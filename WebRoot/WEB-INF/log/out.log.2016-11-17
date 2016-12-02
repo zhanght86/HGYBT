@@ -1,0 +1,40 @@
+15:07:46,364 INFO bat.GZContBlc(266) - 程序开始...
+15:07:46,410 INFO gzbank.GZBankConf(30) - Into GZBankConf.load()...
+15:07:46,452 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:07:46,454 DEBUG common.SysInfo(32) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:07:46,479 DEBUG common.SysInfo(41) - MIDPLAT_HOME = null
+15:07:46,483 DEBUG common.SysInfo(57) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:07:46,485 INFO gzbank.GZBankConf(33) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml...
+15:07:46,538 INFO common.XmlConf(59) - conf file modified at (2016-11-08 16:39:37,728) and length=1791 bytes!
+15:07:46,699 INFO gzbank.GZBankConf(49) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml!
+15:07:46,700 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:07:46,700 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:07:46,702 INFO common.XmlConf(59) - conf file modified at (2016-11-08 17:28:49,157) and length=23566 bytes!
+15:07:46,754 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:07:46,894 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:07:46,896 INFO gzbank.GZBankConf(55) - Out GZBankConf.load()!
+15:07:46,928 DEBUG common.NoFactory(31) - ClusterId=2; ClusterCount=3
+15:07:48,833 INFO bat.GZContBlc(46) - Into GZContBlc.run()...
+15:07:48,989 INFO bat.GZContBlc(216) - Into GZContBlc.getHead()...
+15:07:48,990 INFO bat.GZContBlc(259) - Out GZContBlc.getHead()!
+15:07:48,991 INFO bat.GZContBlc(74) - FileName = 009920161117.txt
+15:07:48,991 INFO bat.GZContBlc(77) - localDir = F:/xml/HG/
+15:07:48,999 ERROR bat.GZContBlc(85) - 生成标准对账报文出错!
+java.io.FileNotFoundException: F:\xml\HG\009920161117.txt (系统找不到指定的路径。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+	at com.sinosoft.midplat.gzbank.bat.GZContBlc.run(GZContBlc.java:80)
+	at com.sinosoft.midplat.gzbank.bat.GZContBlc.main(GZContBlc.java:269)
+15:07:49,001 INFO bat.GZContBlc(111) - 业务处理模块com.sinosoft.midplat.gzbank.service.NewContBlc
+15:07:49,058 INFO service.NewContBlc(31) - Into NewContBlc.service()...
+15:07:49,065 DEBUG service.ServiceImpl(48) - Into ServiceImpl.insertTranLog()...
+15:07:49,349 DEBUG service.ServiceImpl(112) - Out ServiceImpl.insertTranLog()!
+15:07:49,350 INFO service.NewContBlc(74) - 贵州银行业务对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: F:\xml\HG\009920161117.txt (系统找不到指定的路径。)
+	at com.sinosoft.midplat.gzbank.service.NewContBlc.service(NewContBlc.java:55)
+	at com.sinosoft.midplat.gzbank.bat.GZContBlc.run(GZContBlc.java:116)
+	at com.sinosoft.midplat.gzbank.bat.GZContBlc.main(GZContBlc.java:269)
+15:07:49,472 INFO service.NewContBlc(95) - Out NewContBlc.service()!
+15:07:49,473 INFO bat.GZContBlc(128) - Out GZContBlc.run()!
+15:07:49,474 INFO bat.GZContBlc(274) - 成功结束！

@@ -1,0 +1,1118 @@
+10:36:19,826 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:36:19,857 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:36:19,857 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:36:21,136 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:36:21,136 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:36:21,136 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:36:21,136 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:36:22,446 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:36:22,446 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:36:22,446 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:36:22,446 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:36:22,541 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:36:22,587 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:36:22,587 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:36:22,587 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:36:22,587 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:36:22,587 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:36:22,603 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:36:22,603 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:36:22,603 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:36:22,603 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:36:23,290 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:36:23,290 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:36:23,290 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:37:38,088 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:37:38,088 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:37:38,088 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:37:38,088 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:37:38,088 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:37:38,088 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:37:38,088 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:37:38,275 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:37:38,275 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:37:38,275 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:37:38,291 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:37:38,323 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:37:38,323 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:37:38,323 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:37:38,323 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:37:38,323 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:37:38,323 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:37:38,339 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:37:38,339 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:37:38,339 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:37:38,339 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:37:38,417 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:37:38,417 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:37:38,417 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:37:59,329 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:37:59,329 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:37:59,329 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:37:59,329 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:37:59,329 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:37:59,329 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:37:59,329 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:37:59,532 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:37:59,532 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:37:59,532 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:37:59,532 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:37:59,547 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:37:59,563 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:37:59,563 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:37:59,563 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:37:59,563 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:37:59,563 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:37:59,563 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:37:59,563 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:37:59,563 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:37:59,563 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:37:59,656 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:37:59,656 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:37:59,656 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:39:26,096 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:39:26,096 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:39:26,096 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:39:26,096 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:39:26,096 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:39:26,096 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:39:26,112 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:39:26,283 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:39:26,283 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:39:26,283 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:39:26,283 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:39:26,299 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:39:26,314 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:39:26,314 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:39:26,314 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:39:26,314 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:39:26,314 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:39:26,314 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:39:26,314 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:39:26,314 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:39:26,314 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:39:26,408 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:39:26,408 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:39:26,408 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:39:34,239 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:39:34,239 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:39:34,239 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:39:34,239 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:39:34,239 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:39:34,239 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:39:34,239 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:39:34,441 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:39:34,441 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:39:34,441 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:39:34,441 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:39:34,457 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:39:34,457 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:39:34,457 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:39:34,457 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:39:34,457 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:39:34,457 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:39:34,473 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:39:34,473 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:39:34,473 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:39:34,473 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:39:34,551 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:39:34,551 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:39:34,551 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:40:02,421 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:40:02,437 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:40:02,437 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:40:02,453 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:40:02,469 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:40:02,469 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:40:02,469 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:40:02,906 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:40:02,906 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:40:02,906 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:40:02,922 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:40:02,968 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:40:02,984 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:40:02,984 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:40:02,984 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:40:02,984 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:40:02,984 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:40:03,015 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:40:03,015 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:40:03,031 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:40:03,031 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:40:03,188 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:40:03,188 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:40:03,188 INFO common.RuleParser(62) - Out RuleParser.check()!
+10:43:18,336 INFO common.RuleXsl(150) - Into RuleXsl.load()...
+10:43:18,398 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:43:18,414 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:43:18,431 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+10:43:18,446 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:43:18,446 INFO common.RuleXsl(153) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl...
+10:43:18,462 INFO common.XslCache(62) - conf file modified at (2016-11-07 16:26:56,888) and length=15584 bytes!
+10:43:20,182 INFO common.RuleXsl(160) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xsl!
+10:43:20,182 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:43:20,197 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:43:20,197 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+10:43:20,573 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:43:20,604 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:43:20,604 INFO common.RuleXsl(174) - Out RuleXsl.load()!
+10:43:28,981 INFO common.RuleXml(193) - Into RuleXml.load()...
+10:43:28,997 INFO common.RuleXml(196) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml...
+10:43:29,013 INFO common.XmlConf(62) - conf file modified at (2016-11-07 16:26:56,903) and length=10207 bytes!
+10:43:29,232 INFO common.RuleXml(203) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/rule.xml!
+10:43:29,232 INFO common.RuleXml(210) - Out RuleXml.load()!
+10:44:15,054 INFO common.RuleParser(49) - Into RuleParser.check()...
+10:45:52,869 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+10:46:55,704 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+10:47:21,024 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+10:48:20,747 INFO common.RuleParser(62) - Out RuleParser.check()!
+17:23:07,389 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@6d3136e5
+17:23:07,397 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:23:07,400 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+17:23:07,401 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+17:23:07,469 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+17:23:07,470 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+17:23:07,471 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+17:23:07,474 INFO common.XmlConf(62) - conf file modified at (2016-11-21 17:22:42,546) and length=23579 bytes!
+17:23:07,529 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+17:23:07,578 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:23:07,579 INFO common.Log4jPrint(20) - End reset System.out!
+17:23:07,580 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:23:07,581 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+17:23:07,582 INFO common.XmlConf(62) - conf file modified at (2016-11-21 17:22:42,550) and length=640 bytes!
+17:23:07,586 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+17:23:07,586 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:23:07,639 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+17:23:07,640 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35001; class=com.sinosoft.midplat.abc.AbcYbt
+17:23:07,720 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+17:23:07,721 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:23:07,721 INFO net.SocketListenerF5$Server(140) - 监听端口 35001
+17:23:07,729 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+17:23:07,729 INFO net.SocketListenerF5$Server(140) - 监听端口 35017
+17:23:07,730 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=35019; class=com.sinosoft.midplat.boc.BocYbt
+17:23:07,735 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+17:23:07,735 INFO net.SocketListenerF5$Server(140) - 监听端口 35019
+17:23:07,735 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:23:07,742 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+17:23:07,743 INFO net.SocketListenerF5$Server(140) - 监听端口 39871
+17:23:07,743 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+18:53:01,757 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <!--投保基本信息-->
+      <TranDate>20160628</TranDate>
+      <!--交易日期-->
+      <TranTime>102535</TranTime>
+      <!--交易时间-->
+      <BankCode>BOC</BankCode>
+      <!--银行代码-->
+      <InsuId>0024</InsuId>
+      <!--保险公司代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo>20035</BrNo>
+      &gt;
+      <!--网点代码-->
+      <TellerNo>0871077</TellerNo>
+      <!--柜员代码-->
+      <TransNo>2016062807199458</TransNo>
+      <!--交易流水号-->
+      <TranCode>1002</TranCode>
+      <!--交易码-->
+      <Channel>1</Channel>
+      <!--渠道标识-->
+      <OriginTransNo>2016062807198232</OriginTransNo>
+      <!--原出单交易流水号-->
+      <ApplyNo>100030000195733</ApplyNo>
+      <!--投保单号-->
+      <PrintNo>B0091316</PrintNo>
+      <!--保单印刷号-->
+      <Password />
+      <!--保单密码-->
+      <Premium>2000.00</Premium>
+      <!--保险费-->
+      <PayAcc>6217860100001192252</PayAcc>
+      <!--银行账户-->
+   </Main>
+   <BaseInfo>
+      <!--核心请求报文-->
+      <BankCode>9006</BankCode>
+      <!--银行代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo />
+      <!--交易流水号-->
+      <TranNo>2016062807199458</TranNo>
+      <!--交易流水号-->
+      <FuncFlag>01</FuncFlag>
+      <!--交易类型-->
+      <InsuID />
+      <!--保险公司代码-->
+   </BaseInfo>
+</InsuReq>
+
+
+18:53:01,760 INFO test.BocTest(78) - 请求报文长度为：1184个字节
+18:53:01,760 INFO test.BocTest(88) - 消息头长度为:8
+18:53:02,310 INFO test.BocTest(106) - ---------------------------------------------------
+18:53:02,311 INFO test.BocTest(107) - 报文字节 长度为:00000370
+18:53:02,315 INFO test.BocTest(109) - 交易结束，共耗费：0.551秒,551毫秒
+18:53:02,335 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+18:53:54,206 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <!--投保基本信息-->
+      <TranDate>20160628</TranDate>
+      <!--交易日期-->
+      <TranTime>102535</TranTime>
+      <!--交易时间-->
+      <BankCode>BOC</BankCode>
+      <!--银行代码-->
+      <InsuId>0024</InsuId>
+      <!--保险公司代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo>20035</BrNo>
+      &gt;
+      <!--网点代码-->
+      <TellerNo>0871077</TellerNo>
+      <!--柜员代码-->
+      <TransNo>2016062807199458</TransNo>
+      <!--交易流水号-->
+      <TranCode>1002</TranCode>
+      <!--交易码-->
+      <Channel>1</Channel>
+      <!--渠道标识-->
+      <OriginTransNo>2016062807198232</OriginTransNo>
+      <!--原出单交易流水号-->
+      <ApplyNo>100030000195733</ApplyNo>
+      <!--投保单号-->
+      <PrintNo>B0091316</PrintNo>
+      <!--保单印刷号-->
+      <Password />
+      <!--保单密码-->
+      <Premium>2000.00</Premium>
+      <!--保险费-->
+      <PayAcc>6217860100001192252</PayAcc>
+      <!--银行账户-->
+   </Main>
+   <BaseInfo>
+      <!--核心请求报文-->
+      <BankCode>9006</BankCode>
+      <!--银行代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo />
+      <!--交易流水号-->
+      <TranNo>2016062807199458</TranNo>
+      <!--交易流水号-->
+      <FuncFlag>01</FuncFlag>
+      <!--交易类型-->
+      <InsuID />
+      <!--保险公司代码-->
+   </BaseInfo>
+</InsuReq>
+
+
+18:53:54,208 INFO test.BocTest(78) - 请求报文长度为：1184个字节
+18:53:54,208 INFO test.BocTest(88) - 消息头长度为:8
+18:53:54,267 INFO test.BocTest(106) - ---------------------------------------------------
+18:53:54,268 INFO test.BocTest(107) - 报文字节 长度为:00000370
+18:53:54,271 INFO test.BocTest(109) - 交易结束，共耗费：0.06秒,60毫秒
+18:53:54,294 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+18:54:00,641 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@45cfd3b2
+18:54:00,650 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:54:00,655 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+18:54:00,656 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+18:54:00,658 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+18:54:00,659 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+18:54:00,660 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+18:54:00,664 INFO common.XmlConf(62) - conf file modified at (2016-11-21 17:22:42,546) and length=23579 bytes!
+18:54:00,731 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+18:54:00,741 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:54:00,742 INFO common.Log4jPrint(20) - End reset System.out!
+18:54:00,745 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:54:00,745 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+18:54:00,746 INFO common.XmlConf(62) - conf file modified at (2016-11-21 17:22:42,550) and length=640 bytes!
+18:54:00,749 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+18:54:00,750 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:54:00,766 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+18:54:00,767 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35001; class=com.sinosoft.midplat.abc.AbcYbt
+18:54:00,784 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+18:54:00,784 INFO net.SocketListenerF5$Server(140) - 监听端口 35001
+18:54:00,784 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:54:00,790 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+18:54:00,791 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=35019; class=com.sinosoft.midplat.boc.BocYbt
+18:54:00,790 INFO net.SocketListenerF5$Server(140) - 监听端口 35017
+18:54:00,797 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+18:54:00,798 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:54:00,797 INFO net.SocketListenerF5$Server(140) - 监听端口 35019
+18:54:00,803 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+18:54:00,804 INFO net.SocketListenerF5$Server(140) - 监听端口 39871
+18:54:00,804 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+18:54:05,947 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <!--投保基本信息-->
+      <TranDate>20160628</TranDate>
+      <!--交易日期-->
+      <TranTime>102535</TranTime>
+      <!--交易时间-->
+      <BankCode>BOC</BankCode>
+      <!--银行代码-->
+      <InsuId>0024</InsuId>
+      <!--保险公司代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo>20035</BrNo>
+      &gt;
+      <!--网点代码-->
+      <TellerNo>0871077</TellerNo>
+      <!--柜员代码-->
+      <TransNo>2016062807199458</TransNo>
+      <!--交易流水号-->
+      <TranCode>1002</TranCode>
+      <!--交易码-->
+      <Channel>1</Channel>
+      <!--渠道标识-->
+      <OriginTransNo>2016062807198232</OriginTransNo>
+      <!--原出单交易流水号-->
+      <ApplyNo>100030000195733</ApplyNo>
+      <!--投保单号-->
+      <PrintNo>B0091316</PrintNo>
+      <!--保单印刷号-->
+      <Password />
+      <!--保单密码-->
+      <Premium>2000.00</Premium>
+      <!--保险费-->
+      <PayAcc>6217860100001192252</PayAcc>
+      <!--银行账户-->
+   </Main>
+   <BaseInfo>
+      <!--核心请求报文-->
+      <BankCode>9006</BankCode>
+      <!--银行代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo />
+      <!--交易流水号-->
+      <TranNo>2016062807199458</TranNo>
+      <!--交易流水号-->
+      <FuncFlag>01</FuncFlag>
+      <!--交易类型-->
+      <InsuID />
+      <!--保险公司代码-->
+   </BaseInfo>
+</InsuReq>
+
+
+18:54:05,949 INFO test.BocTest(78) - 请求报文长度为：1184个字节
+18:54:05,950 INFO test.BocTest(88) - 消息头长度为:8
+18:54:06,005 INFO test.BocTest(106) - ---------------------------------------------------
+18:54:06,005 INFO test.BocTest(107) - 报文字节 长度为:00000370
+18:54:06,007 INFO test.BocTest(109) - 交易结束，共耗费：0.056秒,56毫秒
+18:54:06,017 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+18:55:06,345 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <!--投保基本信息-->
+      <TranDate>20160628</TranDate>
+      <!--交易日期-->
+      <TranTime>102535</TranTime>
+      <!--交易时间-->
+      <BankCode>BOC</BankCode>
+      <!--银行代码-->
+      <InsuId>0024</InsuId>
+      <!--保险公司代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo>20035</BrNo>
+      <!--网点代码-->
+      <TellerNo>0871077</TellerNo>
+      <!--柜员代码-->
+      <TransNo>2016062807199458</TransNo>
+      <!--交易流水号-->
+      <TranCode>1002</TranCode>
+      <!--交易码-->
+      <Channel>1</Channel>
+      <!--渠道标识-->
+      <OriginTransNo>2016062807198232</OriginTransNo>
+      <!--原出单交易流水号-->
+      <ApplyNo>100030000195733</ApplyNo>
+      <!--投保单号-->
+      <PrintNo>B0091316</PrintNo>
+      <!--保单印刷号-->
+      <Password />
+      <!--保单密码-->
+      <Premium>2000.00</Premium>
+      <!--保险费-->
+      <PayAcc>6217860100001192252</PayAcc>
+      <!--银行账户-->
+   </Main>
+   <BaseInfo>
+      <!--核心请求报文-->
+      <BankCode>9006</BankCode>
+      <!--银行代码-->
+      <ZoneNo>0010</ZoneNo>
+      <!--地区代码-->
+      <BrNo />
+      <!--交易流水号-->
+      <TranNo>2016062807199458</TranNo>
+      <!--交易流水号-->
+      <FuncFlag>01</FuncFlag>
+      <!--交易类型-->
+      <InsuID />
+      <!--保险公司代码-->
+   </BaseInfo>
+</InsuReq>
+
+
+18:55:06,347 INFO test.BocTest(78) - 请求报文长度为：1183个字节
+18:55:06,348 INFO test.BocTest(88) - 消息头长度为:8
+18:55:06,423 INFO test.BocTest(106) - ---------------------------------------------------
+18:55:06,424 INFO test.BocTest(107) - 报文字节 长度为:00000370
+18:55:06,427 INFO test.BocTest(109) - 交易结束，共耗费：0.077秒,77毫秒
+18:55:06,452 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+18:58:38,666 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <TranDate>20160628</TranDate>
+      <TranTime>123135</TranTime>
+      <BankCode>BOC</BankCode>
+      <InsuId>0024</InsuId>
+      <ZoneNo>0010</ZoneNo>
+      <BrNo>02116</BrNo>
+      <TellerNo>2195172</TellerNo>
+      <TransNo>2016062807222537</TransNo>
+      <TranCode>1001</TranCode>
+      <Channel>1</Channel>
+      <ApplyNo>100030000184206</ApplyNo>
+      <!--申请顺序号(投保单号15位)-->
+      <ApplyDate>20160628</ApplyDate>
+      <BrName>中国银行北京石景山支行营业部</BrName>
+      <BrCertID />
+      <ManagerNo />
+      <ManagerName />
+      <SellTeller>4299029</SellTeller>
+      <SellTellerName>张迎</SellTellerName>
+      <SellCertID />
+      <CertIDValidDate>00000000</CertIDValidDate>
+   </Main>
+   <Appnt>
+      <Name>胡杰</Name>
+      <Sex>0</Sex>
+      <Birthday>19580208</Birthday>
+      <IDType>01</IDType>
+      <IDNo>110107195802080021</IDNo>
+      <IDStartDate>20050529</IDStartDate>
+      <IDEndDate>21001231</IDEndDate>
+      <Marriage />
+      <Nationality />
+      <OfficePhone />
+      <MobilePhone>18600283180</MobilePhone>
+      <HomePhone>68528631</HomePhone>
+      <MailAddr />
+      <MailZipCode />
+      <HomeAddr>北京市石景山区杨庄路8号院1栋2-401号</HomeAddr>
+      <HomeZipCode>100043</HomeZipCode>
+      <Email />
+      <JobCode>990002</JobCode>
+      <Income>40000.00</Income>
+      <ResiType>0</ResiType>
+      <FamilyIncome>0.00</FamilyIncome>
+      <PremBudget>0.00</PremBudget>
+      <WorkCompany />
+      <RelaToInsured>01</RelaToInsured>
+   </Appnt>
+   <Insured>
+      <Name>胡杰</Name>
+      <Sex>0</Sex>
+      <Birthday>19580208</Birthday>
+      <IDType>01</IDType>
+      <IDNo>110107195802080021</IDNo>
+      <IDStartDate>20050529</IDStartDate>
+      <IDEndDate>21001231</IDEndDate>
+      <Marriage />
+      <Nationality />
+      <OfficePhone />
+      <MobilePhone>18600283180</MobilePhone>
+      <HomePhone>68528631</HomePhone>
+      <MailAddr />
+      <MailZipCode />
+      <HomeAddr>北京市石景山区杨庄路8号院1栋2-401号</HomeAddr>
+      <HomeZipCode>100043</HomeZipCode>
+      <Email />
+      <JobCode>990002</JobCode>
+      <Income>40000.00</Income>
+      <WorkCompany />
+      <TellInfos>
+         <Count>1</Count>
+         <TellInfo>
+            <Version>36</Version>
+            <Code>001</Code>
+            <Content>0.00</Content>
+            <Remark />
+         </TellInfo>
+      </TellInfos>
+   </Insured>
+   <Objt>
+      <InsuPropertyAddr />
+      <InsuPropertyCode />
+   </Objt>
+   <Bnfs>
+      <Indicator>Y</Indicator>
+      <Count>0</Count>
+   </Bnfs>
+   <Invest>
+      <Count>0</Count>
+   </Invest>
+   <Risks>
+      <Count>1</Count>
+      <Risk>
+         <Code>6010</Code>
+         <MainSubFlag>1</MainSubFlag>
+         <Unit>0</Unit>
+         <InsuAmount>0.00</InsuAmount>
+         <Premium>300000.00</Premium>
+         <PayEndYearFlag>01</PayEndYearFlag>
+         <PayEndYear>0</PayEndYear>
+         <InsuYearFlag>01</InsuYearFlag>
+         <!--保障年期/年龄标志-->
+         <InsuYear>5</InsuYear>
+         <!--保障期间-->
+      </Risk>
+      <Appendix>
+         <PayIntv>01</PayIntv>
+         <GetYearFlag />
+         <GetYear />
+         <GetStartAge />
+         <GetAccBankName />
+         <GetAccName />
+         <GetAcc />
+         <PayAccBankName>中国银行</PayAccBankName>
+         <PayAccName>胡杰</PayAccName>
+         <PayAcc>318164102337</PayAcc>
+         <PayMethod />
+         <SendMethod>1</SendMethod>
+         <HealthFlag>N</HealthFlag>
+         <OccupationFlag />
+         <SpecContent />
+         <BonusPayMode />
+         <BonusGetMode />
+         <FullBonusGetMode />
+         <AutoPayFlag />
+         <SubFlag />
+         <InvestDateInd />
+         <AutoRenewFlag />
+         <NorskPrem />
+         <NorskAmt />
+         <FirstRate />
+         <SureRate />
+         <DealType />
+         <ArbitrationInst />
+         <RiskAssess>Y</RiskAssess>
+      </Appendix>
+   </Risks>
+   <Remark1>3CNY0</Remark1>
+   <Remark2 />
+   <Remark3 />
+   <Remark4 />
+   <BaseInfo>
+      <BankCode>9006</BankCode>
+      <ZoneNo>0010</ZoneNo>
+      <BrNo />
+      <TranNo>2016062807222537</TranNo>
+      <FuncFlag>23</FuncFlag>
+      <InsuID />
+   </BaseInfo>
+</InsuReq>
+
+
+18:58:38,669 INFO test.BocTest(78) - 请求报文长度为：3993个字节
+18:58:38,669 INFO test.BocTest(88) - 消息头长度为:8
+18:58:44,391 INFO test.BocTest(106) - ---------------------------------------------------
+18:58:44,392 INFO test.BocTest(107) - 报文字节 长度为:00000376
+18:58:44,395 INFO test.BocTest(109) - 交易结束，共耗费：5.723秒,5723毫秒
+18:58:44,418 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+19:00:19,493 INFO test.BocTest(77) - 贵州银行请求报文：<?xml version="1.0"?>
+<InsuReq>
+   <Main>
+      <TranDate>20160628</TranDate>
+      <TranTime>123135</TranTime>
+      <BankCode>BOC</BankCode>
+      <InsuId>0024</InsuId>
+      <ZoneNo>0010</ZoneNo>
+      <BrNo>02116</BrNo>
+      <TellerNo>2195172</TellerNo>
+      <TransNo>2016062807222537</TransNo>
+      <TranCode>1001</TranCode>
+      <Channel>1</Channel>
+      <ApplyNo>100030000184206</ApplyNo>
+      <!--申请顺序号(投保单号15位)-->
+      <ApplyDate>20160628</ApplyDate>
+      <BrName>中国银行北京石景山支行营业部</BrName>
+      <BrCertID />
+      <ManagerNo />
+      <ManagerName />
+      <SellTeller>4299029</SellTeller>
+      <SellTellerName>张迎</SellTellerName>
+      <SellCertID />
+      <CertIDValidDate>00000000</CertIDValidDate>
+   </Main>
+   <Appnt>
+      <Name>胡杰</Name>
+      <Sex>0</Sex>
+      <Birthday>19580208</Birthday>
+      <IDType>01</IDType>
+      <IDNo>110107195802080021</IDNo>
+      <IDStartDate>20050529</IDStartDate>
+      <IDEndDate>21001231</IDEndDate>
+      <Marriage />
+      <Nationality />
+      <OfficePhone />
+      <MobilePhone>18600283180</MobilePhone>
+      <HomePhone>68528631</HomePhone>
+      <MailAddr />
+      <MailZipCode />
+      <HomeAddr>北京市石景山区杨庄路8号院1栋2-401号</HomeAddr>
+      <HomeZipCode>100043</HomeZipCode>
+      <Email />
+      <JobCode>990002</JobCode>
+      <Income>40000.00</Income>
+      <ResiType>0</ResiType>
+      <FamilyIncome>0.00</FamilyIncome>
+      <PremBudget>0.00</PremBudget>
+      <WorkCompany />
+      <RelaToInsured>01</RelaToInsured>
+   </Appnt>
+   <Insured>
+      <Name>胡杰</Name>
+      <Sex>0</Sex>
+      <Birthday>19580208</Birthday>
+      <IDType>01</IDType>
+      <IDNo>110107195802080021</IDNo>
+      <IDStartDate>20050529</IDStartDate>
+      <IDEndDate>21001231</IDEndDate>
+      <Marriage />
+      <Nationality />
+      <OfficePhone />
+      <MobilePhone>18600283180</MobilePhone>
+      <HomePhone>68528631</HomePhone>
+      <MailAddr />
+      <MailZipCode />
+      <HomeAddr>北京市石景山区杨庄路8号院1栋2-401号</HomeAddr>
+      <HomeZipCode>100043</HomeZipCode>
+      <Email />
+      <JobCode>990002</JobCode>
+      <Income>40000.00</Income>
+      <WorkCompany />
+      <TellInfos>
+         <Count>1</Count>
+         <TellInfo>
+            <Version>36</Version>
+            <Code>001</Code>
+            <Content>0.00</Content>
+            <Remark />
+         </TellInfo>
+      </TellInfos>
+   </Insured>
+   <Objt>
+      <InsuPropertyAddr />
+      <InsuPropertyCode />
+   </Objt>
+   <Bnfs>
+      <Indicator>Y</Indicator>
+      <Count>0</Count>
+   </Bnfs>
+   <Invest>
+      <Count>0</Count>
+   </Invest>
+   <Risks>
+      <Count>1</Count>
+      <Risk>
+         <Code>6010</Code>
+         <MainSubFlag>1</MainSubFlag>
+         <Unit>0</Unit>
+         <InsuAmount>0.00</InsuAmount>
+         <Premium>300000.00</Premium>
+         <PayEndYearFlag>01</PayEndYearFlag>
+         <PayEndYear>0</PayEndYear>
+         <InsuYearFlag>01</InsuYearFlag>
+         <!--保障年期/年龄标志-->
+         <InsuYear>5</InsuYear>
+         <!--保障期间-->
+      </Risk>
+      <Appendix>
+         <PayIntv>01</PayIntv>
+         <GetYearFlag />
+         <GetYear />
+         <GetStartAge />
+         <GetAccBankName />
+         <GetAccName />
+         <GetAcc />
+         <PayAccBankName>中国银行</PayAccBankName>
+         <PayAccName>胡杰</PayAccName>
+         <PayAcc>318164102337</PayAcc>
+         <PayMethod />
+         <SendMethod>1</SendMethod>
+         <HealthFlag>N</HealthFlag>
+         <OccupationFlag />
+         <SpecContent />
+         <BonusPayMode />
+         <BonusGetMode />
+         <FullBonusGetMode />
+         <AutoPayFlag />
+         <SubFlag />
+         <InvestDateInd />
+         <AutoRenewFlag />
+         <NorskPrem />
+         <NorskAmt />
+         <FirstRate />
+         <SureRate />
+         <DealType />
+         <ArbitrationInst />
+         <RiskAssess>Y</RiskAssess>
+      </Appendix>
+   </Risks>
+   <Remark1>3CNY0</Remark1>
+   <Remark2 />
+   <Remark3 />
+   <Remark4 />
+   <BaseInfo>
+      <BankCode>9006</BankCode>
+      <ZoneNo>0010</ZoneNo>
+      <BrNo />
+      <TranNo>2016062807222537</TranNo>
+      <FuncFlag>23</FuncFlag>
+      <InsuID />
+   </BaseInfo>
+</InsuReq>
+
+
+19:00:19,496 INFO test.BocTest(78) - 请求报文长度为：3993个字节
+19:00:19,496 INFO test.BocTest(88) - 消息头长度为:8
+19:00:34,813 INFO test.BocTest(106) - ---------------------------------------------------
+19:00:34,815 INFO test.BocTest(107) - 报文字节 长度为:00000368
+19:00:34,818 INFO test.BocTest(109) - 交易结束，共耗费：15.319秒,15319毫秒
+19:00:34,850 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 1: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 5 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:47)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:38)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:30)
+	at com.sinosoft.midplat.boc.test.BocTest.main(BocTest.java:110)
+19:50:06,080 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 3: Content is not allowed in prolog.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:63)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:55)
+	at com.sinosoft.midplat.util.XmlTransferTest.main(XmlTransferTest.java:64)
+Caused by: org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 4 more
+Caused by: 
+org.xml.sax.SAXParseException: Content is not allowed in prolog.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl$PrologDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:63)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:55)
+	at com.sinosoft.midplat.util.XmlTransferTest.main(XmlTransferTest.java:64)

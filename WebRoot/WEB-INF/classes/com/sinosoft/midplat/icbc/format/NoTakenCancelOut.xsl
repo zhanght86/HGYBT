@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:java="http://xml.apache.org/xslt/java" exclude-result-prefixes="java">
+
+<xsl:template match="/">
+<TXLife>
+	<xsl:copy-of select="TranData/Head"/>
+	<TXLifeResponse>
+	<TransRefGUID><xsl:value-of select="TranData/Body/TranNo"/></TransRefGUID>
+	<TransType>1030</TransType>
+ 	 <TransExeDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur10Date()"/></TransExeDate> 
+ 	 <TransExeTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Time()"/></TransExeTime> 
+	</TXLifeResponse>    
+</TXLife> 
+</xsl:template>   
+</xsl:stylesheet>

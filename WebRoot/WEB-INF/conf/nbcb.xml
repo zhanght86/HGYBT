@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="GBK"?>
+<nbcb>
+<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="06" insu="0300" />
+	<TranCom outcode="NBYH">06</TranCom>
+	<preNet>com.sinosoft.midplat.nbcb.net.NbcbNetImpl</preNet>
+	
+	<business>
+		<name>新单试算</name>
+		<funcFlag outcode="1">1012</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.nbcb.format.NewCont</format>
+		<service>com.sinosoft.midplat.nbcb.service.NewContInput</service>
+	</business>
+	
+	<business>
+		<name>新单确认</name>
+		<funcFlag outcode="2">1014</funcFlag>
+        <!-- locktime 配置锁定时间 --> 
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.nbcb.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.nbcb.service.NewContConfirm</service>
+	</business>
+	
+	<business>
+		<name>保单打印</name>
+		<!--  31为保单打印-->
+		<funcFlag outcode="3">1032</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.nbcb.format.RePrint</format>
+		<service>com.sinosoft.midplat.nbcb.service.ContRePrint</service> 
+	</business>
+	
+	<business>
+		<name>保单重打</name>
+		<!-- 41 为保单重打  -->
+		<funcFlag outcode="4">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.nbcb.format.RePrint</format>
+		<service>com.sinosoft.midplat.nbcb.service.ContRePrint</service>
+	</business>
+	
+	<business>
+		<name>当日撤单</name>
+		<funcFlag outcode="5">1015</funcFlag>
+		<!-- locktime 配置锁定时间 -->  
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.nbcb.format.WriteOff</format>
+		<service>com.sinosoft.midplat.nbcb.service.ContCancel</service>
+	</business>
+	<business>
+		<name>绿灯</name>
+		<funcFlag outcode="6">111</funcFlag>
+		<!-- locktime 配置锁定时间 -->  
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.nbcb.format.GreenTest</format>
+		<service>com.sinosoft.midplat.nbcb.service.GreenTest</service>
+	</business>
+	
+	<business>		
+		<name>新单对账</name>
+		<funcFlag outcode="7">4005</funcFlag>
+		<ZoneNo>-</ZoneNo>
+		<locktime>200</locktime>
+		<NodeNo>0000000000</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.nbcb.service.NewContBlc</service>
+		<sftp ip="3.4.8.11" port="22" path="/home/ybt/zhrs" user="zhrs" password="" privateKey="/root/.ssh/id_rsa" 
+		passphrase="" action="down"  reconn="5"  timeout="300"/>
+		<!-- UAT /home/ybt/zhrs -->
+		<localDir>/home/yinbaotong/ybtBalanceFile/nbyh/</localDir>
+		<charset>GBK</charset>
+	</business>
+	
+	<business>		
+		<name>单证对账</name>
+		<funcFlag outcode="7">4006</funcFlag>
+		<locktime>200</locktime>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.nbcb.service.NewCardBlc</service>
+
+		<!-- UAT /home/ybt/zhrs -->
+		<localDir>D:/YBT_SAVE_XML/ZHH/nbyh/</localDir>
+		<charset>GBK</charset>
+	</business>
+	
+	<business>		
+		<name>核退保</name>
+		<funcFlag outcode="8">3007</funcFlag>
+		<zone>01500</zone>
+		<NodeNo>0150001201</NodeNo>
+		<nextDate>N</nextDate>
+		<service></service>
+		<sftp ip="3.4.8.11" port="22" path="/home/ybt/zhrs" user="zhrs" password="" privateKey="/root/.ssh/id_rsa" 
+		passphrase="" action="up"  reconn="5"  timeout="300"/>
+		<!-- UAT /home/ybt/zhrs -->
+		<localDir>/home/yinbaotong/ybtBalanceFile/nbyh</localDir>
+	</business>
+
+</nbcb>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="GBK"?>
+<batchs autoRestart="true">
+	<!-- 工行对账start -->
+	<!-- <batch>
+		<name>工行新单对账</name>
+		<startTime>23:50:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.IcbcBusiBlc</class>
+		<com>01</com>
+		<funcFlag>1005</funcFlag>
+	</batch>
+
+	<batch>
+		<name>单证对账</name>
+		<startTime>23:55:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.IcbcCardBlc</class>
+		<com>01</com>
+		<funcFlag>1006</funcFlag>
+	</batch>
+
+	<batch>
+		<name>工行保全对账</name>
+		<startTime>23:25:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.IcbcBAOQUANBlc</class>
+		<com>01</com>
+		<funcFlag>1104</funcFlag>
+	</batch>
+
+	<batch>
+		<name>工行非实时对账</name>
+		<startTime>23:40:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.IcbcNoRealBlc</class>
+		<extendClass>Balance</extendClass>
+		<com>01</com>
+		<funcFlag>1201</funcFlag>
+	</batch>
+
+	<batch>
+		<name>工行核保超时文件处理</name>
+		<startTime>23:20:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.IcbcOverTimeBlc</class>
+		<extendClass>Balance</extendClass>
+		<com>01</com>
+		<funcFlag>1202</funcFlag>
+	</batch>
+
+	<batch>
+		<name>非实时结果文件返回</name>
+		<startTime>20:30:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.ToIcbcResultFileBlc</class>
+		<extendClass>ToBankBalance</extendClass>
+		<com>01</com>
+		<funcFlag>1203</funcFlag>
+	</batch>
+
+	<batch>
+		<name>非实时投保单受理状态变更文件返回</name>
+		<startTime>20:20:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.ToIcbcStateFileBlc</class>
+		<extendClass>ToBankBalance</extendClass>
+		<com>01</com>
+		<funcFlag>1204</funcFlag>
+	</batch>
+
+	<batch>
+		<name>工行保单状态变更文件回传</name>
+		<startTime>20:40:00</startTime>
+		<class>com.sinosoft.midplat.icbc.bat.ToIcbcBaoQuanFileBlc</class>
+		<extendClass>ToBankBalance</extendClass>
+		<com>01</com>
+		<funcFlag>1205</funcFlag>
+	</batch> -->
+	<!-- 工行对账end -->
+
+	<!-- 宁波银行对账start -->
+	<!-- <batch>
+		<name>宁波银行新单对账</name>
+		<startTime>19:00:00</startTime>
+		<class>com.sinosoft.midplat.nbcb.bat.NbcbBusiBlc</class>
+		<com>06</com>
+		<funcFlag>4005</funcFlag>
+	</batch>
+
+	<batch>
+		<name>宁波银行核退保</name>
+		<startTime>27:40:00</startTime>
+		<class>com.sinosoft.midplat.nbcb.bat.NbcbCheckSur</class>
+		<com>06</com>
+		<funcFlag>3007</funcFlag>
+	</batch>
+	
+	<batch>
+		<name>宁波银行单证对账</name>
+		<startTime>20:00:00</startTime>
+		<class>com.sinosoft.midplat.nbcb.bat.NbcbCardBlc</class>
+		<com>06</com>
+		<funcFlag>4006</funcFlag>
+	</batch> -->
+	<!-- 宁波银行对账end -->
+	
+	<!-- 农行对账start -->
+	<!-- <batch>
+		<name>退保犹撤数据文件-银行处理结果回盘</name>
+		<startTime>23:10:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal</class>
+		<com>05</com>
+		<funcFlag>2006</funcFlag>
+	</batch>
+
+	<batch>
+		<name>非实时出单结果文件-银行处理结果回盘</name>
+		<startTime>23:15:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal</class>
+		<com>05</com>
+		<funcFlag>2007</funcFlag>
+	</batch>
+   
+   <batch>
+		<name>农行手工单</name>
+		<startTime>23:10:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.HandCont</class>
+		<com>05</com>
+		<funcFlag>2010</funcFlag>
+	</batch>
+
+	<batch>
+		<name>农行手工单明细</name>
+		<startTime>23:15:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.HandContRiskDtl</class>
+		<com>05</com>
+		<funcFlag>2011</funcFlag>
+	</batch>
+   
+	<batch>
+		<name>新农行新单对账</name>
+		<startTime>23:30:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc</class>
+		<com>05</com>
+		<funcFlag>2001</funcFlag>
+	</batch>
+
+	<batch>
+		<name>保全交易申请文件</name>
+		<startTime>23:35:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.SecuTradAppDoc</class>
+		<com>05</com>
+		<funcFlag>2003</funcFlag>
+	</batch>
+
+	<batch>
+		<name>非实时出单流水明细</name>
+		<startTime>23:45:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail</class>
+		<com>05</com>
+		<funcFlag>2002</funcFlag>
+	</batch>
+
+	<batch>
+		<name>非实时出单结果文件</name>
+		<startTime>20:12:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NonRealTimeCont</class>
+		<com>01</com>
+		<funcFlag>2008</funcFlag>
+	</batch>
+
+	<batch>
+		<name>退保犹撤数据文件</name>
+		<startTime>20:05:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NoTakenBalanceRst</class>
+		<com>05</com>
+		<funcFlag>2004</funcFlag>
+	</batch>
+	<batch>
+		<name>密钥更新交易</name>
+		<startTime>17:45:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.MYZH_Timing</class>
+		<com>05</com>
+		<funcFlag>1001</funcFlag>
+	</batch>
+	
+	<batch>
+		<name>新农行单证对账</name>
+		<startTime>31:00:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NewAbcCardBlc</class>
+		<com>05</com>
+		<funcFlag>2000</funcFlag>
+	</batch> -->
+	<!-- 农行对账end -->
+	
+	<!-- 金华银行对账start -->
+	<!-- <batch>
+		<name>金华银行新单对账</name>
+		<startTime>21:35:00</startTime>
+		<class>com.sinosoft.midplat.jhyh.bat.JhyhBusiBlc</class>
+		<com>07</com>
+		<funcFlag>5005</funcFlag>
+	</batch>
+	
+	<batch>
+		<name>金华银行单证对账</name>
+		<startTime>31:21:21</startTime>
+		<class>com.sinosoft.midplat.jhyh.bat.JhyhCardBlc</class>
+		<com>07</com>
+		<funcFlag>5006</funcFlag>
+	</batch> -->
+	<!-- 金华银行对账end -->
+	
+	
+	<!-- <batch>
+		<name>对账检查</name>
+		<startTime>24:30:00</startTime>
+		<class>com.sinosoft.midplat.bat.BalanceCheck</class>
+		<funcFlag>0007</funcFlag>
+	</batch> -->
+	
+	<!-- 建行对账start -->
+	<!-- <batch>
+		<name>新建行账务对账</name>
+		<startTime>24:00:00</startTime>
+		<class>com.sinosoft.midplat.newccb.bat.NewCcbZWBlc</class>
+		<com>03</com>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>330618235</NodeNo>
+		<nextDate>Y</nextDate>
+		<funcFlag>3005</funcFlag>
+		<BankCode>0104</BankCode>
+	</batch>
+
+	<batch>
+		<name>新建行保全对账</name>
+		<startTime>24:15:00</startTime>
+		<class>com.sinosoft.midplat.newccb.bat.NewCcbBQBlc</class>
+		<com>03</com>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>330618235</NodeNo>
+		<nextDate>Y</nextDate>
+		<funcFlag>1048</funcFlag>
+		<BankCode>0104</BankCode>
+	</batch> -->
+	<!-- 建行对账end -->
+</batchs>  

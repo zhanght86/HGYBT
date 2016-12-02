@@ -1,0 +1,73 @@
+/*******************************************************************************
+ * <p>Title: Lis 6.0</p>
+ * <p>Description: 中科软人寿保险核心业务管理系统</p>
+ * <p>Copyright: Copyright (c) 2005 Sinosoft, Co.,Ltd. All Rights Reserved</p>
+ * <p>Company: 中科软科技股份有限公司</p>
+ * <p>WebSite: http://www.sinosoft.com.cn</p>
+ *
+ * @author   : 辛玉强 <XinYQ@sinosoft.com.cn>
+ * @version  : 1.00, 1.01
+ * @date     : 2006-10-14, 2006-10-21
+ * @direction: 通用日历录入选择控件
+ ******************************************************************************/
+
+
+<public:component name="coolDatePicker">
+<public:attach event="ondocumentready" onEvent="initDatePicker()" />
+<public:attach event="onblur" onEvent="formatDatePicker()" />
+
+
+<script language="JavaScript">
+
+    /**
+     * 初始化日期控件
+     */
+    function initDatePicker()
+    {
+        if (element.getAttribute("DatePickerFlag") == null)
+        {
+            element.setAttribute("DatePickerFlag", "1");
+            element.insertAdjacentHTML("afterEnd", "<img src='../common/images/calendar.gif' vspace='1' onclick='calendar(" + element.name + ")'>");
+        }
+    }
+
+    /**
+     * 格式化手动输入的日期
+     * 将所有 yyyymmdd 或 yyyy/mm/dd 格式化为 yyyy-mm-dd 显示
+     * 此函数功能需要 common.js 支持
+     */
+    function formatDatePicker()
+    {
+        try
+        {
+            if (element != null && !element.disabled && !element.readOnly)
+            {
+                var sCurrentValue = element.value;
+                if (sCurrentValue != null && sCurrentValue != "")
+                {
+                    if ((sCurrentValue.length != 8 && sCurrentValue.length != 10) || (!isDate(sCurrentValue) && !isDateI(sCurrentValue) && !isDateN(sCurrentValue)))
+                    {
+                        element.className = "warndate";
+                        alert("对不起，您输入的日期有误！ \n\n日期格式必须是 yyyy-mm-dd 或 yyyymmdd 或 yyyy/mm/dd 格式！");
+                        element.className = "coolDatePicker";
+                        element.value = "";
+                    }
+                    else if (isDateI(sCurrentValue))
+                    {
+                        //日期格式 yyyy/mm/dd
+                        element.value = replace(sCurrentValue, "/", "-");
+                    }
+                    else if (isDateN(sCurrentValue))
+                    {
+                        //日期格式 yyyymmdd
+                        element.value = sCurrentValue.substring(0, 4) + "-" + sCurrentValue.substring(4, 6) + "-" + sCurrentValue.substring(6, 8);
+                    }
+                }
+            } //element != null
+        }
+        catch (ex) {}
+    }
+
+</script>
+
+</public:component>

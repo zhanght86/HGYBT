@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="GBK"?>
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:java="http://xml.apache.org/xslt/java"
+	exclude-result-prefixes="java">
+	<xsl:output method="xml" indent="yes" />
+	<xsl:template match="/">
+		<!--取盘-->
+		<TranData>
+				<Head>
+				<xsl:for-each select="/Transaction/Transaction_Header">
+					<TranDate>
+						<xsl:value-of select="BkPlatDate" />
+					</TranDate>
+					<!--银行交易日期-->
+					<TranTime>
+					<xsl:value-of select="BkPlatTime" />
+				    </TranTime>
+				    <!-- 银行交易时间 -->
+				　　<BankCode>0104</BankCode> <!--银行分行代码 -->
+					<ZoneNo>
+						<xsl:value-of
+							select="substring(BkBrchNo, 1, 3)" />
+					</ZoneNo>
+					<!--地区代码 -->
+					<NodeNo>
+						<xsl:value-of
+							select="BkBrchNo" />
+					</NodeNo>
+					<!--网点代码-->
+					<TellerNo><!--建行银行柜员代码为12位，我方数据库(LKTRANSSTATUS)中对应字段(BANKOPERATOR)为10位，自动截取后10位。-->
+						<xsl:value-of select="substring(BkTellerNo, 3)" />
+					</TellerNo>
+					<!--柜员代码-->
+					<TranNo>
+						<xsl:value-of select="BkPlatSeqNo" />
+					</TranNo>
+					<!--交易流水号-->
+					<SaleChannel>
+						<xsl:value-of select="BkChnlNo" />
+					</SaleChannel>
+					<!--交易渠道代号-->
+					<InsuID>
+						<xsl:value-of select="PbInsuId" />
+					</InsuID>
+					<xsl:copy-of select="../Head/*"/>
+					<!--保险公司代码(cd03) -->
+				</xsl:for-each>
+					</Head>
+				<xsl:variable name="FileName"
+					select="/Transaction/Transaction_Body/BkFileName" />
+				<FileName>
+					<xsl:value-of select="$FileName" />
+				</FileName>
+				<!-- 批量文件名 -->
+				<Body>
+				<DealType>
+					<xsl:call-template name="tran_type">
+						<xsl:with-param name="type">
+							<xsl:value-of
+								select="substring($FileName, 3, 1)" />
+						</xsl:with-param>
+					</xsl:call-template>
+				</DealType>
+				</Body>
+				<!-- 业务类型 -->
+		</TranData>
+	</xsl:template>
+
+	<xsl:template name="tran_type">
+		<xsl:param name="type">0</xsl:param>
+		<xsl:choose>
+			<xsl:when test="$type = 0">S</xsl:when>
+			<xsl:when test="$type = 1">F</xsl:when>
+			<xsl:otherwise></xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+</xsl:stylesheet>

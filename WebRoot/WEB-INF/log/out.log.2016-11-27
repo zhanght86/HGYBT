@@ -1,0 +1,18 @@
+11:03:01,665 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:03:01,708 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:03:01,709 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:03:01,732 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:03:01,734 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:03:01,734 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:03:01,777 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+11:03:02,092 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:03:02,110 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:08:10,429 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:08:10,434 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:08:10,434 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:08:10,436 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:08:10,438 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:08:10,439 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:08:10,440 INFO common.XmlConf(62) - conf file modified at (2016-11-18 15:21:38,168) and length=23579 bytes!
+11:08:10,619 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:08:10,626 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!

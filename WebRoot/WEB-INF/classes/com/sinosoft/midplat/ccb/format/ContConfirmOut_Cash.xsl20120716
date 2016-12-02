@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="GBK"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" exclude-result-prefixes="java">
+	<xsl:output indent="yes"/>
+	<xsl:template match="/">
+		<Transaction>
+			<Transaction_Body>
+				<!--# # # # 险种信息 # # # # -->
+				<!--主险险种信息-->
+				<PbInsuType>
+					<xsl:call-template name="tran_RiskCode">
+						<xsl:with-param name="RiskCode">
+							<xsl:value-of select="/TranData/Body/Risk/MainRiskCode"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</PbInsuType>
+				<PiEndDate>
+					<xsl:value-of select="/TranData/Body/Risk[RiskCode=MainRiskCode]/InsuEndDate"/>
+				</PiEndDate>
+				<PbFinishDate>
+					<xsl:value-of select="/TranData/Body/Risk[RiskCode=MainRiskCode]/PayEndDate"/>
+				</PbFinishDate>
+				<LiDrawstring>
+					<xsl:value-of select="/TranData/Body/Risk[RiskCode=MainRiskCode]/GetStartDate"/>
+				</LiDrawstring>
+				<!--# # # # 现金价值表# # # #因为建行不要一定传，所以直接置零先-->
+				<LiCashValueCount>0</LiCashValueCount>
+				<!--<xsl:value-of select="/TranData/LCCont/CashValues/CashValueCount"/>暂时置零-->
+				<!--现金价值表循环，循环标签用Cash_List，每条现金价值的标签用Cash_Detail-->
+				<!--<Cash_List>
+					<xsl:for-each select="/TranData/LCCont/LCInsureds/LCInsured/Risks/Risk">
+						<xsl:variable name="RiskCD" select="RiskCode"/>
+						<xsl:variable name="MainRiskCD" select="MainRiskCode"/>
+						<xsl:if test="$RiskCD=$MainRiskCD">
+							<xsl:for-each select="/TranData/LCCont/LCInsureds/LCInsured/Risks/Risk/CashValues/CashValue">
+								<Cash_Detail>
+									<LiCashYearEnd>
+										<xsl:value-of select="End"/>
+									</LiCashYearEnd>
+									<LiCashYearCash>
+										<xsl:value-of select="Cash"/>
+									</LiCashYearCash>
+								</Cash_Detail>
+							</xsl:for-each>
+						</xsl:if>
+					</xsl:for-each>
+				</Cash_List>-->
+				<!--循环结束-->
+				<!--# # # # 红利保额保单年度末现金价值表 # # # #-->
+				<LiBonusValueCount>0</LiBonusValueCount>
+				<!--Bonus  红利保额保单年度末现金价值表循环-->
+				<!--循环标签用Bonus_List，每条现金价值的标签用Bonus_Detail-->
+				<!--<Bonus_List>
+					<Bonus_Detail>
+						<LiBonusEnd/>
+						<LiBonusCash/>
+					</Bonus_Detail>
+				</Bonus_List>-->
+				<!--循环结束-->
+				<PbInsuSlipNo>
+					<xsl:value-of select="/TranData/Body/ContNo"/>
+				</PbInsuSlipNo>
+				<!--保单号-->
+				<BkTotAmt>
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/>
+				</BkTotAmt>
+				<!--总保费-->
+				<LiSureRate>					
+				</LiSureRate>
+				<!--保证利率-->
+				<PbBrokId>
+					<xsl:value-of select="/TranData/Body/AgentCode"/>
+				</PbBrokId>
+				<!--业务员代码-->
+				<LiBrokName>
+					<xsl:value-of select="/TranData/Body/AgentName"/>
+				</LiBrokName>
+				<!--业务员姓名-->
+				<LiBrokGroupNo>
+					<xsl:value-of select="/TranData/Body/AgentGrpCode"/>
+				</LiBrokGroupNo>
+				<!--业务员组号-->
+				<BkOthName>
+					<xsl:value-of select="/TranData/Body/ComName"/>
+				</BkOthName>
+				<!--保险公司名称-->
+				<BkOthAddr>
+					<xsl:value-of select="/TranData/Body/ComLocation"/>
+				</BkOthAddr>
+				<!--保险公司地址-->
+				<PiCpicZipcode>
+					<xsl:value-of select="/TranData/Body/ComZipCode"/>
+				</PiCpicZipcode>
+				<!--保险公司邮编-->
+				<PiCpicTelno>
+					<xsl:value-of select="/TranData/Body/ComPhone"/>
+				</PiCpicTelno>
+				<!--保险公司电话-->				
+				
+				<BkFileNum>2</BkFileNum>
+				<Detail_List>
+					<BkFileDesc>保单第一页</BkFileDesc>
+					<BkType1>010001000001</BkType1>
+					<BkVchNo>
+						<xsl:value-of select="/TranData/LCCont/PrtNo"/>
+					</BkVchNo>
+					<BkRecNum>52</BkRecNum>
+					<Detail>
+							<!--一行打印的内容--> 
+					<xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />
+					<xsl:variable name="MainRisk" select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
+					<BkDetail1/> 
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1/>
+					<BkDetail1><xsl:text></xsl:text>                                             保险单                                             </BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>                                                                币值单位：人民币元</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>保单合同号码（保单号）：<xsl:value-of select="/TranData/Body/ContNo"/></BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>保险合同生效日期：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date8to10(/TranData/Body/Risk/CValiDate)" /><xsl:text>零时                                   </xsl:text>交费方式：<xsl:apply-templates  select="$MainRisk/PayIntv" /></BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>      
+					<BkDetail1><xsl:text></xsl:text><xsl:text>投保人：  </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Appnt/Name, 20)"/>
+																									<xsl:text>性别：</xsl:text><xsl:apply-templates select="/TranData/Body/Appnt/Sex"/><xsl:text> </xsl:text>
+																									<xsl:text>生日：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date8to10(/TranData/Body/Appnt/Birthday)"/><xsl:text>  </xsl:text>  
+																									<xsl:text>证件号码：</xsl:text><xsl:value-of select="/TranData/Body/Appnt/IDNo"/>
+					</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text><xsl:text>被保险人：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Insured/Name, 20)"/>
+																									<xsl:text>性别：</xsl:text><xsl:apply-templates select="/TranData/Body/Insured/Sex"/><xsl:text> </xsl:text>
+																									<xsl:text>生日：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date8to10(/TranData/Body/Insured/Birthday)"/><xsl:text>  </xsl:text>
+																									<xsl:text>证件号码：</xsl:text><xsl:value-of select="/TranData/Body/Insured/IDNo"/>
+					</BkDetail1>
+					<BkDetail1 /> 
+					<xsl:variable name="flag" select="java:java.lang.Boolean.parseBoolean('false')" />  
+					<xsl:if test="count(/TranData/Body/Bnf) = 0">
+						<BkDetail1><xsl:text></xsl:text>身故受益人：未指定</BkDetail1>
+					</xsl:if>
+					<xsl:choose>
+						<xsl:when test="/TranData/Body/Bnf/Name = '未指定' or /TranData/Body/Bnf/Name = '法定'">
+							<BkDetail1><xsl:text></xsl:text>身故受益人：未指定</BkDetail1>
+						</xsl:when>
+						<xsl:when test="/TranData/Body/Bnf/Name != '未指定'">
+						<xsl:for-each select="/TranData/Body/Bnf">
+							<BkDetail1><xsl:text></xsl:text>身故受益人：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Name, 20)"/><xsl:text> 受益比例：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Lot, 3, $flag)"/><xsl:text>%          </xsl:text><xsl:text>受益顺序：</xsl:text><xsl:value-of select="Grade"/>     </BkDetail1>
+						</xsl:for-each>
+					</xsl:when>   
+					</xsl:choose>      
+					                                 
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>                险种名称                红利领取方式  保险期间  交费年期  保额/份数    保险费</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					
+					<xsl:for-each select="/TranData/Body/Risk">
+					<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Amnt)"/>
+					<xsl:variable name="Prem" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/>
+					
+					<BkDetail1><xsl:text></xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(RiskName, 42)"/>
+																			<xsl:apply-templates select="$MainRisk/BonusGetMode" /><xsl:text>     </xsl:text>
+																					<xsl:choose>
+																							<xsl:when test="(InsuYear= 105) and (InsuYearFlag = 'A')">
+																								<xsl:text> 终身</xsl:text>
+																							</xsl:when>
+																							<xsl:when test="InsuYearFlag = 'Y'">
+																								<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>年  </xsl:text>
+																							</xsl:when>  
+																							<xsl:otherwise> 
+																								<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>周岁</xsl:text>
+																							</xsl:otherwise>
+																					</xsl:choose>
+																			<xsl:text>      </xsl:text>
+																				<xsl:choose>
+																							<xsl:when test="PayIntv = 0">
+																								<xsl:text>趸交</xsl:text>
+																							</xsl:when>
+																							<xsl:when test="PayEndYearFlag = 'Y'">
+																								<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>年  </xsl:text>
+																							</xsl:when>  
+																							<xsl:otherwise> 
+																								<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>周岁</xsl:text>
+																							</xsl:otherwise>
+																					</xsl:choose>
+																				<xsl:choose>
+																							<xsl:when test="RiskCode = 321010 or RiskCode = 321020">
+																								<xsl:text>        --   </xsl:text>
+																							</xsl:when>
+																							<xsl:otherwise>
+																								<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Amnt,11,$Falseflag)"/><xsl:text>元</xsl:text>
+																							</xsl:otherwise>
+																				 </xsl:choose>
+																			 <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,13,$Falseflag)"/>元</BkDetail1></xsl:for-each>
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />                                                                   
+					<BkDetail1><xsl:text></xsl:text>本期保险费合计：<xsl:value-of select="/TranData/Body/PremText"/>（RMB<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/>元）</BkDetail1>
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1><xsl:text></xsl:text>---------------------------------------（本栏以下为空白）---------------------------------------</BkDetail1>
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text><xsl:text>特别约定：</xsl:text>
+																					<xsl:choose>
+																							<xsl:when test="$MainRisk/SpecContent = ''">
+																								<xsl:text>（无）</xsl:text>
+																							</xsl:when>
+																							<xsl:otherwise> 
+																								<xsl:value-of select="$MainRisk/SpecContent"/>
+																							</xsl:otherwise>
+																					</xsl:choose>
+					</BkDetail1>
+	                <BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1 />
+					<BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text><xsl:value-of select="/TranData/Body/ComName"/></BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>服务网点地址：<xsl:value-of select="/TranData/Body/ComLocation"/></BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>邮政编码：<xsl:value-of select="/TranData/Body/ComZipCode"/></BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>公司网站：www.zhongronglife.com</BkDetail1> 
+					<BkDetail1><xsl:text></xsl:text>客户服务电话：4006890088</BkDetail1> 
+					<BkDetail1><xsl:text></xsl:text>为确保您的保单权益，请及时拨打本公司服务电话、登陆网站或到柜台</BkDetail1>
+					<BkDetail1><xsl:text></xsl:text>进行查询，核实保单信息。</BkDetail1>		
+					</Detail>
+				</Detail_List>
+				<xsl:if test="/TranData/Body/Risk/CashValues/CashValue != ''">
+				<Detail_List>
+					<BkFileDesc>保单第二页</BkFileDesc>
+					<BkType1>010001000001</BkType1>
+					<BkVchNo>
+						<xsl:value-of select="/TranData/Body/PrtNo"/>
+					</BkVchNo>
+					<BkRecNum>52</BkRecNum>
+					<Detail>
+						<BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1/>
+					     <BkDetail1><xsl:text></xsl:text>                                        现金价值表                     </BkDetail1>
+					     <BkDetail1><xsl:text></xsl:text>保单合同号码：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ContNo, 16)"/><xsl:text>                        </xsl:text>币值单位：人民币元 </BkDetail1>
+					       <BkDetail1 />
+					       <BkDetail1><xsl:text></xsl:text>保单年度末<xsl:text>                        </xsl:text><xsl:value-of select="/TranData/Body/Risk/RiskName"/></BkDetail1>
+					       <BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					       <xsl:for-each select="/TranData/Body/Risk/CashValues/CashValue">  
+					       	<BkDetail1><xsl:text></xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(EndYear,40)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Cash)"/>元</BkDetail1> 
+					       </xsl:for-each>
+					       <BkDetail1><xsl:text></xsl:text>---------------------------------------（本栏以下为空白）---------------------------------------</BkDetail1>
+					       <BkDetail1 />
+					       <BkDetail1 />
+					       <BkDetail1><xsl:text></xsl:text>------------------------------------------------------------------------------------------------</BkDetail1>
+					       <BkDetail1><xsl:text></xsl:text> 现金价值表中所有列保险年度末现金价值为保险合同在每一保险年度最后一天的现金价值，是本公司按照中国保险监</BkDetail1>
+					       <BkDetail1><xsl:text></xsl:text> 督管理委员会的有关规定计算确定的，其他时间的现金价值将在该时间所在保险年度对应的年度末现金价值基础上另行</BkDetail1>
+					       <BkDetail1><xsl:text></xsl:text> 计算。</BkDetail1>
+					</Detail>
+				</Detail_List>
+				</xsl:if>
+			</Transaction_Body>
+		</Transaction>
+	</xsl:template>
+	<xsl:template name="tran_RiskCode">
+		<xsl:param name="RiskCode">0</xsl:param>
+		<xsl:if test="$RiskCode = 321010">0002</xsl:if>
+		<xsl:if test="$RiskCode = 313030">0001</xsl:if>
+	</xsl:template>
+	<!-- 红利领取方式的转换 -->
+<xsl:template match="Risk[RiskCode=MainRiskCode]/BonusGetMode">
+<xsl:choose>
+	<xsl:when test=".=1">累积生息</xsl:when>
+	<xsl:when test=".=2">领取现金</xsl:when>
+	<xsl:when test=".=3">抵交保费</xsl:when>
+	<xsl:when test=".=5">增额交清</xsl:when>
+	<xsl:when test=".=''">   --   </xsl:when> 
+	<xsl:otherwise>--</xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+<!-- 缴费频次2 -->
+<xsl:template  match="PayIntv">
+<xsl:choose>
+	<xsl:when test=".=12">年缴</xsl:when>	<!-- 年缴 -->
+	<xsl:when test=".=1">月缴</xsl:when>	<!-- 月缴 -->
+	<xsl:when test=".=6">半年缴</xsl:when>	<!-- 半年缴 -->
+	<xsl:when test=".=3">季缴</xsl:when>	<!-- 季缴 -->
+	<xsl:when test=".=0">趸缴</xsl:when>	<!-- 趸缴 -->
+	<xsl:when test=".=-1">不定期缴</xsl:when>	<!-- 不定期 -->
+	<xsl:otherwise>--</xsl:otherwise>
+</xsl:choose>
+</xsl:template>  
+<!-- 性别 -->
+<xsl:template name="tran_sex" match="Sex">
+<xsl:choose>      
+	<xsl:when test=".=0">男</xsl:when>	<!-- 男 -->
+	<xsl:when test=".=1">女</xsl:when>	<!-- 女 -->
+	<xsl:when test=".=2">其他</xsl:when>	<!-- 其他 -->
+	<xsl:otherwise>--</xsl:otherwise>
+</xsl:choose>
+</xsl:template> 
+</xsl:stylesheet>

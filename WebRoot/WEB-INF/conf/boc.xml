@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="GBK"?>
+<boc>
+	<!-- <TranCom outcode="03">3</TranCom> -->
+	<TranCom outcode="03">3</TranCom>
+	<preNet>com.sinosoft.midplat.boc.net.BocNetImpl</preNet>
+
+	<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="03" insu="0029" />
+
+	<business>
+		<name>新单试算</name>
+		<funcFlag outcode="1001">201</funcFlag>功能标志
+		<!-- <funcFlag outcode="1002">101</funcFlag> -->
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime><!-- 锁定时间 -->
+		<timeout>200</timeout><!-- 超时 -->
+		<format>com.sinosoft.midplat.boc.format.NewCont</format><!-- 格式 -->
+		<service>com.sinosoft.midplat.service.NewContInput</service><!-- - -->
+	</business>
+
+	<business>
+		<name>新单承保</name>
+		<funcFlag outcode="1002">101</funcFlag>
+		<!-- <funcFlag outcode="1001">201</funcFlag>功能标志 -->
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.boc.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.service.NewContConfirm</service>
+	</business>
+
+	<business>
+		<name>新单重打</name>
+		<funcFlag outcode="1003">102</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.boc.format.RePrint</format>
+		<service>com.sinosoft.midplat.service.ContRePrintBoc</service>
+	</business>
+
+	<business>
+		<name>新单撤单</name>
+		<funcFlag outcode="1004">104</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.boc.format.WriteOff</format>
+		<service>com.sinosoft.midplat.service.ContCancelBoc</service>
+	</business>
+	<business>
+		<name>续期缴费查询</name>
+		<funcFlag outcode="1005">441</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+	    <locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.boc.format.RenewalPayQuery</format>
+		<service>com.sinosoft.midplat.service.RenewalPayQuery</service>
+	</business>
+	<business>
+		<name>续期缴费</name>
+		<funcFlag outcode="1006">442</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.boc.format.RenewalPay</format>
+		<service>com.sinosoft.midplat.service.RenewalPay</service>
+	</business>
+	
+	<business>
+		<name>中行新契约对账读取对账文件</name>
+		<funcFlag>802</funcFlag>
+		<NodeNo>987654321</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.service.ContCardBlcBoc</service>
+		<ftp ip="26.120.99.16" port="21" path="/download/" user="0029" password="0029"/>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/boc/rijie/</localDir>
+	</business>
+
+	<business> 
+		<name>中行对账</name>      
+		<funcFlag>105</funcFlag>            
+		<NodeNo>987654321</NodeNo>
+		<nextDate>N</nextDate>    
+		<localDir>E:/保险公司/中融/报文/中行提供报文/</localDir>
+		<service>com.sinosoft.midplat.service.ContCardBlcBoc</service>
+	</business>
+	
+	<business> 
+		<name>犹豫期退保对账</name> <!-- 交易名称 -->     
+		<funcFlag>801</funcFlag> <!-- 交易类型 -->          
+		<NodeNo>1111111111</NodeNo> <!-- 交易网点 -->
+		<nextDate>N</nextDate> <!-- 是否第二天对账--> 
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/boc/yyqtb/</localDir> <!-- 核心上传文件地址  -->
+		<service>com.sinosoft.midplat.service.BocTBBusiBlc</service> <!-- 交易处理类 -->
+		<FtpIP>26.120.99.16</FtpIP> <!-- 中行FTPIP -->
+		<FtpPort>21</FtpPort> <!-- 中行FTP端口 -->
+		<FtpUser>0029</FtpUser> <!-- 中行FTP用户名 -->
+		<FtpPass>0029</FtpPass> <!-- 中行FTP密码 -->
+		<FtpFilePath>/upload/</FtpFilePath> <!-- 中行FTP路径 -->
+		<FilePath>/web/ybt/ui/WEB-INF/msg/blc/boc/yyqtb/</FilePath> <!-- 放置在中行文件地址 -->
+	</business>
+</boc>

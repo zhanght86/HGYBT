@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="GBK"?>
+<icbc>
+	<TranCom outcode="01">01</TranCom>
+	<preNet>com.sinosoft.midplat.icbc.net.IcbcNetImpl</preNet>
+	
+	<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="01" insu="050" />
+	 
+	<business>
+		<name>密钥更新</name>
+		<funcFlag outcode="0001">0001</funcFlag>
+		<service>com.sinosoft.midplat.icbc.service.KeyChange</service>
+	</business>
+	
+	
+	<business>
+		<name>新单试算</name>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<funcFlag outcode="1012">1012</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.ICBCNewCont</format>
+		<service>com.sinosoft.midplat.service.ICBCNewContInput</service>
+	</business>
+	
+	<business>
+		<name>新单承保</name>
+		<funcFlag outcode="1013">1013</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.icbc.format.NewCont</format>
+		<service>com.sinosoft.midplat.service.NewContAll</service>
+	</business>
+	
+	<business>
+		<name>保单重打</name>
+		<funcFlag outcode="1011">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.icbc.format.RePrint</format>
+		<service>com.sinosoft.midplat.service.ContRePrint</service>
+	</business>
+	
+	
+	<business>
+		<name>当日撤单</name>
+		<funcFlag outcode="1015">1015</funcFlag>
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.icbc.format.Cancel</format>
+		<service>com.sinosoft.midplat.service.ContCancel</service>
+	</business>
+	
+	 <business>
+		<name>犹豫期退保查询</name>
+		<funcFlag outcode="1003">1003</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.NoTakenQuery</format>
+		<service>com.sinosoft.midplat.service.ContNoTakenQuery</service>
+	</business>
+	 
+	 <business>
+		<name>犹豫期退保</name>
+		<funcFlag outcode="1004">1004</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.NoTaken</format>
+		<service>com.sinosoft.midplat.service.ContNoTaken</service>
+	</business>
+	
+	 <business>
+		<name>犹豫期退保冲正</name>
+		<funcFlag outcode="1030">1030</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.NoTakenCancel</format>
+		<service>com.sinosoft.midplat.service.ContNoTakenCancel</service>
+	</business>
+	
+	
+	<business>
+		<name>退保查询</name>
+		<funcFlag outcode="1021">1021</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.TakenQuery</format>
+		<service>com.sinosoft.midplat.service.ContTakenQuery</service>
+	</business>
+	
+	<business>
+		<name>退保</name>
+		<funcFlag outcode="1017">1017</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.Taken</format>
+		<service>com.sinosoft.midplat.service.ContTaken</service>
+	</business>
+	
+	<business>
+		<name>退保冲正</name>
+		<funcFlag outcode="1026">1026</funcFlag>
+		<format>com.sinosoft.midplat.icbc.format.TakenCancel</format>
+		<service>com.sinosoft.midplat.service.ContTakenCancel</service>
+	</business>
+
+	
+	<business> 
+		<name>业务对账</name>      
+		<funcFlag>1005</funcFlag>            
+		<NodeNo>0000000000</NodeNo>
+		<ZoneNo>-</ZoneNo>
+		<nextDate></nextDate>    
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc</localDir> 
+		<service>com.sinosoft.midplat.service.NewContBlc</service>
+	</business>
+	
+	
+	<business> 
+		<name>单证对账</name>      
+		<funcFlag>1006</funcFlag>            
+		<NodeNo>0000000000</NodeNo>
+		<ZoneNo>-</ZoneNo>
+		<nextDate></nextDate>    
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc</localDir> 
+		<service>com.sinosoft.midplat.service.ContCardBlc</service>
+	</business>
+	
+	<business> 
+		<name>保全对账</name>      
+		<funcFlag>1104</funcFlag>            
+		<NodeNo>0000000000</NodeNo>
+		<ZoneNo>-</ZoneNo>
+		<nextDate></nextDate>    
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc</localDir> 
+		<service>com.sinosoft.midplat.service.BaoQuanBlc</service>
+	</business>
+	
+	<business> 
+		<name>非实时对账</name>    
+		<funcFlag>1201</funcFlag>    
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo> 
+		<nextDate>N</nextDate> <!-- 是否第二天对账-->
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc</localDir>
+		<format>com.sinosoft.midplat.icbc.format.NoRealBlc</format>
+		<service>com.sinosoft.midplat.service.IcbcNoRealBlc</service> 
+	</business>
+	
+	<business> 
+		<name>核保超时文件处理</name>  <!-- 交易名称 -->    
+		<funcFlag>1202</funcFlag> <!-- 交易类型 -->   
+		<ZoneNo>-</ZoneNo>   
+		<NodeNo>0000000000</NodeNo> <!-- 交易网点 -->
+		<nextDate>N</nextDate> <!-- 是否第二天对账-->
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc</localDir> <!-- 文件地址 -->
+		<service>com.sinosoft.midplat.service.IcbcOverTimeBlc</service> <!-- 交易处理类 -->
+	</business>
+	
+	<business> 
+		<name>非实时结果文件返回</name> <!-- 交易名称 -->     
+		<funcFlag>1203</funcFlag> <!-- 交易类型 -->          
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo> <!-- 交易网点 -->
+		<nextDate>N</nextDate> <!-- 是否第二天对账--> 
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc/Result/</localDir> <!-- 文件地址  -->
+		<format>com.sinosoft.midplat.icbc.format.NoRealBlc</format>
+		<service>com.sinosoft.midplat.service.IcbcNoRealResultBack</service>
+	
+		<FtpIP>84.36.162.3</FtpIP> <!-- 工行FTPIP -->
+		<FtpPort>21</FtpPort> <!-- 工行FTP端口 -->
+		<FtpUser>ftpiaas</FtpUser> <!-- 工行FTP用户名 -->
+		<FtpPass>Oper1234</FtpPass> <!-- 工行FTP密码 -->
+		<FtpFilePath></FtpFilePath> <!-- 工行FTP路径 -->
+	</business>
+	
+	<business> 
+		<name>非实时投保单受理状态变更文件返回</name> <!-- 交易名称 -->     
+		<funcFlag>1204</funcFlag> <!-- 交易类型 -->          
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo> <!-- 交易网点 -->
+		<nextDate>N</nextDate> <!-- 是否第二天对账--> 
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc/State/</localDir> <!-- 文件地址  -->
+		<format>com.sinosoft.midplat.icbc.format.NoRealBlc</format>
+		<service>com.sinosoft.midplat.service.IcbcNoRealStateBack</service>
+
+		<FtpIP>84.36.162.3</FtpIP> <!-- 工行FTPIP -->
+		<FtpPort>21</FtpPort> <!-- 工行FTP端口 -->
+		<FtpUser>ftpiaas</FtpUser> <!-- 工行FTP用户名 -->
+		<FtpPass>Oper1234</FtpPass> <!-- 工行FTP密码 -->
+		<FtpFilePath></FtpFilePath> <!-- 工行FTP路径 -->
+	</business>
+	
+	
+	<business> 
+		<name>工行保单状态变更文件回传</name> <!-- 交易名称 -->     
+		<funcFlag>1205</funcFlag> <!-- 交易类型 -->          
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo> <!-- 交易网点 -->
+		<nextDate>N</nextDate> <!-- 是否第二天对账--> 
+		<localDir>/home/yinbaotong/ybtBalanceFile/icbc/BaoQuanBack/</localDir> <!-- 文件地址  -->
+		<format>com.sinosoft.midplat.icbc.format.BaoQuanBack</format>
+		<service>com.sinosoft.midplat.service.IcbcBaoQuanBack</service>
+
+		<FtpIP>84.36.162.3</FtpIP> <!-- 工行FTPIP -->
+		<FtpPort>21</FtpPort> <!-- 工行FTP端口 -->
+		<FtpUser>ftpiaas</FtpUser> <!-- 工行FTP用户名 -->
+		<FtpPass>Oper1234</FtpPass> <!-- 工行FTP密码 -->
+		<FtpFilePath></FtpFilePath> <!-- 工行FTP路径 -->
+	</business>
+	
+</icbc>

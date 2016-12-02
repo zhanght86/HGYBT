@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GBK"?>
+<abc>
+	<bank id="05" insu="4518" />
+	<TranCom outcode="05">05</TranCom>
+	<msg path="abc" />
+	<preNet>com.sinosoft.midplat.abc.net.AbcNetImpl</preNet>
+	
+	 <business>
+		<name>新契约承保</name>
+		<timeout>300</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="01">1012</funcFlag>
+		<format>com.sinosoft.midplat.abc.format.NewCont</format>
+		<service>com.sinosoft.midplat.service.NewContInput</service>
+	</business>
+	
+	<business>
+		<name>收费签单</name>
+		<timeout>30</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="02">1014</funcFlag>
+		<format>com.sinosoft.midplat.abc.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.service.NewContConfirm</service>
+	</business>
+	<business>
+		<name>当日撤单</name>
+		<timeout>30</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="03">1015</funcFlag>
+		<format>com.sinosoft.midplat.abc.format.Cancel</format>
+		<service>com.sinosoft.midplat.service.ContCancel</service>		
+	</business>
+
+	<business>
+		<name>自动冲正</name>
+		<timeout>30</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="04">4</funcFlag>
+		<format>com.sinosoft.midplat.abc.format.Rollback</format>
+		<service>com.sinosoft.midplat.service.ContRollback</service>
+	</business>
+
+	<business>
+		<name>农行银保通新契约对账</name>
+		<funcFlag outcode="2005">2005</funcFlag>
+		<zone>00000</zone>
+		<node>0000000000</node>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.service.NewContBlc</service>
+		<ftp ip="2.0.0.2" port="21" path="" user="abc" password="abc123"/>
+		<localDir>/home/yinbaotong/ybtBalanceFile/abc</localDir>
+	</business>	
+</abc>	

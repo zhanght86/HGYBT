@@ -1,0 +1,12 @@
+<CONFIG>
+	<Sheet1>           
+		<COL0>PolicyNo</COL0>
+		<COL1>InsuredIdType</COL1>
+		<COL2>ApplicantIdType</COL2>
+		<COL3>ApplicantIdNo</COL3>
+		<COL4>ApplicantAcctNo</COL4>
+		<COL5>Oid</COL5>
+		<COL6>CancelReason</COL6>
+		<COL7>ExtractedDate</COL7>
+	</Sheet1>
+</CONFIG>

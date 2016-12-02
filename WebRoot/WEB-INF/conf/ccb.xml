@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="GBK"?>
+<ccb>
+<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="03" insu="330072" />
+	<TranCom outcode="03">03</TranCom>
+	<preNet>com.sinosoft.midplat.ccb.net.CcbNetImpl</preNet>
+	
+	<business>
+		<name>新单试算</name>
+		<funcFlag outcode="OPR001">1012</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.ccb.format.NewCont</format>
+		<service>com.sinosoft.midplat.service.NewContInput</service>
+	</business>
+	
+	<business>
+		<name>新单确认</name>
+		<funcFlag outcode="OPR011">1014</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.ccb.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.service.NewContConfirm</service>
+	</business>
+	
+	<business>
+		<name>保单重打</name>
+		<funcFlag outcode="SPE002">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.RePrint</format>
+		<service>com.sinosoft.midplat.service.ContRePrint</service>
+	</business>
+	
+	<business>
+		<name>重空核对交易</name>
+		<funcFlag outcode="VCH102">108</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.CardControl</format>
+	    <service>com.sinosoft.midplat.service.ContCancelCardControlCcb</service>  
+	</business>
+	
+	<business>
+		<name>当日撤单</name>
+		<funcFlag outcode="OPR911">1015</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.WriteOff</format>
+		<service>com.sinosoft.midplat.service.ContCancel</service>
+	</business>
+	
+	<business>
+		<name>新单对账</name>
+		<funcFlag outcode="END103">3005</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.BusiBlc</format>
+		<service>com.sinosoft.midplat.service.NewContBlc</service>
+	</business>
+	<business>
+		<name>单证对账</name>
+		<funcFlag outcode="END104">3006</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.DocumentBlc</format>
+		<service>com.sinosoft.midplat.service.ContCardBlc</service>
+	</business>
+	<business>
+		<name>绿灯测试</name>
+		<funcFlag outcode="OPR999">111</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.GreenTest</format>
+		<service>com.sinosoft.midplat.service.GreenTest</service>
+	</business>
+	
+	<business>
+		<name>退保交易信息查询</name>
+		<funcFlag outcode="SPE801">110</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.ccb.format.TBJYXX</format>
+		<service>com.sinosoft.midplat.service.NewContCancelBlc</service>
+	</business>
+	
+	<business>
+		<name>犹豫期退保申请</name>
+		<funcFlag outcode="OPR002">1003</funcFlag>
+		<format>com.sinosoft.midplat.ccb.format.NoTakenApply</format>
+		<service>com.sinosoft.midplat.ccb.service.ContNoTakenApply</service>
+	</business>
+	<business>
+		<name>犹豫期退保确认</name>
+		<funcFlag outcode="OPR012">1004</funcFlag>
+		<format>com.sinosoft.midplat.ccb.format.NoTaken</format>
+		<service>com.sinosoft.midplat.ccb.service.ContNoTaken</service>
+	</business>
+	
+</ccb>

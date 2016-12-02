@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="GBK"?>
+<abcNew>
+	<TranCom outcode="03">0103</TranCom>
+	<preNet>com.sinosoft.midplat.abcNew.net.AbcNetImpl</preNet>
+	<!-- 银行端代码定义，用于日终类交易 -->
+	<bank insu="1141" />
+	
+	<business>
+		<name>心跳交易</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1000">322</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.HeartBeat</format>
+		<service>com.sinosoft.midplat.abcNew.service.HeartBeat</service>		
+	</business>
+    <business>
+		<name>新契约试算</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1002">201</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.NewCont</format>
+		<service>com.sinosoft.midplat.abcNew.service.NewContInput</service>
+	</business>
+	<business>
+		<name>收费签单</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1004">101</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.abcNew.service.NewContConfirm</service>
+	</business>
+	<business>
+		<name>当日撤单</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1010">104</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.Cancel</format>
+		<service>com.sinosoft.midplat.abcNew.service.ContCancel</service>		
+	</business>
+	<business>
+		<name>自动冲正</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1009">321</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.AutoCancel</format>
+		<service>com.sinosoft.midplat.abcNew.service.AutoCancel</service>		
+	</business>
+	<business>
+		<name>账户变更</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1011">111</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.AccModify</format>
+		<service>com.sinosoft.midplat.abcNew.service.AccModifyServ</service>		
+	</business>
+	<business>
+		<name>保单查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1016">103</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.ContQuery</format>
+		<service>com.sinosoft.midplat.abcNew.service.ContQuery</service>		
+	</business>
+	<business>
+		<name>保单现金价值查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1019">62</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.ContPremQuery</format>
+		<service>com.sinosoft.midplat.abcNew.service.ContPremQuery</service>		
+	</business>
+	<business>
+		<name>重打交易</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1018">102</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.RePrint</format>
+		<service>com.sinosoft.midplat.abcNew.service.ContRePrint</service>		
+	</business>
+	<business>
+		<name>保全查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1012">401</funcFlag>
+	</business>
+	<business>
+		<name>保全申请</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1013">402</funcFlag>
+	</business>
+	<business>
+		<name>保全状态查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1014">46</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.BaoQuanAppStateQuery</format>
+		<service>com.sinosoft.midplat.abcNew.service.BaoQuanAppStateQuery</service>		
+	</business>
+	<!-- 后加交易 START-->
+	<business>
+		<name>试算结果查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1005">24</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.TrialResultQuery</format>
+		<service>com.sinosoft.midplat.abcNew.service.TrialResultQuery</service>		
+	</business>
+	<business>
+		<name>续期查询</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1007">441</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.XuQiQuery</format>
+		<service>com.sinosoft.midplat.abcNew.service.XuQiQuery</service>		
+	</business>
+	<business>
+		<name>续期缴费</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1008">442</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.XuQiPayFee</format>
+		<service>com.sinosoft.midplat.abcNew.service.XuQiPayFee</service>		
+	</business>
+	<!-- 后假交易 END -->
+	<business>
+		<name>农行银保通新契约对账</name>
+		<funcFlag>105</funcFlag>
+		<NodeNo>987654321</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.abcNew.service.NewContBlc</service>
+		<localDir>/home/zjjypt/YBT/YBT_Server/BHYBT/WEB-INF/msg/blc/abc/</localDir>
+	</business>
+	<business>
+		<name>农行银保通保全对账</name>
+		<funcFlag>45</funcFlag>
+		<NodeNo>987654321</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.abcNew.service.NewContBlcBQ</service>
+		<localDir>F:/ETSS_FTP/downLoad/</localDir>
+	</business>
+	
+	<business>
+		<name>农行银保通保单变更数据</name>
+		<funcFlag>222</funcFlag>
+		<NodeNo>987654321</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.service.ContStateServ</service>
+	</business>
+	<business>
+		<name>非实时承包</name>
+		<timeout>200</timeout>
+		<locktime>200</locktime>
+		<funcFlag outcode="1006">1006</funcFlag>
+		<format>com.sinosoft.midplat.abcNew.format.NoRealCont</format>
+		<service>com.sinosoft.midplat.abcNew.service.NoRealCont</service>		
+	</business>
+	
+	
+	
+	<business>
+		<name>犹豫期撤单查询</name>
+		<funcFlag>311</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.HesitateSurQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.HesitateSurQueryServ</service>
+	</business>
+	
+	<business>
+		<name>犹豫期撤单确认</name>
+		<funcFlag>312</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.HesitateSur</format>
+		<service>com.sinosoft.midplat.psbc.service.HesitateSurServ</service>
+	</business>
+	
+	<business>
+		<name>退保查询</name>
+		<funcFlag>314</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.SurrenderQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.SurrQueryServ</service>
+	</business>
+	
+	<business>
+		<name>退保确认</name>
+		<funcFlag>315</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.Surrender</format>
+		<service>com.sinosoft.midplat.psbc.service.SurrenderServ</service>
+	</business>
+	
+	<business>
+		<name>满期给付查询</name>
+		<funcFlag>317</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.MaturePayQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.MaturePayQueryServ</service>
+	</business>
+	
+	<business>
+		<name>满期给付确认</name>
+		<funcFlag>318</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.abcNew.format.MaturePay</format>
+		<service>com.sinosoft.midplat.psbc.service.MaturePayServ</service>
+	</business>
+	
+	
+	
+</abcNew>	
+	
+	

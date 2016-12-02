@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="HGLIFE"
+  id="myeclipse.1476063169461"
+  context-root="/HGLIFE"
+  j2ee-spec="6.0"
+  archive="HGLIFE.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

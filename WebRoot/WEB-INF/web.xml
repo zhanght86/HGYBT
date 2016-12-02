@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_1351156067027" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>midplat</display-name><!-- 显示名称 -->
+	<description>Welcome to midplat</description><!-- 描述信息 -->
+
+	<filter><!-- 定义过滤器 -->
+		<filter-name>Set Character Encoding</filter-name><!-- 过滤器名字 -->
+		<filter-class>filters.SetCharacterEncodingFilter</filter-class><!-- 过滤器实现类 -->
+		<init-param><!--  -->
+			<param-name>encoding</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping><!-- 定义过滤器拦截的URL地址 -->
+		<filter-name>Set Character Encoding</filter-name><!-- 过滤器名字 -->
+		<url-pattern>/*</url-pattern><!-- 过滤器负责拦截的URL 全部以/的请求,如果<url-pattern>/*.action </>,将会以拦截*.action的请求 -->
+	</filter-mapping>
+
+	<!--SocketServer监听 -->
+	<listener><!--  定义监听器 -->
+		<listener-class>com.sinosoft.midplat.net.SocketListenerF5</listener-class><!-- 定义监听器类名称 -->
+	</listener>
+
+	<!--Batch监听 -->
+	<!-- <listener> <listener-class>com.sinosoft.midplat.bat.BatListener</listener-class> 
+		</listener> -->
+	<welcome-file-list id="WelcomeList"><!-- 指定显示的默认文件 -->
+		<welcome-file>indexlis.jsp</welcome-file><!-- 指定默认文件的名称 -->
+	</welcome-file-list>
+
+	<jsp-config><!-- 对JSP的批量配置-->
+		<jsp-property-group><!-- 给一定范围类的JSP文件设置一些特性 -->
+			<description>JSP</description><!-- 设定的说明  -->
+			<display-name>JSP</display-name><!--  设定名称-->
+			<url-pattern>*.jsp</url-pattern><!-- 设定值所影响的范围，如： /CH2 或 /*.jsp -->
+			<url-pattern>*.html</url-pattern><!-- 设定值所影响的范围，如： /CH2 或 /*.jsp -->
+			<el-ignored>false</el-ignored><!-- 若为 true，表示不支持 EL 语法  -->
+			<page-encoding>GBK</page-encoding><!-- 设定 JSP 网页的编码  -->
+			<scripting-invalid>false</scripting-invalid><!-- 若为 true，表示不支持 <% scripting %>语法  -->
+			<is-xml>false</is-xml>
+		</jsp-property-group>
+	</jsp-config>
+</web-app>

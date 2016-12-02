@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="GBK"?>
+<srcb>
+<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="04" insu="0000" />
+	<TranCom outcode="SRCB">04</TranCom>
+	<preNet>com.sinosoft.midplat.srcb.net.SrcbNetImpl</preNet>
+	
+	<business>
+		<name>新保试算</name>
+		<funcFlag outcode="0001">1012</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.srcb.format.NewCont</format>
+		<service>com.sinosoft.midplat.srcb.service.NewContInput</service>
+	</business>
+	
+	<business>
+		<name>新保签单</name>
+		<funcFlag outcode="0002">1014</funcFlag>
+        <!-- locktime 配置锁定时间 --> 
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.srcb.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.srcb.service.NewContConfirm</service>
+	</business>
+		
+	<business>
+		<name>当日撤单</name>
+		<funcFlag outcode="0003">1015</funcFlag>
+		<!-- locktime 配置锁定时间 -->  
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.srcb.format.WriteOff</format>
+		<service>com.sinosoft.midplat.srcb.service.ContCancel</service>
+	</business>
+	
+	<business>
+		<name>当日重打</name>
+		<funcFlag outcode="0004">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.srcb.format.RePrint</format>
+		<service>com.sinosoft.midplat.srcb.service.ContRePrint</service>
+	</business>
+
+	<business>		
+		<name>业务对账</name>
+		<funcFlag outcode="">6005</funcFlag>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.srcb.service.NewContBlc</service>
+		<localDir>D:/YBT_SAVE_XML/ZHH/SRCB/</localDir>
+		<charset>GBK</charset>
+	</business>
+
+</srcb>

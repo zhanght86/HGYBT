@@ -1,0 +1,48 @@
+13:08:39,170 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+13:08:39,186 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+13:08:39,201 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+13:08:39,217 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+13:08:39,607 INFO xiangwei.FtpClient(75) - start to connect to the host...
+13:08:39,607 INFO xiangwei.FtpClient(76) - IP:10.3.1.204  port: 52003
+13:09:00,806 INFO xiangwei.FtpClient(84) - connect to the host successed!
+13:09:00,806 INFO xiangwei.FtpClient(402) - into FtpClient.sendFileToHost()
+13:09:00,806 INFO xiangwei.FtpClient(410) - filename:F:\tmp\test1.txt
+16:15:44,247 ERROR common.JdomUtil(80) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line -1: Premature end of file.
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:63)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:55)
+	at com.sinosoft.midplat.util.XmlTransferTest.main(XmlTransferTest.java:82)
+Caused by: org.xml.sax.SAXParseException: Premature end of file.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 4 more
+Caused by: 
+org.xml.sax.SAXParseException: Premature end of file.
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:78)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:63)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:55)
+	at com.sinosoft.midplat.util.XmlTransferTest.main(XmlTransferTest.java:82)

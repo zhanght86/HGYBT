@@ -1,0 +1,174 @@
+11:39:59,759 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@700a4488
+11:39:59,853 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:39:59,896 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+11:39:59,897 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+11:39:59,958 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:39:59,959 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+11:39:59,960 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+11:40:00,002 INFO common.XmlConf(62) - conf file modified at (2016-11-24 20:11:56,399) and length=23579 bytes!
+11:40:00,125 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+11:40:00,162 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:40:00,163 INFO common.Log4jPrint(20) - End reset System.out!
+11:40:00,181 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:40:00,182 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+11:40:00,183 INFO common.XmlConf(62) - conf file modified at (2016-11-24 20:11:56,402) and length=711 bytes!
+11:40:00,185 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+11:40:00,186 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:40:00,199 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:40:00,200 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+11:40:00,201 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:40:00,191) and length=23579 bytes!
+11:40:00,207 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+11:40:00,208 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:40:00,248 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+11:40:00,248 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+11:40:00,307 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+11:40:00,307 INFO net.SocketListenerF5$Server(140) - 监听端口 35006
+11:40:00,308 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:40:00,357 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+11:40:00,358 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+11:40:00,357 INFO net.SocketListenerF5$Server(140) - 监听端口 35008
+11:40:00,394 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+11:40:00,394 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:40:00,394 INFO net.SocketListenerF5$Server(140) - 监听端口 52004
+11:40:00,439 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+11:40:00,439 INFO net.SocketListenerF5$Server(140) - 监听端口 39871
+11:40:00,439 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+11:41:00,208 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:41:00,208 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+11:41:00,209 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:40:00,316) and length=711 bytes!
+11:41:00,213 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+11:41:00,214 INFO net.SocketListenerF5(85) - Into SocketListenerF5.contextDestroyed()...
+11:41:00,214 INFO net.SocketListenerF5(87) - 关闭ServerSocket监听...
+11:41:00,215 DEBUG net.SocketListenerF5(107) - System.out = com.sinosoft.midplat.common.Log4jPrint@17353249
+11:41:00,216 INFO common.Log4jPrint(20) - Start revert System.out...
+11:41:00,216 INFO net.SocketListenerF5(116) - Out SocketListenerF5.contextDestroyed()!
+11:41:00,216 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+11:41:00,217 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+11:41:00,217 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+11:41:00,217 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:41:00,217 INFO net.SocketListenerF5$Server(140) - 监听端口 35006
+11:41:00,218 INFO net.SocketListenerF5$Server(140) - 监听端口 35008
+11:41:00,218 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+11:41:00,219 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+11:41:00,220 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+11:41:00,220 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:41:00,220 INFO net.SocketListenerF5$Server(140) - 监听端口 52004
+11:41:00,221 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+11:41:00,221 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+11:41:00,221 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:41:00,223 INFO net.SocketListenerF5$Server(140) - 监听端口 39871
+11:41:00,246 ERROR net.SocketListenerF5$Server(175) - 等待客户端连接时发生I/O错误！52004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:153)
+11:41:00,246 ERROR net.SocketListenerF5$Server(175) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:153)
+11:41:00,246 ERROR net.SocketListenerF5$Server(175) - 等待客户端连接时发生I/O错误！35006
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:153)
+11:41:00,246 ERROR net.SocketListenerF5$Server(175) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:153)
+11:42:25,601 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@4640b181
+11:42:25,610 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:42:25,614 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+11:42:25,615 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+11:42:25,616 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:42:25,617 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+11:42:25,618 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+11:42:25,621 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:40:00,191) and length=23579 bytes!
+11:42:25,704 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+11:42:25,714 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:42:25,716 INFO common.Log4jPrint(20) - End reset System.out!
+11:42:25,718 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:42:25,719 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+11:42:25,720 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:40:00,316) and length=711 bytes!
+11:42:25,723 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+11:42:25,723 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:42:25,739 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+11:42:25,739 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+11:42:25,814 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+11:42:25,815 INFO net.SocketListenerF5$Server(140) - 监听端口 35006
+11:42:25,815 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:42:25,820 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+11:42:25,820 INFO net.SocketListenerF5$Server(140) - 监听端口 35008
+11:42:25,821 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+11:42:25,826 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+11:42:25,826 INFO net.SocketListenerF5$Server(140) - 监听端口 52004
+11:42:25,826 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:42:25,831 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+11:42:25,831 INFO net.SocketListenerF5$Server(140) - 监听端口 39871
+11:42:25,831 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+11:48:23,504 INFO net.SocketListenerF5(85) - Into SocketListenerF5.contextDestroyed()...
+11:48:23,505 INFO net.SocketListenerF5(87) - 关闭ServerSocket监听...
+11:48:23,507 DEBUG net.SocketListenerF5(107) - System.out = com.sinosoft.midplat.common.Log4jPrint@4c4b11e9
+11:48:23,508 INFO common.Log4jPrint(20) - Start revert System.out...
+11:48:23,509 INFO common.Log4jPrint(20) - 	at org.apache.log4j.spi.LoggingEvent.<init>(LoggingEvent.java:159)
+11:48:23,510 INFO common.Log4jPrint(20) - 	at org.apache.log4j.Category.forcedLog(Category.java:391)
+11:48:23,512 INFO common.Log4jPrint(20) - 	at org.apache.log4j.Category.error(Category.java:322)
+11:48:23,513 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:175)
+11:48:23,510 INFO net.SocketListenerF5(116) - Out SocketListenerF5.contextDestroyed()!
+11:48:23,515 INFO common.Log4jPrint(20) - Caused by: java.lang.ClassNotFoundException: org.apache.log4j.spi.ThrowableInformation
+11:48:23,517 INFO common.Log4jPrint(20) - 	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1358)
+11:48:23,518 INFO common.Log4jPrint(20) - 	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1204)
+11:48:23,519 INFO common.Log4jPrint(20) - 	... 4 more
+11:48:46,980 INFO boc.BocConf(22) - Into BocConf.load()...
+11:48:46,980 INFO boc.BocConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/boc.xml...
+11:48:46,981 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:48:31,456) and length=3586 bytes!
+11:48:46,985 INFO boc.BocConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/boc.xml!
+11:48:46,985 INFO boc.BocConf(47) - Out BocConf.load()!
+11:48:46,996 INFO newccb.NewCcbConf(25) - Into NewCcbConf.load()...
+11:48:46,997 INFO newccb.NewCcbConf(28) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml...
+11:48:46,997 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:48:31,563) and length=14122 bytes!
+11:48:47,007 INFO newccb.NewCcbConf(44) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml!
+11:48:47,922 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+11:48:47,922 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+11:48:47,923 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:48:31,550) and length=1791 bytes!
+11:48:47,928 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+11:48:47,929 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+11:49:13,974 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@4640b181
+11:49:13,983 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:49:13,989 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+11:49:13,991 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+11:49:13,992 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:49:13,993 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+11:49:13,993 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+11:49:13,997 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:48:31,556) and length=23579 bytes!
+11:49:14,252 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+11:49:14,260 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:49:14,261 INFO common.Log4jPrint(20) - End reset System.out!
+11:49:14,262 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:49:14,263 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+11:49:14,263 INFO common.XmlConf(62) - conf file modified at (2016-11-25 11:48:31,571) and length=711 bytes!
+11:49:14,265 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+11:49:14,266 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:49:14,280 INFO net.SocketListenerF5(54) - Into SocketListenerF5.contextInitialized()...
+11:49:14,280 INFO net.SocketListenerF5(65) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+11:49:14,288 INFO net.SocketListenerF5(72) - 0_Socket(农业银行)加载成功!
+11:49:14,289 INFO net.SocketListenerF5(65) - 1_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:49:14,289 INFO net.SocketListenerF5$Server(140) - 监听端口 35006
+11:49:14,293 INFO net.SocketListenerF5(72) - 1_Socket(贵州银行)加载成功!
+11:49:14,293 INFO net.SocketListenerF5$Server(140) - 监听端口 35008
+11:49:14,293 INFO net.SocketListenerF5(65) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+11:49:14,297 INFO net.SocketListenerF5(72) - 2_Socket(中国银行)加载成功!
+11:49:14,297 INFO net.SocketListenerF5$Server(140) - 监听端口 52004
+11:49:14,297 INFO net.SocketListenerF5(65) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:49:14,301 INFO net.SocketListenerF5(72) - 3_Socket(建设银行)加载成功!
+11:49:14,302 INFO net.SocketListenerF5(80) - Out SocketListenerF5.contextInitialized()!
+11:49:14,302 INFO net.SocketListenerF5$Server(140) - 监听端口 39871

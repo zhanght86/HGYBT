@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="GBK"?>
+<newccb>
+<!-- 银行端代码定义，用于日终类交易 	<bank id="03" insu="010072" />-->
+	<bank id="03" insu="010072" />
+	<TranCom outcode="03">03</TranCom>
+	<CoreNo>010072</CoreNo>
+	<preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet>
+	<!-- 银联账号 -->
+	<BankNo>105</BankNo>
+	<!-- 实时投保业务 -->
+	<business>
+		<name>实时投保</name><!-- 业务名 -->
+		<funcFlag outcode="P53819113">1012</funcFlag><!--交易码  -->
+		<locktime>200</locktime><!-- 锁定时间 -->
+		<timeout>200</timeout> <!-- 超时 -->
+		<format>com.sinosoft.midplat.newccb.format.NewCont</format><!-- 格式化 --><!--录单自核:NewContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewContInput</service><!-- 服务 -->
+	</business>
+	<!-- 新单确认业务 -->
+	<business>
+		<name>新单确认</name>
+		<funcFlag outcode="P53819152">1014</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.ContConfirm</format><!--收费签单:ContConfirmIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewContConfirm</service>
+	</business>
+	
+	<business>
+		<name>重打上笔</name>
+		<funcFlag outcode="P53819184">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.RePrint</format><!--保单重打:RePrintIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.ContRePrint</service>
+	</business>
+	
+	<business>
+		<name>重控核对</name>
+		<funcFlag outcode="P538191A2">108</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.CardControl</format><!--重空核对:CardControlIn.xsl-->
+	    <service>com.sinosoft.midplat.newccb.service.ContCancelCardControlCcb</service>  
+	</business>
+	
+	<business>
+		<name>确认撤销当日保单</name>
+		<funcFlag outcode="P53819142">1015</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.WriteOff</format><!--当日撤单:WriteOffIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.ContCancel</service>
+	</business>
+	
+	<business>
+		<name>绿灯测试</name>
+		<funcFlag outcode="P53818152">111</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.GreenTest</format>
+		<service>com.sinosoft.midplat.newccb.service.GreenTest</service>
+	</business>
+	
+	<business>
+		<name>自动冲正</name>
+		<funcFlag outcode="P53818154">0004</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.AutoWriteOff</format><!--新单回滚(自动冲正):AutoWriteOffIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.ContRollback</service>
+	</business>
+	
+	<business>
+		<name>打印投保单</name>
+		<funcFlag outcode="P53819188">1031</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.PrintAppCont</format><!--打印投保单:PrintAppContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewPrintAppCont</service>
+	</business>
+	
+	<business>
+		<name>打印保单</name>
+		<funcFlag outcode="P53819182">1032</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.PrintCont</format><!--打印保单:PrintContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewPrintCont</service>
+	</business>
+	
+	<business>
+		<name>查询缴纳保费信息</name>
+		<funcFlag outcode="P53819151">1033</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryPrem</format><!--续期缴费查询(查询保费缴纳信息):QueryPremIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryPrem</service>
+	</business>
+	
+	<business>
+		<name>确认续期缴费</name>
+		<funcFlag outcode="P53819156">1034</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.RenewalPay</format><!--续期缴费:RenewalPayIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewRenewalPay</service>
+	</business>
+	
+	<business>
+		<name>确认取消续期缴费</name>
+		<funcFlag outcode="P53819154">1035</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.CancleRenewalPay</format><!--续期缴费冲正:CancleRenewalPayIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewCancleRenewalPay</service>
+	</business>
+	
+	<business>
+		<name>查询满期给付</name>
+		<funcFlag outcode="P53819191">1036</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryExpirationPay</format><!--满期给付查询:QueryExpirationPayIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryExpirationPay</service>
+	</business>
+	
+	<business>
+		<name>确认满期给付</name>
+		<funcFlag outcode="P53819192">1037</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ExpirationPay</format><!--满期给付:ExpirationPayIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewExpirationPay</service>
+	</business>
+	
+	<business>
+		<name>修改保单基本信息</name>
+		<funcFlag outcode="P53819161">1038</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ModifyCont</format><!--修改保单基本信息:ModifyContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewModifyCont</service>
+	</business>
+	
+	<business>
+		<name>查询客户保单</name>
+		<funcFlag outcode="P53819176">1039</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryCont</format><!--查询客户保单:QueryContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryCont</service>
+	</business>
+	
+	<business>
+		<name>查询保单详情</name>
+		<funcFlag outcode="P53819171">1040</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryContDetail</format><!--查询保单详情(寿险) :QueryContDetailIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryContDetail</service>
+	</business>
+
+	<business>
+		<name>查询保单历史变动信息</name>
+		<funcFlag outcode="P53819177">1041</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryContChange</format><!--查询保单历史变动信息:QueryContChangeIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryContChange</service>
+	</business>
+
+	<business>
+		<name>申请退保</name>
+		<funcFlag outcode="P53819143">1021</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ApplyReturnCont</format><!--退保查询（申请退保）:ApplyReturnContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewApplyReturnCont</service>
+	</business>
+	
+	<business>
+		<name>确认退保</name>
+		<funcFlag outcode="P53819144">1017</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ReturnCont</format><!--退保:ReturnContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewReturnCont</service>
+	</business>
+	
+	<business>
+		<name>获取保单详情查询</name>
+		<funcFlag outcode="P53817107">1042</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.GetContList</format><!--获取保单详细查询:GetContListIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewGetContList</service>
+	</business>
+	
+	<business>
+		<name>获取保单详情取数(寿险)</name>
+		<funcFlag outcode="P53816107">1043</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<ip>127.0.0.1</ip>
+		<format>com.sinosoft.midplat.newccb.format.GetContList2</format><!--获取保单详情取数（寿险）:GetContList2In.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewGetContList2</service>
+		<LocalDir>/ybttest/newccb/snd/</LocalDir>
+		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
+	</business>
+	
+	<business>
+		<name>获取保险公司巡点员信息</name>
+		<funcFlag outcode="P538191F1">1044</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryInsStaff</format><!--查询保险公司巡点员信息:QueryInsStaffIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewQueryInsStaff</service>
+	</business>
+	
+	<business>
+		<name>试算保险产品</name>
+		<funcFlag outcode="P538161411">1045</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.CalculateCont</format><!--试算保险产品:CalculateContIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewCalculateCont</service>
+	</business>
+	
+	
+	<business>
+		<name>试算保险产品(寿险)</name>
+		<funcFlag outcode="P53811142">1056</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.CalculateCont2</format>
+		<service>com.sinosoft.midplat.newccb.service.NewCalculateCont2</service>
+	</business>
+	
+<!--	<business>
+		<name>日终与保险公司对账(账务类)</name>
+		<funcFlag outcode="P53817103">3005</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<localDir>/home/ap/fserver2/rcv</localDir>
+	</business>
+	
+ 	<business>
+		<name>日终与保险公司公司对账(保全类)</name>
+		<funcFlag outcode="P53817104">1048</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<CoreNo>010072</CoreNo>
+		<format>com.sinosoft.midplat.newccb.format.BaoQBusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<localDir>/home/ap/fserver2/rcv</localDir>
+	</business>
+
+	<business>
+		<name>发送银行端单证信息</name>
+		<funcFlag outcode="P53817105">3006</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.NewCardBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewSendDocument</service>
+	</business>
+	-->
+	<!--
+	
+	-->
+	<business> 
+		<name>日终与保险公司对账（账务类）</name>      
+		<funcFlag outcode="P53817103">3005</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>    
+		<NodeNo>370684208</NodeNo>      
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>        
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<CoreNo>010072</CoreNo>
+		<LocalDir>/ybttest/newccb/zw/</LocalDir>
+	</business>
+	
+	<business> 
+		<name>日终与保险公司对账（保全类）</name>      
+		<funcFlag outcode="P53817104">1048</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>    
+		<NodeNo>370684208</NodeNo>      
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>        
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<CoreNo>010072</CoreNo>
+		<LocalDir>/ybttest/newccb/bq/</LocalDir>
+	</business>
+	
+	<business>
+		<name>发送银行端单证信息</name>
+		<funcFlag outcode="P53817105">3006</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<NodeNo>370684208</NodeNo>    
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format><!--日终单证信息传递（发送银行端单证信息）:-->
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<CoreNo>010072</CoreNo>
+		<LocalDir>/ybttest/newccb/dz/</LocalDir>
+	</business>
+	 
+		
+	<!-- 范军说：请没有开发批量代扣代付业务的保险公司至少开发一个P53818102批量查询接口（接口仅需返回两个数据项，都固定写为0返回建行即可），以保证退保业务的正常执行。 -->	
+	<business>
+		<name>批量查询</name>
+		<funcFlag outcode="P53818102">1046</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BatchQuery</format><!--批量查询交易:BatchQueryIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.NewBatchQuery</service>
+	</business>
+	
+	<business> 
+		<name>新建行补对账</name>      
+		<funcFlag outcode="">3009</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>    
+		<bankcode>0104</bankcode>    
+		<NodeNo>370684208</NodeNo>    
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<CoreNo>010072</CoreNo>
+		<LocalDir>D:/YBT_SAVE_XML/ZHH/newccb/rcv/</LocalDir>
+		<ccbLocal>D:/YBT_SAVE_XML/ZHH/newccb/localrcv/</ccbLocal>
+	</business>	
+	
+	
+	<business>
+		<name>代理保险售后提醒查询</name>
+		<funcFlag outcode="P5381B123">1052</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ActInsuSaleRemindQuery</format><!--建行代理保险售后提醒查询:ActInsuSaleRemindQueryIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.ActInsuSaleRemindQuery</service>
+	</business>
+	
+	<business>
+		<name>代理保险售后提醒取数</name>
+		<funcFlag outcode="P5381B223">1053</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<ip>127.0.0.1</ip>
+		<format>com.sinosoft.midplat.newccb.format.ActInsuSaleRemindAccess</format><!--建行代理保险售后提醒取数:ActInsuSaleRemindAccessIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.ActInsuSaleRemindAccess</service>
+		<LocalDir>/ybttest/newccb/snd/</LocalDir>
+		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
+	</business>
+	
+	<business>
+		<name>申请登记台账</name>
+		<funcFlag outcode="P538191B2">1054</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.SignPolicyFormat</format><!--建行申请登记台账:SignPolicyFormatIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.SignPolicyService</service>
+	</business>
+	
+	<business>
+		<name>确认登记台账</name>
+		<funcFlag outcode="P538191B3">1055</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.SignConfirm</format><!--建行确认登记台账:SignConfirmIn.xsl-->
+		<service>com.sinosoft.midplat.newccb.service.SignConfirmService</service>
+	</business>
+	
+	<!-- 建行批量代收付 -->
+	<business>
+		<name>批量代收代付查询</name>
+		<funcFlag outcode="P53818102">1056</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BatQuery</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatQuery</service>
+	</business>
+	
+	<business>
+		<name>批量代收代付取盘</name>
+		<funcFlag outcode="P53818103">1057</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BatRequest</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatRequest</service>
+	</business>
+	
+	<business>
+		<name>批量代收代付取盘结果通知</name>
+		<funcFlag outcode="P53818104">1058</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BatRequestResult</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatRequestResult</service>
+	</business>
+	
+	<business>
+		<name>批量代收代付送盘</name>
+		<funcFlag outcode="P53818105">1059</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BatResponse</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
+	</business>
+	
+</newccb>

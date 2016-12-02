@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="GBK"?>
+<psbc>
+	<TranCom outcode="13">0100</TranCom>
+	<preNet>com.sinosoft.midplat.psbc.net.PsbcNetImpl</preNet>
+
+	<!-- 银行端代码定义，用于日终类交易 -->
+	<bank>1200</bank>
+	<insu>0033</insu>
+	<psbcSockt ip="172.16.3.125" port="9833" /><!--172.16.3.60测试环境ip 
+		邮储FTP上传后发socket消息 IP 和 port -->
+	<InsuType>40</InsuType><!--邮储FTP上传通知消息构成参数 保险公司类型 -->
+
+	<business>
+		<name>新单承保</name>
+		<funcFlag outcode="1021">201</funcFlag>
+		<retrunflag>2021</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.psbc.format.NewCont</format>
+		<service>com.sinosoft.midplat.psbc.service.NewContInput</service>
+	</business>
+	<business>
+		<name>交费出单</name>
+		<funcFlag outcode="1022">101</funcFlag>
+		<retrunflag>2022</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>2</locktime>
+		<timeout>2</timeout>
+		<format>com.sinosoft.midplat.psbc.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.psbc.service.NewContConfirm</service>
+	</business>
+
+	<business>
+		<name>保单重打</name>
+		<funcFlag outcode="1013">102</funcFlag>
+		<retrunflag>2013</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.psbc.format.RePrint</format>
+		<service>com.sinosoft.midplat.psbc.service.ContRePrint</service>
+	</business>
+
+	<business>
+		<name>冲正交易</name>
+		<funcFlag outcode="1002">321</funcFlag>
+		<retrunflag>2002</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.AutoCancel</format>
+		<service>com.sinosoft.midplat.psbc.service.AutoCancel</service>	
+	</business>
+	
+	
+	<business>
+		<name>联机非实时</name>
+		<funcFlag outcode="1041">141</funcFlag>
+		<retrunflag>2041</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.psbc.format.NoRealCont</format>
+		<service>com.sinosoft.midplat.psbc.service.NoRealContServ</service>
+	</business>
+	
+	<business>
+		<name>联机非实时取消</name>
+		<funcFlag outcode="1042">142</funcFlag>
+		<retrunflag>2042</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.psbc.format.NoRealContCancel</format>
+		<service>com.sinosoft.midplat.psbc.service.NoRealContCancelServ</service>
+	</business>
+	
+	<business>
+		<name>犹豫期撤单查询</name>
+		<funcFlag outcode="1111">311</funcFlag>
+		<retrunflag>2111</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.HesitateSurQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.HesitateSurQueryServ</service>
+	</business>
+	
+	<business>
+		<name>犹豫期撤单确认</name>
+		<funcFlag outcode="1112">312</funcFlag>
+		<retrunflag>2112</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.HesitateSur</format>
+		<service>com.sinosoft.midplat.psbc.service.HesitateSurServ</service>
+	</business>
+	
+	<business>
+		<name>退保查询</name>
+		<funcFlag outcode="1114">314</funcFlag>
+		<retrunflag>2114</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.SurrenderQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.SurrQueryServ</service>
+	</business>
+	
+	<business>
+		<name>退保确认</name>
+		<funcFlag outcode="1115">315</funcFlag>
+		<retrunflag>2115</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.Surrender</format>
+		<service>com.sinosoft.midplat.psbc.service.SurrenderServ</service>
+	</business>
+	
+	<business>
+		<name>满期给付查询</name>
+		<funcFlag outcode="1117">317</funcFlag>
+		<retrunflag>2117</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.MaturePayQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.MaturePayQueryServ</service>
+	</business>
+	
+	<business>
+		<name>满期给付确认</name>
+		<funcFlag outcode="1118">318</funcFlag>
+		<retrunflag>2118</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.MaturePay</format>
+		<service>com.sinosoft.midplat.psbc.service.MaturePayServ</service>
+	</business>
+	
+	<business>
+		<name>续期缴费查询</name>
+		<funcFlag outcode="1031">441</funcFlag>
+		<retrunflag>2031</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.RenewPayQuery</format>
+		<service>com.sinosoft.midplat.psbc.service.RenewPayQueryServ</service>
+	</business>
+	
+	<business>
+		<name>续期缴费确认</name>
+		<funcFlag outcode="1032">442</funcFlag>
+		<retrunflag>2032</retrunflag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<format>com.sinosoft.midplat.psbc.format.RenewPay</format>
+		<service>com.sinosoft.midplat.psbc.service.RenewPayServ</service>
+	</business>
+
+	<business>
+		<name>业务对账</name>
+		<funcFlag>105</funcFlag>
+		<NodeNo>1212121212</NodeNo>
+		<nextDate>N</nextDate>
+		<localDir>F:/xml/psbc/</localDir>
+		<service>com.sinosoft.midplat.psbc.service.NewContBlc</service>
+	</business>
+	
+	<business>
+		<name>保全对账</name>
+		<funcFlag>115</funcFlag>
+		<NodeNo>1212121212</NodeNo>
+		<nextDate>N</nextDate>
+		<localDir>F:/xml/psbc/</localDir>
+		<service>com.sinosoft.midplat.psbc.service.EndorseBlcServ</service>
+	</business>
+
+
+	<business>
+		<name>邮保通批量代收置盘</name>
+		<funcFlag outcode="816040">31</funcFlag>
+		<type>PCK</type>
+		<zone>9999</zone>
+		<localDir>F:/msg/blc/psbc/</localDir>
+		<ServiceTpye>11</ServiceTpye>
+		<remoteDir>/insu/0033/</remoteDir>
+	</business>
+
+	<business>
+		<name>邮保通批量返盘</name>
+		<funcFlag outcode="816060">32</funcFlag>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/psbc/</localDir>
+		<remoteDir>/insu/0021/</remoteDir>
+		<ServiceTpye>12</ServiceTpye>
+		<funcFlag>12</funcFlag>
+		<service>com.sinosoft.midplat.psbc.service.Get_PayRetServ</service>
+	</business>
+
+	<business>
+		<name>邮保通批量代付置盘</name>
+		<funcFlag outcode="816040">33</funcFlag>
+		<type>PKK</type>
+		<zone>9999</zone>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/psbc/</localDir>
+		<ServiceTpye>11</ServiceTpye>
+		<remoteDir>/insu/0021/</remoteDir>
+	</business>
+
+	<business>
+		<name>邮保通每日数据提取置盘</name>
+		<funcFlag outcode="816040">35</funcFlag>
+		<type>SJB</type>
+		<zone>9999</zone>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/psbc/</localDir>
+		<ServiceTpye>11</ServiceTpye>
+		<remoteDir>/insu/0021/</remoteDir>
+	</business>
+
+	<business>
+		<name>邮保通非实时数据提取置盘</name>
+		<funcFlag outcode="816040">34</funcFlag>
+		<type>FSS</type>
+		<zone>9999</zone>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/psbc/</localDir>
+		<ServiceTpye>11</ServiceTpye>
+		<remoteDir>/insu/0021/</remoteDir>
+	</business>
+	
+	<business>
+		<name>邮保通非实时NCS</name>
+		<funcFlag outcode="816040">33</funcFlag>
+		<type>NCS</type>
+		<zone>9999</zone>
+		<localDir>/web/ybt/ui/WEB-INF/msg/blc/psbc/in</localDir>
+		<ServiceTpye>11</ServiceTpye>
+		<remoteDir>/insu/0033/</remoteDir>
+	</business>
+	
+	<business> 
+		<name>非实时对账</name>      
+		<funcFlag>107</funcFlag>            
+		<NodeNo>1212121212</NodeNo>
+		<nextDate>N</nextDate>
+		<localDir>F:/xml/psbc/</localDir>
+		<service>com.sinosoft.midplat.psbc.service.NoRealContBlc</service>
+	</business>
+</psbc>

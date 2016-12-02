@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20160910</TranDate>
+      <TranTime>232013</TranTime>
+      <TranCom outcode="19">19</TranCom>
+      <TellerNo>sys</TellerNo>
+      <ZoneNo></ZoneNo>
+      <NodeNo>320734836</NodeNo>
+      <AgentCom>0201010014</AgentCom>
+      <AgentCode>-</AgentCode>
+      <TranNo>119316</TranNo>
+      <FuncFlag>16</FuncFlag> 
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>16</ServiceId>
+   </Head>
+ <Body>
+    <Detail>
+      <TranDate>20160910</TranDate>
+      <ContNo>2016090902000001</ContNo>
+   </Detail>
+   <Count>1</Count>
+</Body>
+</TranData>
+

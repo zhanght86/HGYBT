@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="profiler.settings.instrument.empty.methods">true</entry>
+<entry key="ProfilerCPUSettings_profile_runnables">true</entry>
+<entry key="ProfilerCPUSettings_filter_type">2</entry>
+<entry key="ProfilerMemorySettings_track_every">10</entry>
+<entry key="ProfilerMemorySettings_mode">4</entry>
+<entry key="ProfilerCPUSettings_root_classes">com.newsky.xiangwei.**
+com.sinosoft.lis.InterFace.**
+com.sinosoft.lis.changePwd.**
+com.sinosoft.lis.citi.**
+com.sinosoft.lis.db.**
+com.sinosoft.lis.encrypt.**
+com.sinosoft.lis.excel.**
+com.sinosoft.lis.f1print.**
+com.sinosoft.lis.input.**
+com.sinosoft.lis.logon.**
+com.sinosoft.lis.menumang.**
+com.sinosoft.lis.print.**
+com.sinosoft.lis.pubfun.**
+com.sinosoft.lis.schema.**
+com.sinosoft.lis.userMan.**
+com.sinosoft.lis.vdb.**
+com.sinosoft.lis.vschema.**
+com.sinosoft.lis.ybt.**
+com.sinosoft.midplat.**
+com.sinosoft.migration.**
+com.sinosoft.utility.**
+filters.**
+mytest.**
+test.**
+</entry>
+<entry key="ProfilerCPUSettings_filter_value">com.newsky.xiangwei.*,
+com.sinosoft.lis.InterFace.*,
+com.sinosoft.lis.changePwd.*,
+com.sinosoft.lis.citi.*,
+com.sinosoft.lis.db.*,
+com.sinosoft.lis.encrypt.*,
+com.sinosoft.lis.excel.*,
+com.sinosoft.lis.f1print.*,
+com.sinosoft.lis.input.*,
+com.sinosoft.lis.logon.*,
+com.sinosoft.lis.menumang.*,
+com.sinosoft.lis.print.*,
+com.sinosoft.lis.pubfun.*,
+com.sinosoft.lis.schema.*,
+com.sinosoft.lis.userMan.*,
+com.sinosoft.lis.vdb.*,
+com.sinosoft.lis.vschema.*,
+com.sinosoft.lis.ybt.*,
+com.sinosoft.midplat.*,
+com.sinosoft.migration.*,
+com.sinosoft.utility.*,
+filters.*,
+mytest.*,
+test.*</entry>
+<entry key="profiler.settings.istrument.getter.setter.methods">true</entry>
+<entry key="myeclipse.profiling.mode">0</entry>
+<entry key="ProfilerMemorySettings_stacktraces">-1</entry>
+</properties>

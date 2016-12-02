@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="GBK"?>
+<midplat>
+<TestUI ip="127.0.0.1" port="35001" ZoneNo="10011" NodeNo="14800" portname="农业银行"/>
+<ABCTestUI ip="127.0.0.1" port="35001" portname="农业银行"/>
+<NewABCTestUI ip="127.0.0.1" port="35005" portname="新农业银行" ZoneNo="1101" NodeNo="0120"/>
+	<confLoad sleepSecond="60" />
+	<!-- 对应2个YBT操作 -->	    
+	 <cluster id="2" count="3" />
+	
+	<SavePath>f:\</SavePath>
+	<KeyPath>/ybttest/key/</KeyPath>
+	
+	<skip>10.0.6.111</skip><!-- 跳过 -->
+	<!-- 数据库类型、数据库名称、网络之间互连的协议、端口、用户名、密码 -->
+	<database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" />
+	
+ <!--  	<database type="ORACLE" name="ORCL" ip="127.0.0.1" port="1521" user="ybt_wangheng" password="ybt_wangheng" />  --><!-- 本地 -->
+	<!--  <database type="ORACLE" name="ORCL" ip="127.0.0.1" port="1521" user="axa" password="ybt" /> --> <!-- DAT -->
+  	<!-- <database type="ORACLE" name="dat01" ip="10.0.4.14" port="1521" user="ybt" password="ybt" /> -->  <!-- UAT --> 
+	<service>com.sinosoft.midplat.service.SimpService</service>   
+	 <!-- Local http://10.1.41.4:8080/lis_general_dev1/services/ServiceForBankInterfaceService-->
+	 <!-- Local2 http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService -->
+	 <!-- 其他环境 http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService -->     
+	 <!-- DAT http://10.0.4.27:9080/services/ServiceForBankInterfaceService -->
+	 <!-- UAT http://10.1.41.28:8080/services/ServiceForBankInterfaceService -->
+<!-- 	<atomservices>
+		<service id="0" name="录单核保" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="1" name="收费签单" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="27" name="打印投保单" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="28" name="查询缴纳保费信息" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="29" name="打印保单" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="30" name="重空核对" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="32" name="确认续期缴费" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="33" name="确认取消续期缴费" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="2" name="新单回滚" address="http://10.1.41.28:8080/general/services/ServiceForBankInterfaceService" method="service" />
+		<service id="3" name="保单重打" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="4" name="保单查询" address="http://10.1.41.28:8080/general/services/ServiceForBankInterfaceService" method="service" />
+		<service id="5" name="当日撤单" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="6" name="新单日结" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="7" name="单证对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="8" name="退保信息传递" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="9" name="银保续期缴费查询" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="10" name="银保犹豫期退保查询" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="11" name="银保犹豫期退保" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="12" name="银保犹豫期退保冲正" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+	
+		<service id="13" name="银保退保查询" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="14" name="银保退保" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="15" name="银保退保冲正" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="16" name="保全对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="18" name="新建行续期对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+		
+		<service id="20" name="非实时日终对账" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="21" name="非实时超时对账" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="22" name="非实时结果文件返回" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="23" name="非实时投保单状态变更文件返回" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="19" name="建行查询保单历史变动" address="http://10.1.41.7:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="25" name="工行试算" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="26" name="工行保全数据回传" address="http://10.1.41.28:8080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="34" name="建行修改保单基本信息" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="35" name="建行查询客户保单" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="36" name="建行查询保单详情（寿险）" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="37" name="建行获取保单详情取数" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="38" name="建行获取保单详情查询" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="39" name="建行查询保险公司巡逻员信息" address="http://10.1.41.28:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="40" name="建行试算保险产品" address="http://10.1.41.4:8080/lis_bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="41" name="宁波银行银保核退保交易" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="31" name="新农行试算结果查询" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="45" name="新农行保单查询" address="http://10.1.41.7:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="46" name="新农行保全申请状态查询" address="http://10.1.41.7:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="48" name="新农行退保犹退结果文件" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="49" name="新农行非实时出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="50" name="新农行手工单出单结果文件" address="http://10.1.41.34:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="51" name="新农行非实时/手工单出单险种明细" address="http://10.1.41.34:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="52" name="新建行退保申请" address="http://10.1.41.34:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="53" name="新建行退保确认" address="http://10.1.41.34:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="54" name="新农行退保犹退结果文件-银行回盘" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="55" name="新农行非实时出单结果文件-银行回盘" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+	</atomservices>  -->
+	
+	<!--  
+	<atomservices>
+		<service id="0" name="录单核保" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="1" name="收费签单" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="2" name="新单回滚" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="3" name="保单重打" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="5" name="当日撤单" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="6" name="新单日结" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="7" name="单证对账" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="10" name="银保犹豫期退保查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="11" name="银保犹豫期退保" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="12" name="银保犹豫期退保冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="13" name="银保退保查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="14" name="银保退保" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="15" name="银保退保冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="16" name="保全对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="25" name="工行试算" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+	  	<service id="20" name="非实时日终对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="21" name="非实时超时对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="22" name="非实时结果文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="23" name="非实时投保单状态变更文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />	
+		
+		<service id="26" name="工行保单状态变更文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="18" name="新建行续期对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="19" name="建行查询保单历史变动" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="27" name="打印投保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="28" name="查询缴纳保费信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="29" name="打印保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="30" name="重空核对" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="32" name="确认续期缴费" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="33" name="确认取消续期缴费" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="34" name="建行修改保单基本信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="35" name="建行查询客户保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="36" name="建行查询保单详情（寿险）" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="37" name="建行获取保单详情取数" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="38" name="建行获取保单详情查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="39" name="建行查询保险公司巡逻员信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="40" name="建行试算保险产品" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="41" name="宁波银行银保核退保交易" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="31" name="新农行试算结果查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="45" name="新农行保单查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="46" name="新农行保全申请状态查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="48" name="新农行犹豫期退保结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="49" name="新农行非实时出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="50" name="新农行手工单出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="51" name="新农行非实时/手工单出单险种明细" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="52" name="新建行退保申请" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="53" name="新建行退保确认" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="58" name="新建行代理保险售后提醒查询" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="59" name="新建行代理保险售后提醒取数" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="60" name="新建行申请登记台账" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="61" name="新建行确认登记台账" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		
+		-->	
+		<!--
+		<service id="16" name="银保满期给付查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="17" name="银保满期给付" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="18" name="银保满期给付冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="19" name="银保续期缴费" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="20" name="银保续期缴费冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		-->
+		
+		
+		<!-- 本地测试调     10.254.254.127:8001/ui/ -->
+		<atomservices>
+		<service id="0" name="录单核保" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="1" name="收费签单" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="2" name="新单回滚" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="3" name="保单重打" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="5" name="当日撤单" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="6" name="新单日结" address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="7" name="单证对账" address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="10" name="银保犹豫期退保查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="11" name="银保犹豫期退保" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="12" name="银保犹豫期退保冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="13" name="银保退保查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="14" name="银保退保" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="15" name="银保退保冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="16" name="保全对账" address="http://10.0.4.30:9080/services/ServiceForBankInterfaceService" method="service" />
+		<!-- <service id="25" name="工行试算" address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService" method="service" /> -->
+	  	<service id="20" name="非实时日终对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="21" name="非实时超时对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="22" name="非实时结果文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="23" name="非实时投保单状态变更文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />	
+		
+		<service id="26" name="工行保单状态变更文件返回" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		
+		<service id="18" name="新建行续期对账" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="19" name="建行查询保单历史变动" address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService" method="service" />
+		<service id="27" name="打印投保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="28" name="查询缴纳保费信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="29" name="打印保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="30" name="重空核对" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="32" name="确认续期缴费" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="33" name="确认取消续期缴费" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="34" name="建行修改保单基本信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="35" name="建行查询客户保单" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="36" name="建行查询保单详情（寿险）" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="37" name="建行获取保单详情取数" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="38" name="建行获取保单详情查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="39" name="建行查询保险公司巡逻员信息" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="40" name="建行试算保险产品" address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />
+		<service id="41" name="宁波银行银保核退保交易" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="31" name="新农行试算结果查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="45" name="新农行保单查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="46" name="新农行保全申请状态查询" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="48" name="新农行犹豫期退保结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="49" name="新农行非实时出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="50" name="新农行手工单出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="51" name="新农行非实时/手工单出单险种明细" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="52" name="新建行退保申请" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="53" name="新建行退保确认" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
+		<service id="58" name="新建行代理保险售后提醒查询" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="59" name="新建行代理保险售后提醒取数" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="60" name="新建行申请登记台账" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="61" name="新建行确认登记台账" address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService" method="service" />
+		<service id="62" name="新农行保单详情查询" address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />	
+		<service id="63" name="建行试算保险产品（寿险）" address="http://10.1.41.4:8080/bugfix/services/ServiceForBankInterfaceService" method="service" />	
+		
+		
+	</atomservices> 
+</midplat>

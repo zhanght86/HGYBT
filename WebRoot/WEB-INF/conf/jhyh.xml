@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="GBK"?>
+<jhyh>
+<!-- 银行端代码定义，用于日终类交易 -->
+	<bank id="07" insu="0108" />
+	<TranCom outcode="07">07</TranCom>
+	<preNet>com.sinosoft.midplat.jhyh.net.JhyhNetImpl</preNet>
+	
+	<business>
+		<name>新单试算</name>
+		<funcFlag outcode="510015">1012</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.jhyh.format.NewCont</format>
+		<service>com.sinosoft.midplat.jhyh.service.NewContInput</service>
+	</business>
+	
+	<business>
+		<name>新单承保</name>
+		<funcFlag outcode="510001">1014</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.jhyh.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.jhyh.service.NewContConfirm</service>
+	</business>
+	
+	<business>
+		<name>保单重打</name>
+		<funcFlag outcode="510016">1011</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.jhyh.format.RePrint</format>
+		<service>com.sinosoft.midplat.jhyh.service.ContRePrint</service>
+	</business>
+	
+	<business>
+		<name>当日撤单</name>
+		<funcFlag outcode="510006">1015</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.jhyh.format.WriteOff</format>
+		<service>com.sinosoft.midplat.jhyh.service.ContCancel</service>
+	</business>
+    
+    <business>
+		<name>自动冲正</name>
+		<timeout>30</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="500208">4</funcFlag>
+		<format>com.sinosoft.midplat.jhyh.format.Rollback</format>
+		<service>com.sinosoft.midplat.jhyh.service.ContRollback</service>
+	</business>
+	
+	<business>		
+		<name>金华银行新单对账</name>
+		<funcFlag outcode="550002">5005</funcFlag>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.jhyh.service.NewContBlc</service>
+		<localDir>D:/YBT_SAVE_XML/ZHH/jhyh/</localDir>
+		<charset>GBK</charset>
+	</business>
+	
+	<business>		
+		<name>金华银行单证对账</name>
+		<funcFlag outcode="000000">5006</funcFlag>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>0000000000</NodeNo>
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.jhyh.service.NewCardBlc</service>
+		<localDir>D:/YBT_SAVE_XML/ZHH/jhyh/</localDir>
+		<charset>GBK</charset>
+	</business>
+
+
+</jhyh>

@@ -1,0 +1,66 @@
+19:22:42,300 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+19:22:42,456 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+19:22:42,456 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+19:22:42,582 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+19:22:42,582 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+19:22:42,582 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+19:22:42,832 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:09:59,447) and length=23274 bytes!
+19:22:42,972 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+19:22:43,003 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+19:47:04,525 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+19:47:04,525 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+19:47:04,541 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+19:47:04,541 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+19:47:04,541 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+19:47:04,541 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+19:47:04,541 INFO common.XmlConf(58) - conf file modified at (2016-11-04 19:46:53,855) and length=23416 bytes!
+19:47:04,557 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+19:47:04,557 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+19:59:04,878 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+19:59:04,878 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+19:59:04,878 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+19:59:04,894 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+19:59:04,894 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+19:59:04,894 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+19:59:04,894 INFO common.XmlConf(58) - conf file modified at (2016-11-04 19:46:53,855) and length=23416 bytes!
+19:59:04,909 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+19:59:04,909 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+19:59:04,909 INFO net.CallWebsvcAtomSvc(37) - Into CallWebsvcAtomSvc.service()...
+19:59:04,972 DEBUG common.NoFactory(26) - ClusterId=0; ClusterCount=3
+19:59:06,502 ERROR common.NoFactory(113) - 初始化MapNo最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:110)
+	at com.sinosoft.midplat.net.CallWebsvcAtomSvc.call(CallWebsvcAtomSvc.java:50)
+	at test.WebServiceTest.main(WebServiceTest.java:20)
+19:59:06,611 DEBUG common.SaveMessage(17) - SavePath_HOME = null
+19:59:06,611 DEBUG common.SaveMessage(33) - SavePath_HOME = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+19:59:06,642 INFO common.SaveMessage(59) - main_3_16_inSvc.xml IO输出耗时:0.015s
+19:59:06,642 INFO net.CallWebsvcAtomSvc(52) - 保存报文完毕！main_3_16_inSvc.xml
+19:59:06,642 INFO net.CallWebsvcAtomSvc(59) - start call 保全对账(http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService.service)...
+20:02:20,744 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:02:20,760 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:02:20,760 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:02:20,760 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:02:20,760 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:02:20,760 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:02:20,760 INFO common.XmlConf(58) - conf file modified at (2016-11-04 20:02:15,175) and length=23416 bytes!
+20:02:20,776 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:02:20,776 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:02:20,791 INFO net.CallWebsvcAtomSvc(37) - Into CallWebsvcAtomSvc.service()...
+20:02:20,791 DEBUG common.NoFactory(26) - ClusterId=0; ClusterCount=3
+20:02:21,337 ERROR common.NoFactory(113) - 初始化MapNo最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:110)
+	at com.sinosoft.midplat.net.CallWebsvcAtomSvc.call(CallWebsvcAtomSvc.java:50)
+	at test.WebServiceTest.main(WebServiceTest.java:20)
+20:02:21,400 DEBUG common.SaveMessage(17) - SavePath_HOME = null
+20:02:21,400 DEBUG common.SaveMessage(33) - SavePath_HOME = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:02:21,415 INFO common.SaveMessage(59) - main_3_16_inSvc.xml IO输出耗时:0.015s
+20:02:21,415 INFO net.CallWebsvcAtomSvc(52) - 保存报文完毕！main_3_16_inSvc.xml
+20:02:21,415 INFO net.CallWebsvcAtomSvc(59) - start call 保全对账(http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService.service)...

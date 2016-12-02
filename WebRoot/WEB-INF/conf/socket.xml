@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GBK"?>
+<sockets autoRestart="true"><!-- 套接字集 -->
+	<socket>	套接字
+		<name>农业银行</name>
+		<!-- <port>35001</port> -->
+		<port>35006</port>
+		<class>com.sinosoft.midplat.abc.AbcYbt</class>
+	</socket>
+	<socket>	套接字
+		<name>贵州银行</name>
+		<!-- <port>35017</port> -->
+		<port>35008</port>
+		<class>com.sinosoft.midplat.gzbank.GZBankYbt</class>
+	</socket>
+	<socket>	套接字
+		<name>中国银行</name>
+		<!-- <port>35019</port> -->
+		<port>52004</port>
+		<class>com.sinosoft.midplat.boc.BocYbt</class>
+	</socket>
+	<socket>	套接字
+		<name>建设银行</name>
+		<port>39871</port>
+		<class>com.sinosoft.midplat.newccb.NewCcbYbt</class>
+	</socket>
+</sockets>   

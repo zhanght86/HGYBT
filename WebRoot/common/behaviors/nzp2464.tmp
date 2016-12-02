@@ -1,0 +1,168 @@
+/*******************************************************************************
+ * <p>Title: Lis 6.0</p>
+ * <p>Description: 中科软人寿保险核心业务管理系统</p>
+ * <p>Copyright: Copyright (c) 2005 Sinosoft, Co.,Ltd. All Rights Reserved</p>
+ * <p>Company: 中科软科技股份有限公司</p>
+ * <p>WebSite: http://www.sinosoft.com.cn</p>
+ *
+ * @author   : 辛玉强 <XinYQ@sinosoft.com.cn>
+ * @version  : 1.00, 1.01
+ * @date     : 2006-10-24, 2006-11-06
+ * @direction: 通用录入两次校验控件
+ ******************************************************************************/
+
+
+<public:component name="coolConfirmBox">
+<public:attach event="ondocumentready" onEvent="initConfirmBox()" />
+<public:attach event="onblur" onEvent="verifyConfirmBoxOnBlur()" />
+<public:attach event="onkeypress" onEvent="verifyConfirmBoxOnKeyPress()" />
+
+
+<script language="JavaScript">
+
+    var nConfirmBoxEnevtFlag = 0;
+    //标记触发事件的类型, 因为在 onkeypress 不符而 alert() 时会同时先触发 onblur, 导致重复 alert 两次
+    //0-初始值; 1-纯粹onblur引起; 2-纯粹onkeypress引起; 3-onkeypress导致的onblur
+
+    /**
+     * 初始化输入控件
+     */
+    function initConfirmBox()
+    {
+        if (element.getAttribute("ConfirmBoxFlag") == null)
+        {
+            element.setAttribute("ConfirmBoxFlag", "1");
+            element.setAttribute("ConfirmValue1", "");
+            element.setAttribute("ConfirmValue2", "");
+        }
+    }
+
+    /**
+     * 失去焦点时校验输入值
+     */
+    function verifyConfirmBoxOnBlur()
+    {
+        try
+        {
+            if (element != null && !element.disabled && !element.readOnly)
+            {
+                if (nConfirmBoxEnevtFlag != 3)
+                {
+                    nConfirmBoxEnevtFlag = 1;
+                }
+                var sCurrentValue = element.value;
+                var sConfirmValue1 = element.getAttribute("ConfirmValue1");
+                var sConfirmValue2 = element.getAttribute("ConfirmValue2");
+                if (sCurrentValue != null && sCurrentValue != "")
+                {
+                    //两个都为空
+                    if ((sConfirmValue1 == null || sConfirmValue1 == "") && (sConfirmValue2 == null || sConfirmValue2 == ""))
+                    {
+                        element.setAttribute("ConfirmValue1", sCurrentValue);
+                        element.value = "";
+                        element.focus();
+                    }
+                    //第二个为空
+                    else if ((sConfirmValue1 != null && sConfirmValue1 != "") && (sConfirmValue2 == null || sConfirmValue2 == ""))
+                    {
+                        if (sCurrentValue != sConfirmValue1)
+                        {
+                            if (nConfirmBoxEnevtFlag != 3)
+                            {
+                                element.className = "warn";
+                                alert("两次输入的值不匹配，请重新输入！ ");
+                                element.setAttribute("ConfirmValue1", "");
+                                element.setAttribute("ConfirmValue2", "");
+                                element.className = "coolConfirmBox";
+                                element.value = "";
+                                element.focus();
+                            }
+                        }
+                        else
+                        {
+                            element.setAttribute("ConfirmValue2", sCurrentValue);
+                        }
+                    }
+                    //两个都非空
+                    else if ((sConfirmValue1 != null && sConfirmValue1 != "") && (sConfirmValue2 != null || sConfirmValue2 != ""))
+                    {
+                        if (sCurrentValue != sConfirmValue1)
+                        {
+                            element.setAttribute("ConfirmValue1", sCurrentValue);
+                            element.setAttribute("ConfirmValue2", "");
+                            element.value = "";
+                            element.focus();
+                        }
+                    }
+                } //sCurrentValue != null
+            }
+        }
+        catch (ex) {}
+    }
+
+    /**
+     * 键入回车时校验输入值
+     */
+    function verifyConfirmBoxOnKeyPress()
+    {
+        try
+        {
+            if (element != null && !element.disabled && !element.readOnly && event.keyCode == 13)
+            {
+                nConfirmBoxEnevtFlag = 2;
+                var sCurrentValue = element.value;
+                var sConfirmValue1 = element.getAttribute("ConfirmValue1");
+                var sConfirmValue2 = element.getAttribute("ConfirmValue2");
+                if (sCurrentValue != null && sCurrentValue != "")
+                {
+                    //两个都为空
+                    if ((sConfirmValue1 == null || sConfirmValue1 == "") && (sConfirmValue2 == null || sConfirmValue2 == ""))
+                    {
+                        element.setAttribute("ConfirmValue1", sCurrentValue);
+                        element.value = "";
+                        element.focus();
+                    }
+                    //第二个为空
+                    else if ((sConfirmValue1 != null && sConfirmValue1 != "") && (sConfirmValue2 == null || sConfirmValue2 == ""))
+                    {
+                        if (sCurrentValue != sConfirmValue1)
+                        {
+                            nConfirmBoxEnevtFlag = 3;
+                            element.className = "warn";
+                            alert("两次输入的值不匹配，请重新输入！ ");
+                            element.setAttribute("ConfirmValue1", "");
+                            element.setAttribute("ConfirmValue2", "");
+                            element.className = "coolConfirmBox";
+                            element.value = "";
+                            element.focus();
+                        }
+                        else
+                        {
+                            element.setAttribute("ConfirmValue2", sCurrentValue);
+                            element.blur();
+                        }
+                    }
+                    //两个都非空
+                    else if ((sConfirmValue1 != null && sConfirmValue1 != "") && (sConfirmValue2 != null || sConfirmValue2 != ""))
+                    {
+                        if (sCurrentValue != sConfirmValue1)
+                        {
+                            element.setAttribute("ConfirmValue1", sCurrentValue);
+                            element.setAttribute("ConfirmValue2", "");
+                            element.value = "";
+                            element.focus();
+                        }
+                        else
+                        {
+                            element.blur();
+                        }
+                    }
+                } //sCurrentValue != null
+            }
+        }
+        catch (ex) {}
+    }
+
+</script>
+
+</public:component>

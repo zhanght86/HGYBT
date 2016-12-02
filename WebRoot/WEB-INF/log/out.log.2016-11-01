@@ -1,0 +1,2729 @@
+11:32:40,193 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:32:40,193 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:32:40,193 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:32:40,193 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:32:40,203 DEBUG security.CCBCipher(17) - 密钥文件路径：/F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/ccbKey.dat
+11:35:39,231 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:35:39,231 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:35:39,231 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:35:39,231 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:35:39,251 DEBUG security.CCBCipher(17) - 密钥文件路径：/F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/ccbKey.dat
+11:36:10,947 DEBUG common.SysInfo(24) - basepath.r = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:36:10,947 DEBUG common.SysInfo(26) - BasePath = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:36:10,947 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+11:36:10,947 DEBUG common.SysInfo(48) - Home = /F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:36:10,957 DEBUG security.CCBCipher(17) - 密钥文件路径：/F:/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/ccbKey.dat
+19:04:46,687 INFO test.YD_ABCTestUI(70) - Socket连接127.0.0.1:35001
+19:08:05,008 INFO test.YD_ABCTestUI(70) - Socket连接127.0.0.1:35001
+19:09:18,822 INFO test.YD_ABCTestUI(70) - Socket连接127.0.0.1:35001
+19:10:06,838 INFO test.YD_ABCTestUI(70) - Socket连接127.0.0.1:35001
+19:57:49,909 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@12539a92
+19:57:49,913 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+19:57:49,915 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+19:57:49,916 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+19:57:49,930 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+19:57:49,931 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+19:57:49,931 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+19:57:49,934 INFO common.XmlConf(58) - conf file modified at (2016-11-01 19:54:58,273) and length=23278 bytes!
+19:57:50,126 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+19:57:50,133 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+19:57:50,133 INFO common.Log4jPrint(20) - End reset System.out!
+19:57:50,135 INFO net.SocketConf(27) - Into SocketConf.load()...
+19:57:50,135 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+19:57:50,136 INFO common.XmlConf(58) - conf file modified at (2016-11-01 11:19:24,275) and length=208 bytes!
+19:57:50,138 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+19:57:50,138 INFO net.SocketConf(60) - Out SocketConf.load()!
+19:57:50,235 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+19:57:50,236 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+19:57:50,241 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+19:57:50,242 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+19:57:50,242 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+19:57:50,244 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+19:58:00,266 INFO common.Log4jPrint(20) - log4j:ERROR Could not find value for key log4j.appender.DEBUG
+19:58:00,266 INFO common.Log4jPrint(20) - log4j:ERROR Could not instantiate appender named "DEBUG".
+19:58:00,422 INFO common.Log4jPrint(20) - Start reset System.out...
+20:01:00,408 DEBUG net.SocketListenerF5(31) - System.out = com.sinosoft.midplat.common.Log4jPrint@4e511a6e
+20:01:00,412 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:01:00,414 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:01:00,415 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:01:00,415 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:01:00,416 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:01:00,416 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:01:00,418 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:00:38,889) and length=23278 bytes!
+20:01:00,575 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:01:00,581 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:01:00,582 INFO common.Log4jPrint(20) - End reset System.out!
+20:01:00,584 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:01:00,584 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:01:00,585 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:00:38,896) and length=208 bytes!
+20:01:00,588 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:01:00,588 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:01:00,632 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:01:00,632 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:01:00,637 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:01:00,637 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:01:00,637 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:01:00,638 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:01:24,014 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@1ae0e7d
+20:01:24,018 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:01:24,021 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:01:24,021 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:01:24,023 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:01:24,024 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:01:24,024 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:01:24,029 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:00:38,889) and length=23278 bytes!
+20:01:24,220 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:01:24,227 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:01:24,228 INFO common.Log4jPrint(20) - End reset System.out!
+20:01:24,229 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:01:24,229 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:01:24,230 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:00:38,896) and length=208 bytes!
+20:01:24,232 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:01:24,232 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:01:24,290 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:01:24,290 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:01:24,298 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:01:24,299 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:01:24,299 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:01:24,304 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:01:27,292 INFO common.Log4jPrint(20) - log4j:ERROR Could not find value for key log4j.appender.DEBUG
+20:01:27,292 INFO common.Log4jPrint(20) - log4j:ERROR Could not instantiate appender named "DEBUG".
+20:01:27,445 INFO common.Log4jPrint(20) - Start reset System.out...
+20:02:40,597 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@1ac84361
+20:02:40,602 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:02:40,607 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:02:40,607 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:02:40,609 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:02:40,610 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:02:40,610 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:02:40,613 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:02:28,620) and length=23276 bytes!
+20:02:40,784 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:02:40,790 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:02:40,791 INFO common.Log4jPrint(20) - End reset System.out!
+20:02:40,792 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:02:40,793 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:02:40,793 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:00:38,896) and length=208 bytes!
+20:02:40,795 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:02:40,795 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:02:40,846 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:02:40,847 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:02:40,852 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:02:40,852 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:02:40,853 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:02:40,855 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:02:43,851 INFO common.Log4jPrint(20) - log4j:ERROR Could not find value for key log4j.appender.DEBUG
+20:02:43,851 INFO common.Log4jPrint(20) - log4j:ERROR Could not instantiate appender named "DEBUG".
+20:02:43,995 INFO common.Log4jPrint(20) - Start reset System.out...
+20:03:42,286 DEBUG net.SocketListenerF5(31) - System.out = com.sinosoft.midplat.common.Log4jPrint@6e677ea2
+20:03:42,290 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:03:42,292 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:03:42,293 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:03:42,293 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:03:42,293 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:03:42,294 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:03:42,296 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:03:35,202) and length=23276 bytes!
+20:03:42,472 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:03:42,480 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:03:42,480 INFO common.Log4jPrint(20) - End reset System.out!
+20:03:42,481 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:03:42,482 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:03:42,483 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:03:35,209) and length=208 bytes!
+20:03:42,484 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:03:42,485 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:03:42,529 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:03:42,529 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:03:42,535 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:03:42,535 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:03:42,536 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:03:42,536 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:07:50,685 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@1212ee2a
+20:07:50,689 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:07:50,692 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:07:50,692 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:07:50,694 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:07:50,695 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:07:50,695 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:07:50,698 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:07:28,057) and length=23276 bytes!
+20:07:50,872 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:07:50,880 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:07:50,881 INFO common.Log4jPrint(20) - End reset System.out!
+20:07:50,883 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:07:50,884 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:07:50,884 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:07:28,067) and length=208 bytes!
+20:07:50,887 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:07:50,888 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:07:50,936 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:07:50,937 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:07:50,942 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:07:50,943 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:07:50,943 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:07:50,944 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:08:20,507 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+20:08:20,518 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+20:08:20,519 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :127.0.0.1
+20:08:20,538 INFO common.Log4jPrint(20) - 目前暂不支持此种类型的数据库!
+20:08:40,497 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+20:08:40,499 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+20:08:40,500 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :127.0.0.1
+20:08:40,503 INFO common.Log4jPrint(20) - 目前暂不支持此种类型的数据库!
+20:08:53,365 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+20:08:53,366 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+20:08:53,367 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :127.0.0.1
+20:08:53,370 INFO common.Log4jPrint(20) - 目前暂不支持此种类型的数据库!
+20:10:26,120 DEBUG net.SocketListenerF5(31) - System.out = org.apache.tomcat.util.log.SystemLogHandler@7418e252
+20:10:26,125 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:10:26,128 DEBUG common.SysInfo(24) - basepath.r = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:10:26,129 DEBUG common.SysInfo(26) - BasePath = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/classes/
+20:10:26,130 DEBUG common.SysInfo(32) - MIDPLAT_HOME = null
+20:10:26,131 DEBUG common.SysInfo(48) - Home = /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/
+20:10:26,131 INFO midplat.MidplatConf(35) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:10:26,134 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:10:16,869) and length=23274 bytes!
+20:10:26,301 INFO midplat.MidplatConf(51) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:10:26,315 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:10:26,316 INFO common.Log4jPrint(20) - End reset System.out!
+20:10:26,319 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:10:26,319 INFO net.SocketConf(30) - Start load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:10:26,320 INFO common.XmlConf(58) - conf file modified at (2016-11-01 20:10:16,871) and length=208 bytes!
+20:10:26,323 INFO net.SocketConf(46) - End load /F:/Tomcat/apache-tomcat-7.0.70/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:10:26,323 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:10:26,378 INFO net.SocketListenerF5(49) - Into SocketListenerF5.contextInitialized()...
+20:10:26,378 INFO net.SocketListenerF5(60) - 0_Socket(贵州银行): port=35008; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:10:26,384 INFO net.SocketListenerF5$Server(128) - socket请求处理类：com.sinosoft.midplat.gzbank.GZBankYbt端口为：35008
+20:10:26,384 INFO net.SocketListenerF5(67) - 0_Socket(贵州银行)加载成功!
+20:10:26,384 INFO net.SocketListenerF5(75) - Out SocketListenerF5.contextInitialized()!
+20:10:26,387 INFO net.SocketListenerF5$Server(136) - 监听端口 35008
+20:10:33,920 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+20:10:33,943 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+20:10:33,944 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :127.0.0.1
+20:11:00,425 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+20:11:00,830 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+20:11:00,937 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+20:11:01,038 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+20:11:01,040 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000004','86','001','127.0.0.1','2016-11-01','20:11:00' )
+20:11:01,768 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+20:11:04,372 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1105'
+20:11:04,785 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:11:05,873 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+20:11:06,045 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+20:11:06,180 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:11:10,171 INFO pubfun.EasyQueryBL(18) - Into EasyQueryBL.submitData()...
+20:11:10,172 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+20:11:10,173 INFO common.Log4jPrint(20) - ExecSQL :   select bankcode,(select codename from ldcode b where '1478002269000'='1478002269000' and  b.code = a. bankcode and b.codetype ='trancom_bank'),BankBranch,banknode,managecom,funcflag ,(select codename from ldcode b where b.code = a. funcflag and b.codetype ='ybttranstype') from lktransauthorization a where 1 =1 and managecom like '86%' and ManageCom='8621'  order by bankcode,funcflag
+20:11:10,719 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+20:11:10,721 INFO pubfun.EasyQueryBL(54) - Out CodeQueryBL.submitData()!
+20:11:13,203 INFO pubfun.EasyQueryBL(18) - Into EasyQueryBL.submitData()...
+20:11:13,205 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+20:11:13,206 INFO common.Log4jPrint(20) - ExecSQL :   select bankcode,(select codename from ldcode b where '1478002273000'='1478002273000' and  b.code = a. bankcode and b.codetype ='trancom_bank'),BankBranch,banknode,managecom,funcflag ,(select codename from ldcode b where b.code = a. funcflag and b.codetype ='ybttranstype') from lktransauthorization a where 1 =1 and managecom like '86%' and ManageCom='8621'  order by bankcode,funcflag
+20:11:13,608 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+20:11:13,609 INFO pubfun.EasyQueryBL(54) - Out CodeQueryBL.submitData()!
+20:11:45,289 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+20:11:46,223 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+20:11:46,526 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:11:49,489 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+20:11:49,767 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+20:11:50,014 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:11:54,452 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+20:11:54,779 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1108'
+20:11:55,402 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:11:55,532 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1106'
+20:11:56,523 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:11:56,708 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1106'
+20:11:57,062 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:03,841 INFO pubfun.EasyQueryBL(18) - Into EasyQueryBL.submitData()...
+20:12:03,843 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+20:12:03,844 INFO common.Log4jPrint(20) - ExecSQL : select (select CodeName from LDCode where '1478002323000'='1478002323000' and  CodeType='trancom' and Code=a.TranCom), (select CodeName from LDCode where CodeType='ybttranstype' and Code=a.FuncFlag), a.ContNo, a.ProposalPrtNo, date8to10(a.TranDate)||' '||time6to8(a.TranTime), a.RText ,  a.UsedTime,a.NodeNo,a.tranno,a.LogNo from TranLog a where a.funcflag not in('1005','1006','2005','1201','1202','1203','1204','1104','1205')  and to_date(a.MakeDate,'yyyyMMdd') between to_date('20161101','yyyyMMdd') and to_date('20161101','yyyyMMdd') order by a.LogNo desc
+20:12:03,952 INFO common.Log4jPrint(20) - ### Error ExeSQL at getEncodedResult(String sql, int start): select (select CodeName from LDCode where '1478002323000'='1478002323000' and  CodeType='trancom' and Code=a.TranCom), (select CodeName from LDCode where CodeType='ybttranstype' and Code=a.FuncFlag), a.ContNo, a.ProposalPrtNo, date8to10(a.TranDate)||' '||time6to8(a.TranTime), a.RText ,  a.UsedTime,a.NodeNo,a.tranno,a.LogNo from TranLog a where a.funcflag not in('1005','1006','2005','1201','1202','1203','1204','1104','1205')  and to_date(a.MakeDate,'yyyyMMdd') between to_date('20161101','yyyyMMdd') and to_date('20161101','yyyyMMdd') order by a.LogNo desc
+20:12:03,954 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:180)
+20:12:03,955 INFO common.Log4jPrint(20) - 	at oracle.jdbc.ttc7.TTIoer.processError(TTIoer.java:208)
+20:12:03,956 INFO common.Log4jPrint(20) - 	at oracle.jdbc.ttc7.Oall7.receive(Oall7.java:543)
+20:12:03,957 INFO common.Log4jPrint(20) - 	at oracle.jdbc.ttc7.TTC7Protocol.doOall7(TTC7Protocol.java:1451)
+20:12:03,958 INFO common.Log4jPrint(20) - 	at oracle.jdbc.ttc7.TTC7Protocol.parseExecuteDescribe(TTC7Protocol.java:651)
+20:12:03,959 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleStatement.doExecuteQuery(OracleStatement.java:2117)
+20:12:03,961 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:2331)
+20:12:03,962 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OraclePreparedStatement.executeUpdate(OraclePreparedStatement.java:422)
+20:12:03,963 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OraclePreparedStatement.executeQuery(OraclePreparedStatement.java:366)
+20:12:03,964 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.ExeSQL.getEncodedResult(ExeSQL.java:231)
+20:12:03,965 INFO common.Log4jPrint(20) - 	at com.sinosoft.lis.pubfun.EasyQueryBL.submitData(EasyQueryBL.java:35)
+20:12:03,966 INFO common.Log4jPrint(20) - 	at com.sinosoft.lis.pubfun.EasyQueryUI.submitData(EasyQueryUI.java:58)
+20:12:03,967 INFO common.Log4jPrint(20) - 	at org.apache.jsp.common.easyQueryVer3.EasyQueryXML_jsp.easyQueryKernel(EasyQueryXML_jsp.java:72)
+20:12:03,968 INFO common.Log4jPrint(20) - 	at org.apache.jsp.common.easyQueryVer3.EasyQueryXML_jsp._jspService(EasyQueryXML_jsp.java:282)
+20:12:03,969 INFO common.Log4jPrint(20) - 	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+20:12:03,970 INFO common.Log4jPrint(20) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+20:12:03,971 INFO common.Log4jPrint(20) - 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:439)
+20:12:03,972 INFO common.Log4jPrint(20) - 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:395)
+20:12:03,973 INFO common.Log4jPrint(20) - 	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:339)
+20:12:03,974 INFO common.Log4jPrint(20) - 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+20:12:03,975 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+20:12:03,976 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+20:12:03,978 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+20:12:03,979 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+20:12:03,980 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+20:12:03,981 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:218)
+20:12:03,982 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+20:12:03,983 INFO common.Log4jPrint(20) - 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+20:12:03,984 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+20:12:03,986 INFO common.Log4jPrint(20) - 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+20:12:03,987 INFO common.Log4jPrint(20) - 	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+20:12:03,988 INFO common.Log4jPrint(20) - 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+20:12:03,989 INFO common.Log4jPrint(20) - 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:442)
+20:12:03,990 INFO common.Log4jPrint(20) - 	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1082)
+20:12:03,991 INFO common.Log4jPrint(20) - 	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:623)
+20:12:03,992 INFO common.Log4jPrint(20) - 	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2517)
+20:12:03,993 INFO common.Log4jPrint(20) - 	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2506)
+20:12:03,994 INFO common.Log4jPrint(20) - 	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+20:12:03,995 INFO common.Log4jPrint(20) - 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+20:12:03,996 INFO common.Log4jPrint(20) - 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+20:12:03,997 INFO common.Log4jPrint(20) - 	at java.lang.Thread.run(Thread.java:662)
+20:12:03,999 INFO common.Log4jPrint(20) - 为同一个错误对象,不进行复制
+20:12:04,000 INFO common.Log4jPrint(20) - 
+在（ExeSQL）中抛出如下错误：java.sql.SQLException: ORA-00904: "TIME6TO8": 标识符无效
+20:12:04,310 INFO common.Log4jPrint(20) - Sql's bug is very big: select (select CodeName from LDCode where '1478002323000'='1478002323000' and  CodeType='trancom' and Code=a.TranCom), (select CodeName from LDCode where CodeType='ybttranstype' and Code=a.FuncFlag), a.ContNo, a.ProposalPrtNo, date8to10(a.TranDate)||' '||time6to8(a.TranTime), a.RText ,  a.UsedTime,a.NodeNo,a.tranno,a.LogNo from TranLog a where a.funcflag not in('1005','1006','2005','1201','1202','1203','1204','1104','1205')  and to_date(a.MakeDate,'yyyyMMdd') between to_date('20161101','yyyyMMdd') and to_date('20161101','yyyyMMdd') order by a.LogNo desc
+20:12:04,312 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+20:12:04,314 ERROR pubfun.EasyQueryBL(45) - java.sql.SQLException: ORA-00904:  TIME6TO8 : 标识符无效
+20:12:07,244 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+20:12:07,642 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+20:12:07,860 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:09,577 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+20:12:09,667 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+20:12:09,846 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:19,077 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1100'
+20:12:19,360 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+20:12:19,880 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1103'
+20:12:20,137 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1103'
+20:12:20,378 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+20:12:21,161 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1104'
+20:12:21,796 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1104'
+20:12:22,322 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+20:12:25,082 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1101'
+20:12:25,813 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1101'
+20:12:26,769 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+20:12:40,781 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1105'
+20:12:41,131 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:41,681 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1105'
+20:12:42,012 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:42,913 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+20:12:45,047 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:12:45,654 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+20:12:46,019 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:46,396 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+20:12:46,546 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:12:47,555 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+20:12:47,863 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+20:12:48,018 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:12:48,024 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+20:12:48,193 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+20:12:49,129 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:49,459 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:12:49,546 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1106'
+20:12:50,871 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:12:55,554 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 2
+20:12:56,182 INFO common.Log4jPrint(20) - DBConnPool : get connection, index is 1
+20:12:56,241 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1106'
+20:12:58,168 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:22,636 INFO common.Log4jPrint(20) - ### Error ExeSQL at OneValue: SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+20:14:22,637 INFO common.Log4jPrint(20) - 为同一个错误对象,不进行复制
+20:14:22,637 INFO common.Log4jPrint(20) - 
+在（ExeSQL）中抛出如下错误：java.sql.SQLException: Io 异常: Read timed out
+20:14:22,637 INFO common.Log4jPrint(20) - Sql's bug is very big: SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+20:14:23,146 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+20:14:23,232 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1108'
+20:14:23,332 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:23,987 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+20:14:24,081 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+20:14:24,217 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:25,276 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+20:14:25,371 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+20:14:25,486 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:26,877 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+20:14:26,983 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+20:14:27,046 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:37,291 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+20:14:37,398 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+20:14:37,789 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:14:38,744 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+20:14:38,924 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+20:14:39,070 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+20:17:13,905 INFO net.SocketListenerF5(80) - Into SocketListenerF5.contextDestroyed()...
+20:17:13,905 INFO net.SocketListenerF5(82) - 关闭ServerSocket监听...
+20:17:13,905 DEBUG net.SocketListenerF5(102) - System.out = com.sinosoft.midplat.common.Log4jPrint@59678f0a
+20:17:13,905 INFO common.Log4jPrint(20) - Start revert System.out...
+20:17:13,906 INFO net.SocketListenerF5(111) - Out SocketListenerF5.contextDestroyed()!
+20:17:13,907 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,907 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,908 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,908 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,908 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,908 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,908 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,909 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,916 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,917 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,917 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,917 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,918 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,918 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,918 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,918 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,919 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,919 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,919 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,919 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,920 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,920 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,920 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,920 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,921 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,921 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,921 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,922 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,922 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,923 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,923 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,923 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,924 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,924 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,925 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,925 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,925 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,925 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,926 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,926 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,926 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,926 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,927 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,930 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,930 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,931 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,931 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,931 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,931 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,932 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,932 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,932 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,932 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,932 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,933 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,933 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,933 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,933 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,933 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,934 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,935 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,935 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,935 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,935 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,935 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,936 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,936 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,936 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,936 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,936 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,937 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,937 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,937 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,937 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,937 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,938 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,938 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,938 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,938 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,938 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,939 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,939 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,939 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,939 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,939 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,940 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,940 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,940 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,940 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,940 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,941 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,941 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,941 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,941 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,941 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,942 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,943 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,943 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,943 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,943 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,944 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,944 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,944 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,944 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,944 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,945 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,946 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,946 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,946 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,946 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,947 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,947 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,947 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,947 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,948 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,948 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,948 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,948 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,948 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,949 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,949 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,949 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,949 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,949 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,950 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,950 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,950 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,950 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,950 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,951 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,951 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,951 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,952 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,952 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,952 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,952 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,953 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,954 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,954 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,970 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,970 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,970 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,971 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,972 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,972 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,972 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,972 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,972 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,973 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,974 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,975 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,975 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,975 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,975 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,975 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,976 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,977 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,978 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,979 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,980 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,980 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,980 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,980 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,980 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,981 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,982 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,983 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,983 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,983 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,983 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,983 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,984 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,985 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,986 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,986 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,987 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,987 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,987 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,988 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,988 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,988 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,988 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,989 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,990 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,991 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,992 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,993 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,994 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,995 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,996 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,996 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,996 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,996 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,996 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,997 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,998 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:13,999 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,000 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,001 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,002 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,003 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,003 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,003 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,003 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,003 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,004 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,005 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,006 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,007 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,008 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,009 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,010 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,011 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,012 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,013 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,014 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,015 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,016 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,017 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,018 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,019 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,020 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,020 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,020 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,020 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,021 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,022 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,022 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,022 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,022 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,022 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,023 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,024 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,024 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,024 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,024 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,025 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,026 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,027 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,028 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,029 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,030 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,031 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,032 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,033 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,034 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,035 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,035 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,035 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,035 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,035 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,036 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,037 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,037 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,037 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,037 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,037 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,038 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,038 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,038 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,038 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,038 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,039 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,040 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,040 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,040 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,040 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,040 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,041 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,041 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,041 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,042 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,042 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,042 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,042 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,042 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,043 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,043 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,043 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,044 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,044 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,044 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,044 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,045 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,045 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,045 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)
+20:17:14,046 ERROR net.SocketListenerF5$Server(169) - 等待客户端连接时发生I/O错误！35008
+java.net.SocketException: Socket is closed
+	at java.net.ServerSocket.accept(ServerSocket.java:426)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:148)

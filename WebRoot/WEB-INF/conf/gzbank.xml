@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="GBK"?>
+<gzbank>
+	<bank id="09" insu="0099" />
+	<TranCom outcode="09">09</TranCom>
+	<preNet>com.sinosoft.midplat.gzbank.net.GZBankNetImpl</preNet>
+
+	<business>
+		<name>新单试算</name>
+		<funcFlag outcode="9000102">1012</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.gzbank.format.PolicyContTrial</format>
+		<service>com.sinosoft.midplat.service.NewContInput</service>
+	</business>
+
+	<business>
+		<name>新单承保</name>
+		<funcFlag outcode="9000103">1014</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.gzbank.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.service.NewContConfirm</service>
+	</business>
+
+	<business>
+		<name>新单重打</name>
+		<funcFlag outcode="9000801">1011</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.gzbank.format.RePrint</format>
+		<service>com.sinosoft.midplat.service.ContRePrint</service>
+	</business>
+
+	<business>
+		<name>新单撤单</name>
+		<funcFlag outcode="9000901">1015</funcFlag>
+		<!-- locktime 配置锁定时间 -->
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.gzbank.format.PolicyWriteOff</format>
+		<service>com.sinosoft.midplat.service.ContCancel</service>
+	</business>
+	
+	<business>		
+		<name>贵州银行业务对账</name>
+		<funcFlag outcode="">9005</funcFlag>
+		<ZoneNo>-</ZoneNo>
+		<NodeNo>060150001222</NodeNo> 
+		<nextDate>N</nextDate>
+		<service>com.sinosoft.midplat.gzbank.service.NewContBlc</service>
+		<localDir>F:/xml/HG/</localDir>
+		<charset>GBK</charset>
+	</business>
+
+</gzbank>
