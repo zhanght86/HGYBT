@@ -19,6 +19,10 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.xml.sax.InputSource;
 
+/**
+ * Java文档对象模型工具
+ * @author yuantongxin
+ */
 public class JdomUtil {
 	private final static Logger cLogger = Logger.getLogger(JdomUtil.class);
 	
