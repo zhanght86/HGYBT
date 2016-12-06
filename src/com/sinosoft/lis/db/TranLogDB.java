@@ -1,10 +1,10 @@
 /*
  * <p>ClassName: TranLogDB </p>
- * <p>Description: DB灞傛暟鎹簱鎿嶄綔绫绘枃浠�</p>
+ * <p>Description: DB层数据库操作类文象</p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: sinosoft </p>
- * @Database: 閲戠洓
- * @CreateDate锛�011-11-10
+ * @Database: 金盛
+ * @CreateDate象011-11-10
  */
 package com.sinosoft.lis.db;
 
@@ -13,47 +13,47 @@ import com.sinosoft.lis.schema.TranLogSchema;
 import com.sinosoft.lis.vschema.TranLogSet;
 import com.sinosoft.utility.*;
 /**
- * DB灞傛暟鎹簱鎿嶄綔绫�
+ * DB层数据库操作类
  * @author yuantongxin
  */
 public class TranLogDB extends TranLogSchema
 {
 	/**
-	 * 瀛楁
+	 * 字段
 	 */
 	// @Field
-	private Connection con;//杩炴帴瀵硅薄
-	private DBOper db;//鏁版嵁搴撴搷浣滃璞�
+	private Connection con;//连接对象
+	private DBOper db;//数据库操作对象
 	/**
-	* flag = true: 浼犲叆Connection
-	* flag = false: 涓嶄紶鍏onnection
+	* flag = true: 传入Connection
+	* flag = false: 不传入Connection
 	**/
 	private boolean mflag = false;
 
-	public CErrors mErrors = new CErrors();		// 閿欒淇℃伅
+	public CErrors mErrors = new CErrors();		// 错误信息
 
 	/**
-	 * 鏈夊弬鏋勯�鍑芥暟
-	 * @param tConnection 杩炴帴瀵硅薄
+	 * 有参构造函数
+	 * @param tConnection 连接对象
 	 */
 	// @Constructor
 	public TranLogDB( Connection tConnection )
 	{
-		con = tConnection;//浼犲叆杩炴帴瀵硅薄
-		db = new DBOper( con, "TranLog" );//閫氳繃杩炴帴鍜岃〃鍚嶇敓鎴愭暟鎹簱鎿嶄綔瀵硅薄
-		mflag = true;//鏍囪涓哄凡浼犲叆杩炴帴瀵硅薄
+		con = tConnection;//传入连接对象
+		db = new DBOper( con, "TranLog" );//通过连接和表名生成数据库操作对象
+		mflag = true;//标记为已传入连接对象
 	}
 
 	public TranLogDB()
 	{
-		con = null;//涓嶄紶鍏ヨ繛鎺ュ璞�
-		db = new DBOper( "TranLog" );//閫氳繃琛ㄥ悕鐢熸垚鏁版嵁搴撴搷浣滃璞�
-		mflag = false;//鏍囪涓烘湭浼犲叆杩炴帴瀵硅薄
+		con = null;//不传入连接对象
+		db = new DBOper( "TranLog" );//通过表名生成数据库操作对象
+		mflag = false;//标记为未传入连接对象
 	}
 
 	/**
-	 * 鎻掑叆
-	 * @return 鎿嶄綔缁撴灉(true鎴愬姛锛宖alse澶辫触)
+	 * 插入
+	 * @return 操作结果(true成功，false失败)
 	 */
 	// @Method
 	public boolean insert()
@@ -61,12 +61,12 @@ public class TranLogDB extends TranLogSchema
 		TranLogSchema tSchema = this.getSchema();
 		if (!db.insert(tSchema))
 		{
-			// @@閿欒澶勭悊
+			// @@错误处理
 			this.mErrors.copyAllErrors(db.mErrors);
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "insert";
-			tError.errorMessage = "鎿嶄綔澶辫触!";
+			tError.errorMessage = "操作失败!";
 			this.mErrors .addOneError(tError);
 
 			return false;
@@ -76,20 +76,20 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 鏇存柊
-	 * @return 鎿嶄綔缁撴灉(true鎴愬姛锛宖alse澶辫触)
+	 * 更新
+	 * @return 操作结果(true成功，false失败)
 	 */
 	public boolean update()
 	{
 		TranLogSchema tSchema = this.getSchema();
 		if (!db.update(tSchema))
 		{
-			// @@閿欒澶勭悊
+			// @@错误处理
 			this.mErrors.copyAllErrors(db.mErrors);
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "update";
-			tError.errorMessage = "鎿嶄綔澶辫触!";
+			tError.errorMessage = "操作失败!";
 			this.mErrors .addOneError(tError);
 
 			return false;
@@ -99,20 +99,20 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 鍒犻櫎SQL
-	 * @return 鎿嶄綔缁撴灉(true鎴愬姛锛宖alse澶辫触)
+	 * 删除SQL
+	 * @return 操作结果(true成功，false失败)
 	 */
 	public boolean deleteSQL()
 	{
 		TranLogSchema tSchema = this.getSchema();
 		if (!db.deleteSQL(tSchema))
 		{
-			// @@閿欒澶勭悊
+			// @@错误处理
 			this.mErrors.copyAllErrors(db.mErrors);
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "deleteSQL";
-			tError.errorMessage = "鎿嶄綔澶辫触!";
+			tError.errorMessage = "操作失败!";
 			this.mErrors .addOneError(tError);
 
 			return false;
@@ -122,20 +122,20 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 鍒犻櫎
-	 * @return 鎿嶄綔缁撴灉(true鎴愬姛锛宖alse澶辫触)
+	 * 删除
+	 * @return 操作结果(true成功，false失败)
 	 */
 	public boolean delete()
 	{
 		TranLogSchema tSchema = this.getSchema();
 		if (!db.delete(tSchema))
 		{
-			// @@閿欒澶勭悊
+			// @@错误处理
 			this.mErrors.copyAllErrors(db.mErrors);
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "delete";
-			tError.errorMessage = "鎿嶄綔澶辫触!";
+			tError.errorMessage = "操作失败!";
 			this.mErrors .addOneError(tError);
 
 			return false;
@@ -145,8 +145,8 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 寰楀埌鎬绘暟
-	 * @return 鎿嶄綔缁撴灉(tCount鎴愬姛锛�1澶辫触)
+	 * 得到总数
+	 * @return 操作结果(tCount成功，-1失败)
 	 */
 	public int getCount()
 	{
@@ -155,12 +155,12 @@ public class TranLogDB extends TranLogSchema
 		int tCount = db.getCount(tSchema);
 		if (tCount < 0)
 		{
-			// @@閿欒澶勭悊
+			// @@错误处理
 			this.mErrors.copyAllErrors(db.mErrors);
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "getCount";
-			tError.errorMessage = "鎿嶄綔澶辫触!";
+			tError.errorMessage = "操作失败!";
 			this.mErrors .addOneError(tError);
 
 			return -1;
@@ -170,44 +170,44 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 鑾峰彇淇℃伅
-	 * @return 鎿嶄綔缁撴灉(true鎴愬姛锛宖alse澶辫触)
+	 * 获取信息
+	 * @return 操作结果(true成功，false失败)
 	 */
 	public boolean getInfo()
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
-		ResultSet rs = null;//鏌ヨ缁撴灉杩斿洖鐨勭粨鏋滈泦瀵硅薄
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
+		ResultSet rs = null;//查询结果返回的结果集对象
 	  
-	  if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	  if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			SQLString sqlObj = new SQLString("TranLog");//鏍规嵁琛ㄥ悕鍒涘缓SQL瀛楃涓插璞�
-			TranLogSchema aSchema = this.getSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-			sqlObj.setSQL(6,aSchema);//璁剧疆SQL瀛楃涓插璞�
-			String sql = sqlObj.getSQL();//寰楀埌SQL瀛楃涓�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			SQLString sqlObj = new SQLString("TranLog");//根据表名创建SQL字符串对象
+			TranLogSchema aSchema = this.getSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+			sqlObj.setSQL(6,aSchema);//设置SQL字符串对象
+			String sql = sqlObj.getSQL();//得到SQL字符象
 
-			rs = stmt.executeQuery(sql);//璇彞瀵硅薄鎵ц鏌ヨ
-			int i = 0;//璁℃暟鍣�
+			rs = stmt.executeQuery(sql);//语句对象执行查询
+			int i = 0;//计数象
 			
-			while (rs.next())//灏嗗厜鏍囩Щ鍔ㄥ埌涓嬩竴琛岋紝杩唬缁撴灉闆�
+			while (rs.next())//将光标移动到下一行，迭代结果象
 			{
-				i++;//绱姞璁板綍鏁�
-				/*娴嬭瘯浠ｇ爜*/
+				i++;//累加记录象
+				/*测试代码*/
 				System.out.println("-------------------------");
 				System.out.println("this.setSchema(rs,i)="+this.setSchema(rs,i)+",i="+i);
 				System.out.println("-------------------------");
 				if (this.setSchema(rs,i) == false)
 				{
-					// @@閿欒澶勭悊
+					// @@错误处理
 					CError tError = new CError();
 					tError.moduleName = "TranLogDB";
 					tError.functionName = "getInfo";
-					tError.errorMessage = "鍙栨暟澶辫触!";
+					tError.errorMessage = "取数失败!";
 					this.mErrors .addOneError(tError);
 
 					try{ rs.close(); } catch( Exception ex ) {}
@@ -230,11 +230,11 @@ public class TranLogDB extends TranLogSchema
 System.out.println("i="+i);
 			if( i == 0 )
 			{
-				// @@閿欒澶勭悊
+				// @@错误处理
 				CError tError = new CError();
 				tError.moduleName = "TranLogDB";
 				tError.functionName = "getInfo";
-				tError.errorMessage = "鏈壘鍒扮浉鍏虫暟鎹�";
+				tError.errorMessage = "未找到相关数象";
 				this.mErrors .addOneError(tError);
 
 				if (mflag == false)
@@ -250,7 +250,7 @@ System.out.println("i="+i);
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
 			tError.moduleName = "TranLogDB";
 			tError.functionName = "getInfo";
@@ -270,7 +270,7 @@ System.out.println("i="+i);
 			}
 			return false;
 	    }
-	    // 鏂紑鏁版嵁搴撹繛鎺�
+	    // 断开数据库连象
 		if (mflag == false)
 		{
 			try
@@ -284,385 +284,385 @@ System.out.println("i="+i);
 	}
 
 	/**
-	 * 鏌ヨ
-	 * @return 浜ゆ槗鏃ュ織闆�
+	 * 查询
+	 * @return 交易日志象
 	 */
 	public TranLogSet query()
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
-		ResultSet rs = null;//鏌ヨ缁撴灉杩斿洖鐨勭粨鏋滈泦瀵硅薄
-		TranLogSet aTranLogSet = new TranLogSet();//浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
+		ResultSet rs = null;//查询结果返回的结果集对象
+		TranLogSet aTranLogSet = new TranLogSet();//交易日志集合类对象
 		
-	   if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	   if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			SQLString sqlObj = new SQLString("TranLog");//鏍规嵁琛ㄥ悕鍒涘缓SQL瀛楃涓插璞�
-			TranLogSchema aSchema = this.getSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-			sqlObj.setSQL(5,aSchema);//璁剧疆SQL瀛楃涓插璞�
-			String sql = sqlObj.getSQL();//寰楀埌SQL瀛楃涓�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			SQLString sqlObj = new SQLString("TranLog");//根据表名创建SQL字符串对象
+			TranLogSchema aSchema = this.getSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+			sqlObj.setSQL(5,aSchema);//设置SQL字符串对象
+			String sql = sqlObj.getSQL();//得到SQL字符象
 
-			rs = stmt.executeQuery(sql);//璇彞瀵硅薄鎵ц鏌ヨ
-			int i = 0;//璁℃暟鍣�
-			while (rs.next())//灏嗗厜鏍囩Щ鍔ㄥ埌涓嬩竴琛岋紝杩唬缁撴灉闆�
+			rs = stmt.executeQuery(sql);//语句对象执行查询
+			int i = 0;//计数象
+			while (rs.next())//将光标移动到下一行，迭代结果象
 			{
-				i++;//绱姞璁板綍鏁�
-				TranLogSchema s1 = new TranLogSchema();//浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-				s1.setSchema(rs,i);//浣跨敤 ResultSet 涓殑绗�i 琛岀粰 Schema 璧嬪�
-				aTranLogSet.add(s1);//浜ゆ槗鏃ュ織闆嗗悎绫诲璞℃坊鍔犱氦鏄撴棩蹇楁暟鎹簱瀵硅薄鐨勯泦鍚�鐢ㄦ埛) 绫诲璞�
+				i++;//累加记录象
+				TranLogSchema s1 = new TranLogSchema();//交易日志数据库对象的集合(用户) 类对象
+				s1.setSchema(rs,i);//使用 ResultSet 中的象i 行给 Schema 赋象
+				aTranLogSet.add(s1);//交易日志集合类对象添加交易日志数据库对象的集象用户) 类对象
 			}
-			try{ rs.close(); } catch( Exception ex ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex1 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex1 ) {}//关闭语句对象
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";//妯″潡鍚�
-			tError.functionName = "query";//鍑芥暟鍚�
-			tError.errorMessage = e.toString();//閿欒淇℃伅
-			this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+			tError.moduleName = "TranLogDB";//模块象
+			tError.functionName = "query";//函数象
+			tError.errorMessage = e.toString();//错误信息
+			this.mErrors .addOneError(tError);//添加象��错误
 
-			try{ rs.close(); } catch( Exception ex2 ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex3 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex2 ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex3 ) {}//关闭语句对象
 
-			if (mflag == false)//娌℃湁浼犲叆杩炴帴
+			if (mflag == false)//没有传入连接
 			{
 				try
 				{
-					con.close();//杩炴帴鍏抽棴
+					con.close();//连接关闭
 				}
 				catch(Exception et){}
 			}
 	    }
 
-		if (mflag == false)//娌℃湁浼犲叆杩炴帴
+		if (mflag == false)//没有传入连接
 		{
 			try
 			{
-				con.close();//杩炴帴鍏抽棴
+				con.close();//连接关闭
 			}
 			catch(Exception e){}
 		}
 
-		return aTranLogSet;//杩斿洖浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		return aTranLogSet;//返回交易日志集合类对象
 	}
 
 	/**
-	 * 鎵ц鏌ヨ
-	 * @param sql 缁撴瀯鍖栨煡璇㈣瑷�
-	 * @return 浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+	 * 执行查询
+	 * @param sql 结构化查询语象
+	 * @return 交易日志集合类对象
 	 */
 	public TranLogSet executeQuery(String sql)
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
-		ResultSet rs = null;//鏌ヨ缁撴灉杩斿洖鐨勭粨鏋滈泦瀵硅薄
-		TranLogSet aTranLogSet = new TranLogSet();//浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
+		ResultSet rs = null;//查询结果返回的结果集对象
+		TranLogSet aTranLogSet = new TranLogSet();//交易日志集合类对象
 		
-	  if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	  if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			rs = stmt.executeQuery(StrTool.GBKToUnicode(sql));//璇彞瀵硅薄鎵ц瀛楃涓插鐞嗗伐鍏风被灏嗗瓧绗︿覆杞崲涓篣nicode瀛楃涓叉煡璇�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			rs = stmt.executeQuery(StrTool.GBKToUnicode(sql));//语句对象执行字符串处理工具类将字符串转换为Unicode字符串查象
 			
-			int i = 0;//璁℃暟鍣�
-			while (rs.next())//灏嗗厜鏍囩Щ鍔ㄥ埌涓嬩竴琛岋紝杩唬缁撴灉闆�
+			int i = 0;//计数象
+			while (rs.next())//将光标移动到下一行，迭代结果象
 			{
-				i++;//绱姞璁板綍鏁�
-				TranLogSchema s1 = new TranLogSchema();//浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-				if (s1.setSchema(rs,i) == false)//浣跨敤 ResultSet 涓殑绗�i 琛岀粰 Schema 璧嬪�鏄惁澶辫触
+				i++;//累加记录象
+				TranLogSchema s1 = new TranLogSchema();//交易日志数据库对象的集合(用户) 类对象
+				if (s1.setSchema(rs,i) == false)//使用 ResultSet 中的象i 行给 Schema 赋象是否失败
 				{
-					// @@閿欒澶勭悊
+					// @@错误处理
 					CError tError = new CError();
-					tError.moduleName = "TranLogDB";//妯″潡鍚�
-					tError.functionName = "executeQuery";//鍑芥暟鍚�
-					tError.errorMessage = "sql璇彞鏈夎锛岃鏌ョ湅琛ㄥ悕鍙婂瓧娈靛悕淇℃伅!";//閿欒淇℃伅
-					this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+					tError.moduleName = "TranLogDB";//模块象
+					tError.functionName = "executeQuery";//函数象
+					tError.errorMessage = "sql语句有误，请查看表名及字段名信息!";//错误信息
+					this.mErrors .addOneError(tError);//添加象��错误
 				}
-				aTranLogSet.add(s1);//浜ゆ槗鏃ュ織闆嗗悎绫诲璞℃坊鍔犱氦鏄撴棩蹇楁暟鎹簱瀵硅薄鐨勯泦鍚�鐢ㄦ埛) 绫诲璞�
+				aTranLogSet.add(s1);//交易日志集合类对象添加交易日志数据库对象的集象用户) 类对象
 			}
-			try{ rs.close(); } catch( Exception ex ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex1 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex1 ) {}//关闭语句对象
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";//妯″潡鍚�
-			tError.functionName = "executeQuery";//鍑芥暟鍚�
-			tError.errorMessage = e.toString();//閿欒淇℃伅
-			this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+			tError.moduleName = "TranLogDB";//模块象
+			tError.functionName = "executeQuery";//函数象
+			tError.errorMessage = e.toString();//错误信息
+			this.mErrors .addOneError(tError);//添加象��错误
 
-			try{ rs.close(); } catch( Exception ex2 ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex3 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex2 ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex3 ) {}//关闭语句对象
 
-			if (mflag == false)//娌℃湁浼犲叆杩炴帴
+			if (mflag == false)//没有传入连接
 			{
 				try
 				{
-					con.close();//杩炴帴鍏抽棴
+					con.close();//连接关闭
 				}
 				catch(Exception et){}
 			}
 	    }
 
-		if (mflag == false)//娌℃湁浼犲叆杩炴帴
+		if (mflag == false)//没有传入连接
 		{
 			try
 			{
-				con.close();//杩炴帴鍏抽棴
+				con.close();//连接关闭
 			}
 			catch(Exception e){}
 		}
 
-		return aTranLogSet;//杩斿洖浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		return aTranLogSet;//返回交易日志集合类对象
 	}
 
 	/**
-	 * 鏌ヨ
-	 * @param nStart 璧风偣
-	 * @param nCount 鎬绘暟
-	 * @return 浜ゆ槗鏃ュ織闆嗗悎绫�
+	 * 查询
+	 * @param nStart 起点
+	 * @param nCount 总数
+	 * @return 交易日志集合象
 	 */
 	public TranLogSet query(int nStart, int nCount)
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
-		ResultSet rs = null;//鏌ヨ缁撴灉杩斿洖鐨勭粨鏋滈泦瀵硅薄
-		TranLogSet aTranLogSet = new TranLogSet();//浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
+		ResultSet rs = null;//查询结果返回的结果集对象
+		TranLogSet aTranLogSet = new TranLogSet();//交易日志集合类对象
 
-	  if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	  if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			SQLString sqlObj = new SQLString("TranLog");//鏍规嵁琛ㄥ悕鍒涘缓SQL瀛楃涓插璞�
-			TranLogSchema aSchema = this.getSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-			sqlObj.setSQL(5,aSchema);//璁剧疆SQL瀛楃涓插璞�
-			String sql = sqlObj.getSQL();//寰楀埌SQL瀛楃涓�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			SQLString sqlObj = new SQLString("TranLog");//根据表名创建SQL字符串对象
+			TranLogSchema aSchema = this.getSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+			sqlObj.setSQL(5,aSchema);//设置SQL字符串对象
+			String sql = sqlObj.getSQL();//得到SQL字符象
 
-			rs = stmt.executeQuery(sql);//璇彞瀵硅薄鎵ц鏌ヨ
-			int i = 0;//璁℃暟鍣�
-			while (rs.next())//灏嗗厜鏍囩Щ鍔ㄥ埌涓嬩竴琛岋紝杩唬缁撴灉闆�
+			rs = stmt.executeQuery(sql);//语句对象执行查询
+			int i = 0;//计数器
+			while (rs.next())//将光标移动到下一行，迭代结果集
 			{
-				i++;//绱姞璁板綍鏁�
-				if( i < nStart ) {//绱姞璁板綍鏁板皬浜庤捣濮嬪�
-					continue;//缁撴潫鍗曟寰幆(缁х画)
+				i++;//累加记录数
+				if( i < nStart ) {//累加记录数小于起始值
+					continue;//结束单次循环(继续)
 				}
 
-				if( i >= nStart + nCount ) {//绱姞璁板綍鏁板ぇ浜庣瓑浜庤捣濮嬪�涓庢�鏁扮殑鍜�
-					break;//缁撴潫鏁翠釜寰幆浣�
+				if( i >= nStart + nCount ) {//累加记录数大于等于起始值与总数的和
+					break;//结束整个循环体
 				}
 
-				TranLogSchema s1 = new TranLogSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-				s1.setSchema(rs,i);//浣跨敤 ResultSet 涓殑绗�i 琛岀粰 Schema 璧嬪�
-				aTranLogSet.add(s1);//浜ゆ槗鏃ュ織闆嗗悎绫诲璞℃坊鍔犱氦鏄撴棩蹇楁暟鎹簱瀵硅薄鐨勯泦鍚�鐢ㄦ埛) 绫诲璞�
+				TranLogSchema s1 = new TranLogSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+				s1.setSchema(rs,i);//使用 ResultSet 中的象i 行给 Schema 赋值
+				aTranLogSet.add(s1);//交易日志集合类对象添加交易日志数据库对象的集合(用户) 类对象
 			}
-			try{ rs.close(); } catch( Exception ex ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex1 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex1 ) {}//关闭语句对象
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";//妯″潡鍚�
-			tError.functionName = "query";//鍑芥暟鍚�
-			tError.errorMessage = e.toString();//閿欒淇℃伅
-			this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+			tError.moduleName = "TranLogDB";//模块名
+			tError.functionName = "query";//函数名
+			tError.errorMessage = e.toString();//错误信息
+			this.mErrors .addOneError(tError);//添加一个错误
 
-			try{ rs.close(); } catch( Exception ex2 ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex3 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex2 ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex3 ) {}//关闭语句对象
 
-			if (mflag == false)//娌℃湁浼犲叆杩炴帴
+			if (mflag == false)//没有传入连接
 			{
 				try
 				{
-					con.close();//杩炴帴鍏抽棴
+					con.close();//连接关闭
 				}
 				catch(Exception et){}
 			}
 	    }
 
-		if (mflag == false)//娌℃湁浼犲叆杩炴帴
+		if (mflag == false)//没有传入连接
 		{
 			try
 			{
-				con.close();//杩炴帴鍏抽棴
+				con.close();//连接关闭
 			}
 			catch(Exception e){}
 		}
 
-		return aTranLogSet;//杩斿洖浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		return aTranLogSet;//返回交易日志集合类对象
 	}
 
 	/**
-	 * 鎵ц鏌ヨ
-	 * @param sql 缁撴瀯鍖栨煡璇㈣瑷�
-	 * @param nStart 璧风偣
-	 * @param nCount 鎬绘暟
-	 * @return 浜ゆ槗鏃ュ織闆嗗悎绫�
+	 * 执行查询
+	 * @param sql 结构化查询语象
+	 * @param nStart 起点
+	 * @param nCount 总数
+	 * @return 交易日志集合象
 	 */
 	public TranLogSet executeQuery(String sql, int nStart, int nCount)
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
-		ResultSet rs = null;//鏌ヨ缁撴灉杩斿洖鐨勭粨鏋滈泦瀵硅薄
-		TranLogSet aTranLogSet = new TranLogSet();//浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
+		ResultSet rs = null;//查询结果返回的结果集对象
+		TranLogSet aTranLogSet = new TranLogSet();//交易日志集合类对象
 
-	  if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	  if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			rs = stmt.executeQuery(StrTool.GBKToUnicode(sql));//璇彞瀵硅薄鎵ц瀛楃涓插鐞嗗伐鍏风被灏嗗瓧绗︿覆杞崲涓篣nicode瀛楃涓叉煡璇�
-			int i = 0;//璁℃暟鍣�
-			while (rs.next())//灏嗗厜鏍囩Щ鍔ㄥ埌涓嬩竴琛岋紝杩唬缁撴灉闆�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			rs = stmt.executeQuery(StrTool.GBKToUnicode(sql));//语句对象执行字符串处理工具类将字符串转换为Unicode字符串查询
+			int i = 0;//计数器
+			while (rs.next())//将光标移动到下一行，迭代结果集
 			{
-				i++;//绱姞璁板綍鏁�
-				if( i < nStart ) {//绱姞璁板綍鏁板皬浜庤捣濮嬪�
-					continue;//缁撴潫鍗曟寰幆(缁х画)
+				i++;//累加记录数
+				if( i < nStart ) {//累加记录数小于起始值
+					continue;//结束单次循环(继续)
 				}
 
-				if( i >= nStart + nCount ) {//绱姞璁板綍鏁板ぇ浜庣瓑浜庤捣濮嬪�涓庢�鏁扮殑鍜�
-					break;//缁撴潫鏁翠釜寰幆浣�
+				if( i >= nStart + nCount ) {//累加记录数大于等于起始值与总数的和
+					break;//结束整个循环体
 				}
 
-				TranLogSchema s1 = new TranLogSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-				if (s1.setSchema(rs,i) == false)//浣跨敤 ResultSet 涓殑绗�i 琛岀粰 Schema 璧嬪�鏄惁澶辫触
+				TranLogSchema s1 = new TranLogSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+				if (s1.setSchema(rs,i) == false)//使用 ResultSet 中的第i 行给 Schema 赋值是否失败
 				{
-					// @@閿欒澶勭悊
+					// @@错误处理
 					CError tError = new CError();
-					tError.moduleName = "TranLogDB";//妯″潡鍚�
-					tError.functionName = "executeQuery";//鍑芥暟鍚�
-					tError.errorMessage = "sql璇彞鏈夎锛岃鏌ョ湅琛ㄥ悕鍙婂瓧娈靛悕淇℃伅!";//閿欒淇℃伅
-					this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+					tError.moduleName = "TranLogDB";//模块名
+					tError.functionName = "executeQuery";//函数名
+					tError.errorMessage = "sql语句有误，请查看表名及字段名信息!";//错误信息
+					this.mErrors .addOneError(tError);//添加一个错误
 				}
-				aTranLogSet.add(s1);//浜ゆ槗鏃ュ織闆嗗悎绫诲璞℃坊鍔犱氦鏄撴棩蹇楁暟鎹簱瀵硅薄鐨勯泦鍚�鐢ㄦ埛) 绫诲璞�
+				aTranLogSet.add(s1);//交易日志集合类对象添加交易日志数据库对象的集合(用户) 类对象
 			}
-			try{ rs.close(); } catch( Exception ex ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex1 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex1 ) {}//关闭语句对象
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";//妯″潡鍚�
-			tError.functionName = "executeQuery";//鍑芥暟鍚�
-			tError.errorMessage = e.toString();//閿欒淇℃伅
-			this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+			tError.moduleName = "TranLogDB";//模块名
+			tError.functionName = "executeQuery";//函数名
+			tError.errorMessage = e.toString();//错误信息
+			this.mErrors .addOneError(tError);//添加一个错误
 
-			try{ rs.close(); } catch( Exception ex2 ) {}//鍏抽棴缁撴灉闆嗗璞�
-			try{ stmt.close(); } catch( Exception ex3 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ rs.close(); } catch( Exception ex2 ) {}//关闭结果集对象
+			try{ stmt.close(); } catch( Exception ex3 ) {}//关闭语句对象
 
-			if (mflag == false)//娌℃湁浼犲叆杩炴帴
+			if (mflag == false)//没有传入连接
 			{
 				try
 				{
-					con.close();//杩炴帴鍏抽棴
+					con.close();//连接关闭
 				}
 				catch(Exception et){}
 			}
 	    }
 
-		if (mflag == false)//娌℃湁浼犲叆杩炴帴
+		if (mflag == false)//没有传入连接
 		{
 			try
 			{
-				con.close();//杩炴帴鍏抽棴
+				con.close();//连接关闭
 			}
 			catch(Exception e){}
 		}
 
-		return aTranLogSet;//杩斿洖浜ゆ槗鏃ュ織闆嗗悎绫诲璞�
+		return aTranLogSet;//返回交易日志集合类对象
 	}
 
 	/**
-	 * 鏇存柊
-	 * @param strWherePart 瀛楃涓茬殑涓�儴鍒�
+	 * 更新
+	 * @param strWherePart 字符串其中一部分
 	 * @return 
 	 */
 	public boolean update(String strWherePart)
 	{
-		Statement stmt = null;//JDBC杩炴帴涓紶閫扴QL璇彞鐨勫璞�
+		Statement stmt = null;//JDBC连接中传递SQL语句的对象
 
-	  if( !mflag ) {//娌℃湁浼犲叆杩炴帴
-		  con = DBConnPool.getConnection();//鏁版嵁搴撹繛鎺ユ睜鑾峰緱杩炴帴
+	  if( !mflag ) {//没有传入连接
+		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
 		try
 		{
-			//RSType(缁撴灉绫诲瀷):缁撴灉闆嗙殑娓告爣鍙兘鍚戜笅婊氬姩(娓告爣绉诲姩鎺ュ彛, 鐢ㄦ潵鎿嶄綔绉诲姩娓告爣)锛孯SConcurrency(缁撴灉骞跺彂):涓嶈兘鐢ㄧ粨鏋滈泦鏇存柊鏁版嵁搴撲腑鐨勮〃(鏇存柊鏁版嵁鎺ュ彛, 鐢ㄦ潵鏇存柊褰撳墠娓告爣鎸囧悜浣嶇疆鐨勬暟鎹� 骞跺彲浠ユ洿鏀瑰搴旀暟鎹簱涓殑鏁版嵁)
-			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//閫氳繃杩炴帴鍒涘缓璇彞瀵硅薄
-			SQLString sqlObj = new SQLString("TranLog");//鏍规嵁琛ㄥ悕鍒涘缓SQL瀛楃涓插璞�
-			TranLogSchema aSchema = this.getSchema();//鑾峰緱DB灞�浜ゆ槗鏃ュ織鏁版嵁搴撳璞＄殑闆嗗悎(鐢ㄦ埛) 绫诲璞�
-			sqlObj.setSQL(2,aSchema);//璁剧疆SQL瀛楃涓插璞�
-			String sql = "update TranLog " + sqlObj.getUpdPart() + " where " + strWherePart;//寰楀埌鎷兼帴鍚嶴QL瀛楃涓�
+			//RSType(结果类型):结果集的游标只能向下滚动(游标移动接口, 用来操作移动游标)，RSConcurrency(结果并发):不能用结果集更新数据库中的表(更新数据接口, 用来更新当前游标指向位置的数象 并可以更改对应数据库中的数据)
+			stmt = con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);//通过连接创建语句对象
+			SQLString sqlObj = new SQLString("TranLog");//根据表名创建SQL字符串对象
+			TranLogSchema aSchema = this.getSchema();//获得DB象交易日志数据库对象的集合(用户) 类对象
+			sqlObj.setSQL(2,aSchema);//设置SQL字符串对象
+			String sql = "update TranLog " + sqlObj.getUpdPart() + " where " + strWherePart;//得到拼接后SQL字符象
 
-			int operCount = stmt.executeUpdate(sql);//璇彞瀵硅薄鎵ц鏇存柊缁撴瀯鍖栨煡璇㈣鍙ヨ繑鍥炴搷浣滄暟
-			if( operCount == 0 )//鎿嶄綔鏁颁负0
+			int operCount = stmt.executeUpdate(sql);//语句对象执行更新结构化查询语句返回操作数
+			if( operCount == 0 )//操作数为0
 			{
-				// @@閿欒澶勭悊
+				// @@错误处理
 				CError tError = new CError();
-				tError.moduleName = "TranLogDB";//妯″潡鍚�
-				tError.functionName = "update";//鍑芥暟鍚�
-				tError.errorMessage = "鏇存柊鏁版嵁澶辫触!";//閿欒淇℃伅
-				this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+				tError.moduleName = "TranLogDB";//模块名
+				tError.functionName = "update";//函数名
+				tError.errorMessage = "更新数据失败!";//错误信息
+				this.mErrors .addOneError(tError);//添加一个错误
 
-				if (mflag == false)//娌℃湁浼犲叆杩炴帴
+				if (mflag == false)//没有传入连接
 				{
 					try
 					{
-						con.close();//杩炴帴鍏抽棴
+						con.close();//连接关闭
 					}
 					catch(Exception et){}
 				}
-				return false;//鎿嶄綔缁撴灉:澶辫触
+				return false;//操作结果:失败
 			}
 		}
 		catch(Exception e)
 	    {
-			// @@閿欒澶勭悊
+			// @@错误处理
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";//妯″潡鍚�
-			tError.functionName = "update";//鍑芥暟鍚�
-			tError.errorMessage = e.toString();//閿欒淇℃伅
-			this.mErrors .addOneError(tError);//娣诲姞涓�釜閿欒
+			tError.moduleName = "TranLogDB";//模块名
+			tError.functionName = "update";//函数名
+			tError.errorMessage = e.toString();//错误信息
+			this.mErrors .addOneError(tError);//添加一个错误
 
-			try{ stmt.close(); } catch( Exception ex1 ) {}//鍏抽棴璇彞瀵硅薄
+			try{ stmt.close(); } catch( Exception ex1 ) {}//关闭语句对象
 
-			if (mflag == false)//娌℃湁浼犲叆杩炴帴
+			if (mflag == false)//没有传入连接
 			{
 				try
 				{
-					con.close();//杩炴帴鍏抽棴
+					con.close();//连接关闭
 				}
 				catch(Exception et){}
 			}
-			return false;//鎿嶄綔缁撴灉:澶辫触
+			return false;//操作结果:失败
 	    }
-	    // 鏂紑鏁版嵁搴撹繛鎺�
-		if (mflag == false)//娌℃湁浼犲叆杩炴帴
+	    // 断开数据库连接
+		if (mflag == false)//没有传入连接
 		{
 			try
 			{
-				con.close();//杩炴帴鍏抽棴
+				con.close();//连接关闭
 			}
 			catch(Exception e){}
 		}
 
-		return true;//鎿嶄綔缁撴灉:鎴愬姛
+		return true;//操作结果:成功
 	}
 	
 	public static void main(String[] args) {
