@@ -15,17 +15,30 @@ import org.jdom.Element;
 import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 
+/**
+ * 新建行测试用户界面
+ * @author yuantongxin
+ */
 public class NewCCBTestUI {
+	//标识当前类的日志对象,来记录当前类可能发生的异常
 	private Logger cLogger = Logger.getLogger(getClass());
-
+	
+	//网络之间互连的协议
 	private String cIP = null;
+	//端口
 	private int cPort = 0;
-
+	/**
+	 * java程序的入口地址
+	 * @param args
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
+		//程序开始...
 		System.out.println("程序开始...");
-		
+		//定义局部网络之间互连的协议并赋值
 		String mIP = "127.0.0.1";
 //		String mIP = "10.0.4.14";
+		//定义局部端口并赋值
 		int mPort = 39871;
 		
 		
@@ -34,9 +47,9 @@ public class NewCCBTestUI {
 //		String mInFilePath = "D:/TestXml/zhrs/newccb/testlvdeng.xml";
 //		String mOutFilePath = "D:/TestXml/zhrs/newccb/testlvdeng_out.xml";
 		//新单试算
-		String funcflag = "P53819113";
-		String mInFilePath = "D:/task/20161129/newccb/P53819113in_noStd.xml";
-		String mOutFilePath = "D:/task/20161129/newccb/P53819113out_noStd.xml";
+		String funcflag = "P53819113";//交易码
+		String mInFilePath = "D:/task/20161202/newccb/P53819113in_noStd.xml";//输入文件路径
+		String mOutFilePath = "D:/task/20161202/newccb/P53819113out_noStd.xml";//输出文件路径
 //		
 		//新单确认
 //		String funcflag = "P53819152";
@@ -143,35 +156,72 @@ public class NewCCBTestUI {
 //		String funcflag = "P538191F1";
 //		String mInFilePath = "F:\\xml\\CCB\\P538191F1_驻点.xml";
 //		String mOutFilePath = "F:\\xml\\CCB\\P538191F1_驻点_out.xml";
-		
+			//通过局部网络之间互连的协议和端口号创建新建行测试用户界面实例
 			NewCCBTestUI mTestUI = new NewCCBTestUI(mIP,mPort);
+			//通过输入文件路径创建文件输入流
 			InputStream mIs = new FileInputStream(mInFilePath);
 		//	byte[] mOutBytes = mTestUI.sendRequest(funcflag,mIs);
+			//采用UTF-8字符集编码构建一个文档对象，忽略标签之间的空字符(空格、换行、制表符等)。
 			Document document = JdomUtil.build(mIs,"UTF-8");
+			//获取新建行测试用户界面实例发送请求(包含交易码和XML文档对象)返回的字节数组
 			byte[] mOutBytes = mTestUI.sendRequest(funcflag,document);
+			//字节数组采用UTF-8字符集编码构建一个XML文档对象，忽略标签之间的空字符(空格、换行、制表符等)。 构建失败，返回null。
 			Document mOutXmlDoc = JdomUtil.build(mOutBytes , "UTF-8");
+			//实际返回报文为：
 			System.out.println("实际返回报文为：");
+			//将XML文档打印到控制台， GBK编码(默认)，缩进3空格。
 			JdomUtil.print(mOutXmlDoc);
+			//通过输出文件路径创建文件输出流
 			OutputStream mFos = new FileOutputStream(mOutFilePath);
+			//将输出XML文档输出到文件输出流，GBK编码(默认)，缩进3空格。
 			JdomUtil.output(mOutXmlDoc, mFos);
+			//刷新文件输出流缓冲区
 			mFos.flush();
+			//关闭文件输出流
 			mFos.close();
+			//执行结果是---服务响应描述
 			System.out.println("执行结果是---"+mOutXmlDoc.getRootElement().getChild("TX_HEADER").getChildText("SYS_RESP_DESC"));
+			//成功结束！
 			System.out.println("成功结束！"); 
 	}
 
+	/**
+	 *  新建行测试用户界面有参构造器
+	 * @param pIP 网络之间互连的协议
+	 * @param pPort 端口号
+	 */
 	public NewCCBTestUI(String pIP, int pPort) {
-		cIP = pIP;
-		cPort = pPort;
+		cIP = pIP;//形式网络之间互连的协议赋值给成员网络之间互连的协议
+		cPort = pPort;///形式端口号赋值给成员端口号
 	}
 
+	/**
+	 * 通过交易码和输入流发送请求
+	 * @param funcflag 交易码
+	 * @param pInputStream 输入字节流
+	 * @return 字节数组
+	 * @throws Exception
+	 */
 	public byte[] sendRequest(String funcflag,InputStream pInputStream) throws Exception {
+		//Socket连接[网络之间互连的协议地址]:[端口号]
 		cLogger.info("Socket连接" + cIP + ":" + cPort);
+		//通过网络之间互连的协议地址和端口号创建套接字
 		Socket mSocket = new Socket(cIP, cPort);
+		//输入输出转换类将流转换为字节数组，关闭流
 		byte[] mInClearBodyBytes = IOTrans.toBytes(pInputStream);
+		/**
+		 * 对套接字的三个操作
+		 * 1.写入输出流
+		 * 2.刷新缓冲区
+		 * 3.
+		 */
+		//套接字获取输出流写入字节数组
 		mSocket.getOutputStream().write(mInClearBodyBytes);
+		//套接字获取输出流刷新缓冲区
 		mSocket.getOutputStream().flush();
+		//
 		mSocket.shutdownOutput();
+		//返回字节数组
 		return mInClearBodyBytes;
 //		Document document = JdomUtil.build(pInputStream);
 //		return sendRequest(funcflag,document);
@@ -286,22 +336,35 @@ public class NewCCBTestUI {
 //		return mBodyDataStr.getBytes();
 	}
 	
+	/**
+	 * 通过交易码和XML文档发送请求
+	 * @param pFuncFlag 交易码
+	 * @param document XML文档
+	 * @return 字节数组
+	 * @throws Exception
+	 */
 	public byte[] sendRequest(String pFuncFlag, Element document) throws Exception {
+		//Socket连接[网络之间互连的协议]:[端口号]
 		cLogger.info("Socket连接" + cIP + ":" + cPort);
+		//通过网络之间互连的协议地址和端口号创建套接字
 		Socket mSocket = new Socket(cIP, cPort);
-
+		//系统当前时间毫秒数作为旧时间毫秒数
 		long mOldTimeMillis = System.currentTimeMillis();
+		//旧时间毫秒数赋值给当前时间毫秒数
 		long mCurTimeMillis = mOldTimeMillis;
-
+		//Java文档对象模型工具类将XML文档转换为GBK编码的字节数组，保持原格式。
 		byte[] mInClearBodyBytes = JdomUtil.toBytes(document);
-		
+		//Java文档对象模型工具类字节数组采用UTF-8编码构建一个文档对象，忽略标签之间的空字符(空格、换行、制表符等)。 构建失败，返回null。
 		Document mDoc = JdomUtil.build(mInClearBodyBytes ,"UTF-8");
+		//XML文档得到根元素下的报文头子元素得到服务名子元素
 		Element eSYS_TX_CODE = mDoc.getRootElement().getChild("TX_HEADER").getChild("SYS_TX_CODE");
+		//得到服务名元素内容
 		String mSYS_TX_CODE = eSYS_TX_CODE.getText();
-		
+		//XML文档得到根元素下的报文头子元素设置元素内容为P5[截取服务名下标为2的字符开始到最后一位的字符串]，例:string--(st,ring)-->ring
 		mDoc.getRootElement().getChild("TX_HEADER").getChild("SYS_TX_CODE").setText("P5"+mSYS_TX_CODE.substring(2, mSYS_TX_CODE.length()));
 //		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText("CCB000000000111111");
 //		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("CCB_EmpID").setText("建设银行");
+		//Java文档对象模型工具将XML文档转换为UTF-8编码的字节数组，保持原格式。
 		mInClearBodyBytes = JdomUtil.toBytes(mDoc ,"UTF-8");
 		//		mInClearBodyBytes = JdomUtil.toBytes(JdomUtil.build(mInClearBodyBytes , "UTF-8"),"UTF-8");
 		
@@ -312,32 +375,36 @@ public class NewCCBTestUI {
 //		byte[] mInResHeadBytes = IOTrans.toBytes(new FileInputStream(resHeadPath));
 //		System.out.println("安全报文头："+ new String(mInResHeadBytes) +"over!");
 		
-		String mHeadStr = "POST / HTTP/1.1"+"\r\n"
-				+"Host: 128.192.154.4:13010"+"\r\n"
-				+"Server: BIP 1.0"+"\r\n"
-				+"Date: Wed Mar 26 11:12:49 2014 GMT"+"\r\n"
-				+"Content-Type: application/octet-stream; charset=UTF-8"+"\r\n"
-				+"Content-Length:"+mInClearBodyBytes.length+"\r\n"
-				+"Connection: keep-alive"+"\r\n\r\n"+
-				"SEC_ERROR_CODE:00000000000" +"\r\n"+
-				"SEC_IS_MAC:1"+"\r\n" +
-				"SEC_IS_CONTEXT:1"+"\r\n" +
-				"SEC_IS_ENC:1"+"\r\n" +
-				"SEC_MAC:345789gh98rh3r9f8u3r"+"\r\n" +
-				"SEC_CONTEXT:23rjf3o4ijofijhiourhfwikjfiodsfjuirhfkj"+"\r\n" +
-				"SEC_ID1:408002"+"\r\n" +
-				"SEC_ID2:408003"+"\r\n" +
-				"SEC_TRACE_ID:1143445435"+"\r\n" +
-				"SEC_TX_CODE:A2343423"+"\r\n" +
-				"SEC_TX_TYPE:00000"+"\r\n" +
-				"SEC_RESP_CODE:"+"\r\n" +
-				"SEC_LEN:001498"+"\r\n\r\n";;
+		//拼接请求头
+		String mHeadStr = "POST / HTTP/1.1"+"\r\n"//POST / HTTP/1.1
+				+"Host: 128.192.154.4:13010"+"\r\n"//Host: 128.192.154.4:13010
+				+"Server: BIP 1.0"+"\r\n"//Server: BIP 1.0
+				+"Date: Wed Mar 26 11:12:49 2014 GMT"+"\r\n"//Date: Wed Mar 26 11:12:49 2014 GMT
+				+"Content-Type: application/octet-stream; charset=UTF-8"+"\r\n"//Content-Type: application/octet-stream; charset=UTF-8
+				+"Content-Length:"+mInClearBodyBytes.length+"\r\n"//Content-Length:[字节数组长度]
+				+"Connection: keep-alive"+"\r\n\r\n"+//Connection: keep-alive
+				"SEC_ERROR_CODE:00000000000" +"\r\n"+//SEC_ERROR_CODE:00000000000
+				"SEC_IS_MAC:1"+"\r\n" +//SEC_IS_MAC:1
+				"SEC_IS_CONTEXT:1"+"\r\n" +//SEC_IS_CONTEXT:1
+				"SEC_IS_ENC:1"+"\r\n" +//SEC_IS_ENC:1
+				"SEC_MAC:345789gh98rh3r9f8u3r"+"\r\n" +//SEC_MAC:345789gh98rh3r9f8u3r
+				"SEC_CONTEXT:23rjf3o4ijofijhiourhfwikjfiodsfjuirhfkj"+"\r\n" +//SEC_CONTEXT:23rjf3o4ijofijhiourhfwikjfiodsfjuirhfkj
+				"SEC_ID1:408002"+"\r\n" +//SEC_ID1:408002
+				"SEC_ID2:408003"+"\r\n" +//SEC_ID2:408003
+				"SEC_TRACE_ID:1143445435"+"\r\n" +//SEC_TRACE_ID:1143445435
+				"SEC_TX_CODE:A2343423"+"\r\n" +//SEC_TX_CODE:A2343423
+				"SEC_TX_TYPE:00000"+"\r\n" +//SEC_TX_TYPE:00000
+				"SEC_RESP_CODE:"+"\r\n" +//SEC_RESP_CODE:
+				"SEC_LEN:001498"+"\r\n\r\n";;//SEC_LEN:001498
+				//请求头得到字节数组
 				byte[] mInResHeadBytes = mHeadStr.getBytes();
-		
+				
+		//XML文档字符数组赋值给
 		byte[] mInCipherBodyBytes = mInClearBodyBytes;
 //		byte[] mInCipherBodyBytes = SecAPI.pkgEncrypt( "613001" ,"613001",mInClearBodyBytes);
+		//
 		cLogger.info( new String(mInCipherBodyBytes));
-
+		//
 		byte[] mInTotalBytes = new byte[mInCipherBodyBytes.length + mInResHeadBytes.length];
 
 		System.arraycopy(mInResHeadBytes, 0, mInTotalBytes, 0, mInResHeadBytes.length);
