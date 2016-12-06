@@ -10,6 +10,10 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.io.StringWriter;
 
+/**
+ * 输入输出转换
+ * @author yuantongxin
+ */
 public class IOTrans {
 	/**
 	 * 流转换为字节数组，关闭流
