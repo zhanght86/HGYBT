@@ -73,7 +73,7 @@ public class RuleParser implements XmlTag {
 		Document mMsgXml = 
 			cRuleXsl.getCache().transform(pXmlDoc);
 		cLogger.info(JdomUtil.toString(mMsgXml));
-		
+		//投保日期必须为当天
 		String mErrMsg = mMsgXml.getRootElement().getChildText(msg);
 		if (null != mErrMsg) {
 			throw new MidplatException(mErrMsg);
