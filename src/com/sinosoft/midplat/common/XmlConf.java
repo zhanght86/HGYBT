@@ -59,6 +59,8 @@ public abstract class XmlConf implements Load {
 	protected final void recordStatus() {
 		cLastModified = cConfFile.lastModified();
 		cLength = cConfFile.length();
+		//conf file modified at (2016-12-02 20:37:53,105) and length=23443 bytes!
+		//conf file modified at (2016-12-02 20:37:53,286) and length=686 bytes!
 		cLogger.info("conf file modified at (" + DateUtil.getDateStr(cLastModified, "yyyy-MM-dd HH:mm:ss,SSS") + ") and length=" + cLength + " bytes!");
 	}
 }
