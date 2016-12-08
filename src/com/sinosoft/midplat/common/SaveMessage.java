@@ -33,7 +33,12 @@ public class SaveMessage {
 		cLogger.debug("SavePath_HOME = " + cSavePath);
 	}
 	
-	
+	/**
+	 * 
+	 * @param pXmlDoc
+	 * @param pTranCom
+	 * @param pName
+	 */
 	public static void save(Document pXmlDoc, String pTranCom, String pName) {
 		long mStartMillis = System.currentTimeMillis();
 		StringBuilder mFilePath = new StringBuilder(cSavePath)
@@ -56,6 +61,11 @@ public class SaveMessage {
 		} catch (IOException ex) {
 			cLogger.error("保存文件失败！", ex);
 		}
+		//1388_6_111_out.xml IO输出耗时:0.0s
+		//1406_6_111_out.xml IO输出耗时:0.015s
+		//1550_6_0_inSvc.xml IO输出耗时:0.021s
+		//1561_11_108_in.xml IO输出耗时:0.0020s
+		//1561_12_30_inSvc.xml IO输出耗时:0.0010s
 		cLogger.info(pName+" IO输出耗时:"+(System.currentTimeMillis()-mStartMillis)/1000.0 + "s");
 	}
 	
