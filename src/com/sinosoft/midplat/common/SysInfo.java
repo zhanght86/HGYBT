@@ -21,14 +21,17 @@ public final class SysInfo {
 		} catch (UnsupportedEncodingException ex) {
 			cLogger.error("不支持utf-8！", ex);
 		}
+		//basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
 		cLogger.debug("basepath.r = " + tPath);
 		cBasePath = tPath.substring(0, tPath.lastIndexOf("basepath.r"));//F:/MyEclipse/workspace/HGLIFE/src/
+		//BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
 		cLogger.debug("BasePath = " + cBasePath);
 	}
 	
 	public final static String cHome;
 	static {
 		String tHome = System.getenv("MIDPLAT_HOME");
+		//MIDPLAT_HOME = null
 		cLogger.debug("MIDPLAT_HOME = " + tHome);
 		if (null==tHome || "".equals(tHome)) {
 			tHome = getRealPath("..");
@@ -44,7 +47,7 @@ public final class SysInfo {
 			cLogger.error("MIDPLAT_HOME设置有误！" + tHome);
 			cHome = null;
 		}
-		
+		//Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
 		cLogger.debug("Home = " + cHome);
 	}
 	
