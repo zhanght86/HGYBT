@@ -59,6 +59,8 @@ public abstract class XslCache implements Load {
 	protected final void recordStatus() {
 		cLastModified = cXslFile.lastModified();
 		cLength = cXslFile.length();
+		//conf file modified at (2016-12-02 20:37:30,488) and length=3306 bytes!
+		//conf file modified at (2016-12-02 20:37:01,965) and length=941 bytes!
 		cLogger.info("conf file modified at (" + DateUtil.getDateStr(cLastModified, "yyyy-MM-dd HH:mm:ss,SSS") + ") and length=" + cLength + " bytes!");
 	}
 }
