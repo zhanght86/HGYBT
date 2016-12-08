@@ -23,9 +23,11 @@ public class GreenTestOutXsl extends XslCache {
 	}
 	
 	public void load() {
+		//Into GreenTestOutXsl.load()...
 		cLogger.info("Into GreenTestOutXsl.load()...");
 		
 		String mFilePath = SysInfo.cBasePath + cPath;
+		//Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newccb/format/GreenTestOut.xsl...
 		cLogger.info("Start load " + mFilePath + "...");
 		
 		cXslFile = new File(mFilePath);
@@ -42,6 +44,7 @@ public class GreenTestOutXsl extends XslCache {
 		recordStatus();
 		
 		cXslTrsf = loadXsl(cXslFile);
+		//End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newccb/format/GreenTestOut.xsl!
 		cLogger.info("End load " + mFilePath + "!");
 		
 		//是否输出xsl文件
@@ -54,13 +57,14 @@ public class GreenTestOutXsl extends XslCache {
 		if (mOut) {
 			try {
 				cLogger.info(
-						JdomUtil.toString(
-								JdomUtil.build(new FileInputStream(cXslFile)), ""));
+						JdomUtil.toString(//Java文档对象模型工具忽略声明中的编码
+								JdomUtil.build(new FileInputStream(cXslFile)), ""));//Java文档对象模型工具采用GBK编码构建一个文档对象，忽略标签之间的空字符(空格、换行、制表符等)。
 			} catch (IOException ex) {
+				//输出配置文件异常！
 				cLogger.error("输出配置文件异常！", ex);
 			}
 		}
-		
+		//Out GreenTestOutXsl.load()!
 		cLogger.info("Out GreenTestOutXsl.load()!");
 	}
 	
