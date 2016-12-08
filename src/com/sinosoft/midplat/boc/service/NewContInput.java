@@ -30,6 +30,7 @@ public class NewContInput extends ServiceImpl {
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
+		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
 		cInXmlDoc = pInXmlDoc;
 		
