@@ -58,6 +58,7 @@ public class TranLogDB extends TranLogSchema
 	// @Method
 	public boolean insert()
 	{
+		//[AppntIDNo:"371502198310206057",AppntName:"华贵",Bak1:"127.0.0.1",FuncFlag:1012,InNoDoc:"2246_3_1012_in.xml",InsuredIDNo:"371502198310206057",InsuredName:"华贵",LogNo:2246,MakeDate:20161208,MakeTime:142926,NodeNo:"060150001222",Operator:"5201300002",OtherNo:"",ProductId:"011A0100",ProposalPrtNo:"210414132201550",RCode:-1,RText:null,TranCom:9,TranDate:20161108,TranNo:"2016120800010",TranTime	:130101,UnitCode:null,UsedTime:-1,ZoneNo:"01",ModifyDate:20161208,ModifyTime:142926]
 		TranLogSchema tSchema = this.getSchema();
 		if (!db.insert(tSchema))
 		{
