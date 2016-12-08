@@ -33,6 +33,7 @@ public class CardControl extends XmlSimpFormat{
 	}
 	
 	public Document std2NoStd(Document pStdXml) throws Exception {
+		//Into CardControl.getNoStdXml()...
 		cLogger.info("Into CardControl.getNoStdXml()...");
 		
 //		InputStream mSheetIs = getClass().getResourceAsStream("CardControlOut.xsl");
