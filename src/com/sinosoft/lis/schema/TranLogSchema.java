@@ -2330,129 +2330,171 @@ public class TranLogSchema implements Schema
 	**/
 	public int getFieldType(int nFieldIndex)
 	{
+		//默认:类型不存在(-1)
 		int nFieldType = Schema.TYPE_NOFOUND;
 		switch(nFieldIndex) {
 			case 0:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 1:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 2:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 3:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 4:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 5:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 6:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 7:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 8:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 9:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 10:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 11:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 12:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 13:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 14:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 15:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 16:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 17:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 18:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 19:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 20:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 21:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 22:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 23:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 24:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 25:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 26:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 27:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 28:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 29:
+				//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 30:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 31:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 32:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 33:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 34:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 35:
+				//整数类型(3)
 				nFieldType = Schema.TYPE_INT;
 				break;
 			case 36:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 37:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 38:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 39:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			case 40:
+			//字符串类型(0)
 				nFieldType = Schema.TYPE_STRING;
 				break;
 			default:
