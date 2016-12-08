@@ -15,20 +15,29 @@ import com.sinosoft.midplat.common.JdomUtil;
 
 public class GZBankTest {
 	private static  Logger cLogger = Logger.getLogger(GZBankTest.class);
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 		String ip="127.0.0.1";//本机ip地址
 		int port=35017;
-		String path="D:/task/20161118/midplat/HG/9000102.xml";
+		String path="D:/task/20161208/gzbank/9000102in_noStd.xml";
 		String FuncFlag="9000102";//保费试算交易码
 		
-		path="D:/task/20161128/gzbank/9000103in_noStd.xml";
-		FuncFlag="9000103";//保费试算交易码
-//		
-//		path="f://xml/HG//9000901.xml";
-//		FuncFlag="9000901";//当日撤单
+//		path="D:/task/20161207/gzbank/9000103in_noStd.xml";
+//		FuncFlag="9000103";//缴费出单交易码
 		
-//		path="D:/task/20161118/midplat/HG/9000801.xml";
-//		FuncFlag="9000801";//保费试算交易码
+//		path="D:/task/20161207/gzbank/9000201in_noStd.xml";
+//		FuncFlag="9000201";//保单查询交易码
+		
+//		path="D:/task/20161207/gzbank/9000701in_noStd.xml";
+//		FuncFlag="9000701";//续期缴费交易码
+		
+//		path="D:/task/20161207/gzbank/9000801in_noStd.xml";
+//		FuncFlag="9000801";//保单重打交易码
+		
+//		path="D:/task/20161207/gzbank/9000901in_noStd.xml";
+//		FuncFlag="9000901";//当日撤单交易码
 		
 		String insureCode="006"+"   ";//目标保险公司代码
 		try {
@@ -76,7 +85,7 @@ public class GZBankTest {
 			cLogger.info("返回给贵州银行报文："+JdomUtil.toStringFmt(JdomUtil.build(Arrays.copyOfRange(byteArrays,19,byteArrays.length))));
 			socket.close();
 			
-			OutputStream pOs = new FileOutputStream("D:/task/20161128/"+FuncFlag+"out_noStd.xml");
+			OutputStream pOs = new FileOutputStream("D:/task/20161208/gzbank/"+FuncFlag+"out_noStd.xml");
 			JdomUtil.output(JdomUtil.build(Arrays.copyOfRange(byteArrays,19,byteArrays.length)), pOs);
 		} catch (Exception e) {
 			e.printStackTrace();
