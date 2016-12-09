@@ -116,7 +116,7 @@ public class TranLogSchema implements Schema
 		mErrors = new CErrors();
 
 		String[] pk = new String[1];//字符串数组
-		pk[0] = "LogNo";//为第一个元素赋值
+		pk[0] = "TranNo";//为第一个元素赋值
 
 		PK = pk;//将元素值赋给成员变量
 	}
