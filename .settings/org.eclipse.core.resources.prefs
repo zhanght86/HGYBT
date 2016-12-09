@@ -108,6 +108,7 @@ encoding//src/com/sinosoft/lis/schema/LKCardSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LKContNoSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LKHighRiskListSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LKSubRiskCheckSchema.java=UTF-8
+encoding//src/com/sinosoft/lis/schema/LKTranLogSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LMAfterCheckFieldSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LMCalFactorSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/schema/LMCalModeSchema.java=UTF-8

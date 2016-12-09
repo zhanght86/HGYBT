@@ -34,15 +34,18 @@ public class CallWebsvcAtomSvc implements XmlTag
 
 	public CallWebsvcAtomSvc(String pServiceId) throws JDOMException
 	{
-		cServiceId = pServiceId;
+		cServiceId = pServiceId;//0
+		// /child::midplat/child::atomservices/child::service[(attribute::id = "0")]
 		XPath mXPath = XPath.newInstance("/midplat/atomservices/service[@id='" + cServiceId + "']");
+		//[Element: <service/>]
 		cConfEle = (Element) mXPath.selectSingleNode(MidplatConf.newInstance().getConf());
 	}
 
 	public Document call(Document pInXmlDoc) throws Exception
 	{
+		//Into CallWebsvcAtomSvc.service()...
 		cLogger.info("Into CallWebsvcAtomSvc.service()...");
-
+		
 		String mServAddress = cConfEle.getAttributeValue(address);
 		String mServMethod = cConfEle.getAttributeValue(method);
 
@@ -56,14 +59,19 @@ public class CallWebsvcAtomSvc implements XmlTag
 		String mTranCom = mHeadEle.getChildText(TranCom);
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName()).append('_').append(NoFactory.nextAppNo()).append('_').append(cServiceId).append("_inSvc.xml");
 		SaveMessage.save(pInXmlDoc, mTranCom, mSaveName.toString());
+		//保存报文完毕！1550_6_0_inSvc.xml
+		//保存[核心]报文完毕！1561_12_30_inSvc.xml
 		cLogger.info("保存报文完毕！" + mSaveName);
-
+		
 		String mInXmlStr = JdomUtil.toString(pInXmlDoc);// 上websphere 的时候用这个及下行
 		byte[] mInXmlByte = mInXmlStr.getBytes("GBK");// 上websphere的时候用这个
 
 		// byte[] mInXmlByte=JdomUtil.toBytes(pInXmlDoc,"GBK");//在本地测的时候用这个
-		System.out.println("start call " + cConfEle.getAttributeValue(name) + "(" + mServAddress + "." + mServMethod + ")...");
+		//start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+		//start call 重空核对(http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService.service)...
+		System.out.println("start call " + cConfEle.getAttributeValue(name) + "(" + mServAddress + "." + mServMethod + ")...");//银行接口服务
 		//16:25:47,101 INFO net.CallWebsvcAtomSvc(66) - start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+		//start call 重空核对(http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService.service)...
 		cLogger.info("start call " + cConfEle.getAttributeValue(name) + "(" + mServAddress + "." + mServMethod + ")...");
 		// Call mCall = new Call(mServAddress);
 		// mCall.addParameter("p", Constants.XSD_STRING, ParameterMode.IN);
@@ -109,9 +117,10 @@ public class CallWebsvcAtomSvc implements XmlTag
 		// System.out.println("sdfdsfsdfdsf==="+str+"长度:"+mOutStr.length);
 		cLogger.info("投保单号" + mPrtNo + cConfEle.getAttributeValue(name) + "(" + mServMethod + ")耗时：" + (System.currentTimeMillis() - mStartMillis) / 1000.0 + "s");
 		// cLogger.debug(mOutStr);
-
+		//核心请求报文:
 		// System.out.println("核心返回的："+new String(mOutStr));
 		Document mOutXmlDoc = JdomUtil.build(mOutStr);
+		//重空核对in_Std.xml
 		 JdomUtil.print(mOutXmlDoc);
 		if (null == mOutXmlDoc)
 		{

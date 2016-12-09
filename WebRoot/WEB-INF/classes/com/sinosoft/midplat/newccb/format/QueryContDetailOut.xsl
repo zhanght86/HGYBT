@@ -536,7 +536,7 @@
 						<Rsrv_Fld_10></Rsrv_Fld_10>
 						<!-- 投保单号 -->
 						<Ins_BillNo>
-							<xsl:value-of select="/TranData/Body/ProposalPrtNo" />
+							<xsl:value-of select="substring(/TranData/Body/ProposalPrtNo,1,13)" />
 						</Ins_BillNo>
 						<!-- 保单号码 -->
 						<InsPolcy_No>

@@ -99,7 +99,7 @@
 				        		</xsl:for-each>
 				        	</BusiNo_List>
 						    <!-- 投保单号 -->
-						    <Ins_BillNo><xsl:value-of select="/TranData/Body/ProposalPrtNo"/></Ins_BillNo>
+						    <Ins_BillNo><xsl:value-of select="substring(/TranData/Body/ProposalPrtNo,1,13)"/></Ins_BillNo>
 						    <!-- 保险公司派驻人员姓名 -->
 						    <Ins_Co_Acrdt_Stff_Nm><xsl:value-of select="/TranData/Body/SaleName"/></Ins_Co_Acrdt_Stff_Nm>
 						   	<!-- 保险公司派驻人员从业资格证书编号 -->

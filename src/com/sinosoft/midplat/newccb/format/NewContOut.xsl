@@ -114,7 +114,7 @@
 				        		</xsl:for-each>
 				        	</Bu_List>
 			        		<!-- 投保单号 -->
-			        		<Ins_BillNo><xsl:value-of select="/TranData/Body/ProposalPrtNo"/></Ins_BillNo>
+			        		<Ins_BillNo><xsl:value-of select="substring(/TranData/Body/ProposalPrtNo,1,13)"/></Ins_BillNo>
 			        		<!-- 总保费金额 -->
 			        		<Tot_InsPrem_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/></Tot_InsPrem_Amt>
 			        		<!-- 首期缴费金额 -->

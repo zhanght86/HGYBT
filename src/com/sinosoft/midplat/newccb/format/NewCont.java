@@ -28,60 +28,48 @@ import com.sinosoft.midplat.newccb.dao.LKPolicyXMLDao;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.utility.ElementLis;
 import com.sinosoft.utility.ExeSQL;
-/**
- * 建行试算交易
- * @author yuantongxin
- */
+
 public class NewCont extends XmlSimpFormat {
-	private Element cTransaction_Header = null;//交易报文头
-	private String mSYS_RECV_TIME = null;//服务接受时间
-	private String mSYS_RESP_TIME = null;//服务响应时间
-	private String tranNo = null;//交易流水号
-	private String tranDate = null;//保险公司处理日期
-	private String sysTxCode = null;//交易代码
-	private String sAginsPkgId = null;//代理保险套餐编号
-	private String sPayIntv = null;//保费缴纳方式代码
-	private String sMult = null;//份数
-	private String sLot = null;//受益比例(整数，百分比)
+	private Element cTransaction_Header = null;
+	private String mSYS_RECV_TIME = null;
+	private String mSYS_RESP_TIME = null;
+	private String tranNo = null;
+	private String tranDate = null;
+	private String sysTxCode = null;
+	private String sAginsPkgId = null;
+	private String sPayIntv = null;
+	private String sMult = null;
+	private String sLot = null;
 	private String sPayCycCod = null;
-	private String sRelationShip = null;//关系
-	private Element oldTxHeader = null;//旧交易报文头
-	private Element oldComEntity = null;//旧公共域
-	private Element oldAppEntity = null;//旧应用域
+	private String sRelationShip = null;
+	private Element oldTxHeader = null;
+	private Element oldComEntity = null;
+	private Element oldAppEntity = null;
 	
 	/**请求的非标准报文*/
 	private Document noStdDoc = null;
 	
-	/**
-	 * 
-	 * @param pThisConf
-	 */
+	
 	public NewCont(Element pThisConf) {
 		super(pThisConf);
 	}
 	
-	/**
-	 * 非标准报文转标准报文
-	 * @param pNoStdXml 非标准报文
-	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into NewCont.noStd2Std()...");
 		
 		//此处备份一下请求报文头相关信息，组织返回报文时会用到
 		cTransaction_Header =
-			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();//备份TX_HEADER
+			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		//此处备份一下请求报文体APP_EITITY相关信息，组织返回报文时会用到
-		//备份TX_BODY/ENTITY/APP_ENTITY
 		oldAppEntity =
 			(Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").clone();;
-		//备份APP_ENTITY/Busi_List/
+		
 		sAginsPkgId	=oldAppEntity.getChild("Busi_List").getChild("Busi_Detail").getChildText("AgIns_Pkg_ID");
-		System.out.println(sAginsPkgId);
-		//		JdomUtil.print(cTransaction_Header);
+//		JdomUtil.print(cTransaction_Header);
 		
 		//服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-		//
+		
 		oldTxHeader = (Element)pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		oldComEntity = (Element)pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
 		sysTxCode= oldTxHeader.getChildText("SYS_TX_CODE");
@@ -278,8 +266,8 @@ public class NewCont extends XmlSimpFormat {
 		System.out.println("程序开始…");
 
 
-		String mInFilePath = "D:/task/20161201/newccb/P53819113in_noStd.xml";
-		String mOutFilePath = "D:/task/20161201/newccb/P53819113in_Std.xml";
+		String mInFilePath = "C:/Users/liuzk/Desktop/1380526_39_0_outSvc.xml";
+		String mOutFilePath = "C:/Users/liuzk/Desktop/22.xml";
 
 
 

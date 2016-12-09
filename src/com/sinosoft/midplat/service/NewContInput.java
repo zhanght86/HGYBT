@@ -29,15 +29,22 @@ public class NewContInput extends ServiceImpl {
 
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
+		//1481094634768[2016-12-07 03:10:34]
+		//1481095536926[2016-12-07 03:25:36]
 		long mStartMillis = System.currentTimeMillis();
+		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
+		//[Element: <TranData/>]
 		cInXmlDoc = pInXmlDoc;
-
+		//[Element: <TranData/>]
 		Element mRootEle = cInXmlDoc.getRootElement();
+		//[Element: <Body/>]
 		Element mBodyEle = mRootEle.getChild(Body);
+		//[Element: <ProposalPrtNo/>]101019000003200
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
+		//[Element: <ContPrtNo/>]
 		String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
-
+		
 		try {
 			// System.out.println("--------------------------------------------------------------------------------------------------------");
 			// JdomUtil.print(cInXmlDoc);
@@ -51,27 +58,33 @@ public class NewContInput extends ServiceImpl {
 			// 校验系统中是否有相同保单正在处理，尚未返回
 			int tLockTime = 300; // 默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try {
+				//[Element: <business/>]200
 				tLockTime = Integer.parseInt(cThisBusiConf
-						.getChildText(locktime));
+						.getChildText(locktime));//[Element: <locktime/>]
 			} catch (Exception ex) { // 使用默认值
 				cLogger.debug("未配置锁定时间，或配置有误，使用默认值(s)：" + tLockTime, ex);
 			}
+			//															2016-12-07 03:50:10
+			//java.util.GregorianCalendar[time=1481097010192,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Asia/Shanghai",offset=28800000,dstSavings=0,useDaylight=false,transitions=19,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2016,MONTH=11,WEEK_OF_YEAR=50,WEEK_OF_MONTH=2,DAY_OF_MONTH=7,DAY_OF_YEAR=342,DAY_OF_WEEK=4,DAY_OF_WEEK_IN_MONTH=1,AM_PM=1,HOUR=3,HOUR_OF_DAY=15,MINUTE=50,SECOND=10,MILLISECOND=192,ZONE_OFFSET=28800000,DST_OFFSET=0]
 			Calendar tCurCalendar = Calendar.getInstance();
-			tCurCalendar.add(Calendar.SECOND, -tLockTime);
+			//								13，-200
+			tCurCalendar.add(Calendar.SECOND, -tLockTime);//time:1481184762689[2016-12-08 04:12:42]
+			//select count(1) from TranLog where RCode=-1 and ProposalPrtNo='210414132201550' and MakeDate>=20161208 and MakeTime>=173040
 			String tSqlStr = new StringBuilder(
-					"select count(1) from TranLog where RCode=")
-					.append(CodeDef.RCode_NULL).append(" and ProposalPrtNo='")
-					.append(mProposalPrtNo).append('\'')
-					.append(" and MakeDate>=")
-					.append(DateUtil.get8Date(tCurCalendar))
-					.append(" and MakeTime>=")
-					.append(DateUtil.get6Time(tCurCalendar)).toString();
+					"select count(1) from TranLog where RCode=")//select count(1) from TranLog where RCode=
+					.append(CodeDef.RCode_NULL).append(" and ProposalPrtNo='")//-1 and ProposalPrtNo='
+					.append(mProposalPrtNo).append('\'')//210414132201550\'
+					.append(" and MakeDate>=")// and MakeDate>=
+					.append(DateUtil.get8Date(tCurCalendar))//1481188736202[20161208]
+					.append(" and MakeTime>=")// and MakeTime>=
+					.append(DateUtil.get6Time(tCurCalendar)).toString();//1481188736202[171856]
 			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
+				//
 				throw new MidplatException("此保单数据正在处理中，请稍候！");
 			}
-
+			//0in_Std.xml
 			JdomUtil.print(cInXmlDoc);
-
+			
 			new RuleParser().check(cInXmlDoc);
 
 			Element tRiskCode = (Element) XPath.selectSingleNode(
@@ -178,16 +191,21 @@ public class NewContInput extends ServiceImpl {
 			cTranLogDB.setAgentCom(tContDB.getAgentCom());
 			cTranLogDB.setAgentCode(tContDB.getAgentCode());
 		} catch (Exception ex) {
+			//新单试算交易失败！
+			//com.sinosoft.midplat.exception.MidplatException: 投保日期必须为当天
 			cLogger.error(cThisBusiConf.getChildText(name) + "交易失败！", ex);
-
+			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR,
 					ex.getMessage());
 		}
 
 		if (null != cTranLogDB) { // 插入日志失败时cTranLogDB=null
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
+			//交易结果
 			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
+			//交易结果描述
 			cTranLogDB.setRText(tHeadEle.getChildText(Desc));
+			//1481092916636[2016-12-07 02:41:56]
 			long tCurMillis = System.currentTimeMillis();
 			cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));

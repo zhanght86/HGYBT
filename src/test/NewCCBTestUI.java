@@ -44,12 +44,12 @@ public class NewCCBTestUI {
 		
 		//绿灯测试
 //		String funcflag = "P53818152";
-//		String mInFilePath = "D:/TestXml/zhrs/newccb/testlvdeng.xml";
-//		String mOutFilePath = "D:/TestXml/zhrs/newccb/testlvdeng_out.xml";
+//		String mInFilePath = "D:/task/20161206/newccb/P53818152in_noStd.xml";
+//		String mOutFilePath = "D:/task/20161206/newccb/P53818152out_noStd.xml";
 		//新单试算
 		String funcflag = "P53819113";//交易码
-		String mInFilePath = "D:/task/20161202/newccb/P53819113in_noStd.xml";//输入文件路径
-		String mOutFilePath = "D:/task/20161202/newccb/P53819113out_noStd.xml";//输出文件路径
+		String mInFilePath = "D:/task/20161209/newccb/P53819113in_noStd.xml";//输入文件路径
+		String mOutFilePath = "D:/task/20161209/newccb/P53819113out_noStd.xml";//输出文件路径
 //		
 		//新单确认
 //		String funcflag = "P53819152";
@@ -73,9 +73,9 @@ public class NewCCBTestUI {
 		
 		//重控核对
 //		String funcflag = "P538191A2";
-//		String mInFilePath = "F:\\xml\\CCB\\P538191A2_核对.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P538191A2_核对_out.xml";
-		
+//		String mInFilePath = "D:/task/20161209/newccb/P538191A2in_noStd.xml";
+//		String mOutFilePath = "D:/task/20161209/newccb/P538191A2out_noStd.xml";
+//		
 		//确认撤销当日保单
 //		String funcflag = "P53819142";
 //		String mInFilePath = "F:\\xml\\CCB\\P53819142_撤单.xml";
@@ -134,8 +134,8 @@ public class NewCCBTestUI {
 		
 		//申请退保
 //		String funcflag = "P53819143";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/中韩新建行测试/申请退保/申请退保.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/中韩新建行测试/申请退保/申请退保_out.xml";		
+//		String mInFilePath = "D:/task/20161206/newccb/P53819143in_noStd.xml";
+//		String mOutFilePath = "D:/task/20161206/newccb/P53819143out_noStd.xml";		
 		
 		//确认退保
 //		String funcflag = "P53819144";
@@ -399,26 +399,29 @@ public class NewCCBTestUI {
 				//请求头得到字节数组
 				byte[] mInResHeadBytes = mHeadStr.getBytes();
 				
-		//XML文档字符数组赋值给
+		//XML文档字符数组赋值给最小密码体字节数组
 		byte[] mInCipherBodyBytes = mInClearBodyBytes;
 //		byte[] mInCipherBodyBytes = SecAPI.pkgEncrypt( "613001" ,"613001",mInClearBodyBytes);
-		//
+		//最小密码体字节转为字符串
 		cLogger.info( new String(mInCipherBodyBytes));
-		//
+		//初始化元素个数为最小密码体字节数组元素个数与请求头字节数组元素个数和的最小总字节数组
 		byte[] mInTotalBytes = new byte[mInCipherBodyBytes.length + mInResHeadBytes.length];
-
-		System.arraycopy(mInResHeadBytes, 0, mInTotalBytes, 0, mInResHeadBytes.length);
+		//系统级数组复制(请求头字节数组[源数组]，首位[源数组要复制的起始位置]，最小总字节数组[目的数组]，[目的数组放置的起始位置]，请求头字节数组元素个数[复制长度])
+		System.arraycopy(mInResHeadBytes, 0, mInTotalBytes, 0, mInResHeadBytes.length);//实现数组之间的复制
 //		System.arraycopy("\r\n".getBytes(), 0, mInTotalBytes, 0, "\r\n".getBytes().length);
-		
+		//系统级数组复制(XML文档字符数组[源数组]，首位[源数组要复制的起始位置]，最小总字节数组[目的数组]，请求头字节数组下一位[目的数组放置的起始位置]，XML文档字符数组元素个数[复制长度])
 		System.arraycopy(mInClearBodyBytes, 0, mInTotalBytes, mInResHeadBytes.length, mInClearBodyBytes.length);
 		
-		
+		//通过请求头字节数组得到最小体长字符串
 		String mInBodyLengthStr = String.valueOf(mInResHeadBytes.length);
+		//请求报文长度：最小体长字符串
 		cLogger.info("请求报文长度：" + mInBodyLengthStr);
+		//最小体长字符串得到字节数组
 		byte[] mInLengthBytes = mInBodyLengthStr.getBytes();
 //		System.arraycopy(mInLengthBytes, 0, mInTotalBytes, 0, mInLengthBytes.length);
 
 //		System.arraycopy(mInCipherBodyBytes, 0, mInTotalBytes, 0, mInCipherBodyBytes.length);
+		//
 		System.out.println("整体报文："+ new String(mInTotalBytes));
 		cLogger.info("发送请求报文长度：" + new String(mInTotalBytes).length());
 		cLogger.info("发送请求报文！");
@@ -468,6 +471,7 @@ public class NewCCBTestUI {
 	}
 	
 	public byte[] sendRequest(String pFuncFlag, Document document) throws Exception {
+		//Socket连接127.0.0.1:39871
 		cLogger.info("Socket连接" + cIP + ":" + cPort);
 		Socket mSocket = new Socket(cIP, cPort);
 
@@ -480,6 +484,7 @@ public class NewCCBTestUI {
 
 		// 报文体长度
 		String mInBodyLengthStr = String.valueOf(mInClearBodyBytes.length);
+		//请求报文长度：1522
 		cLogger.info("请求报文长度：" + mInBodyLengthStr);
 		byte[] mInLengthBytes = mInBodyLengthStr.getBytes();
 		System.arraycopy(mInLengthBytes, 0, mInTotalBytes, 0,
@@ -494,6 +499,7 @@ public class NewCCBTestUI {
 		
 		/**以下处理返回报文************************/
 		InputStream mSocketIs = mSocket.getInputStream();
+		//收到返回报文！
 		cLogger.info("收到返回报文！");
 
 		//获取返回报文

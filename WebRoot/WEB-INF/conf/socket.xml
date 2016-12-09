@@ -8,8 +8,8 @@
 	</socket>
 	<socket>	套接字
 		<name>贵州银行</name>
-		<!-- <port>35017</port> -->
-		<port>35008</port>
+		<port>35017</port>
+		<!-- <port>35008</port> -->
 		<class>com.sinosoft.midplat.gzbank.GZBankYbt</class>
 	</socket>
 	<socket>	套接字

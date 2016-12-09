@@ -95,6 +95,7 @@ public class NewCcbNetImpl extends SocketNetImpl
 		// 解析安全报文头及报文体
 		Object[] recv = SecurityMessageHeaderUtils.ummarshal(mDataStr.getBytes(), true, new SecurityMessageHeader());
 		byte[] responseData = (byte[]) recv[1];
+		//获得明文报文体：P538191A2in_noStd.xml(转换为UTF-8编码)
 		cLogger.debug("获得明文报文体：" + new String(responseData, "UTF-8"));
 		header = (SecurityMessageHeader) recv[0];
 		// 发送方安全节点编号
@@ -102,7 +103,7 @@ public class NewCcbNetImpl extends SocketNetImpl
 		// 目标安全节点号
 		remoteSecNodeId = header.getSecNodeId();
 
-		// 获得报文体数据
+		// 获得报文体数据[P538191A2in_noStd.xml(转换为UTF-8编码)]
 		Document mInNoStd = JdomUtil.build(responseData, "UTF-8");
 		
 		//复制接收到的报文储入类变量中
@@ -118,9 +119,11 @@ public class NewCcbNetImpl extends SocketNetImpl
 		Element mRootEle = mInNoStd.getRootElement();
 		Element cHeader = mRootEle.getChild("TX_HEADER");
 		mSYS_TX_CODE = cHeader.getChildText("SYS_TX_CODE");
+		//新建行交易码为==P538191A2
 		cLogger.info("新建行交易码为==" + mSYS_TX_CODE);
 		// JdomUtil.print(cThisConfRoot);
 		String mTranCom = cThisConfRoot.getChildText("TranCom");
+		//mTranCom==============13
 		cLogger.info("mTranCom==============" + mTranCom);
 
 		XPath mXPath2 = XPath.newInstance("business/funcFlag[@outcode='" + mSYS_TX_CODE + "']");
@@ -128,8 +131,9 @@ public class NewCcbNetImpl extends SocketNetImpl
 
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName()).append('_').append(NoFactory.nextAppNo()).append('_').append(cFuncFlag).append("_in.xml");
 		SaveMessage.save(mInNoStd, cTranComEle.getText(), mSaveName.toString());
+		//保存报文完毕！1561_11_108_in.xml
 		cLogger.info("保存报文完毕！" + mSaveName);
-
+		
 		// 生成标准报文头
 		Element mTranComEle = new Element(TranCom);
 		mTranComEle.setText(mTranCom);
@@ -150,9 +154,10 @@ public class NewCcbNetImpl extends SocketNetImpl
 		mHeadEle.addContent(mInNoDoc);
 
 		mRootEle.addContent(mHeadEle);
+		//增加标准报文头节点后报文：
 		cLogger.info("增加标准报文头节点后报文：");
 		JdomUtil.print(mInNoStd);
-
+		//Out NewCcbNetImpl.receive()...
 		cLogger.info("Out NewCcbNetImpl.receive()...");
 		return mInNoStd;
 	}

@@ -25,7 +25,7 @@
 		<msg>单证号不能为空</msg>
 	</xsl:if>
 	<!-- 借贷险工行不传缴费账户，此处校验放开 -->
-	<xsl:if test="string-length(AccNo)=0">
+    <xsl:if test="string-length(AccNo)=0">
 		<xsl:choose>
 			<xsl:when test="$sTranCom='03'">
 			</xsl:when>
@@ -36,7 +36,7 @@
 			<xsl:when test="$sTranCom='05' and (string-length(Risk/AccName) = 0 )"><!-- 农行自助终端的时候缴费账户可以为空-->
 			</xsl:when>
 			<xsl:otherwise>
-				<msg>缴费账户不能为空</msg>
+				<!-- <msg>缴费账户不能为空</msg> -->
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:if>
@@ -137,11 +137,11 @@
 	
 	<!-- 投保人通讯地址不能为空校验 -工行，农行 -->
 	<xsl:if test="$sTranCom !='03' and string-length(Address) = 0 "> 
-		<msg>投保人通讯地址不能为空</msg>
+		<!-- <msg>投保人通讯地址不能为空</msg> -->
 	</xsl:if>     
 	<!-- 投保人单位地址和家庭地址不能同时为空校验 -建行 -->
 	<xsl:if test="$sTranCom ='03' and string-length(Address) = 0 and string-length(WorkAddress) = 0"> 
-		<msg>投保人单位地址和家庭地址不能同时为空</msg>
+		<!-- <msg>投保人单位地址和家庭地址不能同时为空</msg> -->
 	</xsl:if>   
 	<!-- 投保人家庭电话和单位电话不能同时为空校验 -建行 -->
 	<xsl:if test="$sTranCom ='03' and string-length(Phone) = 0 and string-length(WorkPhone) = 0 and string-length(Mobile) = 0"> 
@@ -255,7 +255,7 @@
 	
 	<!-- 被保人邮寄地址不能为空校验 -->
 	<xsl:if test="string-length(Address) = 0 "> 
-		<msg>被保人邮寄地址不能为空</msg>
+		<!-- <msg>被保人邮寄地址不能为空</msg> -->
 	</xsl:if>        
 	 
 	 <!-- 被保人邮编不能为空校验 -->

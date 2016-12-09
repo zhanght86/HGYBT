@@ -22,6 +22,7 @@ public class ContCancelCardControlCcb extends ServiceImpl {
 
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
+		//Into ContCancelCardControlCcb.service()...
 		cLogger.info("Into ContCancelCardControlCcb.service()...");
 		cInXmlDoc = pInXmlDoc;
 	

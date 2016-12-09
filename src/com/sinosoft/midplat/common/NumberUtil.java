@@ -2,6 +2,7 @@ package com.sinosoft.midplat.common;
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -551,24 +552,29 @@ public class NumberUtil {
     	 formater.setRoundingMode(RoundingMode.FLOOR);
     	return Double.valueOf(formater.format(money));
     } 
-    
+    /**
+     * 将13位的投保单号以及单证号根据指定规则转换成15位投保单号及单证号
+     * @param no
+     * @return
+     */
+    public static String no13To15(String no){
+    	if("".equals(no)||no==null){
+    		return "";
+    	}
+    	String printNoType=no.substring(0,5);
+    	String tranNo=no.substring(5,no.length());
+    	int mod=(int)(Long.valueOf(tranNo+printNoType)%97);
+    	mod=98-mod;
+    	//如果mod不足两位，在前面添0
+    	if(mod<10){
+    		return no+"0"+mod;
+    	}
+    	return no+mod;
+    }
     
 	public static void main(String[] args) {
-		System.out.println("程序开始...");
+		System.out.println(no13To15("1010122161110"));
 		
-//		double mTestNum = 1235656.2;
-//		
-//		DecimalFormat mDecimalFormat = (DecimalFormat) DecimalFormat.getNumberInstance();
-//		mDecimalFormat.setMaximumFractionDigits(2);
-//		System.out.println(
-//				mDecimalFormat.format(mTestNum));
-//		
-/*		String s ="13457800.23";
-
-		 String a=NumberUtil.getChnMoney(s);
-		System.out.println("a:"+a);
-
-		System.out.println("成功结束！");*/
-		System.out.println(NumberUtil.fillStrWith_("aaaaa", 10)+"b");
+		
 	}
 }

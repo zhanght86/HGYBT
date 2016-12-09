@@ -486,7 +486,7 @@
 						    		</Busi_List>
 						    		
 									<!-- 投保单号 -->
-									<Ins_BillNo><xsl:value-of select="ProposalPrtNo"/></Ins_BillNo>
+									<Ins_BillNo><xsl:value-of select="substring(ProposalPrtNo,1,13)"/></Ins_BillNo>
 									<!-- 保单号码 -->
 									<InsPolcy_No><xsl:value-of select="ContNo"/></InsPolcy_No>
 									<!-- 投保人缴费账号 -->

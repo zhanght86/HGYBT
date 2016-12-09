@@ -113,7 +113,7 @@ public abstract class Ybt4Socket extends Thread
           tServiceClassName = ttClass;//显式服务的内容的值赋给隐式服务类名称
         }
       }
-      
+      //报文转换模块：com.sinosoft.midplat.newccb.format.CardControl
       this.cLogger.info("报文转换模块：" + tFormatClassName);
       //格式化构造器
       Constructor tFormatConstructor = Class.forName(
@@ -121,7 +121,7 @@ public abstract class Ybt4Socket extends Thread
       //通过格式化构造器创建实例并初始化数组
       Format tFormat = (Format)tFormatConstructor.newInstance(new Object[] { tBusinessEle });
       Document tInStd = tFormat.noStd2Std(tInNoStd);//业务元素格式化对象非标准报文转标准报文
-      
+      //业务处理模块：com.sinosoft.midplat.newccb.service.ContCancelCardControlCcb
       this.cLogger.info("业务处理模块：" + tServiceClassName);
       //服务构造器
       Constructor tServiceConstructor = Class.forName(
@@ -143,20 +143,20 @@ public abstract class Ybt4Socket extends Thread
       //输出非标准报文非空
       if (mOutNoStd != null) {
 	        try {
-	          this.cPreNet.send(mOutNoStd);//发送
+	          this.cPreNet.send(mOutNoStd);//发送[Element: <TX/>]
 	        } catch (Exception ex) {
 	          this.cLogger.error("发送返回报文异常!", ex);
 	        }
       }
       		//交易日志数据库对象
-      		TranLogDB tranLogDB = new TranLogDB();
+      		TranLogDB tranLogDB = new TranLogDB();//初始化字段
       		//设置日志号
-			tranLogDB.setLogNo(Thread.currentThread().getName());
+			tranLogDB.setLogNo(Thread.currentThread().getName());//1406
 			//获取信息失败
 			if(!tranLogDB.getInfo()){
 				cLogger.error("查询Tranlog表异常!");
 			}else{
-				//设置备用3
+				//设置备用3[0.078]
 				tranLogDB.setBak3((System.currentTimeMillis()-mStartMillis)/1000.0+"");
 				tranLogDB.setOutNoDoc(cPreNet.cOutNoStdDoc);//设置返回报文 
 				//更新失败
@@ -166,9 +166,9 @@ public abstract class Ybt4Socket extends Thread
 			}
       this.cPreNet.close();//关闭
     }
-
+    //处理总耗时：3850.487s
     this.cLogger.info("处理总耗时：" + (System.currentTimeMillis() - mStartMillis) / 1000.0D + "s");
-
+    //Out Ybt4Socket.run()!
     this.cLogger.info("Out Ybt4Socket.run()!");
   }
 }

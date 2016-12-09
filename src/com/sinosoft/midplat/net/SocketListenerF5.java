@@ -28,6 +28,7 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 
 	public SocketListenerF5()
 	{
+		//System.out = org.apache.tomcat.util.log.SystemLogHandler@13899213
 		cLogger.debug("System.out = " + System.out);
 		if (MidplatConf.newInstance().resetLog())
 		{

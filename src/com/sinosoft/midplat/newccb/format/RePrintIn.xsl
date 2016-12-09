@@ -36,7 +36,7 @@
 				<ProposalPrtNo></ProposalPrtNo>
 				<!-- 新保单合同印刷号 -->
 				<xsl:for-each select="TX_BODY/ENTITY/APP_ENTITY/Detail_List/Detail">
-				<ContPrtNo><xsl:value-of select="Mod_Af_Ins_IBVoch_ID"/></ContPrtNo>
+				<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Mod_Af_Ins_IBVoch_ID)"/></ContPrtNo>
 				</xsl:for-each>
 				<!-- 旧保单合同印刷号-->
 				<OldContPrtNo></OldContPrtNo>

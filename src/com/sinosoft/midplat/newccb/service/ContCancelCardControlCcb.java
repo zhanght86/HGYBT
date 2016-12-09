@@ -37,6 +37,7 @@ public class ContCancelCardControlCcb extends ServiceImpl {
 		try { 
 			cTranLogDB = insertTranLog(pInXmlDoc);
 			long mStartContConfirm = System.currentTimeMillis();
+			//Into ContCancelCardControlCcb.service()...-->authorityCheck.submitData(mHeadEle)交易权限
 			cLogger.info("Into ContCancelCardControlCcb.service()...-->authorityCheck.submitData(mHeadEle)交易权限");	
 			 mUsedContConfirm = (System.currentTimeMillis() - mStartContConfirm);
 			//原来工行不调核心

@@ -97,8 +97,10 @@ public class CcbNetImpl extends SocketNetImpl
   }
 
   public void send(Document pOutNoStd) throws Exception {
+	//Into CcbNetImpl.send()...
     this.cLogger.info("Into CcbNetImpl.send()...");
-
+    
+    //Java文档对象模型工具将文档(请求报文协议报文头+报文体+通用域+实体域+公共域)打印到控制台， GBK编码，缩进3空格。
     JdomUtil.print(pOutNoStd);
     if (pOutNoStd.getRootElement().getChild("TX_HEADER") == null) {
       System.out.println("==================send====");
@@ -160,29 +162,42 @@ public class CcbNetImpl extends SocketNetImpl
       pOutNoStd = mNoStdXml;
     }
 
+    //[Element: <TX_HEADER/>]
     Element mHeadEle = pOutNoStd.getRootElement().getChild("TX_HEADER");
-    int mHeadEleLength = JdomUtil.toBytes(mHeadEle, "UTF-8").length;
-    mHeadEleLength += String.valueOf(mHeadEleLength).length() - 1;
+    //获取Java文档对象模型工具将报文头元素转换为UTF-8编码的字节数组(保持原格式)的元素个数
+    int mHeadEleLength = JdomUtil.toBytes(mHeadEle, "UTF-8").length;//827
+    //827+(3-1)=829
+    mHeadEleLength += String.valueOf(mHeadEleLength).length() - 1;//829
+    //<SYS_HDR_LEN>829</SYS_HDR_LEN>
     mHeadEle.getChild("SYS_HDR_LEN").setText(String.valueOf(mHeadEleLength));
-
+    // Java文档对象模型工具将文档转换为UTF-8编码的字节数组(保持原格式)[Element: <TX/>]
     byte[] mXmlBytes = JdomUtil.toBytes(pOutNoStd, "UTF-8");
+    //XML文档字节数组元素个数[1753]
     int mXmlDocLength = mXmlBytes.length;
+    //1753+(4-1)=1756
     mXmlDocLength += String.valueOf(mXmlDocLength).length() - 1;
+    //<SYS_TTL_LEN>1756</SYS_TTL_LEN>
     mHeadEle.getChild("SYS_TTL_LEN").setText(String.valueOf(mXmlDocLength));
-
-    StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())
-      .append('_').append(NoFactory.nextAppNo())
-      .append('_').append(this.cFuncFlag)
-      .append("_out.xml");
+    //1406_6_111_out.xml
+    StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())//1406
+      .append('_').append(NoFactory.nextAppNo())//_6
+      .append('_').append(this.cFuncFlag)//_111
+      .append("_out.xml");//_out.xml
+    //[Element: <TX/>]，[Element: <TranCom/>]，1406_6_111_out.xml
     SaveMessage.save(pOutNoStd, this.cTranComEle.getText(), mSaveName.toString());
+    //保存报文完毕！1406_6_111_out.xml
     this.cLogger.info("保存报文完毕！" + mSaveName);
+    //1406_6_111_out.xml
     this.cOutNoStdDoc = mSaveName.toString();
+    //将文档转换为UTF-8编码的字节数组，保持原格式。
     byte[] mBodyBytes0 = JdomUtil.toBytes(pOutNoStd,"UTF-8");
-    this.cLogger.info("返回给银行的报文：" + new String(mBodyBytes0));
-
+    //返回给银行的报文：建行绿灯测试响应报文(无应用域)
+    this.cLogger.info("返回给银行的报文：" + new String(mBodyBytes0));	
+    //Socket[addr=/127.0.0.1,port=50412,localport=39871]得到输出流，从报文体字节数组写入报文体字节数组元素个字节到该文件输出流。
     this.cSocket.getOutputStream().write(mBodyBytes0);
+    //Socket[addr=/127.0.0.1,port=50412,localport=39871]关闭输出
     this.cSocket.shutdownOutput();
-
+    //Out CcbNetImpl.send()!
     this.cLogger.info("Out CcbNetImpl.send()!");
   }
 }
