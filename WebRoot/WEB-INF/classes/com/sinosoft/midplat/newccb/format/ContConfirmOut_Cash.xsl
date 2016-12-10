@@ -141,7 +141,7 @@
 									</xsl:for-each>
 								</Detail_List>
 							</xsl:for-each>   -->	
-
+                            <xsl:if test = "/TranData/Head/Flag ='0'">
 							<Detail_List>
 								<!-- 提示信息描述 -->
 								<Prmpt_Inf_Dsc>保单第一页</Prmpt_Inf_Dsc>
@@ -397,7 +397,7 @@
 									   <Ret_Inf><xsl:text>     </xsl:text><xsl:text>    银保经理签名：	          经办人签字：           日期：      年     月     日</xsl:text></Ret_Inf>
 							  </Detail>	 
 							</Detail_List>	
-
+                          </xsl:if>
 			        	</APP_ENTITY>
 			        </ENTITY>
 	      	</TX_BODY>

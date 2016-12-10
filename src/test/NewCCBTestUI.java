@@ -1,7 +1,6 @@
 package test;
 
 import java.io.EOFException;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -48,18 +47,19 @@ public class NewCCBTestUI {
 //		String mOutFilePath = "D:/task/20161206/newccb/P53818152out_noStd.xml";
 		//新单试算
 		String funcflag = "P53819113";//交易码
-		String mInFilePath = "D:/task/20161209/newccb/P53819113in_noStd.xml";//输入文件路径
-		String mOutFilePath = "D:/task/20161209/newccb/P53819113out_noStd.xml";//输出文件路径
+		String mInFilePath = "D:/task/20161210/newccb/3651_49_1012_in.xml";//输入文件路径
+		mInFilePath="D:/task/20161210/newccb/P53819113in_noStd.xml";
+		String mOutFilePath = "D:/task/20161210/newccb/3651_49_1012_out.xml";//输出文件路径
+		mOutFilePath="D:/task/20161210/newccb/P53819113out_noStd.xml";
 //		
 		//新单确认
 //		String funcflag = "P53819152";
-//		String mInFilePath = "F:\\xml\\CCB/P53819152_新单确认.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819152_out.xml";
-
+//		String mInFilePath = "D:/task/20161210/newccb/3653_53_1014_in.xml";
+//		String mOutFilePath = "D:/task/20161210/newccb/3653_53_1014_out.xml";
 		//打印保单
 //		String funcflag = "P53819182";
-//		String mInFilePath = "F:\\xml\\CCB\\P53819182_保单打印.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819182__out.xml";
+//		String mInFilePath = "D:/task/20161209/newccb/3657_61_1032_in.xml";
+//		String mOutFilePath = "D:/task/20161209/newccb/3657_61_1032_out.xml";
 		
 		/*//自动冲正*/
 //		String funcflag = "P53818154";
@@ -343,6 +343,7 @@ public class NewCCBTestUI {
 	 * @return 字节数组
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unused")
 	public byte[] sendRequest(String pFuncFlag, Element document) throws Exception {
 		//Socket连接[网络之间互连的协议]:[端口号]
 		cLogger.info("Socket连接" + cIP + ":" + cPort);

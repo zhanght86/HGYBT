@@ -1182,6 +1182,8 @@ public class TranLogSchema implements Schema
 		}
 		if (FCode.equals("TranNo"))
 		{
+			System.out.println(String.valueOf(TranNo));
+			System.out.println(StrTool.GBKToUnicode(String.valueOf(TranNo)));
 			strReturn = StrTool.GBKToUnicode(String.valueOf(TranNo));
 		}
 		if (FCode.equals("Operator"))
