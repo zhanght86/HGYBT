@@ -12,24 +12,28 @@ public class NoFactory {
 	protected static final byte cClusterId;
 	protected static final byte cClusterCount;
 	static {
+		//cluster元素
 		Element tClusterEle = MidplatConf.newInstance().getConf().getRootElement().getChild("cluster");
+		//cluster元素存在，获取元素属性值
 		if (null != tClusterEle) {
 			cClusterId = Byte.parseByte(tClusterEle.getAttributeValue("id"));
 			cClusterCount = Byte.parseByte(tClusterEle.getAttributeValue("count"));
+		//cluster元素不存在，赋默认值
 		} else {
 			cClusterId = 0;
 			cClusterCount = 1;
 		}
+		//ClusterId=2; ClusterCount=3
 		cLogger.debug("ClusterId=" + cClusterId + "; ClusterCount=" + cClusterCount);
 	}
 	
-	private static final byte[] cAppNoLock = new byte[0];
-	private static int cAppNo;
+	private static final byte[] cAppNoLock = new byte[0];//[]
+	private static int cAppNo;//6
 	public final static int nextAppNo() {
 		synchronized (cAppNoLock) {
-			cAppNo += cClusterCount;
+			cAppNo += cClusterCount;//6+3=9
 		}
-		return cAppNo;
+		return cAppNo;//9
 	}
 	public final static void setAppNo(int pMaxNo) {
 		synchronized (cAppNoLock) {

@@ -2,15 +2,16 @@
 <newccb>
 <!-- 银行端代码定义，用于日终类交易 	<bank id="03" insu="010072" />-->
 	<bank id="03" insu="010072" />
-	<TranCom outcode="13">13</TranCom>
+	<!-- <TranCom outcode="13">13</TranCom> -->
+	<TranCom outcode="13">03</TranCom><!-- 201612151117 -->
 	<CoreNo>010072</CoreNo>
 	<AgentCom>1301010001</AgentCom><!--代理机构编码:建设银行贵州贵阳世纪城网点 -->
 	<!-- <preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet> -->
 	<preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet>
 	<!-- 银联账号 -->
 	<BankNo>105</BankNo>
-	<business>
-		<name>实时投保</name>
+	<business><!-- 元素 -->
+		<name>实时投保</name><!-- 属性 -->
 		<funcFlag outcode="P53819113">1012</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout> 
@@ -283,28 +284,28 @@
 		<LocalDir>/ybttest/newccb/zw/</LocalDir>
 	</business>
 	
-	<business> 
-		<name>日终与保险公司对账（保全类）</name>      
-		<funcFlag outcode="P53817104">1048</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout>    
-		<NodeNo>370684208</NodeNo>      
-		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>        
-		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
-		<CoreNo>010072</CoreNo>
-		<LocalDir>/ybttest/newccb/bq/</LocalDir>
+	<business> <!-- 交易 -->
+		<name>日终与保险公司对账（保全类）</name><!-- 交易名称 -->      
+		<funcFlag outcode="P53817104">1048</funcFlag><!-- 交易码 -->
+		<locktime>200</locktime><!-- 锁定时间 -->
+		<timeout>200</timeout><!-- 超时时间 -->
+		<NodeNo>370684208</NodeNo><!-- 银行网点 -->      
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format><!-- 报文转换模块 -->    
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service><!-- 业务处理模块 -->
+		<CoreNo>010072</CoreNo><!-- 核心号 -->
+		<LocalDir>/ybttest/newccb/bq/</LocalDir><!-- 本地目录 -->
 	</business>
 	
-	<business>
-		<name>发送银行端单证信息</name>
-		<funcFlag outcode="P53817105">3006</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout>
-		<NodeNo>370684208</NodeNo>    
-		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>
-		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
-		<CoreNo>010072</CoreNo>
-		<LocalDir>/ybttest/newccb/dz/</LocalDir>
+	<business><!-- 交易 -->
+		<name>发送银行端单证信息</name><!-- 交易名称 -->
+		<funcFlag outcode="P53817105">3006</funcFlag><!-- 交易码 -->
+		<locktime>200</locktime><!-- 锁定时间 -->
+		<timeout>200</timeout><!-- 超时时间 -->
+		<NodeNo>370684208</NodeNo><!-- 网点代码 --> 
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format><!-- 格式化 -->
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service><!-- 服务类 -->
+		<CoreNo>010072</CoreNo><!-- 核心号 -->
+		<LocalDir>/ybttest/newccb/dz/</LocalDir><!-- 本地目录 -->
 	</business>
 	 
 		

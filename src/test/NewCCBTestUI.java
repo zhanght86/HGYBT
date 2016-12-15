@@ -35,6 +35,7 @@ public class NewCCBTestUI {
 		//程序开始...
 		System.out.println("程序开始...");
 		//定义局部网络之间互连的协议并赋值
+//		String mIP = "10.2.0.31";
 		String mIP = "127.0.0.1";
 //		String mIP = "10.0.4.14";
 		//定义局部端口并赋值
@@ -47,19 +48,19 @@ public class NewCCBTestUI {
 //		String mOutFilePath = "D:/task/20161206/newccb/P53818152out_noStd.xml";
 		//新单试算
 		String funcflag = "P53819113";//交易码
-		String mInFilePath = "D:/task/20161210/newccb/3651_49_1012_in.xml";//输入文件路径
-		mInFilePath="D:/task/20161210/newccb/P53819113in_noStd.xml";
-		String mOutFilePath = "D:/task/20161210/newccb/3651_49_1012_out.xml";//输出文件路径
-		mOutFilePath="D:/task/20161210/newccb/P53819113out_noStd.xml";
+		String mInFilePath = "D:/task/20161215/newccb/local/10452_551_1012_in.xml";//输入文件路径
+		mInFilePath="D:/task/20161215/P53819113in_noStd.xml";
+		String mOutFilePath = "D:/task/20161215/newccb/local/10452_551_1012_out.xml";//输出文件路径
+		mOutFilePath="D:/task/20161215/P53819113out_noStd.xml";
 //		
 		//新单确认
 //		String funcflag = "P53819152";
-//		String mInFilePath = "D:/task/20161210/newccb/3653_53_1014_in.xml";
-//		String mOutFilePath = "D:/task/20161210/newccb/3653_53_1014_out.xml";
+//		String mInFilePath = "D:/task/2?0161215/newccb/local/10456_557_1014_in.xml";
+//		String mOutFilePath = "D:/task/20161215/newccb/local/10456_557_1014_out.xml";
 		//打印保单
 //		String funcflag = "P53819182";
-//		String mInFilePath = "D:/task/20161209/newccb/3657_61_1032_in.xml";
-//		String mOutFilePath = "D:/task/20161209/newccb/3657_61_1032_out.xml";
+//		String mInFilePath = "D:/task/20161209/newccb/9693_2480_1032_in.xml";
+//		String mOutFilePath = "D:/task/20161209/newccb/9693_2480_1032_out.xml";
 		
 		/*//自动冲正*/
 //		String funcflag = "P53818154";

@@ -29,6 +29,7 @@ import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
 import com.sinosoft.utility.Schema;
 
+//实时投保[录单自核]
 public class NewContInput extends ServiceImpl
 {
 	public NewContInput(Element pThisBusiConf)
@@ -40,10 +41,11 @@ public class NewContInput extends ServiceImpl
 	public Document service(Document pInXmlDoc)
 	{
 		long mStartMillis = System.currentTimeMillis();
+		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
 		cInXmlDoc = pInXmlDoc;
-
-		JdomUtil.print(cInXmlDoc);
+		//Java文档对象模型工具将输入标准报文打印到控制台[GBK编码，缩进3空格]
+		JdomUtil.print(cInXmlDoc);//[Element:<TranData/>]
 		Element mRootEle = cInXmlDoc.getRootElement();//核心录单自核请求报文根节点[Element: <TranData/>]
 		Element mBodyEle = mRootEle.getChild(Body);//核心录单自核请求报文报文体[Element: <Body/>]
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);//投保单(印刷)号 210414131200027
@@ -54,21 +56,24 @@ public class NewContInput extends ServiceImpl
 			// System.out.println("--------------------------------------------------------------------------------------------------------");
 			// JdomUtil.print(cInXmlDoc);
 			cTranLogDB = insertTranLog(cInXmlDoc);
-
+			
 			// 校验系统中是否有相同保单正在处理，尚未返回
 			int tLockTime = 300; // 默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try
 			{
+				//获取锁定时间
 				tLockTime = Integer.parseInt(cThisBusiConf.getChildText(locktime));
 			}
 			catch (Exception ex)
 			{ // 使用默认值
 				cLogger.debug("未配置锁定时间，或配置有误，使用默认值(s)：" + tLockTime, ex);
 			}
+			//获取当前日历对象
 			//java.util.GregorianCalendar[time=1480406848055,areFieldsSet=true,areAllFieldsSet=true,lenient=true,zone=sun.util.calendar.ZoneInfo[id="Asia/Shanghai",offset=28800000,dstSavings=0,useDaylight=false,transitions=19,lastRule=null],firstDayOfWeek=1,minimalDaysInFirstWeek=1,ERA=1,YEAR=2016,MONTH=10,WEEK_OF_YEAR=49,WEEK_OF_MONTH=5,DAY_OF_MONTH=29,DAY_OF_YEAR=334,DAY_OF_WEEK=3,DAY_OF_WEEK_IN_MONTH=5,AM_PM=1,HOUR=4,HOUR_OF_DAY=16,MINUTE=7,SECOND=28,MILLISECOND=55,ZONE_OFFSET=28800000,DST_OFFSET=0]
 			Calendar tCurCalendar = Calendar.getInstance();
-			//
+			//日历对象加入秒数
 			tCurCalendar.add(Calendar.SECOND, -tLockTime);//13，200
+			//拼接结构化查询语句[查询交易日志表中交易结果为交易挂起，未返回，投保单印刷号为]
 			//select count(1) from TranLog where RCode=-1 and ProposalPrtNo='210414131200027' and MakeDate>=20161129 and MakeTime>=160408
 			String tSqlStr = new StringBuilder("select count(1) from TranLog where RCode=").append(CodeDef.RCode_NULL).append(" and ProposalPrtNo='").append(mProposalPrtNo).append('\'').append(" and MakeDate>=").append(DateUtil.get8Date(tCurCalendar)).append(" and MakeTime>=").append(DateUtil.get6Time(tCurCalendar)).toString();
 			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr)))
@@ -241,7 +246,7 @@ public class NewContInput extends ServiceImpl
 				cLogger.error("更新日志信息失败！" + cTranLogDB.mErrors.getFirstError());
 			}
 		}
-
+		//Out NewContInput.service()!
 		cLogger.info("Out NewContInput.service()!");
 		return cOutXmlDoc;
 	}

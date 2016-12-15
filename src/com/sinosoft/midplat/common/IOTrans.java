@@ -72,14 +72,18 @@ public class IOTrans {
 	}
 	
 	/**
-	 * 从指定流中读取数据，填满传入的字节数组，不关闭流
+	 * 从输入字节流中读取数据，填满传入的字节数组，不关闭流
 	 */
 	public static void readFull(byte[] pByte, InputStream pIs) throws IOException {
 		for (int tReadSize = 0; tReadSize < pByte.length;) {
+			//从输入流读取转换为字节数组数据达到字节数组长度个字节，返回读入缓冲区的总字节数
 			int tRead = pIs.read(pByte, tReadSize, pByte.length-tReadSize);
+			//如果没有更多的数据，因为数据流的末尾已到达返回-1
 			if (-1 == tRead) {
+				//抛出输入输出异常:读取数据出错！实际读入长度：读取大小
 				throw new IOException("读取数据出错！实际读入长度：" + tReadSize);
 			}
+			//将读取大小与读入缓冲区的总字节数相加，并将结果赋给读取大小
 			tReadSize += tRead;
 		}
 	}

@@ -9,7 +9,7 @@
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
       <ZoneNo><xsl:value-of select="BankCode"/></ZoneNo>	<!-- 地区代码 -->
       <NodeNo><xsl:value-of select="Branch"/></NodeNo>		<!-- 网点代码 -->
-      <BankCode>0105</BankCode>								<!--  -->
+      <BankCode>0105</BankCode>								<!-- 银行代码 -->
       <TellerNo><xsl:value-of select="Teller"/></TellerNo>	<!-- 柜员代码 -->
       <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>	<!-- 流水号 -->
       <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
@@ -121,6 +121,7 @@
          <Phone><xsl:value-of select="Insured/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="Insured/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="Insured/Email"/></Email>
+         <!-- 职业类别[PolicyHolder/OccupationType] -->
          <JobCode><xsl:value-of select="Insured/OccupationType"/></JobCode>
           <!-- 体重 -->
 		 <Stature><xsl:value-of select="Insured/Height"/></Stature>

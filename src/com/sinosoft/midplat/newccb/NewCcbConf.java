@@ -17,14 +17,18 @@ public class NewCcbConf extends XmlConf {
 	private String cPath = "conf/newccb.xml";
 	
 	private NewCcbConf() {
+		//加载新建行配置文件
 		load();
+		//文件缓存管理
 		FileCacheManage.newInstance().register(cPath, this);
 	}
 	
 	public void load() {
+		//Into NewCcbConf.load()...
 		cLogger.info("Into NewCcbConf.load()...");
-		
+		// /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml
 		String mFilePath = SysInfo.cHome + cPath;
+		//Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml...
 		cLogger.info("Start load " + mFilePath + "...");
 		
 		cConfFile = new File(mFilePath);
@@ -41,19 +45,26 @@ public class NewCcbConf extends XmlConf {
 		recordStatus();
 		
 		cConfDoc = loadXml(cConfFile);
+		//End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml!
 		cLogger.info("End load " + mFilePath + "!");
 		
-		//是否输出配置文件
+		//是否输出配置文件[默认输出]
 		boolean mOut = true;
+		//配置加载[睡眠秒数:60]
+		//[Element: <confLoad/>]
 		Element mConfLoad =
 			MidplatConf.newInstance().getConf().getRootElement().getChild("confLoad");
+		//配置加载 != null，out属性值==false
 		if (null!=mConfLoad && "false".equals(mConfLoad.getAttributeValue("out"))) {
+			//不输出配置文件
 			mOut = false;
 		}
+		//输出配置文件
 		if (mOut) {
+			//Java文档对象模型工具保持原格式新建行配置文件:[Element: <newccb/>]
 			cLogger.info(JdomUtil.toString(cConfDoc, ""));
 		}
-		
+		//Out NewCcbConf.load()!
 		cLogger.info("Out NewCcbConf.load()!");
 	}
 	

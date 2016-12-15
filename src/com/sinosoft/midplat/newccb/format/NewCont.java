@@ -55,6 +55,7 @@ public class NewCont extends XmlSimpFormat {
 	}
 	
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
+		//Into NewCont.noStd2Std()...
 		cLogger.info("Into NewCont.noStd2Std()...");
 		
 		//此处备份一下请求报文头相关信息，组织返回报文时会用到
@@ -104,41 +105,61 @@ public class NewCont extends XmlSimpFormat {
 			NewContInXsl.newInstance().getCache().transform(pNoStdXml);
 		//lilu20150305处理关系代码，建行发被保人是投保人的关系，核心要投保人是被保人的关系，目前核心只有00本人，01父母，02配偶，03子女，04祖孙，05监护，06其他，07保单服务人员
 		sRelationShip = mStdXml.getRootElement().getChild("Body").getChild("Appnt").getChildText("RelaToInsured");
-		
+		//================0133043
 		System.out.println("================"+pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("Plchd_And_Rcgn_ReTpCd"));
+		//================00
 		System.out.println("================"+sRelationShip);
+		//关系类型为父母
 		if("01".equals(sRelationShip)){
+			//投保人被保人关系为子女
 			mStdXml.getRootElement().getChild("Body").getChild("Appnt").getChild("RelaToInsured").setText("03");
 		}
+		//关系类型为子女
 		if("03".equals(sRelationShip)){
+			//投保人被保人关系为父母
 			mStdXml.getRootElement().getChild("Body").getChild("Appnt").getChild("RelaToInsured").setText("01");
 		}
-		System.out.println("++++++++++++++++"+sRelationShip);
+		//++++++++++++++++00
+		System.out.println("++++++++++++++++"+sRelationShip);//本人
 		
 		//中韩附加定盈宝两全保险（万能型）保障类型随主险
 		//主险
+		//险种[可多个] 
 		List mRiskList = mStdXml.getRootElement().getChild("Body").getChildren("Risk");
+		//定义保险年期年龄标志
 		String mInsuYearFlag = "";
+		//定义保险年期年龄
 		String mInsuYear = "";
+		//遍历险种
 		for(int i=0;i<mRiskList.size();i++){
+			//获取当前险种元素
 			Element mRiskEle = (Element) mRiskList.get(i);
+			//
 			String mRiskCode = mRiskEle.getChildText("RiskCode");
+			//险种代码为131204、131204、131301、131302、221206、001301、231302
 			if("131204".equals(mRiskCode) || "131205".equals(mRiskCode) || "131301".equals(mRiskCode) || "131302".equals(mRiskCode) ||
 					"221206".equals(mRiskCode) || "001301".equals(mRiskCode) || "231302".equals(mRiskCode)){
+				//获取保险年期年龄标志
 				mInsuYearFlag = mRiskEle.getChildText("InsuYearFlag");
+				//获取保险年期年龄
 				mInsuYear = mRiskEle.getChildText("InsuYear");
 			}
 		}
-		
+		//遍历险种[二次]
 		for(int i=0;i<mRiskList.size();i++){
+			//获取当前险种元素
 			Element mRiskEle = (Element) mRiskList.get(i);
+			//获取险种代码
 			String mRiskCode = mRiskEle.getChildText("RiskCode");
+			//获取险种代码为145201
 			if("145201".equals(mRiskCode)){
+				//设置保险年期年龄标志为""
 				mRiskEle.getChild("InsuYearFlag").setText(mInsuYearFlag);
+				//设置保险年期年龄为""
 				mRiskEle.getChild("InsuYear").setText(mInsuYear);
 			}
 		}
-			
+		//Out NewCont.noStd2Std()!
 		cLogger.info("Out NewCont.noStd2Std()!");
 		return mStdXml;
 	}
@@ -158,23 +179,24 @@ public class NewCont extends XmlSimpFormat {
 			NewContOutXsl.newInstance().getCache().transform(pStdXml);
 		JdomUtil.print(mNoStdXml);
 		
-		//服务响应时间
+		//服务响应时间[20161212103228778]
 		mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		
-		//设置TX_HEADER的一些节点信息
+		//设置TX_HEADER的一些节点信息[返回给银行的非标准报文,银行发过来的非标准报文的头节点,服务接受时间(20161212095023139),服务响应时间(20161212103228778)]
 		mNoStdXml = NewCcbFormatUtil.setNoStdTxHeader(mNoStdXml, oldTxHeader, mSYS_RECV_TIME, mSYS_RESP_TIME);
 		
 		//当核保成功的时候，返回TX_BODY时，增加COM_ENTITY节点
 //		String resultCode = pStdXml.getRootElement().getChild("Head").getChildText("Flag");
 //		if(resultCode.equals("0")){
+		//返回加入了COM_ENTITY节点的非标准报文[转换后的非标准报文,核心返回的标准报文,body节点下的COM_ENTITY节点,服务名(交易码:P53819113)]
 		mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
 //		}
 		
 		
 		/*Start-组织返回报文头*/
-
+		//核心返回的标准报文头
 		Element mRetData = pStdXml.getRootElement().getChild("Head");
-		if (mRetData.getChildText(Flag).equals("0")) {	//交易成功
+		if (mRetData.getChildText(Flag).equals("0")) {	//交易成功[设置转换后的非标准报文头]
 			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText(Desc));
 			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC_LEN").setText(Integer.toString(mRetData.getChildText(Desc).length()));
 			//COM_ENTITY节点加入服务方流水号
@@ -194,10 +216,10 @@ public class NewCont extends XmlSimpFormat {
 
 			
 			
-		} else {	//交易失败
+		} else {	//交易失败[设置转换后的非标准报文头错误信息]
 			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_CODE").setText("ZZZ072000001");//返回通用错误代码
-			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText("Desc"));
-			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC_LEN").setText(Integer.toString(mRetData.getChildText(Desc).length()));
+			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText("Desc"));//服务响应描述
+			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC_LEN").setText(Integer.toString(mRetData.getChildText(Desc).length()));//服务响应描述长度
 		}
 		
 		/*End-组织返回报文头*/

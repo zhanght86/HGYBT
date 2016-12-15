@@ -114,6 +114,7 @@ public class FileUtil
 	// 解密银行发送过来的加密文件，并且读取文件，根据不同交易转换成不同标准报文。
 	public Document fileSecurity() throws MidplatException
 	{
+		//Into FileUtil.fileSecurity()...
 		cLogger.info("Into FileUtil.fileSecurity()...");
 		try
 		{
@@ -130,13 +131,16 @@ public class FileUtil
 				}
 				try
 				{
+					//
 					cLogger.info("FileName = " + fileName);
 					cLogger.info("FilePath==" + filePath);
 					// 解密后的报文路径
 					String mFilePath = cThisBusiConf.getChildTextTrim("LocalDir");
 
 					// 解密：本地节点，对端节点，密文文件存放路径，解密后明文文件绝对路径
+					//解密前的对账文件存放路径：/home/ap/fserver2/rcv/RcnclFile_20161231_010079_510000000_001.xml
 					cLogger.info("解密前的对账文件存放路径：" + filePath + fileName);
+					//解密后的对账文件存放路径：/ybttest/newccb/zw/RcnclFile_20161231_010079_510000000_001.xml
 					cLogger.info("解密后的对账文件存放路径：" + mFilePath + fileName);
 					
 					//文件解密

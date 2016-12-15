@@ -451,7 +451,7 @@ public class TranLogSchema implements Schema
 	{
 		return RCode;
 	}
-	/** 交易结果 */
+	/**  */
 	public void setRCode(int aRCode)
 	{
 		RCode = aRCode;
@@ -790,47 +790,47 @@ public class TranLogSchema implements Schema
 	**/
 	public void setSchema(TranLogSchema aTranLogSchema)
 	{
-		this.LogNo = aTranLogSchema.getLogNo();
-		this.TranCom = aTranLogSchema.getTranCom();
-		this.ZoneNo = aTranLogSchema.getZoneNo();
-		this.NodeNo = aTranLogSchema.getNodeNo();
-		this.TranNo = aTranLogSchema.getTranNo();
-		this.Operator = aTranLogSchema.getOperator();
-		this.FuncFlag = aTranLogSchema.getFuncFlag();
-		this.TranDate = aTranLogSchema.getTranDate();
-		this.TranTime = aTranLogSchema.getTranTime();
-		this.ProposalPrtNo = aTranLogSchema.getProposalPrtNo();
-		this.ContNo = aTranLogSchema.getContNo();
-		this.OtherNo = aTranLogSchema.getOtherNo();
-		this.AgentCom = aTranLogSchema.getAgentCom();
-		this.AgentCode = aTranLogSchema.getAgentCode();
-		this.AgentComName = aTranLogSchema.getAgentComName();
-		this.AgentName = aTranLogSchema.getAgentName();
-		this.UnitCode = aTranLogSchema.getUnitCode();
-		this.AgentCodeGrade = aTranLogSchema.getAgentCodeGrade();
-		this.AgentGrade = aTranLogSchema.getAgentGrade();
-		this.ManageCom = aTranLogSchema.getManageCom();
-		this.RCode = aTranLogSchema.getRCode();
-		this.RText = aTranLogSchema.getRText();
-		this.UsedTime = aTranLogSchema.getUsedTime();
-		this.AppntName = aTranLogSchema.getAppntName();
-		this.Bak1 = aTranLogSchema.getBak1();
-		this.Bak2 = aTranLogSchema.getBak2();
-		this.Bak3 = aTranLogSchema.getBak3();
-		this.Bak4 = aTranLogSchema.getBak4();
-		this.Bak5 = aTranLogSchema.getBak5();
-		this.InNoDoc = aTranLogSchema.getInNoDoc();
-		this.MakeDate = aTranLogSchema.getMakeDate();
-		this.InDoc = aTranLogSchema.getInDoc();
-		this.OutDoc = aTranLogSchema.getOutDoc();
-		this.MakeTime = aTranLogSchema.getMakeTime();
-		this.ModifyDate = aTranLogSchema.getModifyDate();
-		this.ModifyTime = aTranLogSchema.getModifyTime();
-		this.AppntIDNo = aTranLogSchema.getAppntIDNo();
-		this.InsuredName = aTranLogSchema.getInsuredName();
-		this.InsuredIDNo = aTranLogSchema.getInsuredIDNo();
-		this.ProductId = aTranLogSchema.getProductId();
-		this.OutNoDoc = aTranLogSchema.getOutNoDoc();
+		this.LogNo = aTranLogSchema.getLogNo();//设置日志号
+		this.TranCom = aTranLogSchema.getTranCom();//设置交易单位 
+		this.ZoneNo = aTranLogSchema.getZoneNo();//设置地区代码
+		this.NodeNo = aTranLogSchema.getNodeNo();//设置交易网点
+		this.TranNo = aTranLogSchema.getTranNo();//设置交易流水号
+		this.Operator = aTranLogSchema.getOperator();//设置操作员
+		this.FuncFlag = aTranLogSchema.getFuncFlag();//设置交易类型
+		this.TranDate = aTranLogSchema.getTranDate();//设置交易日期
+		this.TranTime = aTranLogSchema.getTranTime();//设置交易时间
+		this.ProposalPrtNo = aTranLogSchema.getProposalPrtNo();//设置投保单(印刷)号
+		this.ContNo = aTranLogSchema.getContNo();//设置保单号
+		this.OtherNo = aTranLogSchema.getOtherNo();//设置其他关联号
+		this.AgentCom = aTranLogSchema.getAgentCom();//设置代理机构
+		this.AgentCode = aTranLogSchema.getAgentCode();//设置代理人
+		this.AgentComName = aTranLogSchema.getAgentComName();//设置代理机构名称
+		this.AgentName = aTranLogSchema.getAgentName();//设置代理人名称
+		this.UnitCode = aTranLogSchema.getUnitCode();//设置组别
+		this.AgentCodeGrade = aTranLogSchema.getAgentCodeGrade();//设置代理级别
+		this.AgentGrade = aTranLogSchema.getAgentGrade();//设置代理机构级别
+		this.ManageCom = aTranLogSchema.getManageCom();//设置管理机构
+		this.RCode = aTranLogSchema.getRCode();//设置交易结果 
+		this.RText = aTranLogSchema.getRText();//设置结果描述
+		this.UsedTime = aTranLogSchema.getUsedTime();//设置服务耗时 
+		this.AppntName = aTranLogSchema.getAppntName();//设置投保人姓名
+		this.Bak1 = aTranLogSchema.getBak1();//设置备用1
+		this.Bak2 = aTranLogSchema.getBak2();//设置备用2 
+		this.Bak3 = aTranLogSchema.getBak3();//设置备用3
+		this.Bak4 = aTranLogSchema.getBak4();//设置备用4
+		this.Bak5 = aTranLogSchema.getBak5();//设置备用5
+		this.InNoDoc = aTranLogSchema.getInNoDoc();//设置进入报文
+		this.MakeDate = aTranLogSchema.getMakeDate();//设置入库日期
+		this.InDoc = aTranLogSchema.getInDoc();//设置进入标准报文
+		this.OutDoc = aTranLogSchema.getOutDoc();//设置返回标准报文
+		this.MakeTime = aTranLogSchema.getMakeTime();//设置入库时间
+		this.ModifyDate = aTranLogSchema.getModifyDate();//设置最后修改日期
+		this.ModifyTime = aTranLogSchema.getModifyTime();//设置最后修改时间
+		this.AppntIDNo = aTranLogSchema.getAppntIDNo();//设置投保人证件号码
+		this.InsuredName = aTranLogSchema.getInsuredName();//设置被保人姓名
+		this.InsuredIDNo = aTranLogSchema.getInsuredIDNo();//设置被保人证件号码
+		this.ProductId = aTranLogSchema.getProductId();//设置产品代码
+		this.OutNoDoc = aTranLogSchema.getOutNoDoc();//返回报文
 	}
 
 	/**
@@ -1024,8 +1024,11 @@ public class TranLogSchema implements Schema
      */
 	public TranLogSchema getSchema()
 	{
+		//初始化交易日志数据库对象的集合(用户) 类实例
 		TranLogSchema aTranLogSchema = new TranLogSchema();
+		//使用另外一个 DB层 交易日志数据库对象的集合(用户) 类 对象给 集合(用户) 类 赋值
 		aTranLogSchema.setSchema(this);
+		//返回集合(用户) 类对象
 		return aTranLogSchema;
 	}
 
@@ -1182,7 +1185,7 @@ public class TranLogSchema implements Schema
 		}
 		if (FCode.equals("TranNo"))
 		{
-			System.out.println(String.valueOf(TranNo));
+			System.out.println(String.valueOf(TranNo));//108011rv11481276333011875
 			System.out.println(StrTool.GBKToUnicode(String.valueOf(TranNo)));
 			strReturn = StrTool.GBKToUnicode(String.valueOf(TranNo));
 		}

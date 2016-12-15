@@ -13,7 +13,7 @@ import com.sinosoft.lis.schema.TranLogSchema;
 import com.sinosoft.lis.vschema.TranLogSet;
 import com.sinosoft.utility.*;
 /**
- * DB层数据库操作类
+ * 交易日志数据库操作类
  * @author yuantongxin
  */
 public class TranLogDB extends TranLogSchema
@@ -60,6 +60,7 @@ public class TranLogDB extends TranLogSchema
 	{
 		//[AppntIDNo:"371502198310206057",AppntName:"华贵",Bak1:"127.0.0.1",FuncFlag:1012,InNoDoc:"2246_3_1012_in.xml",InsuredIDNo:"371502198310206057",InsuredName:"华贵",LogNo:2246,MakeDate:20161208,MakeTime:142926,NodeNo:"060150001222",Operator:"5201300002",OtherNo:"",ProductId:"011A0100",ProposalPrtNo:"210414132201550",RCode:-1,RText:null,TranCom:9,TranDate:20161108,TranNo:"2016120800010",TranTime	:130101,UnitCode:null,UsedTime:-1,ZoneNo:"01",ModifyDate:20161208,ModifyTime:142926]
 		TranLogSchema tSchema = this.getSchema();
+		//数据库操作对象插入集合(用户)类对象失败
 		if (!db.insert(tSchema))
 		{
 			// @@错误处理
@@ -72,8 +73,8 @@ public class TranLogDB extends TranLogSchema
 
 			return false;
 		}
-
-		return true;
+		//插入成功
+		return true;//返回真
 	}
 
 	/**
@@ -178,8 +179,9 @@ public class TranLogDB extends TranLogSchema
 	{
 		Statement stmt = null;//JDBC连接中传递SQL语句的对象
 		ResultSet rs = null;//查询结果返回的结果集对象
-	  
+	  //!false=true
 	  if( !mflag ) {//没有传入连接
+		  //得到连接
 		  con = DBConnPool.getConnection();//数据库连接池获得连接
 		}
 
@@ -235,7 +237,7 @@ System.out.println("i="+i);
 				CError tError = new CError();
 				tError.moduleName = "TranLogDB";
 				tError.functionName = "getInfo";
-				tError.errorMessage = "未找到相关数象";
+				tError.errorMessage = "未找到相关对象";
 				this.mErrors .addOneError(tError);
 
 				if (mflag == false)
@@ -252,15 +254,16 @@ System.out.println("i="+i);
 		catch(Exception e)
 	    {
 			// @@错误处理
+			//初始化错误实例
 			CError tError = new CError();
-			tError.moduleName = "TranLogDB";
-			tError.functionName = "getInfo";
-			tError.errorMessage = e.toString();
+			tError.moduleName = "TranLogDB";//设置模块名[交易日志数据库操作类]
+			tError.functionName = "getInfo";//设置函数名[获取信息]
+			tError.errorMessage = e.toString();//设置错误信息[java.sql.SQLException: Io 异常: Read timed out]
 			this.mErrors .addOneError(tError);
 
 			try{ rs.close(); } catch( Exception ex ) {}
 			try{ stmt.close(); } catch( Exception ex1 ) {}
-
+			//false==false
 			if (mflag == false)
 			{
 				try

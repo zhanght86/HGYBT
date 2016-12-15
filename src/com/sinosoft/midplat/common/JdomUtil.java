@@ -124,8 +124,11 @@ public class JdomUtil {
 	 * 注意：此方法不自动关闭流，如有需要，请在调用后手动关闭。
 	 */
 	public static void output(Document pXmlDoc, OutputStream pOs, String pCharset) throws IOException {
+		//得到原格式指定编码缩进3空格
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset).setIndent("   ");
+		//使用格式创建XML输出器
 		XMLOutputter mXMLOutputter = new XMLOutputter(mFormat);
+		//输出XML文档到字节输出流
 		mXMLOutputter.output(pXmlDoc, pOs);
 	}
 	

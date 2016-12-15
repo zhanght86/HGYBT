@@ -23,9 +23,11 @@ public class NewContInXsl extends XslCache {
 	}
 	
 	public void load() {
+		//Into NewContInXsl.load()...
 		cLogger.info("Into NewContInXsl.load()...");
 		
 		String mFilePath = SysInfo.cBasePath + cPath;
+		//Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newccb/format/NewContIn.xsl...
 		cLogger.info("Start load " + mFilePath + "...");
 		
 		cXslFile = new File(mFilePath);
@@ -42,6 +44,7 @@ public class NewContInXsl extends XslCache {
 		recordStatus();
 		
 		cXslTrsf = loadXsl(cXslFile);
+		//End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newccb/format/NewContIn.xsl!
 		cLogger.info("End load " + mFilePath + "!");
 		
 		//是否输出xsl文件
@@ -55,12 +58,12 @@ public class NewContInXsl extends XslCache {
 			try {
 				cLogger.info(
 						JdomUtil.toString(
-								JdomUtil.build(new FileInputStream(cXslFile)), ""));
+								JdomUtil.build(new FileInputStream(cXslFile)), ""));//<?xml version="1.0"?><xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" version="1.0" exclude-result-prefixes="java">
 			} catch (IOException ex) {
 				cLogger.error("输出配置文件异常！", ex);
 			}
 		}
-		
+		//Out NewContInXsl.load()!
 		cLogger.info("Out NewContInXsl.load()!");
 	}
 	

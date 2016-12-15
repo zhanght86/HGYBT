@@ -32,6 +32,7 @@ public class SocketNetImpl implements XmlTag {
 	public SocketNetImpl(Socket pSocket, Element pThisConfRoot) throws MidplatException {
 		cSocket = pSocket;
 		cClientIp = cSocket.getInetAddress().getHostAddress();
+		//客户端IP：127.0.0.1；服务端口：39871
 		cLogger.info("客户端IP：" + cClientIp + "；服务端口：" + cSocket.getLocalPort());
 		cThisConfRoot = pThisConfRoot;
 		cTranComEle = (Element) cThisConfRoot.getChild(TranCom).clone();
@@ -48,8 +49,9 @@ public class SocketNetImpl implements XmlTag {
 	 * @throws Exception
 	 */
 	public Document receive() throws Exception {
+		//Into SocketNetImp.receive()...
 		cLogger.info("Into SocketNetImp.receive()...");
-		
+		//输入输出转换为字节数组不关闭流
 		byte[] mBodyBytes = 
 			IOTrans.toBytes5Close(cSocket.getInputStream());
 		cSocket.shutdownInput();

@@ -32,15 +32,19 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 		cLogger.debug("System.out = " + System.out);
 		if (MidplatConf.newInstance().resetLog())
 		{
+			//Start reset System.out...[开始重置系统输出…]
 			System.out.println("Start reset System.out...");
+			//重新分配“标准”输出流。
 			System.setOut(new Log4jPrint(System.out));
+			//重新分配“标准”错误输出流。
 			System.setErr(new Log4jPrint(System.err));
+			//End reset System.out![结束重置系统输出!]
 			System.out.println("End reset System.out!");
 		}
-
+		//套接字配置新实例设置监听当前实例
 		SocketConf.newInstance().setListener(this); // 注册到Socket配置缓存中，调整配置后自动调用相关方法重启端口监听
-
-		// 启动配置文件缓存管理系统
+		
+		// 启动配置文件缓存管理系统使该线程开始执行
 		FileCacheManage.newInstance().start();
 	}
 
@@ -52,11 +56,14 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 	@SuppressWarnings("unchecked")
 	public void contextInitialized(ServletContextEvent pEvent)
 	{
+		//Into SocketListenerF5.contextInitialized()...[进入套接字侦听器上下文初始化]
 		cLogger.info("Into SocketListenerF5.contextInitialized()...");
-
+		//[Element: <sockets/>]
 		Document mSocketConfDoc = SocketConf.newInstance().getConf();
+		//[Element: <sockets/>]获取根元素socket子元素列表
 		List<Element> mSocketList = mSocketConfDoc.getRootElement().getChildren(socket);
-		int mSize = mSocketList.size();
+		//[[Element: <socket/>], [Element: <socket/>], [Element: <socket/>], [Element: <socket/>]]
+		int mSize = mSocketList.size();//size:4
 		cServers = new Server[mSize];
 		for (int i = 0; i < mSize; i++)
 		{
@@ -116,28 +123,45 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 
 		cLogger.info("Out SocketListenerF5.contextDestroyed()!");
 	}
-
+	
+	/**
+	 * 服务器端
+	 * @author yuantongxin
+	 */
 	private class Server extends Thread
 	{
-		private int cPort = -1;
-		private Constructor<Thread> cConstructor = null;
-		private ServerSocket cServerSocket = null;
-
+		private int cPort = -1;//端口号
+		private Constructor<Thread> cConstructor = null;//构造器
+		private ServerSocket cServerSocket = null;//服务器端套接字
+		
 		private Logger cLogger = Logger.getLogger(getClass());
-
+		
+		/**
+		 * 构造服务器端实例
+		 * @param pPort 端口号 
+		 * @param pClassName 类名
+		 * @throws Exception
+		 */
 		@SuppressWarnings("unchecked")
 		public Server(int pPort, String pClassName) throws Exception
 		{
+			//实参初始化端口号
 			cPort = pPort;
+			//实参初始化构造器
 			cConstructor = (Constructor<Thread>) Class.forName(pClassName).getConstructor(new Class[]
 			{ Socket.class });
 		}
-
+		
+		/**
+		 * 运行
+		 */
 		public void run()
 		{
 			try
 			{
+				//初始化服务器端套接字
 				cServerSocket = new ServerSocket(cPort);
+				//监听端口 35006[农业银行]
 				cLogger.info("监听端口 " + cServerSocket.getLocalPort());
 			}
 			catch (IOException ex)
