@@ -48,7 +48,7 @@ public class TranLogSet extends SchemaSet
 	}
 	
 	/**
-	 * 得到
+	 * 得到DB层 交易日志数据库对象的集合(用户) 类实例
 	 * @param index 索引
 	 * @return 交易日志数据库对象的集合类对象
 	 */

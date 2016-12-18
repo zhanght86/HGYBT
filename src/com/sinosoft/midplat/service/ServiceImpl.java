@@ -27,10 +27,14 @@ public class ServiceImpl implements Service, XmlTag
 	protected Document cOutXmlDoc;
 	protected TranLogDB cTranLogDB;
 	protected NodeMapSchema cNodeMapSchema;
-
+	
+	/**
+	 * 初始化服务实现类
+	 * @param pThisBusiConf 交易元素
+	 */
 	public ServiceImpl(Element pThisBusiConf)
 	{
-		cThisBusiConf = pThisBusiConf;
+		cThisBusiConf = pThisBusiConf;//成员交易配置文件初始化
 	}
 
 	public Document service(Document pInXmlDoc) throws Exception

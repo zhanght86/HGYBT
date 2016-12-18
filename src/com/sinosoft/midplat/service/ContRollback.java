@@ -29,6 +29,11 @@ public class ContRollback extends ServiceImpl {
 		super(pThisBusiConf);
 	}
 	
+	/**
+	 * 业务处理
+	 * @param pInXmlDoc 输入XML文档 
+	 * @return cOutXmlDoc 输出XML文档
+	 */
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into ContRollback.service()...");

@@ -139,4 +139,5 @@ encoding//src/com/sinosoft/utility/DBConn.java=GBK
 encoding//src/com/sinosoft/utility/ElementLis.java=GBK
 encoding//src/com/sinosoft/utility/HttpDownload.java=GBK
 encoding//src/com/sinosoft/utility/StrTool.java=GBK
-encoding//src/test/NewCCBTestUI.java=GBK
+encoding//src/test/NewCCBTestUI.java=UTF-8
+encoding//src/test/NewCCBTestUI2.java=UTF-8

@@ -149,8 +149,11 @@
 		<!-- <service id="0" name="录单核保" address="http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<service id="0" name="录单核保"
-			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="0" name="录单核保"
+			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<!-- 本地环境 -->
 		<!-- <service id="1" name="收费签单" address="http://10.0.0.193:18080/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
@@ -158,10 +161,10 @@
 		<!-- <service id="1" name="收费签单" address="http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<service id="1" name="收费签单"
-			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="2" name="新单回滚"
-			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="3" name="保单重打"
 			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
@@ -228,7 +231,7 @@
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="29" name="打印保单"
-			address="http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<!-- <service id="30" name="重空核对" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" 
 			method="service" />本地环境 -->

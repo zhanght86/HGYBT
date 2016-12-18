@@ -15,214 +15,220 @@ import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 
 /**
- * ĞÂ½¨ĞĞ²âÊÔÓÃ»§½çÃæ
+ * æ–°å»ºè¡Œæµ‹è¯•ç”¨æˆ·ç•Œé¢
  * @author yuantongxin
  */
 public class NewCCBTestUI {
-	//±êÊ¶µ±Ç°ÀàµÄÈÕÖ¾¶ÔÏó,À´¼ÇÂ¼µ±Ç°Àà¿ÉÄÜ·¢ÉúµÄÒì³£
+	//æ ‡è¯†å½“å‰ç±»çš„æ—¥å¿—å¯¹è±¡,æ¥è®°å½•å½“å‰ç±»å¯èƒ½å‘ç”Ÿçš„å¼‚å¸¸[åˆå§‹åŒ–æ—¥å¿—]
 	private Logger cLogger = Logger.getLogger(getClass());
 	
-	//ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé
+	//ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®[å®šä¹‰]
 	private String cIP = null;
-	//¶Ë¿Ú
+	//ç«¯å£[å®šä¹‰]
 	private int cPort = 0;
 	/**
-	 * java³ÌĞòµÄÈë¿ÚµØÖ·
+	 * javaç¨‹åºçš„å…¥å£åœ°å€
 	 * @param args
 	 * @throws Exception
 	 */
 	public static void main(String[] args) throws Exception {
-		//³ÌĞò¿ªÊ¼...
-		System.out.println("³ÌĞò¿ªÊ¼...");
-		//¶¨Òå¾Ö²¿ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé²¢¸³Öµ
+		//ç¨‹åºå¼€å§‹...
+		System.out.println("ç¨‹åºå¼€å§‹...");
+		//å®šä¹‰å±€éƒ¨ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®å¹¶èµ‹å€¼
 //		String mIP = "10.2.0.31";
-		String mIP = "127.0.0.1";
+		String mIP = "127.0.0.1";//[127.0.0.1]
 //		String mIP = "10.0.4.14";
-		//¶¨Òå¾Ö²¿¶Ë¿Ú²¢¸³Öµ
-		int mPort = 39871;
+		//å®šä¹‰å±€éƒ¨ç«¯å£å¹¶èµ‹å€¼
+		int mPort = 39871;//[39871]
 		
 		
-		//ÂÌµÆ²âÊÔ
+		//ç»¿ç¯æµ‹è¯•
 //		String funcflag = "P53818152";
-//		String mInFilePath = "D:/task/20161206/newccb/P53818152in_noStd.xml";
-//		String mOutFilePath = "D:/task/20161206/newccb/P53818152out_noStd.xml";
-		//ĞÂµ¥ÊÔËã
-		String funcflag = "P53819113";//½»Ò×Âë
-		String mInFilePath = "D:/task/20161215/newccb/local/10452_551_1012_in.xml";//ÊäÈëÎÄ¼şÂ·¾¶
-		mInFilePath="D:/task/20161215/P53819113in_noStd.xml";
-		String mOutFilePath = "D:/task/20161215/newccb/local/10452_551_1012_out.xml";//Êä³öÎÄ¼şÂ·¾¶
-		mOutFilePath="D:/task/20161215/P53819113out_noStd.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/9704_15_111_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/9704_15_111_out.xml";
+		//æ–°å•è¯•ç®—
+//		String funcflag = "P53819113";//äº¤æ˜“ç [P53819113]
+		//[D:/task/20161218/newccb/core_local/10452_551_1012_in.xml]
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/11092_1314_1012_in.xml";//è¾“å…¥æ–‡ä»¶è·¯å¾„
+		//[D:/task/20161218/newccb/local/1012/P53819113in_noStd.xml]
+//		mInFilePath="D:/task/20161218/newccb/ybt_local/P53819113in_noStd.xml";
+		//[D:/task/20161218/newccb/core_local/10452_551_1012_out.xml]
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/11092_1314_1012_out.xml";//è¾“å‡ºæ–‡ä»¶è·¯å¾„
+		//D:/task/20161218/newccb/local/1012/P53819113out_noStd.xml
+//		mOutFilePath="D:/task/20161218/newccb/ybt_local/P53819113out_noStd.xml";
 //		
-		//ĞÂµ¥È·ÈÏ
-//		String funcflag = "P53819152";
-//		String mInFilePath = "D:/task/2?0161215/newccb/local/10456_557_1014_in.xml";
-//		String mOutFilePath = "D:/task/20161215/newccb/local/10456_557_1014_out.xml";
-		//´òÓ¡±£µ¥
+		//æ–°å•ç¡®è®¤
+		String funcflag = "P53819152";
+		String mInFilePath = "D:/task/20161218/newccb/core_test/11094_1318_1014_in.xml";
+		String mOutFilePath = "D:/task/20161215/newccb/local/11094_1318_1014_out.xml";
+		//æ‰“å°ä¿å•
 //		String funcflag = "P53819182";
-//		String mInFilePath = "D:/task/20161209/newccb/9693_2480_1032_in.xml";
-//		String mOutFilePath = "D:/task/20161209/newccb/9693_2480_1032_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_out.xml";
 		
-		/*//×Ô¶¯³åÕı*/
+		/*//è‡ªåŠ¨å†²æ­£*/
 //		String funcflag = "P53818154";
-//		String mInFilePath = "F:\\xml\\CCB/P53818154_³åÕı.xml";
-//		String mOutFilePath = "F:\\xml\\CCB/P53818154_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/11435_57_0004_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/11435_57_0004_out.xml";
 		
-		//ÖØ´òÉÏ±Ê
+		//é‡æ‰“ä¸Šç¬”
 //		String funcflag = "P53819184";
-//		String mInFilePath = "F:\\xml\\CCB\\P53819184_ÖØ´ò.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819184_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/1287_9_1011_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/1287_9_1011_in.xml";
 		
-		//ÖØ¿ØºË¶Ô
+		//é‡æ§æ ¸å¯¹
 //		String funcflag = "P538191A2";
-//		String mInFilePath = "D:/task/20161209/newccb/P538191A2in_noStd.xml";
-//		String mOutFilePath = "D:/task/20161209/newccb/P538191A2out_noStd.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/1307_44_108_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/1307_44_108_out.xml";
 //		
-		//È·ÈÏ³·Ïúµ±ÈÕ±£µ¥
+		//ç¡®è®¤æ’¤é”€å½“æ—¥ä¿å•
 //		String funcflag = "P53819142";
-//		String mInFilePath = "F:\\xml\\CCB\\P53819142_³·µ¥.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819142_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/6568_66_1015_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/6568_66_1015_out.xml";
 		
-		//ÂÌµÆ²âÊÔ
+		//ç»¿ç¯æµ‹è¯•
 //		String funcflag = "P53818152";
-//		String mInFilePath = "D:/task/20161128/newccb/P53818152in_noStd.xml";
-//		String mOutFilePath = "D:/task/20161128/newccb/P53818152out_noStd.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/9704_15_111_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/9704_15_111_in.xml";
 		
-		//´òÓ¡Í¶±£µ¥
+		//æ‰“å°æŠ•ä¿å•
 //		String funcflag = "P53819188";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/´òÓ¡Í¶±£µ¥/´òÓ¡Í¶±£µ¥.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/´òÓ¡Í¶±£µ¥/´òÓ¡Í¶±£µ¥_out.xml";
+//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/æ‰“å°æŠ•ä¿å•/æ‰“å°æŠ•ä¿å•.xml";
+//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/æ‰“å°æŠ•ä¿å•/æ‰“å°æŠ•ä¿å•_out.xml";
 		
-		//²éÑ¯½ÉÄÉ±£·ÑĞÅÏ¢
+		//æŸ¥è¯¢ç¼´çº³ä¿è´¹ä¿¡æ¯
 //		String funcflag = "P53819151";
-//		String mInFilePath = "D:/TestXml/zhrs/newccb/²éÑ¯½ÉÄÉ±£·ÑĞÅÏ¢.xml";
-//		String mOutFilePath = "D:/TestXml/zhrs/newccb/²éÑ¯½ÉÄÉ±£·ÑĞÅÏ¢_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/11395_477_1033_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/11395_477_1033_out.xml";
 		
-		//È·ÈÏĞøÆÚ½É·Ñ
+		//ç¡®è®¤ç»­æœŸç¼´è´¹
 //		String funcflag = "P53819156";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏĞøÆÚ½É·Ñ/È·ÈÏĞøÆÚ½É·Ñ.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏĞøÆÚ½É·Ñ/È·ÈÏĞøÆÚ½É·Ñ_out.xml";
+//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤ç»­æœŸç¼´è´¹/ç¡®è®¤ç»­æœŸç¼´è´¹.xml";
+//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤ç»­æœŸç¼´è´¹/ç¡®è®¤ç»­æœŸç¼´è´¹_out.xml";
 		
-		//È·ÈÏÈ¡ÏûĞøÆÚ½É·Ñ
+		//ç¡®è®¤å–æ¶ˆç»­æœŸç¼´è´¹
 //		String funcflag = "P53819154";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏÈ¡ÏûĞøÆÚ½É·Ñ/È·ÈÏÈ¡ÏûĞøÆÚ½É·Ñ.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏÈ¡ÏûĞøÆÚ½É·Ñ/È·ÈÏÈ¡ÏûĞøÆÚ½É·Ñ_out.xml";
+//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤å–æ¶ˆç»­æœŸç¼´è´¹/ç¡®è®¤å–æ¶ˆç»­æœŸç¼´è´¹.xml";
+//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤å–æ¶ˆç»­æœŸç¼´è´¹/ç¡®è®¤å–æ¶ˆç»­æœŸç¼´è´¹_out.xml";
 		
-		//²éÑ¯ÂúÆÚ¸ø¸¶
+		//æŸ¥è¯¢æ»¡æœŸç»™ä»˜
 //		String funcflag = "P53819191";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/²éÑ¯ÂúÆÚ¸ø¸¶/²éÑ¯ÂúÆÚ¸ø¸¶.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/²éÑ¯ÂúÆÚ¸ø¸¶/²éÑ¯ÂúÆÚ¸ø¸¶_out.xml";
+//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/æŸ¥è¯¢æ»¡æœŸç»™ä»˜/æŸ¥è¯¢æ»¡æœŸç»™ä»˜.xml";
+//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/æŸ¥è¯¢æ»¡æœŸç»™ä»˜/æŸ¥è¯¢æ»¡æœŸç»™ä»˜_out.xml";
 		
-		//ĞŞ¸Ä±£µ¥»ù±¾ĞÅÏ¢
+		//ä¿®æ”¹ä¿å•åŸºæœ¬ä¿¡æ¯
 //		String funcflag = "P53819161";
-//		String mInFilePath = "D:/TestXml/zhrs/newccb/ĞŞ¸Ä±£µ¥»ù±¾ĞÅÏ¢.xml";
-//		String mOutFilePath = "D:/TestXml/zhrs/newccb/ĞŞ¸Ä±£µ¥»ù±¾ĞÅÏ¢_out.xml";
+//		String mInFilePath = "D:/TestXml/zhrs/newccb/ä¿®æ”¹ä¿å•åŸºæœ¬ä¿¡æ¯.xml";
+//		String mOutFilePath = "D:/TestXml/zhrs/newccb/ä¿®æ”¹ä¿å•åŸºæœ¬ä¿¡æ¯_out.xml";
 		
-		//²éÑ¯¿Í»§±£µ¥
+		//æŸ¥è¯¢å®¢æˆ·ä¿å•
 //		String funcflag = "P53819176";
-//		String mInFilePath = "F:\\xml\\CCB\\P53819176_¿Í»§±£µ¥²éÑ¯.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819176_²éÑ¯¿Í»§±£µ¥_out.xml";
+//		String mInFilePath = "F:\\xml\\CCB\\P53819176_å®¢æˆ·ä¿å•æŸ¥è¯¢.xml";
+//		String mOutFilePath = "F:\\xml\\CCB\\P53819176_æŸ¥è¯¢å®¢æˆ·ä¿å•_out.xml";
 		
 		
-		//²éÑ¯±£µ¥ÏêÇé
+		//æŸ¥è¯¢ä¿å•è¯¦æƒ…
 //		String funcflag = "P53819171";
-//		String mInFilePath = "F:\\xml\\CCB\\P53819171_²éÑ¯±£µ¥ÏêÇé.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53819171_²éÑ¯±£µ¥ÏêÇé_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/3497_559_1040_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/3497_559_1040_out.xml";
 		
-		//²éÑ¯±£µ¥ÀúÊ·±ä¶¯ĞÅÏ¢
+		//æŸ¥è¯¢ä¿å•å†å²å˜åŠ¨ä¿¡æ¯
 //		String funcflag = "P53819177";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/²éÑ¯±£µ¥ÀúÊ·±ä¶¯ĞÅÏ¢/²éÑ¯±£µ¥ÀúÊ·±ä¶¯ĞÅÏ¢.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/²éÑ¯±£µ¥ÀúÊ·±ä¶¯ĞÅÏ¢/²éÑ¯±£µ¥ÀúÊ·±ä¶¯ĞÅÏ¢_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/6853_144_1042_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/6853_144_1042_out.xml";
 		
-		//ÉêÇëÍË±£
+		//ç”³è¯·é€€ä¿
 //		String funcflag = "P53819143";
 //		String mInFilePath = "D:/task/20161206/newccb/P53819143in_noStd.xml";
 //		String mOutFilePath = "D:/task/20161206/newccb/P53819143out_noStd.xml";		
 		
-		//È·ÈÏÍË±£
+		//ç¡®è®¤é€€ä¿
 //		String funcflag = "P53819144";
-//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏÍË±£/È·ÈÏÍË±£.xml";
-//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ÖĞº«ĞÂ½¨ĞĞ²âÊÔ/È·ÈÏÍË±£/È·ÈÏÍË±£_out.xml";
+//		String mInFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤é€€ä¿/ç¡®è®¤é€€ä¿.xml";
+//		String mOutFilePath = "C:/Users/Administrator/Desktop/liuzk/ä¸­éŸ©æ–°å»ºè¡Œæµ‹è¯•/ç¡®è®¤é€€ä¿/ç¡®è®¤é€€ä¿_out.xml";
 		
-		//»ñÈ¡±£µ¥ÏêÇé²éÑ¯
+		//è·å–ä¿å•è¯¦æƒ…æŸ¥è¯¢
 //		String funcflag = "P53817107";
-//		String mInFilePath = "F:\\xml\\CCB\\P53817107_»ñÈ¡±£µ¥ÏêÇé.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53817107_»ñÈ¡±£µ¥ÏêÇé_out.xml";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/6853_144_1042_in.xml";
+//		String mOutFilePath = "D:/task/20161218/newccb/core_test/6853_144_1042_out.xml";
 		
-		//»ñÈ¡±£µ¥ÏêÇéÈ¡Êı(ÊÙÏÕ)
+		//è·å–ä¿å•è¯¦æƒ…å–æ•°(å¯¿é™©)
 //		String funcflag = "P53816107";
-//		String mInFilePath = "F:\\xml\\CCB\\P53816107_»ñÈ¡±£µ¥ÏêÇéÈ¡Êı.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P53816107_»ñÈ¡±£µ¥ÏêÇéÈ¡Êı_out.xml";
+//		String mInFilePath = "F:\\xml\\CCB\\P53816107_è·å–ä¿å•è¯¦æƒ…å–æ•°.xml";
+//		String mOutFilePath = "F:\\xml\\CCB\\P53816107_è·å–ä¿å•è¯¦æƒ…å–æ•°_out.xml";
 		
-		//»ñÈ¡±£ÏÕ¹«Ë¾Ñ²µãÔ±ĞÅÏ¢ P538191F1
+		//è·å–ä¿é™©å…¬å¸å·¡ç‚¹å‘˜ä¿¡æ¯ P538191F1
 //		String funcflag = "P538191F1";
-//		String mInFilePath = "F:\\xml\\CCB\\P538191F1_×¤µã.xml";
-//		String mOutFilePath = "F:\\xml\\CCB\\P538191F1_×¤µã_out.xml";
-			//Í¨¹ı¾Ö²¿ÍøÂçÖ®¼ä»¥Á¬µÄĞ­ÒéºÍ¶Ë¿ÚºÅ´´½¨ĞÂ½¨ĞĞ²âÊÔÓÃ»§½çÃæÊµÀı
+//		String mInFilePath = "F:\\xml\\CCB\\P538191F1_é©»ç‚¹.xml";
+//		String mOutFilePath = "F:\\xml\\CCB\\P538191F1_é©»ç‚¹_out.xml";
+			//é€šè¿‡å±€éƒ¨ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®å’Œç«¯å£å·åˆ›å»ºæ–°å»ºè¡Œæµ‹è¯•ç”¨æˆ·ç•Œé¢å®ä¾‹
 			NewCCBTestUI mTestUI = new NewCCBTestUI(mIP,mPort);
-			//Í¨¹ıÊäÈëÎÄ¼şÂ·¾¶´´½¨ÎÄ¼şÊäÈëÁ÷
+			//é€šè¿‡è¾“å…¥æ–‡ä»¶è·¯å¾„åˆ›å»ºæ–‡ä»¶è¾“å…¥æµ
+			//[File:/task/20161218/newccb/local/1012/P53819113in_noStd.xml]
 			InputStream mIs = new FileInputStream(mInFilePath);
 		//	byte[] mOutBytes = mTestUI.sendRequest(funcflag,mIs);
-			//²ÉÓÃUTF-8×Ö·û¼¯±àÂë¹¹½¨Ò»¸öÎÄµµ¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-			Document document = JdomUtil.build(mIs,"UTF-8");
-			//»ñÈ¡ĞÂ½¨ĞĞ²âÊÔÓÃ»§½çÃæÊµÀı·¢ËÍÇëÇó(°üº¬½»Ò×ÂëºÍXMLÎÄµµ¶ÔÏó)·µ»ØµÄ×Ö½ÚÊı×é
+			//é‡‡ç”¨UTF-8å­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªæ–‡æ¡£å¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+			Document document = JdomUtil.build(mIs,"UTF-8");//[Element: <TX/>]
+			//è·å–æ–°å»ºè¡Œæµ‹è¯•ç”¨æˆ·ç•Œé¢å®ä¾‹å‘é€è¯·æ±‚(åŒ…å«äº¤æ˜“ç å’ŒXMLæ–‡æ¡£å¯¹è±¡)è¿”å›çš„å­—èŠ‚æ•°ç»„
+			//å‘é€è¯·æ±‚[P53819113,æ–‡æ¡£å¯¹è±¡]
 			byte[] mOutBytes = mTestUI.sendRequest(funcflag,document);
-			//×Ö½ÚÊı×é²ÉÓÃUTF-8×Ö·û¼¯±àÂë¹¹½¨Ò»¸öXMLÎÄµµ¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£ ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+			//å­—èŠ‚æ•°ç»„é‡‡ç”¨UTF-8å­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªXMLæ–‡æ¡£å¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚ æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 			Document mOutXmlDoc = JdomUtil.build(mOutBytes , "UTF-8");
-			//Êµ¼Ê·µ»Ø±¨ÎÄÎª£º
-			System.out.println("Êµ¼Ê·µ»Ø±¨ÎÄÎª£º");
-			//½«XMLÎÄµµ´òÓ¡µ½¿ØÖÆÌ¨£¬ GBK±àÂë(Ä¬ÈÏ)£¬Ëõ½ø3¿Õ¸ñ¡£
+			//å®é™…è¿”å›æŠ¥æ–‡ä¸ºï¼š
+			System.out.println("å®é™…è¿”å›æŠ¥æ–‡ä¸ºï¼š");
+			//å°†XMLæ–‡æ¡£æ‰“å°åˆ°æ§åˆ¶å°ï¼Œ GBKç¼–ç (é»˜è®¤)ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
 			JdomUtil.print(mOutXmlDoc);
-			//Í¨¹ıÊä³öÎÄ¼şÂ·¾¶´´½¨ÎÄ¼şÊä³öÁ÷
+			//é€šè¿‡è¾“å‡ºæ–‡ä»¶è·¯å¾„åˆ›å»ºæ–‡ä»¶è¾“å‡ºæµ
 			OutputStream mFos = new FileOutputStream(mOutFilePath);
-			//½«Êä³öXMLÎÄµµÊä³öµ½ÎÄ¼şÊä³öÁ÷£¬GBK±àÂë(Ä¬ÈÏ)£¬Ëõ½ø3¿Õ¸ñ¡£
+			//å°†è¾“å‡ºXMLæ–‡æ¡£è¾“å‡ºåˆ°æ–‡ä»¶è¾“å‡ºæµï¼ŒGBKç¼–ç (é»˜è®¤)ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
 			JdomUtil.output(mOutXmlDoc, mFos);
-			//Ë¢ĞÂÎÄ¼şÊä³öÁ÷»º³åÇø
+			//åˆ·æ–°æ–‡ä»¶è¾“å‡ºæµç¼“å†²åŒº
 			mFos.flush();
-			//¹Ø±ÕÎÄ¼şÊä³öÁ÷
+			//å…³é—­æ–‡ä»¶è¾“å‡ºæµ
 			mFos.close();
-			//Ö´ĞĞ½á¹ûÊÇ---·şÎñÏìÓ¦ÃèÊö
-			System.out.println("Ö´ĞĞ½á¹ûÊÇ---"+mOutXmlDoc.getRootElement().getChild("TX_HEADER").getChildText("SYS_RESP_DESC"));
-			//³É¹¦½áÊø£¡
-			System.out.println("³É¹¦½áÊø£¡"); 
+			//æ‰§è¡Œç»“æœæ˜¯---æœåŠ¡å“åº”æè¿°
+			System.out.println("æ‰§è¡Œç»“æœæ˜¯---"+mOutXmlDoc.getRootElement().getChild("TX_HEADER").getChildText("SYS_RESP_DESC"));
+			//æˆåŠŸç»“æŸï¼
+			System.out.println("æˆåŠŸç»“æŸï¼"); 
 	}
 
 	/**
-	 *  ĞÂ½¨ĞĞ²âÊÔÓÃ»§½çÃæÓĞ²Î¹¹ÔìÆ÷
-	 * @param pIP ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé
-	 * @param pPort ¶Ë¿ÚºÅ
+	 *  æ–°å»ºè¡Œæµ‹è¯•ç”¨æˆ·ç•Œé¢æœ‰å‚æ„é€ å™¨
+	 * @param pIP ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®
+	 * @param pPort ç«¯å£å·
 	 */
 	public NewCCBTestUI(String pIP, int pPort) {
-		cIP = pIP;//ĞÎÊ½ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé¸³Öµ¸ø³ÉÔ±ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé
-		cPort = pPort;///ĞÎÊ½¶Ë¿ÚºÅ¸³Öµ¸ø³ÉÔ±¶Ë¿ÚºÅ
+		cIP = pIP;//å½¢å¼ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®èµ‹å€¼ç»™æˆå‘˜ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®[åˆå§‹åŒ–æˆå‘˜]
+		cPort = pPort;///å½¢å¼ç«¯å£å·èµ‹å€¼ç»™æˆå‘˜ç«¯å£å·[åˆå§‹åŒ–æˆå‘˜]
 	}
 
 	/**
-	 * Í¨¹ı½»Ò×ÂëºÍÊäÈëÁ÷·¢ËÍÇëÇó
-	 * @param funcflag ½»Ò×Âë
-	 * @param pInputStream ÊäÈë×Ö½ÚÁ÷
-	 * @return ×Ö½ÚÊı×é
+	 * é€šè¿‡äº¤æ˜“ç å’Œè¾“å…¥æµå‘é€è¯·æ±‚
+	 * @param funcflag äº¤æ˜“ç 
+	 * @param pInputStream è¾“å…¥å­—èŠ‚æµ
+	 * @return å­—èŠ‚æ•°ç»„
 	 * @throws Exception
 	 */
 	public byte[] sendRequest(String funcflag,InputStream pInputStream) throws Exception {
-		//SocketÁ¬½Ó[ÍøÂçÖ®¼ä»¥Á¬µÄĞ­ÒéµØÖ·]:[¶Ë¿ÚºÅ]
-		cLogger.info("SocketÁ¬½Ó" + cIP + ":" + cPort);
-		//Í¨¹ıÍøÂçÖ®¼ä»¥Á¬µÄĞ­ÒéµØÖ·ºÍ¶Ë¿ÚºÅ´´½¨Ì×½Ó×Ö
+		//Socketè¿æ¥[ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®åœ°å€]:[ç«¯å£å·]
+		cLogger.info("Socketè¿æ¥" + cIP + ":" + cPort);
+		//é€šè¿‡ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®åœ°å€å’Œç«¯å£å·åˆ›å»ºå¥—æ¥å­—
 		Socket mSocket = new Socket(cIP, cPort);
-		//ÊäÈëÊä³ö×ª»»Àà½«Á÷×ª»»Îª×Ö½ÚÊı×é£¬¹Ø±ÕÁ÷
+		//è¾“å…¥è¾“å‡ºè½¬æ¢ç±»å°†æµè½¬æ¢ä¸ºå­—èŠ‚æ•°ç»„ï¼Œå…³é—­æµ
 		byte[] mInClearBodyBytes = IOTrans.toBytes(pInputStream);
 		/**
-		 * ¶ÔÌ×½Ó×ÖµÄÈı¸ö²Ù×÷
-		 * 1.Ğ´ÈëÊä³öÁ÷
-		 * 2.Ë¢ĞÂ»º³åÇø
+		 * å¯¹å¥—æ¥å­—çš„ä¸‰ä¸ªæ“ä½œ
+		 * 1.å†™å…¥è¾“å‡ºæµ
+		 * 2.åˆ·æ–°ç¼“å†²åŒº
 		 * 3.
 		 */
-		//Ì×½Ó×Ö»ñÈ¡Êä³öÁ÷Ğ´Èë×Ö½ÚÊı×é
+		//å¥—æ¥å­—è·å–è¾“å‡ºæµå†™å…¥å­—èŠ‚æ•°ç»„
 		mSocket.getOutputStream().write(mInClearBodyBytes);
-		//Ì×½Ó×Ö»ñÈ¡Êä³öÁ÷Ë¢ĞÂ»º³åÇø
+		//å¥—æ¥å­—è·å–è¾“å‡ºæµåˆ·æ–°ç¼“å†²åŒº
 		mSocket.getOutputStream().flush();
 		//
 		mSocket.shutdownOutput();
-		//·µ»Ø×Ö½ÚÊı×é
+		//è¿”å›å­—èŠ‚æ•°ç»„
 		return mInClearBodyBytes;
 //		Document document = JdomUtil.build(pInputStream);
 //		return sendRequest(funcflag,document);
@@ -238,16 +244,16 @@ public class NewCCBTestUI {
 //		
 //		mDoc.getRootElement().getChild("TX_HEADER").getChild("SYS_TX_CODE").setText("P5"+mSYS_TX_CODE.substring(2, mSYS_TX_CODE.length()));
 ////		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText("CCB000000000111111");
-////		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("CCB_EmpID").setText("½¨ÉèÒøĞĞ");
+////		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("CCB_EmpID").setText("å»ºè®¾é“¶è¡Œ");
 //		mInClearBodyBytes = JdomUtil.toBytes(mDoc ,"UTF-8");
 //		//		mInClearBodyBytes = JdomUtil.toBytes(JdomUtil.build(mInClearBodyBytes , "UTF-8"),"UTF-8");
 //		
-//		//¼ÓÃÜ 
+//		//åŠ å¯† 
 //		
-//		//Ìí¼Ó±¨ÎÄÍ·
+//		//æ·»åŠ æŠ¥æ–‡å¤´
 ////		String resHeadPath = "F:/innostd_head.xml"; 
 ////		byte[] mInResHeadBytes = IOTrans.toBytes(new FileInputStream(resHeadPath));
-////		System.out.println("°²È«±¨ÎÄÍ·£º"+ new String(mInResHeadBytes) +"over!");
+////		System.out.println("å®‰å…¨æŠ¥æ–‡å¤´ï¼š"+ new String(mInResHeadBytes) +"over!");
 //		
 //		String mHeadStr = "POST / HTTP/1.1"+"\r\n"
 //				+"Host: 128.192.154.4:13010"+"\r\n"
@@ -284,37 +290,37 @@ public class NewCCBTestUI {
 //		
 //		
 //		String mInBodyLengthStr = String.valueOf(mInResHeadBytes.length);
-//		cLogger.info("ÇëÇó±¨ÎÄ³¤¶È£º" + mInBodyLengthStr);
+//		cLogger.info("è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š" + mInBodyLengthStr);
 //		byte[] mInLengthBytes = mInBodyLengthStr.getBytes();
 ////		System.arraycopy(mInLengthBytes, 0, mInTotalBytes, 0, mInLengthBytes.length);
 //
 ////		System.arraycopy(mInCipherBodyBytes, 0, mInTotalBytes, 0, mInCipherBodyBytes.length);
-//		System.out.println("ÕûÌå±¨ÎÄ£º"+ new String(mInTotalBytes));
-//		cLogger.info("·¢ËÍÇëÇó±¨ÎÄ³¤¶È£º" + new String(mInTotalBytes).length());
-//		cLogger.info("·¢ËÍÇëÇó±¨ÎÄ£¡");
+//		System.out.println("æ•´ä½“æŠ¥æ–‡ï¼š"+ new String(mInTotalBytes));
+//		cLogger.info("å‘é€è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š" + new String(mInTotalBytes).length());
+//		cLogger.info("å‘é€è¯·æ±‚æŠ¥æ–‡ï¼");
 //		mSocket.getOutputStream().write(mInTotalBytes);
 //		mSocket.getOutputStream().flush();
 ////		mSocket.shutdownOutput();
 //		mCurTimeMillis = System.currentTimeMillis();
-//		cLogger.info("¿Í»§¶ËÇëÇó·¢ËÍÍê±Ï£¡ºÄÊ±£º" + (mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");
+//		cLogger.info("å®¢æˆ·ç«¯è¯·æ±‚å‘é€å®Œæ¯•ï¼è€—æ—¶ï¼š" + (mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");
 //
-//		/**ÒÔÏÂ´¦Àí·µ»Ø±¨ÎÄ************************/
+//		/**ä»¥ä¸‹å¤„ç†è¿”å›æŠ¥æ–‡************************/
 //		InputStream mSocketIs = mSocket.getInputStream();
-//		cLogger.info("ÊÕµ½·µ»Ø±¨ÎÄ£¡");
+//		cLogger.info("æ”¶åˆ°è¿”å›æŠ¥æ–‡ï¼");
 //
-//		//»ñÈ¡·µ»Ø±¨ÎÄ
+//		//è·å–è¿”å›æŠ¥æ–‡
 //		byte[] mOutHeadBytes = new byte[1024*50];
 //		for (int tReadSize = 0; tReadSize < mOutHeadBytes.length;) {
 //			int tRead = mSocketIs.read(mOutHeadBytes, tReadSize, mOutHeadBytes.length-tReadSize);
 //			if (-1 == tRead) {
-//				throw new EOFException("»ñÈ¡±¨ÎÄÍ·³ö´í£¡Êµ¼Ê¶ÁÈë£º" + new String(mOutHeadBytes));
+//				throw new EOFException("è·å–æŠ¥æ–‡å¤´å‡ºé”™ï¼å®é™…è¯»å…¥ï¼š" + new String(mOutHeadBytes));
 //			}else if(-1 != tRead){
 //				break;
 //			}
 //			tReadSize += tRead;
 //		}
 ////		int mOutBodyLengthInt = Integer.parseInt(new String(mOutHeadBytes).trim());
-//		cLogger.info("·µ»Ø±¨ÎÄ³¤¶È£º" + mOutHeadBytes.length);
+//		cLogger.info("è¿”å›æŠ¥æ–‡é•¿åº¦ï¼š" + mOutHeadBytes.length);
 //
 //		
 //		String mDataStr = new String(mOutHeadBytes).trim();
@@ -323,7 +329,7 @@ public class NewCCBTestUI {
 //		
 //		String mHeadDataStr = mDataStr.substring(0,index_Body_SEP);
 //		
-//		System.out.println("°²È«±¨ÎÄÍ·£º\r\n"+mHeadDataStr);
+//		System.out.println("å®‰å…¨æŠ¥æ–‡å¤´ï¼š\r\n"+mHeadDataStr);
 //		
 //		
 //		String mBodyDataStr = mDataStr.substring(index_Body_SEP,mDataStr.length()).trim();
@@ -331,59 +337,59 @@ public class NewCCBTestUI {
 //
 //		mSocket.close();
 //		mCurTimeMillis = System.currentTimeMillis();
-//		cLogger.info("¿Í»§¶Ë½ÓÊÕ·µ»Ø±¨ÎÄÍê±Ï£¡ºÄÊ±£º"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
+//		cLogger.info("å®¢æˆ·ç«¯æ¥æ”¶è¿”å›æŠ¥æ–‡å®Œæ¯•ï¼è€—æ—¶ï¼š"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
 //		
-////		return mCCBCipher.decode(mOutCipherBodyBytes);  //½âÃÜ
+////		return mCCBCipher.decode(mOutCipherBodyBytes);  //è§£å¯†
 //		return mBodyDataStr.getBytes();
 	}
 	
 	/**
-	 * Í¨¹ı½»Ò×ÂëºÍXMLÎÄµµ·¢ËÍÇëÇó
-	 * @param pFuncFlag ½»Ò×Âë
-	 * @param document XMLÎÄµµ
-	 * @return ×Ö½ÚÊı×é
+	 * é€šè¿‡äº¤æ˜“ç å’ŒXMLæ–‡æ¡£å‘é€è¯·æ±‚
+	 * @param pFuncFlag äº¤æ˜“ç 
+	 * @param document XMLæ–‡æ¡£
+	 * @return å­—èŠ‚æ•°ç»„
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unused")
 	public byte[] sendRequest(String pFuncFlag, Element document) throws Exception {
-		//SocketÁ¬½Ó[ÍøÂçÖ®¼ä»¥Á¬µÄĞ­Òé]:[¶Ë¿ÚºÅ]
-		cLogger.info("SocketÁ¬½Ó" + cIP + ":" + cPort);
-		//Í¨¹ıÍøÂçÖ®¼ä»¥Á¬µÄĞ­ÒéµØÖ·ºÍ¶Ë¿ÚºÅ´´½¨Ì×½Ó×Ö
+		//Socketè¿æ¥[ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®]:[ç«¯å£å·]
+		cLogger.info("Socketè¿æ¥" + cIP + ":" + cPort);
+		//é€šè¿‡ç½‘ç»œä¹‹é—´äº’è¿çš„åè®®åœ°å€å’Œç«¯å£å·åˆ›å»ºå¥—æ¥å­—
 		Socket mSocket = new Socket(cIP, cPort);
-		//ÏµÍ³µ±Ç°Ê±¼äºÁÃëÊı×÷Îª¾ÉÊ±¼äºÁÃëÊı
+		//ç³»ç»Ÿå½“å‰æ—¶é—´æ¯«ç§’æ•°ä½œä¸ºæ—§æ—¶é—´æ¯«ç§’æ•°
 		long mOldTimeMillis = System.currentTimeMillis();
-		//¾ÉÊ±¼äºÁÃëÊı¸³Öµ¸øµ±Ç°Ê±¼äºÁÃëÊı
+		//æ—§æ—¶é—´æ¯«ç§’æ•°èµ‹å€¼ç»™å½“å‰æ—¶é—´æ¯«ç§’æ•°
 		long mCurTimeMillis = mOldTimeMillis;
-		//JavaÎÄµµ¶ÔÏóÄ£ĞÍ¹¤¾ßÀà½«XMLÎÄµµ×ª»»ÎªGBK±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+		//Javaæ–‡æ¡£å¯¹è±¡æ¨¡å‹å·¥å…·ç±»å°†XMLæ–‡æ¡£è½¬æ¢ä¸ºGBKç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
 		byte[] mInClearBodyBytes = JdomUtil.toBytes(document);
-		//JavaÎÄµµ¶ÔÏóÄ£ĞÍ¹¤¾ßÀà×Ö½ÚÊı×é²ÉÓÃUTF-8±àÂë¹¹½¨Ò»¸öÎÄµµ¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£ ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+		//Javaæ–‡æ¡£å¯¹è±¡æ¨¡å‹å·¥å…·ç±»å­—èŠ‚æ•°ç»„é‡‡ç”¨UTF-8ç¼–ç æ„å»ºä¸€ä¸ªæ–‡æ¡£å¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚ æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 		Document mDoc = JdomUtil.build(mInClearBodyBytes ,"UTF-8");
-		//XMLÎÄµµµÃµ½¸ùÔªËØÏÂµÄ±¨ÎÄÍ·×ÓÔªËØµÃµ½·şÎñÃû×ÓÔªËØ
+		//XMLæ–‡æ¡£å¾—åˆ°æ ¹å…ƒç´ ä¸‹çš„æŠ¥æ–‡å¤´å­å…ƒç´ å¾—åˆ°æœåŠ¡åå­å…ƒç´ 
 		Element eSYS_TX_CODE = mDoc.getRootElement().getChild("TX_HEADER").getChild("SYS_TX_CODE");
-		//µÃµ½·şÎñÃûÔªËØÄÚÈİ
+		//å¾—åˆ°æœåŠ¡åå…ƒç´ å†…å®¹
 		String mSYS_TX_CODE = eSYS_TX_CODE.getText();
-		//XMLÎÄµµµÃµ½¸ùÔªËØÏÂµÄ±¨ÎÄÍ·×ÓÔªËØÉèÖÃÔªËØÄÚÈİÎªP5[½ØÈ¡·şÎñÃûÏÂ±êÎª2µÄ×Ö·û¿ªÊ¼µ½×îºóÒ»Î»µÄ×Ö·û´®]£¬Àı:string--(st,ring)-->ring
+		//XMLæ–‡æ¡£å¾—åˆ°æ ¹å…ƒç´ ä¸‹çš„æŠ¥æ–‡å¤´å­å…ƒç´ è®¾ç½®å…ƒç´ å†…å®¹ä¸ºP5[æˆªå–æœåŠ¡åä¸‹æ ‡ä¸º2çš„å­—ç¬¦å¼€å§‹åˆ°æœ€åä¸€ä½çš„å­—ç¬¦ä¸²]ï¼Œä¾‹:string--(st,ring)-->ring
 		mDoc.getRootElement().getChild("TX_HEADER").getChild("SYS_TX_CODE").setText("P5"+mSYS_TX_CODE.substring(2, mSYS_TX_CODE.length()));
 //		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText("CCB000000000111111");
-//		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("CCB_EmpID").setText("½¨ÉèÒøĞĞ");
-		//JavaÎÄµµ¶ÔÏóÄ£ĞÍ¹¤¾ß½«XMLÎÄµµ×ª»»ÎªUTF-8±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+//		mDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("CCB_EmpID").setText("å»ºè®¾é“¶è¡Œ");
+		//Javaæ–‡æ¡£å¯¹è±¡æ¨¡å‹å·¥å…·å°†XMLæ–‡æ¡£è½¬æ¢ä¸ºUTF-8ç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
 		mInClearBodyBytes = JdomUtil.toBytes(mDoc ,"UTF-8");
 		//		mInClearBodyBytes = JdomUtil.toBytes(JdomUtil.build(mInClearBodyBytes , "UTF-8"),"UTF-8");
 		
-		//¼ÓÃÜ 
+		//åŠ å¯† 
 		
-		//Ìí¼Ó±¨ÎÄÍ·
+		//æ·»åŠ æŠ¥æ–‡å¤´
 //		String resHeadPath = "F:/innostd_head.xml"; 
 //		byte[] mInResHeadBytes = IOTrans.toBytes(new FileInputStream(resHeadPath));
-//		System.out.println("°²È«±¨ÎÄÍ·£º"+ new String(mInResHeadBytes) +"over!");
+//		System.out.println("å®‰å…¨æŠ¥æ–‡å¤´ï¼š"+ new String(mInResHeadBytes) +"over!");
 		
-		//Æ´½ÓÇëÇóÍ·
+		//æ‹¼æ¥è¯·æ±‚å¤´
 		String mHeadStr = "POST / HTTP/1.1"+"\r\n"//POST / HTTP/1.1
 				+"Host: 128.192.154.4:13010"+"\r\n"//Host: 128.192.154.4:13010
 				+"Server: BIP 1.0"+"\r\n"//Server: BIP 1.0
 				+"Date: Wed Mar 26 11:12:49 2014 GMT"+"\r\n"//Date: Wed Mar 26 11:12:49 2014 GMT
 				+"Content-Type: application/octet-stream; charset=UTF-8"+"\r\n"//Content-Type: application/octet-stream; charset=UTF-8
-				+"Content-Length:"+mInClearBodyBytes.length+"\r\n"//Content-Length:[×Ö½ÚÊı×é³¤¶È]
+				+"Content-Length:"+mInClearBodyBytes.length+"\r\n"//Content-Length:[å­—èŠ‚æ•°ç»„é•¿åº¦]
 				+"Connection: keep-alive"+"\r\n\r\n"+//Connection: keep-alive
 				"SEC_ERROR_CODE:00000000000" +"\r\n"+//SEC_ERROR_CODE:00000000000
 				"SEC_IS_MAC:1"+"\r\n" +//SEC_IS_MAC:1
@@ -398,58 +404,58 @@ public class NewCCBTestUI {
 				"SEC_TX_TYPE:00000"+"\r\n" +//SEC_TX_TYPE:00000
 				"SEC_RESP_CODE:"+"\r\n" +//SEC_RESP_CODE:
 				"SEC_LEN:001498"+"\r\n\r\n";;//SEC_LEN:001498
-				//ÇëÇóÍ·µÃµ½×Ö½ÚÊı×é
+				//è¯·æ±‚å¤´å¾—åˆ°å­—èŠ‚æ•°ç»„
 				byte[] mInResHeadBytes = mHeadStr.getBytes();
 				
-		//XMLÎÄµµ×Ö·ûÊı×é¸³Öµ¸ø×îĞ¡ÃÜÂëÌå×Ö½ÚÊı×é
+		//XMLæ–‡æ¡£å­—ç¬¦æ•°ç»„èµ‹å€¼ç»™æœ€å°å¯†ç ä½“å­—èŠ‚æ•°ç»„
 		byte[] mInCipherBodyBytes = mInClearBodyBytes;
 //		byte[] mInCipherBodyBytes = SecAPI.pkgEncrypt( "613001" ,"613001",mInClearBodyBytes);
-		//×îĞ¡ÃÜÂëÌå×Ö½Ú×ªÎª×Ö·û´®
+		//æœ€å°å¯†ç ä½“å­—èŠ‚è½¬ä¸ºå­—ç¬¦ä¸²
 		cLogger.info( new String(mInCipherBodyBytes));
-		//³õÊ¼»¯ÔªËØ¸öÊıÎª×îĞ¡ÃÜÂëÌå×Ö½ÚÊı×éÔªËØ¸öÊıÓëÇëÇóÍ·×Ö½ÚÊı×éÔªËØ¸öÊıºÍµÄ×îĞ¡×Ü×Ö½ÚÊı×é
+		//åˆå§‹åŒ–å…ƒç´ ä¸ªæ•°ä¸ºæœ€å°å¯†ç ä½“å­—èŠ‚æ•°ç»„å…ƒç´ ä¸ªæ•°ä¸è¯·æ±‚å¤´å­—èŠ‚æ•°ç»„å…ƒç´ ä¸ªæ•°å’Œçš„æœ€å°æ€»å­—èŠ‚æ•°ç»„
 		byte[] mInTotalBytes = new byte[mInCipherBodyBytes.length + mInResHeadBytes.length];
-		//ÏµÍ³¼¶Êı×é¸´ÖÆ(ÇëÇóÍ·×Ö½ÚÊı×é[Ô´Êı×é]£¬Ê×Î»[Ô´Êı×éÒª¸´ÖÆµÄÆğÊ¼Î»ÖÃ]£¬×îĞ¡×Ü×Ö½ÚÊı×é[Ä¿µÄÊı×é]£¬[Ä¿µÄÊı×é·ÅÖÃµÄÆğÊ¼Î»ÖÃ]£¬ÇëÇóÍ·×Ö½ÚÊı×éÔªËØ¸öÊı[¸´ÖÆ³¤¶È])
-		System.arraycopy(mInResHeadBytes, 0, mInTotalBytes, 0, mInResHeadBytes.length);//ÊµÏÖÊı×éÖ®¼äµÄ¸´ÖÆ
+		//ç³»ç»Ÿçº§æ•°ç»„å¤åˆ¶(è¯·æ±‚å¤´å­—èŠ‚æ•°ç»„[æºæ•°ç»„]ï¼Œé¦–ä½[æºæ•°ç»„è¦å¤åˆ¶çš„èµ·å§‹ä½ç½®]ï¼Œæœ€å°æ€»å­—èŠ‚æ•°ç»„[ç›®çš„æ•°ç»„]ï¼Œ[ç›®çš„æ•°ç»„æ”¾ç½®çš„èµ·å§‹ä½ç½®]ï¼Œè¯·æ±‚å¤´å­—èŠ‚æ•°ç»„å…ƒç´ ä¸ªæ•°[å¤åˆ¶é•¿åº¦])
+		System.arraycopy(mInResHeadBytes, 0, mInTotalBytes, 0, mInResHeadBytes.length);//å®ç°æ•°ç»„ä¹‹é—´çš„å¤åˆ¶
 //		System.arraycopy("\r\n".getBytes(), 0, mInTotalBytes, 0, "\r\n".getBytes().length);
-		//ÏµÍ³¼¶Êı×é¸´ÖÆ(XMLÎÄµµ×Ö·ûÊı×é[Ô´Êı×é]£¬Ê×Î»[Ô´Êı×éÒª¸´ÖÆµÄÆğÊ¼Î»ÖÃ]£¬×îĞ¡×Ü×Ö½ÚÊı×é[Ä¿µÄÊı×é]£¬ÇëÇóÍ·×Ö½ÚÊı×éÏÂÒ»Î»[Ä¿µÄÊı×é·ÅÖÃµÄÆğÊ¼Î»ÖÃ]£¬XMLÎÄµµ×Ö·ûÊı×éÔªËØ¸öÊı[¸´ÖÆ³¤¶È])
+		//ç³»ç»Ÿçº§æ•°ç»„å¤åˆ¶(XMLæ–‡æ¡£å­—ç¬¦æ•°ç»„[æºæ•°ç»„]ï¼Œé¦–ä½[æºæ•°ç»„è¦å¤åˆ¶çš„èµ·å§‹ä½ç½®]ï¼Œæœ€å°æ€»å­—èŠ‚æ•°ç»„[ç›®çš„æ•°ç»„]ï¼Œè¯·æ±‚å¤´å­—èŠ‚æ•°ç»„ä¸‹ä¸€ä½[ç›®çš„æ•°ç»„æ”¾ç½®çš„èµ·å§‹ä½ç½®]ï¼ŒXMLæ–‡æ¡£å­—ç¬¦æ•°ç»„å…ƒç´ ä¸ªæ•°[å¤åˆ¶é•¿åº¦])
 		System.arraycopy(mInClearBodyBytes, 0, mInTotalBytes, mInResHeadBytes.length, mInClearBodyBytes.length);
 		
-		//Í¨¹ıÇëÇóÍ·×Ö½ÚÊı×éµÃµ½×îĞ¡Ìå³¤×Ö·û´®
+		//é€šè¿‡è¯·æ±‚å¤´å­—èŠ‚æ•°ç»„å¾—åˆ°æœ€å°ä½“é•¿å­—ç¬¦ä¸²
 		String mInBodyLengthStr = String.valueOf(mInResHeadBytes.length);
-		//ÇëÇó±¨ÎÄ³¤¶È£º×îĞ¡Ìå³¤×Ö·û´®
-		cLogger.info("ÇëÇó±¨ÎÄ³¤¶È£º" + mInBodyLengthStr);
-		//×îĞ¡Ìå³¤×Ö·û´®µÃµ½×Ö½ÚÊı×é
+		//è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼šæœ€å°ä½“é•¿å­—ç¬¦ä¸²
+		cLogger.info("è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š" + mInBodyLengthStr);
+		//æœ€å°ä½“é•¿å­—ç¬¦ä¸²å¾—åˆ°å­—èŠ‚æ•°ç»„
 		byte[] mInLengthBytes = mInBodyLengthStr.getBytes();
 //		System.arraycopy(mInLengthBytes, 0, mInTotalBytes, 0, mInLengthBytes.length);
 
 //		System.arraycopy(mInCipherBodyBytes, 0, mInTotalBytes, 0, mInCipherBodyBytes.length);
 		//
-		System.out.println("ÕûÌå±¨ÎÄ£º"+ new String(mInTotalBytes));
-		cLogger.info("·¢ËÍÇëÇó±¨ÎÄ³¤¶È£º" + new String(mInTotalBytes).length());
-		cLogger.info("·¢ËÍÇëÇó±¨ÎÄ£¡");
+		System.out.println("æ•´ä½“æŠ¥æ–‡ï¼š"+ new String(mInTotalBytes));
+		cLogger.info("å‘é€è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š" + new String(mInTotalBytes).length());
+		cLogger.info("å‘é€è¯·æ±‚æŠ¥æ–‡ï¼");
 		mSocket.getOutputStream().write(mInTotalBytes);
 		mSocket.getOutputStream().flush();
 //		mSocket.shutdownOutput();
 		mCurTimeMillis = System.currentTimeMillis();
-		cLogger.info("¿Í»§¶ËÇëÇó·¢ËÍÍê±Ï£¡ºÄÊ±£º" + (mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");
+		cLogger.info("å®¢æˆ·ç«¯è¯·æ±‚å‘é€å®Œæ¯•ï¼è€—æ—¶ï¼š" + (mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");
 
-		/**ÒÔÏÂ´¦Àí·µ»Ø±¨ÎÄ************************/
+		/**ä»¥ä¸‹å¤„ç†è¿”å›æŠ¥æ–‡************************/
 		InputStream mSocketIs = mSocket.getInputStream();
-		cLogger.info("ÊÕµ½·µ»Ø±¨ÎÄ£¡");
+		cLogger.info("æ”¶åˆ°è¿”å›æŠ¥æ–‡ï¼");
 
-		//»ñÈ¡·µ»Ø±¨ÎÄ
+		//è·å–è¿”å›æŠ¥æ–‡
 		byte[] mOutHeadBytes = new byte[1024*50];
 		for (int tReadSize = 0; tReadSize < mOutHeadBytes.length;) {
 			int tRead = mSocketIs.read(mOutHeadBytes, tReadSize, mOutHeadBytes.length-tReadSize);
 			if (-1 == tRead) {
-				throw new EOFException("»ñÈ¡±¨ÎÄÍ·³ö´í£¡Êµ¼Ê¶ÁÈë£º" + new String(mOutHeadBytes));
+				throw new EOFException("è·å–æŠ¥æ–‡å¤´å‡ºé”™ï¼å®é™…è¯»å…¥ï¼š" + new String(mOutHeadBytes));
 			}else if(-1 != tRead){
 				break;
 			}
 			tReadSize += tRead;
 		}
 //		int mOutBodyLengthInt = Integer.parseInt(new String(mOutHeadBytes).trim());
-		cLogger.info("·µ»Ø±¨ÎÄ³¤¶È£º" + mOutHeadBytes.length);
+		cLogger.info("è¿”å›æŠ¥æ–‡é•¿åº¦ï¼š" + mOutHeadBytes.length);
 
 		
 		String mDataStr = new String(mOutHeadBytes).trim();
@@ -458,7 +464,7 @@ public class NewCCBTestUI {
 		
 		String mHeadDataStr = mDataStr.substring(0,index_Body_SEP);
 		
-		System.out.println("°²È«±¨ÎÄÍ·£º\r\n"+mHeadDataStr);
+		System.out.println("å®‰å…¨æŠ¥æ–‡å¤´ï¼š\r\n"+mHeadDataStr);
 		
 		
 		String mBodyDataStr = mDataStr.substring(index_Body_SEP,mDataStr.length()).trim();
@@ -466,63 +472,96 @@ public class NewCCBTestUI {
 
 		mSocket.close();
 		mCurTimeMillis = System.currentTimeMillis();
-		cLogger.info("¿Í»§¶Ë½ÓÊÕ·µ»Ø±¨ÎÄÍê±Ï£¡ºÄÊ±£º"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
+		cLogger.info("å®¢æˆ·ç«¯æ¥æ”¶è¿”å›æŠ¥æ–‡å®Œæ¯•ï¼è€—æ—¶ï¼š"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
 		
-//		return mCCBCipher.decode(mOutCipherBodyBytes);  //½âÃÜ
+//		return mCCBCipher.decode(mOutCipherBodyBytes);  //è§£å¯†
 		return mBodyDataStr.getBytes();
 	}
 	
+	/**
+	 * å‘é€è¯·æ±‚
+	 * @param pFuncFlag äº¤æ˜“ç 
+	 * @param document æ–‡æ¡£å¯¹è±¡
+	 * @return å­—èŠ‚æ•°ç»„[äºŒè¿›åˆ¶]
+	 * @throws Exception
+	 */
 	public byte[] sendRequest(String pFuncFlag, Document document) throws Exception {
-		//SocketÁ¬½Ó127.0.0.1:39871
-		cLogger.info("SocketÁ¬½Ó" + cIP + ":" + cPort);
+		//Socketè¿æ¥127.0.0.1:39871
+		cLogger.info("Socketè¿æ¥" + cIP + ":" + cPort);
+		//åˆå§‹åŒ–å¥—æ¥å­—[IP,ç«¯å£å·]
 		Socket mSocket = new Socket(cIP, cPort);
-
+		//æ—©æœŸæ¯«ç§’æ•°[ç³»ç»Ÿå½“å‰æ—¶é—´][1481862732977:2016-12-16 12:32:12]
 		long mOldTimeMillis = System.currentTimeMillis();
+		//å½“å‰æ¯«ç§’æ•°[é»˜è®¤æ—©æœŸæ¯«ç§’æ•°]	[1481862784332:2016-12-16 12:33:04]
 		long mCurTimeMillis = mOldTimeMillis;
-
+		//æ–‡æ¡£å¯¹è±¡è½¬æ¢ä¸ºGBKç¼–ç çš„å­—èŠ‚æ•°ç»„
 		byte[] mInClearBodyBytes = JdomUtil.toBytes(document,"GBK");
+		//åˆå§‹åŒ–ä¸€ä¸ªGBKå­—èŠ‚æ•°ç»„å¤§å…­ä¸ªå…ƒç´ çš„æ•°ç»„
+		//[53, 55, 53, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,...]
+		byte[] mInTotalBytes = new byte[mInClearBodyBytes.length + 6];//è¾“å…¥æ€»å­—èŠ‚æ•°ç»„
 		
-		byte[] mInTotalBytes = new byte[mInClearBodyBytes.length + 6];
-
-		// ±¨ÎÄÌå³¤¶È
+		// æŠ¥æ–‡ä½“é•¿åº¦
+		//æ–°å­—èŠ‚æ•°ç»„é•¿åº¦å­—ç¬¦ä¸²
 		String mInBodyLengthStr = String.valueOf(mInClearBodyBytes.length);
-		//ÇëÇó±¨ÎÄ³¤¶È£º1522
-		cLogger.info("ÇëÇó±¨ÎÄ³¤¶È£º" + mInBodyLengthStr);
+		//è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š1522
+		//è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š5759
+		cLogger.info("è¯·æ±‚æŠ¥æ–‡é•¿åº¦ï¼š" + mInBodyLengthStr);
+		//å­—èŠ‚æ•°ç»„é•¿åº¦å­—ç¬¦ä¸²å¾—åˆ°å­—èŠ‚æ•°ç»„[53, 55, 53, 57]
 		byte[] mInLengthBytes = mInBodyLengthStr.getBytes();
+		//ä»æŒ‡å®šæºæ•°ç»„ä¸­å¤åˆ¶ä¸€ä¸ªæ•°ç»„ï¼Œå¤åˆ¶ä»èµ·å§‹ä½ç½®å¼€å§‹ï¼Œåˆ°ç›®æ ‡æ•°ç»„çš„æœ€å¤§ç´¢å¼•ä½ç½®ç»“æŸ
 		System.arraycopy(mInLengthBytes, 0, mInTotalBytes, 0,
 				mInLengthBytes.length);
-
+		//ä»æŒ‡å®šæºæ•°ç»„ä¸­å¤åˆ¶ä¸€ä¸ªæ•°ç»„ï¼Œå¤åˆ¶ä»ç´¢å¼•6ä½ç½®å¼€å§‹ï¼Œåˆ°ç›®æ ‡æ•°ç»„çš„æœ€å¤§ç´¢å¼•ä½ç½®ç»“æŸã€‚
+		//[53, 55, 53, 57, 0, 0, 60(6), 63, 120, 109, 108, 32, 118, 101, 114, 115, 105, 111, 110, 61, 34, 49, 46, 48, 34, 32, 101, 110, 99, 111, 100, 105, 110, 103, 61, 34, 71, 66, 75, 34, 63, 62, 13, 10, 60, 84, 88, 62, 60, 84, 88, 95, 72, 69, 65, 68, 69, 82, 62, 60, 83, 89, 83, 95, 72, 68, 82, 95, 76, 69, 78, 62, 48, 60, 47, 83, 89, 83, 95, 72, 68, 82, 95, 76, 69, 78, 62, 60, 83, 89, 83, 95, 80, 75, 71, 95, 86, 82, 83, 78, 62, 48, 49, 60, 47, 83, 89, 83, 95, 80, 75, 71, 95, 86, 82, 83, 78, 62, 60, 83, 89, 83, 95, 84, 84, 76, 95, 76, 69, 78, 62, 48, 60, 47, 83, 89, 83, 95, 84, 84, 76, 95, 76, 69, 78, 62, 60, 83, 89, 83, 95, 82, 69, 81, 95, 83, 69, 67, 95, 73, 68, 62, 49, 48, 50, 48, 48, 49, 60, 47, 83, 89, 83, 95, 82, 69, 81, 95, 83, 69, 67, 95, 73, 68, 62, 60, 83, 89, 83, 95, 83, 78, 68, 95, 83, 69, 67, 95, 73, 68, 62, 49, 48, 56, 48, 49, 49, 60, 47, 83, 89, 83, 95, 83, 78, 68, 95, 83, 69, 67, 95, 73, 68, 62, 60, 83, 89, 83, 95, 84, 88, 95, 67, 79, 68, 69, 62, 80, 53, 51, 56, 49, 57, 49, 49, 51, 60, 47, 83, 89, 83, 95, 84, 88, 95, 67, 79, 68, 69, 62, 60, 83, 89, 83, 95, 84, 88, 95, 86, 82, 83, 78, 62, 48, 49, 60, 47, 83, 89, 83, 95, 84, 88, 95, 86, 82, 83, 78, 62, 60, 83, 89, 83, 95, 84, 88, 95, 84, 89, 80, 69, 62, 48, 50, 48, 48, 48, 48, 60, 47, 83, 89, 83, 95, 84, 88, 95, 84, 89, 80, 69, 62, 60, 83, 89, 83, 95, 82, 69, 83, 69, 82, 86, 69, 68, 62, 48, 60, 47, 83, 89, 83, 95, 82, 69, 83, 69, 82, 86, 69, 68, 62, 60, 83, 89, 83, 95, 69, 86, 84, 95, 84, 82, 65, 67, 69, 95, 73, 68, 62, 49, 48, 50, 48, 48, 49, 56, 48, 50, 49, 52, 56, 51, 49, 52, 55, 53, 51, 52, 48, 48, 49, 52, 56, 56, 60, 47, 83, 89, 83, 95, 69, 86, 84, 95, 84, 82, 65, 67, 69, 95, 73, 68, 62, 60, 83, 89, 83, 95, 83, 78, 68, 95, 83, 69, 82, 73, 65, 76, 95, 78, 79, 62, 49, 48, 48, 48, 48, 48, 48, 48, 48, 48, 60, 47, 83, 89, 83, 95, 83, 78, 68, 95, 83, 69, 82, 73, 65, 76, 95, 78, 79, 62, 60, 83, 89, 83, 95, 80, 75, 71, 95, 84, 89, 80, 69, 62, 49, 60, 47, 83, 89, 83, 95, 80, 75, 71, 95, 84, 89, 80, 69, 62, 60, 83, 89, 83, 95, 77, 83, 71, 95, 76, 69, 78, 62, 48, 60, 47, 83, 89, 83, 95, 77, 83, 71, 95, 76, 69, 78, 62, 60, 83, 89, 83, 95, 73, 83, 95, 69, 78, 67, 82, 89, 80, 84, 69, 68, 62, 48, 60, 47, 83, 89, 83, 95, 73, 83, 95, 69, 78, 67, 82, 89, 80, 84, 69, 68, 62, 60, 83, 89, 83, 95, 69, 78, 67, 82, 89, 80, 84, 95, 84, 89, 80, 69, 62, 51, 60, 47, 83, 89, 83, 95, 69, 78, 67, 82, 89, 80, 84, 95, 84, 89, 80, 69, 62, 60, 83, 89, 83, 95, 67, 79, 77, 80, 82, 69, 83, 83, 95, 84, 89, 80, 69, 62, 48, 60, 47, 83, 89, 83, 95, 67, 79, 77, 80, 82, 69, 83, 83, 95, 84, 89, 80, 69, 62, 60, 83, 89, 83, 95, 69, 77, 66, 95, 77, 83, 71, 95, 76, 69, 78, 62, 48, 60, 47, 83, 89, 83, 95, 69, 77, 66, 95, 77, 83, 71, 95, 76, 69, 78, 62, 60, 83, 89, 83, 95, 82, 69, 81, 95, 84, 73, 77, 69, 62, 50, 48, 49, 54, 49, 50, 51, 49, 48, 57, 50, 53, 51, 52, 49, 50, 53, 60, 47, 83, 89, 83, 95, 82, 69, 81, 95, 84, 73, 77, 69, 62, 60, 83, 89, 83, 95, 84, 73, 77, 69, 95, 76, 69, 70, 84, 62, 48, 48, 48, 49, 49, 57, 55, 48, 51, 60, 47, 83, 89, 83, 95, 84, 73, 77, 69, 95, 76, 69, 70, 84, 62, 60, 83, 89, 83, 95, 80, 75, 71, 95, 83, 84, 83, 95, 84, 89, 80, 69, 62, 48, 48, 60, 47, 83, 89, 83, 95, 80, 75, 71, 95, 83, 84, 83, 95, 84, 89, 80, 69, 62, 60, 76, 111, 99, 97, 108, 73, 68, 62, 53, 49, 48, 48, 57, 54, 60, 47, 76, 111, 99, 97, 108, 73, 68, 62, 60, 114, 101, 109, 111, 116, 101, 73, 68, 62, 49, 48, 53, 48, 48, 53, 60, 47, 114, 101, 109, 111, 116, 101, 73, 68, 62, 60, 47, 84, 88, 95, 72, 69, 65, 68, 69, 82, 62, 60, 84, 88, 95, 66, 79, 68, 89, 62, 60, 67, 79, 77, 77, 79, 78, 62, 60, 70, 73, 76, 69, 95, 76, 73, 83, 84, 95, 80, 65, 67, 75, 62, 60, 70, 73, 76, 69, 95, 78, 85, 77, 62, 48, 60, 47, 70, 73, 76, 69, 95, 78, 85, 77, 62, 60, 70, 73, 76, 69, 95, 77, 79, 68, 69, 62, 48, 60, 47, 70, 73, 76, 69, 95, 77, 79, 68, 69, 62, 60, 70, 73, 76, 69, 95, 78, 79, 68, 69, 32, 47, 62, 60, 70, 73, 76, 69, 95, 78, 65, 77, 69, 95, 80, 65, 67, 75, 32, 47, 62, 60, 70, 73, 76, 69, 95, 80, 65, 84, 72, 95, 80, 65, 67, 75, 32, 47, 62, 60, 47, 70, 73, 76, 69, 95, 76, 73, 83, 84, 95, 80, 65, 67, 75, 62, 60, 47, 67, 79, 77, 77, 79, 78, 62, 60, 69, 78, 84, 73, 84, 89, 62, 60, 67, 79, 77, 95, 69, 78, 84, 73, 84, 89, 62, 60, 73, 110, 115, 116, 95, 69, 110, 103, 95, 83, 104, 114, 116, 78, 109, 62, 67, 67, 66, 60, 47, 73, 110, 115, 116, 95, 69, 110, 103, 95, 83, 104, 114, 116, 78, 109, 62, 60, 73, 110, 115, 95, 67, 111, 95, 73, 68, 62, 48, 49, 48, 48, 55, 57, 60, 47, 73, 110, 115, 95, 67, 111, 95, 73, 68, 62, 60, 83, 118, 80, 116, 95, 74, 114, 110, 108, 95, 78, 111, 62, 49, 48, 56, 48, 49, 49, 114, 118, 49, 49, 52, 56, 49, 55, 54, 53, 49, 49, 49, 48, 49, 53, 49, 50, 48, 60, 47, 83, 118, 80, 116, 95, 74, 114, 110, 108, 95, 78, 111, 62, 60, 84, 88, 78, 95, 73, 84, 84, 95, 67, 72, 78, 76, 95, 73, 68, 62, 48, 48, 50, 57, 49, 49, 48, 51, 55, 56, 51, 48, 48, 48, 48, 32, 32, 32, 32, 32, 32, 32, 32, 60, 47, 84, 88, 78, 95, 73, 84, 84, 95, 67, 72, 78, 76, 95, 73, 68, 62, 60, 84, 88, 78, 95, 73, 84, 84, 95, 67, 72, 78, 76, 95, 67, 71, 89, 95, 67, 79, 68, 69, 62, 50, 48, 49, 55, 48, 48, 50, 57, 60, 47, 84, 88, 78, 95, 73, 84, 84, 95, 67, 72, 78, 76, 95, 67, 71, 89, 95, 67, 79, 68, 69, 62, 60, 67, 67, 66, 73, 110, 115, 95, 73, 68, 62, 49, 49, 48, 51, 55, 56, 51, 48, 48, 60, 47, 67, 67, 66, 73, 110, 115, 95, 73, 68, 62, 60, 67, 67, 66, 95, 69, 109, 112, 73, 68, 62, 57, 51, 57, 49, 48, 48, 57, 50, 60, 47, 67, 67, 66, 95, 69, 109, 112, 73, 68, 62, 60, 79, 112, 114, 103, 68, 97, 121, 95, 80, 114, 100, 62, 50, 48, 49, 54, 49, 50, 51, 49, 60, 47, 79, 112, 114, 103, 68, 97, 121, 95, 80, 114, 100, 62, 60, 76, 78, 71, 95, 73, 68, 62, 122, 104, 45, 99, 110, 60, 47, 76, 78, 71, 95, 73, 68, 62, 60, 47, 67, 79, 77, 95, 69, 78, 84, 73, 84, 89, 62, 60, 65, 80, 80, 95, 69, 78, 84, 73, 84, 89, 62, 60, 80, 108, 99, 104, 100, 95, 78, 109, 62, -43, -44, -63, -7, 60, 47, 80, 108, 99, 104, 100, 95, 78, 109, 62, 60, 80, 108, 99, 104, 100, 95, 71, 110, 100, 95, 67, 100, 62, 48, 49, 60, 47, 80, 108, 99, 104, 100, 95, 71, 110, 100, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 66, 114, 116, 104, 95, 68, 116, 62, 49, 57, 54, 51, 48, 54, 50, 54, 60, 47, 80, 108, 99, 104, 100, 95, 66, 114, 116, 104, 95, 68, 116, 62, 60, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 84, 112, 67, 100, 62, 49, 48, 49, 48, 60, 47, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 84, 112, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 78, 111, 62, 51, 50, 48, 49, 55, 55, 49, 57, 54, 51, 48, 54, 50, 54, 49, 48, 49, 54, 60, 47, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 78, 111, 62, 60, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 69, 102, 68, 116, 62, 50, 48, 48, 55, 48, 57, 50, 52, 60, 47, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 69, 102, 68, 116, 62, 60, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 69, 120, 112, 68, 116, 62, 50, 48, 49, 56, 49, 50, 49, 50, 60, 47, 80, 108, 99, 104, 100, 95, 67, 114, 100, 116, 95, 69, 120, 112, 68, 116, 62, 60, 80, 108, 99, 104, 100, 95, 78, 97, 116, 95, 67, 100, 62, 49, 53, 54, 60, 47, 80, 108, 99, 104, 100, 95, 78, 97, 116, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 67, 116, 99, 65, 100, 114, 67, 116, 121, 82, 103, 111, 110, 95, 67, 100, 62, 49, 53, 54, 60, 47, 80, 108, 99, 104, 100, 67, 116, 99, 65, 100, 114, 67, 116, 121, 82, 103, 111, 110, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 80, 114, 111, 118, 95, 67, 100, 62, 49, 49, 48, 48, 48, 48, 60, 47, 80, 108, 99, 104, 100, 95, 80, 114, 111, 118, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 67, 105, 116, 121, 95, 67, 100, 62, 49, 49, 48, 48, 48, 48, 60, 47, 80, 108, 99, 104, 100, 95, 67, 105, 116, 121, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 67, 110, 116, 121, 65, 110, 100, 68, 115, 116, 99, 95, 67, 100, 62, 49, 49, 48, 49, 48, 49, 60, 47, 80, 108, 99, 104, 100, 95, 67, 110, 116, 121, 65, 110, 100, 68, 115, 116, 99, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 68, 116, 108, 95, 65, 100, 114, 95, 67, 110, 116, 110, 116, 62, -74, -85, -75, -60, -75, -60, -75, -60, -75, -60, -75, -60, -54, -57, -54, -57, -54, -57, 60, 47, 80, 108, 99, 104, 100, 95, 68, 116, 108, 95, 65, 100, 114, 95, 67, 110, 116, 110, 116, 62, 60, 80, 108, 99, 104, 100, 95, 67, 111, 109, 109, 95, 65, 100, 114, 32, 47, 62, 60, 80, 108, 99, 104, 100, 95, 90, 105, 112, 69, 67, 68, 62, 49, 48, 48, 48, 48, 48, 60, 47, 80, 108, 99, 104, 100, 95, 90, 105, 112, 69, 67, 68, 62, 60, 80, 108, 99, 104, 100, 70, 105, 120, 84, 101, 108, 73, 116, 110, 108, 68, 115, 116, 99, 78, 111, 62, 56, 54, 60, 47, 80, 108, 99, 104, 100, 70, 105, 120, 84, 101, 108, 73, 116, 110, 108, 68, 115, 116, 99, 78, 111, 62, 60, 80, 108, 99, 104, 100, 70, 105, 120, 84, 101, 108, 68, 109, 115, 116, 68, 115, 116, 99, 78, 111, 62, 48, 49, 48, 60, 47, 80, 108, 99, 104, 100, 70, 105, 120, 84, 101, 108, 68, 109, 115, 116, 68, 115, 116, 99, 78, 111, 62, 60, 80, 108, 99, 104, 100, 95, 70, 105, 120, 95, 84, 101, 108, 78, 111, 62, 51, 56, 54, 52, 51, 53, 54, 52, 60, 47, 80, 108, 99, 104, 100, 95, 70, 105, 120, 95, 84, 101, 108, 78, 111, 62, 60, 80, 108, 99, 104, 100, 77, 111, 118, 101, 84, 101, 108, 73, 116, 108, 68, 115, 116, 99, 78, 111, 62, 56, 54, 60, 47, 80, 108, 99, 104, 100, 77, 111, 118, 101, 84, 101, 108, 73, 116, 108, 68, 115, 116, 99, 78, 111, 62, 60, 80, 108, 99, 104, 100, 95, 77, 111, 118, 101, 95, 84, 101, 108, 78, 111, 62, 49, 51, 51, 53, 53, 54, 53, 57, 56, 55, 55, 60, 47, 80, 108, 99, 104, 100, 95, 77, 111, 118, 101, 95, 84, 101, 108, 78, 111, 62, 60, 80, 108, 99, 104, 100, 95, 69, 109, 97, 105, 108, 95, 65, 100, 114, 32, 47, 62, 60, 80, 108, 99, 104, 100, 95, 79, 99, 112, 95, 67, 100, 62, 65, 48, 48, 48, 48, 60, 47, 80, 108, 99, 104, 100, 95, 79, 99, 112, 95, 67, 100, 62, 60, 80, 108, 99, 104, 100, 95, 89, 114, 95, 73, 110, 99, 109, 65, 109, 62, 51, 48, 48, 48, 48, 48, 48, 46, 48, 48, 60, 47, 80, 108, 99, 104, 100, 95, 89, 114, 95, 73, 110, 99, 109, 65, 109, 62, 60, 70, 97, 109, 95, 89, 114, 95, 73, 110, 99, 109, 65, 109, 62, 51, 48, 48, 48, 48, 48, 48, 46, 48, 48, 60, 47, 70, 97, 109, 95, 89, 114, 95, 7...
 		System.arraycopy(mInClearBodyBytes, 0, mInTotalBytes, 6,
 				mInClearBodyBytes.length);
 		
-		
+		//è¿”å›æ­¤å¥—æ¥å­—çš„è¾“å‡ºæµå°† æ•°ç»„é•¿åº¦ä¸ªå­—èŠ‚ä»è¾“å…¥æ€»å­—èŠ‚æ•°ç»„å†™å…¥å¥—æ¥å­—è¾“å‡ºæµã€‚
 		mSocket.getOutputStream().write(mInTotalBytes);
+		//Socket[addr=/127.0.0.1,port=39871,localport=53343]è¿”å›æ­¤å¥—æ¥å­—çš„è¾“å‡ºæµåˆ·æ–°æ­¤è¾“å‡ºæµå¹¶å¼ºåˆ¶å†™å‡ºæ‰€æœ‰ç¼“å†²çš„è¾“å‡ºå­—èŠ‚
 		mSocket.getOutputStream().flush();
 		
-		/**ÒÔÏÂ´¦Àí·µ»Ø±¨ÎÄ************************/
+		/**ä»¥ä¸‹å¤„ç†è¿”å›æŠ¥æ–‡************************/
+		//Socket[addr=/127.0.0.1,port=39871,localport=53343]è¿”å›æ­¤å¥—æ¥å­—çš„è¾“å…¥æµ
 		InputStream mSocketIs = mSocket.getInputStream();
-		//ÊÕµ½·µ»Ø±¨ÎÄ£¡
-		cLogger.info("ÊÕµ½·µ»Ø±¨ÎÄ£¡");
+		//æ”¶åˆ°è¿”å›æŠ¥æ–‡ï¼
+		cLogger.info("æ”¶åˆ°è¿”å›æŠ¥æ–‡ï¼");
 
-		//»ñÈ¡·µ»Ø±¨ÎÄ
+		//è·å–è¿”å›æŠ¥æ–‡
+		//åˆå§‹åŒ–è¾“å‡ºæŠ¥æ–‡å¤´å­—èŠ‚æ•°ç»„[50k]
 		byte[] mOutHeadBytes = new byte[1024*50];
+		//éå†è¾“å‡ºæŠ¥æ–‡å¤´å­—èŠ‚æ•°ç»„
 		for (int tReadSize = 0; tReadSize < mOutHeadBytes.length;) {
+			//å°†è¾“å…¥æµä¸­æœ€å¤š å…ƒç´ ä¸ªæ•° ä¸ªæ•°æ®å­—èŠ‚è¯»å…¥å­—èŠ‚æ•°ç»„
 			int tRead = mSocketIs.read(mOutHeadBytes, tReadSize, mOutHeadBytes.length-tReadSize);
+			//è¯»å…¥ç¼“å†²åŒºçš„æ€»å­—èŠ‚æ•°ï¼Œå¦‚æœç”±äºå·²åˆ°è¾¾æµæœ«å°¾è€Œä¸å†æœ‰æ•°æ®ï¼Œåˆ™è¿”å› -1
 			if (-1 == tRead) {
-				throw new EOFException("»ñÈ¡±¨ÎÄÍ·³ö´í£¡Êµ¼Ê¶ÁÈë£º" + new String(mOutHeadBytes));
+				//è·å–æŠ¥æ–‡å¤´å‡ºé”™ï¼å®é™…è¯»å…¥ï¼šè¾“å‡ºæŠ¥æ–‡å¤´å­—èŠ‚æ•°ç»„
+				throw new EOFException("è·å–æŠ¥æ–‡å¤´å‡ºé”™ï¼å®é™…è¯»å…¥ï¼š" + new String(mOutHeadBytes));
+			//æœªåˆ°è¾¾æµæœ«å°¾ï¼Œè¿˜æœ‰æ•°æ®
 			}else if(-1 != tRead){
 				break;
 			}
+			//è¯»å–å¤§å°åŠ ä¸Šè¯»å…¥ç¼“å†²åŒºçš„æ€»å­—èŠ‚æ•°
 			tReadSize += tRead;
 		}
+		//æŠ¥æ–‡ä½“æ•°æ®å­—ç¬¦ä¸²[æŠ¥æ–‡ä½“å­—èŠ‚æ•°ç»„è½¬æ¢ä¸ºå­—ç¬¦ä¸²è¿”å›å‰¯æœ¬ï¼Œå¿½ç•¥å‰å¯¼ç©ºç™½å’Œå°¾éƒ¨ç©ºç™½]
 		String mBodyDataStr = new String(mOutHeadBytes).trim();
-		cLogger.info("·µ»Ø±¨ÎÄ³¤¶È£º" + mBodyDataStr.length());
-
+		//è¿”å›æŠ¥æ–‡é•¿åº¦ï¼š1926[æŠ¥æ–‡ä½“æ•°æ®å­—ç¬¦ä¸²çš„é•¿åº¦]
+		cLogger.info("è¿”å›æŠ¥æ–‡é•¿åº¦ï¼š" + mBodyDataStr.length());
+		//Socket[addr=/127.0.0.1,port=39871,localport=54303]å…³é—­å¥—æ¥å­—
 		mSocket.close();
+		//å½“å‰ç³»ç»Ÿæ—¶é—´æ¯«ç§’æ•°[1481871563250:2016-12-16 02:59:23]
 		mCurTimeMillis = System.currentTimeMillis();
-		cLogger.info("¿Í»§¶Ë½ÓÊÕ·µ»Ø±¨ÎÄÍê±Ï£¡ºÄÊ±£º"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
+		//å®¢æˆ·ç«¯æ¥æ”¶è¿”å›æŠ¥æ–‡å®Œæ¯•ï¼è€—æ—¶ï¼š191.118s
+		cLogger.info("å®¢æˆ·ç«¯æ¥æ”¶è¿”å›æŠ¥æ–‡å®Œæ¯•ï¼è€—æ—¶ï¼š"+(mCurTimeMillis - mOldTimeMillis)/1000.0 + "s");		
 		
-//		return mCCBCipher.decode(mOutCipherBodyBytes);  //½âÃÜ
+//		return mCCBCipher.decode(mOutCipherBodyBytes);  //è§£å¯†
+		/**
+		 * <?xml version="1.0" encoding="UTF-8"?>
+		    <TX><TX_HEADER><SYS_HDR_LEN>823</SYS_HDR_LEN><SYS_PKG_VRSN>01</SYS_PKG_VRSN><SYS_TTL_LEN>1926</SYS_TTL_LEN><SYS_SND_SEC_ID>510050</SYS_SND_SEC_ID><SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID><SYS_TX_TYPE>020000</SYS_TX_TYPE><SYS_EVT_TRACE_ID>1020018021483147534001488</SYS_EVT_TRACE_ID><SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO><SYS_PKG_TYPE>1</SYS_PKG_TYPE><SYS_MSG_LEN>728</SYS_MSG_LEN><SYS_IS_ENCRYPTED>3</SYS_IS_ENCRYPTED><SYS_ENCRYPT_TYPE>3</SYS_ENCRYPT_TYPE><SYS_COMPRESS_TYPE>0</SYS_COMPRESS_TYPE><SYS_EMB_MSG_LEN>0</SYS_EMB_MSG_LEN><SYS_RECV_TIME>20161218145615581</SYS_RECV_TIME><SYS_RESP_TIME>20161218145615696</SYS_RESP_TIME><SYS_PKG_STS_TYPE>01</SYS_PKG_STS_TYPE><SYS_TX_STATUS>01</SYS_TX_STATUS><SYS_RESP_CODE>ZZZ072000001</SYS_RESP_CODE><SYS_RESP_DESC_LEN>7</SYS_RESP_DESC_LEN><SYS_RESP_DESC>é»æ‘å†éƒãƒ¥ç¹”æ¾¶è¾«è§¦é”›ï¿½/SYS_RESP_DESC></TX_HEADER><TX_BODY><COMMON><FILE_LIST_PACK><FILE_NUM>0</FILE_NUM><FILE_MODE>0</FILE_MODE><FILE_NODE /><FILE_NAME_PACK /><FILE_PATH_PACK /><FILE_INFO><FILE_NAME /><FILE_PATH /></FILE_INFO></FILE_LIST_PACK></COMMON><ENTITY><APP_ENTITY><AgIns_Pkg_ID /><Cvr_Num>0</Cvr_Num><Bu_List /><Ins_BillNo /><Tot_InsPrem_Amt /><Init_PyF_Amt /><Anulz_InsPrem_Amt /><Ins_Co_Acrdt_Stff_Nm /><InsCoAcrStCrQuaCtf_ID /><InsPrem_PyF_MtdCd /><AgInsRgAutoDdcn_AccNo /><EcIst_PyF_Amt_Inf /><InsPrem_PyF_Prd_Num /><InsPrem_PyF_Cyc_Cd /></APP_ENTITY><COM_ENTITY><Inst_Eng_ShrtNm>CCB</Inst_Eng_ShrtNm><Ins_Co_ID>010079</Ins_Co_ID><SvPt_Jrnl_No>108011rv11481765111015120</SvPt_Jrnl_No><TXN_ITT_CHNL_ID>002911037830000        </TXN_ITT_CHNL_ID><TXN_ITT_CHNL_CGY_CODE>20170029</TXN_ITT_CHNL_CGY_CODE><CCBIns_ID>110378300</CCBIns_ID><CCB_EmpID>93910092</CCB_EmpID><OprgDay_Prd>20161231</OprgDay_Prd><LNG_ID>zh-cn</LNG_ID><SYS_TX_CODE>P53819113</SYS_TX_CODE><Ins_Co_Acg_Dt /><Ins_Co_Jrnl_No /><Ins_Co_Cst_Svc_Tel>4009-800-800</Ins_Co_Cst_Svc_Tel></COM_ENTITY></ENTITY></TX_BODY></TX>
+		 */
+		//è¿”å›ä½¿ç”¨UTF-8å­—ç¬¦é›†å°†æ­¤ æŠ¥æ–‡ä½“æ•°æ®å­—ç¬¦ä¸² è§£ç ä¸ºå­—èŠ‚åºåˆ—ï¼Œå¹¶å°†ç»“æœå­˜å‚¨åˆ°ä¸€ä¸ªæ–°çš„å­—èŠ‚æ•°ç»„ä¸­ã€‚
 		return mBodyDataStr.getBytes("UTF-8");
 	}
 }

@@ -64,6 +64,7 @@ public class JdomUtil {
 	 * 构建失败，返回null。
 	 */
 	public static Document build(InputStream pIs, String pCharset) {
+		//构建一个文档对象[File:/task/20161216/newccb/local/1012/P53819113in_noStd.xml,UTF-8,忽略标签之间的空字符]
 		return build(pIs, pCharset, true);
 	}
 	

@@ -20,16 +20,25 @@ import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
+/**
+ * 套接字监听器
+ * @author yuantongxin
+ * @version 1.0
+ */
 public class SocketListenerF5 implements ServletContextListener, XmlTag
 {
 	private final static Logger cLogger = Logger.getLogger(SocketListenerF5.class);
-
+	//定义服务器端数组
 	private Server[] cServers = null;
-
+	
+	/**
+	 * 套接字监听构造器
+	 */
 	public SocketListenerF5()
 	{
 		//System.out = org.apache.tomcat.util.log.SystemLogHandler@13899213
-		cLogger.debug("System.out = " + System.out);
+		cLogger.debug("System.out = " + System.out);//“标准”输出流
+		//中间平台配置新实例重置日志
 		if (MidplatConf.newInstance().resetLog())
 		{
 			//Start reset System.out...[开始重置系统输出…]
@@ -58,25 +67,36 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 	{
 		//Into SocketListenerF5.contextInitialized()...[进入套接字侦听器上下文初始化]
 		cLogger.info("Into SocketListenerF5.contextInitialized()...");
-		//[Element: <sockets/>]
+		//[Element: <sockets/>]获取xml配置文件的缓存对象
 		Document mSocketConfDoc = SocketConf.newInstance().getConf();
 		//[Element: <sockets/>]获取根元素socket子元素列表
 		List<Element> mSocketList = mSocketConfDoc.getRootElement().getChildren(socket);
 		//[[Element: <socket/>], [Element: <socket/>], [Element: <socket/>], [Element: <socket/>]]
-		int mSize = mSocketList.size();//size:4
+		int mSize = mSocketList.size();//size:4返回列表中的元素数
+		//初始化服务器端数组[套接字长度个元素]
 		cServers = new Server[mSize];
+		//遍历套接字列表
 		for (int i = 0; i < mSize; i++)
 		{
 			try
 			{
+				//返回套接字列表中指定位置的元素
 				Element ttSocket = mSocketList.get(i);
+				//0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+				//1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
 				cLogger.info(i + "_Socket(" + ttSocket.getChildText(name) + "): port=" + ttSocket.getChildText(port) + "; class="
 						+ ttSocket.getChildText("class"));
+				//套接字得到套接字端口号子元素文本[35006,35017,]
 				int ttPort = Integer.parseInt(ttSocket.getChildText(port));
+				//套接字得到套接字类子元素文本[com.sinosoft.midplat.abc.AbcYbt]
 				String ttClassName = ttSocket.getChildText("class");
+				//Thread[Thread-2,5,main]构造服务器端实例[端口号:35006，类名:com.sinosoft.midplat.abc.AbcYbt;端口号:35017，类名:com.sinosoft.midplat.gzbank.GZBankYbt]
 				Server ttServer = new Server(ttPort, ttClassName);
-				cServers[i] = ttServer;
+				//服务器端数组保存当前服务器端实例[0,1,2,3]
+				cServers[i] = ttServer;		
+				//服务器端实例使该线程开始执行[Java 虚拟机调用该线程的 run 方法]
 				ttServer.start();
+				//0_Socket(农业银行)加载成功!
 				cLogger.info(i + "_Socket(" + ttSocket.getChildText(name) + ")加载成功!");
 			}
 			catch (Throwable ex)
@@ -161,6 +181,7 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 			{
 				//初始化服务器端套接字
 				cServerSocket = new ServerSocket(cPort);
+				//监听端口 35006[农业银行]
 				//监听端口 35006[农业银行]
 				cLogger.info("监听端口 " + cServerSocket.getLocalPort());
 			}

@@ -22,7 +22,7 @@ public class FileCacheManage extends Thread {
 	
 	private int cSleepSecond = 5*60;	//默认五分钟扫描一次
 	
-	private boolean cIsOpen = true;
+	private boolean cIsOpen = true;//是否打开
 	
 	private FileCacheManage() {
 		setName("FileCache");
@@ -37,9 +37,12 @@ public class FileCacheManage extends Thread {
 		return cFileCacheManageIns;
 	}
 	
+	/**
+	 * 启动缓存管理系统
+	 */
 	public void run() {
 		cLogger.info("缓存管理系统启动...");
-		
+		//打开[true]
 		while (cIsOpen) {
 			cLogger.info("Start scan conf files...");
 			//{conf/socket.xml=com.sinosoft.midplat.net.SocketConf@50a69b6b, conf/midplat.xml=com.sinosoft.midplat.MidplatConf@6a25b72a}
@@ -47,7 +50,7 @@ public class FileCacheManage extends Thread {
 			Iterator<String> mKeyIterator = cConfigMap.keySet().iterator();
 			//遍历键集迭代器[仍有元素可以迭代，则返回 true]
 			while (mKeyIterator.hasNext()) {
-				//返回迭代的下一个元素
+				//返回迭代的下一个元素[conf/midplat.xml]
 				String tFilePath = mKeyIterator.next();
 				//返回指定键在此标识哈希映射中所映射的值
 				Load tLoad = cConfigMap.get(tFilePath);

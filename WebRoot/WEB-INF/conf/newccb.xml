@@ -5,7 +5,8 @@
 	<!-- <TranCom outcode="13">13</TranCom> -->
 	<TranCom outcode="13">03</TranCom><!-- 201612151117 -->
 	<CoreNo>010072</CoreNo>
-	<AgentCom>1301010001</AgentCom><!--代理机构编码:建设银行贵州贵阳世纪城网点 -->
+	<!-- <AgentCom>1301010001</AgentCom>代理机构编码:建设银行贵州贵阳世纪城网点 -->
+	<AgentCom>5201300003</AgentCom>
 	<!-- <preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet> -->
 	<preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet>
 	<!-- 银联账号 -->

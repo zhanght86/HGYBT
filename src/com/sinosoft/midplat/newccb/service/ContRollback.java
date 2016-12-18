@@ -27,10 +27,16 @@ import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
 
 public class ContRollback extends ServiceImpl {
+	
 	public ContRollback(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
 	
+	/**
+	 * 业务处理
+	 * @param pInXmlDoc 输入XML文档
+	 * @return cOutXmlDoc 输出XML文档
+	 */
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into ContRollback.service()...");
@@ -51,25 +57,32 @@ public class ContRollback extends ServiceImpl {
 				
 				/** 检查签单的交易流水号的合法性  */
 				String checkTranNoSQL = new StringBuilder(
-				"select * from Tranlog where ")
-				.append(" FuncFlag=").append("1014")
-				.append(" and tranno ='").append(mOldTranNo).append('\'')
-				.append(" and MakeDate=").append(cTranLogDB.getMakeDate())
-				.append(" and TranCom=").append(cTranLogDB.getTranCom())
+				"select * from Tranlog where ")//select * from Tranlog where 
+				.append(" FuncFlag=").append("1014")// FuncFlag=1014
+				.append(" and tranno ='").append(mOldTranNo).append('\'')// and tranno ='108011rv11481789165000572'
+				.append(" and MakeDate=").append(cTranLogDB.getMakeDate())// and MakeDate=20161231
+				.append(" and TranCom=").append(cTranLogDB.getTranCom())// and TranCom=13
 //				.append(" and ZoneNo='").append(cTranLogDB.getZoneNo())
-				.append(" and NodeNo='")
-				.append(cTranLogDB.getNodeNo()).append('\'').toString();
+				.append(" and NodeNo='")// and NodeNo='
+				.append(cTranLogDB.getNodeNo()).append('\'').toString();//110378300'
+				//select * from Tranlog where  FuncFlag=1014 and tranno ='108011rv11481789208000575' and MakeDate=20161231 and TranCom=13 and NodeNo='110378300'
+				//select * from Tranlog where  FuncFlag=1014 and tranno ='108011rv11481789208000575' and MakeDate=20161215 and TranCom=3 and NodeNo='110378300'
 				cLogger.info(checkTranNoSQL);
+				//交易日志数据库操作类执行查询
 				TranLogSet sTranLogSet = new TranLogDB().executeQuery(checkTranNoSQL);
+				//交易日志集合类
 				if (1 != sTranLogSet.size()) {
 					throw new MidplatException("当日的交易流水号" + mOldTranNo + "不存在，请确认！");
 				}
+				//得到索引1的DB层 交易日志数据库对象的集合(用户) 类实例
 				TranLogSchema tTranLogSchema = sTranLogSet.get(1);
+				//得到投保单(印刷)号
 				mProposalPrtNo = tTranLogSchema.getProposalPrtNo();
 				
 				//校验系统中是否有相同保单正在处理，尚未返回
 				int tLockTime = 300;	//默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 				try {
+					//
 					tLockTime = Integer.parseInt(cThisBusiConf.getChildText(locktime));
 				} catch (Exception ex) {	//使用默认值
 					cLogger.debug("未配置锁定时间，或配置有误，使用默认值(s)："+tLockTime, ex);
@@ -179,6 +192,7 @@ public class ContRollback extends ServiceImpl {
 			}
 			JdomUtil.print(cOutXmlDoc);
 		} catch (Exception ex) {
+			//自动冲正|新单回滚交易失败！
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
 			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
