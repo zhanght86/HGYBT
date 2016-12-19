@@ -3,13 +3,13 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
 <xsl:template match="TXLife">
-<TranData><!-- 核心录单自核请求报文 -->
+<TranData>
    <Head>
       <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
       <ZoneNo><xsl:value-of select="BankCode"/></ZoneNo>	<!-- 地区代码 -->
       <NodeNo><xsl:value-of select="Branch"/></NodeNo>		<!-- 网点代码 -->
-      <BankCode>0105</BankCode>								<!-- 银行代码 -->
+      <BankCode>0105</BankCode>								<!--  -->
       <TellerNo><xsl:value-of select="Teller"/></TellerNo>	<!-- 柜员代码 -->
       <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>	<!-- 流水号 -->
       <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
@@ -24,7 +24,7 @@
    	  <SaleName><xsl:value-of select="AgentSalesName"/></SaleName>
       <SaleStaff><xsl:value-of select="AgentSalesCode"/></SaleStaff>
       <SaleCertNo><xsl:value-of select="Credentials"/></SaleCertNo>
-      <ProposalPrtNo><xsl:value-of select="HOAppFormNumber"/></ProposalPrtNo>	<!-- 投保单号 -->
+      <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(HOAppFormNumber)"/></ProposalPrtNo>	<!-- 投保单号 -->
       <ContPrtNo />	<!--保单印刷号  -->
       <PolApplyDate><xsl:value-of select="SubmissionDate"/></PolApplyDate>	
       <AccNo><xsl:value-of select="Banking[AccountType='0' or AccountType='2']/AccountNumber"/></AccNo>
@@ -121,7 +121,6 @@
          <Phone><xsl:value-of select="Insured/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="Insured/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="Insured/Email"/></Email>
-         <!-- 职业类别[PolicyHolder/OccupationType] -->
          <JobCode><xsl:value-of select="Insured/OccupationType"/></JobCode>
           <!-- 体重 -->
 		 <Stature><xsl:value-of select="Insured/Height"/></Stature>
@@ -197,8 +196,8 @@
     	<Risk>
          <RiskCode><xsl:value-of select="ProductCode"/></RiskCode>
          <MainRiskCode><xsl:value-of select="ProductCode"/></MainRiskCode>
-         <Amnt></Amnt>
-         <Prem><xsl:value-of select="PaymentAmt"/></Prem>
+         <Amnt>5000000</Amnt>
+         <Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(PaymentAmt)"/></Prem>
          <Mult><xsl:value-of select="IntialNumberOfUnits"/></Mult>
          <PayMode>B</PayMode>
          <PayIntv>

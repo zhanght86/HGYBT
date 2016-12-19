@@ -3,7 +3,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
 <xsl:template match="/TranData">
-<TXLife><!-- 贵州银行保费试算应答报文 -->
+<TXLife>
 	<!-- 交易码-->
 	<TransNo></TransNo>
 	<!-- 签到银行代码-->
@@ -13,7 +13,7 @@
 	<!--银行网点代码 -->
 	<Branch></Branch>
 	<!--保险机构代码-->
-	<CarrierCode></CarrierCode>
+	<InsuOrgNo></InsuOrgNo>
 	<!-- 银行交易日期-->
 	<TransExeDate></TransExeDate>
 	<!-- 银行交易时间-->

@@ -58,13 +58,13 @@ public class NewCCBTestUI {
 //		mOutFilePath="D:/task/20161218/newccb/ybt_local/P53819113out_noStd.xml";
 //		
 		//新单确认
-		String funcflag = "P53819152";
-		String mInFilePath = "D:/task/20161218/newccb/core_test/11094_1318_1014_in.xml";
-		String mOutFilePath = "D:/task/20161215/newccb/local/11094_1318_1014_out.xml";
+//		String funcflag = "P53819152";
+//		String mInFilePath = "D:/task/20161218/newccb/core_test/11094_1318_1014_in.xml";
+//		String mOutFilePath = "D:/task/20161215/newccb/local/11094_1318_1014_out.xml";
 		//打印保单
-//		String funcflag = "P53819182";
-//		String mInFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_in.xml";
-//		String mOutFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_out.xml";
+		String funcflag = "P53819182";
+		String mInFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_in.xml";
+		String mOutFilePath = "D:/task/20161218/newccb/core_test/9982_317_1032_out.xml";
 		
 		/*//自动冲正*/
 //		String funcflag = "P53818154";

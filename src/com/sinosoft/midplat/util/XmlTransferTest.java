@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20161201/newccb/";
+		inXmlSource = "D:/task/20161218/newccb/transfer_test/";
 		String filename="";
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -75,9 +75,9 @@ public class XmlTransferTest {
 //		filename="9000901in_noStd.xml";
 //		filename="9000901out_Std.xml";
 		//建设银行
-		filename="P53819113in_noStd.xml";
+//		filename="P53819113in_noStd.xml";
 //		filename="P53819113out_Std.xml";
-//		filename="P53819152in_noStd.xml";
+		filename="P53819152in_noStd.xml";
 //		filename="P53819152out_Std.xml";
 //		filename="P53819184in_noStd.xml";
 //		filename="P53819184out_Std.xml";
@@ -126,9 +126,9 @@ public class XmlTransferTest {
 //		XslPath="PolicyWriteOffIn.xsl";
 //		XslPath="PolicyWriteOffOut.xsl";
 		//建设银行
-		XslPath="NewContIn.xsl";
+//		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
-//		XslPath="ContConfirmIn.xsl";
+		XslPath="ContConfirmIn.xsl";
 //		XslPath="ContConfirmOut.xsl";
 //		XslPath="RePrintIn.xsl";
 //		XslPath="RePrintOut.xsl";
@@ -151,7 +151,7 @@ public class XmlTransferTest {
 		inXmlSource=inXmlSource+filename;
 		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20161201/newccb/P53819113in_Std.xml";
+		String outXml = "D:/task/20161218/newccb/transfer_test/P53819152in_Std.xml";
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
 		Document mLogDocument = JdomUtil.build(fis);

@@ -36,18 +36,18 @@ public class NewContBlc extends ServiceImpl {
 		try {
 			cTranLogDB = insertTranLog(cInXmlDoc);
 			
-//			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
-//				.append(" and TranDate=").append(cTranLogDB.getTranDate())
-//				.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())
-//				.append(" and TranCom=").append(cTranLogDB.getTranCom())
-//				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
-//				.toString();
-//			ExeSQL tExeSQL = new ExeSQL();
-//			if ("1".equals(tExeSQL.getOneValue(tSqlStr))) {
-//				throw new MidplatException("已成功做过新单对账，不能重复操作！");
-//			} else if (tExeSQL.mErrors.needDealError()) {
-//				throw new MidplatException("查询历史对账信息异常！");
-//			} 
+			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
+				.append(" and TranDate=").append(cTranLogDB.getTranDate())
+				.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())
+				.append(" and TranCom=").append(cTranLogDB.getTranCom())
+				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
+				.toString();
+			ExeSQL tExeSQL = new ExeSQL();
+			if ("1".equals(tExeSQL.getOneValue(tSqlStr))) {
+				throw new MidplatException("已成功做过新单对账，不能重复操作！");
+			} else if (tExeSQL.mErrors.needDealError()) {
+				throw new MidplatException("查询历史对账信息异常！");
+			} 
 			
 			//处理前置机传过来的报错信息(扫描超时等)
 			String tErrorStr = cInXmlDoc.getRootElement().getChildText(Error);
@@ -55,7 +55,7 @@ public class NewContBlc extends ServiceImpl {
 				throw new MidplatException(tErrorStr);
 			}
 			
-			JdomUtil.print(cInXmlDoc);
+			cLogger.info(JdomUtil.toStringFmt(cInXmlDoc));
 			
 			//不保存对账明细
 //			saveDetails(cInXmlDoc);
@@ -64,7 +64,7 @@ public class NewContBlc extends ServiceImpl {
 			//cInXmlDoc = authority(cInXmlDoc);
 			//add by zhj 网点与权限 添加代理end 	 		
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(cInXmlDoc);
-			
+			cLogger.info("日终对账核心返回数据:"+JdomUtil.toStringFmt(cOutXmlDoc));
 			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {	//交易失败
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));

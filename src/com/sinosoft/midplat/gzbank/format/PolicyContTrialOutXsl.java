@@ -21,10 +21,8 @@ public class PolicyContTrialOutXsl extends XslCache {
 	}
 	
 	public void load() {
-		// Into PolicyContTrialInXsl.load()...
 		cLogger.info("Into PolicyContTrialInXsl.load()...");
 		String mFilePath = SysInfo.cBasePath + cPath;
-		//Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
 		cLogger.info("Start load " + mFilePath + "...");
 		cXslFile = new File(mFilePath);
 		/**
@@ -39,7 +37,6 @@ public class PolicyContTrialOutXsl extends XslCache {
 		recordStatus();
 		
 		cXslTrsf = loadXsl(cXslFile);
-		//End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
 		cLogger.info("End load " + mFilePath + "!");
 		
 		//是否输出xsl文件
@@ -52,7 +49,7 @@ public class PolicyContTrialOutXsl extends XslCache {
 				cLogger.error("输出xsl异常！", ex);
 			}
 		}
-		//Out PolicyContTrialInXsl.load()!
+		
 		cLogger.info("Out PolicyContTrialInXsl.load()!");
 	}
 	

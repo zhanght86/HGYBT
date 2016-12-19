@@ -51,6 +51,8 @@ public class ContCancel extends ServiceImpl {
 			mProposalPrtNo = new ExeSQL().getOneValue(getProposalPrtNoSQL);
 			ProposalPrtNoEle.setText(mProposalPrtNo);
 		}else{
+			//select proposalprtno from cont where contno ='888010000000007' and state='2'
+			//[101019388100905,101019116142112]
 			String getproposalprtno ="select proposalprtno from cont where contno ='"+mContNo+"' and state='2'";
 			cLogger.info(getproposalprtno);
 			mProposalPrtNo =   new ExeSQL().getOneValue(getproposalprtno);
@@ -90,6 +92,7 @@ public class ContCancel extends ServiceImpl {
 			}
 			
 			//当天、同一网点，成功出过单
+			//select * from Cont where Type=0 and State=2 and ProposalPrtNo='101019388100905' and MakeDate=20161219 and TranCom=9 and NodeNo='09990901'
 			tSqlStr = new StringBuilder("select * from Cont where Type=").append(AblifeCodeDef.ContType_Bank)
 				.append(" and State=").append(AblifeCodeDef.ContState_Sign)
 				//.append(" and ContNo='").append(mContNo).append('\'')

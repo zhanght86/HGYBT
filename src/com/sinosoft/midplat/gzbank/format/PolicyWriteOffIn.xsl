@@ -3,7 +3,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
 <xsl:template match="TXLife">
-<TranData><!-- 核心当日撤单请求报文 -->
+<TranData>
    <Head>
       <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>

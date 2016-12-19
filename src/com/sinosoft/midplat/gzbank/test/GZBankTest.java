@@ -15,35 +15,35 @@ import com.sinosoft.midplat.common.JdomUtil;
 
 public class GZBankTest {
 	private static  Logger cLogger = Logger.getLogger(GZBankTest.class);
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 		String ip="127.0.0.1";//本机ip地址
+//    	String ip="10.2.0.31";//测试环境ip
 		int port=35017;
-		String path="D:/task/20161208/gzbank/9000102in_noStd.xml";
+		String path="D:/task/20161219/gz/core_test/1228_17_1012_in.xml";
 		String FuncFlag="9000102";//保费试算交易码
 		
-//		path="D:/task/20161207/gzbank/9000103in_noStd.xml";
+//		path="D:/task/20161219/gz/core_test/1303_38_1014_in.xml";
 //		FuncFlag="9000103";//缴费出单交易码
 		
-//		path="D:/task/20161207/gzbank/9000201in_noStd.xml";
+//		path="D:/task/20161219/gz/core_test/9000201in_noStd.xml";
 //		FuncFlag="9000201";//保单查询交易码
 		
-//		path="D:/task/20161207/gzbank/9000701in_noStd.xml";
+//		path="D:/task/20161219/gz/core_test/9000701in_noStd.xml";
 //		FuncFlag="9000701";//续期缴费交易码
 		
-//		path="D:/task/20161207/gzbank/9000801in_noStd.xml";
+//		path="D:/task/20161219/gz/core_test/918_63_1011_in.xml";
 //		FuncFlag="9000801";//保单重打交易码
 		
-//		path="D:/task/20161207/gzbank/9000901in_noStd.xml";
+//		path="D:/task/20161219/gz/core_test/918_51_1015_in.xml";
 //		FuncFlag="9000901";//当日撤单交易码
+		String returnPath="D:/task/20161219/gz/core_test/1228_17_1012_out3.xml";
 		
 		String insureCode="006"+"   ";//目标保险公司代码
 		try {
 			FileInputStream input=new FileInputStream(path);
 			byte[] bytes=IOTrans.toBytes(input);
 			Socket socket=new Socket(ip,port);
+			//socket.setSoTimeout(0);
 			cLogger.info("贵州银行请求报文："+JdomUtil.toStringFmt(JdomUtil.build(bytes,"GBK")));
 			cLogger.info("请求报文长度为："+bytes.length+"个字节");
 			String head="";
@@ -85,7 +85,7 @@ public class GZBankTest {
 			cLogger.info("返回给贵州银行报文："+JdomUtil.toStringFmt(JdomUtil.build(Arrays.copyOfRange(byteArrays,19,byteArrays.length))));
 			socket.close();
 			
-			OutputStream pOs = new FileOutputStream("D:/task/20161208/gzbank/"+FuncFlag+"out_noStd.xml");
+			OutputStream pOs = new FileOutputStream(returnPath);
 			JdomUtil.output(JdomUtil.build(Arrays.copyOfRange(byteArrays,19,byteArrays.length)), pOs);
 		} catch (Exception e) {
 			e.printStackTrace();

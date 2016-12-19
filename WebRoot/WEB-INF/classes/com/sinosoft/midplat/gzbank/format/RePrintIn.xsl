@@ -26,12 +26,12 @@
 				</ContNo>
 				<!--保单印刷号-->
 				<ContPrtNo>
-					<xsl:value-of select="NewDanNo"/>
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(NewDanNo)"/>
 				</ContPrtNo>
 				<!--投保单号-->
 				<ProposalPrtNo></ProposalPrtNo>
 				<!-- 旧保单印刷号 -->
-				<OldContPrtNo><xsl:value-of select="OldDanNo"/></OldContPrtNo>
+				<OldContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(OldDanNo)"/></OldContPrtNo>
 				<!-- 原交易流水号 -->
 				<OldTranNo></OldTranNo>
 			</Body>

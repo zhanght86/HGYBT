@@ -3,7 +3,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
 <xsl:template match="TXLife">
-<TranData><!-- 核心收费签单请求报文 -->
+<TranData>
    <Head>
       <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
@@ -22,11 +22,11 @@
    </Head>
    <Body>
    	  <SaleChannel>0</SaleChannel>
-      <ProposalPrtNo><xsl:value-of select="HOAppFormNumber"/></ProposalPrtNo>
+      <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(HOAppFormNumber)"/></ProposalPrtNo>
       <Prem></Prem>
       <OldTranNo></OldTranNo>
       <ContNo />
-      <ContPrtNo><xsl:value-of select="ProviderPolicyNumber"/></ContPrtNo>
+      <ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(ProviderPolicyNumber)"/></ContPrtNo>
       <PayMode />
       <AcctNo />
 	  <BkAcctNo><xsl:value-of select="PayInAcctNo" /></BkAcctNo>

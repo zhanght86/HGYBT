@@ -38,7 +38,7 @@ public class ContConfirm extends XmlSimpFormat{
 		cLogger.info("Into PolicyContTrial.std2NoStd()...");
 		cLogger.info("核心返回报文:"+JdomUtil.toStringFmt(pOutStd));
         Document mNoStdXml =ContConfirmOutXsl.newInstance().getCache().transform(pOutStd);
-		cLogger.info("返回给第三方报文:"+JdomUtil.toStringFmt(mNoStdXml));
+		//cLogger.info("返回给第三方报文:"+JdomUtil.toStringFmt(mNoStdXml));
 		cLogger.info("Out PolicyContTrial.std2NoStd()!");
 		return mNoStdXml;
 	}

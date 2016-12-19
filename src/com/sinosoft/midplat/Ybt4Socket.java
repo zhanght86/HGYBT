@@ -18,6 +18,10 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+/**
+ * 银保通套接字
+ * @author yuantongxin
+ */
 public abstract class Ybt4Socket extends Thread
   implements XmlTag
 {
@@ -26,6 +30,12 @@ public abstract class Ybt4Socket extends Thread
   protected final Element cMidplatRoot;
   protected final Element cThisConfRoot;
 
+  /**
+   * 
+   * @param pSocket
+   * @param pThisConf
+   * @throws Exception
+   */
   public Ybt4Socket(Socket pSocket, XmlConf pThisConf)
     throws Exception
   {
@@ -123,9 +133,10 @@ public abstract class Ybt4Socket extends Thread
         }
       }
       TranLogDB tranLogDB = new TranLogDB();
-	  tranLogDB.setTranNo(mOutNoStd.getRootElement()
-			                       .getChild("TX_BODY").getChild("ENTITY")
-			                       .getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No"));
+//	  tranLogDB.setTranNo(mOutNoStd.getRootElement()
+//			                       .getChild("TX_BODY").getChild("ENTITY")
+//			                       .getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No"));
+      tranLogDB.setTranNo(Thread.currentThread().getName());
 	  if(!tranLogDB.getInfo()){
 		  cLogger.error("查询Tranlog表异常!");
 	  } else {
