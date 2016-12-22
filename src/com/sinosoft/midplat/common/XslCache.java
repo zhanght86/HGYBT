@@ -56,8 +56,13 @@ public abstract class XslCache implements Load {
 		}
 	}
 	
+	/**
+	 * 记录XSL状态
+	 */
 	protected final void recordStatus() {
+		//获取XSL文件最后修改时间
 		cLastModified = cXslFile.lastModified();
+		//XSL文件长度
 		cLength = cXslFile.length();
 		//conf file modified at (2016-12-02 20:37:30,488) and length=3306 bytes!
 		//conf file modified at (2016-12-02 20:37:01,965) and length=941 bytes!

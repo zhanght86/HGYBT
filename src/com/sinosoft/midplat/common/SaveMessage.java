@@ -9,14 +9,21 @@ import org.jdom.Document;
 
 import com.sinosoft.midplat.MidplatConf;
 
+/**
+ * 保存信息
+ * @author yuantongxin
+ */
 public class SaveMessage {
 	private final static Logger cLogger = Logger.getLogger(SaveMessage.class);
-	public final static String cSavePath;
+	public final static String cSavePath;//保存路径
 	static {
+		//获取中间平台配置文件保存路径[盘符]
 		String tSavePath =  MidplatConf.newInstance().getConf().getRootElement().getChildText("SavePath");
 		//SavePath_HOME = f:\
 		cLogger.debug("SavePath_HOME = " + tSavePath);
+		//保存路径为空
 		if (null==tSavePath || "".equals(tSavePath)) {
+			//使用
 			tSavePath = SysInfo.getRealPath("..");
 		}
 		tSavePath = tSavePath.replace('\\', '/');
@@ -35,20 +42,22 @@ public class SaveMessage {
 	}
 	
 	/**
-	 * 
-	 * @param pXmlDoc
-	 * @param pTranCom
-	 * @param pName
+	 * 保存[非标准输出]报文，到03[交易机构代码]目录下
+	 * @param pXmlDoc 非标准输出报文
+	 * @param pTranCom 交易机构代码
+	 * @param pName 报文文件名
 	 */
 	public static void save(Document pXmlDoc, String pTranCom, String pName) {
 		//1481623141858[2016-12-13 05:59:01]
 		long mStartMillis = System.currentTimeMillis();
 		//f:/msg/13/2016/201612/20161213/
+		//保存文件路径[保存路径(盘符)/msg/交易机构代码/当前日期(年/年月/年月日)]
 		StringBuilder mFilePath = new StringBuilder(cSavePath)//f:/
 					.append("msg/")//msg/
 					.append(pTranCom).append('/')//13/
 					.append(DateUtil.getCurDate("yyyy/yyyyMM/yyyyMMdd/"));//2016/201612/20161213/
 		//f:/msg/13/2016/201612/20161213/
+		//保存文件路径文件夹
 		File mFileDir = new File(mFilePath.toString());
 		//此抽象路径名表示的文件或目录不存在
 		if (!mFileDir.exists()) {

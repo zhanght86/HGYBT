@@ -18,10 +18,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
-/**
- * 银保通套接字
- * @author yuantongxin
- */
 public abstract class Ybt4Socket extends Thread
   implements XmlTag
 {
@@ -30,12 +26,6 @@ public abstract class Ybt4Socket extends Thread
   protected final Element cMidplatRoot;
   protected final Element cThisConfRoot;
 
-  /**
-   * 
-   * @param pSocket
-   * @param pThisConf
-   * @throws Exception
-   */
   public Ybt4Socket(Socket pSocket, XmlConf pThisConf)
     throws Exception
   {
@@ -65,9 +55,12 @@ public abstract class Ybt4Socket extends Thread
     this.cLogger.info("Into Ybt4Socket.run()...");
 
     Document mOutNoStd = null;
+    String tranNo=null;
     try {
       Document tInNoStd = this.cPreNet.receive();
       Element tHeadEle = tInNoStd.getRootElement().getChild("Head");
+      tranNo=tInNoStd.getRootElement().getChild("Head").getChildText("TranNo");
+      tInNoStd.getRootElement().getChild("Head").removeChild("TranNo");
       String tFormatClassName = "com.sinosoft.midplat.format.XmlSimpFormat";
       String tServiceClassName = "com.sinosoft.midplat.service.ServiceImpl";
 
@@ -133,10 +126,7 @@ public abstract class Ybt4Socket extends Thread
         }
       }
       TranLogDB tranLogDB = new TranLogDB();
-//	  tranLogDB.setTranNo(mOutNoStd.getRootElement()
-//			                       .getChild("TX_BODY").getChild("ENTITY")
-//			                       .getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No"));
-      tranLogDB.setTranNo(Thread.currentThread().getName());
+	  tranLogDB.setTranNo(tranNo);
 	  if(!tranLogDB.getInfo()){
 		  cLogger.error("查询Tranlog表异常!");
 	  } else {

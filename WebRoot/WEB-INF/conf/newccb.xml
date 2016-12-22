@@ -410,4 +410,22 @@
 		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
 	</business>
 	
+	<business>
+		<name>更新非实时业务状态</name>
+		<funcFlag outcode="P538191E4"></funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.UpdateServiceStatus</format>
+		<service>com.sinosoft.midplat.newccb.service.ContUpdateServiceStatus</service>
+	</business>
+	
+	<business>
+		<name>查询非实时缴费信息</name>
+		<funcFlag outcode="P53819153"></funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.QueryPaymentInfo</format>
+		<service>com.sinosoft.midplat.newccb.service.NewQueryPaymentInfo</service>
+	</business>
+	
 </newccb>

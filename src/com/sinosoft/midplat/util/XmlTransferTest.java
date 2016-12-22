@@ -77,12 +77,14 @@ public class XmlTransferTest {
 		//建设银行
 //		filename="P53819113in_noStd.xml";
 //		filename="P53819113out_Std.xml";
-		filename="P53819152in_noStd.xml";
+//		filename="P53819152in_noStd.xml";
 //		filename="P53819152out_Std.xml";
 //		filename="P53819184in_noStd.xml";
 //		filename="P53819184out_Std.xml";
 //		filename="P53819142in_noStd.xml";
 //		filename="P53819142out_Std.xml";
+//		filename="P53819182in_noStd.xml";
+		filename="P53819182out_Std.xml";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";

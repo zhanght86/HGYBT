@@ -22,8 +22,9 @@ public class ServiceImpl implements Service, XmlTag
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
 	protected final Element cThisBusiConf;
-
+	//输入标准报文
 	protected Document cInXmlDoc;
+	//输出标准报文
 	protected Document cOutXmlDoc;
 	protected TranLogDB cTranLogDB;
 	protected NodeMapSchema cNodeMapSchema;

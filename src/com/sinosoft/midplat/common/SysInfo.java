@@ -8,11 +8,16 @@ import org.apache.log4j.Logger;
 
 import com.sinosoft.midplat.MidplatConf;
 
+/**
+ * 系统信息
+ * @author yuantongxin
+ */
 public final class SysInfo {
 	private final static Class<SysInfo> cThisClass = SysInfo.class;
-	
+	//记录当前类的日志
 	private final static Logger cLogger = Logger.getLogger(cThisClass);
 	
+	//基本路径
 	public final static String cBasePath;
 	static {
 		String tPath = cThisClass.getResource("/basepath.r").getPath();
@@ -52,8 +57,13 @@ public final class SysInfo {
 	}
 	
 
-	
+	/**
+	 * 得到绝对路径
+	 * @param pPath
+	 * @return
+	 */
 	public static String getRealPath(String pPath) {
+		///F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
 		pPath = new File(cBasePath).toURI().resolve(pPath.replace('\\', '/')).getPath();
 		try {
 			pPath = URLDecoder.decode(pPath, "utf-8");

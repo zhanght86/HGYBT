@@ -1,5 +1,5 @@
 /**
- * ´ËÀàµ±Ç°½öÖ§³ÖJDOM 1.1
+ * æ­¤ç±»å½“å‰ä»…æ”¯æŒJDOM 1.1
  */
 
 package com.sinosoft.midplat.common;
@@ -20,85 +20,88 @@ import org.jdom.output.XMLOutputter;
 import org.xml.sax.InputSource;
 
 /**
- * JavaÎÄµµ¶ÔÏóÄ£ĞÍ¹¤¾ß
+ * Javaæ–‡æ¡£å¯¹è±¡æ¨¡å‹å·¥å…·
  * @author yuantongxin
  */
 public class JdomUtil {
 	private final static Logger cLogger = Logger.getLogger(JdomUtil.class);
 	
 	/**
-	 * ²ÉÓÃGBK±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨GBKç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(byte[] pBytes) {
 		return build(pBytes, "GBK");
 	}
 	
 	/**
-	 * ²ÉÓÃÖ¸¶¨×Ö·û¼¯±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨æŒ‡å®šå­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(byte[] pBytes, String pCharset) {
 		return build(pBytes, pCharset, true);
 	}
 
 	/**
-	 * ²ÉÓÃÖ¸¶¨×Ö·û¼¯±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó¡£
-	 * OmitSpace: ±êÊ¶ÊÇ·ñºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)£¬true-ºöÂÔ
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨æŒ‡å®šå­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ã€‚
+	 * OmitSpace: æ ‡è¯†æ˜¯å¦å¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ï¼Œtrue-å¿½ç•¥
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(byte[] pBytes, String pCharset, boolean OmitSpace) {
 		return build(new ByteArrayInputStream(pBytes), pCharset, OmitSpace);
 	}
 	
 	/**
-	 * ²ÉÓÃGBK±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨GBKç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(InputStream pIs) {
 		return build(pIs, "GBK");
 	}
 	
 	/**
-	 * ²ÉÓÃÖ¸¶¨×Ö·û¼¯±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨æŒ‡å®šå­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(InputStream pIs, String pCharset) {
-		//¹¹½¨Ò»¸öÎÄµµ¶ÔÏó[File:/task/20161216/newccb/local/1012/P53819113in_noStd.xml,UTF-8,ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û]
-		return build(pIs, pCharset, true);
+		//æ„å»ºä¸€ä¸ªæ–‡æ¡£å¯¹è±¡[File:/task/20161216/newccb/local/1012/P53819113in_noStd.xml,UTF-8,å¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦]
+		return build(pIs, pCharset, true);//UTF-8ç¼–ç æ–‡æ¡£
 	}
 	
 	/**
-	 * ²ÉÓÃÖ¸¶¨×Ö·û¼¯±àÂë¹¹½¨Ò»¸öDocument¶ÔÏó¡£
-	 * OmitSpace: ±êÊ¶ÊÇ·ñºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)£¬true-ºöÂÔ
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * é‡‡ç”¨æŒ‡å®šå­—ç¬¦é›†ç¼–ç æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ã€‚
+	 * OmitSpace: æ ‡è¯†æ˜¯å¦å¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ï¼Œtrue-å¿½ç•¥
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(InputStream pIs, String pCharset, boolean OmitSpace) {
 		try {
+			//é€šè¿‡å­—èŠ‚è¾“å…¥æµæ„å»ºXML å®ä½“å•ä¸€è¾“å…¥æº
 			InputSource mInputSource = new InputSource(pIs);
+			//è®¾ç½®å­—ç¬¦ç¼–ç ä¸ºUTF-8
 			mInputSource.setEncoding(pCharset);
-		
+			//JDOMè§£æå™¨
 			SAXBuilder mSAXBuilder = new SAXBuilder();
+			//è®¾ç½®å¿½ç•¥è¾¹ç•Œç©ºç™½
 			mSAXBuilder.setIgnoringBoundaryWhitespace(OmitSpace);
-			return mSAXBuilder.build(mInputSource);
+			return mSAXBuilder.build(mInputSource);//è¿”å›è§£æå•ä¸€è¾“å…¥æºç”Ÿæˆçš„æ–‡æ¡£
 		} catch(Exception ex) {
-			cLogger.error("xml¸ñÊ½ÓĞÎó£¬½âÎöÊ§°Ü£¡", ex);
+			cLogger.error("xmlæ ¼å¼æœ‰è¯¯ï¼Œè§£æå¤±è´¥ï¼", ex);
 			return null;
 		}
 	}
 	
 	/**
-	 * ½«Ö¸¶¨×Ö·û´®¹¹½¨Ò»¸öDocument¶ÔÏó£¬ºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)¡£
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * å°†æŒ‡å®šå­—ç¬¦ä¸²æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ï¼Œå¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ã€‚
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(String pXmlStr) {
 		return build(pXmlStr, true);
 	}
 	
 	/**
-	 * ½«Ö¸¶¨×Ö·û´®¹¹½¨Ò»¸öDocument¶ÔÏó¡£
-	 * OmitSpace: ±êÊ¶ÊÇ·ñºöÂÔ±êÇ©Ö®¼äµÄ¿Õ×Ö·û(¿Õ¸ñ¡¢»»ĞĞ¡¢ÖÆ±í·ûµÈ)£¬true-ºöÂÔ
-	 * ¹¹½¨Ê§°Ü£¬·µ»Ønull¡£
+	 * å°†æŒ‡å®šå­—ç¬¦ä¸²æ„å»ºä¸€ä¸ªDocumentå¯¹è±¡ã€‚
+	 * OmitSpace: æ ‡è¯†æ˜¯å¦å¿½ç•¥æ ‡ç­¾ä¹‹é—´çš„ç©ºå­—ç¬¦(ç©ºæ ¼ã€æ¢è¡Œã€åˆ¶è¡¨ç¬¦ç­‰)ï¼Œtrue-å¿½ç•¥
+	 * æ„å»ºå¤±è´¥ï¼Œè¿”å›nullã€‚
 	 */
 	public static Document build(String pXmlStr, boolean OmitSpace) {
 		try {
@@ -107,43 +110,43 @@ public class JdomUtil {
 			return mSAXBuilder.build(
 					new StringReader(pXmlStr));
 		} catch(Exception ex) {
-			cLogger.error("xml¸ñÊ½ÓĞÎó£¬½âÎöÊ§°Ü£¡", ex);
+			cLogger.error("xmlæ ¼å¼æœ‰è¯¯ï¼Œè§£æå¤±è´¥ï¼", ex);
 			return null;
 		}
 	}
 	
 	/**
-	 * ½«DocumentÊä³öµ½Ö¸¶¨µÄÊä³öÁ÷£¬GBK±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
-	 * ×¢Òâ£º´Ë·½·¨²»×Ô¶¯¹Ø±ÕÁ÷£¬ÈçÓĞĞèÒª£¬ÇëÔÚµ÷ÓÃºóÊÖ¶¯¹Ø±Õ¡£
+	 * å°†Documentè¾“å‡ºåˆ°æŒ‡å®šçš„è¾“å‡ºæµï¼ŒGBKç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
+	 * æ³¨æ„ï¼šæ­¤æ–¹æ³•ä¸è‡ªåŠ¨å…³é—­æµï¼Œå¦‚æœ‰éœ€è¦ï¼Œè¯·åœ¨è°ƒç”¨åæ‰‹åŠ¨å…³é—­ã€‚
 	 */
 	public static void output(Document pXmlDoc, OutputStream pOs) throws IOException {
 		output(pXmlDoc, pOs, "GBK");
 	}
 	
 	/**
-	 * ½«DocumentÊä³öµ½Ö¸¶¨µÄÊä³öÁ÷£¬pCharsetÖ¸¶¨±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
-	 * ×¢Òâ£º´Ë·½·¨²»×Ô¶¯¹Ø±ÕÁ÷£¬ÈçÓĞĞèÒª£¬ÇëÔÚµ÷ÓÃºóÊÖ¶¯¹Ø±Õ¡£
+	 * å°†Documentè¾“å‡ºåˆ°æŒ‡å®šçš„è¾“å‡ºæµï¼ŒpCharsetæŒ‡å®šç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
+	 * æ³¨æ„ï¼šæ­¤æ–¹æ³•ä¸è‡ªåŠ¨å…³é—­æµï¼Œå¦‚æœ‰éœ€è¦ï¼Œè¯·åœ¨è°ƒç”¨åæ‰‹åŠ¨å…³é—­ã€‚
 	 */
 	public static void output(Document pXmlDoc, OutputStream pOs, String pCharset) throws IOException {
-		//µÃµ½Ô­¸ñÊ½Ö¸¶¨±àÂëËõ½ø3¿Õ¸ñ
+		//å¾—åˆ°åŸæ ¼å¼æŒ‡å®šç¼–ç ç¼©è¿›3ç©ºæ ¼
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset).setIndent("   ");
-		//Ê¹ÓÃ¸ñÊ½´´½¨XMLÊä³öÆ÷
+		//ä½¿ç”¨æ ¼å¼åˆ›å»ºXMLè¾“å‡ºå™¨
 		XMLOutputter mXMLOutputter = new XMLOutputter(mFormat);
-		//Êä³öXMLÎÄµµµ½×Ö½ÚÊä³öÁ÷
+		//è¾“å‡ºXMLæ–‡æ¡£åˆ°å­—èŠ‚è¾“å‡ºæµ
 		mXMLOutputter.output(pXmlDoc, pOs);
 	}
 	
 	/**
-	 * ½«ElementÊä³öµ½Ö¸¶¨µÄÊä³öÁ÷£¬ GBK±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
-	 * ×¢Òâ£º´Ë·½·¨²»×Ô¶¯¹Ø±ÕÁ÷£¬ÈçÓĞĞèÒª£¬ÇëÔÚµ÷ÓÃºóÊÖ¶¯¹Ø±Õ¡£
+	 * å°†Elementè¾“å‡ºåˆ°æŒ‡å®šçš„è¾“å‡ºæµï¼Œ GBKç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
+	 * æ³¨æ„ï¼šæ­¤æ–¹æ³•ä¸è‡ªåŠ¨å…³é—­æµï¼Œå¦‚æœ‰éœ€è¦ï¼Œè¯·åœ¨è°ƒç”¨åæ‰‹åŠ¨å…³é—­ã€‚
 	 */
 	public static void output(Element pElement, OutputStream pOs) throws IOException {
 		output(pElement, pOs, "GBK");
 	}
 	
 	/**
-	 * ½«ElementÊä³öµ½Ö¸¶¨µÄÊä³öÁ÷£¬pCharsetÖ¸¶¨±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
-	 * ×¢Òâ£º´Ë·½·¨²»×Ô¶¯¹Ø±ÕÁ÷£¬ÈçÓĞĞèÒª£¬ÇëÔÚµ÷ÓÃºóÊÖ¶¯¹Ø±Õ¡£
+	 * å°†Elementè¾“å‡ºåˆ°æŒ‡å®šçš„è¾“å‡ºæµï¼ŒpCharsetæŒ‡å®šç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
+	 * æ³¨æ„ï¼šæ­¤æ–¹æ³•ä¸è‡ªåŠ¨å…³é—­æµï¼Œå¦‚æœ‰éœ€è¦ï¼Œè¯·åœ¨è°ƒç”¨åæ‰‹åŠ¨å…³é—­ã€‚
 	 */
 	public static void output(Element pElement, OutputStream pOs, String pCharset) throws IOException {
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset).setIndent("   ");
@@ -152,50 +155,55 @@ public class JdomUtil {
 	}
 	
 	/**
-	 * ½«Document´òÓ¡µ½¿ØÖÆÌ¨£¬ GBK±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
+	 * å°†Documentæ‰“å°åˆ°æ§åˆ¶å°ï¼Œ GBKç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
 	 */
 	public static void print(Document pXmlDoc) {
 		System.out.print(toStringFmt(pXmlDoc));
 	}
 	
 	/**
-	 * ½«Element´òÓ¡µ½¿ØÖÆÌ¨£¬ GBK±àÂë£¬Ëõ½ø3¿Õ¸ñ¡£
+	 * å°†Elementæ‰“å°åˆ°æ§åˆ¶å°ï¼Œ GBKç¼–ç ï¼Œç¼©è¿›3ç©ºæ ¼ã€‚
 	 */
 	public static void print(Element pElement) {
 		System.out.print(toStringFmt(pElement));
 	}
 	
 	/**
-	 * ½«Document×ª»»ÎªGBK±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+	 * å°†Documentè½¬æ¢ä¸ºGBKç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
+	 * @param pXmlDoc éæ ‡å‡†è¾“å‡ºæŠ¥æ–‡
 	 */
 	public static byte[] toBytes(Document pXmlDoc) {
 		return toBytes(pXmlDoc, "GBK");
 	}
 	
 	/**
-	 * ½«Element×ª»»ÎªGBK±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+	 * å°†Elementè½¬æ¢ä¸ºGBKç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
 	 */
 	public static byte[] toBytes(Element pElement) {
 		return toBytes(pElement, "GBK");
 	}
 	
 	/**
-	 * ½«Document×ª»»ÎªÖ¸¶¨×Ö·û¼¯±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+	 * å°†Documentè½¬æ¢ä¸ºæŒ‡å®šå­—ç¬¦é›†ç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
 	 */
 	public static byte[] toBytes(Document pXmlDoc, String pCharset) {
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset);
 		XMLOutputter mXMLOutputter = new XMLOutputter(mFormat);
+		//å­—èŠ‚æ•°ç»„è¾“å‡ºæµ
 		ByteArrayOutputStream mBaos = new ByteArrayOutputStream();
 		try {
-			mXMLOutputter.output(pXmlDoc, mBaos);
+			/*<?xml version="1.0" encoding="GBK"?>
+			   <TX><TX_HEADER><SYS_HDR_LEN>0</SYS_HDR_LEN><SYS_PKG_VRSN>01</SYS_PKG_VRSN><SYS_TTL_LEN>0</SYS_TTL_LEN><SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID><SYS_SND_SEC_ID>108011</SYS_SND_SEC_ID><SYS_TX_CODE>P53819113</SYS_TX_CODE><SYS_TX_VRSN>01</SYS_TX_VRSN><SYS_TX_TYPE>020000</SYS_TX_TYPE><SYS_RESERVED>0</SYS_RESERVED><SYS_EVT_TRACE_ID>1020018041483154197003560</SYS_EVT_TRACE_ID><SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO><SYS_PKG_TYPE>1</SYS_PKG_TYPE><SYS_MSG_LEN>0</SYS_MSG_LEN><SYS_IS_ENCRYPTED>0</SYS_IS_ENCRYPTED><SYS_ENCRYPT_TYPE>3</SYS_ENCRYPT_TYPE><SYS_COMPRESS_TYPE>0</SYS_COMPRESS_TYPE><SYS_EMB_MSG_LEN>0</SYS_EMB_MSG_LEN><SYS_REQ_TIME>20161220111637210</SYS_REQ_TIME><!--ï¿½ï¿½ï¿½à·½Â½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½--><SYS_TIME_LEFT>000118916</SYS_TIME_LEFT><SYS_PKG_STS_TYPE>00</SYS_PKG_STS_TYPE><LocalID>510096</LocalID><remoteID>105005</remoteID></TX_HEADER><TX_BODY><COMMON><FILE_LIST_PACK><FILE_NUM>0</FILE_NUM><FILE_MODE>0</FILE_MODE><FILE_NODE /><FILE_NAME_PACK /><FILE_PATH_PACK /></FILE_LIST_PACK></COMMON><ENTITY><COM_ENTITY><Inst_Eng_ShrtNm>CCB</Inst_Eng_ShrtNm><Ins_Co_ID>010079</Ins_Co_ID><SvPt_Jrnl_No>108011rv11481771876015539</SvPt_Jrnl_No><!--#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®ï¿½ï¿½--><TXN_ITT_CHNL_ID>002911037830000        </TXN_ITT_CHNL_ID><TXN_ITT_CHNL_CGY_CODE>20170029</TXN_ITT_CHNL_CGY_CODE><CCBIns_ID>110378300</CCBIns_ID><CCB_EmpID>93910092</CCB_EmpID><OprgDay_Prd>20161218</OprgDay_Prd><!--#ÓªÒµÊ±ï¿½ï¿½--><LNG_ID>zh-cn</LNG_ID></COM_ENTITY><APP_ENTITY><Plchd_Nm>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</Plchd_Nm><Plchd_Gnd_Cd>01</Plchd_Gnd_Cd><Plchd_Brth_Dt>19630626</Plchd_Brth_Dt><Plchd_Crdt_TpCd>1010</Plchd_Crdt_TpCd><Plchd_Crdt_No>320177196306261011</Plchd_Crdt_No><Plchd_Crdt_EfDt>20070924</Plchd_Crdt_EfDt><Plchd_Crdt_ExpDt>20181212</Plchd_Crdt_ExpDt><Plchd_Nat_Cd>156</Plchd_Nat_Cd><PlchdCtcAdrCtyRgon_Cd>156</PlchdCtcAdrCtyRgon_Cd><Plchd_Prov_Cd>110000</Plchd_Prov_Cd><Plchd_City_Cd>110000</Plchd_City_Cd><Plchd_CntyAndDstc_Cd>110101</Plchd_CntyAndDstc_Cd><Plchd_Dtl_Adr_Cntnt>ï¿½ï¿½ï¿½ÄµÄµÄµÄµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</Plchd_Dtl_Adr_Cntnt><Plchd_Comm_Adr /><Plchd_ZipECD>100000</Plchd_ZipECD><PlchdFixTelItnlDstcNo>86</PlchdFixTelItnlDstcNo><PlchdFixTelDmstDstcNo>000</PlchdFixTelDmstDstcNo><Plchd_Fix_TelNo>00000000</Plchd_Fix_TelNo><PlchdMoveTelItlDstcNo>86</PlchdMoveTelItlDstcNo><Plchd_Move_TelNo>13639075617</Plchd_Move_TelNo><Plchd_Email_Adr /><Plchd_Ocp_Cd>A0000</Plchd_Ocp_Cd><Plchd_Yr_IncmAm>0.00</Plchd_Yr_IncmAm><Fam_Yr_IncmAm>0.00</Fam_Yr_IncmAm><InsPrem_Bdgt_Amt>0.00</InsPrem_Bdgt_Amt><Rsdnt_TpCd>1</Rsdnt_TpCd><RspbPsn_Nm /><Plchd_And_Rcgn_ReTpCd>0133011</Plchd_And_Rcgn_ReTpCd><Rcgn_Nm>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</Rcgn_Nm><Rcgn_CPA_FullNm /><Rcgn_Gnd_Cd>02</Rcgn_Gnd_Cd><Rcgn_Brth_Dt>19811231</Rcgn_Brth_Dt><Rcgn_Crdt_TpCd>1010</Rcgn_Crdt_TpCd><Rcgn_Crdt_No>110101198112310024</Rcgn_Crdt_No><Rcgn_Crdt_EfDt /><Rcgn_Crdt_ExpDt>20200520</Rcgn_Crdt_ExpDt><Rcgn_Nat_Cd>156</Rcgn_Nat_Cd><RcgnCtcAdr_CtyRgon_Cd>156</RcgnCtcAdr_CtyRgon_Cd><Rcgn_Prov_Cd>110000</Rcgn_Prov_Cd><Rcgn_City_Cd>110000</Rcgn_City_Cd><Rcgn_CntyAndDstc_Cd>110101</Rcgn_CntyAndDstc_Cd><Rcgn_Dtl_Adr_Cntnt>È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</Rcgn_Dtl_Adr_Cntnt><Rcgn_Comm_Adr /><Rcgn_ZipECD>110000</Rcgn_ZipECD><RcgnFixTelItnl_DstcNo /><RcgnFixTelDmst_DstcNo /><Rcgn_Fix_TelNo /><RcgnMoveTelItnlDstcNo>86</RcgnMoveTelItnlDstcNo><Rcgn_Move_TelNo>00000000000</Rcgn_Move_TelNo><Rcgn_Email_Adr /><Rcgn_Ocp_Cd>Y0000</Rcgn_Ocp_Cd><Rcgn_Yr_IncmAm>0.00</Rcgn_Yr_IncmAm><Rcgn_LvFr_Pps_Lnd_Num /><Pps_List /><Benf_Num>1</Benf_Num><Benf_List><Benf_Detail><AgIns_Benf_TpCd>1</AgIns_Benf_TpCd><Benf_SN>1</Benf_SN><Benf_Bnft_Seq>1</Benf_Bnft_Seq><Benf_Nm>ï¿½ï¿½ï¿½ï¿½</Benf_Nm><Benf_Gnd_Cd>02</Benf_Gnd_Cd><Benf_Brth_Dt>19640101</Benf_Brth_Dt><Benf_Crdt_TpCd>1010</Benf_Crdt_TpCd><Benf_Crdt_No>110101196401010046</Benf_Crdt_No><Benf_Crdt_EfDt>19640101</Benf_Crdt_EfDt><Benf_Crdt_ExpDt>20200820</Benf_Crdt_ExpDt><Benf_Nat_Cd>156</Benf_Nat_Cd><Benf_And_Rcgn_ReTpCd>0133015</Benf_And_Rcgn_ReTpCd><Bnft_Pct>1.0000</Bnft_Pct><BenfCtcAdr_CtyRgon_Cd>156</BenfCtcAdr_CtyRgon_Cd><Benf_Prov_Cd>110000</Benf_Prov_Cd><Benf_City_Cd>110000</Benf_City_Cd><Benf_CntyAndDstc_Cd>110101</Benf_CntyAndDstc_Cd><Benf_Dtl_Adr_Cntnt>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</Benf_Dtl_Adr_Cntnt><Benf_Comm_Adr /></Benf_Detail></Benf_List><AgIns_Pkg_ID /><Cvr_Num>1</Cvr_Num><Busi_List><Busi_Detail><Cvr_ID>011A0100</Cvr_ID><Cvr_Nm>ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½2ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)</Cvr_Nm><MainAndAdlIns_Ind>1</MainAndAdlIns_Ind><Ins_Cps>20</Ins_Cps><InsPrem_Amt>20000.00</InsPrem_Amt><Ins_Cvr /><Ins_Scm_Inf /><Opt_Part_DieIns_Amt /><FTm_Extr_Adl_InsPrem /><Emgr_CtcPsn /><EmgrCtcPsnAndRcReTpCd /><Emgr_Ctc_Tel /><AgIns_Ln_Ctr_ID /><Ln_Ctr_ExpDt /><Upd_Loan_Amt /><PrimBlInsPolcyVchr_No /><InsPrem_PyF_MtdCd>02</InsPrem_PyF_MtdCd><InsPrem_PyF_Prd_Num>1</InsPrem_PyF_Prd_Num><InsPrem_PyF_Cyc_Cd>0100</InsPrem_PyF_Cyc_Cd><ExpPrmmRcvModCgyCd /><SvBnf_Drw_Cyc_Cd /><ApntInsPremPyAdvnInd /><XtraDvdn_Pcsg_MtdCd /><RdAmtPyCls_Ind /><Anuty_Drw_CgyCd /><Anuty_Drw_Prd_Num /><Anuty_Drw_Cyc_Cd /><Anuty_Pcsg_MtdCd /><Ins_Yr_Prd_CgyCd>03</Ins_Yr_Prd_CgyCd><Ins_Ddln>5</Ins_Ddln><Ins_Cyc_Cd>03</Ins_Cyc_Cd><Ivs_MtdCd /><Auto_RnwCv_Ind /><Rsrv_Fld_1 /><Rsrv_Fld_2 /><Rsrv_Fld_3 /><Rsrv_Fld_4 /><Rsrv_Fld_5 /><Rsrv_Fld_6 /><Rsrv_Fld_7 /><Rsrv_Fld_8 /><Rsrv_Fld_9 /><Rsrv_Fld_10 /><IvsAc_Num>0</IvsAc_Num><PayAcctCode_List /></Busi_Detail></Busi_List><Ins_Bl_Prt_No>1010190000120</Ins_Bl_Prt_No><!--Í¶ï¿½ï¿½ï¿½ï¿½Ó¡Ë¢ï¿½ï¿½--><Minr_Acm_Cvr /><InsPolcy_Pswd /><Inv_No /><Ntf_Itm_Ind>0</Ntf_Itm_Ind><Dspt_Pcsg_MtdCd>03</Dspt_Pcsg_MtdCd><Dspt_Arbtr_Inst_Nm /><InsPolcy_Rcv_MtdCd /><Ins_Prj_CgyCd /><PydFeeOutBill_CgyCd /><InsPolcyActSaleRgonID /><Ins_CsLs_Prvd_Rgon_ID /><Pstcrpt_Rmrk /><InsPolcy_Intnd_EfDt /><InsPolcy_Medm_TpCd>2</InsPolcy_Medm_TpCd><CstMgr_Blng_CCBIns_ID /><Lv1_Br_No>110000000</Lv1_Br_No><BO_Nm>ï¿½Ğ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¹É·ï¿½ï¿½ï¿½ï¿½Ş¹ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö§ï¿½ï¿½</BO_Nm><BOInsPrAgnBsnLcns_ECD>110106667505023002</BOInsPrAgnBsnLcns_ECD><BOInsPrAgBsnLcnVld_Dt>20991231</BOInsPrAgBsnLcnVld_Dt><BO_Sale_Stff_Nm>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</BO_Sale_Stff_Nm><BO_Sale_Stff_ID>93910092</BO_Sale_Stff_ID><Sale_Stff_AICSQCtf_ID>02008101100000153255</Sale_Stff_AICSQCtf_ID><InsAgnCrStQuaCtVld_Dt>20221005</InsAgnCrStQuaCtVld_Dt><BOIChOfAgInsBsnPnp_ID>60516155</BOIChOfAgInsBsnPnp_ID><BOIChOfAgInsBsnPnp_Nm /><Rnew_PyF_PyMd_Cd /><Plchd_PyF_AccNo /><Plchd_Drw_AccNo /><Rcgn_AccNo /><Benf_AccNo /><Rsrv_Fld_11 /><Rsrv_Fld_12 /><Rsrv_Fld_13 /><Rsrv_Fld_14 /><Rsrv_Fld_15 /><Rsrv_Fld_16 /><Rsrv_Fld_17 /><Rsrv_Fld_18 /><Rsrv_Fld_19 /><Rsrv_Fld_20 /><Cst_Rsk_Tlrnc_Cpy_Cd>02</Cst_Rsk_Tlrnc_Cpy_Cd><Rsk_Evlt_AvlDt>20171118</Rsk_Evlt_AvlDt></APP_ENTITY></ENTITY></TX_BODY><TX_EMB /></TX>
+			 */
+			mXMLOutputter.output(pXmlDoc, mBaos);//æ–‡æ¡£æ•°æ®è¢«å†™å…¥ä¸€ä¸ªå­—èŠ‚æ•°ç»„è¾“å‡ºæµ
 		} catch (IOException ex) {
-			cLogger.error("Xml.Document-->byte[]Òì³££¡", ex);
+			cLogger.error("Xml.Document-->byte[]å¼‚å¸¸ï¼", ex);
 		}
-		return mBaos.toByteArray();
+		return mBaos.toByteArray();//è¿”å›æ–°åˆ†é…çš„å­—èŠ‚æ•°ç»„
 	}
 	
 	/**
-	 * ½«Element×ª»»ÎªÖ¸¶¨×Ö·û¼¯±àÂëµÄ×Ö½ÚÊı×é£¬±£³ÖÔ­¸ñÊ½¡£
+	 * å°†Elementè½¬æ¢ä¸ºæŒ‡å®šå­—ç¬¦é›†ç¼–ç çš„å­—èŠ‚æ•°ç»„ï¼Œä¿æŒåŸæ ¼å¼ã€‚
 	 */
 	public static byte[] toBytes(Element pElement, String pCharset) {
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset);
@@ -204,21 +212,21 @@ public class JdomUtil {
 		try {
 			mXMLOutputter.output(pElement, mBaos);
 		} catch (IOException ex) {
-			cLogger.error("Xml.Element-->byte[]Òì³££¡", ex);
+			cLogger.error("Xml.Element-->byte[]å¼‚å¸¸ï¼", ex);
 		}
 		return mBaos.toByteArray();
 	}
 	
 	/**
-	 * Ëõ½ø3¿Õ¸ñ£¬ºöÂÔÉùÃ÷ÖĞµÄ±àÂë¡£
+	 * ç¼©è¿›3ç©ºæ ¼ï¼Œå¿½ç•¥å£°æ˜ä¸­çš„ç¼–ç ã€‚
 	 */
 	public static String toStringFmt(Document pXmlDoc) {
 		return toStringFmt(pXmlDoc, "");
 	}
 	
 	/**
-	 * Ëõ½ø3¿Õ¸ñ¡£
-	 * pEncodingDecl£ºÉùÃ÷ÖĞµÄ±àÂë£¬null-ºöÂÔÕû¸öxmlÉùÃ÷£¬""-ºöÂÔÉùÃ÷ÖĞµÄ±àÂë
+	 * ç¼©è¿›3ç©ºæ ¼ã€‚
+	 * pEncodingDeclï¼šå£°æ˜ä¸­çš„ç¼–ç ï¼Œnull-å¿½ç•¥æ•´ä¸ªxmlå£°æ˜ï¼Œ""-å¿½ç•¥å£°æ˜ä¸­çš„ç¼–ç 
 	 */
 	public static String toStringFmt(Document pXmlDoc, String pEncodingDecl) {
 		Format mFormat = Format.getRawFormat().setIndent("   ");
@@ -234,8 +242,8 @@ public class JdomUtil {
 	
 	
 	/**
-	 * Ëõ½ø3¿Õ¸ñ¡£
-	 * pEncodingDecl£ºÉùÃ÷ÖĞµÄ±àÂë£¬null-ºöÂÔÕû¸öxmlÉùÃ÷£¬""-ºöÂÔÉùÃ÷ÖĞµÄ±àÂë
+	 * ç¼©è¿›3ç©ºæ ¼ã€‚
+	 * pEncodingDeclï¼šå£°æ˜ä¸­çš„ç¼–ç ï¼Œnull-å¿½ç•¥æ•´ä¸ªxmlå£°æ˜ï¼Œ""-å¿½ç•¥å£°æ˜ä¸­çš„ç¼–ç 
 	 */
 	public static String toStringFmtNull(Document pXmlDoc, String pEncodingDecl) {
 		Format mFormat = Format.getRawFormat().setIndent("");
@@ -250,7 +258,7 @@ public class JdomUtil {
 	}
 	
 	/**
-	 * Ëõ½ø3¿Õ¸ñ¡£
+	 * ç¼©è¿›3ç©ºæ ¼ã€‚
 	 */
 	public static String toStringFmt(Element pElement) {
 		Format mFormat = Format.getRawFormat().setIndent("   ");
@@ -258,30 +266,39 @@ public class JdomUtil {
 	}
 	
 	/**
-	 * ±£³ÖÔ­¸ñÊ½£¬ºöÂÔÉùÃ÷ÖĞµÄ±àÂë¡£
+	 * ä¿æŒåŸæ ¼å¼ï¼Œå¿½ç•¥å£°æ˜ä¸­çš„ç¼–ç ã€‚
 	 */
 	public static String toString(Document pXmlDoc) {
 		return toString(pXmlDoc,"");
 	}
 	
 	/**
-	 * ±£³ÖÔ­¸ñÊ½¡£
-	 * pEncodingDecl£ºÉùÃ÷ÖĞµÄ±àÂë£¬null-ºöÂÔÕû¸öxmlÉùÃ÷£¬""-ºöÂÔÉùÃ÷ÖĞµÄ±àÂë
+	 * ä¿æŒåŸæ ¼å¼ã€‚
+	 * pEncodingDeclï¼šå£°æ˜ä¸­çš„ç¼–ç ï¼Œnull-å¿½ç•¥æ•´ä¸ªxmlå£°æ˜ï¼Œ""-å¿½ç•¥å£°æ˜ä¸­çš„ç¼–ç 
+	 * @param pXmlDoc XSLæ–‡ä»¶
+	 * @param pEncodingDecl å£°æ˜ç¼–ç 
 	 */
 	public static String toString(Document pXmlDoc, String pEncodingDecl) {
+		//å¾—åˆ°åŸæ ¼å¼å¯¹è±¡
 		Format mFormat = Format.getRawFormat();
+		//å£°æ˜ç¼–ç ä¸ºç©º
 		if (null == pEncodingDecl) {
+			//è®¾ç½®å¿½ç•¥å£°æ˜
 			mFormat.setOmitDeclaration(true);
+		//æˆ–è€…å£°æ˜ç¼–ç ä¸ºç©ºå­—ç¬¦
 		} else if ("".equals(pEncodingDecl)) {
+			//è®¾ç½®å¿½ç•¥å£°æ˜
 			mFormat.setOmitEncoding(true);
 		} else {
+			//å¦åˆ™è®¾ç½®ç¼–ç ä¸ºå£°æ˜ç¼–ç 
 			mFormat.setEncoding(pEncodingDecl);
 		}
+		//åŸæ ¼å¼å¯¹è±¡æ„å»ºXMLè¾“å‡ºå™¨è¾“å‡ºXSLæ–‡ä»¶å­—ç¬¦ä¸²
 		return new XMLOutputter(mFormat).outputString(pXmlDoc);
 	}
 	
 	/**
-	 * ±£³ÖÔ­¸ñÊ½¡£
+	 * ä¿æŒåŸæ ¼å¼ã€‚
 	 */
 	public static String toString(Element pElement) {
 		Format mFormat = Format.getRawFormat();

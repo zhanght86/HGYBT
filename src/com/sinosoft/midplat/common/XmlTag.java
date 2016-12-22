@@ -1,5 +1,9 @@
 package com.sinosoft.midplat.common;
 
+/**
+ * 核心报文标签
+ * @author yuantongxin
+ */
 public interface XmlTag {
 	
 	/*
@@ -148,24 +152,24 @@ public interface XmlTag {
 	String Lot = "Lot";
 	
 	String RiskCode = "RiskCode";
-	String RiskName = "RiskName";
+	String RiskName = "RiskName";//险种名称
 	String MainRiskCode = "MainRiskCode";
-	String Mult = "Mult";
-	String PayIntv = "PayIntv";
-	String PayMode = "PayMode";
+	String Mult = "Mult";//投保份数投保份数
+	String PayIntv = "PayIntv";//缴费频次
+	String PayMode = "PayMode";//缴费形式
 	String PolApplyDate = "PolApplyDate";
 	String SignDate = "SignDate";
 	String CValiDate = "CValiDate";
 	String InsuEndDate = "InsuEndDate";
 	String InsuYearFlag = "InsuYearFlag";
 	String InsuYear = "InsuYear";
-	String PayEndYearFlag = "PayEndYearFlag";
-	String PayEndYear = "PayEndYear";
+	String PayEndYearFlag = "PayEndYearFlag";//缴费年期类型
+	String PayEndYear = "PayEndYear";//缴费年期
 	String PayEndDate = "PayEndDate";
 	String BonusGetMode = "BonusGetMode";
 	String FullBonusGetMode = "FullBonusGetMode";
 	String GetYearFlag = "GetYearFlag";
-	String GetYear = "GetYear";
+	String GetYear = "GetYear";//领取年龄
 	String GetIntv = "GetIntv";
 	String CostIntv = "CostIntv";
 	String CostDate = "CostDate";

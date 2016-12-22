@@ -34,7 +34,7 @@ public class CcbNetImpl extends SocketNetImpl
   }
   
   /**
-   * 接收
+   * 接收[银行非标准]报文，增加标准报文头节点
    */
   public Document receive() throws Exception {
 	  //Into CcbNetImpl.receive()...
@@ -87,7 +87,8 @@ public class CcbNetImpl extends SocketNetImpl
     this.cLogger.info("保存报文完毕！" + mSaveName);
     //Java文档对象模型工具将输入非标准报文打印到控制台(GBK编码，缩进3空格)
     JdomUtil.print(this.mInNoStd);
-    	
+   
+    /*增加标准报文头节点[Head节点下6个字段]:TranCom、InNoDoc、ClientIp、FuncFlag、AgentCom、AgentCode*/
 	// 交易机构代码元素
 	Element mTranComEle = new Element(TranCom);
 	//设置交易机构代码
@@ -128,8 +129,8 @@ public class CcbNetImpl extends SocketNetImpl
 	//增加标准报文头节点后报文：
 	cLogger.info("增加标准报文头节点后报文：");
 	//Java文档对象模型工具将输入非标准报文打印到控制台(GBK编码，缩进3空格)
-	JdomUtil.print(mInNoStd);
-
+	JdomUtil.print(mInNoStd);//打印[增加标准报文头节点后的银行非标准报文]
+	
 	//Out CcbNetImpl.receive()!
     this.cLogger.info("Out CcbNetImpl.receive()!");
     //返回输入非标准报文

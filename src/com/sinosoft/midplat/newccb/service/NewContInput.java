@@ -37,12 +37,18 @@ public class NewContInput extends ServiceImpl
 		super(pThisBusiConf);
 	}
 
+	/**
+	 * 标准输入报文业务处理
+	 * @param pInXmlDoc 标准输入报文
+	 */
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc)
 	{
+		//开始毫秒数
 		long mStartMillis = System.currentTimeMillis();
 		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
+		//获取标准输入报文
 		cInXmlDoc = pInXmlDoc;
 		//Java文档对象模型工具将输入标准报文打印到控制台[GBK编码，缩进3空格]
 		JdomUtil.print(cInXmlDoc);//[Element:<TranData/>]

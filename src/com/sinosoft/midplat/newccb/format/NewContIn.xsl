@@ -118,7 +118,9 @@
 				<!-- 投保人国家地区代码 -->
 				<NationalityCode><xsl:value-of select="Plchd_Nat_Cd" /></NationalityCode>
 				<!-- 投保人地址 -->
-				<Address><xsl:value-of select="Plchd_Comm_Adr" /></Address>
+				<Address><xsl:value-of select="Plchd_Dtl_Adr_Cntnt" /></Address>
+				<!--单位地址 -->
+				<WorkAddress><xsl:value-of select="Plchd_Dtl_Adr_Cntnt" /></WorkAddress>
 				<!-- 投保人邮政编码-->
 				<ZipCode><xsl:value-of select="Plchd_ZipECD" /></ZipCode>
 				<!-- 投保人固定电话-->
@@ -134,7 +136,13 @@
 				<xsl:value-of select="Plchd_Email_Adr" />
 				</Email>
 				<!-- 投保人职业代码-->
-				<JobCode>3010101</JobCode>
+				<JobCode>
+				<xsl:call-template name="tran_JobCode">
+			      <xsl:with-param name="JobCode">
+		            <xsl:value-of select="Plchd_Ocp_Cd"/>
+			      </xsl:with-param>
+		        </xsl:call-template>
+				</JobCode>
 				<!-- 投保人年收入 -->
 				<YearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(Plchd_Yr_IncmAm)"/></YearSalary>
 				<!-- 投保人家庭年收入 -->
@@ -207,7 +215,7 @@
 				<NationalityCode><xsl:value-of select="Rcgn_Nat_Cd" /></NationalityCode>
  				<!-- 被保人地址-->
 				<Address>
-					<xsl:value-of select="Rcgn_Comm_Adr" />
+					<xsl:value-of select="Rcgn_Dtl_Adr_Cntnt" />
 				</Address>
 				<!-- 被保人邮编-->
 				<ZipCode>
@@ -638,11 +646,24 @@
 		</xsl:choose>
 	</xsl:template>
 
-    <!-- 健康告知 -->
-    <xsl:template name="healFlag">
-    <xsl:param name="HealFlag">N</xsl:param>
-    <xsl:if test="$HealFlag = 0">N</xsl:if><!-- 无健康告知 -->
-    <xsl:if test="$HealFlag = 1">Y</xsl:if><!-- 有健康告知 -->
-     </xsl:template>
-     
+<!-- 健康告知 -->
+<xsl:template name="healFlag">
+  <xsl:param name="HealFlag">N</xsl:param>
+  <xsl:if test="$HealFlag = 0">N</xsl:if><!-- 无健康告知 -->
+  <xsl:if test="$HealFlag = 1">Y</xsl:if><!-- 有健康告知 -->
+</xsl:template>
+<!--职业代码-->
+<xsl:template name="tran_JobCode">
+  <xsl:param name="JobCode"></xsl:param>
+  <xsl:choose>
+    <xsl:when test="$JobCode = 'A0000'">??</xsl:when><!--柜面-->
+    <xsl:when test="$JobCode = 'B0000'">??</xsl:when><!--网银 -->
+    <xsl:when test="$JobCode = 'C0000'">???</xsl:when><!--自助终端 -->
+    <xsl:when test="$JobCode = 'D0000'">??</xsl:when><!--自助终端 -->
+    <xsl:when test="$JobCode = 'E0000'">??</xsl:when><!--自助终端 -->
+    <xsl:when test="$JobCode = 'F0000'">??</xsl:when><!--自助终端 -->
+    <xsl:when test="$JobCode = 'Y0000'">??</xsl:when><!--自助终端 -->
+    <xsl:otherwise></xsl:otherwise>  
+  </xsl:choose>
+</xsl:template>
 </xsl:stylesheet>

@@ -44,7 +44,7 @@ public class SocketNetImpl implements XmlTag {
 	}
 	
 	/**
-	 * 接收
+	 * 接收[银行非标准]报文，增加标准报文头
 	 * @return
 	 * @throws Exception
 	 */
@@ -66,10 +66,12 @@ public class SocketNetImpl implements XmlTag {
 			cFuncFlag = mFuncFlagEle.getText();
 		}
 		
+		//保存文件名[线程名_下一个顺序号_交易码_in.xml]
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())
 			.append('_').append(NoFactory.nextAppNo())
 			.append('_').append(cFuncFlag)
 			.append("_in.xml");
+		//
 		SaveMessage.save(mXmlDoc, cTranComEle.getText(), mSaveName.toString());
 		cLogger.info("保存报文完毕！"+mSaveName);
 		
@@ -85,24 +87,27 @@ public class SocketNetImpl implements XmlTag {
 	}
 	
 	/**
-	 * 发送
+	 * 发送[非标准输出报文]
 	 * @param pOutNoStd 输出非标准报文
-	 * @throws Exception
+	 * @throws Exception 
 	 */
 	public void send(Document pOutNoStd) throws Exception {
 		cLogger.info("Into SocketNetImp.send()...");
-		
+		//保存[非标准输出报文]文件名[线程名_下一顺序号_交易码_out.xml]
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())
 			.append('_').append(NoFactory.nextAppNo())
 			.append('_').append(cFuncFlag)
 			.append("_out.xml");
+		//保存[非标准输出]报文，到03[交易机构代码]目录下
 		SaveMessage.save(pOutNoStd, cTranComEle.getText(), mSaveName.toString());
+		//保存报文完毕！保存[非标准输出报文]文件名
 		cLogger.info("保存报文完毕！"+mSaveName);
-		
+		//套接字输出流写入非标准输出报文GBK二进制序列
 		cSocket.getOutputStream().write(
 				JdomUtil.toBytes(pOutNoStd));
+		//禁用套接字输出流
 		cSocket.shutdownOutput();
-		
+		//Out SocketNetImp.send()![ 从SocketNetImp.send函数出来]
 		cLogger.info("Out SocketNetImp.send()!");
 	}
 	

@@ -231,7 +231,7 @@
 																										</xsl:otherwise>
 																								</xsl:choose>
 																						<xsl:apply-templates select="PayIntv"/>
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Amnt,11,$Falseflag)"/><xsl:text>Ԫ</xsl:text>
+																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Amnt,11,$Falseflag)"/><xsl:text>Ԫ</xsl:text>/<xsl:value-of select="Mult"/>
 																						 <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,13,$Falseflag)"/>Ԫ</Ret_Inf>
 								</xsl:for-each>
 								 <Ret_Inf/>

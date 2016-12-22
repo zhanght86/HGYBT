@@ -13,13 +13,13 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
 public class ActInsuSaleRemindQuery extends XmlSimpFormat {
-	private String mSYS_RECV_TIME = null;
-	private String mSYS_RESP_TIME = null;
-	private String tranNo = null;
-	private String tranDate = null;
-	private String sysTxCode = null;
-	private Element oldTxHeader = null;
-	private Element oldComEntity = null;
+	private String mSYS_RECV_TIME = null;//服务接受时间
+	private String mSYS_RESP_TIME = null;//服务响应时间
+	private String tranNo = null;//交易码
+	private String tranDate = null;//交易日期
+	private String sysTxCode = null;//服务名
+	private Element oldTxHeader = null;//旧报文头
+	private Element oldComEntity = null;//旧公共域
 	
 	
 	public ActInsuSaleRemindQuery(Element pThisConf) {
@@ -33,7 +33,7 @@ public class ActInsuSaleRemindQuery extends XmlSimpFormat {
 		
 		//服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-		
+		//旧报文头[]
 		oldTxHeader = (Element)pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		oldComEntity = (Element)pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
 		sysTxCode= oldTxHeader.getChildText("SYS_TX_CODE");
@@ -52,7 +52,7 @@ public class ActInsuSaleRemindQuery extends XmlSimpFormat {
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into ActInsuSaleRemindQuery.std2NoStd()...");
-	
+		
 		Document mNoStdXml = 
 			ActInsuSaleRemindQueryOutXsl.newInstance().getCache().transform(pStdXml);
 

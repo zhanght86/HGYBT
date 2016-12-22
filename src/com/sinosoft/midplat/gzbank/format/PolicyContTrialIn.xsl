@@ -64,7 +64,14 @@
          <Phone><xsl:value-of select="PolicyHolder/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="PolicyHolder/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="PolicyHolder/Email"/></Email>
-         <JobCode><xsl:value-of select="PolicyHolder/OccupationType"/></JobCode>
+         <JobCode>
+         	<xsl:call-template name="tran_jobcode">
+					<xsl:with-param name="jobcode">
+						<xsl:value-of
+							select="PolicyHolder/OccupationType" />
+					</xsl:with-param>
+			</xsl:call-template>
+         </JobCode>
          <!-- 体重 -->
 		 <Stature><xsl:value-of select="PolicyHolder/Height"/></Stature>
 		 <!-- 身高 -->
@@ -121,7 +128,14 @@
          <Phone><xsl:value-of select="Insured/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="Insured/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="Insured/Email"/></Email>
-         <JobCode><xsl:value-of select="Insured/OccupationType"/></JobCode>
+         <JobCode>
+         	<xsl:call-template name="tran_jobcode">
+					<xsl:with-param name="jobcode">
+						<xsl:value-of
+							select="Insured/OccupationType" />
+					</xsl:with-param>
+			</xsl:call-template>
+         </JobCode>
           <!-- 体重 -->
 		 <Stature><xsl:value-of select="Insured/Height"/></Stature>
 		 <!-- 身高 -->
@@ -421,6 +435,38 @@
 			</xsl:when>
 			<xsl:when test="$relation = 305">04</xsl:when><!-- 配偶 -->
 			<xsl:otherwise>06</xsl:otherwise><!-- 其他 -->
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="tran_jobcode">
+		<xsl:param name="jobcode"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$jobcode = 1001">2099904</xsl:when>
+			<xsl:when test="$jobcode = 1002">8000002</xsl:when>
+			<xsl:when test="$jobcode = 1003">2099907</xsl:when>
+			<xsl:when test="$jobcode = 1004"></xsl:when>
+			<xsl:when test="$jobcode = 1005">2021106</xsl:when>
+			<xsl:when test="$jobcode = 1006">6030516</xsl:when>
+			<xsl:when test="$jobcode = 1007">4040701</xsl:when>
+			<xsl:when test="$jobcode = 1008"></xsl:when><!-- 4050304、4040208 -->
+			<xsl:when test="$jobcode = 1009">6050712</xsl:when>
+			<xsl:when test="$jobcode = 1010">6010316</xsl:when>
+			<xsl:when test="$jobcode = 1011">6010317</xsl:when>
+			<xsl:when test="$jobcode = 1012">6010608</xsl:when>
+			<xsl:when test="jobcode = 1013"></xsl:when>
+			<xsl:when test="$jobcode = 1014">4030503</xsl:when>
+			<xsl:when test="$jobcode = 1015">6230710</xsl:when>
+			<xsl:when test="$jobcode = 1016">2129901</xsl:when>
+			<xsl:when test="$jobcode = 1017"></xsl:when>
+			<xsl:when test="$jobcode = 1018"></xsl:when>
+			<xsl:when test="$jobcode = 1019"></xsl:when>
+			<xsl:when test="$jobcode = 1020"></xsl:when>
+			<xsl:when test="$jobcode = 1021">2099902</xsl:when>
+			<xsl:when test="$jobcode = 1022">2080301</xsl:when>
+			<xsl:when test="$jobcode = 1023">2060301</xsl:when>
+			<xsl:when test="$jobcode = 1024">4071203</xsl:when>
+			<xsl:when test="$jobcode = 1025">3020101</xsl:when>
+			<xsl:when test="$jobcode = 9999999"></xsl:when>
 		</xsl:choose>
 	</xsl:template>
 

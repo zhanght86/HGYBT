@@ -9,6 +9,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.midplat.common.JdomUtil;
+import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 
 public class PolicyContTrial extends XmlSimpFormat {
@@ -21,7 +22,6 @@ public class PolicyContTrial extends XmlSimpFormat {
 	@Override
 	public Document noStd2Std(Document pInNoStd) throws Exception {
 		cLogger.info("Into PolicyContTrial.noStd2Std()...");
-		cLogger.info("第三方请求报文:" + JdomUtil.toStringFmt(pInNoStd));
 		this.cInNoStd = pInNoStd;
 
 //		int BeneficiaryCount = Integer.parseInt(pInNoStd.getRootElement()
@@ -44,7 +44,6 @@ public class PolicyContTrial extends XmlSimpFormat {
 //				.setText(
 //						cThisBusiConf.getParentElement()
 //								.getChildText("TranCom"));
-		cLogger.info("请求核心报文：" + JdomUtil.toStringFmt(mStdXml));
 		cLogger.info("Out PolicyContTrial.noStd2Std()!");
 		return mStdXml;
 	}
@@ -52,7 +51,6 @@ public class PolicyContTrial extends XmlSimpFormat {
 	@Override
 	public Document std2NoStd(Document pOutStd) throws Exception {
 		cLogger.info("Into PolicyContTrial.std2NoStd()...");
-		cLogger.info("核心返回报文:" + JdomUtil.toStringFmt(pOutStd));
 		Document mNoStdXml = PolicyContTrialOutXsl.newInstance().getCache()
 				.transform(pOutStd);
 		Element mRoot = mNoStdXml.getRootElement();
@@ -83,8 +81,9 @@ public class PolicyContTrial extends XmlSimpFormat {
 			}
 			Element mHOAppFormNumber = (Element) mNoStdRoot.getChild(
 					"HOAppFormNumber").clone();
-			Element mPaymentAmt = new Element("PaymentAmt").setText(pOutStd
-					.getRootElement().getChild("Body").getChildText(Prem));
+			Element mPaymentAmt = new Element("PaymentAmt").setText(
+					NumberUtil.fenToYuan(pOutStd.getRootElement().getChild("Body").getChildText(Prem))
+					);
 			Element mProductCode = (Element) mNoStdRoot.getChild("ProductCode")
 					.clone();
 
@@ -107,7 +106,7 @@ public class PolicyContTrial extends XmlSimpFormat {
 				}
 			}
 			Element mModalPremAmt = new Element("ModalPremAmt")
-					.setText(mMainRiskEle.getChildText(Prem));
+					.setText(NumberUtil.fenToYuan(mMainRiskEle.getChildText(Prem)));
 			Element mPlanName = new Element("PlanName").setText(mMainRiskEle
 					.getChildText(RiskName));
 			Element mSubmissionDate = (Element) mNoStdRoot
@@ -152,7 +151,6 @@ public class PolicyContTrial extends XmlSimpFormat {
 			.addContent(mFinalPaymentDate).addContent(mEffDate).addContent(mTermDate).addContent(mCoverageCount);
 		}
 
-		cLogger.info("返回给第三方报文:" + JdomUtil.toStringFmt(mNoStdXml));
 		cLogger.info("Out PolicyContTrial.std2NoStd()!");
 		return mNoStdXml;
 	}

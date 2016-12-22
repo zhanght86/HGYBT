@@ -19,7 +19,7 @@ public class GZBankTest {
 		String ip="127.0.0.1";//本机ip地址
 //    	String ip="10.2.0.31";//测试环境ip
 		int port=35017;
-		String path="D:/task/20161219/gz/core_test/1228_17_1012_in.xml";
+		String path="D:/task/20161221/gz/ybt_local/15744_255_1012_in.xml";
 		String FuncFlag="9000102";//保费试算交易码
 		
 //		path="D:/task/20161219/gz/core_test/1303_38_1014_in.xml";
@@ -36,7 +36,7 @@ public class GZBankTest {
 		
 //		path="D:/task/20161219/gz/core_test/918_51_1015_in.xml";
 //		FuncFlag="9000901";//当日撤单交易码
-		String returnPath="D:/task/20161219/gz/core_test/1228_17_1012_out3.xml";
+		String returnPath="D:/task/20161221/gz/ybt_local/15744_255_1012_out.xml";
 		
 		String insureCode="006"+"   ";//目标保险公司代码
 		try {
