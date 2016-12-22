@@ -16,27 +16,28 @@ import com.sinosoft.midplat.common.JdomUtil;
 public class GZBankTest {
 	private static  Logger cLogger = Logger.getLogger(GZBankTest.class);
     public static void main(String[] args) {
-		String ip="127.0.0.1";//本机ip地址
-//    	String ip="10.2.0.31";//测试环境ip
-		int port=35017;
-		String path="D:/task/20161221/gz/ybt_local/15744_255_1012_in.xml";
+//		String ip="127.0.0.1";//本机ip地址
+    	String ip="10.2.0.31";//测试环境ip
+//		int port=35017;
+    	int port=9004;
+		String path="D:/task/20161222/gz/ybt_local/15744_255_1012_in.xml";
 		String FuncFlag="9000102";//保费试算交易码
 		
-//		path="D:/task/20161219/gz/core_test/1303_38_1014_in.xml";
+//		path="D:/task/20161222/gz/ybt_test/1293_19_1014_in.xml";
 //		FuncFlag="9000103";//缴费出单交易码
 		
-//		path="D:/task/20161219/gz/core_test/9000201in_noStd.xml";
+//		path="D:/task/20161222/gz/core_test/9000201in_noStd.xml";
 //		FuncFlag="9000201";//保单查询交易码
 		
-//		path="D:/task/20161219/gz/core_test/9000701in_noStd.xml";
+//		path="D:/task/20161222/gz/core_test/9000701in_noStd.xml";
 //		FuncFlag="9000701";//续期缴费交易码
 		
-//		path="D:/task/20161219/gz/core_test/918_63_1011_in.xml";
-//		FuncFlag="9000801";//保单重打交易码
+		path="D:/task/20161222/gz/ybt_test/918_63_1011_in.xml";
+		FuncFlag="9000801";//保单重打交易码
 		
-//		path="D:/task/20161219/gz/core_test/918_51_1015_in.xml";
+//		path="D:/task/20161222/gz/core_test/918_51_1015_in.xml";
 //		FuncFlag="9000901";//当日撤单交易码
-		String returnPath="D:/task/20161221/gz/ybt_local/15744_255_1012_out.xml";
+		String returnPath="D:/task/20161222/gz/ybt_test/918_63_1011_out.xml";
 		
 		String insureCode="006"+"   ";//目标保险公司代码
 		try {

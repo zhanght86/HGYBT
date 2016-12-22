@@ -47,13 +47,13 @@ public class NewCCBTestUI {
 //		String mInFilePath = "D:/task/20161222/newccb/core_test/9704_15_111_in.xml";
 //		String mOutFilePath = "D:/task/20161222/newccb/core_test/9704_15_111_out.xml";
 		//新单试算
-//		String funcflag = "P53819113";//交易码[P53819113]
+		String funcflag = "P53819113";//交易码[P53819113]
 		//[D:/task/20161222/newccb/core_local/10452_551_1012_in.xml]
-//		String mInFilePath = "D:/task/20161222/newccb/core_test/11092_1314_1012_in.xml";//输入文件路径
+		String mInFilePath = "D:/task/20161222/newccb/core_test/11092_1314_1012_in.xml";//输入文件路径
 		//[D:/task/20161222/newccb/local/1012/P53819113in_noStd.xml]
 //		mInFilePath="D:/task/20161222/newccb/ybt_local/P53819113in_noStd.xml";
 		//[D:/task/20161222/newccb/core_local/10452_551_1012_out.xml]
-//		String mOutFilePath = "D:/task/20161222/newccb/core_test/11092_1314_1012_out.xml";//输出文件路径
+		String mOutFilePath = "D:/task/20161222/newccb/core_test/11092_1314_1012_out.xml";//输出文件路径
 		//D:/task/20161222/newccb/local/1012/P53819113out_noStd.xml
 //		mOutFilePath="D:/task/20161222/newccb/ybt_local/P53819113out_noStd.xml";
 //		
@@ -62,9 +62,9 @@ public class NewCCBTestUI {
 //		String mInFilePath = "D:/task/20161222/newccb/core_test/11094_1318_1014_in.xml";
 //		String mOutFilePath = "D:/task/20161215/newccb/local/11094_1318_1014_out.xml";
 		//打印保单
-		String funcflag = "P53819182";
-		String mInFilePath = "D:/task/20161222/newccb/core_test/9982_317_1032_in.xml";
-		String mOutFilePath = "D:/task/20161222/newccb/core_test/9982_317_1032_out.xml";
+//		String funcflag = "P53819182";
+//		String mInFilePath = "D:/task/20161222/newccb/core_test/9982_317_1032_in.xml";
+//		String mOutFilePath = "D:/task/20161222/newccb/core_test/9982_317_1032_out.xml";
 		
 		/*//自动冲正*/
 //		String funcflag = "P53818154";

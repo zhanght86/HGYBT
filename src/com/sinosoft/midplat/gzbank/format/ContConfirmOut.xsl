@@ -2,8 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
-<xsl:template match="TranData">
-<TXLife>
+<xsl:template match="TranData"><!-- 核心收费签单应答报文 -->
+<TXLife><!-- 贵州银行缴费出单应答报文 -->
 	<!-- 交易码-->
 	<TransNo></TransNo>
 	<!-- 签到银行代码-->
@@ -348,7 +348,14 @@
 		<PolicySerialNumber></PolicySerialNumber>
 		<DigitalSignature></DigitalSignature>
 	</DigitalSignInfo>
-	<TotalPages>3</TotalPages>
+	<xsl:choose>
+		<xsl:when test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode = '011A0100'">
+			<TotalPages>2</TotalPages>
+		</xsl:when>
+		<xsl:otherwise>
+			<TotalPages>3</TotalPages>
+		</xsl:otherwise>
+	</xsl:choose>
 	<PrintList>
 		<PrintDesc></PrintDesc>
 		<PrintPages>1</PrintPages>
@@ -408,6 +415,7 @@
 								<xsl:for-each select="/TranData/Body/Risk">
 								<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Amnt)"/>
 								<xsl:variable name="Prem" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/>
+								<xsl:variable name="Mult" select="Mult"/>
 								<Details>
 								<!-- 险种名称 -->
 								<xsl:text>　</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(RiskName, 36)"/>
@@ -444,7 +452,7 @@
 																										</xsl:otherwise>
 																								</xsl:choose>
 																						<xsl:apply-templates select="PayIntv"/>
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Amnt,11,$Falseflag)"/><xsl:text>元</xsl:text>
+																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Mult,11,$Falseflag)"/><xsl:text>份</xsl:text>
 																						 <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,13,$Falseflag)"/>元</Details>
 								</xsl:for-each>
 								 <Details/>
@@ -507,56 +515,58 @@
 			<Details></Details>
 		</PrintDetails>
 	</PrintList>
-	<PrintList>
-	<xsl:variable name="Amnt"
-		select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Amnt)" />
-	<xsl:variable name="Falseflag"
-		select="java:java.lang.Boolean.parseBoolean('false')" />
-	<xsl:variable name="MainRisk"
-		select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
-		<PrintDesc></PrintDesc>
-		<PrintPages>2</PrintPages>
-		<VoucherType>2</VoucherType>
-		<PrintRecNum></PrintRecNum>
-		<PrintDetails>
-			<Details></Details>
-			<Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details><xsl:text>　　　</xsl:text>                                     现金价值表                     </Details>
-								 <Details/>
-								 <Details><xsl:text>　　　</xsl:text>保险合同号：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ContNo, 50)"/><xsl:text></xsl:text>基本保险金额： <xsl:value-of select="$Amnt"/></Details>
-								 <Details><xsl:text>　　　</xsl:text>险种名称：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($MainRisk/RiskName, 52)"/>货币单位：人民币/元</Details>
-								 <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
-								 <Details><xsl:text>　　　　　　</xsl:text>  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Details>
-							     <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
-								 <xsl:text></xsl:text>           <xsl:apply-templates select="/TranData/Body/Risk/CashValues"/>
-								 <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
-								 <Details><xsl:text>　　　</xsl:text>*现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Details>
-							     <Details><xsl:text>　　　</xsl:text>金价值额。投保后所做的各项变更可能使本表不再适用。</Details>
-							     <Details><xsl:text>　　　</xsl:text>*对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Details>
-							     <Details><xsl:text>　　　</xsl:text>公司来电垂询。</Details>				    
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-			<Details></Details>
-		</PrintDetails>
-	</PrintList>
+	<xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '011A0100'">
+		<PrintList>
+		<xsl:variable name="Amnt"
+			select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Amnt)" />
+		<xsl:variable name="Falseflag"
+			select="java:java.lang.Boolean.parseBoolean('false')" />
+		<xsl:variable name="MainRisk"
+			select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
+			<PrintDesc></PrintDesc>
+			<PrintPages>2</PrintPages>
+			<VoucherType>2</VoucherType>
+			<PrintRecNum></PrintRecNum>
+			<PrintDetails>
+				<Details></Details>
+				<Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details><xsl:text>　　　</xsl:text>                                     现金价值表                     </Details>
+									 <Details/>
+									 <Details><xsl:text>　　　</xsl:text>保险合同号：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ContNo, 50)"/><xsl:text></xsl:text>基本保险金额： <xsl:value-of select="$Amnt"/></Details>
+									 <Details><xsl:text>　　　</xsl:text>险种名称：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($MainRisk/RiskName, 52)"/>货币单位：人民币/元</Details>
+									 <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
+									 <Details><xsl:text>　　　　　　</xsl:text>  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Details>
+								     <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
+									 <xsl:text></xsl:text>           <xsl:apply-templates select="/TranData/Body/Risk/CashValues"/>
+									 <Details><xsl:text>　　　</xsl:text>------------------------------------------------------------------------------------------------</Details>
+									 <Details><xsl:text>　　　</xsl:text>*现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Details>
+								     <Details><xsl:text>　　　</xsl:text>金价值额。投保后所做的各项变更可能使本表不再适用。</Details>
+								     <Details><xsl:text>　　　</xsl:text>*对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Details>
+								     <Details><xsl:text>　　　</xsl:text>公司来电垂询。</Details>				    
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+									 <Details/>
+				<Details></Details>
+			</PrintDetails>
+		</PrintList>
+	</xsl:if>
 	<PrintList>
 	  <xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />
 	  <PrintDesc></PrintDesc>
@@ -576,12 +586,12 @@
 		 <Details><xsl:text>     </xsl:text><xsl:text>投保人: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Appnt/Name, 19)"/><xsl:text>银保经理姓名：      </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/AgentName, 18)"/><xsl:text>银保经理代码：</xsl:text><xsl:value-of select="/TranData/Body/AgentCode"/></Details>
 		 <xsl:choose><!-- 保驾护航产品（221201） 没有产品说明说明书，智赢C有 -->
 		   <xsl:when test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '221201' and /TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode!='221301'">
-		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单、现</xsl:text></Details>
-		     <Details><xsl:text>     </xsl:text><xsl:text>金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保提示</xsl:text></Details>
+		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单、</xsl:text></Details>
+		     <Details><xsl:text>     </xsl:text><xsl:text>保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保提示</xsl:text></Details>
 		     <Details><xsl:text>     </xsl:text><xsl:text>书和产品说明书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</xsl:text></Details>
 		   </xsl:when>
 		   <xsl:otherwise>
-		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单、现</xsl:text></Details>
+		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单</xsl:text></Details>
 		     <Details><xsl:text>     </xsl:text><xsl:text>金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保提示</xsl:text></Details>
 		     <Details><xsl:text>     </xsl:text><xsl:text>书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</xsl:text></Details>
 		   </xsl:otherwise>
@@ -634,7 +644,7 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template name="tran_idtype">
+	<xsl:template name="tran_idtype"><!-- 核心证件类型转换为贵州银行证件类型 -->
 		<xsl:param name="idtype"></xsl:param>
 		<xsl:choose>
 			<xsl:when test="$idtype = 0">0</xsl:when><!-- 身份证 -->

@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20161218/newccb/transfer_test/";
+		inXmlSource = "D:/task/20161222/newccb/transfer_test/";
 		String filename="";
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -130,12 +130,13 @@ public class XmlTransferTest {
 		//建设银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
-		XslPath="ContConfirmIn.xsl";
+//		XslPath="ContConfirmIn.xsl";
 //		XslPath="ContConfirmOut.xsl";
 //		XslPath="RePrintIn.xsl";
 //		XslPath="RePrintOut.xsl";
 //		XslPath="WriteOffIn.xsl";
 //		XslPath="WriteOffOut.xsl";
+		XslPath="PrintContOut.xsl";
 		//农业银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
@@ -153,7 +154,7 @@ public class XmlTransferTest {
 		inXmlSource=inXmlSource+filename;
 		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20161218/newccb/transfer_test/P53819152in_Std.xml";
+		String outXml = "D:/task/20161222/newccb/transfer_test/P53819182out_noStd.xml";
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
 		Document mLogDocument = JdomUtil.build(fis);

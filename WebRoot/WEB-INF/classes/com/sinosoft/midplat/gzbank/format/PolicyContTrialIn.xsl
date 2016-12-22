@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
-<xsl:template match="TXLife">
+<xsl:template match="TXLife"><!-- 贵州银行请求报文转换为核心请求报文 -->
 <TranData>
    <Head>
       <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
@@ -350,7 +350,7 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template name="tran_idtype">
+	<xsl:template name="tran_idtype"><!-- 贵州银行证件类型转换为核心证件类型 -->
 		<xsl:param name="idtype"></xsl:param>
 		<xsl:choose>
 			<xsl:when test="$idtype = 0">0</xsl:when><!-- 身份证 -->

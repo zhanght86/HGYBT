@@ -115,7 +115,7 @@
 				<FixTelDmstDstcNo><xsl:value-of select="PlchdFixTelDmstDstcNo" /></FixTelDmstDstcNo>
 				<!-- 投保人移动电话国际区号 -->
 				<MobileItlDstcNo><xsl:value-of select="PlchdMoveTelItlDstcNo" /></MobileItlDstcNo>
-				<!-- 投保人国家地区代码 -->
+				<!-- 投保人国家地区代码 --><!-- 映射为核心国籍字段 -->
 				<NationalityCode><xsl:value-of select="Plchd_Nat_Cd" /></NationalityCode>
 				<!-- 投保人地址 -->
 				<Address><xsl:value-of select="Plchd_Dtl_Adr_Cntnt" /></Address>
@@ -147,11 +147,11 @@
 				<YearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(Plchd_Yr_IncmAm)"/></YearSalary>
 				<!-- 投保人家庭年收入 -->
 				<FamilyYearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(Fam_Yr_IncmAm)"/></FamilyYearSalary>
-				<!-- 投保人与被保人关系代码 -->
+				<!-- 投保人与被保人关系代码 --><!-- 核心字段 -->
 				<RelaToInsured>
 					<xsl:call-template name="tran_relation">
 						<xsl:with-param name="RelaToInsured">
-							<xsl:value-of select="Plchd_And_Rcgn_ReTpCd" />
+							<xsl:value-of select="Plchd_And_Rcgn_ReTpCd" /><!-- 新建行投保人和被保人关系类型代码字段 -->
 						</xsl:with-param>
 					</xsl:call-template>
 				</RelaToInsured>				
@@ -197,7 +197,7 @@
 					<xsl:when test="Rcgn_Crdt_ExpDt=20991231" ><IdExpDate>99990101</IdExpDate></xsl:when>
 					<xsl:otherwise><IdExpDate><xsl:value-of select="Rcgn_Crdt_ExpDt"/></IdExpDate></xsl:otherwise>
 				</xsl:choose>
- 				<!-- 被保人国籍-->
+ 				<!-- 被保人国籍--><!-- 映射为核心国籍字段 -->
 				<Nationality>
 					<xsl:call-template name="tran_Nationality">
 					<xsl:with-param name="Nationality">
@@ -305,11 +305,11 @@
 							</xsl:call-template>
 						</Nationality>						
 						<!-- 受益人与被保人关系代码 -->
-						<RelaToInsured>
+						<RelaToInsured><!-- 核心字段 -->
 							<xsl:call-template name="tran_Bnfrelation">
 								<xsl:with-param name="BnfRelaToInsured">
 									<xsl:value-of
-										select="Benf_And_Rcgn_ReTpCd" />
+										select="Benf_And_Rcgn_ReTpCd" /><!-- 新建行受益人和被保人关系类型代码字段 -->
 								</xsl:with-param>
 							</xsl:call-template>
 						</RelaToInsured>
@@ -494,7 +494,7 @@
 		<xsl:if test="$GETLiRenteDrawMode = 12">Y</xsl:if>          <!--  12-年给付  -->
 	</xsl:template>
 	
-	<!-- 投被保人国籍 -->
+	<!-- 投被保人国籍 --><!-- 新建行请求报文国籍字段转换为核心请求报文国籍字段[新建行国籍：核心国籍] -->
 	<xsl:template name="tran_Nationality">
 		<xsl:param name="Nationality"></xsl:param>
 		<xsl:if test="$Nationality = 0156">CHN</xsl:if>
@@ -597,7 +597,7 @@
 	</xsl:template>
 
 	<!-- 投保人和被保人的 关系 -->
-	<xsl:template name="tran_relation">
+	<xsl:template name="tran_relation"><!-- 投保人与被保人关系、受益人与被保人关系转换一致 -->
 		<xsl:param name="RelaToInsured">00</xsl:param>
 		<xsl:choose>
 			<xsl:when test="$RelaToInsured = 0133043">00</xsl:when><!--本人 -->
@@ -621,7 +621,7 @@
 		</xsl:choose>
 	</xsl:template>
 	
-		<!-- 被保人和收益人的 关系 -->
+		<!-- 受益人和被保人的关系 --><!-- 投保人与被保人关系、受益人与被保人关系转换一致 -->
 	<xsl:template name="tran_Bnfrelation">
 		<xsl:param name="BnfRelaToInsured">00</xsl:param>
 		<xsl:choose>

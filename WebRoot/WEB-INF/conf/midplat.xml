@@ -148,24 +148,24 @@
 		<!-- 测试环境 -->
 		<!-- <service id="0" name="录单核保" address="http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
-		<!-- <service id="0" name="录单核保"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="0" name="录单核保"
-			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="0" name="录单核保"
+			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<!-- 本地环境 -->
 		<!-- <service id="1" name="收费签单" address="http://10.0.0.193:18080/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<!-- 测试环境 -->
 		<!-- <service id="1" name="收费签单" address="http://10.2.0.33:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
-		<!-- <service id="1" name="收费签单"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="1" name="收费签单"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			method="service" />
+		<!-- <service id="1" name="收费签单"
 			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
-			method="service" />	
+			method="service" />	 -->
 		<service id="2" name="新单回滚"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />

@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
-<xsl:template match="/TranData">
+<xsl:template match="/TranData"><!-- 核心应答报文转换为贵州银行应答报文 -->
 <TXLife>
 	<!-- 交易码-->
 	<TransNo></TransNo>

@@ -96,6 +96,8 @@ public class GZBankNetImpl extends SocketNetImpl {
 		mFuncFlagEle.setText(cFuncFlag);
 		Element mAgentCom = new Element(AgentCom);
 		Element mAgentCode = new Element(AgentCode);
+		Element mTranNo = new Element(TranNo);
+		mTranNo.setText(this.mTransRefGUID);
 		Element mHeadEle = new Element(Head);
 		mHeadEle.addContent(mClientIpEle);
 		mHeadEle.addContent(mTranComEle);
@@ -103,9 +105,8 @@ public class GZBankNetImpl extends SocketNetImpl {
 		mHeadEle.addContent(mAgentCom);
 		mHeadEle.addContent(mAgentCode);
 		mHeadEle.addContent(mInNoDoc);
-      
+		mHeadEle.addContent(mTranNo);
 		mRootEle.addContent(mHeadEle);
-	    
 	    JdomUtil.print(mXmlDoc);
 		cLogger.info("Out GZBankNetImpl.receive()!");
 		return mXmlDoc;

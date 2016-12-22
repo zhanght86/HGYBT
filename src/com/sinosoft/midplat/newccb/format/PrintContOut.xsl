@@ -83,7 +83,7 @@
 	      			<ENTITY>
 			        	<APP_ENTITY>
 							<!-- 主险险种编号 -->
-					        <MainIns_Cvr_ID><xsl:value-of select="/TranData/Body/Risk/MainRiskCode" /></MainIns_Cvr_ID>
+					        <MainIns_Cvr_ID><xsl:value-of select="/TranData/Body/Risk/MainRiskCode" /></MainIns_Cvr_ID><!--与建行字段对应的核心报文字段映射-->
 			        		<!-- 代理保险套餐编号 -->
 			        		<AgIns_Pkg_ID></AgIns_Pkg_ID>
 					        <!-- 保单失效日期-->
@@ -241,11 +241,11 @@
 								<Ret_Inf><xsl:text>　</xsl:text>保险费合计：<xsl:value-of select="TranData/Body/PremText"/>（RMB <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(TranData/Body/Prem)"/>元）</Ret_Inf>
 								<Ret_Inf><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Ret_Inf>
 								<xsl:choose><!-- 保驾护航产品（221201） 此处打印的是（此栏空白），不是红利领取方式 -->
-								<xsl:when test="Risk[RiskCode=MainRiskCode]/RiskCode != '221201'">
-								<Ret_Inf><xsl:text>　</xsl:text>红利领取方式：<xsl:apply-templates select="TranData/Body/Risk[RiskCode=MainRiskCode]/BonusGetMode" /></Ret_Inf>
+								<xsl:when test="Risk[RiskCode=MainRiskCode]/RiskCode != '221201'"><!--当险种的险种代码与主险代码相同、险种的险种代码不为221201时-->
+								<Ret_Inf><xsl:text>　</xsl:text>红利领取方式：<xsl:apply-templates select="TranData/Body/Risk[RiskCode=MainRiskCode]/BonusGetMode" /></Ret_Inf><!--输出红利领取方式：-->
 								</xsl:when>
-								<xsl:otherwise>
-								<Ret_Inf><xsl:text>　</xsl:text>（本栏空白）</Ret_Inf>
+								<xsl:otherwise><!--否则[险种的险种代码与主险代码不同、险种的险种代码为221201时]-->
+								<Ret_Inf><xsl:text>　</xsl:text>（本栏空白）</Ret_Inf><!--输出（本栏空白）-->
 								<Ret_Inf/>
 								</xsl:otherwise>
 								</xsl:choose>
@@ -259,11 +259,11 @@
 								<Ret_Inf><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Ret_Inf>
 								<Ret_Inf><xsl:text>　</xsl:text><xsl:text>特别约定：</xsl:text>
 																								<xsl:choose>
-																										<xsl:when test="$MainRisk/SpecContent = ''">
-																											<xsl:text>（无）</xsl:text>
+																										<xsl:when test="$MainRisk/SpecContent = ''"><!--主险种的规格内容属性(子节点)内容为空字符-->
+																											<xsl:text>（无）</xsl:text><!--输出（无）-->
 																										</xsl:when>
-																										<xsl:otherwise> 
-																											<xsl:value-of select="$MainRisk/SpecContent"/>
+																										<xsl:otherwise> <!--否则[主险种的规格内容属性(子节点)内容非空字符]-->
+																											<xsl:value-of select="$MainRisk/SpecContent"/><!--输出主险种的规格内容属性(子节点)内容-->
 																										</xsl:otherwise>
 																								</xsl:choose>
 								</Ret_Inf>
@@ -275,7 +275,7 @@
 								<Ret_Inf />
 								<Ret_Inf />
 								<Ret_Inf><xsl:text>　　　　　　　</xsl:text>------------------------------------------------------------------------------------------------</Ret_Inf>
-								<Ret_Inf><xsl:text>　　　　　　　</xsl:text>银行网点名称：<xsl:value-of select="TranData/Body/AgentComName"/></Ret_Inf>
+								<Ret_Inf><xsl:text>　　　　　　　</xsl:text>银行网点名称：<xsl:value-of select="TranData/Body/AgentComName"/></Ret_Inf><!--核心代理机构名称-->
 								<Ret_Inf><xsl:text>　　　　　　　</xsl:text>银行销售人员姓名/代码：<xsl:value-of select="TranData/Body/SaleName"/>/<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(TranData/Body/SaleStaff,44)"/>打印时间：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur10Date()"/><xsl:text> </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Time()"/></Ret_Inf>
 								<Ret_Inf><xsl:text>　　　　　　　</xsl:text>银保经理姓名：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(TranData/Body/AgentName, 54)"/>银保经理电话：<xsl:value-of select="TranData/Body/AgentPhone"/></Ret_Inf>
 								<Ret_Inf />
