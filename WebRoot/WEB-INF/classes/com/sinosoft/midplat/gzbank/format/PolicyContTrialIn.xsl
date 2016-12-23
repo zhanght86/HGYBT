@@ -44,7 +44,7 @@
 			</xsl:call-template>         
          </Sex>
          <Birthday><xsl:value-of select="PolicyHolder/BirthDate"/></Birthday>
-         <IDType>
+         <IDType><!-- 投保人证件类型 -->
          	<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="PolicyHolder/GovtIDTC" />
@@ -64,7 +64,7 @@
          <Phone><xsl:value-of select="PolicyHolder/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="PolicyHolder/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="PolicyHolder/Email"/></Email>
-         <JobCode>
+         <JobCode><!-- 投保人职业类别 -->
          	<xsl:call-template name="tran_jobcode">
 					<xsl:with-param name="jobcode">
 						<xsl:value-of
@@ -106,7 +106,7 @@
 			</xsl:call-template>    
          </Sex>
          <Birthday><xsl:value-of select="Insured/BirthDate"/></Birthday>
-         <IDType>
+         <IDType><!-- 被保人证件类型 -->
          	<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="Insured/GovtIDTC" />
@@ -128,7 +128,7 @@
          <Phone><xsl:value-of select="Insured/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="Insured/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="Insured/Email"/></Email>
-         <JobCode>
+         <JobCode><!-- 被保人职业类别 -->
          	<xsl:call-template name="tran_jobcode">
 					<xsl:with-param name="jobcode">
 						<xsl:value-of
@@ -148,12 +148,12 @@
       </Insured>
       <xsl:choose>
 		 <xsl:when test="BeneficiaryCount !='0'">
-		 	<xsl:variable name="count" 	select="BeneficiaryCount" />
-		 	<xsl:for-each select="(//*)[position() &lt;= $count]">
-		 		<xsl:variable name="tBeneficiary" select="concat('Beneficiary',position() )"></xsl:variable>
-		 		<xsl:for-each select="/TXLife/*">
-		 			<xsl:if test="local-name()= $tBeneficiary">
-		 			<xsl:variable name="tnode" select="node()" />
+		 	<xsl:variable name="count" 	select="BeneficiaryCount" /><!-- 身故受益人个数 -->
+		 	<xsl:for-each select="(//*)[position() &lt;= $count]"><!-- 选取所有节点相对于节点列表中所有选定节点的位置（或索引号）<=身故受益人个数 -->
+		 		<xsl:variable name="tBeneficiary" select="concat('Beneficiary',position() )"></xsl:variable><!-- 返回上下文节点在正在处理的节点集合中的位置，串连Beneficiary字符串，作为当前身故受益人 -->
+		 		<xsl:for-each select="/TXLife/*"><!--  根节点的所有子节点 -->
+		 			<xsl:if test="local-name()= $tBeneficiary"><!-- 本地名为当前身故受益人 -->
+		 			<xsl:variable name="tnode" select="node()" /><!-- 声明局部变量匹配除属性节点和根节点之外的其他任何节点[非根节点、属性节点的元素(根节点子元素)] -->
 			 		<Bnf>
 			 			<Type>1</Type> <!-- 身故受益人 -->
 						<Grade><xsl:value-of select="No " /></Grade>
@@ -170,7 +170,7 @@
 							<xsl:value-of
 								select="BirthDate" />
 						</Birthday>
-						<IDType>
+						<IDType><!-- 受益人证件类型 -->
 							<xsl:call-template name="tran_idtype">
 								<xsl:with-param name="idtype">
 									<xsl:value-of

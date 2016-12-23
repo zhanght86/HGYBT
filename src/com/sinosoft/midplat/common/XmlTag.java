@@ -97,7 +97,7 @@ public interface XmlTag {
 	String Appnt = "Appnt";
 	String Insured = "Insured";
 	String Bnf = "Bnf";
-	String Risk = "Risk";
+	String Risk = "Risk";//ÏÕÖÖ
 	
 	String ProposalPrtNo = "ProposalPrtNo";
 	String ContPrtNo = "ContPrtNo";

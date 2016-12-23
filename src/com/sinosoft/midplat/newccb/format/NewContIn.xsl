@@ -236,7 +236,7 @@
 				<!-- 被保人职业代码-->
 				<JobCode>3010101</JobCode>
 				<!-- 被保人年收入 -->
-				<RcgnYrIncmAm><xsl:value-of select="Rcgn_Yr_IncmAm" /></RcgnYrIncmAm>
+				<YearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(Rcgn_Yr_IncmAm)" /></YearSalary><!-- 建行转核心请求XSL，核心字段写成建行字段 -->
 				<!-- 未成年被保险人在其他保险公司累计身故保额 -->
 	            <CovSumAmt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Minr_Acm_Cvr)"/></CovSumAmt>
 				<!--客户风险承受能力代码-->

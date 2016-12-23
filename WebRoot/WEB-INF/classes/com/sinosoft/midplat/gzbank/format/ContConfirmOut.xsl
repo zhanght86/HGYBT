@@ -55,7 +55,7 @@
 	<BankNetCredentialsNo></BankNetCredentialsNo><!-- 银行保险兼业代理业务许可证 -->
 	<BankNetName></BankNetName><!-- 网点名称 -->
 	<PolicyHolder>
-		<GovtIDTC>
+		<GovtIDTC><!-- 投保人证件类型 -->
 			<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="Body/Appnt/IDType" />
@@ -80,7 +80,7 @@
 		<FullName>
 			<xsl:value-of select="Body/Appnt/Name"/>
 		</FullName>
-		<OccupationType>
+		<OccupationType><!-- 投保人职业代码 -->
 			<xsl:value-of select="Body/Appnt/JobCode"/>
 		</OccupationType>
 		<Line1>
@@ -109,7 +109,7 @@
 		<Email><xsl:value-of select="Body/Appnt/Email"/></Email>
 	</PolicyHolder>
 	<Insured>
-		<GovtIDTC>
+		<GovtIDTC><!-- 被保人证件类型 -->
 			<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="Body/Insured/IDType" />
@@ -134,7 +134,7 @@
 		<FullName>
 			<xsl:value-of select="Body/Insured/Name" />
 		</FullName>
-		<OccupationType>
+		<OccupationType><!-- 被保人职业代码 -->
 			<xsl:value-of select="Body/Insured/JobCode" />
 		</OccupationType>
 		<Line1>
@@ -175,7 +175,7 @@
 		<xsl:element name="{'Beneficiary'}{position()}">
 			<No><xsl:value-of select="Grade" /></No>
 			<BeneficiaryMethod>3</BeneficiaryMethod>
-			<GovtIDTC>
+			<GovtIDTC><!-- 受益人证件类型 -->
 				<xsl:call-template name="tran_idtype">
 					<xsl:with-param name="idtype">
 						<xsl:value-of select="IDType" />
@@ -187,7 +187,7 @@
 			<EffectDate></EffectDate>
 			<ExpireDate></ExpireDate>
 			<FullName><xsl:value-of select="Name" /></FullName>
-			<OccupationType></OccupationType>
+			<OccupationType></OccupationType><!-- 受益人职业代码 -->
 			<Line1></Line1>
 			<DialCode></DialCode>
 			<DialNumber></DialNumber>
