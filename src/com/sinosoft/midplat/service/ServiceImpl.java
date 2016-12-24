@@ -21,11 +21,13 @@ public class ServiceImpl implements Service, XmlTag
 {
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
+	//当前交易配置文件
 	protected final Element cThisBusiConf;
-	//输入标准报文
+	//标准输入报文
 	protected Document cInXmlDoc;
-	//输出标准报文
+	//标准输出报文
 	protected Document cOutXmlDoc;
+	//交易日志数据库操作类
 	protected TranLogDB cTranLogDB;
 	protected NodeMapSchema cNodeMapSchema;
 	
@@ -51,7 +53,7 @@ public class ServiceImpl implements Service, XmlTag
 
 	/**
 	 * 插入交易日志
-	 * @param pXmlDoc XML文档
+	 * @param pXmlDoc XML文档[标准输入报文]
 	 * @return 交易日志对象
 	 * @throws MidplatException
 	 */
@@ -59,61 +61,81 @@ public class ServiceImpl implements Service, XmlTag
 	{
 		//Into ServiceImpl.insertTranLog()...
 		//Into ServiceImpl.insertTranLog()...
-		//Into ServiceImpl.insertTranLog()...
+		//Into ServiceImpl.insertTranLog()...[进入业务处理实现类.插入交易日志...]
 		cLogger.debug("Into ServiceImpl.insertTranLog()...");//15:43:10,347 DEBUG service.ServiceImpl(54) - Into ServiceImpl.insertTranLog()...
 		//[Element: <TranData/>]
+		//[标准输入]报文根节点
 		Element mTranDataEle = pXmlDoc.getRootElement();
 		//[Element: <Head/>]
+		//[标准输入]报文头
 		Element mHeadEle = mTranDataEle.getChild(Head);
+		//[标准输入]报文体
 		//[Element: <Body/>]
 		Element mBodyEle = mTranDataEle.getChild(Body);
-
+		//交易日志数据库操作类实例[不传入连接对象，交易日志生成数据库操作对象]
 		TranLogDB mTranLogDB = new TranLogDB();
 		//LogNo:2240
+		//设置日志号为当前正在执行的线程对象的引用名称
 		mTranLogDB.setLogNo(Thread.currentThread().getName());
 		//进程名：2240
 		//进程名：10091
 		System.out.println("进程名：" + Thread.currentThread().getName());
 		//TranCom:9
+		//设置交易单位为[标准输入]报文头交易机构代码子元素文本
 		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
 		//ZoneNo:01
+		//设置地区代码为[标准输入]报文头省市代码子元素文本
 		mTranLogDB.setZoneNo(mHeadEle.getChildText("ZoneNo"));
 		//NodeNo:060150001222
+		//设置交易网点为[标准输入]报文头网点代码子元素文本
 		mTranLogDB.setNodeNo(mHeadEle.getChildText(NodeNo));
 		//TranNo:2016120800010
+		//设置交易流水号为[标准输入]报文头交易流水号子元素文本
 		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo));
 		//Operator:5201300002
+		//设置操作员为[标准输入]报文头柜员代码子元素文本
 		mTranLogDB.setOperator(mHeadEle.getChildText(TellerNo));
 		//FuncFlag:1012
+	   //设置交易类型为[标准输入]报文头交易类型子元素文本
 		mTranLogDB.setFuncFlag(mHeadEle.getChildText(FuncFlag));
 		//TranDate:20161108
+		//设置交易日期为[标准输入]报文头交易日期子元素文本
 		mTranLogDB.setTranDate(mHeadEle.getChildText(TranDate));
 		//TranTime:130101
+		//设置交易时间为[标准输入]报文头交易时间子元素文本
 		mTranLogDB.setTranTime(mHeadEle.getChildText(TranTime));
 		//InNoDoc:2240_3_1012_in.xml
+		//设置进入报文为[标准输入]报文头进入报文子元素文本
 		mTranLogDB.setInNoDoc(mHeadEle.getChildText("InNoDoc"));
 		//trancom:9
-		//trancom:13
+		//trancom:13[输出交易单位]
 		System.out.println("trancom:" + mTranLogDB.getTranCom());
 		//FuncFlag:1012
-		//FuncFlag:1012
+		//FuncFlag:1012[输出交易类型]
 		System.out.println("FuncFlag:" + mTranLogDB.getFuncFlag());
 		//mHeadEle.getChildText10091_3_1012_in.xml
-		//mHeadEle.getChildText2240_3_1012_in.xml
+		//mHeadEle.getChildText2240_3_1012_in.xml[输出进入报文]
 		System.out.println("mHeadEle.getChildText" + mHeadEle.getChildText("InNoDoc"));
 		//<Body> != null
+		//[标准输入]报文体非空
 		if (null != mBodyEle)
 		{
 			//ProposalPrtNo:210414132201550
+			//设置投保单(印刷)号为[标准输入]报文体投保单(印刷)号子元素文本
 			mTranLogDB.setProposalPrtNo(mBodyEle.getChildText(ProposalPrtNo));
 			//ContNo:null
+			//设置保单号为[标准输入]报文体保险单号子元素文本
 			mTranLogDB.setContNo(mBodyEle.getChildText(ContNo));
 			//OtherNo:""
+			//设置其他关联号为[标准输入]报文体保单合同印刷号 (单证) 子元素文本
 			mTranLogDB.setOtherNo(mBodyEle.getChildText(ContPrtNo));
 			//Bak2:null
+			//设置备用2为[标准输入]报文体旧日志号子元素文本
 			mTranLogDB.setBak2(mBodyEle.getChildText("OldLogNo"));
+			//交易日志数据库操作类实例备用2为空、空字符
 			if (null == mTranLogDB.getBak2() || "".equals(mTranLogDB.getBak2()))
 			{
+				//设置备用2为[标准输入]报文体旧交易流水号子元素文本
 				mTranLogDB.setBak2(mBodyEle.getChildText("OldTranNo"));
 			}
 		}
