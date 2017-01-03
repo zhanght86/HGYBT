@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GBK"?>
 <gzbank>
 	<bank id="09" insu="0099" />
-	<TranCom outcode="09">09</TranCom>
+	<TranCom outcode="09">09</TranCom><!-- 贵州银行交易机构代码 -->
 	<preNet>com.sinosoft.midplat.gzbank.net.GZBankNetImpl</preNet>
 
 	<business>

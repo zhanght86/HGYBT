@@ -151,11 +151,11 @@
 		<!-- <service id="0" name="录单核保"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
-		<!-- <service id="0" name="录单核保"
+		<service id="0" name="录单核保"
 			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
-		 <service id="0" name="录单核保" address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService" 
-			method="service" /> 
+			method="service" />
+		 <!-- <service id="0" name="录单核保" address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService" 
+			method="service" /> --> 
 		<!-- 本地环境 -->
 		<!-- <service id="1" name="收费签单" address="http://10.0.0.193:18080/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
@@ -321,7 +321,12 @@
 		<service id="63" name="建行试算保险产品（寿险）"
 			address="http://10.1.41.4:8080/bugfix/services/ServiceForBankInterfaceService"
 			method="service" />
-
-
+		<!-- 新建行非实时交易 -->
+		<service id="64" name="建行更新非实时业务状态"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" />
+		<service id="65" name="建行查询非实时缴费信息"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" />
 	</atomservices>
 </midplat>

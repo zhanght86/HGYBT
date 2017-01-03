@@ -58,9 +58,14 @@
          <Address><xsl:value-of select="PolicyHolder/Line1"/></Address>
          <ZipCode><xsl:value-of select="PolicyHolder/Zip"/></ZipCode>
          <IdExpDate><xsl:value-of select="PolicyHolder/ExpireDate"/></IdExpDate>
-         <Nationality><xsl:value-of select="PolicyHolder/Nation" /></Nationality>
+         <Nationality>
+         	<xsl:call-template name="tran_nationality">
+				<xsl:with-param name="nationality">
+					<xsl:value-of select="PolicyHolder/Nation" />
+				</xsl:with-param>
+			</xsl:call-template>
+         </Nationality>
          <AddressContent><xsl:value-of select="PolicyHolder/Line1"/></AddressContent>
-         <Nationality>CHN</Nationality>
          <Phone><xsl:value-of select="PolicyHolder/DialNumber"/></Phone>
          <Mobile><xsl:value-of select="PolicyHolder/MobileNumber"/></Mobile>
          <Email><xsl:value-of select="PolicyHolder/Email"/></Email>
@@ -115,11 +120,16 @@
          </IDType>
          <IDNo><xsl:value-of select="Insured/GovtID"/></IDNo>
          <IdExpDate><xsl:value-of select="Insured/ExpireDate"/></IdExpDate>
-         <Nationality><xsl:value-of select="Insured/Nation"/></Nationality>
+         <Nationality>
+         	<xsl:call-template name="tran_nationality">
+				<xsl:with-param name="nationality">
+					<xsl:value-of select="Insured/Nation" />
+				</xsl:with-param>
+			</xsl:call-template>
+         </Nationality>
          <AddressContent><xsl:value-of select="Insured/Line1"/></AddressContent>
          <FixTelDmstDstcNo></FixTelDmstDstcNo>
          <MobileItlDstcNo></MobileItlDstcNo>
-         <Nationality>CHN</Nationality>
          <Prov><xsl:value-of select="Insured/Province"/></Prov>
 		 <City><xsl:value-of select="Insured/County"/></City>
 		 <Zone></Zone>
@@ -467,6 +477,24 @@
 			<xsl:when test="$jobcode = 1024">4071203</xsl:when>
 			<xsl:when test="$jobcode = 1025">3020101</xsl:when>
 			<xsl:when test="$jobcode = 9999999"></xsl:when>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="tran_nationality">
+		<xsl:param name="nationality"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$nationality=CAN">CAN</xsl:when><!-- 加拿大 -->
+			<xsl:when test="$nationality=CN or $nationality=CHN">CHN</xsl:when><!-- 中国 -->
+			<xsl:when test="$nationality=TWN">TW</xsl:when><!-- 台湾 -->
+			<xsl:when test="$nationality=HKG">HK</xsl:when><!-- 香港 -->
+			<xsl:when test="$nationality=JAP">JAN</xsl:when><!-- 日本 -->
+			<xsl:when test="$nationality=KOR">KOR</xsl:when><!-- 韩国 -->
+			<xsl:when test="$nationality=MAC">MO</xsl:when><!-- 澳门 -->
+			<xsl:when test="$nationality=RUS">RUS</xsl:when><!-- 俄罗斯联邦 -->
+			<xsl:when test="$nationality=GBR">ENG</xsl:when><!-- 英国 -->
+			<xsl:when test="$nationality=USA">USA</xsl:when><!-- 美国 -->
+			<xsl:when test="$nationality=AUS">AUS</xsl:when><!-- 澳大利亚 -->
+			<xsl:otherwise>OTH</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 

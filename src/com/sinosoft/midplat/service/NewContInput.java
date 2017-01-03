@@ -31,23 +31,30 @@ public class NewContInput extends ServiceImpl {
 	public Document service(Document pInXmlDoc) {
 		//1481094634768[2016-12-07 03:10:34]
 		//1481095536926[2016-12-07 03:25:36]
+		//开始毫秒数
 		long mStartMillis = System.currentTimeMillis();
 		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
 		//[Element: <TranData/>]
+		//为标准输入报文成员变量赋值
 		cInXmlDoc = pInXmlDoc;
 		//[Element: <TranData/>]
+		//标准输入报文根节点
 		Element mRootEle = cInXmlDoc.getRootElement();
 		//[Element: <Body/>]
+		//标准输入报文体
 		Element mBodyEle = mRootEle.getChild(Body);
 		//[Element: <ProposalPrtNo/>]101019000003200
+		//投保单(印刷)号
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
 		//[Element: <ContPrtNo/>]
+		//保单合同印刷号[保单单证号]
 		String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
 		
 		try {
 			// System.out.println("--------------------------------------------------------------------------------------------------------");
 			// JdomUtil.print(cInXmlDoc);
+			//将标准输入报文插入到交易日志获取交易日志数据库操作类实例
 			cTranLogDB = insertTranLog(cInXmlDoc);
 
 			// cLogger.info("Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理");
@@ -79,7 +86,7 @@ public class NewContInput extends ServiceImpl {
 					.append(" and MakeTime>=")// and MakeTime>=
 					.append(DateUtil.get6Time(tCurCalendar)).toString();//1481188736202[171856]
 			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
-				//
+				//此保单数据正在处理中，请稍候！
 				throw new MidplatException("此保单数据正在处理中，请稍候！");
 			}
 			//0in_Std.xml

@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20161223/gz/transfer_test/";
+		inXmlSource = "D:/task/20161229/newccb/transfer_test/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -67,7 +67,7 @@ public class XmlTransferTest {
 //		filename="1009in_noStd.xml";
 		//贵州银行
 //		filename="9000102in_noStd.xml";//贵州银行保费试算请求
-		filename="9000102out_Std.xml";//核心保费试算应答
+//		filename="9000102out_Std.xml";//核心保费试算应答
 //		filename="9000103in_noStd.xml";//贵州银行缴费出单请求
 //		filename="9000103out_Std.xml";//核心缴费出单应答
 //		filename="9000801in_noStd.xml";
@@ -85,6 +85,8 @@ public class XmlTransferTest {
 //		filename="P53819142out_Std.xml";
 //		filename="P53819182in_noStd.xml";
 //		filename="P53819182out_Std.xml";
+//		filename="P538191E4in_noStd.xml";
+		filename="P538191E4out_Std.xml";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";
@@ -121,7 +123,7 @@ public class XmlTransferTest {
 //		XslPath="PolicyCancelConfirmOut.xsl";
 		//贵州银行
 //		XslPath="PolicyContTrialIn.xsl";//转换为核心请求报文XSL
-		XslPath="PolicyContTrialOut.xsl";
+//		XslPath="PolicyContTrialOut.xsl";
 //		XslPath="ContConfirmIn.xsl";
 //		XslPath="ContConfirmOut.xsl";//转换为贵州银行应答报文XSL
 //		XslPath="RePrintIn.xsl";
@@ -137,6 +139,8 @@ public class XmlTransferTest {
 //		XslPath="WriteOffIn.xsl";
 //		XslPath="WriteOffOut.xsl";
 //		XslPath="PrintContOut.xsl";
+//		XslPath="UpdateServiceStatusIn.xsl";
+		XslPath="UpdateServiceStatusOut.xsl";
 		//农业银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
@@ -152,9 +156,9 @@ public class XmlTransferTest {
 //		XslPath="RollbackIn.xsl";
 //		XslPath="RollbackOut.xsl";
 		inXmlSource=inXmlSource+filename;
-		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/gzbank/format/";
+		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20161222/newccb/transfer_test/9000102out_noStd.xml";
+		String outXml = "D:/task/20161229/newccb/transfer_test/P538191E4out_noStd.xml";
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
 		Document mLogDocument = JdomUtil.build(fis);

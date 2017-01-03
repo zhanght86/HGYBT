@@ -3,17 +3,21 @@
 	<xsl:output method="xml" indent="yes"/>
 		<xsl:template match="TX">
 			<TranData>
+				<Head>
+					<ServiceId>64</ServiceId>
+					<TranCom><xsl:value-of select="Head/TranCom"/></TranCom>
+				</Head>
 				<BaseInfo>
 					<!--银行编号 -->
-					<BankCode>003</BankCode>
+					<BankCode><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCBIns_ID" /></BankCode>
 				    <!--交易日期 -->
 					<BankDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,0,8)" /></BankDate>
 					<!--交易时间 -->
 					<BankTime><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,8,14)" /></BankTime>
 					<!-- 一级分行号(地区编号) -->
-					<ZoneNo></ZoneNo>
+					<ZoneNo>1</ZoneNo>
 					<!-- 保险客户名单提供地区编号(分支编号) -->
-					<BrNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCBIns_ID" /></BrNo>
+					<BrNo>1</BrNo>
 					<!--柜员号 -->
 					<TellerNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCB_EmpID" /></TellerNo>
 					<!-- 交易流水号 -->
@@ -48,4 +52,4 @@
  			</LCConts>
 	</xsl:template>
 
-</xsl:stylesheet>
+</xsl:stylesheet> 

@@ -1,0 +1,3234 @@
+11:39:59,501 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@53706eb7
+11:39:59,672 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:39:59,722 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+11:39:59,722 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+11:52:21,453 DEBUG common.SysInfo(41) - MIDPLAT_HOME = null
+14:00:33,733 DEBUG common.SysInfo(57) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+14:02:07,521 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+14:22:03,224 INFO common.XmlConf(75) - conf file modified at (2016-12-23 11:26:44,567) and length=25215 bytes!
+14:31:54,942 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+14:43:38,660 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:44:45,516 INFO common.Log4jPrint(20) - End reset System.out!
+14:46:20,284 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:46:20,314 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+14:46:20,339 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+14:46:20,408 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+14:46:20,419 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:51:55,199 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+14:51:55,208 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+14:51:55,342 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+14:51:55,343 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+14:51:55,351 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:51:55,392 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+14:51:55,393 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+14:51:55,397 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+14:51:55,427 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+14:51:55,428 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+14:51:55,430 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:51:55,512 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+14:51:55,518 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+14:51:55,512 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+14:55:15,460 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@78ba6c13
+14:55:15,468 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:55:15,471 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+14:55:15,472 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+14:55:15,473 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:55:15,474 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+14:55:15,474 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+14:55:15,477 INFO common.XmlConf(80) - conf file modified at (2016-12-23 11:26:44,567) and length=25215 bytes!
+14:55:15,537 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+14:55:15,546 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:55:15,547 INFO common.Log4jPrint(20) - End reset System.out!
+14:55:15,549 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:55:15,549 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+14:55:15,550 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+14:55:15,553 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+14:55:15,553 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:55:15,568 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+14:55:15,569 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+14:55:15,577 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+14:55:15,578 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+14:55:15,578 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:55:15,584 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+14:55:15,584 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+14:55:15,585 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+14:55:15,590 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+14:55:15,590 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+14:55:15,590 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:55:15,595 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+14:55:15,595 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+14:55:15,595 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+15:01:53,668 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@78ba6c13
+15:01:53,676 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:01:53,679 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:01:53,680 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:01:53,682 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:01:53,683 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:01:53,683 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:01:53,686 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+15:01:53,755 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:01:53,763 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:01:53,764 INFO common.Log4jPrint(20) - End reset System.out!
+15:01:53,766 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:01:53,767 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:01:53,768 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+15:01:53,770 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:01:53,771 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:01:53,787 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+15:01:53,787 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+15:01:53,796 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+15:01:53,797 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+15:01:53,797 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:01:53,802 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+15:01:53,802 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+15:01:53,802 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+15:01:53,807 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+15:01:53,807 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+15:01:53,809 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:01:53,813 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+15:01:53,814 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+15:01:53,814 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+15:02:08,136 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+15:02:08,137 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+15:02:08,137 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+15:02:08,140 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+15:02:08,140 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+15:02:08,175 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+15:02:08,237 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+15:02:08,279 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009492</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20170101</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:02:08,284 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:02:08,285 INFO test.GZBankTest(60) - 消息头长度为:19
+15:02:09,310 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+15:02:09,366 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+15:02:09,446 INFO midplat.Ybt4Socket(33) - TranLogNo:13253
+15:02:09,446 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:02:09,487 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:02:09,487 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:02:09,488 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:02:09,503 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:02:09,504 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:02:09,504 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:02:09,635 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+15:02:09,636 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/
+15:02:09,686 INFO common.SaveMessage(94) - 13256_3_1012_in.xml IO输出耗时:0.05s
+15:02:09,686 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13256_3_1012_in.xml
+15:02:09,687 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:02:09,688 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:02:09,712 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:02:09,758 INFO format.PolicyContTrialInXsl(36) - Into PolicyContTrialInXsl.load()...
+15:02:09,758 INFO format.PolicyContTrialInXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl...
+15:02:09,761 INFO common.XslCache(70) - conf file modified at (2016-12-23 14:47:07,983) and length=20548 bytes!
+15:02:10,365 INFO format.PolicyContTrialInXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl!
+15:02:10,365 INFO format.PolicyContTrialInXsl(68) - Out PolicyContTrialInXsl.load()!
+15:02:10,565 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:02:10,565 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:02:10,595 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:02:10,596 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:02:10,668 INFO common.Log4jPrint(20) - 进程名：13256
+15:02:10,669 INFO common.Log4jPrint(20) - trancom:9
+15:02:10,669 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:02:10,670 INFO common.Log4jPrint(20) - mHeadEle.getChildText13256_3_1012_in.xml
+15:02:10,714 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:02:10,715 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13256,9,'02','09990901','000000009492','01350',1012,20161223,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13256_3_1012_in.xml',20161224,150210,20161224,150210,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:02:10,799 ERROR service.ServiceImpl(167) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+15:02:10,804 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:172)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:51)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:02:10,871 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:02:10,872 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:02:10,892 INFO format.PolicyContTrialOutXsl(36) - Into PolicyContTrialInXsl.load()...
+15:02:10,893 INFO format.PolicyContTrialOutXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
+15:02:10,894 INFO common.XslCache(70) - conf file modified at (2016-12-22 13:14:26,018) and length=978 bytes!
+15:02:10,927 INFO format.PolicyContTrialOutXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
+15:02:10,928 INFO format.PolicyContTrialOutXsl(68) - Out PolicyContTrialInXsl.load()!
+15:02:10,932 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:02:10,933 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:02:10,936 INFO common.SaveMessage(94) - 13256_6_1012_out.xml IO输出耗时:0.0020s
+15:02:10,937 INFO net.GZBankNetImpl(135) - 保存报文完毕！13256_6_1012_out.xml
+15:02:10,938 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009492</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009492</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:02:10,940 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:02:10,940 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:02:10,941 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:02:10,942 INFO test.GZBankTest(81) - 报文字节 长度为:448
+15:02:10,943 INFO test.GZBankTest(82) - 交易码为:9000102
+15:02:10,944 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:02:10,947 INFO test.GZBankTest(85) - 交易结束，共耗费：2.659秒,2659毫秒
+15:02:10,956 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009492</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009492</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:02:10,980 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:02:10,981 INFO common.Log4jPrint(20) - 000000009492
+15:02:10,981 INFO common.Log4jPrint(20) - 000000009492
+15:02:10,982 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009492'
+15:02:11,014 INFO common.Log4jPrint(20) - -------------------------
+15:02:11,015 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:02:11,015 INFO common.Log4jPrint(20) - -------------------------
+15:02:11,046 INFO common.Log4jPrint(20) - i=1
+15:02:11,078 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:02:11,079 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:02:11,079 INFO common.Log4jPrint(20) - 000000009492
+15:02:11,079 INFO common.Log4jPrint(20) - 000000009492
+15:02:11,079 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=18522,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009492',Operator='01350',FuncFlag=1012,TranDate=20161223,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom='0901010001',AgentCode='5201300004',AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom='86520101',RCode=0,RText='交易成功！',UsedTime=1,AppntName='王超廷',Bak1='18.254.30.2',Bak2=null,Bak3='1.56',Bak4=null,Bak5=null,InNoDoc='18522_378_1012_in.xml',MakeDate=20170101,InDoc=null,OutDoc=null,MakeTime=15329,ModifyDate=20170101,ModifyTime=15331,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13256_6_1012_out.xml' where TranNo='000000009492'
+15:02:11,112 INFO midplat.Ybt4Socket(143) - 处理总耗时：1.625s
+15:02:11,113 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:02:46,382 INFO midplat.Ybt4Socket(33) - TranLogNo:13259
+15:02:46,383 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:02:46,383 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:02:46,384 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:02:46,384 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:02:46,513 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20170101</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:02:46,516 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:02:46,517 INFO test.GZBankTest(60) - 消息头长度为:19
+15:02:46,518 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:02:46,518 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:02:46,518 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:02:46,525 INFO common.SaveMessage(94) - 13262_9_1012_in.xml IO输出耗时:0.0030s
+15:02:46,525 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13262_9_1012_in.xml
+15:02:46,527 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:02:46,527 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:02:46,527 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:02:46,546 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:02:46,547 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:02:46,547 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:02:46,547 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:02:46,547 INFO common.Log4jPrint(20) - 进程名：13262
+15:02:46,548 INFO common.Log4jPrint(20) - trancom:9
+15:02:46,548 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:02:46,548 INFO common.Log4jPrint(20) - mHeadEle.getChildText13262_9_1012_in.xml
+15:02:46,582 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:02:46,583 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13262,9,'02','09990901','000000009493','01350',1012,20161223,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13262_9_1012_in.xml',20161224,150246,20161224,150246,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:02:46,598 DEBUG service.ServiceImpl(176) - Out ServiceImpl.insertTranLog()!
+15:02:46,600 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101019000006590' and MakeDate>=20161224 and MakeTime>=145926
+15:02:46,730 INFO common.RuleXsl(155) - Into RuleXsl.load()...
+15:02:46,731 INFO common.RuleXsl(158) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl...
+15:02:46,733 INFO common.XslCache(70) - conf file modified at (2016-12-19 10:26:46,664) and length=15623 bytes!
+15:02:46,807 INFO common.RuleXsl(165) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl!
+15:02:46,807 INFO common.RuleXsl(179) - Out RuleXsl.load()!
+15:02:46,808 INFO common.RuleXml(198) - Into RuleXml.load()...
+15:02:46,809 INFO common.RuleXml(201) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml...
+15:02:46,810 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=9884 bytes!
+15:02:46,826 INFO common.RuleXml(208) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml!
+15:02:46,826 INFO common.RuleXml(215) - Out RuleXml.load()!
+15:02:46,827 INFO common.RuleParser(49) - Into RuleParser.check()...
+15:02:46,827 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+15:02:46,846 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:02:46,856 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:02:46,857 INFO common.Log4jPrint(20) - 返回的结果是:0
+15:02:46,859 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:02:46,863 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules><msg>投保日期必须为当天</msg></rules>
+
+15:02:46,863 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 投保日期必须为当天
+	at com.sinosoft.midplat.common.RuleParser.checkByXsl(RuleParser.java:79)
+	at com.sinosoft.midplat.common.RuleParser.check(RuleParser.java:53)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:88)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:02:46,892 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:02:46,892 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:02:46,892 INFO common.Log4jPrint(20) - 000000009493
+15:02:46,893 INFO common.Log4jPrint(20) - 000000009493
+15:02:46,893 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13262,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009493',Operator='01350',FuncFlag=1012,TranDate=20161223,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=0,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='13262_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150246,ModifyDate=20161224,ModifyTime=150246,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc=null where TranNo='000000009493'
+15:02:46,908 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:02:46,909 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:02:46,910 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:02:46,911 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:02:46,915 INFO common.SaveMessage(94) - 13262_12_1012_out.xml IO输出耗时:0.0030s
+15:02:46,916 INFO net.GZBankNetImpl(135) - 保存报文完毕！13262_12_1012_out.xml
+15:02:46,917 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009493</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>投保日期必须为当天</ResultInfoDesc>
+</TXLife>
+
+
+15:02:46,919 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:02:46,920 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:02:46,920 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:02:46,921 INFO test.GZBankTest(81) - 报文字节 长度为:452
+15:02:46,923 INFO test.GZBankTest(82) - 交易码为:9000102
+15:02:46,924 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:02:46,927 INFO test.GZBankTest(85) - 交易结束，共耗费：0.408秒,408毫秒
+15:02:46,935 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161223</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009493</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>投保日期必须为当天</ResultInfoDesc>
+</TXLife>
+
+
+15:02:46,957 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:02:46,957 INFO common.Log4jPrint(20) - 000000009493
+15:02:46,957 INFO common.Log4jPrint(20) - 000000009493
+15:02:46,969 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009493'
+15:02:46,998 INFO common.Log4jPrint(20) - -------------------------
+15:02:46,999 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:02:46,999 INFO common.Log4jPrint(20) - -------------------------
+15:02:47,011 INFO common.Log4jPrint(20) - i=1
+15:02:47,090 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:02:47,091 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:02:47,092 INFO common.Log4jPrint(20) - 000000009493
+15:02:47,093 INFO common.Log4jPrint(20) - 000000009493
+15:02:47,093 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13262,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009493',Operator='01350',FuncFlag=1012,TranDate=20161223,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=0,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='0.627',Bak4=null,Bak5=null,InNoDoc='13262_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150246,ModifyDate=20161224,ModifyTime=150246,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13262_12_1012_out.xml' where TranNo='000000009493'
+15:02:47,119 INFO midplat.Ybt4Socket(143) - 处理总耗时：0.735s
+15:02:47,120 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:03:29,511 INFO midplat.Ybt4Socket(33) - TranLogNo:13265
+15:03:29,512 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:03:29,512 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:03:29,512 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:03:29,513 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:03:29,643 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:03:29,646 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:03:29,646 INFO test.GZBankTest(60) - 消息头长度为:19
+15:03:29,647 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:03:29,648 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:03:29,648 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:03:29,687 INFO common.SaveMessage(94) - 13268_15_1012_in.xml IO输出耗时:0.032s
+15:03:29,687 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13268_15_1012_in.xml
+15:03:29,688 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:03:29,689 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:03:29,689 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:03:29,707 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:03:29,708 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:03:29,708 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:03:29,709 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:03:29,709 INFO common.Log4jPrint(20) - 进程名：13268
+15:03:29,709 INFO common.Log4jPrint(20) - trancom:9
+15:03:29,710 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:03:29,710 INFO common.Log4jPrint(20) - mHeadEle.getChildText13268_15_1012_in.xml
+15:03:29,742 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:03:29,742 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13268,9,'02','09990901','000000009493','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13268_15_1012_in.xml',20161224,150329,20161224,150329,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:03:29,758 ERROR service.ServiceImpl(167) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+15:03:29,758 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:172)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:51)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:03:29,758 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:03:29,758 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:03:29,760 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:03:29,760 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:03:29,787 INFO common.SaveMessage(94) - 13268_18_1012_out.xml IO输出耗时:0.0010s
+15:03:29,787 INFO net.GZBankNetImpl(135) - 保存报文完毕！13268_18_1012_out.xml
+15:03:29,787 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009493</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:03:29,788 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:03:29,788 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:03:29,788 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:03:29,789 INFO test.GZBankTest(81) - 报文字节 长度为:448
+15:03:29,789 INFO test.GZBankTest(82) - 交易码为:9000102
+15:03:29,789 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:03:29,790 INFO test.GZBankTest(85) - 交易结束，共耗费：0.143秒,143毫秒
+15:03:29,793 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009493</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009493</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:03:29,846 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:03:29,846 INFO common.Log4jPrint(20) - 000000009493
+15:03:29,846 INFO common.Log4jPrint(20) - 000000009493
+15:03:29,846 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009493'
+15:03:29,865 INFO common.Log4jPrint(20) - -------------------------
+15:03:29,866 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:03:29,866 INFO common.Log4jPrint(20) - -------------------------
+15:03:29,875 INFO common.Log4jPrint(20) - i=1
+15:03:29,903 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:03:29,904 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:03:29,905 INFO common.Log4jPrint(20) - 000000009493
+15:03:29,906 INFO common.Log4jPrint(20) - 000000009493
+15:03:29,906 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13262,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009493',Operator='01350',FuncFlag=1012,TranDate=20161223,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=0,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='0.363',Bak4=null,Bak5=null,InNoDoc='13262_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150246,ModifyDate=20161224,ModifyTime=150246,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13268_18_1012_out.xml' where TranNo='000000009493'
+15:03:29,927 INFO midplat.Ybt4Socket(143) - 处理总耗时：0.415s
+15:03:29,928 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:03:43,272 INFO midplat.Ybt4Socket(33) - TranLogNo:13271
+15:03:43,273 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:03:43,273 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:03:43,273 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:03:43,273 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:03:43,410 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009494</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:03:43,413 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:03:43,413 INFO test.GZBankTest(60) - 消息头长度为:19
+15:03:43,414 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:03:43,415 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:03:43,415 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:03:43,423 INFO common.SaveMessage(94) - 13274_21_1012_in.xml IO输出耗时:0.0040s
+15:03:43,423 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13274_21_1012_in.xml
+15:03:43,424 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:03:43,425 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:03:43,426 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:03:43,438 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:03:43,438 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:03:43,438 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:03:43,439 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:03:43,439 INFO common.Log4jPrint(20) - 进程名：13274
+15:03:43,439 INFO common.Log4jPrint(20) - trancom:9
+15:03:43,439 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:03:43,440 INFO common.Log4jPrint(20) - mHeadEle.getChildText13274_21_1012_in.xml
+15:03:43,475 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:03:43,475 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13274,9,'02','09990901','000000009494','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13274_21_1012_in.xml',20161224,150343,20161224,150343,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:03:43,491 ERROR service.ServiceImpl(167) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+15:03:43,492 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:172)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:51)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:03:43,492 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:03:43,492 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:03:43,493 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:03:43,494 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:03:43,495 INFO common.SaveMessage(94) - 13274_24_1012_out.xml IO输出耗时:0.0010s
+15:03:43,495 INFO net.GZBankNetImpl(135) - 保存报文完毕！13274_24_1012_out.xml
+15:03:43,495 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009494</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009494</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:03:43,496 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:03:43,496 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:03:43,496 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:03:43,497 INFO test.GZBankTest(81) - 报文字节 长度为:448
+15:03:43,497 INFO test.GZBankTest(82) - 交易码为:9000102
+15:03:43,498 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:03:43,499 INFO test.GZBankTest(85) - 交易结束，共耗费：0.084秒,84毫秒
+15:03:43,502 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009494</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009494</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:03:43,530 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:03:43,530 INFO common.Log4jPrint(20) - 000000009494
+15:03:43,530 INFO common.Log4jPrint(20) - 000000009494
+15:03:43,531 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009494'
+15:03:43,553 INFO common.Log4jPrint(20) - -------------------------
+15:03:43,554 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:03:43,554 INFO common.Log4jPrint(20) - -------------------------
+15:03:43,564 INFO common.Log4jPrint(20) - i=1
+15:03:43,594 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:03:43,594 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:03:43,594 INFO common.Log4jPrint(20) - 000000009494
+15:03:43,594 INFO common.Log4jPrint(20) - 000000009494
+15:03:43,595 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13232,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009494',Operator='01350',FuncFlag=1012,TranDate=20161223,TranTime=8137,ProposalPrtNo='101019000006707',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=3,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='0.291',Bak4=null,Bak5=null,InNoDoc='13232_3_1012_in.xml',MakeDate=20161223,InDoc=null,OutDoc=null,MakeTime=112857,ModifyDate=20161223,ModifyTime=112900,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13274_24_1012_out.xml' where TranNo='000000009494'
+15:03:43,617 INFO midplat.Ybt4Socket(143) - 处理总耗时：0.344s
+15:03:43,617 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:04:05,776 INFO midplat.Ybt4Socket(33) - TranLogNo:13277
+15:04:05,777 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:04:05,777 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:04:05,777 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:04:05,778 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:04:05,917 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:04:05,920 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:04:05,921 INFO test.GZBankTest(60) - 消息头长度为:19
+15:04:05,922 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:04:05,922 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:04:05,922 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:04:05,957 INFO common.SaveMessage(94) - 13280_27_1012_in.xml IO输出耗时:0.031s
+15:04:05,957 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13280_27_1012_in.xml
+15:04:05,958 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:04:05,959 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:04:05,959 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:04:05,971 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:04:05,971 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:04:05,971 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:04:05,972 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:04:05,972 INFO common.Log4jPrint(20) - 进程名：13280
+15:04:05,972 INFO common.Log4jPrint(20) - trancom:9
+15:04:05,972 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:04:05,973 INFO common.Log4jPrint(20) - mHeadEle.getChildText13280_27_1012_in.xml
+15:04:06,019 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:04:06,020 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13280,9,'02','09990901','000000009514','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13280_27_1012_in.xml',20161224,150405,20161224,150405,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:04:06,051 DEBUG service.ServiceImpl(176) - Out ServiceImpl.insertTranLog()!
+15:04:06,053 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101019000006590' and MakeDate>=20161224 and MakeTime>=150046
+15:04:06,151 INFO common.RuleParser(49) - Into RuleParser.check()...
+15:04:06,151 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+15:04:06,162 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:04:06,164 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:04:06,165 INFO common.Log4jPrint(20) - 返回的结果是:0
+15:04:06,168 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:04:06,171 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+15:04:06,172 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+15:04:06,172 INFO common.RuleParser(62) - Out RuleParser.check()!
+15:04:06,220 INFO net.CallWebsvcAtomSvc(47) - Into CallWebsvcAtomSvc.service()...
+15:04:06,224 INFO common.SaveMessage(94) - 13280_30_0_inSvc.xml IO输出耗时:0.0040s
+15:04:06,225 INFO net.CallWebsvcAtomSvc(64) - 保存报文完毕！13280_30_0_inSvc.xml
+15:04:06,226 INFO common.Log4jPrint(20) - start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+15:04:06,227 INFO net.CallWebsvcAtomSvc(75) - start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+15:04:07,105 WARN dialect.StAXDialectDetector(177) - Unable to determine dialect of the StAX implementation at jar:file:/F:/MyEclipse/Common/plugins/com.genuitec.eclipse.ws.xfire_9.0.0.me201211011550/lib/webservices-rt.jar!/
+15:04:09,218 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:04:09,259 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:04:09,260 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:04:09,260 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:04:09,260 DEBUG httpclient.Wire(70) - >> "Host: 10.0.1.160:8080[\r][\n]"
+15:04:09,261 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:04:09,261 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:04:09,327 DEBUG httpclient.Wire(70) - >> "800[\r][\n]"
+15:04:09,328 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTYxMjI0PC9UcmFuRGF0ZT48VHJhblRpbWU+MDA4MTM3PC9UcmFuVGltZT48Wm9uZU5vPjAyPC9ab25lTm8+PE5vZGVObz4wOTk5MDkwMTwvTm9kZU5vPjxCYW5rQ29kZT4wMTA1PC9CYW5rQ29kZT48VGVsbGVyTm8+MDEzNTA8L1RlbGxlck5vPjxUcmFuTm8+MDAwMDAwMDA5NTE0PC9UcmFuTm8+PENsaWVudElwPjEyNy4wLjAuMTwvQ2xpZW50SXA+PFRyYW5Db20+MDk8L1RyYW5Db20+PEZ1bmNGbGFnPjEwMTI8L0Z1bmNGbGFnPjxBZ2VudENvbSAvPjxBZ2VudENvZGUgLz48SW5Ob0RvYz4xMzI4MF8yN18xMDEyX2luLnhtbDwvSW5Ob0RvYz48U2VydmljZUlkPjA8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PFNhbGVDaGFubmVsPjA8L1NhbGVDaGFubmVsPjxTYWxlTmFtZT603uitPC9TYWxlTmFtZT48U2FsZVN0YWZmPjUyMDEzMDAwMDQ8L1NhbGVTdGFmZj48U2FsZUNlcnRObz4xMTEyMjI8L1NhbGVDZXJ0Tm8+PFByb3Bvc2FsUHJ0Tm8+MTAxMDE5MDAwMDA2NTkwPC9Qcm9wb3NhbFBydE5vPjxDb250UHJ0Tm8gLz48UG9sQXBwbHlEYXRlPjIwMTYxMjI0PC9Qb2xBcHBseURhdGU+PEFjY05vPjYyMTQ2MDAxODAwMDAwMDA0OTI8L0FjY05vPjxBY2NOYW1lPs31s6zNojwvQWNjTmFtZT48UGF5TW9kZT5CPC9QYXlNb2RlPjxHZXRQb2xNb2RlPjE8L0dldFBvbE1vZGU+PEpvYk5vdGljZSAvPjxIZWFsdGhOb3RpY2U+TjwvSGVhbHRoTm90aWNlPjxBcHBudD48TmFtZT7N9bOszaI8L05hbWU+PFNleD4wPC9TZXg+PEJpcnRoZGF5PjE5NzcwMjIyPC9CaXJ0aGRheT48SURUeXBlPjA8L0lEVHlwZT48SURObz4yMzAxMDExOTc3MDIyMjY1Mzg8L0lETm8+PFByb3YgLz48Q2l0eSAvPjxab25lIC8+PEFkZHJlc3M+utrB+r2tyqG5/rb7sfXK0MrQz73H+DwvQWRkcmVzcz48WmlwQ29kZT40NTYyMTI8L1ppcENvZGU+PElkRXhwRGF0ZSAvPjxOYXRpb25hbGl0eT5DTjwvTmF0aW9uYWxpdHk+PEFkZHJlc3NDb250ZW50Prrawfq9rcqhuf62+7H1ytDK0M+9x/g8L0FkZHJlc3NDb250ZW50PjxOYXRpb25hbGl0eT5DSE48L05hdGlvbmFsaXR5PjxQaG9uZSAvPjxNb2JpbGU+MTM1MjMyMzEyMzI8L01vYmlsZT48RW1haWwgLz48Sm9iQ29kZT4yMTI5OTAxPC9Kb2JDb2RlPjxTdGF0dXJlIC8+PFdlaWdodCAvPjxNYXJpdGFsU3RhdHVzIC8+PFllYXJTYWxhcnk+NTwvWWVhclNhbGFyeT48RmFtaWx5WWVhclNhbGFyeT4wPC9GYW1pbHlZZWFyU2FsYXJ5PjxSZWxhVG9JbnN1cmVkPjAwPC9SZWxhVG9JbnN1cmVkPjxEZW5UeXBlPjE8L0RlblR5cGU+PC9BcHBudD48SW5zdXJlZD48TmFtZT7N9bOszaI8L05hbWU+PFNleD4wPC9TZXg+PEJpcnRoZGF5PjE5NzcwMjIyPC9CaX"
+15:04:09,328 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:04:09,329 DEBUG httpclient.Wire(70) - >> "6b1[\r][\n]"
+15:04:09,329 DEBUG httpclient.Wire(84) - >> "J0aGRheT48SURUeXBlPjA8L0lEVHlwZT48SURObz4yMzAxMDExOTc3MDIyMjY1Mzg8L0lETm8+PElkRXhwRGF0ZSAvPjxOYXRpb25hbGl0eT5DTjwvTmF0aW9uYWxpdHk+PEFkZHJlc3NDb250ZW50Prrawfq9rcqhuf62+7H1ytDK0M+9x/g8L0FkZHJlc3NDb250ZW50PjxGaXhUZWxEbXN0RHN0Y05vIC8+PE1vYmlsZUl0bERzdGNObyAvPjxOYXRpb25hbGl0eT5DSE48L05hdGlvbmFsaXR5PjxQcm92IC8+PENpdHkgLz48Wm9uZSAvPjxBZGRyZXNzPrrawfq9rcqhuf62+7H1ytDK0M+9x/g8L0FkZHJlc3M+PFppcENvZGU+NDU2MjEyPC9aaXBDb2RlPjxQaG9uZSAvPjxNb2JpbGU+MTM1MjMyMzEyMzI8L01vYmlsZT48RW1haWwgLz48Sm9iQ29kZT4yMTI5OTAxPC9Kb2JDb2RlPjxTdGF0dXJlIC8+PFdlaWdodCAvPjxNYXJpdGFsU3RhdHVzIC8+PFllYXJTYWxhcnk+NTwvWWVhclNhbGFyeT48Umlza0Fzc2Vzc21lbnRSZXN1bHQgLz48Umlza0Fzc2Vzc21lbnRFbmREYXRlIC8+PFByZW1pdW1CdWRnZXQgLz48L0luc3VyZWQ+PEJuZj48VHlwZT4xPC9UeXBlPjxHcmFkZT4xPC9HcmFkZT48TmFtZT7V1Pat5qs8L05hbWU+PFNleD4xPC9TZXg+PEJpcnRoZGF5PjE5ODgwNTE1PC9CaXJ0aGRheT48SURUeXBlPjA8L0lEVHlwZT48SURObz4yMTAxMDExOTg4MDUxNTE1Njg8L0lETm8+PElkRXhwRGF0ZSAvPjxMb3Q+MTAwPC9Mb3Q+PFJlbGFUb0luc3VyZWQgLz48QmVuZWZpY1R5cGU+TjwvQmVuZWZpY1R5cGU+PC9CbmY+PFJpc2s+PFJpc2tDb2RlPjAxMUEwMTAwPC9SaXNrQ29kZT48TWFpblJpc2tDb2RlPjAxMUEwMTAwPC9NYWluUmlza0NvZGU+PEFtbnQ+NTAwMDAwMDwvQW1udD48UHJlbT4xMDAwMDAwPC9QcmVtPjxNdWx0PjEwPC9NdWx0PjxQYXlNb2RlPkI8L1BheU1vZGU+PFBheUludHY+MDwvUGF5SW50dj48UGF5RW5kWWVhcj4xPC9QYXlFbmRZZWFyPjxQYXlFbmRZZWFyRmxhZz5BPC9QYXlFbmRZZWFyRmxhZz48R2V0SW50dj4xMjwvR2V0SW50dj48R2V0WWVhckZsYWc+WTwvR2V0WWVhckZsYWc+PEJvbnVzR2V0TW9kZT4xPC9Cb251c0dldE1vZGU+PFN1YkZsYWcgLz48R2V0WWVhciAvPjxJbnN1WWVhckZsYWc+WTwvSW5zdVllYXJGbGFnPjxJbnN1WWVhcj41PC9JbnN1WWVhcj48R2V0QmFua0NvZGUgLz48R2V0QmFua0FjY05vPjYyMTQ2MDAxODAwMDAwMDA0OTI8L0dldEJhbmtBY2NObz48R2V0QWNjTmFtZSAvPjxBdXRvUGF5RmxhZyAvPjwvUmlzaz48L0JvZHk+PC9UcmFuRGF0YT4NCg==</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:04:09,329 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:04:09,330 DEBUG httpclient.Wire(84) - >> "0"
+15:04:09,330 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:04:09,330 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:04:09,363 DEBUG httpclient.Wire(70) - << "HTTP/1.1 404 Not Found[\r][\n]"
+15:04:09,363 DEBUG httpclient.Wire(70) - << "HTTP/1.1 404 Not Found[\r][\n]"
+15:04:09,365 DEBUG httpclient.Wire(70) - << "Server: Apache-Coyote/1.1[\r][\n]"
+15:04:09,365 DEBUG httpclient.Wire(70) - << "Content-Type: text/html;charset=utf-8[\r][\n]"
+15:04:09,365 DEBUG httpclient.Wire(70) - << "Content-Length: 1081[\r][\n]"
+15:04:09,366 DEBUG httpclient.Wire(70) - << "Date: Sat, 24 Dec 2016 07:04:12 GMT[\r][\n]"
+15:04:09,366 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:04:09,368 DEBUG httpclient.Wire(84) - << "<html><head><title>Apache Tomcat/6.0.32 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /ui/services/ServiceForBankInterfaceService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/ui/services/ServiceForBankInterfaceService</u></p><p><b>description</b> <u>The requested resource (/ui/services/ServiceForBankInterfaceService) is not available.</u></p><HR size="1" nosh"
+15:04:09,368 DEBUG httpclient.Wire(84) - << "ade="noshade"><h3>Apache Tomcat/6.0.32</h3></body></html>"
+15:04:09,383 ERROR service.NewContInput(196) - 新单试算交易失败！
+org.apache.axis2.AxisFault: Transport error: 404 Error: Not Found
+	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:310)
+	at org.apache.axis2.transport.http.HTTPSender.sendViaPost(HTTPSender.java:194)
+	at org.apache.axis2.transport.http.HTTPSender.send(HTTPSender.java:75)
+	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.writeMessageWithCommons(CommonsHTTPTransportSender.java:404)
+	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.invoke(CommonsHTTPTransportSender.java:231)
+	at org.apache.axis2.engine.AxisEngine.send(AxisEngine.java:443)
+	at org.apache.axis2.description.OutInAxisOperationClient.send(OutInAxisOperation.java:406)
+	at org.apache.axis2.description.OutInAxisOperationClient.executeImpl(OutInAxisOperation.java:229)
+	at org.apache.axis2.client.OperationClient.execute(OperationClient.java:165)
+	at org.apache.axis2.client.ServiceClient.sendReceive(ServiceClient.java:555)
+	at org.apache.axis2.client.ServiceClient.sendReceive(ServiceClient.java:531)
+	at org.apache.axis2.rpc.client.RPCServiceClient.invokeBlocking(RPCServiceClient.java:102)
+	at com.sinosoft.midplat.net.CallWebsvcAtomSvc.call(CallWebsvcAtomSvc.java:113)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:110)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:04:09,413 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:04:09,413 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:04:09,413 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,413 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,413 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13280,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009514',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=3,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='13280_27_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150405,ModifyDate=20161224,ModifyTime=150409,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc=null where TranNo='000000009514'
+15:04:09,448 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:04:09,448 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:04:09,452 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:04:09,452 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:04:09,455 INFO common.SaveMessage(94) - 13280_33_1012_out.xml IO输出耗时:0.0020s
+15:04:09,456 INFO net.GZBankNetImpl(135) - 保存报文完毕！13280_33_1012_out.xml
+15:04:09,457 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>Transport error: 404 Error: Not Found</ResultInfoDesc>
+</TXLife>
+
+
+15:04:09,460 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:04:09,461 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:04:09,461 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:04:09,463 INFO test.GZBankTest(81) - 报文字节 长度为:471
+15:04:09,464 INFO test.GZBankTest(82) - 交易码为:9000102
+15:04:09,466 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:04:09,469 INFO test.GZBankTest(85) - 交易结束，共耗费：3.546秒,3546毫秒
+15:04:09,473 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>Transport error: 404 Error: Not Found</ResultInfoDesc>
+</TXLife>
+
+
+15:04:09,496 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:04:09,497 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,497 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,497 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009514'
+15:04:09,520 INFO common.Log4jPrint(20) - -------------------------
+15:04:09,521 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:04:09,521 INFO common.Log4jPrint(20) - -------------------------
+15:04:09,529 INFO common.Log4jPrint(20) - i=1
+15:04:09,559 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:04:09,559 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:04:09,559 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,559 INFO common.Log4jPrint(20) - 000000009514
+15:04:09,560 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13280,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009514',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=3,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='3.752',Bak4=null,Bak5=null,InNoDoc='13280_27_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150405,ModifyDate=20161224,ModifyTime=150409,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13280_33_1012_out.xml' where TranNo='000000009514'
+15:04:09,581 INFO midplat.Ybt4Socket(143) - 处理总耗时：3.804s
+15:04:09,581 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:04:33,629 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@170d9151
+15:04:33,637 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:04:33,641 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:04:33,641 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:04:33,643 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:04:33,644 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:04:33,644 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:04:33,647 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+15:04:33,707 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:04:33,716 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:04:33,717 INFO common.Log4jPrint(20) - End reset System.out!
+15:04:33,719 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:04:33,719 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:04:33,720 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+15:04:33,723 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:04:33,723 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:04:33,739 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+15:04:33,740 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+15:04:33,749 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+15:04:33,750 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:04:33,749 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+15:04:33,755 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+15:04:33,756 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+15:04:33,756 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+15:04:33,762 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+15:04:33,762 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:04:33,762 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+15:04:33,767 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+15:04:33,767 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+15:04:33,767 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+15:04:43,867 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+15:04:43,868 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+15:04:43,868 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+15:04:43,871 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+15:04:43,872 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+15:04:43,883 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+15:04:43,890 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+15:04:44,019 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:04:44,022 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:04:44,023 INFO test.GZBankTest(60) - 消息头长度为:19
+15:04:44,398 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+15:04:44,477 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+15:04:44,538 INFO midplat.Ybt4Socket(33) - TranLogNo:13283
+15:04:44,539 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:04:44,553 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:04:44,555 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:04:44,556 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:04:44,564 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:04:44,565 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:04:44,566 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:04:44,703 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+15:04:44,704 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/
+15:04:44,715 INFO common.SaveMessage(94) - 13286_3_1012_in.xml IO输出耗时:0.011s
+15:04:44,715 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13286_3_1012_in.xml
+15:04:44,716 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:04:44,717 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:04:44,722 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:04:44,726 INFO format.PolicyContTrialInXsl(36) - Into PolicyContTrialInXsl.load()...
+15:04:44,727 INFO format.PolicyContTrialInXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl...
+15:04:44,727 INFO common.XslCache(70) - conf file modified at (2016-12-23 14:47:07,983) and length=20548 bytes!
+15:04:45,035 INFO format.PolicyContTrialInXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl!
+15:04:45,036 INFO format.PolicyContTrialInXsl(68) - Out PolicyContTrialInXsl.load()!
+15:04:45,193 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:04:45,193 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:04:45,198 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:04:45,199 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:04:45,207 INFO common.Log4jPrint(20) - 进程名：13286
+15:04:45,208 INFO common.Log4jPrint(20) - trancom:9
+15:04:45,208 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:04:45,208 INFO common.Log4jPrint(20) - mHeadEle.getChildText13286_3_1012_in.xml
+15:04:45,265 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:04:45,267 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13286,9,'02','09990901','000000009514','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13286_3_1012_in.xml',20161224,150445,20161224,150445,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:04:45,314 ERROR service.ServiceImpl(167) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+15:04:45,320 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:172)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:51)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:04:45,323 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:04:45,324 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:04:45,326 INFO format.PolicyContTrialOutXsl(36) - Into PolicyContTrialInXsl.load()...
+15:04:45,326 INFO format.PolicyContTrialOutXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
+15:04:45,327 INFO common.XslCache(70) - conf file modified at (2016-12-22 13:14:26,018) and length=978 bytes!
+15:04:45,329 INFO format.PolicyContTrialOutXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
+15:04:45,330 INFO format.PolicyContTrialOutXsl(68) - Out PolicyContTrialInXsl.load()!
+15:04:45,331 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:04:45,331 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:04:45,361 INFO common.SaveMessage(94) - 13286_6_1012_out.xml IO输出耗时:0.029s
+15:04:45,362 INFO net.GZBankNetImpl(135) - 保存报文完毕！13286_6_1012_out.xml
+15:04:45,362 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:04:45,363 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:04:45,363 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:04:45,363 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:04:45,363 INFO test.GZBankTest(81) - 报文字节 长度为:448
+15:04:45,364 INFO test.GZBankTest(82) - 交易码为:9000102
+15:04:45,364 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:04:45,365 INFO test.GZBankTest(85) - 交易结束，共耗费：1.341秒,1341毫秒
+15:04:45,368 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:04:45,396 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:04:45,396 INFO common.Log4jPrint(20) - 000000009514
+15:04:45,396 INFO common.Log4jPrint(20) - 000000009514
+15:04:45,397 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009514'
+15:04:45,417 INFO common.Log4jPrint(20) - -------------------------
+15:04:45,418 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:04:45,418 INFO common.Log4jPrint(20) - -------------------------
+15:04:45,426 INFO common.Log4jPrint(20) - i=1
+15:04:45,476 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:04:45,477 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:04:45,478 INFO common.Log4jPrint(20) - 000000009514
+15:04:45,479 INFO common.Log4jPrint(20) - 000000009514
+15:04:45,479 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13280,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009514',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=3,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='0.872',Bak4=null,Bak5=null,InNoDoc='13280_27_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150405,ModifyDate=20161224,ModifyTime=150409,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13286_6_1012_out.xml' where TranNo='000000009514'
+15:04:45,499 INFO midplat.Ybt4Socket(143) - 处理总耗时：0.944s
+15:04:45,500 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:05:30,565 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@53706eb7
+15:05:30,574 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:05:30,578 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:05:30,578 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:05:30,580 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:05:30,581 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:05:30,582 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:05:30,585 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+15:05:30,653 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:05:30,663 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:05:30,665 INFO common.Log4jPrint(20) - End reset System.out!
+15:05:30,667 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:05:30,667 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:05:30,668 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+15:05:30,672 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:05:30,701 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:05:30,722 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+15:05:30,722 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+15:05:30,732 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+15:05:30,732 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+15:05:30,733 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:05:30,739 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+15:05:30,740 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+15:05:30,740 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+15:05:30,746 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+15:05:30,746 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+15:05:30,746 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:05:30,754 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+15:05:30,755 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+15:05:30,754 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+15:05:36,137 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+15:05:36,138 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+15:05:36,138 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+15:05:36,141 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+15:05:36,142 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+15:05:36,153 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+15:05:36,160 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+15:05:36,314 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:05:36,319 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:05:36,319 INFO test.GZBankTest(60) - 消息头长度为:19
+15:05:36,661 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+15:05:36,731 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+15:05:36,806 INFO midplat.Ybt4Socket(33) - TranLogNo:13283
+15:05:36,807 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:05:36,821 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:05:36,823 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:05:36,825 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:05:36,831 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:05:36,832 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:05:36,832 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:05:36,967 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+15:05:36,967 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/
+15:05:36,978 INFO common.SaveMessage(94) - 13286_3_1012_in.xml IO输出耗时:0.01s
+15:05:36,978 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13286_3_1012_in.xml
+15:05:36,980 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:05:36,980 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:05:36,985 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:05:36,989 INFO format.PolicyContTrialInXsl(36) - Into PolicyContTrialInXsl.load()...
+15:05:36,989 INFO format.PolicyContTrialInXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl...
+15:05:36,990 INFO common.XslCache(70) - conf file modified at (2016-12-23 14:47:07,983) and length=20548 bytes!
+15:05:37,297 INFO format.PolicyContTrialInXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl!
+15:05:37,297 INFO format.PolicyContTrialInXsl(68) - Out PolicyContTrialInXsl.load()!
+15:05:37,453 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:05:37,454 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:05:37,459 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:05:37,459 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:05:37,468 INFO common.Log4jPrint(20) - 进程名：13286
+15:05:37,468 INFO common.Log4jPrint(20) - trancom:9
+15:05:37,468 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:05:37,468 INFO common.Log4jPrint(20) - mHeadEle.getChildText13286_3_1012_in.xml
+15:05:37,505 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:05:37,506 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13286,9,'02','09990901','000000009514','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13286_3_1012_in.xml',20161224,150537,20161224,150537,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:05:37,592 ERROR service.ServiceImpl(167) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+15:05:37,596 ERROR service.NewContInput(196) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:172)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:51)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:05:37,601 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:05:37,602 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:05:37,606 INFO format.PolicyContTrialOutXsl(36) - Into PolicyContTrialInXsl.load()...
+15:05:37,606 INFO format.PolicyContTrialOutXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
+15:05:37,607 INFO common.XslCache(70) - conf file modified at (2016-12-22 13:14:26,018) and length=978 bytes!
+15:05:37,610 INFO format.PolicyContTrialOutXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
+15:05:37,610 INFO format.PolicyContTrialOutXsl(68) - Out PolicyContTrialInXsl.load()!
+15:05:37,612 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:05:37,612 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:05:37,613 INFO common.SaveMessage(94) - 13286_6_1012_out.xml IO输出耗时:0.0010s
+15:05:37,613 INFO net.GZBankNetImpl(135) - 保存报文完毕！13286_6_1012_out.xml
+15:05:37,614 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:05:37,614 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:05:37,615 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:05:37,615 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:05:37,615 INFO test.GZBankTest(81) - 报文字节 长度为:448
+15:05:37,615 INFO test.GZBankTest(82) - 交易码为:9000102
+15:05:37,616 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:05:37,617 INFO test.GZBankTest(85) - 交易结束，共耗费：1.296秒,1296毫秒
+15:05:37,620 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009514</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009514</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+15:05:37,670 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:05:37,670 INFO common.Log4jPrint(20) - 000000009514
+15:05:37,671 INFO common.Log4jPrint(20) - 000000009514
+15:05:37,671 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009514'
+15:05:37,692 INFO common.Log4jPrint(20) - -------------------------
+15:05:37,696 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:05:37,696 INFO common.Log4jPrint(20) - -------------------------
+15:05:37,715 INFO common.Log4jPrint(20) - i=1
+15:05:37,753 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:05:37,754 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:05:37,755 INFO common.Log4jPrint(20) - 000000009514
+15:05:37,755 INFO common.Log4jPrint(20) - 000000009514
+15:05:37,756 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13280,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009514',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=3,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='0.892',Bak4=null,Bak5=null,InNoDoc='13280_27_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150405,ModifyDate=20161224,ModifyTime=150409,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13286_6_1012_out.xml' where TranNo='000000009514'
+15:05:37,773 INFO midplat.Ybt4Socket(143) - 处理总耗时：0.95s
+15:05:37,774 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:07:12,613 INFO midplat.Ybt4Socket(33) - TranLogNo:13289
+15:07:12,614 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:07:12,614 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:07:12,614 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:07:12,614 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:07:12,753 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:07:12,756 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:07:12,756 INFO test.GZBankTest(60) - 消息头长度为:19
+15:07:12,757 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:07:12,757 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:07:12,757 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:07:12,765 INFO common.SaveMessage(94) - 13292_9_1012_in.xml IO输出耗时:0.0030s
+15:07:12,765 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13292_9_1012_in.xml
+15:07:12,766 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:07:12,767 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:07:12,767 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:07:12,786 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:07:12,786 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:07:12,786 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:07:12,786 DEBUG service.ServiceImpl(64) - Into ServiceImpl.insertTranLog()...
+15:07:12,787 INFO common.Log4jPrint(20) - 进程名：13292
+15:07:12,787 INFO common.Log4jPrint(20) - trancom:9
+15:07:12,787 INFO common.Log4jPrint(20) - FuncFlag:1012
+15:07:12,787 INFO common.Log4jPrint(20) - mHeadEle.getChildText13292_9_1012_in.xml
+15:07:12,914 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:07:12,915 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13292,9,'02','09990901','000000009515','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13292_9_1012_in.xml',20161224,150712,20161224,150712,'230101197702226538','王超廷','230101197702226538','011A0100' )
+15:07:12,929 DEBUG service.ServiceImpl(176) - Out ServiceImpl.insertTranLog()!
+15:07:12,931 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101019000006590' and MakeDate>=20161224 and MakeTime>=150352
+15:07:13,059 INFO common.RuleXsl(155) - Into RuleXsl.load()...
+15:07:13,059 INFO common.RuleXsl(158) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl...
+15:07:13,060 INFO common.XslCache(70) - conf file modified at (2016-12-19 10:26:46,664) and length=15623 bytes!
+15:07:13,103 INFO common.RuleXsl(165) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl!
+15:07:13,103 INFO common.RuleXsl(179) - Out RuleXsl.load()!
+15:07:13,104 INFO common.RuleXml(198) - Into RuleXml.load()...
+15:07:13,104 INFO common.RuleXml(201) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml...
+15:07:13,104 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=9884 bytes!
+15:07:13,109 INFO common.RuleXml(208) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml!
+15:07:13,110 INFO common.RuleXml(215) - Out RuleXml.load()!
+15:07:13,110 INFO common.RuleParser(49) - Into RuleParser.check()...
+15:07:13,110 INFO common.RuleParser(71) - Into RuleParser.checkByXsl()...
+15:07:13,118 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:07:13,118 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:07:13,119 INFO common.Log4jPrint(20) - 返回的结果是:0
+15:07:13,121 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:07:13,125 INFO common.RuleParser(75) - <?xml version="1.0"?>
+<rules />
+
+15:07:13,125 INFO common.RuleParser(82) - Out RuleParser.checkByXsl()!
+15:07:13,125 INFO common.RuleParser(62) - Out RuleParser.check()!
+15:07:13,131 INFO net.CallWebsvcAtomSvc(47) - Into CallWebsvcAtomSvc.service()...
+15:07:13,134 INFO common.SaveMessage(94) - 13292_12_0_inSvc.xml IO输出耗时:0.0020s
+15:07:13,135 INFO net.CallWebsvcAtomSvc(64) - 保存报文完毕！13292_12_0_inSvc.xml
+15:07:13,135 INFO common.Log4jPrint(20) - start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+15:07:13,136 INFO net.CallWebsvcAtomSvc(75) - start call 录单核保(http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService.service)...
+15:07:13,401 WARN dialect.StAXDialectDetector(177) - Unable to determine dialect of the StAX implementation at jar:file:/F:/MyEclipse/Common/plugins/com.genuitec.eclipse.ws.xfire_9.0.0.me201211011550/lib/webservices-rt.jar!/
+15:07:14,063 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:07:14,104 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:07:14,104 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:07:14,105 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:07:14,105 DEBUG httpclient.Wire(70) - >> "Host: 10.0.1.160:8080[\r][\n]"
+15:07:14,105 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:07:14,106 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:07:14,131 DEBUG httpclient.Wire(70) - >> "800[\r][\n]"
+15:07:14,132 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTYxMjI0PC9UcmFuRGF0ZT48VHJhblRpbWU+MDA4MTM3PC9UcmFuVGltZT48Wm9uZU5vPjAyPC9ab25lTm8+PE5vZGVObz4wOTk5MDkwMTwvTm9kZU5vPjxCYW5rQ29kZT4wMTA1PC9CYW5rQ29kZT48VGVsbGVyTm8+MDEzNTA8L1RlbGxlck5vPjxUcmFuTm8+MDAwMDAwMDA5NTE1PC9UcmFuTm8+PENsaWVudElwPjEyNy4wLjAuMTwvQ2xpZW50SXA+PFRyYW5Db20+MDk8L1RyYW5Db20+PEZ1bmNGbGFnPjEwMTI8L0Z1bmNGbGFnPjxBZ2VudENvbSAvPjxBZ2VudENvZGUgLz48SW5Ob0RvYz4xMzI5Ml85XzEwMTJfaW4ueG1sPC9Jbk5vRG9jPjxTZXJ2aWNlSWQ+MDwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48U2FsZUNoYW5uZWw+MDwvU2FsZUNoYW5uZWw+PFNhbGVOYW1lPrTe6K08L1NhbGVOYW1lPjxTYWxlU3RhZmY+NTIwMTMwMDAwNDwvU2FsZVN0YWZmPjxTYWxlQ2VydE5vPjExMTIyMjwvU2FsZUNlcnRObz48UHJvcG9zYWxQcnRObz4xMDEwMTkwMDAwMDY1OTA8L1Byb3Bvc2FsUHJ0Tm8+PENvbnRQcnRObyAvPjxQb2xBcHBseURhdGU+MjAxNjEyMjQ8L1BvbEFwcGx5RGF0ZT48QWNjTm8+NjIxNDYwMDE4MDAwMDAwMDQ5MjwvQWNjTm8+PEFjY05hbWU+zfWzrM2iPC9BY2NOYW1lPjxQYXlNb2RlPkI8L1BheU1vZGU+PEdldFBvbE1vZGU+MTwvR2V0UG9sTW9kZT48Sm9iTm90aWNlIC8+PEhlYWx0aE5vdGljZT5OPC9IZWFsdGhOb3RpY2U+PEFwcG50PjxOYW1lPs31s6zNojwvTmFtZT48U2V4PjA8L1NleD48QmlydGhkYXk+MTk3NzAyMjI8L0JpcnRoZGF5PjxJRFR5cGU+MDwvSURUeXBlPjxJRE5vPjIzMDEwMTE5NzcwMjIyNjUzODwvSURObz48UHJvdiAvPjxDaXR5IC8+PFpvbmUgLz48QWRkcmVzcz662sH6va3Kobn+tvux9crQytDPvcf4PC9BZGRyZXNzPjxaaXBDb2RlPjQ1NjIxMjwvWmlwQ29kZT48SWRFeHBEYXRlIC8+PE5hdGlvbmFsaXR5PkNOPC9OYXRpb25hbGl0eT48QWRkcmVzc0NvbnRlbnQ+utrB+r2tyqG5/rb7sfXK0MrQz73H+DwvQWRkcmVzc0NvbnRlbnQ+PE5hdGlvbmFsaXR5PkNITjwvTmF0aW9uYWxpdHk+PFBob25lIC8+PE1vYmlsZT4xMzUyMzIzMTIzMjwvTW9iaWxlPjxFbWFpbCAvPjxKb2JDb2RlPjIxMjk5MDE8L0pvYkNvZGU+PFN0YXR1cmUgLz48V2VpZ2h0IC8+PE1hcml0YWxTdGF0dXMgLz48WWVhclNhbGFyeT41PC9ZZWFyU2FsYXJ5PjxGYW1pbHlZZWFyU2FsYXJ5PjA8L0ZhbWlseVllYXJTYWxhcnk+PFJlbGFUb0luc3VyZWQ+MDA8L1JlbGFUb0luc3VyZWQ+PERlblR5cGU+MTwvRGVuVHlwZT48L0FwcG50PjxJbnN1cmVkPjxOYW1lPs31s6zNojwvTmFtZT48U2V4PjA8L1NleD48QmlydGhkYXk+MTk3NzAyMjI8L0Jpcn"
+15:07:14,133 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:07:14,133 DEBUG httpclient.Wire(70) - >> "6ad[\r][\n]"
+15:07:14,134 DEBUG httpclient.Wire(84) - >> "RoZGF5PjxJRFR5cGU+MDwvSURUeXBlPjxJRE5vPjIzMDEwMTE5NzcwMjIyNjUzODwvSURObz48SWRFeHBEYXRlIC8+PE5hdGlvbmFsaXR5PkNOPC9OYXRpb25hbGl0eT48QWRkcmVzc0NvbnRlbnQ+utrB+r2tyqG5/rb7sfXK0MrQz73H+DwvQWRkcmVzc0NvbnRlbnQ+PEZpeFRlbERtc3REc3RjTm8gLz48TW9iaWxlSXRsRHN0Y05vIC8+PE5hdGlvbmFsaXR5PkNITjwvTmF0aW9uYWxpdHk+PFByb3YgLz48Q2l0eSAvPjxab25lIC8+PEFkZHJlc3M+utrB+r2tyqG5/rb7sfXK0MrQz73H+DwvQWRkcmVzcz48WmlwQ29kZT40NTYyMTI8L1ppcENvZGU+PFBob25lIC8+PE1vYmlsZT4xMzUyMzIzMTIzMjwvTW9iaWxlPjxFbWFpbCAvPjxKb2JDb2RlPjIxMjk5MDE8L0pvYkNvZGU+PFN0YXR1cmUgLz48V2VpZ2h0IC8+PE1hcml0YWxTdGF0dXMgLz48WWVhclNhbGFyeT41PC9ZZWFyU2FsYXJ5PjxSaXNrQXNzZXNzbWVudFJlc3VsdCAvPjxSaXNrQXNzZXNzbWVudEVuZERhdGUgLz48UHJlbWl1bUJ1ZGdldCAvPjwvSW5zdXJlZD48Qm5mPjxUeXBlPjE8L1R5cGU+PEdyYWRlPjE8L0dyYWRlPjxOYW1lPtXU9q3mqzwvTmFtZT48U2V4PjE8L1NleD48QmlydGhkYXk+MTk4ODA1MTU8L0JpcnRoZGF5PjxJRFR5cGU+MDwvSURUeXBlPjxJRE5vPjIxMDEwMTE5ODgwNTE1MTU2ODwvSURObz48SWRFeHBEYXRlIC8+PExvdD4xMDA8L0xvdD48UmVsYVRvSW5zdXJlZCAvPjxCZW5lZmljVHlwZT5OPC9CZW5lZmljVHlwZT48L0JuZj48Umlzaz48Umlza0NvZGU+MDExQTAxMDA8L1Jpc2tDb2RlPjxNYWluUmlza0NvZGU+MDExQTAxMDA8L01haW5SaXNrQ29kZT48QW1udD41MDAwMDAwPC9BbW50PjxQcmVtPjEwMDAwMDA8L1ByZW0+PE11bHQ+MTA8L011bHQ+PFBheU1vZGU+QjwvUGF5TW9kZT48UGF5SW50dj4wPC9QYXlJbnR2PjxQYXlFbmRZZWFyPjE8L1BheUVuZFllYXI+PFBheUVuZFllYXJGbGFnPkE8L1BheUVuZFllYXJGbGFnPjxHZXRJbnR2PjEyPC9HZXRJbnR2PjxHZXRZZWFyRmxhZz5ZPC9HZXRZZWFyRmxhZz48Qm9udXNHZXRNb2RlPjE8L0JvbnVzR2V0TW9kZT48U3ViRmxhZyAvPjxHZXRZZWFyIC8+PEluc3VZZWFyRmxhZz5ZPC9JbnN1WWVhckZsYWc+PEluc3VZZWFyPjU8L0luc3VZZWFyPjxHZXRCYW5rQ29kZSAvPjxHZXRCYW5rQWNjTm8+NjIxNDYwMDE4MDAwMDAwMDQ5MjwvR2V0QmFua0FjY05vPjxHZXRBY2NOYW1lIC8+PEF1dG9QYXlGbGFnIC8+PC9SaXNrPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:07:14,134 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:07:14,135 DEBUG httpclient.Wire(84) - >> "0"
+15:07:14,135 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:07:14,135 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:07:14,139 DEBUG httpclient.Wire(70) - << "HTTP/1.1 404 Not Found[\r][\n]"
+15:07:14,139 DEBUG httpclient.Wire(70) - << "HTTP/1.1 404 Not Found[\r][\n]"
+15:07:14,141 DEBUG httpclient.Wire(70) - << "Server: Apache-Coyote/1.1[\r][\n]"
+15:07:14,141 DEBUG httpclient.Wire(70) - << "Content-Type: text/html;charset=utf-8[\r][\n]"
+15:07:14,141 DEBUG httpclient.Wire(70) - << "Content-Length: 1081[\r][\n]"
+15:07:14,142 DEBUG httpclient.Wire(70) - << "Date: Sat, 24 Dec 2016 07:07:16 GMT[\r][\n]"
+15:07:14,142 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:07:14,144 DEBUG httpclient.Wire(84) - << "<html><head><title>Apache Tomcat/6.0.32 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 404 - /ui/services/ServiceForBankInterfaceService</h1><HR size="1" noshade="noshade"><p><b>type</b> Status report</p><p><b>message</b> <u>/ui/services/ServiceForBankInterfaceService</u></p><p><b>description</b> <u>The requested resource (/ui/services/ServiceForBankInterfaceService) is not available.</u></p><HR size="1" nosh"
+15:07:14,144 DEBUG httpclient.Wire(84) - << "ade="noshade"><h3>Apache Tomcat/6.0.32</h3></body></html>"
+15:07:14,157 ERROR service.NewContInput(196) - 新单试算交易失败！
+org.apache.axis2.AxisFault: Transport error: 404 Error: Not Found
+	at org.apache.axis2.transport.http.HTTPSender.handleResponse(HTTPSender.java:310)
+	at org.apache.axis2.transport.http.HTTPSender.sendViaPost(HTTPSender.java:194)
+	at org.apache.axis2.transport.http.HTTPSender.send(HTTPSender.java:75)
+	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.writeMessageWithCommons(CommonsHTTPTransportSender.java:404)
+	at org.apache.axis2.transport.http.CommonsHTTPTransportSender.invoke(CommonsHTTPTransportSender.java:231)
+	at org.apache.axis2.engine.AxisEngine.send(AxisEngine.java:443)
+	at org.apache.axis2.description.OutInAxisOperationClient.send(OutInAxisOperation.java:406)
+	at org.apache.axis2.description.OutInAxisOperationClient.executeImpl(OutInAxisOperation.java:229)
+	at org.apache.axis2.client.OperationClient.execute(OperationClient.java:165)
+	at org.apache.axis2.client.ServiceClient.sendReceive(ServiceClient.java:555)
+	at org.apache.axis2.client.ServiceClient.sendReceive(ServiceClient.java:531)
+	at org.apache.axis2.rpc.client.RPCServiceClient.invokeBlocking(RPCServiceClient.java:102)
+	at com.sinosoft.midplat.net.CallWebsvcAtomSvc.call(CallWebsvcAtomSvc.java:113)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:110)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+15:07:14,186 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:07:14,186 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:07:14,187 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,187 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,187 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13292,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009515',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=1,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='13292_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150712,ModifyDate=20161224,ModifyTime=150714,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc=null where TranNo='000000009515'
+15:07:14,217 INFO service.NewContInput(218) - Out NewContInput.service()!
+15:07:14,217 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+15:07:14,221 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+15:07:14,221 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+15:07:14,225 INFO common.SaveMessage(94) - 13292_15_1012_out.xml IO输出耗时:0.0030s
+15:07:14,226 INFO net.GZBankNetImpl(135) - 保存报文完毕！13292_15_1012_out.xml
+15:07:14,226 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009515</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>Transport error: 404 Error: Not Found</ResultInfoDesc>
+</TXLife>
+
+
+15:07:14,228 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+15:07:14,229 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+15:07:14,230 INFO test.GZBankTest(80) - ---------------------------------------------------
+15:07:14,231 INFO test.GZBankTest(81) - 报文字节 长度为:471
+15:07:14,233 INFO test.GZBankTest(82) - 交易码为:9000102
+15:07:14,234 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+15:07:14,238 INFO test.GZBankTest(85) - 交易结束，共耗费：1.479秒,1479毫秒
+15:07:14,244 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009515</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>Transport error: 404 Error: Not Found</ResultInfoDesc>
+</TXLife>
+
+
+15:07:14,292 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:07:14,293 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,293 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,293 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009515'
+15:07:14,314 INFO common.Log4jPrint(20) - -------------------------
+15:07:14,314 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+15:07:14,315 INFO common.Log4jPrint(20) - -------------------------
+15:07:14,323 INFO common.Log4jPrint(20) - i=1
+15:07:14,352 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:07:14,353 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:07:14,353 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,353 INFO common.Log4jPrint(20) - 000000009515
+15:07:14,353 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13292,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009515',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=1,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='1.709',Bak4=null,Bak5=null,InNoDoc='13292_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150712,ModifyDate=20161224,ModifyTime=150714,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13292_15_1012_out.xml' where TranNo='000000009515'
+15:07:14,366 INFO midplat.Ybt4Socket(143) - 处理总耗时：1.752s
+15:07:14,366 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+15:07:48,421 INFO midplat.Ybt4Socket(33) - TranLogNo:13295
+15:07:48,421 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+15:07:48,421 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+15:07:48,422 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+15:07:48,422 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+15:07:48,559 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+15:07:48,562 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+15:07:48,562 INFO test.GZBankTest(60) - 消息头长度为:19
+15:07:48,563 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+15:07:48,564 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+15:07:48,564 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+15:07:48,602 INFO common.SaveMessage(94) - 13298_18_1012_in.xml IO输出耗时:0.034s
+15:07:48,602 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13298_18_1012_in.xml
+15:07:48,603 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+15:07:48,604 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+15:07:48,604 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+15:07:48,622 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+15:07:48,622 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+15:09:41,651 INFO service.NewContInput(36) - Into NewContInput.service()...
+15:28:11,777 DEBUG service.ServiceImpl(65) - Into ServiceImpl.insertTranLog()...
+15:47:42,538 DEBUG service.ServiceImpl(65) - Into ServiceImpl.insertTranLog()...
+15:50:34,827 INFO common.Log4jPrint(20) - 进程名：13298
+17:37:41,986 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@170d9151
+17:37:41,994 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:37:41,998 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+17:37:41,998 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+17:37:42,000 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:37:42,001 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+17:37:42,001 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+17:37:42,005 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+17:37:42,067 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+17:37:42,076 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:37:42,077 INFO common.Log4jPrint(20) - End reset System.out!
+17:37:42,079 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:37:42,079 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+17:37:42,080 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+17:37:42,083 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+17:37:42,084 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:37:42,099 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+17:37:42,100 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+17:37:42,113 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+17:37:42,114 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:37:42,113 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+17:37:42,120 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+17:37:42,120 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+17:37:42,121 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+17:37:42,126 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+17:37:42,126 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:37:42,126 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+17:37:42,132 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+17:37:42,132 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+17:37:42,132 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+17:37:47,137 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+17:37:47,138 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+17:37:47,138 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+17:37:47,141 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+17:37:47,142 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+17:37:47,153 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+17:37:47,160 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+17:37:47,284 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+17:37:47,287 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+17:37:47,288 INFO test.GZBankTest(60) - 消息头长度为:19
+17:37:47,645 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+17:37:47,703 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+17:37:47,783 INFO midplat.Ybt4Socket(33) - TranLogNo:13295
+17:37:47,784 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+17:37:47,799 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+17:37:47,801 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+17:37:47,802 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+17:37:47,810 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+17:37:47,810 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+17:37:47,811 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+17:37:47,942 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+17:37:47,943 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/
+17:37:47,954 INFO common.SaveMessage(94) - 13298_3_1012_in.xml IO输出耗时:0.011s
+17:37:47,954 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13298_3_1012_in.xml
+17:37:47,955 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+17:37:47,956 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+17:37:47,961 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+17:37:47,965 INFO format.PolicyContTrialInXsl(36) - Into PolicyContTrialInXsl.load()...
+17:37:47,965 INFO format.PolicyContTrialInXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl...
+17:37:47,966 INFO common.XslCache(70) - conf file modified at (2016-12-23 14:47:07,983) and length=20548 bytes!
+17:37:48,275 INFO format.PolicyContTrialInXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl!
+17:37:48,275 INFO format.PolicyContTrialInXsl(68) - Out PolicyContTrialInXsl.load()!
+17:37:48,430 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+17:37:48,430 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+17:40:58,155 INFO service.NewContInput(37) - Into NewContInput.service()...
+17:41:33,307 DEBUG service.ServiceImpl(65) - Into ServiceImpl.insertTranLog()...
+17:41:42,014 INFO common.Log4jPrint(20) - 进程名：13298
+17:41:50,701 INFO common.Log4jPrint(20) - trancom:9
+17:41:50,972 INFO common.Log4jPrint(20) - FuncFlag:1012
+17:42:03,038 INFO common.Log4jPrint(20) - mHeadEle.getChildText13298_3_1012_in.xml
+17:47:36,808 DEBUG service.ServiceImpl(65) - Into ServiceImpl.insertTranLog()...
+17:47:36,818 INFO common.Log4jPrint(20) - 进程名：13298
+17:47:36,823 INFO common.Log4jPrint(20) - trancom:9
+17:47:36,827 INFO common.Log4jPrint(20) - FuncFlag:1012
+17:47:36,831 INFO common.Log4jPrint(20) - mHeadEle.getChildText13298_3_1012_in.xml
+17:47:36,883 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:47:36,890 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13298,9,'02','09990901','000000009515','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13298_3_1012_in.xml',20161224,174736,20161224,174736,'230101197702226538','王超廷','230101197702226538','011A0100' )
+17:47:37,096 ERROR service.ServiceImpl(189) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+17:48:06,755 ERROR service.NewContInput(203) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:194)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:58)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:109)
+17:48:12,964 INFO service.NewContInput(225) - Out NewContInput.service()!
+17:48:17,640 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+17:48:17,660 INFO format.PolicyContTrialOutXsl(36) - Into PolicyContTrialInXsl.load()...
+17:48:17,664 INFO format.PolicyContTrialOutXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
+17:48:17,671 INFO common.XslCache(70) - conf file modified at (2016-12-22 13:14:26,018) and length=978 bytes!
+17:48:17,699 INFO format.PolicyContTrialOutXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
+17:48:17,701 INFO format.PolicyContTrialOutXsl(68) - Out PolicyContTrialInXsl.load()!
+17:48:17,707 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+17:48:18,984 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+17:48:18,998 INFO common.SaveMessage(94) - 13298_6_1012_out.xml IO输出耗时:0.0080s
+17:48:19,002 INFO net.GZBankNetImpl(135) - 保存报文完毕！13298_6_1012_out.xml
+17:48:19,008 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009515</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+17:48:19,015 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+17:48:20,007 ERROR midplat.Ybt4Socket(125) - 发送返回报文异常!
+java.net.SocketException: Connection reset by peer: socket write error
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:92)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:124)
+	at com.sinosoft.midplat.gzbank.net.GZBankNetImpl.send(GZBankNetImpl.java:151)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:123)
+17:48:21,945 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:48:21,950 INFO common.Log4jPrint(20) - 000000009515
+17:48:21,954 INFO common.Log4jPrint(20) - 000000009515
+17:48:21,958 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009515'
+17:48:22,060 INFO common.Log4jPrint(20) - -------------------------
+17:48:22,073 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+17:48:22,077 INFO common.Log4jPrint(20) - -------------------------
+17:48:22,100 INFO common.Log4jPrint(20) - i=1
+17:48:24,352 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:48:24,359 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:48:24,363 INFO common.Log4jPrint(20) - 000000009515
+17:48:24,367 INFO common.Log4jPrint(20) - 000000009515
+17:48:24,372 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13292,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009515',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=1,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='635.286',Bak4=null,Bak5=null,InNoDoc='13292_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150712,ModifyDate=20161224,ModifyTime=150714,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13298_6_1012_out.xml' where TranNo='000000009515'
+17:48:26,338 INFO midplat.Ybt4Socket(143) - 处理总耗时：638.536s
+17:48:26,944 INFO midplat.Ybt4Socket(144) - Out Ybt4Socket.run()!
+17:49:55,329 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@170d9151
+17:49:55,338 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:49:55,343 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+17:49:55,343 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+17:49:55,345 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:49:55,346 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+17:49:55,346 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+17:49:55,351 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+17:49:55,425 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+17:49:55,436 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:49:55,438 INFO common.Log4jPrint(20) - End reset System.out!
+17:49:55,440 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:49:55,441 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+17:49:55,442 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+17:49:55,446 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+17:49:55,447 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:49:55,463 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+17:49:55,464 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+17:49:55,477 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+17:49:55,478 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+17:49:55,478 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:49:55,487 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+17:49:55,488 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+17:49:55,488 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+17:49:55,493 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+17:49:55,494 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+17:49:55,494 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:49:55,500 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+17:49:55,501 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+17:49:55,501 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+17:50:00,277 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+17:50:00,278 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+17:50:00,278 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+17:50:00,281 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+17:50:00,281 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+17:50:00,294 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+17:50:00,301 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+17:50:00,440 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+17:50:00,443 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+17:50:00,444 INFO test.GZBankTest(60) - 消息头长度为:19
+17:50:00,809 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+17:50:00,867 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+17:50:00,925 INFO midplat.Ybt4Socket(33) - TranLogNo:13295
+17:50:00,926 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+17:50:00,942 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+17:50:00,944 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+17:50:00,945 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+17:50:00,952 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+17:50:00,952 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+17:50:00,953 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+17:50:01,084 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+17:50:01,084 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/
+17:50:01,095 INFO common.SaveMessage(94) - 13298_3_1012_in.xml IO输出耗时:0.01s
+17:50:01,096 INFO net.GZBankNetImpl(87) - 保存非标准报文完毕！13298_3_1012_in.xml
+17:50:01,097 INFO net.GZBankNetImpl(111) - Out GZBankNetImpl.receive()!
+17:50:01,098 INFO midplat.Ybt4Socket(99) - 报文转换模块：com.sinosoft.midplat.gzbank.format.PolicyContTrial
+17:50:01,103 INFO format.PolicyContTrial(31) - Into PolicyContTrial.noStd2Std()...
+17:50:01,107 INFO format.PolicyContTrialInXsl(36) - Into PolicyContTrialInXsl.load()...
+17:50:01,107 INFO format.PolicyContTrialInXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl...
+17:50:01,108 INFO common.XslCache(70) - conf file modified at (2016-12-23 14:47:07,983) and length=20548 bytes!
+17:50:01,413 INFO format.PolicyContTrialInXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl!
+17:50:01,413 INFO format.PolicyContTrialInXsl(68) - Out PolicyContTrialInXsl.load()!
+17:50:01,570 INFO format.PolicyContTrial(57) - Out PolicyContTrial.noStd2Std()!
+17:50:01,570 INFO midplat.Ybt4Socket(105) - 业务处理模块：com.sinosoft.midplat.service.NewContInput
+17:50:07,848 INFO service.NewContInput(37) - Into NewContInput.service()...
+17:50:07,852 DEBUG service.ServiceImpl(65) - Into ServiceImpl.insertTranLog()...
+17:50:07,894 INFO common.Log4jPrint(20) - 进程名：13298
+17:50:07,896 INFO common.Log4jPrint(20) - trancom:9
+17:50:07,898 INFO common.Log4jPrint(20) - FuncFlag:1012
+17:50:07,900 INFO common.Log4jPrint(20) - mHeadEle.getChildText13298_3_1012_in.xml
+17:50:07,941 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:50:07,946 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,RCode,UsedTime,AppntName,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime,AppntIDNo,InsuredName,InsuredIDNo,ProductId ) values ( 13298,9,'02','09990901','000000009515','01350',1012,20161224,8137,'101019000006590',-1,-1,'王超廷','127.0.0.1','13298_3_1012_in.xml',20161224,175007,20161224,175007,'230101197702226538','王超廷','230101197702226538','011A0100' )
+17:50:08,020 ERROR service.ServiceImpl(189) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+17:50:08,030 ERROR service.NewContInput(203) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:194)
+	at com.sinosoft.midplat.service.NewContInput.service(NewContInput.java:58)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:110)
+17:50:08,037 INFO service.NewContInput(225) - Out NewContInput.service()!
+17:50:09,711 INFO format.PolicyContTrial(70) - Into PolicyContTrial.std2NoStd()...
+17:50:09,730 INFO format.PolicyContTrialOutXsl(36) - Into PolicyContTrialInXsl.load()...
+17:50:09,735 INFO format.PolicyContTrialOutXsl(40) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl...
+17:50:09,740 INFO common.XslCache(70) - conf file modified at (2016-12-22 13:14:26,018) and length=978 bytes!
+17:50:09,757 INFO format.PolicyContTrialOutXsl(55) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/PolicyContTrialOut.xsl!
+17:50:09,759 INFO format.PolicyContTrialOutXsl(68) - Out PolicyContTrialInXsl.load()!
+17:50:09,766 INFO format.PolicyContTrial(226) - Out PolicyContTrial.std2NoStd()!
+17:50:11,279 INFO net.GZBankNetImpl(116) - Into GZBankNetImpl.send()...
+17:50:11,292 INFO common.SaveMessage(94) - 13298_6_1012_out.xml IO输出耗时:0.0070s
+17:50:11,297 INFO net.GZBankNetImpl(135) - 保存报文完毕！13298_6_1012_out.xml
+17:50:11,301 INFO net.GZBankNetImpl(136) - 返回非标准报文:<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName></TellerName>
+   <CpicWater>000000009515</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+17:50:11,307 INFO net.GZBankNetImpl(148) - send消息头长度为:19
+17:50:11,310 INFO test.GZBankTest(80) - ---------------------------------------------------
+17:50:11,310 INFO test.GZBankTest(81) - 报文字节 长度为:448
+17:50:11,309 INFO net.GZBankNetImpl(154) - Out GZBankNetImpl.send()!
+17:50:11,311 INFO test.GZBankTest(82) - 交易码为:9000102
+17:50:11,312 INFO test.GZBankTest(83) - 目标保险公司代码为:006
+17:50:11,314 INFO test.GZBankTest(85) - 交易结束，共耗费：10.867秒,10867毫秒
+17:50:11,319 INFO test.GZBankTest(86) - 返回给贵州银行报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <InsuOrgNo />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <CpicWater>000000009515</CpicWater>
+   <ResultCode>01</ResultCode>
+   <ResultInfoDesc>插入日志失败！</ResultInfoDesc>
+</TXLife>
+
+
+17:50:13,435 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:50:13,440 INFO common.Log4jPrint(20) - 000000009515
+17:50:13,444 INFO common.Log4jPrint(20) - 000000009515
+17:50:13,448 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='000000009515'
+17:50:13,508 INFO common.Log4jPrint(20) - -------------------------
+17:50:13,515 INFO common.Log4jPrint(20) - this.setSchema(rs,i)=true,i=1
+17:50:13,516 INFO common.Log4jPrint(20) - -------------------------
+17:50:13,538 INFO common.Log4jPrint(20) - i=1
+17:50:15,225 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:50:15,232 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:50:15,236 INFO common.Log4jPrint(20) - 000000009515
+17:50:15,241 INFO common.Log4jPrint(20) - 000000009515
+17:50:15,245 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=13292,TranCom=9,ZoneNo='02',NodeNo='09990901',TranNo='000000009515',Operator='01350',FuncFlag=1012,TranDate=20161224,TranTime=8137,ProposalPrtNo='101019000006590',ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='Transport error: 404 Error: Not Found',UsedTime=1,AppntName='王超廷',Bak1='127.0.0.1',Bak2=null,Bak3='12.935',Bak4=null,Bak5=null,InNoDoc='13292_9_1012_in.xml',MakeDate=20161224,InDoc=null,OutDoc=null,MakeTime=150712,ModifyDate=20161224,ModifyTime=150714,AppntIDNo='230101197702226538',InsuredName='王超廷',InsuredIDNo='230101197702226538',ProductId='011A0100',OutNoDoc='13298_6_1012_out.xml' where TranNo='000000009515'
+17:50:16,378 INFO midplat.Ybt4Socket(144) - 处理总耗时：15.432s
+17:50:16,887 INFO midplat.Ybt4Socket(145) - Out Ybt4Socket.run()!
+17:53:40,902 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@78ba6c13
+17:53:40,909 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:53:40,913 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+17:53:40,914 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+17:53:40,916 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:53:40,916 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+17:53:40,917 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+17:53:40,920 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+17:53:40,991 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+17:53:40,999 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:53:41,000 INFO common.Log4jPrint(20) - End reset System.out!
+17:53:41,002 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:53:41,002 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+17:53:41,003 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+17:53:41,006 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+17:53:41,006 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:53:41,021 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+17:53:41,022 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+17:53:41,031 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+17:53:41,031 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:53:41,031 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+17:53:41,036 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+17:53:41,037 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+17:53:41,036 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+17:53:41,042 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+17:53:41,042 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+17:53:41,042 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:53:41,048 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+17:53:41,048 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+17:53:41,048 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+17:53:51,245 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+17:53:51,245 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+17:53:51,246 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+17:53:51,249 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+17:53:51,249 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+17:53:51,263 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+17:53:51,271 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+17:53:51,391 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+17:53:51,394 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+17:53:51,395 INFO test.GZBankTest(60) - 消息头长度为:19
+17:53:51,762 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+17:53:51,836 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+17:53:51,891 INFO midplat.Ybt4Socket(33) - TranLogNo:13295
+17:53:51,893 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+17:53:51,907 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+17:53:51,909 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+17:53:51,910 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+17:53:51,918 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+17:53:51,919 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+17:53:51,920 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+17:53:52,055 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+17:54:39,407 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@78ba6c13
+17:54:39,415 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:54:39,419 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+17:54:39,419 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+17:54:39,421 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:54:39,421 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+17:54:39,422 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+17:54:39,425 INFO common.XmlConf(80) - conf file modified at (2016-12-24 15:01:44,729) and length=25215 bytes!
+17:54:39,484 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+17:54:39,493 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:54:39,494 INFO common.Log4jPrint(20) - End reset System.out!
+17:54:39,496 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:54:39,497 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+17:54:39,497 INFO common.XmlConf(80) - conf file modified at (2016-12-22 19:58:23,597) and length=789 bytes!
+17:54:39,500 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+17:54:39,501 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:54:39,518 INFO net.SocketListenerF5(69) - Into SocketListenerF5.contextInitialized()...
+17:54:39,519 INFO net.SocketListenerF5(87) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+17:54:39,528 INFO net.SocketListenerF5(100) - 0_Socket(农业银行)加载成功!
+17:54:39,528 INFO net.SocketListenerF5(87) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:54:39,528 INFO net.SocketListenerF5$Server(186) - 监听端口 35006
+17:54:39,534 INFO net.SocketListenerF5(100) - 1_Socket(贵州银行)加载成功!
+17:54:39,534 INFO net.SocketListenerF5(87) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+17:54:39,534 INFO net.SocketListenerF5$Server(186) - 监听端口 35017
+17:54:39,539 INFO net.SocketListenerF5(100) - 2_Socket(中国银行)加载成功!
+17:54:39,540 INFO net.SocketListenerF5(87) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:54:39,539 INFO net.SocketListenerF5$Server(186) - 监听端口 52004
+17:54:39,546 INFO net.SocketListenerF5(100) - 3_Socket(建设银行)加载成功!
+17:54:39,546 INFO net.SocketListenerF5(108) - Out SocketListenerF5.contextInitialized()!
+17:54:39,546 INFO net.SocketListenerF5$Server(186) - 监听端口 39871
+17:54:44,075 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
+17:54:44,075 INFO gzbank.GZBankConf(25) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml...
+17:54:44,076 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,664) and length=1763 bytes!
+17:54:44,079 INFO gzbank.GZBankConf(41) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/gzbank.xml!
+17:54:44,079 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
+17:54:44,091 DEBUG common.NoFactory(27) - ClusterId=2; ClusterCount=3
+17:54:44,097 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+17:54:44,223 INFO test.GZBankTest(48) - 贵州银行请求报文：<?xml version="1.0"?>
+<TXLife>
+   <TransNo>9000102</TransNo>
+   <QdBankCode>GYAYN95270</QdBankCode>
+   <BankCode>02</BankCode>
+   <Branch>09990901</Branch>
+   <CarrierCode />
+   <TransExeDate>20161224</TransExeDate>
+   <TransExeTime>181437</TransExeTime>
+   <TransRefGUID>000000009515</TransRefGUID>
+   <Teller>01350</Teller>
+   <TellerName />
+   <AgentSalesCode>5201300004</AgentSalesCode>
+   <AgentSalesName>崔璀</AgentSalesName>
+   <Credentials>111222</Credentials>
+   <BankNetUpLeaderCode />
+   <BankNetUpLeaderName />
+   <BankNetCredentialsNo>52030072214373301</BankNetCredentialsNo>
+   <BankNetName>贵州银行股份有限公司贵州银行股份有限公司遵义分行营业部</BankNetName>
+   <PolicyHolder>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Zip>456212</Zip>
+      <RelatedToInsuredRoleCode>301</RelatedToInsuredRoleCode>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType>1</ResidentsType>
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome>0</AnnualHomeIncome>
+      <Height />
+      <Weight />
+      <CompanyName />
+   </PolicyHolder>
+   <Insured>
+      <GovtID>230101197702226538</GovtID>
+      <GovtIDTC>0</GovtIDTC>
+      <EffectDate />
+      <ExpireDate />
+      <BirthDate>19770222</BirthDate>
+      <Gender>1</Gender>
+      <FullName>王超廷</FullName>
+      <OccupationType>1016</OccupationType>
+      <Line1>黑龙江省哈尔滨市市辖区</Line1>
+      <Zip>456212</Zip>
+      <DialCode />
+      <DialNumber />
+      <MobileNumber>13523231232</MobileNumber>
+      <Nation>CN</Nation>
+      <Province />
+      <County />
+      <ExpireDate />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome>50000</AnnualIncome>
+      <AnnualHomeIncome />
+      <Height />
+      <Weight />
+      <CompanyName />
+   </Insured>
+   <HOAppFormNumber>1010190000065</HOAppFormNumber>
+   <ProductCode>011A0100</ProductCode>
+   <PaymentAmt>10000</PaymentAmt>
+   <SubmissionDate>20161224</SubmissionDate>
+   <IntialNumberOfUnits>10</IntialNumberOfUnits>
+   <PaymentMode>1</PaymentMode>
+   <PaymentDuration>1</PaymentDuration>
+   <PayAge>0</PayAge>
+   <CpicTeller />
+   <BeneficiaryIndicator>N</BeneficiaryIndicator>
+   <BeneficiaryCount>1</BeneficiaryCount>
+   <Beneficiary1>
+      <No>1</No>
+      <BeneficiaryMethod>1</BeneficiaryMethod>
+      <GovtIDTC>0</GovtIDTC>
+      <GovtID>210101198805151568</GovtID>
+      <BirthDate>19880515</BirthDate>
+      <EffectDate />
+      <ExpireDate />
+      <FullName>赵霏娅</FullName>
+      <OccupationType>9999999</OccupationType>
+      <Line1 />
+      <DialCode>0323</DialCode>
+      <DialNumber>0</DialNumber>
+      <MobileNumber>13521212451</MobileNumber>
+      <Zip />
+      <Gender>2</Gender>
+      <RelatedToInsuredRoleCode>304</RelatedToInsuredRoleCode>
+      <InterestPercent>100</InterestPercent>
+      <Nation />
+      <Province />
+      <County />
+      <Education />
+      <Marriage />
+      <Email />
+      <ResidentsType />
+      <AnnualIncome />
+      <AnnualHomeIncome />
+   </Beneficiary1>
+   <DivType>12</DivType>
+   <BenefitMode />
+   <EffDate />
+   <TermDate />
+   <PeriodType>2</PeriodType>
+   <CoverPeriod>5</CoverPeriod>
+   <CoverageCount>0</CoverageCount>
+   <Banking>
+      <AccountType>2</AccountType>
+      <AccountNumber>6214600180000000492</AccountNumber>
+      <BankName />
+   </Banking>
+   <HealthIndicator>N</HealthIndicator>
+   <RiskIndicator>Y</RiskIndicator>
+</TXLife>
+
+
+17:54:44,227 INFO test.GZBankTest(49) - 请求报文长度为：3959个字节
+17:54:44,227 INFO test.GZBankTest(60) - 消息头长度为:19
+17:54:44,556 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+17:54:44,631 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2
+17:54:44,692 INFO midplat.Ybt4Socket(33) - TranLogNo:13295
+17:54:44,692 INFO midplat.Ybt4Socket(46) - 前端通讯模块：com.sinosoft.midplat.gzbank.net.GZBankNetImpl
+17:54:44,697 INFO net.SocketNetImpl(36) - 客户端IP：127.0.0.1；服务端口：35017
+17:54:44,698 INFO midplat.Ybt4Socket(55) - Into Ybt4Socket.run()...
+17:54:44,698 INFO net.GZBankNetImpl(39) - Into GZBankNetImpl.receive()...
+17:54:44,700 INFO net.GZBankNetImpl(43) - 请求报文长度：3959
+17:54:44,701 INFO net.GZBankNetImpl(45) - 交易代码：9000102
+17:54:44,701 INFO net.GZBankNetImpl(47) - 保险公司代码：006
+17:54:44,827 DEBUG common.SaveMessage(23) - SavePath_HOME = f:\
+17:54:44,828 DEBUG common.SaveMessage(41) - SavePath_HOME = f:/

@@ -412,7 +412,7 @@
 	
 	<business>
 		<name>更新非实时业务状态</name>
-		<funcFlag outcode="P538191E4"></funcFlag>
+		<funcFlag outcode="P538191E4">1080</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout> 
 		<format>com.sinosoft.midplat.newccb.format.UpdateServiceStatus</format>
@@ -421,7 +421,7 @@
 	
 	<business>
 		<name>查询非实时缴费信息</name>
-		<funcFlag outcode="P53819153"></funcFlag>
+		<funcFlag outcode="P53819153">1090</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout> 
 		<format>com.sinosoft.midplat.newccb.format.QueryPaymentInfo</format>

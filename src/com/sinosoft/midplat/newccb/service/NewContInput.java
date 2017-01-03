@@ -51,9 +51,13 @@ public class NewContInput extends ServiceImpl
 		//获取标准输入报文
 		cInXmlDoc = pInXmlDoc;
 		//Java文档对象模型工具将输入标准报文打印到控制台[GBK编码，缩进3空格]
+		//打印标准输入报文
 		JdomUtil.print(cInXmlDoc);//[Element:<TranData/>]
+		//标准输入报文TranData根节点
 		Element mRootEle = cInXmlDoc.getRootElement();//核心录单自核请求报文根节点[Element: <TranData/>]
+		//标准输入报文Body报文体节点
 		Element mBodyEle = mRootEle.getChild(Body);//核心录单自核请求报文报文体[Element: <Body/>]
+		//Body的投保单(印刷)号子节点文本
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);//投保单(印刷)号 210414131200027
 		// String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
 
@@ -61,6 +65,7 @@ public class NewContInput extends ServiceImpl
 		{
 			// System.out.println("--------------------------------------------------------------------------------------------------------");
 			// JdomUtil.print(cInXmlDoc);
+			//将标准输入报文插入交易日志表
 			cTranLogDB = insertTranLog(cInXmlDoc);
 			
 			// 校验系统中是否有相同保单正在处理，尚未返回
@@ -247,6 +252,7 @@ public class NewContInput extends ServiceImpl
 			cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
 			cTranLogDB.setModifyTime(DateUtil.get6Time(tCurMillis));
+			//更新交易日志记录失败[!false=true]
 			if (!cTranLogDB.update())
 			{
 				cLogger.error("更新日志信息失败！" + cTranLogDB.mErrors.getFirstError());

@@ -152,6 +152,14 @@ public interface AblifeCodeDef extends CodeDef {
 	/** 新建行确认登记台账*/
 	String SID_SignConfirm= "61";
 	
+	/*新建行非实时*/
+	/**建行非实时投保申请**/
+	/**建行更新非实时业务状态**/
+	String SID_UpdateServiceStatus="64";
+	/**建行查询非实时缴费信息**/
+	String SID_QueryPaymentInfo="65";
+	/**建行获取非实时核保状态**/
+	
 	/** 新农行保全对账*/
 	String SID_BQContBlc= "16";
 	

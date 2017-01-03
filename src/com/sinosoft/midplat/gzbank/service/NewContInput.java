@@ -29,22 +29,33 @@ public class NewContInput extends ServiceImpl {
 		super(pThisBusiConf);
 	}
 	
+	/**
+	 * 业务处理
+	 * @param pInXmlDoc 输入XML文件
+	 * @return 
+	 */
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) throws Exception {
+		//开始毫秒数
 		long mStartMillis = System.currentTimeMillis();
+		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
-		
+		//输入XML文件根节点
 		Element mRootEle = pInXmlDoc.getRootElement();
+		//输入XML文件报文头
 		Element mHeadEle=mRootEle.getChild("Head");
+		//输入XML文件报文体
 		Element mBodyEle = mRootEle.getChild(Body);
 		
 		try {
-			//保存核心报文
+			//保存核心报文[交易流水号_交易类型_年月日时分秒.xml]
 			StringBuffer mSaveName = new StringBuffer(mHeadEle.getChildText("TranNo"))
 			.append('_').append(mHeadEle.getChildText("FuncFlag"))
 			.append('_').append(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()))
 			.append(".xml");
+			//当前交易配置文件得到父元素[gzbank]的交易机构代码
 			String TranCom=cThisBusiConf.getParentElement().getChildText("TranCom");
+			//
 		    SaveMessage.save(JdomUtil.toBytes(pInXmlDoc),TranCom,"InStd",mSaveName.toString());
 		    cLogger.info("保存核心报文完毕！"+mSaveName);
 		    pInXmlDoc.getRootElement().getChild("Head").getChild("InNoDoc").setText(mSaveName.toString());

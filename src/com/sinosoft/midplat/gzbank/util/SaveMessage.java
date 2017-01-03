@@ -11,6 +11,10 @@ import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.SysInfo;
 
+/**
+ * 保存报文
+ * @author yuantongxin
+ */
 public class SaveMessage {
 	private SaveMessage() {}
 	private final static Logger cLogger = Logger.getLogger(SaveMessage.class);
@@ -38,7 +42,15 @@ public class SaveMessage {
 		}
 	}
 	
+	/**
+	 * 保存
+	 * @param pBytes 输入XML文档二进制序列
+	 * @param pTranCom 交易机构代码
+	 * @param pName 报文名[标准输入报文]
+	 * @param tFileName 保存文件名
+	 */
 	public static void save(byte[] pBytes, String pTranCom, String pName,String tFileName) {
+		//获取环境变量文件路径
 		StringBuilder mFilePath = new StringBuilder(SysInfo.cHome)
 			.append("msg/")
 			.append('/')

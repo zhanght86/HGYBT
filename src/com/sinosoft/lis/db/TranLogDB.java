@@ -52,15 +52,17 @@ public class TranLogDB extends TranLogSchema
 	}
 
 	/**
-	 * 插入
+	 * 插入交易日志
 	 * @return 操作结果(true成功，false失败)
 	 */
 	// @Method
 	public boolean insert()
 	{
 		//[AppntIDNo:"371502198310206057",AppntName:"华贵",Bak1:"127.0.0.1",FuncFlag:1012,InNoDoc:"2246_3_1012_in.xml",InsuredIDNo:"371502198310206057",InsuredName:"华贵",LogNo:2246,MakeDate:20161208,MakeTime:142926,NodeNo:"060150001222",Operator:"5201300002",OtherNo:"",ProductId:"011A0100",ProposalPrtNo:"210414132201550",RCode:-1,RText:null,TranCom:9,TranDate:20161108,TranNo:"2016120800010",TranTime	:130101,UnitCode:null,UsedTime:-1,ZoneNo:"01",ModifyDate:20161208,ModifyTime:142926]
+		//得到交易日志记录集
 		TranLogSchema tSchema = this.getSchema();
 		//数据库操作对象插入集合(用户)类对象失败
+		//插入交易日志记录集失败[!false=true]
 		if (!db.insert(tSchema))
 		{
 			// @@错误处理

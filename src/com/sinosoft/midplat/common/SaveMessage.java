@@ -10,7 +10,7 @@ import org.jdom.Document;
 import com.sinosoft.midplat.MidplatConf;
 
 /**
- * 保存信息
+ * 保存报文
  * @author yuantongxin
  */
 public class SaveMessage {

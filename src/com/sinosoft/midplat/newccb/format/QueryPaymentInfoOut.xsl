@@ -39,13 +39,13 @@
 				<SYS_RESP_TIME></SYS_RESP_TIME>
 			     <!-- 报文状态类型  -->
 				<SYS_PKG_STS_TYPE>01</SYS_PKG_STS_TYPE>    
-				<xsl:if test = "/TranData/Head/Flag='0'">
+				<xsl:if test = "/TranData/RetData/Flag='1'">
 			     <!-- 服务状态 -->
 				<SYS_TX_STATUS>00</SYS_TX_STATUS>    
 			     <!-- 服务响应码 -->
 				<SYS_RESP_CODE>000000000000</SYS_RESP_CODE>    
 				</xsl:if>
-				<xsl:if test = "/TranData/Head/Flag !='0'">
+				<xsl:if test = "/TranData/RetData/Flag ='0'">
 			     <!-- 服务状态 -->
 				<SYS_TX_STATUS>01</SYS_TX_STATUS>    
 			     <!-- 服务响应码 -->
@@ -82,39 +82,34 @@
 	      			</COMMON>
 	      			<ENTITY>
 			        	<APP_ENTITY>
-								 
-							<!-- 建行代理标志  -->
-							<CCB_Agnc_Ind>1</CCB_Agnc_Ind>
-							<!-- 一级分行号  -->
-							<Lv1_Br_No></Lv1_Br_No>
-							<!-- 代理保险缴费业务细分代码 ？ --> 
-							<xsl:if test = "/TranData/Body/PayedTimes !='0'">
-							<AgInsPyFBsnSbdvsn_Cd>14</AgInsPyFBsnSbdvsn_Cd>
-							</xsl:if>
-							<xsl:if test = "/TranData/Body/PayedTimes ='0'">
-							<AgInsPyFBsnSbdvsn_Cd>11</AgInsPyFBsnSbdvsn_Cd>
-							</xsl:if>
 							<!-- 投保单号 -->
-							<Ins_BillNo><xsl:value-of select="/TranData/Body/ProposalPrtNo"/></Ins_BillNo>
-							<!-- 套餐名称 -->
-							<Pkg_Nm></Pkg_Nm>
-							<!-- 险种名称 -->
-							<Cvr_Nm><xsl:value-of select="/TranData/Body/PlanName"/></Cvr_Nm>
+							<Ins_BillNo><xsl:value-of select="/TranData/LCCont/PrtNo"/></Ins_BillNo>
 							<!-- 险种编号 -->
-					        <Cvr_ID><xsl:value-of select="/TranData/Body/RiskCode" /></Cvr_ID>
+					        <Cvr_ID><xsl:value-of select="/TranData/LCCont/RiskCode" /></Cvr_ID>
+							<!-- 险种名称 -->
+							<Cvr_Nm><xsl:value-of select="/TranData/LCCont/RiskName"/></Cvr_Nm>
 			        		<!-- 代理保险套餐编号 -->
 			        		<AgIns_Pkg_ID></AgIns_Pkg_ID>
-							<!-- 保单号码 -->
-							<InsPolcy_No><xsl:value-of select="/TranData/Body/ContNo"/></InsPolcy_No>
-							<!-- 投保人姓名 -->
-							<Plchd_Nm><xsl:value-of select="/TranData/Body/Name"/></Plchd_Nm>
-							<!-- 续期应缴日期 -->
-							<Rnew_Pbl_Dt><xsl:value-of select="/TranData/Body/RecvDate"/></Rnew_Pbl_Dt>
+							<!-- 套餐名称 -->
+							<Pkg_Nm></Pkg_Nm>
+							<!-- 投保人名称 -->
+							<Plchd_Nm><xsl:value-of select="/TranData/LCCont/AppntName"/></Plchd_Nm>
 							<!-- 保险缴费金额  -->
-							<Ins_PyF_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/RecvAmount)"/></Ins_PyF_Amt>
-							<!-- 续期应缴期数  已缴期数-->
-							<Rnew_Pbl_Prd_Num><xsl:value-of select="/TranData/Body/CurrentTimes"/></Rnew_Pbl_Prd_Num>
-							
+							<Ins_PyF_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/LCCont/Prem)"/></Ins_PyF_Amt>
+							<!-- 保险年期类别代码 -->
+							<Ins_Yr_Prd_CgyCd><xsl:value-of select="/TranData/LCCont/InsuYearFlag"/></Ins_Yr_Prd_CgyCd>
+							<!-- 保险期限 -->
+							<Ins_Ddln><xsl:value-of select="/TranData/LCCont/InsuYear"/></Ins_Ddln>
+							<!-- 保险周期代码 -->
+							<Ins_Cyc_Cd></Ins_Cyc_Cd>
+							<!-- 保费缴费方式代码 -->
+							<InsPrem_PyF_MtdCd><xsl:value-of select="/TranData/LCCont/PayIntv"/></InsPrem_PyF_MtdCd>
+							<!-- 保费缴费期数 -->
+							<InsPrem_PyF_Prd_Num><xsl:value-of select="/TranData/LCCont/PayEndYear"/></InsPrem_PyF_Prd_Num>
+							<!-- 保费缴费周期代码 -->
+							<InsPrem_PyF_Cyc_Cd><xsl:value-of select="/TranData/LCCont/PayEndYearFlag"/></InsPrem_PyF_Cyc_Cd>
+							<!-- 代理保险缴费业务细分代码 -->
+							<AgInsPyFBsnSbdvsn_Cd></AgInsPyFBsnSbdvsn_Cd>
 			        	</APP_ENTITY>
 			        </ENTITY>
 	      	</TX_BODY>

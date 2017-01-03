@@ -33,23 +33,35 @@ public final class SysInfo {
 		cLogger.debug("BasePath = " + cBasePath);
 	}
 	
+	//环境变量
 	public final static String cHome;
 	static {
+		//获取中间平台本地环境变量值
 		String tHome = System.getenv("MIDPLAT_HOME");
 		//MIDPLAT_HOME = null
 		cLogger.debug("MIDPLAT_HOME = " + tHome);
+		//环境变量值为空、空字符
 		if (null==tHome || "".equals(tHome)) {
+			//设置环境变量值为得到的绝对路径
 			tHome = getRealPath("..");
 		}
+		//将环境变量中的\\替换为/
 		tHome = tHome.replace('\\', '/');
+		//环境变量非/后缀结尾
 		if (!tHome.endsWith("/")) {
+			//环境变量拼接上/
 			tHome += '/';
 		}
+		//构建环境变量文件对象
 		File tFile = new File(tHome);
+		//环境变量表示的目录存在
 		if (tFile.exists() && tFile.isDirectory()) {
+			//为成员环境变量赋值
 			cHome = tHome;
 		} else {
+			//MIDPLAT_HOME设置有误！环境变量
 			cLogger.error("MIDPLAT_HOME设置有误！" + tHome);
+			//环境变量设为空
 			cHome = null;
 		}
 		//Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
@@ -59,17 +71,21 @@ public final class SysInfo {
 
 	/**
 	 * 得到绝对路径
-	 * @param pPath
-	 * @return
+	 * @param pPath 路径[父级目录:..]
+	 * @return pPath 绝对路径
 	 */
 	public static String getRealPath(String pPath) {
 		///F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+		//解析一个表示基本路径的文件统一资源标识符的将路径中的\\转换为/的字符串,构造一个新统一资源标识符[路径URI]
+		///F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
 		pPath = new File(cBasePath).toURI().resolve(pPath.replace('\\', '/')).getPath();
 		try {
+			//将路径URI编码为UTF-8字符串
 			pPath = URLDecoder.decode(pPath, "utf-8");
 		} catch (UnsupportedEncodingException ex) {
 			cLogger.error("不支持utf-8！", ex);
 		}
+		//返回UTF-8格式的路径
 		return pPath;
 	}
 	

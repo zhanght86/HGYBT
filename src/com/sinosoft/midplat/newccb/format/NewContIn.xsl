@@ -427,19 +427,19 @@
 				
 				<!--保险期间-->	 
 				<xsl:choose>		
-					<xsl:when test="Ins_Yr_Prd_CgyCd='04'">	<!-- 至某特定年龄 -->
+					<xsl:when test="Ins_Yr_Prd_CgyCd='04'">	<!-- 至某特定年龄 --><!-- 保险年期类别代码为04 -->
 						<!-- 保险年期年龄标志 -->
-						<InsuYearFlag>A</InsuYearFlag>
+						<InsuYearFlag>A</InsuYearFlag><!-- 保险期间类型为A -->
 						<!-- 保险年期年龄 -->
 						<InsuYear><xsl:value-of select="Ins_Ddln" /></InsuYear> 
 					</xsl:when> 
-					<xsl:when test="Ins_Yr_Prd_CgyCd='05'">	<!-- 保终身 -->
+					<xsl:when test="Ins_Yr_Prd_CgyCd='05'">	<!-- 保终身 --><!-- 保险年期类别代码为05 -->
 						<!-- 保险年期年龄标志 -->
-						<InsuYearFlag>A</InsuYearFlag>
+						<InsuYearFlag>A</InsuYearFlag><!-- 保险期间类型为A -->
 						<!-- 保险年期年龄 -->
 						<InsuYear><xsl:value-of select="Ins_Ddln" /></InsuYear> 
 					</xsl:when> 
-					<xsl:otherwise>	
+					<xsl:otherwise><!-- 否则，保险期间类型为保险周期代码 -->
 						<InsuYearFlag>
 							<xsl:call-template name="tran_PbIYF">
 								<xsl:with-param name="PbInsuYearFlag">

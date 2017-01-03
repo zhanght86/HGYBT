@@ -17,6 +17,10 @@ import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.exception.NetException;
 
+/**
+ * 套接字网络实现类
+ * @author yuantongxin
+ */
 public class SocketNetImpl implements XmlTag {
 	protected final Logger cLogger = Logger.getLogger(getClass());
 	

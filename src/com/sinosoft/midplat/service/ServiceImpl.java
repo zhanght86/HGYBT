@@ -64,22 +64,25 @@ public class ServiceImpl implements Service, XmlTag
 		//Into ServiceImpl.insertTranLog()...[进入业务处理实现类.插入交易日志...]
 		cLogger.debug("Into ServiceImpl.insertTranLog()...");//15:43:10,347 DEBUG service.ServiceImpl(54) - Into ServiceImpl.insertTranLog()...
 		//[Element: <TranData/>]
-		//[标准输入]报文根节点
+		//[标准输入]报文TranData根节点
 		Element mTranDataEle = pXmlDoc.getRootElement();
 		//[Element: <Head/>]
-		//[标准输入]报文头
-		Element mHeadEle = mTranDataEle.getChild(Head);
-		//[标准输入]报文体
+		//[标准输入]Head报文头
+		Element mHeadEle = mTranDataEle.getChild("BaseInfo");
+		//[标准输入]Body报文体
 		//[Element: <Body/>]
-		Element mBodyEle = mTranDataEle.getChild(Body);
+		Element mBodyEle = mTranDataEle.getChild("LCCont");
 		//交易日志数据库操作类实例[不传入连接对象，交易日志生成数据库操作对象]
-		TranLogDB mTranLogDB = new TranLogDB();
+		TranLogDB mTranLogDB = new TranLogDB();//TranLog数据操作类实例
 		//LogNo:2240
 		//设置日志号为当前正在执行的线程对象的引用名称
+		//设置日志号
 		mTranLogDB.setLogNo(Thread.currentThread().getName());
 		//进程名：2240
 		//进程名：10091
 		System.out.println("进程名：" + Thread.currentThread().getName());
+		/*设置交易日志数据库操作类实例字段为核心标准输入报文头字段值*/
+		/*设置TranLog表9个字段[标准输入报文头9个字段]：TranDate、TranTime、ZoneNo、NodeNo、TellerNo[Operator]、TranNo、TranCom、FuncFlag、InNoDoc*/
 		//TranCom:9
 		//设置交易单位为[标准输入]报文头交易机构代码子元素文本
 		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
@@ -118,8 +121,10 @@ public class ServiceImpl implements Service, XmlTag
 		System.out.println("mHeadEle.getChildText" + mHeadEle.getChildText("InNoDoc"));
 		//<Body> != null
 		//[标准输入]报文体非空
+		//Body非空
 		if (null != mBodyEle)
 		{
+			/*设置TranLog表4个字段:ProposalPrtNo、ContNo、ContPrtNo、OldLogNo[Bak2]*/
 			//ProposalPrtNo:210414132201550
 			//设置投保单(印刷)号为[标准输入]报文体投保单(印刷)号子元素文本
 			mTranLogDB.setProposalPrtNo(mBodyEle.getChildText(ProposalPrtNo));
@@ -140,9 +145,11 @@ public class ServiceImpl implements Service, XmlTag
 			}
 		}
 		//交易码为实时投保、新单确认，交易机构代码是中国工商银行
+		//交易码为试算交易或工行新单承保
 		if (("1012".equals(mHeadEle.getChildText(FuncFlag)))// 建行和农行的试算交易
 				|| ("1013".equals(mHeadEle.getChildText(FuncFlag)) && String.valueOf(AblifeCodeDef.TranCom_ICBC).endsWith(mHeadEle.getChildText(TranCom))))
 		{
+			/*设置TranLog表5个字段：AppntName、AppntIDNo、InsuredName、InsuredIDNo、RiskCode[ProductId]*/
 			//设置投保人名称
 			mTranLogDB.setAppntName((mBodyEle.getChild(Appnt).getChildText(Name)));
 			//设置投保人证件号码
@@ -163,6 +170,7 @@ public class ServiceImpl implements Service, XmlTag
 				mTranLogDB.setProductId(mBodyEle.getChild(Risk).getChildText(MainRiskCode));
 			}
 		}
+		/*设置TranLog表7个字段:RCode、UsedTime、Bak1、MakeDate、MakeTime、ModifyDate、ModifyTime*/
 		//设置交易结果为交易挂起，未返回 
 		mTranLogDB.setRCode(CodeDef.RCode_NULL);
 		//设置服务耗时为-1
@@ -182,6 +190,8 @@ public class ServiceImpl implements Service, XmlTag
 		//获取当前毫秒数
 		long mStartMillis = System.currentTimeMillis();
 		//交易日志数据库操作插入失败
+		//插入交易日志对象到交易日志表
+		//!false=true插入失败
 		if (!mTranLogDB.insert())
 		{
 			//ORA-00001: 违反唯一约束条件 (YBT.PK_TRANLOG) 

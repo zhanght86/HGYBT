@@ -4,60 +4,60 @@
 		<xsl:template match="TX">
 			<TranData>
 				<Head>
+					<ServiceId>65</ServiceId>
+					<TranCom><xsl:value-of select="Head/TranCom"/></TranCom>
+				</Head>
+				<BaseInfo>
+					<!-- 银行编号 -->
+					<BankCode><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCBIns_ID" /></BankCode>
 				     <!--交易日期 -->
-					<TranDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,0,8)" /></TranDate>
+					<BankDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,0,8)" /></BankDate>
 					<!--交易时间 -->
-					<TranTime><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,8,14)" /></TranTime>
-					<!-- 银行网点 -->
-					<NodeNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCBIns_ID" /></NodeNo>
-					<!-- 银行编码 -->
-					<BankCode>0104</BankCode>
-					<!--柜员号 -->
+					<BankTime><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,8,14)" /></BankTime>
+					<!-- 一级分行号(地区编号) -->
+					<ZoneNo>1</ZoneNo>
+					<!-- 保险客户名单提供地区编号(分支编号) -->
+					<BrNo>1</BrNo>
+					<!--柜员编号 -->
 					<TellerNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCB_EmpID" /></TellerNo>
-					<!-- 交易流水号 -->
-					<TranNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/SvPt_Jrnl_No" /></TranNo>
-					<!-- 银行端ip[非必须] 
-					<ClientIp>127.0.0.1</ClientIp> -->
-					<!-- 交易渠道 
-					<TranCom>03</TranCom> -->
-					<!-- 交易类型 -->
-			 <!-- <FuncFlag><xsl:value-of select="TX_HEADER/SYS_TX_CODE" /></FuncFlag>  -->	
-					<!-- 服务id ?待确认
-					<ServiceId>1</ServiceId>--> 
-					
-					<!-- 生产上用下面方式，上面为了测试所以加上下面字段-->
-					
-					<!-- 交易类型 服务类中添加-->
-					<!-- 服务id 服务类中添加-->
-					<!-- 银行端ip[非必须] 服务类中添加-->
+					<!-- #服务方流水号 -->
+					<TransrNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/SvPt_Jrnl_No" /></TransrNo>
+					<!--交易类型 -->
+					<FunctionFlag>48</FunctionFlag>
+					<!--保险公司编号 -->
+					<InsuID></InsuID>
 				    <xsl:copy-of select="Head/*"/>
-			  </Head>
+			  </BaseInfo>
 			  <!-- 报文体 -->
 			  <xsl:apply-templates select="TX_BODY/ENTITY/APP_ENTITY" />
 		 </TranData>	
 	</xsl:template>
 			
 		<xsl:template match="TX_BODY/ENTITY/APP_ENTITY">	
-			<Body>
-				<!-- 险种编号 -->
-				<RiskCode><xsl:value-of select="Cvr_ID" /></RiskCode>
-				<!-- 保单号码 -->
-				<ContNo><xsl:value-of select="InsPolcy_No" /></ContNo> 
+			<LCCont>
  				<!-- 投保单号 -->
- 				<ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Ins_BillNo)" /></ProposalPrtNo>			
+ 				<PrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Ins_BillNo)" /></PrtNo>			
 				<!-- 投保人姓名 -->
-				<Name><xsl:value-of select="Plchd_Nm" /></Name>					
+				<AppntName><xsl:value-of select="Plchd_Nm" /></AppntName>					
 				<!-- 投保人证件类型 -->
-				<IDType>
+				<AppntIDType>
 					<xsl:call-template name="tran_idtype">
 						<xsl:with-param name="idtype">
 							<xsl:value-of select="Plchd_Crdt_TpCd" />
 						</xsl:with-param>
 					</xsl:call-template>
-				</IDType>			
+				</AppntIDType>			
 				<!-- 投保人证件号 -->
-				<IDNo><xsl:value-of select="Plchd_Crdt_No" /></IDNo>
-  			</Body>
+				<AppntIDNo><xsl:value-of select="Plchd_Crdt_No" /></AppntIDNo>
+				<!-- 投保人证件有效期类型 -->
+				<AppntIDValiDateType><xsl:value-of select="Plchd_Crdt_TpCd" /></AppntIDValiDateType>
+				<!-- 投保人证件生效日期 -->
+				<AppntIDStartDate><xsl:value-of select="Plchd_Crdt_EfDt" /></AppntIDStartDate>
+				<!-- 投保人证件失效日期 -->
+				<AppntIDEndDate><xsl:value-of select="Plchd_Crdt_ExpDt" /></AppntIDEndDate>
+				<!-- 投保人国际地区代码 -->
+				<AppntNationality><xsl:value-of select="Plchd_Nat_Cd" /></AppntNationality>
+  			</LCCont>
 		</xsl:template>
 
 	<!-- 证件类型 -->

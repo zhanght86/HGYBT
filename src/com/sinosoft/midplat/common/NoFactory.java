@@ -6,17 +6,26 @@ import org.jdom.Element;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.utility.ExeSQL;
 
+/**
+ * 编号工厂类
+ * @author yuantongxin
+ */
 public class NoFactory {
 	private final static Logger cLogger = Logger.getLogger(NoFactory.class);
 	
+	//集群ID
 	protected static final byte cClusterId;
+	//集群数
 	protected static final byte cClusterCount;
+	/*静态代码块:初始化集群ID、集群数单一实例*/
 	static {
 		//cluster元素
 		Element tClusterEle = MidplatConf.newInstance().getConf().getRootElement().getChild("cluster");
 		//cluster元素存在，获取元素属性值
 		if (null != tClusterEle) {
+			//集群ID
 			cClusterId = Byte.parseByte(tClusterEle.getAttributeValue("id"));
+			//集群数
 			cClusterCount = Byte.parseByte(tClusterEle.getAttributeValue("count"));
 		//cluster元素不存在，赋默认值
 		} else {
@@ -27,16 +36,34 @@ public class NoFactory {
 		cLogger.debug("ClusterId=" + cClusterId + "; ClusterCount=" + cClusterCount);
 	}
 	
-	private static final byte[] cAppNoLock = new byte[0];//[]
+	//应用号锁
+	private static final byte[] cAppNoLock = new byte[0];
+	//应用号
 	private static int cAppNo;//6
+	
+	/**
+	 * 下个应用号
+	 * @return cAppNo 应用号
+	 */
 	public final static int nextAppNo() {
+		//同步应用号锁
 		synchronized (cAppNoLock) {
+			/*允许访问控制的代码*/
+			//应用号=应用号+集群数[3]
 			cAppNo += cClusterCount;//6+3=9
 		}
+		//返回应用号
 		return cAppNo;//9
 	}
+	
+	/**
+	 * 设置应用号
+	 * @param pMaxNo 最大编号
+	 */
 	public final static void setAppNo(int pMaxNo) {
+		//同步应用号锁
 		synchronized (cAppNoLock) {
+			//应用号=最大编号-(最大编号余集群数[3])+集群ID
 			cAppNo = pMaxNo - pMaxNo%cClusterCount + cClusterId;
 		}
 	}
