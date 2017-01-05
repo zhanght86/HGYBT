@@ -68,10 +68,10 @@ public class ServiceImpl implements Service, XmlTag
 		Element mTranDataEle = pXmlDoc.getRootElement();
 		//[Element: <Head/>]
 		//[标准输入]Head报文头
-		Element mHeadEle = mTranDataEle.getChild("BaseInfo");
+		Element mHeadEle = mTranDataEle.getChild("Head");
 		//[标准输入]Body报文体
 		//[Element: <Body/>]
-		Element mBodyEle = mTranDataEle.getChild("LCCont");
+		Element mBodyEle = mTranDataEle.getChild("Body");
 		//交易日志数据库操作类实例[不传入连接对象，交易日志生成数据库操作对象]
 		TranLogDB mTranLogDB = new TranLogDB();//TranLog数据操作类实例
 		//LogNo:2240

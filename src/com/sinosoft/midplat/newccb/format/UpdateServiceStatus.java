@@ -4,21 +4,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
-import com.sinosoft.midplat.newccb.bean.LKPolicyXML;
-import com.sinosoft.midplat.newccb.dao.LKPolicyXMLDao;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
+/**
+ * @ClassName: UpdateServiceStatus
+ * @Description: 
+ * @author yuantongxin
+ * @date 2017-1-4 上午10:56:29
+ */
 public class UpdateServiceStatus extends XmlSimpFormat {
 
-	/*非标准报文头*/
-	private Element cTransaction_Header = null;
 	//服务接受时间
 	private String mSYS_RECV_TIME = null;
 	//服务响应时间
@@ -31,24 +31,16 @@ public class UpdateServiceStatus extends XmlSimpFormat {
 	private String sysTxCode = null;
 	//代理保险套餐编号[TX_BODY/APP_ENTITY/AgIns_Pkg_ID]
 	private String sAginsPkgId = null;
-	//缴费频次[TX_BODY/APP_ENTITY/../InsPrem_PyF_MtdCd]
-	private String sPayIntv = null;
-	//投保份数[TX_BODY/APP_ENTITY]
-	private String sMult = null;
-	//受益比例(整数，百分比) [TX_BODY/APP_ENTITY/Bnft_Pct]
-	private String sLot = null;
-	//
-	private String sPayCycCod = null;
-	//关系类型
-	private String sRelationShip = null;
 	//报文头[TX_HEADER]
 	private Element oldTxHeader = null;
 	//旧公共域[TX_BODY/COM_ENTITY]
 	private Element oldComEntity = null;
 	//旧应用域[TX_BODY/APP_ENTITY]
+	@SuppressWarnings("unused")
 	private Element oldAppEntity = null;
 	
 	/**请求的非标准报文*/
+	@SuppressWarnings("unused")
 	private Document noStdDoc = null;//非标准报文
 
 	public UpdateServiceStatus(Element pThisBusiConf) {
@@ -92,15 +84,7 @@ public class UpdateServiceStatus extends XmlSimpFormat {
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into UpdateServiceStatus.std2NoStd()...");
-		// 如果试算成功,保存原始保文
-		String funcFlag = pStdXml.getRootElement().getChild("RetData")
-				.getChildText("Flag");
-		if (StringUtils.isNotBlank(funcFlag) && "0".equals(funcFlag)) {
-			// 保存非标准报文
-			saveNoStdDoc(pStdXml);
-		}
-
-//		JdomUtil.print(pStdXml);
+		//		JdomUtil.print(pStdXml);
 		Document mNoStdXml = UpdateServiceStatusOutXsl.newInstance().getCache()
 				.transform(pStdXml);
 		JdomUtil.print(mNoStdXml);
@@ -112,15 +96,10 @@ public class UpdateServiceStatus extends XmlSimpFormat {
 		// 设置TX_HEADER的一些节点信息[返回给银行的非标准报文,银行发过来的非标准报文的头节点,服务接受时间(20161212095023139),服务响应时间(20161212103228778)]
 		mNoStdXml = NewCcbFormatUtil.setNoStdTxHeader(mNoStdXml, oldTxHeader,
 				mSYS_RECV_TIME, mSYS_RESP_TIME);
-
-		// 当核保成功的时候，返回TX_BODY时，增加COM_ENTITY节点
-		// String resultCode =
-		// pStdXml.getRootElement().getChild("Head").getChildText("Flag");
-		// if(resultCode.equals("0")){
+		
 		// 返回加入了COM_ENTITY节点的非标准报文[转换后的非标准报文,核心返回的标准报文,body节点下的COM_ENTITY节点,服务名(交易码:P53819113)]
 		mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml,
 				oldComEntity, sysTxCode);
-		// }
 		mNoStdXml=setAppEntity(mNoStdXml);
 		
 		/* Start-组织返回报文头 */
@@ -149,21 +128,6 @@ public class UpdateServiceStatus extends XmlSimpFormat {
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
 					.getChild("COM_ENTITY").getChild("Ins_Co_Jrnl_No")
 					.setText(tranNo);
-			// 加入保险代理套餐编号
-//			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
-//					.getChild("APP_ENTITY").getChild("AgIns_Pkg_ID")
-//					.setText(sAginsPkgId);
-			// 加入保费缴费方式代码
-//			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
-//					.getChild("APP_ENTITY").getChild("InsPrem_PyF_MtdCd")
-//					.setText(sPayIntv);
-			// 加入保费缴费周期代码
-//			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
-//					.getChild("APP_ENTITY").getChild("InsPrem_PyF_Cyc_Cd")
-//					.setText(sPayCycCod);
-			// 加入投保份数
-			// mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("Ins_Cps").setText(sMult);
-
 		} else { // 交易失败[设置转换后的非标准报文头错误信息]
 //			mNoStdXml.getRootElement().getChild("TX_HEADER")
 //					.getChild("SYS_RESP_CODE").setText("ZZZ072000001");// 返回通用错误代码
@@ -184,55 +148,7 @@ public class UpdateServiceStatus extends XmlSimpFormat {
 		cLogger.info("Out NewCont.std2NoStd()!");
 		return mNoStdXml;
 	}
-
-	/**
-	 * 
-	 * saveNoStdDoc 标准报文
-	 * 
-	 * @param stdDoc
-	 */
-	private void saveNoStdDoc(Document stdDoc) {
-
-		LKPolicyXML policyXML = new LKPolicyXML();
-
-		// 标准报文根节点
-		Element stdDocRoot = stdDoc.getRootElement();
-
-		// 设置保单号
-		policyXML.setContNo(stdDocRoot.getChild("LCConts").getChildText(ContNo));
-		// 投置投保单号
-		policyXML.setProposalPrtNo(stdDocRoot.getChild("LCConts").getChildText("ProposalContNo"));
-
-		// 设置银行机构码
-		policyXML.setTranCom("03");
-
-		// 设置交易日期
-		policyXML.setTranDate(DateUtil.parseDate(tranDate, "yyyyMMdd"));
-
-		// 设置报文信息
-		policyXML.setXmlContent(JdomUtil.toBytes(noStdDoc));
-
-		// 设置入机及及修改日期时间
-		policyXML.setMakeDate(new Date());
-		policyXML.setMakeTime(DateUtil.getCur8Time());
-		policyXML.setModifyDate(new Date());
-		policyXML.setModifyTime(DateUtil.getCur8Time());
-
-		LKPolicyXMLDao dao = new LKPolicyXMLDao();
-		try {
-			// 插入保单报文信息
-			boolean flag = dao.insert(policyXML);
-			if (!flag) {
-				cLogger.error("保存非标准报文到数据库失败!");
-			} else {
-				cLogger.info("保存非标准报文到数据库成功!");
-			}
-		} catch (Exception e) {
-			cLogger.error("保存非标准报文到数据库失败:" + e.getMessage());
-			e.printStackTrace();
-		}
-	}
-
+	
 	@SuppressWarnings("unchecked")
 	public Document setAppEntity(Document mNoStdXml){
 		Element mRootEle=mNoStdXml.getRootElement();

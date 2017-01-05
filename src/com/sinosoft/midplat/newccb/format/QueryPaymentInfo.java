@@ -11,7 +11,14 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.utility.ExeSQL;
 
+/**
+ * @ClassName: QueryPaymentInfo
+ * @Description: 
+ * @author yuantongxin
+ * @date 2017-1-4 上午10:57:38
+ */
 public class QueryPaymentInfo extends XmlSimpFormat {
+	@SuppressWarnings("unused")
 	private Element cTransaction_Header = null;
 	private String mSYS_RECV_TIME = null;
 	private String mSYS_RESP_TIME = null;
@@ -22,9 +29,9 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 	private String sLv1BrNo = null;
 	private String sAgInsPkgID = null;
 	private String sysTxCode = null;
-	private String sPayedTimes  = null;
 	private Element oldTxHeader = null;
 	private Element oldComEntity = null;
+	@SuppressWarnings("unused")
 	private Document cInNoStdXml = null;
 	
 	public QueryPaymentInfo(Element pThisBusiConf) {
@@ -96,17 +103,7 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 
 			Element mRetData = pStdXml.getRootElement().getChild("RetData");
 			if (mRetData.getChildText(Flag).equals("1")) {	//交易成功
-				
-//				sPayedTimes=pStdXml.getRootElement().getChild("Body").getChildText("PayedTimes");
-				//已交保费期数>=1，表示是续期缴费查询，否则为实时投保缴费查询
-//				if(Integer.parseInt(sPayedTimes)>=1){
-//					mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgInsPyFBsnSbdvsn_Cd").setText("14");
-//				}else{
-//					mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgInsPyFBsnSbdvsn_Cd").setText("11");
-//				}
-			
-			
-//			sContno=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("InsPolcy_No");
+			//			sContno=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("InsPolcy_No");
 			sProposalPrtNo=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("Ins_BillNo");
 			
 			if(sContno!=null&&!sContno.equals("")){

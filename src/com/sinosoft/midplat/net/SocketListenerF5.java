@@ -62,6 +62,10 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 		new SocketListenerF5().contextInitialized(null);
 	}
 
+	/**
+	 * 上下文初始化(Servlet容器启动的时候，将会执行此方法)
+	 * @param pEvent servlet上下文事件
+	 */
 	@SuppressWarnings("unchecked")
 	public void contextInitialized(ServletContextEvent pEvent)
 	{
@@ -108,6 +112,10 @@ public class SocketListenerF5 implements ServletContextListener, XmlTag
 		cLogger.info("Out SocketListenerF5.contextInitialized()!");
 	}
 
+	/**
+	 * 上下文销毁(Servlet容器关闭时，则会执行此方法)
+	 * @param pEvent servlet上下文事件
+	 */
 	public void contextDestroyed(ServletContextEvent pEvent)
 	{
 		cLogger.info("Into SocketListenerF5.contextDestroyed()...");

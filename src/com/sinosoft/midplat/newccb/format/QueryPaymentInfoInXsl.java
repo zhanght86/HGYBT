@@ -12,6 +12,12 @@ import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
+/**
+ * @ClassName: QueryPaymentInfoInXsl
+ * @Description: 
+ * @author yuantongxin
+ * @date 2017-1-4 上午10:58:16
+ */
 public class QueryPaymentInfoInXsl extends XslCache {
 
 	// 实时投保输入报文样式实例

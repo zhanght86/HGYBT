@@ -95,8 +95,8 @@ public class CallWebsvcAtomSvc implements XmlTag
 
 		Options options = serviceClient.getOptions();
 		// 设置超时时间
-//		options.setTimeOutInMilliSeconds(600000);
-		options.setTimeOutInMilliSeconds(800000);
+		options.setTimeOutInMilliSeconds(600000);
+//		options.setTimeOutInMilliSeconds(800000);
 		// 指定调用WebService的URL
 		String servicePath = mServAddress + "?wsdl";
 		EndpointReference targetEPR = new EndpointReference(servicePath);

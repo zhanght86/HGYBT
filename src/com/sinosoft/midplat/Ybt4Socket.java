@@ -35,6 +35,7 @@ public abstract class Ybt4Socket extends Thread
     this.cThisConfRoot = pThisConf.getConf().getRootElement();
     this.cMidplatRoot = MidplatConf.newInstance().getConf().getRootElement();
 
+    //前端通讯模块
     String mPreNetClass = "com.sinosoft.midplat.net.SocketNetImpl";
     String mClassName = this.cMidplatRoot.getChildText("preNet");
     if ((mClassName != null) && (!"".equals(mClassName))) {

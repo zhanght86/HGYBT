@@ -12,6 +12,12 @@ import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
+/**
+ * @ClassName: UpdateServiceStatusOutXsl
+ * @Description: 
+ * @author yuantongxin
+ * @date 2017-1-4 ионГ10:57:19
+ */
 public class UpdateServiceStatusOutXsl extends XslCache {
 
 	private static UpdateServiceStatusOutXsl cThisIns = new UpdateServiceStatusOutXsl();
