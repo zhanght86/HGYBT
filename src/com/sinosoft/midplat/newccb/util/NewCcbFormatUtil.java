@@ -68,35 +68,42 @@ public class NewCcbFormatUtil {
 	
 	
 	/**
-	 * 
+	 * 设置非标准报文头
 	 * @param mNoStdXml  返回给银行的非标准报文
 	 * @param oldTxHeader	银行发过来的非标准报文的头节点
-	 * @param startTime		服务接受时间
-	 * @param endTime	服务响应时间
-	 * @return
+	 * @param startTime		服务接受时间[开始时间毫秒数]
+	 * @param endTime	服务响应时间[结束时间毫秒数]
+	 * @return 设置非标准报文头后的非标准输出报文
 	 */
 	public static Document setNoStdTxHeader(Document mNoStdXml,Element oldTxHeader,String startTime,String endTime){
-		//全局事件跟踪号
+		//设置非标准输出报文字段
+		//全局事件跟踪号[in_noStd.xml:<SYS_EVT_TRACE_ID>1020018031483262927006140</SYS_EVT_TRACE_ID>]
 		String mSYS_EVT_TRACE_ID = oldTxHeader.getChildText("SYS_EVT_TRACE_ID");
+		//全局事件跟踪号
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_EVT_TRACE_ID").setText(mSYS_EVT_TRACE_ID);
 		
-		//发起方安全节点编号
+		//发起方安全节点编号[in_noStd.xml:<SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID>]
 		String mSYS_REQ_SEC_ID = oldTxHeader.getChildText("SYS_REQ_SEC_ID"); 
+		//发起方安全节点编号
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_REQ_SEC_ID").setText(mSYS_REQ_SEC_ID);
 		
-		//子交易序号
+		//子交易序号[in_noStd.xml:<SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO>]
 		String mSYS_SND_SERIAL_NO = oldTxHeader.getChildText("SYS_SND_SERIAL_NO");
+		//子交易序号
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_SND_SERIAL_NO").setText(mSYS_SND_SERIAL_NO);
 		
-		//服务接受时间
+		//服务接受时间[开始时间毫秒数]
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RECV_TIME").setText(startTime);
 		
-		//服务响应时间
+		//服务响应时间[结束时间毫秒数]
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_TIME").setText(endTime);
 		
-		 //应用报文长度
+		 //应用报文长度节点[in_noStd.xml:<SYS_MSG_LEN />][获取节点，无内容]
         Element mSYS_MSG_LEN = mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_MSG_LEN");
+        
+        //非标准输出报文头元素转换为UTF-8编码的字节数组[保持原格式]的长度[字节数]
         int length = JdomUtil.toBytes(mNoStdXml.getRootElement().getChild("TX_HEADER"),"utf-8").length;
+        //
         length += String.valueOf(length).length()-1;
         mSYS_MSG_LEN.setText(Integer.toString(length));
 		

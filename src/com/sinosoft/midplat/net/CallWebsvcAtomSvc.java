@@ -25,22 +25,49 @@ import com.sinosoft.midplat.common.SaveMessage;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 
+/**
+ * @ClassName: CallWebsvcAtomSvc
+ * @Description: 调用WebService原子服务
+ * @author yuantongxin
+ * @date 2017-1-6 上午11:30:15
+ */
 public class CallWebsvcAtomSvc implements XmlTag
 {
 	private final static Logger cLogger = Logger.getLogger(CallWebsvcAtomSvc.class);
-
+	
+	//服务编号
 	private final String cServiceId;
+	//配置文件元素
 	private final Element cConfEle;
 
+	/**
+	 * <p>Title:CallWebsvcAtomSvc</p>
+	 * <p>Description: 调用WebService原子服务</p>
+	 * @param pServiceId 服务编号
+	 * @throws JDOMException Java文档对象模型异常
+	 */
 	public CallWebsvcAtomSvc(String pServiceId) throws JDOMException
 	{
+		//为成员服务编号赋值
 		cServiceId = pServiceId;//0
 		// /child::midplat/child::atomservices/child::service[(attribute::id = "0")]
+		//XML路径[中间平台/原子服务/服务/编号=成员服务编号]构建单一实例
 		XPath mXPath = XPath.newInstance("/midplat/atomservices/service[@id='" + cServiceId + "']");
 		//[Element: <service/>]
+		//XML路径单一实例在midplat.xml选择单个节点
 		cConfEle = (Element) mXPath.selectSingleNode(MidplatConf.newInstance().getConf());
 	}
 
+	/**
+	 * 
+	 * @Title: call
+	 * @Description: 调用
+	 * @param pInXmlDoc 标准输入报文
+	 * @return 标准输出报文
+	 * @throws Exception 异常
+	 * @return Document 标准输出报文
+	 * @throws 异常
+	 */
 	public Document call(Document pInXmlDoc) throws Exception
 	{
 		//Into CallWebsvcAtomSvc.service()...
@@ -138,6 +165,7 @@ public class CallWebsvcAtomSvc implements XmlTag
 		cLogger.info("保存报文完毕！" + mSaveName);
 
 		cLogger.info("Out CallWebsvcAtomSvc.service()!");
+		//返回标准输出报文
 		return mOutXmlDoc;
 	}
 	

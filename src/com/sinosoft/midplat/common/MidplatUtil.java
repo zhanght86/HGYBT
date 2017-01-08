@@ -19,9 +19,15 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.utility.ExeSQL;
 import com.sinosoft.utility.StrTool;
 
+/**
+ * @ClassName: MidplatUtil
+ * @Description: 中间平台工具类
+ * @author yuantongxin
+ * @date 2017-1-6 下午2:33:14
+ */
 public class MidplatUtil implements XmlTag {
 	private final static Logger cLogger = Logger.getLogger(MidplatUtil.class);
-
+	
 	/**
 	 * DESC 校验保单号前三位与城市编码是否符合规则 如果不存在返回false
 	 * 

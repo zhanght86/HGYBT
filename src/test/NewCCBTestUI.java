@@ -44,52 +44,52 @@ public class NewCCBTestUI {
 		
 		//绿灯测试
 //		String funcflag = "P53818152";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/9704_15_111_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/9704_15_111_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/9704_15_111_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/9704_15_111_out.xml";
 		//新单试算
 //		String funcflag = "P53819113";//交易码[P53819113]
-		//[D:/task/20170105/newccb/core_local/10452_551_1012_in.xml]
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/13070_3_1012_in.xml";//输入文件路径
-		//[D:/task/20170105/newccb/local/1012/P53819113in_noStd.xml]
-//		mInFilePath="D:/task/20170105/newccb/ybt_local/P53819113in_noStd.xml";
-		//[D:/task/20170105/newccb/core_local/10452_551_1012_out.xml]
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/13070_3_1012_out.xml";//输出文件路径
-		//D:/task/20170105/newccb/local/1012/P53819113out_noStd.xml
-//		mOutFilePath="D:/task/20170105/newccb/ybt_local/P53819113out_noStd.xml";
+		//[D:/task/20170108/newccb/core_local/10452_551_1012_in.xml]
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/18666_177_1012_in.xml";//输入文件路径
+		//[D:/task/20170108/newccb/local/1012/P53819113in_noStd.xml]
+//		mInFilePath="D:/task/20170108/newccb/ybt_local/P53819113in_noStd.xml";
+		//[D:/task/20170108/newccb/core_local/10452_551_1012_out.xml]
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/18666_177_1012_out.xml";//输出文件路径
+		//D:/task/20170108/newccb/local/1012/P53819113out_noStd.xml
+//		mOutFilePath="D:/task/20170108/newccb/ybt_local/P53819113out_noStd.xml";
 //		
 		//新单确认
-//		String funcflag = "P53819152";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/11094_1318_1014_in.xml";
-//		String mOutFilePath = "D:/task/20161215/newccb/local/11094_1318_1014_out.xml";
+		String funcflag = "P53819152";
+		String mInFilePath = "D:/task/20170108/newccb/core_test/15642_69_1014_in.xml";
+		String mOutFilePath = "D:/task/20161215/newccb/local/15642_69_1014_out.xml";
 		//打印保单
 //		String funcflag = "P53819182";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/9982_317_1032_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/9982_317_1032_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/18294_1707_1032_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/18294_1707_1032_out.xml";
 		
 		/*//自动冲正*/
 //		String funcflag = "P53818154";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/11435_57_0004_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/11435_57_0004_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/11435_57_0004_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/11435_57_0004_out.xml";
 		
 		//重打上笔
 //		String funcflag = "P53819184";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/1287_9_1011_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/1287_9_1011_in.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/1287_9_1011_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/1287_9_1011_in.xml";
 		
 		//重控核对
 //		String funcflag = "P538191A2";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/1307_44_108_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/1307_44_108_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/1307_44_108_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/1307_44_108_out.xml";
 //		
 		//确认撤销当日保单
 //		String funcflag = "P53819142";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/6568_66_1015_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/6568_66_1015_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/6568_66_1015_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/6568_66_1015_out.xml";
 		
 		//绿灯测试
 //		String funcflag = "P53818152";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/9704_15_111_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/9704_15_111_in.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/9704_15_111_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/9704_15_111_in.xml";
 		
 		//打印投保单
 //		String funcflag = "P53819188";
@@ -98,8 +98,8 @@ public class NewCCBTestUI {
 		
 		//查询缴纳保费信息
 //		String funcflag = "P53819151";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/11395_477_1033_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/11395_477_1033_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/11395_477_1033_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/11395_477_1033_out.xml";
 		
 		//确认续期缴费
 //		String funcflag = "P53819156";
@@ -129,13 +129,13 @@ public class NewCCBTestUI {
 		
 		//查询保单详情
 //		String funcflag = "P53819171";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/3497_559_1040_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/3497_559_1040_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/3497_559_1040_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/3497_559_1040_out.xml";
 		
 		//查询保单历史变动信息
 //		String funcflag = "P53819177";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/6853_144_1042_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/6853_144_1042_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/6853_144_1042_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/6853_144_1042_out.xml";
 		
 		//申请退保
 //		String funcflag = "P53819143";
@@ -149,8 +149,8 @@ public class NewCCBTestUI {
 		
 		//获取保单详情查询
 //		String funcflag = "P53817107";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/6853_144_1042_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/6853_144_1042_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/6853_144_1042_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/6853_144_1042_out.xml";
 		
 		//获取保单详情取数(寿险)
 //		String funcflag = "P53816107";
@@ -163,19 +163,19 @@ public class NewCCBTestUI {
 //		String mOutFilePath = "F:\\xml\\CCB\\P538191F1_驻点_out.xml";
 		
 		//更新非实时业务状态
-		String funcflag = "P538191E4";
-		String mInFilePath = "D:/task/20170105/newccb/core_test/30720_21_1080_in.xml";
-		String mOutFilePath = "D:/task/20170105/newccb/core_test/30720_21_1080_out.xml";
+//		String funcflag = "P538191E4";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/30720_21_1080_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/30720_21_1080_out.xml";
 		
 		//查询非实时缴费信息
 //		String funcflag = "P53819153";
-//		String mInFilePath = "D:/task/20170105/newccb/core_test/25569_75_1090_in.xml";
-//		String mOutFilePath = "D:/task/20170105/newccb/core_test/25569_75_1090_out.xml";
+//		String mInFilePath = "D:/task/20170108/newccb/core_test/30756_45_1090_in.xml";
+//		String mOutFilePath = "D:/task/20170108/newccb/core_test/30756_45_1090_out.xml";
 		
 			//通过局部网络之间互连的协议和端口号创建新建行测试用户界面实例
 			NewCCBTestUI mTestUI = new NewCCBTestUI(mIP,mPort);
 			//通过输入文件路径创建文件输入流
-			//[File:/task/20170105/newccb/local/1012/P53819113in_noStd.xml]
+			//[File:/task/20170108/newccb/local/1012/P53819113in_noStd.xml]
 			InputStream mIs = new FileInputStream(mInFilePath);
 		//	byte[] mOutBytes = mTestUI.sendRequest(funcflag,mIs);
 			//采用UTF-8字符集编码构建一个文档对象，忽略标签之间的空字符(空格、换行、制表符等)。
@@ -571,7 +571,7 @@ public class NewCCBTestUI {
 //		return mCCBCipher.decode(mOutCipherBodyBytes);  //解密
 		/**
 		 * <?xml version="1.0" encoding="UTF-8"?>
-		    <TX><TX_HEADER><SYS_HDR_LEN>823</SYS_HDR_LEN><SYS_PKG_VRSN>01</SYS_PKG_VRSN><SYS_TTL_LEN>1926</SYS_TTL_LEN><SYS_SND_SEC_ID>510050</SYS_SND_SEC_ID><SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID><SYS_TX_TYPE>020000</SYS_TX_TYPE><SYS_EVT_TRACE_ID>1020018021483147534001488</SYS_EVT_TRACE_ID><SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO><SYS_PKG_TYPE>1</SYS_PKG_TYPE><SYS_MSG_LEN>728</SYS_MSG_LEN><SYS_IS_ENCRYPTED>3</SYS_IS_ENCRYPTED><SYS_ENCRYPT_TYPE>3</SYS_ENCRYPT_TYPE><SYS_COMPRESS_TYPE>0</SYS_COMPRESS_TYPE><SYS_EMB_MSG_LEN>0</SYS_EMB_MSG_LEN><SYS_RECV_TIME>20170105145615581</SYS_RECV_TIME><SYS_RESP_TIME>20170105145615696</SYS_RESP_TIME><SYS_PKG_STS_TYPE>01</SYS_PKG_STS_TYPE><SYS_TX_STATUS>01</SYS_TX_STATUS><SYS_RESP_CODE>ZZZ072000001</SYS_RESP_CODE><SYS_RESP_DESC_LEN>7</SYS_RESP_DESC_LEN><SYS_RESP_DESC>鎻掑叆鏃ュ織澶辫触锛�/SYS_RESP_DESC></TX_HEADER><TX_BODY><COMMON><FILE_LIST_PACK><FILE_NUM>0</FILE_NUM><FILE_MODE>0</FILE_MODE><FILE_NODE /><FILE_NAME_PACK /><FILE_PATH_PACK /><FILE_INFO><FILE_NAME /><FILE_PATH /></FILE_INFO></FILE_LIST_PACK></COMMON><ENTITY><APP_ENTITY><AgIns_Pkg_ID /><Cvr_Num>0</Cvr_Num><Bu_List /><Ins_BillNo /><Tot_InsPrem_Amt /><Init_PyF_Amt /><Anulz_InsPrem_Amt /><Ins_Co_Acrdt_Stff_Nm /><InsCoAcrStCrQuaCtf_ID /><InsPrem_PyF_MtdCd /><AgInsRgAutoDdcn_AccNo /><EcIst_PyF_Amt_Inf /><InsPrem_PyF_Prd_Num /><InsPrem_PyF_Cyc_Cd /></APP_ENTITY><COM_ENTITY><Inst_Eng_ShrtNm>CCB</Inst_Eng_ShrtNm><Ins_Co_ID>010079</Ins_Co_ID><SvPt_Jrnl_No>108011rv11481765111015120</SvPt_Jrnl_No><TXN_ITT_CHNL_ID>002911037830000        </TXN_ITT_CHNL_ID><TXN_ITT_CHNL_CGY_CODE>20170029</TXN_ITT_CHNL_CGY_CODE><CCBIns_ID>110378300</CCBIns_ID><CCB_EmpID>93910092</CCB_EmpID><OprgDay_Prd>20161231</OprgDay_Prd><LNG_ID>zh-cn</LNG_ID><SYS_TX_CODE>P53819113</SYS_TX_CODE><Ins_Co_Acg_Dt /><Ins_Co_Jrnl_No /><Ins_Co_Cst_Svc_Tel>4009-800-800</Ins_Co_Cst_Svc_Tel></COM_ENTITY></ENTITY></TX_BODY></TX>
+		    <TX><TX_HEADER><SYS_HDR_LEN>823</SYS_HDR_LEN><SYS_PKG_VRSN>01</SYS_PKG_VRSN><SYS_TTL_LEN>1926</SYS_TTL_LEN><SYS_SND_SEC_ID>510050</SYS_SND_SEC_ID><SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID><SYS_TX_TYPE>020000</SYS_TX_TYPE><SYS_EVT_TRACE_ID>1020018021483147534001488</SYS_EVT_TRACE_ID><SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO><SYS_PKG_TYPE>1</SYS_PKG_TYPE><SYS_MSG_LEN>728</SYS_MSG_LEN><SYS_IS_ENCRYPTED>3</SYS_IS_ENCRYPTED><SYS_ENCRYPT_TYPE>3</SYS_ENCRYPT_TYPE><SYS_COMPRESS_TYPE>0</SYS_COMPRESS_TYPE><SYS_EMB_MSG_LEN>0</SYS_EMB_MSG_LEN><SYS_RECV_TIME>20170108145615581</SYS_RECV_TIME><SYS_RESP_TIME>20170108145615696</SYS_RESP_TIME><SYS_PKG_STS_TYPE>01</SYS_PKG_STS_TYPE><SYS_TX_STATUS>01</SYS_TX_STATUS><SYS_RESP_CODE>ZZZ072000001</SYS_RESP_CODE><SYS_RESP_DESC_LEN>7</SYS_RESP_DESC_LEN><SYS_RESP_DESC>鎻掑叆鏃ュ織澶辫触锛�/SYS_RESP_DESC></TX_HEADER><TX_BODY><COMMON><FILE_LIST_PACK><FILE_NUM>0</FILE_NUM><FILE_MODE>0</FILE_MODE><FILE_NODE /><FILE_NAME_PACK /><FILE_PATH_PACK /><FILE_INFO><FILE_NAME /><FILE_PATH /></FILE_INFO></FILE_LIST_PACK></COMMON><ENTITY><APP_ENTITY><AgIns_Pkg_ID /><Cvr_Num>0</Cvr_Num><Bu_List /><Ins_BillNo /><Tot_InsPrem_Amt /><Init_PyF_Amt /><Anulz_InsPrem_Amt /><Ins_Co_Acrdt_Stff_Nm /><InsCoAcrStCrQuaCtf_ID /><InsPrem_PyF_MtdCd /><AgInsRgAutoDdcn_AccNo /><EcIst_PyF_Amt_Inf /><InsPrem_PyF_Prd_Num /><InsPrem_PyF_Cyc_Cd /></APP_ENTITY><COM_ENTITY><Inst_Eng_ShrtNm>CCB</Inst_Eng_ShrtNm><Ins_Co_ID>010079</Ins_Co_ID><SvPt_Jrnl_No>108011rv11481765111015120</SvPt_Jrnl_No><TXN_ITT_CHNL_ID>002911037830000        </TXN_ITT_CHNL_ID><TXN_ITT_CHNL_CGY_CODE>20170029</TXN_ITT_CHNL_CGY_CODE><CCBIns_ID>110378300</CCBIns_ID><CCB_EmpID>93910092</CCB_EmpID><OprgDay_Prd>20161231</OprgDay_Prd><LNG_ID>zh-cn</LNG_ID><SYS_TX_CODE>P53819113</SYS_TX_CODE><Ins_Co_Acg_Dt /><Ins_Co_Jrnl_No /><Ins_Co_Cst_Svc_Tel>4009-800-800</Ins_Co_Cst_Svc_Tel></COM_ENTITY></ENTITY></TX_BODY></TX>
 		 */
 		//返回使用UTF-8字符集将此 报文体数据字符串 解码为字节序列，并将结果存储到一个新的字节数组中。
 		return mBodyDataStr.getBytes("UTF-8");

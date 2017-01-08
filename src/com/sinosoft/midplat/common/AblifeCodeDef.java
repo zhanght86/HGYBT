@@ -1,5 +1,11 @@
 package com.sinosoft.midplat.common;
 
+/**
+ * @ClassName: AblifeCodeDef
+ * @Description: 代码定义
+ * @author yuantongxin
+ * @date 2017-1-6 上午11:33:53
+ */
 public interface AblifeCodeDef extends CodeDef {
 	/** 银保普通出单网点 */
 	int NodeType_Bank_Sale = 0;

@@ -204,16 +204,25 @@ public class JdomUtil {
 	
 	/**
 	 * 将Element转换为指定字符集编码的字节数组，保持原格式。
+	 * @param pElement 节点
+	 * @param pCharset 字符集
+	 * @return 输出流中的字节数组
 	 */
 	public static byte[] toBytes(Element pElement, String pCharset) {
+		//构建格式化对象获取原格式设置字符集为指定编码[UTF-8]
 		Format mFormat = Format.getRawFormat().setEncoding(pCharset);
+		//格式化对象构建XML输出器
 		XMLOutputter mXMLOutputter = new XMLOutputter(mFormat);
+		//构建字节数组输出流
 		ByteArrayOutputStream mBaos = new ByteArrayOutputStream();
 		try {
+			//XML输出器输出元素到输出流
 			mXMLOutputter.output(pElement, mBaos);
 		} catch (IOException ex) {
+			//Xml.Element-->byte[]异常！
 			cLogger.error("Xml.Element-->byte[]异常！", ex);
 		}
+		//返回输出流中的字节数组
 		return mBaos.toByteArray();
 	}
 	

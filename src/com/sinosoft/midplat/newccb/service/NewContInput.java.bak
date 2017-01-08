@@ -252,32 +252,22 @@ public class NewContInput extends ServiceImpl
 			}
 			
 			// 保存保单信息
-			//获取保单数据库操作类实例
+			//
 			ContDB tContDB = getContDB();
-			//当前日期
 			Date tCurDate = new Date();
-			//设置入库日期为8位日期
 			tContDB.setMakeDate(DateUtil.get8Date(tCurDate));
-			//设置入库时间为6位时间
 			tContDB.setMakeTime(DateUtil.get6Time(tCurDate));
-			//设置最后修改日期为入库日期
 			tContDB.setModifyDate(tContDB.getMakeDate());
-			//设置最后修改时间为入库时间
 			tContDB.setModifyTime(tContDB.getMakeTime());
 
-			//执行保单数据库操作类插入方法失败
+
 			if (!tContDB.insert())
 			{
-				//保单信息(Cont)入库失败！错误信息对象获取首个错误
 				cLogger.error("保单信息(Cont)入库失败！" + tContDB.mErrors.getFirstError());
 			}
 			// cTranLogDB.setContNo(tContDB.getContNo());
-			//设置交易日志数据库操作类字段
-			//管理机构
 			cTranLogDB.setManageCom(tContDB.getManageCom());
-			//代理机构
 			cTranLogDB.setAgentCom(tContDB.getAgentCom());
-			//代理人
 			cTranLogDB.setAgentCode(tContDB.getAgentCode());
 		}
 		catch (Exception ex)
@@ -290,36 +280,24 @@ public class NewContInput extends ServiceImpl
 			//标准输出报文
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
-		
-		//交易日志数据库操作类实例非空
+
 		if (null != cTranLogDB)
 		{ // 插入日志失败时cTranLogDB=null
-			//标准输出报文报文头
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
-			//设置交易日志数据库操作类字段
-			//交易结果
 			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
-			//结果描述
 			cTranLogDB.setRText(tHeadEle.getChildText(Desc));
-			//当前时间毫秒数
 			long tCurMillis = System.currentTimeMillis();
-			//服务耗时[当前时间毫秒数-开始时间毫秒数][s]
 			cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
-			//最后修改日期[8位日期]
 			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
-			//最后修改时间[6位时间]
 			cTranLogDB.setModifyTime(DateUtil.get6Time(tCurMillis));
 			//更新交易日志记录失败[!false=true]
-			//执行交易日志数据库操作类更新方法失败
 			if (!cTranLogDB.update())
 			{
-				//更新日志信息失败！ 错误信息对象获取首个错误
 				cLogger.error("更新日志信息失败！" + cTranLogDB.mErrors.getFirstError());
 			}
 		}
 		//Out NewContInput.service()!
 		cLogger.info("Out NewContInput.service()!");
-		//返回标准输出报文
 		return cOutXmlDoc;
 	}
 
@@ -335,13 +313,9 @@ public class NewContInput extends ServiceImpl
 		cLogger.debug("Into NewContInput.getContDB()...");
 		
 		//获取标准输入报文节点
-		//报文体
 		Element mInBodyEle = cInXmlDoc.getRootElement().getChild(Body);
-		//险种
 		Element mInRiskEle = mInBodyEle.getChild(Risk);
-		//投保人
 		Element inAppntEle = mInBodyEle.getChild(Appnt);
-		//受益人
 		Element inBnf = mInBodyEle.getChild(Bnf);
 		
 		//获取标准输出报文节点
@@ -424,42 +398,27 @@ public class NewContInput extends ServiceImpl
 		//备用4
 		mContDB.setBak4(mInBodyEle.getChildText(AccNo));
 		
-		//受益人非空
+		
 		if (inBnf != null)
 		{
-			//设置备用3为受益人与被保人关系3
 			mContDB.setBak3(inBnf.getChildText("RelaToInsured3"));// 受益人与被保人关系，银行代码
 		}
-		//一级分行号：[] 套餐编号：[]
 		System.out.println("一级分行号：" + mInBodyEle.getChildText("Lv1BrNo") + "  " + "套餐编号：" + mInRiskEle.getChildText("AgInsPkgID"));
-		//设置备用10为一级分行号
 		mContDB.setBak10(mInBodyEle.getChildText("Lv1BrNo"));
-		//设置备用9为套餐编号
 		mContDB.setBak9(mInRiskEle.getChildText("AgInsPkgID"));
-		//设置操作员为sys
 		mContDB.setOperator(CodeDef.SYS);
-		//Out NewContInput.getContDB()!
+
 		cLogger.debug("Out NewContInput.getContDB()!");
-		//返回保单数据库操作类实例
 		return mContDB;
 	}
 	
-	/**
-	 * @Title: rollback
-	 * @Description: 回滚
-	 * @return void
-	 * @throws 异常
-	 */
+
 	private void rollback()
 	{
-		//Into NewContInput.rollback()...
 		cLogger.debug("Into NewContInput.rollback()...");
-		
-		//标准输入报文根节点
+
 		Element mInRootEle = cInXmlDoc.getRootElement();
-		//报文体
 		Element mInBodyEle = mInRootEle.getChild(Body);
-		//
 		Element mHeadEle = (Element) mInRootEle.getChild(Head).clone();
 		mHeadEle.getChild(ServiceId).setText(AblifeCodeDef.SID_Bank_ContRollback);
 		Element mBodyEle = new Element(Body);

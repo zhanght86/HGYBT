@@ -1,5 +1,11 @@
 package com.sinosoft.midplat.common;
 
+/**
+ * @InterfaceName: CodeDef
+ * @Description: 代码定义接口
+ * @author yuantongxin
+ * @date 2017-1-6 下午2:22:07
+ */
 public interface CodeDef {
 	/** 交易挂起，未返回 */
 	int RCode_NULL = -1;

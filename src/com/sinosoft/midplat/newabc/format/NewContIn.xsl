@@ -276,7 +276,7 @@
 			<!-- 电子邮件 -->
 			<Email><xsl:value-of select="Email"/></Email>
 			<!-- 职业代码 --><!-- 和核心以及客户确认过，农行不传，传默认值3010101（一般内勤），有确认邮件 -->
-			 <JobCode>3010101</JobCode>
+			<JobCode>3010101</JobCode>
 			<!-- 国籍 -->
 			<Nationality>CHN</Nationality>
 			<!-- 体重 -->

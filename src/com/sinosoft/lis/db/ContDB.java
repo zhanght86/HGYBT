@@ -14,6 +14,12 @@ import com.sinosoft.lis.vschema.ContSet;
 import com.sinosoft.lis.pubfun.PubFun;
 import com.sinosoft.utility.*;
 
+/**
+ * @ClassName: ContDB
+ * @Description: 保单数据库操作类
+ * @author yuantongxin
+ * @date 2017-1-6 下午2:45:35
+ */
 public class ContDB extends ContSchema
 {
 	// @Field 

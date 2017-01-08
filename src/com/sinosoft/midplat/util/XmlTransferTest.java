@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20170104/newccb/transfer_test/";
+		inXmlSource = "D:/task/20170108/newccb/transfer_test/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -77,7 +77,7 @@ public class XmlTransferTest {
 		//建设银行
 //		filename="P53819113in_noStd.xml";
 //		filename="P53819113out_Std.xml";
-//		filename="P53819152in_noStd.xml";
+		filename="P53819152in_noStd.xml";
 //		filename="P53819152out_Std.xml";
 //		filename="P53819184in_noStd.xml";
 //		filename="P53819184out_Std.xml";
@@ -86,7 +86,7 @@ public class XmlTransferTest {
 //		filename="P53819182in_noStd.xml";
 //		filename="P53819182out_Std.xml";
 //		filename="P538191E4in_noStd.xml";
-		filename="P538191E4out_Std.xml";
+//		filename="P538191E4out_Std.xml";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";
@@ -132,7 +132,7 @@ public class XmlTransferTest {
 		//建设银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
-//		XslPath="ContConfirmIn.xsl";
+		XslPath="ContConfirmIn.xsl";
 //		XslPath="ContConfirmOut.xsl";
 //		XslPath="RePrintIn.xsl";
 //		XslPath="RePrintOut.xsl";
@@ -140,7 +140,7 @@ public class XmlTransferTest {
 //		XslPath="WriteOffOut.xsl";
 //		XslPath="PrintContOut.xsl";
 //		XslPath="UpdateServiceStatusIn.xsl";
-		XslPath="UpdateServiceStatusOut.xsl";
+//		XslPath="UpdateServiceStatusOut.xsl";
 		//农业银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
@@ -158,7 +158,7 @@ public class XmlTransferTest {
 		inXmlSource=inXmlSource+filename;
 		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20170104/newccb/transfer_test/P538191E4out_noStd.xml";
+		String outXml = "D:/task/20170108/newccb/transfer_test/P53819152in_Std.xml";
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
 		Document mLogDocument = JdomUtil.build(fis);

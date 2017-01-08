@@ -25,7 +25,12 @@ public class RuleParser implements XmlTag {
 	private final XslCache cRuleXsl;//规则XSL
 	private final XmlConf cRuleXml;//规则XML
 	
+	/**
+	 * <p>Title: 规则解析器类构造实例</p>
+	 * <p>Description:初始化规则XSL、规则XML</p>
+	 */
 	public RuleParser() {
+		//规则XSL
 		cRuleXsl = RuleXsl.newInstance();
 		cRuleXml = RuleXml.newInstance();
 	}
@@ -141,16 +146,32 @@ public class RuleParser implements XmlTag {
 	}
 }
 
+/**
+ * @ClassName: RuleXsl
+ * @Description: 规则XSL
+ * @author yuantongxin
+ * @date 2017-1-6 上午9:58:49
+ */
 class RuleXsl extends XslCache {
+	//规则XSL单一实例
 	private static final RuleXsl cThisIns = new RuleXsl();
-	
+	//XSL路径
 	private static final String cPath = "conf/rule.xsl";
 	
+	/**
+	 * <p>Title:规则XSL构造函数 </p>
+	 * <p>Description:加载XSL、配置文件缓存管理系统实例[单例]注册路径、加载实现 </p>
+	 */
 	private RuleXsl() {
+		//加载XSL
 		load();
+		//配置文件缓存管理系统实例[单例]注册路径、加载实现
 		FileCacheManage.newInstance().register(cPath, this);
 	}
 	
+	/**
+	 * 加载XSL
+	 */
 	public void load() {
 		cLogger.info("Into RuleXsl.load()...");
 		
@@ -159,8 +180,10 @@ class RuleXsl extends XslCache {
 		
 		cXslFile = new File(mFilePath);
 		
+		//记录XSL状态
 		recordStatus();
 		
+		// 加载指定路径的Xsl，使用GBK编码解析为XSLTransformer，并返回
 		cXslTrsf = loadXsl(cXslFile);
 		cLogger.info("End load " + mFilePath + "!");
 		
@@ -179,6 +202,13 @@ class RuleXsl extends XslCache {
 		cLogger.info("Out RuleXsl.load()!");
 	}
 	
+	/**
+	 * @Title: newInstance
+	 * @Description: 构建单一实例
+	 * @return 
+	 * @return RuleXsl
+	 * @throws
+	 */
 	public static RuleXsl newInstance() {
 		return cThisIns;
 	}
