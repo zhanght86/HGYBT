@@ -178,7 +178,7 @@ public class NewCont extends XmlSimpFormat {
 			Element mRiskEle = (Element) mRiskList.get(i);
 			//获取险种代码[011A0100]
 			String mRiskCode = mRiskEle.getChildText("RiskCode");
-			//险种代码为131204、131204、131301、131302、221206、001301、231302
+			//险种代码为131204、131205、131301、131302、221206、001301、231302
 			if("131204".equals(mRiskCode) || "131205".equals(mRiskCode) || "131301".equals(mRiskCode) || "131302".equals(mRiskCode) ||
 					"221206".equals(mRiskCode) || "001301".equals(mRiskCode) || "231302".equals(mRiskCode)){
 				//获取保险年期年龄标志

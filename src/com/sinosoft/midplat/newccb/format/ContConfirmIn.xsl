@@ -43,7 +43,6 @@
 				<!-- 投保单(印刷)号 -->
                 <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Ins_BillNo)" /></ProposalPrtNo>
 				<!-- 保费缴纳金额 -->
-				<!-- <Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Ins_PyF_Amt)" /></Prem>  -->
 				<Prem><xsl:value-of select="Ins_PyF_Amt" /></Prem> 
   				
 				<!--原来的交易流水号-->

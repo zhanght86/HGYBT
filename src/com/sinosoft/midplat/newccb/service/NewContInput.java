@@ -40,6 +40,7 @@ public class NewContInput extends ServiceImpl
 	/**
 	 * 标准输入报文业务处理
 	 * @param pInXmlDoc 标准输入报文
+	 * @return 标准输出报文
 	 */
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc)

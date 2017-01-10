@@ -11,6 +11,12 @@ package com.sinosoft.lis.vschema;
 import com.sinosoft.lis.schema.ContSchema;
 import com.sinosoft.utility.*;
 
+/**
+ * @ClassName: ContSet
+ * @Description: 保单记录集
+ * @author yuantongxin
+ * @date 2017-1-8 下午4:26:29
+ */
 public class ContSet extends SchemaSet
 {
 	// @Method

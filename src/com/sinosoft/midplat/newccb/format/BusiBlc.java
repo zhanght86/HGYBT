@@ -47,8 +47,9 @@ public class BusiBlc extends XmlSimpFormat
 
 		oldTxHeader = (Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		oldComEntity = (Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
+		//服务名
 		sysTxCode = oldTxHeader.getChildText("SYS_TX_CODE");
-
+		
 		// 临时保存保险公司方交易流水号
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 

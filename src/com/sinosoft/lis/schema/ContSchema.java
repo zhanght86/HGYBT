@@ -16,7 +16,7 @@ import com.sinosoft.lis.db.ContDB;
 
 /**
  * @ClassName: ContSchema
- * @Description: DB层 保单数据库对象的集合(用户) 类
+ * @Description: 保单数据库操作基类
  * @author yuantongxin
  * @date 2017-1-6 下午2:45:59
  */

@@ -319,6 +319,14 @@ public class ContDB extends ContSchema
 		return aContSet;
 	}
 
+	/**
+	 * @Title: executeQuery
+	 * @Description: 执行查询
+	 * @param sql 结构化查询语句
+	 * @return 
+	 * @return ContSet
+	 * @throws
+	 */
 	public ContSet executeQuery(String sql)
 	{
 		Statement stmt = null;

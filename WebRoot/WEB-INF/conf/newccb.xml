@@ -260,7 +260,6 @@
 		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
 		<localDir>/home/ap/fserver2/rcv</localDir>
 	</business>
-
 	<business>
 		<name>发送银行端单证信息</name>
 		<funcFlag outcode="P53817105">3006</funcFlag>

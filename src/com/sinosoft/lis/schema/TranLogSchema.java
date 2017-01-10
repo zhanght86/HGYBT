@@ -13,7 +13,7 @@ import com.sinosoft.lis.pubfun.FDate;
 import com.sinosoft.utility.*;
 import com.sinosoft.lis.db.TranLogDB;
 /**
- * DB层 交易日志数据库对象的集合(用户) 类
+ * 交易日志数据库操作基类
  * @author yuantongxin
  */
 public class TranLogSchema implements Schema

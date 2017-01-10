@@ -61,8 +61,9 @@ public class NewCcbFormatUtil {
 		mTelPhoneNo.setText("4009-800-800");
 		oldComEntity.addContent(mTelPhoneNo);
 		
+		//非标准输出报文加入公共域
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").addContent(oldComEntity);
-		
+		//返回公共域加入了[服务名、保险公司账务日期、保险公司流水号、保险公司客服电话]4个节点的非标准输出报文、
 		return mNoStdXml;
 	}
 	
@@ -107,7 +108,7 @@ public class NewCcbFormatUtil {
         length += String.valueOf(length).length()-1;
         mSYS_MSG_LEN.setText(Integer.toString(length));
 		
-		
+        //返回设置了[发起方安全节点编号、全局事件跟踪号、子交易序号、应用报文长度、服务接受时间、服务响应时间]6个节点的非标准输出报文
 		return mNoStdXml;
 	}
 	

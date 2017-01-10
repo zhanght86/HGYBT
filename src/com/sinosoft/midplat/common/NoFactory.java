@@ -136,6 +136,7 @@ public class NoFactory {
 //			int tMax = Integer.parseInt(
 //					new ExeSQL().getOneValue("select max(MapNo) from NodeMap"));
 //			cNodeMapNo = tMax - tMax%cClusterCount + cClusterId;
+			//select max(MapNo) from NodeMap where mod(MapNo,3)=0
 			cNodeMapNo = Integer.parseInt(
 					new ExeSQL().getOneValue("select max(MapNo) from NodeMap where mod(MapNo,"+cClusterCount+")="+cClusterId));
 		} catch (Throwable ex) {

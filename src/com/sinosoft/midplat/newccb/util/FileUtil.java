@@ -44,6 +44,12 @@ import com.sinosoft.midplat.service.Service;
 import com.sinosoft.utility.ElementLis;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
+/**
+ * @ClassName: FileUtil
+ * @Description: 文件工具类
+ * @author yuantongxin
+ * @date 2017-1-8 下午6:35:40
+ */
 public class FileUtil
 {
 	protected final Logger cLogger = Logger.getLogger(getClass());
@@ -64,6 +70,12 @@ public class FileUtil
 	private Document cNoStdXml;
 	private Element cTransaction_Header = null;
 
+	/**
+	 * <p>Title: FileUtil</p>
+	 * <p>Description: 文件工具类构造器</p>
+	 * @param pInXmlDoc 标准输入报文
+	 * @throws JDOMException 文档对象模型异常
+	 */
 	public FileUtil(Document pInXmlDoc) throws JDOMException
 	{
 		cLogger.info("into init FileUtil()..");
@@ -71,6 +83,7 @@ public class FileUtil
 		JdomUtil.print(pInXmlDoc);
 		cNoStdXml = pInXmlDoc;
 
+		//服务名非获取保单详情取数（寿险）
 		if (!pInXmlDoc.getRootElement().getChild("TX_HEADER").getChildText("SYS_TX_CODE").equals("P53816107"))
 		{
 			cTransaction_Header = (Element) pInXmlDoc.getRootElement().getChild("Head").clone();

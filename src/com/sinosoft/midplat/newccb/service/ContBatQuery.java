@@ -14,8 +14,15 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.service.ServiceImpl;
 
+/**
+ * @ClassName: ContBatQuery
+ * @Description: 批量代收代付查询业务处理
+ * @author yuantongxin
+ * @date 2017-1-9 下午5:43:24
+ */
 public class ContBatQuery extends ServiceImpl {
 
+	//
 	int tPayNum = 0;
 	int tIncomeNum = 0;
 	
@@ -24,6 +31,7 @@ public class ContBatQuery extends ServiceImpl {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Document service(Document pInXmlDoc) throws Exception {
 
 		cLogger.info("Into ContBatQuery()...");
@@ -32,6 +40,7 @@ public class ContBatQuery extends ServiceImpl {
 		Element tHeadEle = pInXmlDoc.getRootElement().getChild(Head);
 		String tTranDate = tHeadEle.getChildText(TranDate);
 		String tNodeNo = tHeadEle.getChildText(NodeNo);
+		//
 		String tBatchFTPPaht4LIS = NewCcbConf.newInstance().getConf().getRootElement().getChildText("BatchFTPPaht4LIS");
 		String tLocalFilePathSnd = NewCcbConf.newInstance().getConf().getRootElement().getChildText("LocalFilePathSnd");
 		
