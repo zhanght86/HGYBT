@@ -204,6 +204,7 @@ public class NewCont extends XmlSimpFormat {
 		//Out NewCont.noStd2Std()!
 		cLogger.info("Out NewCont.noStd2Std()!");
 		//返回输入标准报文
+		//返回设置了受益人比例、投保人与被保人关系、保险年期年龄标志、保险年期年龄后的标准输入报文
 		return mStdXml;
 	}
 
@@ -248,7 +249,7 @@ public class NewCont extends XmlSimpFormat {
 			
 			//COM_ENTITY节点加入保险公司方流水号
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("Ins_Co_Jrnl_No").setText(tranNo);
-			//加入保险代理套餐编号
+			//加入保险代理套餐编号[代理保险套餐编号]
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgIns_Pkg_ID").setText(sAginsPkgId);
 			//加入保费缴费方式代码
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("InsPrem_PyF_MtdCd").setText(sPayIntv);
@@ -268,6 +269,7 @@ public class NewCont extends XmlSimpFormat {
 		/*End-组织返回报文头*/
 
 		cLogger.info("Out NewCont.std2NoStd()!");
+		//
 		return mNoStdXml;
 	}
 	

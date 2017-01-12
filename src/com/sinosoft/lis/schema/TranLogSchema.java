@@ -451,7 +451,7 @@ public class TranLogSchema implements Schema
 	{
 		return RCode;
 	}
-	/**  */
+	/** 交易结果 */
 	public void setRCode(int aRCode)
 	{
 		RCode = aRCode;

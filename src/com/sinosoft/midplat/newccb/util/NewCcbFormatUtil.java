@@ -103,9 +103,9 @@ public class NewCcbFormatUtil {
         Element mSYS_MSG_LEN = mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_MSG_LEN");
         
         //非标准输出报文头元素转换为UTF-8编码的字节数组[保持原格式]的长度[字节数]
-        int length = JdomUtil.toBytes(mNoStdXml.getRootElement().getChild("TX_HEADER"),"utf-8").length;
+        int length = JdomUtil.toBytes(mNoStdXml.getRootElement().getChild("TX_HEADER"),"utf-8").length;//726
         //
-        length += String.valueOf(length).length()-1;
+        length += String.valueOf(length).length()-1;//726+(3-1)=728
         mSYS_MSG_LEN.setText(Integer.toString(length));
 		
         //返回设置了[发起方安全节点编号、全局事件跟踪号、子交易序号、应用报文长度、服务接受时间、服务响应时间]6个节点的非标准输出报文

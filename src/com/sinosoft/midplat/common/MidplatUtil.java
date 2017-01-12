@@ -80,22 +80,25 @@ public class MidplatUtil implements XmlTag {
 	
 	/**
 	 * 根据pFlag和pMessage，生成简单的标准返回报文。
+	 * @param pFlag 交易结果
+	 * @param pMessage 交易结果描述
 	 */
 	public static Document getSimpOutXml(int pFlag, String pMessage) {
-		Element mFlag = new Element(Flag);
-		mFlag.addContent(String.valueOf(pFlag));
-
-		Element mDesc = new Element(Desc);
-		mDesc.addContent(pMessage);
-
-		Element mHead = new Element(Head);
-		mHead.addContent(mFlag);
-		mHead.addContent(mDesc);
-
-		Element mTranData = new Element(TranData);
-		mTranData.addContent(mHead);
-
-		return new Document(mTranData);
+		//交易结果
+		Element mFlag = new Element(Flag);//<Flag />
+		mFlag.addContent(String.valueOf(pFlag));//<Flag>1</Flag>
+		//交易结果描述
+		Element mDesc = new Element(Desc);//<Desc />
+		mDesc.addContent(pMessage);//<Desc>AgentCom在本系统中不存在</Desc>
+		//报文头
+		Element mHead = new Element(Head);//<Head />
+		mHead.addContent(mFlag);//<Head><Flag>1</Flag></Head>
+		mHead.addContent(mDesc);//<Head><Flag>1</Flag><Desc>AgentCom在本系统中不存在</Desc></Head>
+		//根节点
+		Element mTranData = new Element(TranData);//<TranData />
+		mTranData.addContent(mHead);//<TranData><Head><Flag>1</Flag><Desc>AgentCom在本系统中不存在</Desc></Head></TranData>
+		//返回简单标准输出报文
+		return new Document(mTranData);//<?xml version="1.0"?><TranData><Head><Flag>1</Flag><Desc>AgentCom在本系统中不存在</Desc></Head></TranData>
 	}
 
 	/**

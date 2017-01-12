@@ -265,7 +265,7 @@ public class NewContInput extends ServiceImpl
 			tContDB.setModifyDate(tContDB.getMakeDate());
 			//设置最后修改时间为入库时间
 			tContDB.setModifyTime(tContDB.getMakeTime());
-
+			
 			//执行保单数据库操作类插入方法失败
 			if (!tContDB.insert())
 			{

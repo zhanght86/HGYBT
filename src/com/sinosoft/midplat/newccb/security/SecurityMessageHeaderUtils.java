@@ -66,6 +66,16 @@ public class SecurityMessageHeaderUtils
 	protected static final String SEC_SIGN = "SEC_SIGN";
 	protected static final byte[] SEC_SIGN_BYTES = "SEC_SIGN".getBytes(SecurityManagerUtils.CHARSET);;
 
+	/**
+	 * @Title: marshal
+	 * @Description: 
+	 * @param securityMessageHeader
+	 * @param messageData
+	 * @param isClient
+	 * @return
+	 * @return byte[]
+	 * @throws
+	 */
 	public static byte[] marshal(SecurityMessageHeader securityMessageHeader, byte[] messageData, boolean isClient)
 	{
 		// log.debug("log001", new Object[] { securityMessageHeader });

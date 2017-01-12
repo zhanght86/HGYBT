@@ -77,7 +77,7 @@ public class BatResponse extends XmlSimpFormat {
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("Ins_Co_Jrnl_No").setText(tranNo);
 		
 		/*Start-组织返回报文头*/
-
+		
 		Element mRetData = pStdXml.getRootElement().getChild("Head");
 		if (mRetData.getChildText(Flag).equals("0")) {	//交易成功
 			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText("Desc"));
