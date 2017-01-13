@@ -175,7 +175,7 @@
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="3" name="保单重打"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="5" name="当日撤单"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"

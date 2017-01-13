@@ -13,6 +13,12 @@ import org.apache.commons.lang3.StringUtils;
 import cn.ccb.secapi.SecAPI;
 import cn.ccb.secapi.SecException;
 
+/**
+ * @ClassName: SecurityMessageHeaderUtils
+ * @Description: 安全报文头工具类
+ * @author yuantongxin
+ * @date 2017-1-12 下午2:06:08
+ */
 public class SecurityMessageHeaderUtils
 {
 	// private static final Log log =
@@ -68,7 +74,7 @@ public class SecurityMessageHeaderUtils
 
 	/**
 	 * @Title: marshal
-	 * @Description: 
+	 * @Description: 加密
 	 * @param securityMessageHeader
 	 * @param messageData
 	 * @param isClient
@@ -259,6 +265,16 @@ public class SecurityMessageHeaderUtils
 		return os.toByteArray();
 	}
 
+	/**
+	 * @Title: ummarshal
+	 * @Description: 解密
+	 * @param message
+	 * @param isServer
+	 * @param securityMessageHeader
+	 * @return
+	 * @return Object[]
+	 * @throws
+	 */
 	public static Object[] ummarshal(byte[] message, boolean isServer, SecurityMessageHeader securityMessageHeader)
 	{
 		// 返回结果数组对象＿为安全头＿为报文体
@@ -463,6 +479,14 @@ public class SecurityMessageHeaderUtils
 		return retObjs;
 	}
 
+	/**
+	 * @Title: pinDecrypt
+	 * @Description: 密码解密
+	 * @param cipherData
+	 * @return
+	 * @return byte[]
+	 * @throws
+	 */
 	public static byte[] pinDecrypt(byte[] cipherData)
 	{
 		// System.out.println("进入敏感字段解密。䀣䀣㿢);
@@ -482,6 +506,16 @@ public class SecurityMessageHeaderUtils
 		return secDecryptBytes;
 	}
 
+	/**
+	 * @Title: outputHeader
+	 * @Description: 输出头
+	 * @param headerName
+	 * @param headerValue
+	 * @param outputStream
+	 * @throws IOException
+	 * @return void
+	 * @throws
+	 */
 	private static void outputHeader(byte[] headerName, byte[] headerValue, OutputStream outputStream) throws IOException
 	{
 		outputStream.write(headerName);
@@ -490,6 +524,16 @@ public class SecurityMessageHeaderUtils
 		outputStream.write(SEP2_BYTES);
 	}
 
+	/**
+	 * @Title: outputHeader
+	 * @Description: 输出头
+	 * @param headerName
+	 * @param headerValue
+	 * @param outputStream
+	 * @throws IOException
+	 * @return void
+	 * @throws
+	 */
 	private static void outputHeader(byte[] headerName, String headerValue, OutputStream outputStream) throws IOException
 	{
 		byte[] bytesValue = new byte[0];
@@ -500,11 +544,29 @@ public class SecurityMessageHeaderUtils
 		outputHeader(headerName, bytesValue, outputStream);
 	}
 
+	/**
+	 * @Title: getBooleanHeader
+	 * @Description: 得到布尔头
+	 * @param headerName
+	 * @param container
+	 * @return
+	 * @return boolean
+	 * @throws
+	 */
 	private static boolean getBooleanHeader(String headerName, Map<String, byte[]> container)
 	{
 		return "1".equals(getStringHeader(headerName, container));
 	}
-
+	
+	/**
+	 * @Title: getStringHeader
+	 * @Description: 得到字符串头
+	 * @param headerName
+	 * @param container
+	 * @return
+	 * @return String
+	 * @throws
+	 */
 	private static String getStringHeader(String headerName, Map<String, byte[]> container)
 	{
 		byte[] byteHeader = (byte[]) container.get(headerName);

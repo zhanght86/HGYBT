@@ -126,11 +126,24 @@
 											</xsl:call-template>
 										</Ins_Cyc_Cd>
 										<!-- 保费缴费方式代码 -->
-										<InsPrem_PyF_MtdCd><xsl:value-of select="PayEndYearFlag"/></InsPrem_PyF_MtdCd>
+										<InsPrem_PyF_MtdCd>
+											<xsl:call-template name="tran_insPremPyFMtdCd">
+												<xsl:with-param name="insPremPyFMtdCd">
+													<!-- <xsl:value-of select="PayEndYearFlag"/> -->
+													<xsl:value-of select="PayIntv"/>
+												</xsl:with-param>
+											</xsl:call-template>
+										</InsPrem_PyF_MtdCd>
 										<!-- 保费缴费期数 -->
 										<InsPrem_PyF_Prd_Num><xsl:value-of select="PayEndYear"/></InsPrem_PyF_Prd_Num>
 										<!-- 保费缴费周期代码 format类中添加 -->
-										<InsPrem_PyF_Cyc_Cd></InsPrem_PyF_Cyc_Cd>
+										<InsPrem_PyF_Cyc_Cd>
+											<xsl:call-template name="tran_insPremPyFCycCd">
+												<xsl:with-param name="insPremPyFCycCd">
+													<xsl:value-of select="PayEndYearFlag"/>
+												</xsl:with-param>
+											</xsl:call-template>
+										</InsPrem_PyF_Cyc_Cd>
 									</Insu_Detail>
 								</xsl:for-each>
 							</Insu_List>
@@ -151,8 +164,11 @@
 	<xsl:template name="tran_insCycCd">
 		<xsl:param name="insCycCd"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$insCycCd !='A'"><xsl:value-of select="$insCycCd" /></xsl:when>
-			<xsl:otherwise></xsl:otherwise>
+			<!-- <xsl:when test="$insCycCd ='A'">0100</xsl:when> -->
+			<xsl:when test="$insCycCd ='Y'">03</xsl:when><!--按年  -->
+			<xsl:when test="$insCycCd ='M'">04</xsl:when><!-- 按月 -->
+			<xsl:when test="$insCycCd ='D'">05</xsl:when><!---->
+			<xsl:otherwise>99</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
@@ -168,9 +184,31 @@
 			<xsl:when test="$acisarStcd=06">076023</xsl:when><!-- 契撤终止 -->
 			<xsl:when test="$acisarStcd=98">076014</xsl:when><!-- 保险公司已经接收非实时核保信息 -->
 			<xsl:when test="$acisarStcd=99">076018</xsl:when><!-- 保险公司未找到此投保单 -->
-			<xsl:when test="$acisarStcd=07"></xsl:when><!-- 核保通过 -->
+			<xsl:when test="$acisarStcd=07">076019</xsl:when><!-- 核保通过 -->
 			<xsl:when test="$acisarStcd=09">076016</xsl:when><!-- 拒保 客户提交核保，保险公司拒保 -->
-			<xsl:when test="$acisarStcd=11"></xsl:when><!-- 撤销 -->
+			<xsl:when test="$acisarStcd=11">076017</xsl:when><!-- 撤销 -->
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="tran_insPremPyFMtdCd">
+		<xsl:param name="insPremPyFMtdCd">02</xsl:param>
+		<xsl:choose>
+			<xsl:when test="$insPremPyFMtdCd='-1'">01</xsl:when><!--不定期缴-->
+			<xsl:when test="$insPremPyFMtdCd='0'">02</xsl:when><!--趸交-->
+			<xsl:when test="$insPremPyFMtdCd='12'">03</xsl:when><!--年缴-->
+			<xsl:when test="$insPremPyFMtdCd='98'">04</xsl:when><!--交至某确定年-->
+			<xsl:when test="$insPremPyFMtdCd='99'">05</xsl:when>><!--终身缴费-->
+			<xsl:otherwise>01</xsl:otherwise><!--不定期缴-->
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="tran_insPremPyFCycCd">
+		<xsl:param name="insPremPyFCycCd"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$insPremPyFCycCd='A'">0100</xsl:when><!--趸交-->
+			<xsl:when test="$insPremPyFCycCd='M'">0204</xsl:when><!--月缴-->
+			<xsl:when test="$insPremPyFCycCd='Y'">0203</xsl:when><!--年缴-->
+			<xsl:otherwise>9999</xsl:otherwise><!--其他-->
 		</xsl:choose>
 	</xsl:template>
 	
