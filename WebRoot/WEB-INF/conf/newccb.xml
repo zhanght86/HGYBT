@@ -405,8 +405,8 @@
 		<funcFlag outcode="P53818105">1059</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout>
-		<format>com.sinosoft.midplat.newccb.format.BatResponse</format>
-		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
+		<format>com.sinosoft.midplat.newccb.format.BatchSendDisk</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatchSendDisk</service>
 	</business>
 	
 	<business>

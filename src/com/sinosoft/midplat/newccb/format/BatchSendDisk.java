@@ -18,7 +18,7 @@ import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.midplat.newccb.util.PutContFile;
 
-public class BatResponse extends XmlSimpFormat {
+public class BatchSendDisk extends XmlSimpFormat {
 	
 	// 非标准输入报文头
 	private Element cTransaction_Header = null;
@@ -47,7 +47,7 @@ public class BatResponse extends XmlSimpFormat {
 	/** 请求的非标准报文 */
 	private Document cNoStdXml = null;
 
-	public BatResponse(Element pThisBusiConf) {
+	public BatchSendDisk(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
 	

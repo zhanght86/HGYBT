@@ -11,12 +11,12 @@ import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
 
-public class BatResponseOutXsl extends XslCache {
-	private static BatResponseOutXsl cThisIns = new BatResponseOutXsl();
+public class BatchSendDiskOutXsl extends XslCache {
+	private static BatchSendDiskOutXsl cThisIns = new BatchSendDiskOutXsl();
 	
-	private String cPath = "com/sinosoft/midplat/newccb/format/BatResponseOut.xsl";
+	private String cPath = "com/sinosoft/midplat/newccb/format/BatchSendDiskOut.xsl";
 	
-	private BatResponseOutXsl() {
+	private BatchSendDiskOutXsl() {
 		load();
 		FileCacheManage.newInstance().register(cPath, this);
 	}
@@ -63,7 +63,7 @@ public class BatResponseOutXsl extends XslCache {
 		cLogger.info("Out BatResponseOutXsl.load()!");
 	}
 	
-	public static BatResponseOutXsl newInstance() {
+	public static BatchSendDiskOutXsl newInstance() {
 		return cThisIns;
 	}
 }

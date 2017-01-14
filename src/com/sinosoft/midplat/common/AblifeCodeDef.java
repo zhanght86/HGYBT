@@ -166,6 +166,10 @@ public interface AblifeCodeDef extends CodeDef {
 	String SID_QueryPaymentInfo="65";
 	/**建行获取非实时核保状态**/
 	
+	/*批量业务*/
+	/**建行批量代收代付送盘**/
+	String SID_BatchSendDisk="";
+	
 	/** 新农行保全对账*/
 	String SID_BQContBlc= "16";
 	
