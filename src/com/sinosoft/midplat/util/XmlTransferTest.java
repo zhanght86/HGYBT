@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20170113/newccb/transfer_test/";
+		inXmlSource = "D:/task/20170114/newccb/transfer_test/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -86,9 +86,10 @@ public class XmlTransferTest {
 //		filename="P53819182in_noStd.xml";
 //		filename="P53819182out_Std.xml";
 //		filename="P538191E4in_noStd.xml";
-		filename="P538191E4out_Std.xml";
+//		filename="P538191E4out_Std.xml";
 //		filename="P53818102in_noStd.xml";
-//		filename="AL03100192017011101_RESULT.XML";
+		filename="AL03100192017011101_RESULT.XML";
+//		filename="AL13100192017011101_RESULT.XML";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";
@@ -142,8 +143,9 @@ public class XmlTransferTest {
 //		XslPath="WriteOffOut.xsl";
 //		XslPath="PrintContOut.xsl";
 //		XslPath="UpdateServiceStatusIn.xsl";
-		XslPath="UpdateServiceStatusOut.xsl";
+//		XslPath="UpdateServiceStatusOut.xsl";
 //		XslPath="BatQueryIn.xsl";
+		XslPath="BatResponseIn.xsl";
 		
 		//农业银行
 //		XslPath="NewContIn.xsl";
@@ -161,13 +163,14 @@ public class XmlTransferTest {
 //		XslPath="RollbackOut.xsl";
 		inXmlSource=inXmlSource+filename;
 		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
-//		String filepath = "D:/task/20170113/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
+//		String filepath = "D:/task/20170114/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20170113/newccb/transfer_test/P538191E4out_noStd.xml";
+		String outXml = "D:/task/20170114/newccb/transfer_test/0000000001_S0220090729_00001.txt";//32
+//		String outXml = "D:/task/20170114/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
-		Document mLogDocument = JdomUtil.build(fis);
-		JdomUtil.print(mLogDocument);
+//		Document mLogDocument = JdomUtil.build(fis);
+//		JdomUtil.print(mLogDocument);
 	}
 
 }

@@ -12,7 +12,7 @@
 			</xsl:with-param>
 		</xsl:call-template><xsl:text>,</xsl:text><!-- 代收标志 -->
 		<xsl:value-of select="/Root/Head/Cur_Btch_Dtl_TDnum" /><xsl:text>,</xsl:text><!-- 商户ID -->
-		<xsl:value-of select="/Root/Head/Cur_Btch_Dtl_TDnum" /><xsl:text>,</xsl:text><!-- 提交日期 -->
+		<xsl:value-of select="substring(/Root/Head/AgIns_BtchBag_Nm,10,8)" /><xsl:text>,</xsl:text><!-- 提交日期 -->
 		<xsl:value-of select="/Root/Head/Cur_Btch_Dtl_TDnum" /><xsl:text>,</xsl:text><!-- 总记录数 -->
 		<xsl:value-of select="/Root/Head/Cur_Btch_Dtl_TAmt" /><xsl:text>,</xsl:text><!-- 总金额 -->
 		<xsl:value-of select="/Root/Head/AgIns_BtchBag_TpCd"/><xsl:text>,</xsl:text><!-- 业务类型 -->

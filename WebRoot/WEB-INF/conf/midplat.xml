@@ -325,12 +325,12 @@
 		<!-- <service id="64" name="建行更新非实时业务状态"
 			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
-		<!-- <service id="64" name="建行更新非实时业务状态"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="64" name="建行更新非实时业务状态"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="64" name="建行更新非实时业务状态"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<!-- <service id="65" name="建行查询非实时缴费信息"
 			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->

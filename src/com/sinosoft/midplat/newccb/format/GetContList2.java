@@ -30,50 +30,81 @@ import com.sinosoft.midplat.newccb.util.PutContFile;
  */
 public class GetContList2 extends XmlSimpFormat
 {
+	//非标准输入报文头
 	private Element cTransaction_Header = null;
+	//服务接受时间
 	private String mSYS_RECV_TIME = null;
+	//服务响应时间
 	private String mSYS_RESP_TIME = null;
+	//服务方流水号
 	private String tranNo = null;
+	//交易日期
 	private String tranDate = null;
+	//服务名
 	private String sysTxCode = null;
+	//批量包个数
 	private String tPackNum = null;
+	//批量包名称
 	private String tBagName = null;
+	//非标准输入报文头
 	private Element oldTxHeader = null;
+	//非标准输入报文公共域
 	private Element oldComEntity = null;
+	//交易配置文件根节点
 	private Element cBusiConfRoot = null;
+	//当前交易配置文件
 	private Element cThisBusiConf = null;
 	/**请求的非标准报文*/
 	private Document cNoStdXml = null;
 
+	/**
+	 * <p>Title: GetContList2</p>
+	 * <p>Description: 获取保单详情取数(寿险)报文转换类构造函数</p>
+	 * @param pThisConf
+	 */
 	public GetContList2(Element pThisConf)
 	{
 		super(pThisConf);
 	}
 
+	/**
+	 * 非标准输入报文转标准输入报文
+	 * @param pNoStdXml 非标准输入报文
+	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception
 	{
+		//Into GetContList2.noStd2Std()...
 		cLogger.info("Into GetContList2.noStd2Std()...");
+		//为非标准输入报文成员变量赋值
 		cNoStdXml = pNoStdXml;
 		// 此处备份一下请求报文头相关信息，组织返回报文时会用到
+		//克隆非标准输入报文头
 		cTransaction_Header = (Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 
 		// JdomUtil.print(cTransaction_Header);
 
-		// 服务接受时间
+		// 服务接受时间[简单日期格式化当前日期]
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-
+		//克隆非标准输入报文头
 		oldTxHeader = (Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
+		//克隆非标准输入报文公共域
 		oldComEntity = (Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
+		//非标准输入报文头服务码
 		sysTxCode = oldTxHeader.getChildText("SYS_TX_CODE");
-
+		
 		// 临时保存保险公司方交易流水号
+		//非标准输入报文公共域服务方流水号
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 		// 临时保存银行发起交易日期作为保险公司账务日期
+		//非标准输入报文头发起方交易时间前8位
 		tranDate = NewCcbFormatUtil.getTimeAndDate(pNoStdXml.getRootElement().getChild("TX_HEADER").getChildText("SYS_REQ_TIME"), 0, 8);
+		//非标准输入报文应用域代理保险批量包名称
 		tBagName = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("AgIns_BtchBag_Nm");
+		//非标准输入报文转标准输入报文
 		Document mStdXml = GetContList2InXsl.newInstance().getCache().transform(pNoStdXml);
-
+		
 		// 如果不是当天发查询交易的话，核心取的日期是TranDate，所以，我们对批量报名称substring一下把查询时间送给核心
+		//标准输入报文查询日期文本内容设置为
 		mStdXml.getRootElement().getChild("Body").getChild("QryStrDate").setText(tBagName.substring(10, 18));
 
 		cLogger.info("Out GetContList.noStd2Std()!");

@@ -97,7 +97,7 @@
 							<!-- 保险缴费金额  -->
 							<Ins_PyF_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/LCCont/Prem)"/></Ins_PyF_Amt>
 							<!-- 保险年期类别代码 -->
-							<Ins_Yr_Prd_CgyCd><xsl:value-of select="/TranData/LCCont/InsuYearFlag"/></Ins_Yr_Prd_CgyCd>
+							<Ins_Yr_Prd_CgyCd>03</Ins_Yr_Prd_CgyCd>
 							<!-- 保险期限 -->
 							<Ins_Ddln><xsl:value-of select="/TranData/LCCont/InsuYear"/></Ins_Ddln>
 							<!-- 保险周期代码 -->
@@ -118,12 +118,14 @@
 								</xsl:call-template>
 							</InsPrem_PyF_MtdCd>
 							<!-- 保费缴费期数 -->
-							<InsPrem_PyF_Prd_Num><xsl:value-of select="/TranData/LCCont/PayEndYear"/></InsPrem_PyF_Prd_Num>
+							<!-- <InsPrem_PyF_Prd_Num><xsl:value-of select="/TranData/LCCont/PayEndYear"/></InsPrem_PyF_Prd_Num> -->
+							<InsPrem_PyF_Prd_Num>1</InsPrem_PyF_Prd_Num>
 							<!-- 保费缴费周期代码 -->
 							<InsPrem_PyF_Cyc_Cd>
 								<xsl:call-template name="tran_insPremPyFCycCd">
 									<xsl:with-param name="insPremPyFCycCd">
-										<xsl:value-of select="/TranData/LCCont/PayEndYearFlag"/>
+										<!-- <xsl:value-of select="/TranData/LCCont/PayEndYearFlag"/> -->
+										<xsl:value-of select="/TranData/LCCont/PayIntv"/>
 									</xsl:with-param>
 								</xsl:call-template>
 							</InsPrem_PyF_Cyc_Cd>
@@ -153,7 +155,7 @@
 			<xsl:when test="$insPremPyFMtdCd='0'">02</xsl:when><!--趸交-->
 			<xsl:when test="$insPremPyFMtdCd='12'">03</xsl:when><!--年缴-->
 			<xsl:when test="$insPremPyFMtdCd='98'">04</xsl:when><!--交至某确定年-->
-			<xsl:when test="$insPremPyFMtdCd='99'">05</xsl:when>><!--终身缴费-->
+			<xsl:when test="$insPremPyFMtdCd='99'">05</xsl:when><!--终身缴费-->
 			<xsl:otherwise>01</xsl:otherwise><!--不定期缴-->
 		</xsl:choose>
 	</xsl:template>
@@ -161,9 +163,11 @@
 	<xsl:template name="tran_insPremPyFCycCd">
 		<xsl:param name="insPremPyFCycCd"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$insPremPyFCycCd='A'">0100</xsl:when><!--趸交-->
-			<xsl:when test="$insPremPyFCycCd='M'">0204</xsl:when><!--月缴-->
-			<xsl:when test="$insPremPyFCycCd='Y'">0203</xsl:when><!--年缴-->
+			<xsl:when test="$insPremPyFCycCd='0'">0100</xsl:when><!--趸交-->
+			<xsl:when test="$insPremPyFCycCd='3'">0201</xsl:when><!--季缴-->
+			<xsl:when test="$insPremPyFCycCd='6'">0202</xsl:when><!--半年缴-->
+			<xsl:when test="$insPremPyFCycCd='12'">0203</xsl:when><!--年缴-->
+			<xsl:when test="$insPremPyFCycCd='1'">0204</xsl:when><!--月缴-->
 			<xsl:otherwise>9999</xsl:otherwise><!--其他-->
 		</xsl:choose>
 	</xsl:template>
