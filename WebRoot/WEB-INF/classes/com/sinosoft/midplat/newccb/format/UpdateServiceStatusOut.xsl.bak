@@ -167,7 +167,7 @@
 			<!-- <xsl:when test="$insCycCd ='A'">0100</xsl:when> -->
 			<xsl:when test="$insCycCd ='Y'">03</xsl:when><!--按年  -->
 			<xsl:when test="$insCycCd ='M'">04</xsl:when><!-- 按月 -->
-			<xsl:when test="$insCycCd ='D'">05</xsl:when><!--按天-->
+			<xsl:when test="$insCycCd ='D'">05</xsl:when><!---->
 			<xsl:otherwise>99</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

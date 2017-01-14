@@ -22,6 +22,12 @@ import com.sinosoft.midplat.newccb.util.CcbGetFile;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.midplat.newccb.util.PutContFile;
 
+/**
+ * @ClassName: GetContList2
+ * @Description: 获取保单详情取数(寿险)报文转换类
+ * @author yuantongxin
+ * @date 2017-1-14 下午12:30:13
+ */
 public class GetContList2 extends XmlSimpFormat
 {
 	private Element cTransaction_Header = null;
