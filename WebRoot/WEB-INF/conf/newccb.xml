@@ -403,6 +403,7 @@
 	<business>
 		<name>批量代收代付送盘</name>
 		<funcFlag outcode="P53818105">1059</funcFlag>
+		<savePath>/home/weblogic/ybttest/newccb/sp/</savePath><!-- 明文保存路径 -->
 		<locktime>200</locktime>
 		<timeout>200</timeout>
 		<format>com.sinosoft.midplat.newccb.format.BatchSendDisk</format>

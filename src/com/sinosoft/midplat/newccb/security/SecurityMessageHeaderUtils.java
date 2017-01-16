@@ -268,11 +268,11 @@ public class SecurityMessageHeaderUtils
 	/**
 	 * @Title: ummarshal
 	 * @Description: 解密
-	 * @param message
-	 * @param isServer
-	 * @param securityMessageHeader
-	 * @return
-	 * @return Object[]
+	 * @param message 安全报文头+报文体
+	 * @param isServer 是服务器
+	 * @param securityMessageHeader 安全报文头
+	 * @return 
+	 * @return Object[] 
 	 * @throws
 	 */
 	public static Object[] ummarshal(byte[] message, boolean isServer, SecurityMessageHeader securityMessageHeader)

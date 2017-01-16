@@ -44,7 +44,7 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20170114/newccb/transfer_test/";
+		inXmlSource = "D:/task/20170116/newccb/transfer_test/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -145,7 +145,7 @@ public class XmlTransferTest {
 //		XslPath="UpdateServiceStatusIn.xsl";
 //		XslPath="UpdateServiceStatusOut.xsl";
 //		XslPath="BatQueryIn.xsl";
-		XslPath="BatResponseIn.xsl";
+		XslPath="BatchSendDiskIn.xsl";
 		
 		//农业银行
 //		XslPath="NewContIn.xsl";
@@ -163,14 +163,14 @@ public class XmlTransferTest {
 //		XslPath="RollbackOut.xsl";
 		inXmlSource=inXmlSource+filename;
 		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
-//		String filepath = "D:/task/20170114/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
+//		String filepath = "D:/task/20170116/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20170114/newccb/transfer_test/0000000001_S0220090729_00001.txt";//32
-//		String outXml = "D:/task/20170114/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
+		String outXml = "D:/task/20170116/newccb/transfer_test/0000000001_S0220090729_00001.xml";//32
+//		String outXml = "D:/task/20170116/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
-//		Document mLogDocument = JdomUtil.build(fis);
-//		JdomUtil.print(mLogDocument);
+		Document mLogDocument = JdomUtil.build(fis);
+		JdomUtil.print(mLogDocument);
 	}
 
 }

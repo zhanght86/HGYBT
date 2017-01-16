@@ -40,6 +40,9 @@ public class BusiBlc extends XmlSimpFormat
 		super(pThisConf);
 	}
 
+	/**
+	 * 
+	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception
 	{
 		cLogger.info("Into BusiBlc.noStd2Std()...");

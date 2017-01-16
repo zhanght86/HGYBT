@@ -1,5 +1,6 @@
 package com.sinosoft.midplat.newccb.format;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -7,6 +8,12 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -93,16 +100,16 @@ public class BatchSendDisk extends XmlSimpFormat {
 				.getChild("ENTITY").getChild("APP_ENTITY")
 				.getChildText("AgIns_BtchBag_Nm");
 		// 非标准输入报文转标准输入报文
-		Document mStdXml = GetContList2InXsl.newInstance().getCache()
-				.transform(pNoStdXml);
-
+		/*Document mStdXml = BatchSendDiskInXsl.newInstance().getCache()
+				.transform(pNoStdXml);*/
+//		Document mStdXml =null;
 		// 如果不是当天发查询交易的话，核心取的日期是TranDate，所以，我们对批量报名称substring一下把查询时间送给核心
 		// 标准输入报文查询日期文本内容设置为
-		mStdXml.getRootElement().getChild("Body").getChild("QryStrDate")
-				.setText(tBagName.substring(10, 18));
+//		mStdXml.getRootElement().getChild("Body").getChild("QryStrDate")
+//				.setText(tBagName.substring(10, 18));
 
 		cLogger.info("Out GetContList.noStd2Std()!");
-		return mStdXml;
+		return pNoStdXml;
 	}
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
@@ -110,7 +117,7 @@ public class BatchSendDisk extends XmlSimpFormat {
 		JdomUtil.print(pStdXml);
 
 		// 非标准报文
-		Document mNoStdXml = GetContList2OutXsl.newInstance().getCache()
+		Document mNoStdXml = BatchSendDiskOutXsl.newInstance().getCache()
 				.transform(pStdXml);
 
 		// 服务响应时间
@@ -179,7 +186,7 @@ public class BatchSendDisk extends XmlSimpFormat {
 		cBusiConfRoot = NewCcbConf.newInstance().getConf().getRootElement();
 		// 获取配置节点信息
 		cThisBusiConf = (Element) XPath.selectSingleNode(cBusiConfRoot,
-				"business[funcFlag='1043']");
+				"business[funcFlag='1059']");
 		cLogger.info("配置节点element:");
 		JdomUtil.print(cThisBusiConf);
 
@@ -211,9 +218,9 @@ public class BatchSendDisk extends XmlSimpFormat {
 		JdomUtil.print(mNoStdXml);
 
 		// 获取保单详情循环节点内容
-		List<Element> tDetail = mNoStdXml.getRootElement().getChild("TX_BODY")
+		/*List<Element> tDetail = mNoStdXml.getRootElement().getChild("TX_BODY")
 				.getChild("ENTITY").getChild("APP_ENTITY")
-				.getChild("Insu_List").getChildren("Insu_Detail");
+				.getChildren("AgIns_BtchBag_Nm");
 		// 组织保单详情返回文件
 		if (tDetail.size() != 0) {
 			JdomUtil.print(cNoStdXml);
@@ -231,11 +238,11 @@ public class BatchSendDisk extends XmlSimpFormat {
 				mSYS_TX_STATUS.setText("01");
 				mSYS_RESP_DESC.setText("文件不存在");
 			}
-		}
+		}*/
 
 		JdomUtil.print(mNoStdXml);
-		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
-				.getChild("APP_ENTITY").removeChild("Insu_List");
+//		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY")
+//				.getChild("APP_ENTITY").removeChild("Insu_List");
 		JdomUtil.print(mNoStdXml);
 
 		cLogger.info("Out GetContList2.std2NoStd()!");
@@ -250,15 +257,15 @@ public class BatchSendDisk extends XmlSimpFormat {
 		// String mOutFilePath = "H:/李路/模拟建行报文/P53819184inSvc.xml";
 		// String mInFilePath = "H:/李路/任务/P53819184InNoStd.xml";
 		// String mOutFilePath = "H:/李路/任务/P53819184inSvcStd.xml";
-		String mInFilePath = "E:/1067817_13_38_outSvc.xml";
-		String mOutFilePath = "E:/99999.xml";
+		String mInFilePath = "D:/task/20170116/newccb/transfer_test/AL03100192017011101_RESULT.XML";
+		String mOutFilePath = "D:/task/20170116/newccb/transfer_test/0000000001_S0220090729_00001.xml";
 
 		InputStream mIs = new FileInputStream(mInFilePath);
 		Document mInXmlDoc = JdomUtil.build(mIs);
 		mIs.close();
 
-		Document mOutXmlDoc = new GetContList2(null).std2NoStd(mInXmlDoc);
-		// Document mOutXmlDoc = new GetContList2(null).noStd2Std(mInXmlDoc);
+		 Document mOutXmlDoc = new BatchSendDisk(null).noStd2Std(mInXmlDoc);
+//		Document mOutXmlDoc = new GetContList2(null).std2NoStd(mInXmlDoc);
 
 		JdomUtil.print(mOutXmlDoc);
 
