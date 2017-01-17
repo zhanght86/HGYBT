@@ -4,7 +4,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
 	exclude-result-prefixes="java">
 	<xsl:output method="xml" indent="yes" />
-	<xsl:template match="/">
+	<xsl:template match="TranData">
 		<TX>
 			<!-- 报文头 -->
 			<TX_HEADER>
@@ -42,13 +42,13 @@
 				<SYS_RESP_TIME></SYS_RESP_TIME>
 			     <!-- 报文状态类型  -->
 				<SYS_PKG_STS_TYPE>01</SYS_PKG_STS_TYPE>    
-				<xsl:if test = "/TranData/Head/Flag='0'">
+				<xsl:if test = "Head/Flag='0'">
 			     <!-- 服务状态 -->
 				<SYS_TX_STATUS>00</SYS_TX_STATUS>    
 			     <!-- 服务响应码 -->
 				<SYS_RESP_CODE>000000000000</SYS_RESP_CODE>    
 				</xsl:if>
-				<xsl:if test = "/TranData/Head/Flag !='0'">
+				<xsl:if test = "Head/Flag !='0'">
 			     <!-- 服务状态 -->
 				<SYS_TX_STATUS>01</SYS_TX_STATUS>    
 			     <!-- 服务响应码 -->
@@ -65,9 +65,9 @@
 	      			<COMMON>
 	         			<FILE_LIST_PACK>
 	         				<!-- 文件个数 -->
-				            <FILE_NUM>0</FILE_NUM>
+				            <FILE_NUM>1</FILE_NUM>
 				            <!-- 文件处理方式 -->
-				            <FILE_MODE></FILE_MODE>
+				            <FILE_MODE>0</FILE_MODE>
 				        	<!-- 文件节点 -->
 				            <FILE_NODE></FILE_NODE>
 				            <!-- 打包后后文件名 -->
@@ -76,40 +76,22 @@
 				            <FILE_PATH_PACK></FILE_PATH_PACK>
 				            <!-- 文件信息 -->
 				            <FILE_INFO>
-				            <!-- 文件信息 -->
-				            <FILE_NAME></FILE_NAME>
-				            <!-- 文件路径 -->
-				            <FILE_PATH></FILE_PATH>
-				            </FILE_INFO>
+						      <FILE_NAME><xsl:value-of select="Body/FileName" /><xsl:text>_SOURCE.xml</xsl:text></FILE_NAME>
+						      <FILE_PATH><xsl:value-of select="Body/FilePath" /></FILE_PATH>
+					        </FILE_INFO>
 	         			</FILE_LIST_PACK>
 	      			</COMMON>
 	      			<ENTITY>
-			<xsl:if test="//Head/Flag='0'">
-				<xsl:apply-templates select="TranData/Body" />
+			<xsl:if test="Head/Flag='0'">
+				<APP_ENTITY>
+			<AgIns_BtchBag_Nm><xsl:value-of select="Body/FileName" /></AgIns_BtchBag_Nm><!-- 代理保险批量包名称 -->
+			<Cur_Btch_Dtl_TDnum><xsl:value-of select="Body/Num" /></Cur_Btch_Dtl_TDnum><!-- #当前批明细总笔数-->
+			<Cur_Btch_Dtl_TAmt><xsl:value-of select="Body/SumAmt" /></Cur_Btch_Dtl_TAmt><!-- #当前批明细总金额-->
+			<AgIns_BtchBag_TpCd></AgIns_BtchBag_TpCd><!-- #代理保险批量包类型代码-->
+		</APP_ENTITY>
 			</xsl:if>
 		</ENTITY>
 		</TX_BODY>
 		</TX>
 	</xsl:template>
-	<xsl:template name="Body" match="TranData/Body">
-		<APP_ENTITY>
-			<AgIns_BtchBag_Nm><xsl:value-of select="/TranData/Body/FileName" /></AgIns_BtchBag_Nm><!-- 代理保险批量包名称 -->
-			<Cur_Btch_Dtl_TDnum><xsl:value-of select="/TranData/Body/Num" /></Cur_Btch_Dtl_TDnum><!-- #当前批明细总笔数-->
-			<Cur_Btch_Dtl_TAmt><xsl:value-of select="/TranData/Body/SumAmt" /></Cur_Btch_Dtl_TAmt><!-- #当前批明细总金额-->
-			<AgIns_BtchBag_TpCd></AgIns_BtchBag_TpCd><!-- #代理保险批量包类型代码-->
-		</APP_ENTITY>
-		<COMMON>
-		<FILE_LIST_PACK>
-					<FILE_NUM>1</FILE_NUM>
-					<FILE_MODE>0</FILE_MODE>
-					<FILE_NODE/> 
-					<FILE_NAME_PACK/>
-					<FILE_PATH_PACK/>
-					<FILE_INFO>
-						<FILE_NAME><xsl:value-of select="//FileName" /><xsl:text>_SOURCE.xml</xsl:text></FILE_NAME>
-						<FILE_PATH><xsl:value-of select="//FilePath" /></FILE_PATH>
-					</FILE_INFO>
-				</FILE_LIST_PACK>
-			</COMMON>
-</xsl:template>
 </xsl:stylesheet>
