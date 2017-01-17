@@ -1,6 +1,7 @@
 package com.sinosoft.midplat.newccb.service;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -565,4 +566,12 @@ public class NewContBlc extends ServiceImpl
 
 	}
 
+	public static void main(String[] args) throws Exception {
+		String mInFilePath="D:/task/20170117/newccb/core_test/32592_6_6_inSvc.xml";
+		InputStream mIs = new FileInputStream(mInFilePath);
+		Document document = JdomUtil.build(mIs,"UTF-8");
+		Document cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(document);
+		JdomUtil.print(cOutXmlDoc);
+	}
+	
 }

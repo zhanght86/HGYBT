@@ -53,16 +53,22 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 public class FileUtil
 {
 	protected final Logger cLogger = Logger.getLogger(getClass());
+	/**类型代码*/
 	private String typeCode = null;
+	/**发送方安全节点编号*/
 	private String secNodeId = null;
+	/**目标安全节点号*/
 	private String rmtSecNodeId = null;
 	/**文件名*/
 	private String fileName = null;
 	/**文件路径*/
 	private String filePath = null;
+	/**交易配置文件根节点*/
 	private Element cBusiConfRoot = null;
+	/**当前配置文件根节点*/
 	protected Element cThisBusiConf = null;
 	/**解密后的非标准报文*/
+	//
 	private Document returnNoStd = null;
 	/**转换后的标准报文*/
 	private Document cInXmlDoc = null;
@@ -90,8 +96,11 @@ public class FileUtil
 		}
 		cBusiConfRoot = NewCcbConf.newInstance().getConf().getRootElement();
 		Element TX_HEADER = pInXmlDoc.getRootElement().getChild("TX_HEADER");
+		//服务名
 		typeCode = TX_HEADER.getChildTextTrim("SYS_TX_CODE");
+		//发送方安全节点编号
 		secNodeId = TX_HEADER.getChildTextTrim("LocalID");
+		//目标安全节点号
 		rmtSecNodeId = TX_HEADER.getChildTextTrim("remoteID");
 
 		//获取保单详情取数(寿险)

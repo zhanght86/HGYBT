@@ -16,10 +16,10 @@ import com.sinosoft.midplat.common.JdomUtil;
 public class GZBankTest {
 	private static  Logger cLogger = Logger.getLogger(GZBankTest.class);
     public static void main(String[] args) {
-		//String ip="127.0.0.1";//本机ip地址
-    	String ip="10.2.0.31";//测试环境ip
+		String ip="127.0.0.1";//本机ip地址
+//    	String ip="10.2.0.31";//测试环境ip
 		int port=35017;
-		String path="D:/bank/gz/9000102.xml";
+		String path="D:/task/20170117/gz/core_test/32742_297_1012_in.xml";
 		       //path="C:\\Users\\anico\\Desktop\\贵州银行报文\\9000103_缴费出单.xml";
 		       //path="C:\\Users\\anico\\Desktop\\贵州银行报文\\9000801_保单重打.xml";
 		       //path="C:\\Users\\anico\\Desktop\\贵州银行报文\\9000901_当日撤单.xml";
@@ -27,7 +27,8 @@ public class GZBankTest {
 //		       FuncFlag="9000103";//缴费出单
 		       //FuncFlag="9000801";//保单重打
 		       //FuncFlag="9000901";
-		String returnPath="D:/bank/gz/"+FuncFlag+"_out.xml";
+//		String returnPath="D:/bank/gz/"+FuncFlag+"_out.xml";
+		String returnPath="D:/task/20170117/gz/core_test/32742_297_1012_out.xml";
 		
 		String insureCode="006"+"   ";//目标保险公司代码
 		try {

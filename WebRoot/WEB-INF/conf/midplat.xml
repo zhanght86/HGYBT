@@ -181,13 +181,13 @@
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="6" name="新单日结"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="7" name="单证对账"
 			address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="10" name="银保犹豫期退保查询"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="11" name="银保犹豫期退保"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
@@ -196,10 +196,10 @@
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="13" name="银保退保查询"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="14" name="银保退保"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="15" name="银保退保冲正"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
@@ -227,7 +227,7 @@
 			method="service" />
 
 		<service id="18" name="新建行续期对账"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="19" name="建行查询保单历史变动"
 			address="http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService"
@@ -298,10 +298,10 @@
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="52" name="新建行退保申请"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="53" name="新建行退保确认"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="58" name="新建行代理保险售后提醒查询"
 			address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService"

@@ -45,6 +45,7 @@ public class BusiBlc extends XmlSimpFormat
 	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception
 	{
+		//
 		cLogger.info("Into BusiBlc.noStd2Std()...");
 		noStdDoc = pNoStdXml;
 

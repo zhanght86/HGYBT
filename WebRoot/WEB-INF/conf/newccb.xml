@@ -375,7 +375,7 @@
 	<!-- 建行批量代收付 -->
 	<business>
 		<name>批量代收代付查询</name>
-		<funcFlag outcode="P53818102">1056</funcFlag>
+		<funcFlag outcode="P53818102">1046</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout>
 		<format>com.sinosoft.midplat.newccb.format.BatQuery</format>
@@ -389,6 +389,11 @@
 		<timeout>200</timeout>
 		<format>com.sinosoft.midplat.newccb.format.BatRequest</format>
 		<service>com.sinosoft.midplat.newccb.service.ContBatRequest</service>
+		<!--响应银行文件加密前存储路径-->
+		<!--<LocalDir>/home/weblogic/ybttest/newccb/qp/</LocalDir>-->
+		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
+		<!--响应银行文件加密后存储路径-->
+		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
 	</business>
 	
 	<business>
@@ -403,11 +408,13 @@
 	<business>
 		<name>批量代收代付送盘</name>
 		<funcFlag outcode="P53818105">1059</funcFlag>
-		<savePath>/home/weblogic/ybttest/newccb/sp/</savePath><!-- 明文保存路径 -->
 		<locktime>200</locktime>
 		<timeout>200</timeout>
-		<format>com.sinosoft.midplat.newccb.format.BatchSendDisk</format>
-		<service>com.sinosoft.midplat.newccb.service.ContBatchSendDisk</service>
+		<format>com.sinosoft.midplat.newccb.format.BatResponse</format>
+		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
+		<!--银行送盘文件解密存储路径-->
+		<!--<LocalDir>/home/weblogic/ybttest/newccb/sp/</LocalDir>-->
+		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
 	</business>
 	
 	<business>

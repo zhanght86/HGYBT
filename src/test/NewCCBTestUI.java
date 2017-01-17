@@ -49,18 +49,18 @@ public class NewCCBTestUI {
 		//新单试算
 //		String funcflag = "P53819113";//交易码[P53819113]
 		//[D:/task/20170117/newccb/core_local/10452_551_1012_in.xml]
-//		String mInFilePath = "D:/task/20170117/newccb/core_test/18666_177_1012_in.xml";//输入文件路径
+//		String mInFilePath = "D:/task/20170117/newccb/core_test/32670_159_1012_in.xml";//输入文件路径
 		//[D:/task/20170117/newccb/local/1012/P53819113in_noStd.xml]
 //		mInFilePath="D:/task/20170117/newccb/ybt_local/P53819113in_noStd.xml";
 //		[D:/task/20170117/newccb/core_local/10452_551_1012_out.xml]
-//		String mOutFilePath = "D:/task/20170117/newccb/core_test/18666_177_1012_out.xml";//输出文件路径
+//		String mOutFilePath = "D:/task/20170117/newccb/core_test/32670_159_1012_out.xml";//输出文件路径
 		//D:/task/20170117/newccb/local/1012/P53819113out_noStd.xml
 //		mOutFilePath="D:/task/20170117/newccb/ybt_local/P53819113out_noStd.xml";
 //		
 		//新单确认
 //		String funcflag = "P53819152";
-//		String mInFilePath = "D:/task/20170117/newccb/core_test/15642_69_1014_in.xml";
-//		String mOutFilePath = "D:/task/20161215/newccb/local/15642_69_1014_out.xml";
+//		String mInFilePath = "D:/task/20170117/newccb/core_test/32676_171_1014_in.xml";
+//		String mOutFilePath = "D:/task/20170117/newccb/core_test/32676_171_1014_out.xml";
 		//打印保单
 //		String funcflag = "P53819182";
 //		String mInFilePath = "D:/task/20170117/newccb/core_test/18294_1707_1032_in.xml";
@@ -138,9 +138,9 @@ public class NewCCBTestUI {
 //		String mOutFilePath = "D:/task/20170117/newccb/core_test/6853_144_1042_out.xml";
 		
 		//申请退保
-//		String funcflag = "P53819143";
-//		String mInFilePath = "D:/task/20161206/newccb/P53819143in_noStd.xml";
-//		String mOutFilePath = "D:/task/20161206/newccb/P53819143out_noStd.xml";		
+		String funcflag = "P53819143";
+		String mInFilePath = "D:/task/20170117/newccb/core_test/32718_255_1021_in.xml";
+		String mOutFilePath = "D:/task/20170117/newccb/core_test/32718_255_1021_out.xml";		
 		
 		//确认退保
 //		String funcflag = "P53819144";
@@ -178,9 +178,9 @@ public class NewCCBTestUI {
 //		String mOutFilePath="D:/task/20170117/newccb/core_test/P53818102out_noStd.xml";
 		
 		//批量代收代付送盘
-		String funcflag="P53818105";
-		String mInFilePath="D:/task/20170117/newccb/core_test/03_108011rv11484294694478099_P53818105_20170113_160512_.xml";
-		String mOutFilePath="D:/task/20170117/newccb/core_test/03_108011rv11484294694478099_P53818105_20170113_160512_out.xml";
+//		String funcflag="P53818105";
+//		String mInFilePath="D:/task/20170117/newccb/core_test/03_108011rv11484294694478099_P53818105_20170113_160512_.xml";
+//		String mOutFilePath="D:/task/20170117/newccb/core_test/03_108011rv11484294694478099_P53818105_20170113_160512_out.xml";
 		
 		//更新非实时业务状态
 //		String funcflag = "P538191E4";
