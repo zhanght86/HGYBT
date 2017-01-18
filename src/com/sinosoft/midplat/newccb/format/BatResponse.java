@@ -11,12 +11,12 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
 /**
- * @ClassName: BatRequest
- * @Description: 批量代收代付取盘
+ * @ClassName: BatResponse 
+ * @Description: 批量代收代付送盘报文转换类
  * @author yuantongxin
- * @date 2017-1-18 下午4:55:50
+ * @date 2017-1-17 下午7:10:08
  */
-public class BatRequest extends XmlSimpFormat {
+public class BatResponse extends XmlSimpFormat {
 	
 	//非标准输入报文头
 	private Element cTransaction_Header = null;
@@ -36,23 +36,23 @@ public class BatRequest extends XmlSimpFormat {
 	private Element oldComEntity = null;
 	
 	/**
-	 * <p>Title: BatRequest</p>
-	 * <p>Description: 批量代收代付取盘</p>
+	 * <p>Title: BatResponse</p>
+	 * <p>Description: 批量代收代付送盘报文转换类构造函数</p>
 	 * @param pThisConf 当前交易配置文件
 	 */
-	public BatRequest(Element pThisConf) {
+	public BatResponse(Element pThisConf) {
 		super(pThisConf);
 	}
 	
 	/**
 	 * 非标准输入报文转标准输入报文
-	 * @param pNoStdXml 非标准输入报文
+	 * @pNoStdXml 非标准输入报文
 	 * @return 标准输入报文
+	 * @exception 异常
 	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
-		//Into BatRequest.noStd2Std()...
-		cLogger.info("Into BatRequest.noStd2Std()...");
-		
+		//
+		cLogger.info("Into BatResponse.noStd2Std()...");
 		//此处备份一下请求报文头相关信息，组织返回报文时会用到
 		cTransaction_Header =
 			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
@@ -69,20 +69,19 @@ public class BatRequest extends XmlSimpFormat {
 		//临时保存保险公司方交易流水号
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 		//临时保存银行发起交易日期作为保险公司账务日期 
-		tranDate = NewCcbFormatUtil.getTimeAndDate(pNoStdXml.getRootElement().getChild("TX_HEADER").getChildText("SYS_REQ_TIME"), 0, 8);
+		tranDate = NewCcbFormatUtil.getTimeAndDate(pNoStdXml.getRootElement().getChild("TX_HEADER").getChildText("SYS_REQ_TIME"), 0, 8);		
 		
-		Document mStdXml = BatRequestInXsl.newInstance().getCache().transform(pNoStdXml);
+		Document mStdXml = BatResponseInXsl.newInstance().getCache().transform(pNoStdXml);
 		
-		//Out BatRequest.noStd2Std()!
-		cLogger.info("Out BatRequest.noStd2Std()!");
+		cLogger.info("Out BatResponse.noStd2Std()!");
 		return mStdXml;
 	}
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
-		cLogger.info("Into BatRequest.std2NoStd()...");
+		cLogger.info("Into BatResponse.std2NoStd()...");
 		
-		Document mNoStdXml = BatRequestOutXsl.newInstance().getCache().transform(pStdXml);
-        
+		Document mNoStdXml = BatResponseOutXsl.newInstance().getCache().transform(pStdXml);
+         
 		//服务响应时间
 		mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		
@@ -115,7 +114,7 @@ public class BatRequest extends XmlSimpFormat {
 		}
 		
 		/*End-组织返回报文头*/
-		cLogger.info("Out BatRequest.std2NoStd()!");
+		cLogger.info("Out BatResponse.std2NoStd()!");
 		return mNoStdXml;
 	}
  

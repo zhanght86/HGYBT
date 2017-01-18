@@ -7,6 +7,8 @@
 	<CoreNo>010072</CoreNo>
 	<!-- <AgentCom>1301010001</AgentCom>代理机构编码:建设银行贵州贵阳世纪城网点 -->
 	<AgentCom>5201300003</AgentCom>
+	<coreUploadFilePath>/bankdata/GZB/uploadfile/</coreUploadFilePath><!--核心上传批量包路径 -->
+	<coreDownloadFilePath>/bankdata/GZB/downloadfile/</coreDownloadFilePath><!--核心下载批量包路径 -->
 	<!-- <preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet> -->
 	<preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet>
 	<!-- 银联账号 -->
@@ -414,7 +416,7 @@
 		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
 		<!--银行送盘文件解密存储路径-->
 		<!--<LocalDir>/home/weblogic/ybttest/newccb/sp/</LocalDir>-->
-		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
+		<LocalDir>D:/home/weblogic/ybttest/newccb/sp/</LocalDir>
 	</business>
 	
 	<business>

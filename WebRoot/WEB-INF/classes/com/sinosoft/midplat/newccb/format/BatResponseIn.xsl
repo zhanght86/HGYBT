@@ -6,7 +6,7 @@
 
 	<xsl:template match="/">
 		<TranData> 
-			<Head>
+				<Head>
 				    <!--交易日期 -->
 					<TranDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,0,8)" /></TranDate>
 					<!--交易时间 -->
@@ -23,12 +23,16 @@
 					<ClientIp>127.0.0.1</ClientIp> -->
 					<!-- 交易渠道 -->
 					<TranCom>03</TranCom> 
-					<!-- 本地安全节点号 -->
-					<LocalID><xsl:value-of select="//TX/TX_HEADER/LocalID" /></LocalID>
-					<!-- 建行安全节点号 -->
-					<RemoteID><xsl:value-of select="//TX/TX_HEADER/remoteID" /></RemoteID>
-					<LocalID><xsl:value-of select="//TX/TX_HEADER/LocalID" /></LocalID>
-                    <RemoteID><xsl:value-of select="//TX/TX_HEADER/remoteID" /></RemoteID>
+					<!-- 交易类型 -->
+			         <!-- <FuncFlag><xsl:value-of select="TX_HEADER/SYS_TX_CODE" /></FuncFlag>  -->	
+					<!-- 服务id 
+					<ServiceId>1</ServiceId> -->
+					
+					<!-- 生产上用下面方式，上面为了测试所以加上下面字段-->
+					
+					<!-- 交易类型 服务类中添加-->
+					<!-- 服务id 服务类中添加-->
+					<!-- 银行端ip[非必须] 服务类中添加-->
 				    <xsl:copy-of select="//TX/Head/*"/>
 			  </Head>
 			<!-- 报文体 -->
@@ -40,16 +44,10 @@
 	<xsl:template match="APP_ENTITY">
 		<Body>
 			<xsl:variable name="FileName" select="//AgIns_BtchBag_Nm" />
-				<FileName>
-					<xsl:value-of select="$FileName" />
-				</FileName>
-				<!-- 批量文件名 -->
-				<Type>
-					<xsl:value-of select="substring($FileName, 3, 1)" />
-				</Type>
-				<OrderNo>
-					<xsl:value-of select="substring($FileName, 18, 2)" />
-				</OrderNo>
+			<FileName><xsl:value-of select="//AgIns_BtchBag_Nm" /><xsl:text>_RESULT.xml</xsl:text></FileName>
+			<BatFlag><xsl:value-of select="//AgInsBtchBagPcsg_StCd" /></BatFlag>
+			<Num><xsl:value-of select="//Cur_Btch_Dtl_TDnum" /></Num><!--当前批明细总笔数-->
+			<SumAmt><xsl:value-of select="//Cur_Btch_Dtl_TAmt" /></SumAmt><!--当前批明细总金额-->
 		</Body>
 	</xsl:template>
 	

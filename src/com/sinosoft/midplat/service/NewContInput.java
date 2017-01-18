@@ -113,6 +113,18 @@ public class NewContInput extends ServiceImpl {
 				}
 			}
 
+			/**借意险保额、贷款金额校验*/
+			if(tRiskCode.getTextTrim().equals("022J0300")){
+				Element  tAmnt= (Element) XPath.selectSingleNode(
+						cInXmlDoc.getRootElement(), "/TranData/Body/Risk/Amnt");
+				Element  tLoanPrem= (Element) XPath.selectSingleNode(
+						cInXmlDoc.getRootElement(), "/TranData/Body/Loan/LoanPrem");
+				if(!tAmnt.getTextTrim().equals(tLoanPrem.getTextTrim())){
+					throw new MidplatException("保额、贷款金额不一致！请确认");
+				}
+			}
+			
+			
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContInput)
 					.call(cInXmlDoc);
 //			FileInputStream input=new FileInputStream("F:\\xml\\HG\\录单_outSvc.xml");

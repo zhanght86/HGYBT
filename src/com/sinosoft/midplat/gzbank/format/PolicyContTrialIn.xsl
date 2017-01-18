@@ -220,27 +220,43 @@
     	<Risk>
          <RiskCode><xsl:value-of select="ProductCode"/></RiskCode>
          <MainRiskCode><xsl:value-of select="ProductCode"/></MainRiskCode>
-         <Amnt>5000000</Amnt>
-         <Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(PaymentAmt)"/></Prem>
+         <Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(PaymentAmt)"/></Amnt>
+         <Prem>1000</Prem>
          <Mult><xsl:value-of select="IntialNumberOfUnits"/></Mult>
          <PayMode>B</PayMode>
-         <PayIntv>
-         	<xsl:call-template name="tran_payintv">
-				<xsl:with-param name="payintv">
-					<xsl:value-of
-						select="PaymentMode" />
-				</xsl:with-param>
-			</xsl:call-template>
-         </PayIntv>
-         <PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
-         <PayEndYearFlag>
-         	<xsl:call-template name="tran_payendyearflag">
-				<xsl:with-param name="payendyearflag">
-					<xsl:value-of
-						select="PaymentMode" />
-				</xsl:with-param>
-			</xsl:call-template>
-         </PayEndYearFlag>
+         <xsl:choose>
+         	<!-- 万能险PayIntv值固定 -->
+         	<xsl:when test="ProductCode='011A0100'">
+         		<PayIntv>0</PayIntv><!-- 趸交 -->
+         	</xsl:when>
+         	<xsl:otherwise>
+         		<PayIntv>
+		         	<xsl:call-template name="tran_payintv">
+						<xsl:with-param name="payintv">
+							<xsl:value-of
+								select="PaymentMode" />
+						</xsl:with-param>
+					</xsl:call-template>
+		         </PayIntv>
+         	</xsl:otherwise>
+         </xsl:choose>
+         <xsl:choose>
+         	<xsl:when test="ProductCode='011A0100'">
+         		<PayEndYear>1000</PayEndYear>
+         		<PayEndYearFlag>Y</PayEndYearFlag>
+         	</xsl:when>
+         	<xsl:otherwise>
+         		<PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
+         		<PayEndYearFlag>
+		         	<xsl:call-template name="tran_payendyearflag">
+						<xsl:with-param name="payendyearflag">
+							<xsl:value-of
+								select="PaymentMode" />
+						</xsl:with-param>
+					</xsl:call-template>
+		         </PayEndYearFlag>
+         	</xsl:otherwise>
+         </xsl:choose>
          <GetIntv><xsl:value-of select="BenefitMode"/>
          	<xsl:call-template name="tran_BenefitMode">
 				<xsl:with-param name="BenefitMode">
@@ -260,15 +276,24 @@
          </BonusGetMode>
          <SubFlag />
          <GetYear><xsl:value-of select="COVERAGE_YEAR"/></GetYear>
-         <InsuYearFlag>
-         	<xsl:call-template name="tran_insuyearflag">
-				<xsl:with-param name="insuyearflag">
-					<xsl:value-of
-						select="PeriodType" />
-				</xsl:with-param>
-			</xsl:call-template>
-         </InsuYearFlag>
-         <InsuYear><xsl:value-of select="CoverPeriod"/></InsuYear>
+         <xsl:choose>
+         	<!-- 万能险InsuYearFlag、InsuYear值固定 -->
+         	<xsl:when test="ProductCode='011A0100'">
+         		<InsuYearFlag>Y</InsuYearFlag><!-- 按年 -->
+         		<InsuYear>5</InsuYear><!-- 5年 -->
+         	</xsl:when>
+         	<xsl:otherwise>
+		         <InsuYearFlag>
+		         	<xsl:call-template name="tran_insuyearflag">
+						<xsl:with-param name="insuyearflag">
+							<xsl:value-of
+								select="PeriodType" />
+						</xsl:with-param>
+					</xsl:call-template>
+		         </InsuYearFlag>
+		         <InsuYear><xsl:value-of select="CoverPeriod"/></InsuYear>
+         	</xsl:otherwise>
+         </xsl:choose>
          <GetBankCode />
          <GetBankAccNo>
          	<xsl:value-of select="Banking[AccountType='1' or AccountType='2']/AccountNumber"/>
@@ -291,21 +316,19 @@
 				         <Mult><xsl:value-of select="IntialNumberOfUnits"/></Mult>
 				         <PayMode>B</PayMode>
 				         <PayIntv>
-				         	<xsl:call-template name="tran_payintv">
-								<xsl:with-param name="payintv">
-									<xsl:value-of
-										select="PaymentMode" />
-								</xsl:with-param>
-							</xsl:call-template>
+					         <xsl:call-template name="tran_payintv">
+							   <xsl:with-param name="payintv">
+							     <xsl:value-of select="PaymentMode" />
+							   </xsl:with-param>
+						     </xsl:call-template>
 				         </PayIntv>
 				         <PayEndYear><xsl:value-of select="PayoutDuration"/></PayEndYear>
 				         <PayEndYearFlag><xsl:value-of select="PaymentMode"/>
-				         	<xsl:call-template name="tran_payendyearflag">
-								<xsl:with-param name="payendyearflag">
-									<xsl:value-of
-										select="PaymentMode" />
-								</xsl:with-param>
-							</xsl:call-template>
+				         <xsl:call-template name="tran_payendyearflag">
+					       <xsl:with-param name="payendyearflag">
+						     <xsl:value-of select="PaymentMode" />
+						   </xsl:with-param>
+						 </xsl:call-template>
 				         </PayEndYearFlag>
 				         <GetIntv><xsl:value-of select="BenefitMode"/>
 				         	<xsl:call-template name="tran_BenefitMode">
@@ -347,6 +370,20 @@
 		 	</xsl:for-each>
 		 </xsl:when>
 	  </xsl:choose>
+	  <!-- 借意险添加贷款节点 -->
+	  <xsl:if test="ProductCode='022J0300'">
+			 <Loan>
+			       <LoanNo><xsl:value-of select="Loan/LoanNo"/></LoanNo>                <!-- 贷款合同号-->
+			       <LoanBankName><xsl:value-of select="Loan/LoanBankName"/></LoanBankName>    <!-- 贷款机构名称-->
+			       <LoanDate><xsl:value-of select="Loan/LoanDate"/></LoanDate>            <!-- 贷款日期yyyyMMdd -->
+			       <LoanEndDate><xsl:value-of select="Loan/LoanEndDate"/></LoanEndDate>      <!-- 贷款到期日yyyyMMdd-->
+			       <LoanPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/LoanPrem)"/></LoanPrem><!-- 贷款金额-->
+			       <InsuDate><xsl:value-of select="Loan/InsuDate"/></InsuDate>            <!--保险期限:月 -->
+			       <IsPrepayInsu><xsl:value-of select="Loan/IsPrepayInsu"/></IsPrepayInsu>    <!-- 是否预交保费-->
+			       <PrepayInsuPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/PrepayInsuPrem)"/></PrepayInsuPrem><!--预交保费金额-->
+			       <PrepayYear><xsl:value-of select="Loan/PrepayYear"/></PrepayYear>        <!--预交年期:月-->
+			 </Loan>
+	  </xsl:if>
   </Body>
 </TranData>
 </xsl:template>

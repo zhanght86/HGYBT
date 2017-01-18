@@ -29,34 +29,61 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.service.ServiceImpl;
 import com.sun.xml.internal.bind.util.Which;
+
 /**
- * 批量代收付取盘交易
- * @author anico
- *
+ * @ClassName: ContBatRequest
+ * @Description: 批量代收代付取盘业务处理类
+ * @author yuantongxin
+ * @date 2017-1-18 下午6:18:23
  */
 public class ContBatRequest extends ServiceImpl {
 
-	
+	/**
+	 * <p>Title: ContBatRequest</p>
+	 * <p>Description: 批量代收代付取盘业务处理类构造函数</p>
+	 * @param pThisBusiConf 当前业务配置文件
+	 */
 	public ContBatRequest(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
-
+	
+	/**
+	 * 标准输入报文处理为标准输出报文
+	 * @param pInXmlDoc 标准输入报文
+	 * @return 标准输出报文
+	 */
 	public Document service(Document pInXmlDoc) throws Exception {
+		//Into ContBatRequest()...
 		cLogger.info("Into ContBatRequest()...");
+		//开始时间毫秒数
 		long mStartMillis = System.currentTimeMillis();
+		//标准输入报文[缩进3空格，忽略声明中的编码]
 		cLogger.info(JdomUtil.toStringFmt(pInXmlDoc));
+		//本地安全节点号
 		String localID=pInXmlDoc.getRootElement().getChild("Head").getChildText("LocalID");
+		//建行安全节点号
 		String remoteID=pInXmlDoc.getRootElement().getChild("Head").getChildText("RemoteID");
+		//银行端安全节点号:建行安全节点号
 		cLogger.info("银行端安全节点号:"+remoteID);
+		//保险公司端安全节点号:本地安全节点号
 		cLogger.info("保险公司端安全节点号:"+localID);
+		//标准输入报文体
 		Element tBodyEle = pInXmlDoc.getRootElement().getChild(Body);
+		//代理保险批量包名称
 		String tFileName = tBodyEle.getChildText("FileName");
+		//代收代付标志
 		String tType = tBodyEle.getChildText("Type");
+		//当日批次号
 		String tOrderNo=tBodyEle.getChildText("OrderNo");
+		//提交日期
 		final String dateStr=tFileName.substring(9,17);
+		//文件名为:代理保险批量包名称
 		cLogger.info("文件名为:"+tFileName);
+		//文件序号:当日批次号
 		cLogger.info("文件序号:"+tOrderNo);
+		//文件日期:提交日期
 		cLogger.info("文件日期:"+dateStr);
+		//文件类型:代收代付标志
 		cLogger.info("文件类型:"+tType+(tType.equals("0")?"代收":"代付"));
 		String coreUploadFilePath=NewCcbConf.newInstance().getConf().getRootElement().getChildText("coreUploadFilePath");
 		try {

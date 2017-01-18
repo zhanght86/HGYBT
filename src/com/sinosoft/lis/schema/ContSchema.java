@@ -128,7 +128,7 @@ public class ContSchema implements Schema
 		mErrors = new CErrors();
 
 		String[] pk = new String[1];
-		pk[0] = "RecordNo";
+		pk[0] = "ContNo";
 
 		PK = pk;
 	}
@@ -182,14 +182,22 @@ public class ContSchema implements Schema
 	}
 
 	/** 保单号<P>保单合同号 */
-	public String getContNo()
+	/*public String getContNo()
 	{
 		if (ContNo != null && !ContNo.equals("") && SysConst.CHANGECHARSET == true)
 		{
 			ContNo = StrTool.unicodeToGBK(ContNo);
 		}
 		return ContNo;
-	}
+	}*/
+	public String getContNo()
+	  {
+	    if (this.ContNo != null) {
+	      this.ContNo.equals("");
+	    }
+	    return this.ContNo;
+	  }
+	
 	/** 保单号 */
 	public void setContNo(String aContNo)
 	{
