@@ -228,6 +228,10 @@
          	<!-- 万能险PayIntv值固定 -->
          	<xsl:when test="ProductCode='011A0100'">
          		<PayIntv>0</PayIntv><!-- 趸交 -->
+         		<PayEndYear>1000</PayEndYear>
+        		<PayEndYearFlag>Y</PayEndYearFlag>
+         		<!-- <InsuYearFlag>Y</InsuYearFlag>按年
+         		<InsuYear>5</InsuYear>5年 -->
          	</xsl:when>
          	<xsl:otherwise>
          		<PayIntv>
@@ -238,16 +242,8 @@
 						</xsl:with-param>
 					</xsl:call-template>
 		         </PayIntv>
-         	</xsl:otherwise>
-         </xsl:choose>
-         <xsl:choose>
-         	<xsl:when test="ProductCode='011A0100'">
-         		<PayEndYear>1000</PayEndYear>
-         		<PayEndYearFlag>Y</PayEndYearFlag>
-         	</xsl:when>
-         	<xsl:otherwise>
-         		<PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
-         		<PayEndYearFlag>
+		         <PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
+		   		 <PayEndYearFlag>
 		         	<xsl:call-template name="tran_payendyearflag">
 						<xsl:with-param name="payendyearflag">
 							<xsl:value-of
@@ -276,24 +272,15 @@
          </BonusGetMode>
          <SubFlag />
          <GetYear><xsl:value-of select="COVERAGE_YEAR"/></GetYear>
-         <xsl:choose>
-         	<!-- 万能险InsuYearFlag、InsuYear值固定 -->
-         	<xsl:when test="ProductCode='011A0100'">
-         		<InsuYearFlag>Y</InsuYearFlag><!-- 按年 -->
-         		<InsuYear>5</InsuYear><!-- 5年 -->
-         	</xsl:when>
-         	<xsl:otherwise>
-		         <InsuYearFlag>
-		         	<xsl:call-template name="tran_insuyearflag">
-						<xsl:with-param name="insuyearflag">
-							<xsl:value-of
-								select="PeriodType" />
-						</xsl:with-param>
-					</xsl:call-template>
-		         </InsuYearFlag>
-		         <InsuYear><xsl:value-of select="CoverPeriod"/></InsuYear>
-         	</xsl:otherwise>
-         </xsl:choose>
+         <InsuYearFlag>
+         	<xsl:call-template name="tran_insuyearflag">
+				<xsl:with-param name="insuyearflag">
+					<xsl:value-of
+						select="PeriodType" />
+				</xsl:with-param>
+			</xsl:call-template>
+         </InsuYearFlag>
+         <InsuYear><xsl:value-of select="CoverPeriod"/></InsuYear>
          <GetBankCode />
          <GetBankAccNo>
          	<xsl:value-of select="Banking[AccountType='1' or AccountType='2']/AccountNumber"/>
