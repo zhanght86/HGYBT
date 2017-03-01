@@ -21,19 +21,33 @@ import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.utility.ExeSQL;
 
 public class QueryPrem extends XmlSimpFormat {
+	//报文头
 	private Element cTransaction_Header = null;
+	//服务接受时间
 	private String mSYS_RECV_TIME = null;
+	//服务响应时间
 	private String mSYS_RESP_TIME = null;
+	//交易流水号
 	private String tranNo = null;
+	//交易日期
 	private String tranDate = null;
+	//保险单号
 	private String sContno = null;
+	//投保单(印刷)号
 	private String sProposalPrtNo = null;
+	//建行一级分行号
 	private String sLv1BrNo = null;
+	//代理保险套餐编号
 	private String sAgInsPkgID = null;
+	//服务名
 	private String sysTxCode = null;
+	//已交期数
 	private String sPayedTimes  = null;
+	//非标准输入报文头
 	private Element oldTxHeader = null;
+	//非标准输入报文公共域
 	private Element oldComEntity = null;
+	//非标准输入报文
 	private Document cInNoStdXml = null;
 	
 	

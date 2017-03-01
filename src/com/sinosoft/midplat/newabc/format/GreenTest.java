@@ -65,8 +65,8 @@ public class GreenTest extends XmlSimpFormat {
 	public static void main(String[] args) throws Exception {
 	System.out.println("³ÌÐò¿ªÊ¼¡­");
 
-	String mInFilePath = "E:/55555.xml";
-	String mOutFilePath = "E:/66666.xml";
+	String mInFilePath = "D:/File/task/20170214/newabc/ybt_test/1000in_noStd.xml";
+	String mOutFilePath = "D:/File/task/20170214/newabc/ybt_test/1000in_Std.xml";
 
 	InputStream mIs = new FileInputStream(mInFilePath);
 	Document mInXmlDoc = JdomUtil.build(mIs);

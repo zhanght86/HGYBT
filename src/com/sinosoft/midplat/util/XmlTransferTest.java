@@ -44,7 +44,8 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-		inXmlSource = "D:/task/20170119/newccb/transfer_test/";
+//		inXmlSource = "D:/task/20170119/newccb/transfer_test/";
+		inXmlSource="D:/File/task/20170215/newabc/ybt_test/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -91,7 +92,7 @@ public class XmlTransferTest {
 //		filename="AL03100192017011101_RESULT.XML";
 //		filename="AL13100192017011101_RESULT.XML";
 //		filename="P53818105in_noStd.xml";
-		filename="P53818103in_noStd.xml";
+//		filename="P53818103in_noStd.xml";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";
@@ -107,6 +108,8 @@ public class XmlTransferTest {
 //		filename="1013out_Std.xml";
 //		filename="1009in_noStd.xml";
 //		filename="1009out_Std.xml";
+		filename="1021in_noStd.xml";
+//		filename="1021out_Std.xml";
 		String XslPath= "";//XSL文件
 		//中国银行
 //		XslPath = "NewContIn.xsl";
@@ -148,7 +151,7 @@ public class XmlTransferTest {
 //		XslPath="UpdateServiceStatusOut.xsl";
 //		XslPath="BatQueryIn.xsl";
 //		XslPath="BatchSendDiskIn.xsl";
-		XslPath="BatRequestIn.xsl";
+//		XslPath="BatRequestIn.xsl";
 //		XslPath="BatResponseIn.xsl";
 		//农业银行
 //		XslPath="NewContIn.xsl";
@@ -164,11 +167,13 @@ public class XmlTransferTest {
 //		XslPath="SecureApplyOut.xsl";
 //		XslPath="RollbackIn.xsl";
 //		XslPath="RollbackOut.xsl";
+		XslPath="PolDetailQueryIn.xsl";
 		inXmlSource=inXmlSource+filename;
-		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
+//		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newabc/format/";
+		String filepath="D:/Software/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newabc/format/";
 //		String filepath = "D:/task/20170119/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/task/20170119/newccb/transfer_test/P53818103out_noStd.xml";//32
+		String outXml = "D:/File/task/20170213/newabc/ybt_test/1021in_Std.xml";//32
 //		String outXml = "D:/task/20170119/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));

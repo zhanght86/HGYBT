@@ -1,0 +1,96 @@
+09:20:10,020 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@7a74db2c
+09:20:10,116 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:20:10,160 DEBUG common.SysInfo(30) - basepath.r = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+09:20:10,160 DEBUG common.SysInfo(33) - BasePath = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+09:20:10,246 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:20:10,247 DEBUG common.SysInfo(68) - Home = /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+09:20:10,247 INFO midplat.MidplatConf(35) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+09:20:10,271 INFO common.XmlConf(80) - conf file modified at (2017-01-18 15:56:37,009) and length=26705 bytes!
+09:20:10,373 INFO midplat.MidplatConf(51) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+09:20:10,401 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:20:10,402 INFO common.Log4jPrint(20) - End reset System.out!
+09:20:10,417 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:20:10,418 INFO net.SocketConf(30) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+09:20:10,419 INFO common.XmlConf(80) - conf file modified at (2017-01-18 15:56:39,732) and length=789 bytes!
+09:20:10,431 INFO net.SocketConf(46) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+09:20:10,431 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:20:10,467 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:20:10,468 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.abc.AbcYbt
+09:20:10,501 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+09:20:10,502 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:20:10,502 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+09:20:10,519 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+09:20:10,520 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+09:20:10,520 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+09:20:10,541 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+09:20:10,541 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+09:20:10,541 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:20:10,569 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+09:20:10,569 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:20:10,569 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:20:54,230 INFO newccb.NewCcbConf(28) - Into NewCcbConf.load()...
+09:20:54,230 INFO newccb.NewCcbConf(32) - Start load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml...
+09:20:54,231 INFO common.XmlConf(80) - conf file modified at (2017-01-18 15:56:37,133) and length=15838 bytes!
+09:20:54,263 INFO newccb.NewCcbConf(49) - End load /F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newccb.xml!
+09:20:54,285 INFO newccb.NewCcbConf(65) - <?xml version="1.0"?>
+<newccb><!-- 银行端代码定义，用于日终类交易 	<bank id="03" insu="010072" />--><bank id="03" insu="010072" /><!-- <TranCom outcode="13">13</TranCom> --><TranCom outcode="13">03</TranCom><!-- 201612151117 --><CoreNo>010072</CoreNo><!-- <AgentCom>1301010001</AgentCom>代理机构编码:建设银行贵州贵阳世纪城网点 --><AgentCom>5201300003</AgentCom><coreUploadFilePath>/bankdata/GZB/uploadfile/</coreUploadFilePath><!--核心上传批量包路径 --><coreDownloadFilePath>/bankdata/GZB/downloadfile/</coreDownloadFilePath><!--核心下载批量包路径 --><!-- <preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet> --><preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet><!-- 银联账号 --><BankNo>105</BankNo><business><!-- 元素 --><name>实时投保</name><!-- 属性 --><funcFlag outcode="P53819113">1012</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.NewCont</format><service>com.sinosoft.midplat.newccb.service.NewContInput</service></business><business><name>新单确认</name><funcFlag outcode="P53819152">1014</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ContConfirm</format><service>com.sinosoft.midplat.newccb.service.NewContConfirm</service></business><business><name>重打上笔</name><funcFlag outcode="P53819184">1011</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.RePrint</format><service>com.sinosoft.midplat.newccb.service.ContRePrint</service></business><business><name>重控核对</name><funcFlag outcode="P538191A2">108</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.CardControl</format><service>com.sinosoft.midplat.newccb.service.ContCancelCardControlCcb</service></business><business><name>确认撤销当日保单</name><funcFlag outcode="P53819142">1015</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.WriteOff</format><service>com.sinosoft.midplat.newccb.service.ContCancel</service></business><business><name>绿灯测试</name><funcFlag outcode="P53818152">111</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.GreenTest</format><service>com.sinosoft.midplat.newccb.service.GreenTest</service></business><business><name>自动冲正</name><funcFlag outcode="P53818154">0004</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.AutoWriteOff</format><service>com.sinosoft.midplat.newccb.service.ContRollback</service></business><business><name>打印投保单</name><funcFlag outcode="P53819188">1031</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.PrintAppCont</format><service>com.sinosoft.midplat.newccb.service.NewPrintAppCont</service></business><business><name>打印保单</name><funcFlag outcode="P53819182">1032</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.PrintCont</format><service>com.sinosoft.midplat.newccb.service.NewPrintCont</service></business><business><name>查询缴纳保费信息</name><funcFlag outcode="P53819151">1033</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryPrem</format><service>com.sinosoft.midplat.newccb.service.NewQueryPrem</service></business><business><name>确认续期缴费</name><funcFlag outcode="P53819156">1034</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.RenewalPay</format><service>com.sinosoft.midplat.newccb.service.NewRenewalPay</service></business><business><name>确认取消续期缴费</name><funcFlag outcode="P53819154">1035</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.CancleRenewalPay</format><service>com.sinosoft.midplat.newccb.service.NewCancleRenewalPay</service></business><business><name>查询满期给付</name><funcFlag outcode="P53819191">1036</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryExpirationPay</format><service>com.sinosoft.midplat.newccb.service.NewQueryExpirationPay</service></business><business><name>确认满期给付</name><funcFlag outcode="P53819192">1037</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ExpirationPay</format><service>com.sinosoft.midplat.newccb.service.NewExpirationPay</service></business><business><name>修改保单基本信息</name><funcFlag outcode="P53819161">1038</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ModifyCont</format><service>com.sinosoft.midplat.newccb.service.NewModifyCont</service></business><business><name>查询客户保单</name><funcFlag outcode="P53819176">1039</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryCont</format><service>com.sinosoft.midplat.newccb.service.NewQueryCont</service></business><business><name>查询保单详情</name><funcFlag outcode="P53819171">1040</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryContDetail</format><service>com.sinosoft.midplat.newccb.service.NewQueryContDetail</service></business><business><name>查询保单历史变动信息</name><funcFlag outcode="P53819177">1041</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryContChange</format><service>com.sinosoft.midplat.newccb.service.NewQueryContChange</service></business><business><name>申请退保</name><funcFlag outcode="P53819143">1021</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ApplyReturnCont</format><service>com.sinosoft.midplat.newccb.service.NewApplyReturnCont</service></business><business><name>确认退保</name><funcFlag outcode="P53819144">1017</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ReturnCont</format><service>com.sinosoft.midplat.newccb.service.NewReturnCont</service></business><business><name>获取保单详情查询</name><funcFlag outcode="P53817107">1042</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.GetContList</format><service>com.sinosoft.midplat.newccb.service.NewGetContList</service></business><business><name>获取保单详情取数(寿险)</name><funcFlag outcode="P53816107">1043</funcFlag><locktime>200</locktime><timeout>200</timeout><ip>127.0.0.1</ip><format>com.sinosoft.midplat.newccb.format.GetContList2</format><service>com.sinosoft.midplat.newccb.service.NewGetContList2</service><LocalDir>/ybttest/newccb/snd/</LocalDir><ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir></business><business><name>获取保险公司巡点员信息</name><funcFlag outcode="P538191F1">1044</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryInsStaff</format><service>com.sinosoft.midplat.newccb.service.NewQueryInsStaff</service></business><business><name>试算保险产品</name><funcFlag outcode="P538161411">1045</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.CalculateCont</format><service>com.sinosoft.midplat.newccb.service.NewCalculateCont</service></business><business><name>试算保险产品(寿险)</name><funcFlag outcode="P53811142">1056</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.CalculateCont2</format><service>com.sinosoft.midplat.newccb.service.NewCalculateCont2</service></business><!--	<business>
+		<name>日终与保险公司对账(账务类)</name>
+		<funcFlag outcode="P53817103">3005</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<localDir>/home/ap/fserver2/rcv</localDir>
+	</business>
+	
+ 	<business>
+		<name>日终与保险公司公司对账(保全类)</name>
+		<funcFlag outcode="P53817104">1048</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<CoreNo>010072</CoreNo>
+		<format>com.sinosoft.midplat.newccb.format.BaoQBusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
+		<localDir>/home/ap/fserver2/rcv</localDir>
+	</business>
+	<business>
+		<name>发送银行端单证信息</name>
+		<funcFlag outcode="P53817105">3006</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.NewCardBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.NewSendDocument</service>
+	</business>
+	--><!--
+	
+	--><business><name>日终与保险公司对账（账务类）</name><funcFlag outcode="P53817103">3005</funcFlag><locktime>200</locktime><timeout>200</timeout><NodeNo>370684208</NodeNo><format>com.sinosoft.midplat.newccb.format.BusiBlc</format><service>com.sinosoft.midplat.newccb.service.NewContBlc</service><CoreNo>010072</CoreNo><LocalDir>/ybttest/newccb/zw/</LocalDir></business><business><!-- 交易 --><name>日终与保险公司对账（保全类）</name><!-- 交易名称 --><funcFlag outcode="P53817104">1048</funcFlag><!-- 交易码 --><locktime>200</locktime><!-- 锁定时间 --><timeout>200</timeout><!-- 超时时间 --><NodeNo>370684208</NodeNo><!-- 银行网点 --><format>com.sinosoft.midplat.newccb.format.BusiBlc</format><!-- 报文转换模块 --><service>com.sinosoft.midplat.newccb.service.NewContBlc</service><!-- 业务处理模块 --><CoreNo>010072</CoreNo><!-- 核心号 --><LocalDir>/ybttest/newccb/bq/</LocalDir><!-- 本地目录 --></business><business><!-- 交易 --><name>发送银行端单证信息</name><!-- 交易名称 --><funcFlag outcode="P53817105">3006</funcFlag><!-- 交易码 --><locktime>200</locktime><!-- 锁定时间 --><timeout>200</timeout><!-- 超时时间 --><NodeNo>370684208</NodeNo><!-- 网点代码 --><format>com.sinosoft.midplat.newccb.format.BusiBlc</format><!-- 格式化 --><service>com.sinosoft.midplat.newccb.service.NewContBlc</service><!-- 服务类 --><CoreNo>010072</CoreNo><!-- 核心号 --><LocalDir>/ybttest/newccb/dz/</LocalDir><!-- 本地目录 --></business><!-- 范军说：请没有开发批量代扣代付业务的保险公司至少开发一个P53818102批量查询接口（接口仅需返回两个数据项，都固定写为0返回建行即可），以保证退保业务的正常执行。 --><business><name>批量查询</name><funcFlag outcode="P53818102">1046</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.BatchQuery</format><service>com.sinosoft.midplat.newccb.service.NewBatchQuery</service></business><business><name>新建行补对账</name><funcFlag outcode="">3009</funcFlag><locktime>200</locktime><timeout>200</timeout><bankcode>0104</bankcode><NodeNo>370684208</NodeNo><service>com.sinosoft.midplat.newccb.service.NewContBlc</service><CoreNo>010072</CoreNo><LocalDir>D:/YBT_SAVE_XML/ZHH/newccb/rcv/</LocalDir><ccbLocal>D:/YBT_SAVE_XML/ZHH/newccb/localrcv/</ccbLocal></business><business><name>代理保险售后提醒查询</name><funcFlag outcode="P5381B123">1052</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.ActInsuSaleRemindQuery</format><service>com.sinosoft.midplat.newccb.service.ActInsuSaleRemindQuery</service></business><business><name>代理保险售后提醒取数</name><funcFlag outcode="P5381B223">1053</funcFlag><locktime>200</locktime><timeout>200</timeout><ip>127.0.0.1</ip><format>com.sinosoft.midplat.newccb.format.ActInsuSaleRemindAccess</format><service>com.sinosoft.midplat.newccb.service.ActInsuSaleRemindAccess</service><LocalDir>/ybttest/newccb/snd/</LocalDir><ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir></business><business><name>申请登记台账</name><funcFlag outcode="P538191B2">1054</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.SignPolicyFormat</format><service>com.sinosoft.midplat.newccb.service.SignPolicyService</service></business><business><name>确认登记台账</name><funcFlag outcode="P538191B3">1055</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.SignConfirm</format><service>com.sinosoft.midplat.newccb.service.SignConfirmService</service></business><!-- 建行批量代收付 --><business><name>批量代收代付查询</name><funcFlag outcode="P53818102">1046</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.BatQuery</format><service>com.sinosoft.midplat.newccb.service.ContBatQuery</service></business><business><name>批量代收代付取盘</name><funcFlag outcode="P53818103">1057</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.BatRequest</format><service>com.sinosoft.midplat.newccb.service.ContBatRequest</service><!--响应银行文件加密前存储路径--><!--<LocalDir>/home/weblogic/ybttest/newccb/qp/</LocalDir>--><LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir><!--响应银行文件加密后存储路径--><ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir></business><business><name>批量代收代付取盘结果通知</name><funcFlag outcode="P53818104">1058</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.BatRequestResult</format><service>com.sinosoft.midplat.newccb.service.ContBatRequestResult</service></business><business><name>批量代收代付送盘</name><funcFlag outcode="P53818105">1059</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.BatResponse</format><service>com.sinosoft.midplat.newccb.service.ContBatResponse</service><!--银行送盘文件解密存储路径--><!--<LocalDir>/home/weblogic/ybttest/newccb/sp/</LocalDir>--><LocalDir>D:/home/weblogic/ybttest/newccb/sp/</LocalDir></business><business><name>更新非实时业务状态</name><funcFlag outcode="P538191E4">1080</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.UpdateServiceStatus</format><service>com.sinosoft.midplat.newccb.service.ContUpdateServiceStatus</service></business><business><name>查询非实时缴费信息</name><funcFlag outcode="P53819153">1090</funcFlag><locktime>200</locktime><timeout>200</timeout><format>com.sinosoft.midplat.newccb.format.QueryPaymentInfo</format><service>com.sinosoft.midplat.newccb.service.NewQueryPaymentInfo</service></business></newccb>
+
+09:20:54,286 INFO newccb.NewCcbConf(68) - Out NewCcbConf.load()!
+09:20:54,302 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+09:20:54,346 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=2
+09:21:15,656 INFO common.Log4jPrint(20) - 创建连接失败...Io 异常: The Network Adapter could not establish the connection
+09:21:15,678 ERROR common.NoFactory(117) - 初始化最大号异常！
+java.lang.NullPointerException
+	at com.sinosoft.utility.ExeSQL.getOneValue(ExeSQL.java:67)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:115)
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:33)
+	at com.sinosoft.midplat.newccb.NewCcbYbt.<init>(NewCcbYbt.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+09:21:15,680 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=2
+09:21:36,682 INFO common.Log4jPrint(20) - 创建连接失败...Io 异常: The Network Adapter could not establish the connection
+09:21:36,683 ERROR common.NoFactory(143) - 初始化最大号异常！
+java.lang.NullPointerException
+	at com.sinosoft.utility.ExeSQL.getOneValue(ExeSQL.java:67)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:141)
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:33)
+	at com.sinosoft.midplat.newccb.NewCcbYbt.<init>(NewCcbYbt.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+09:21:36,685 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=2

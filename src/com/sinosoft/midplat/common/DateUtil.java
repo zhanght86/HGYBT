@@ -10,6 +10,12 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @ClassName: DateUtil
+ * @Description:日期处理类
+ * @author sinosoft
+ * @date 2017-2-27 下午4:33:48
+ */
 public class DateUtil {
 	
 	public static void main(String arg[]){
@@ -167,6 +173,14 @@ public class DateUtil {
 		return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 	}
 	
+	/**
+	 * @Title: getCurDate
+	 * @Description: 获取当前日期
+	 * @param pDateFormat 日期格式
+	 * @return
+	 * @return String
+	 * @throws
+	 */
 	public static String getCurDate(String pDateFormat) {
 		return new SimpleDateFormat(pDateFormat).format(new Date());
 	}
@@ -263,6 +277,15 @@ public class DateUtil {
 		return new SimpleDateFormat(pFormat).format(new Date(pMillis));
 	}
 	
+	/**
+	 * @Title: getDateStr
+	 * @Description: 获取日期字符串
+	 * @param pDate 日期对象
+	 * @param pFormat 格式字符串
+	 * @return 简单日期格式化日期对象后的字符串
+	 * @return String
+	 * @throws
+	 */
 	public static String getDateStr(Date pDate, String pFormat) {
 		return new SimpleDateFormat(pFormat).format(pDate);
 	}

@@ -25,6 +25,8 @@ public class RePrint extends XmlSimpFormat {
 		Document mStdXml = 
 			RePrintInXsl.newInstance().getCache().transform(pNoStdXml);
 		
+		//测试
+		JdomUtil.print(mStdXml);
 		//农行传ProposalContNo，方从Cont中查出ProposalPrtNo,ContNo
 		sProposalprtno=mStdXml.getRootElement().getChild("Body").getChildText("ProposalPrtNo");
 		String getContNoSQL = new StringBuilder("select contno from cont where proposalprtno = '").append(sProposalprtno).append("'").toString();

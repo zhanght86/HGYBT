@@ -157,8 +157,8 @@
 	<batch>
 		<name>非实时出单结果文件</name>
 		<startTime>20:12:00</startTime>
-		<class>com.sinosoft.midplat.newabc.bat.NonRealTimeCont</class>
-		<com>01</com>
+		<class>com.sinosoft.midplat.newabc.bat.NonRealTimeContRst</class>
+		<com>05</com>
 		<funcFlag>2008</funcFlag>
 	</batch>
 

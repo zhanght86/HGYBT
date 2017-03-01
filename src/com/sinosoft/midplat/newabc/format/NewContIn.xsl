@@ -123,9 +123,11 @@
 			<!-- 主险种信息 -->
 		    <Risk>
 		    <!-- 险种代码 -->
-			<RiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></RiskCode>
+			<!-- <RiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></RiskCode> -->
+			<RiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></RiskCode>
 			<!-- 主险险种代码 -->
-			<MainRiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></MainRiskCode>
+			<!-- <MainRiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></MainRiskCode> -->
+			<MainRiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></MainRiskCode>
 			<!-- 保额 -->
 			<Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Risks/Amnt)"/></Amnt>
 			<!-- 保费 -->
@@ -457,9 +459,9 @@
 		<xsl:when test=".=19">06</xsl:when> <!--妹妹               -->
 		<xsl:when test=".=20">06</xsl:when> <!--公公               -->
 		<xsl:when test=".=21">06</xsl:when> <!--婆婆               -->
-		<xsl:when test=".=22">06</xsl:when> <!--岳父               -->
-		<xsl:when test=".=23">06</xsl:when> <!--岳母               -->
-		<xsl:when test=".=24">06</xsl:when> <!--儿媳               -->
+		<xsl:when test=".=22">06</xsl:when> <!--儿媳               -->
+		<xsl:when test=".=23">06</xsl:when> <!--岳父               -->
+		<xsl:when test=".=24">06</xsl:when> <!--岳母               -->
 		<xsl:when test=".=25">06</xsl:when> <!--女婿               -->
 		<xsl:when test=".=26">06</xsl:when> <!--其他亲属        -->
 		<xsl:when test=".=27">06</xsl:when> <!--同事     -->
@@ -484,7 +486,7 @@
 <!-- 证件类型-->
 <xsl:template name="tran_idtype" match="IDKind">
 	<xsl:choose>
-		<xsl:when test=".=110001">0</xsl:when>	<!-- 身份证 -->
+		<xsl:when test=".=110001">0</xsl:when>	<!-- 居民身份证 -->
 		<xsl:when test=".=110002">0</xsl:when>	<!-- 重号居民身份证-->
 		<xsl:when test=".=110003">C</xsl:when>	<!-- 临时居民身份证 -->
 		<xsl:when test=".=110004">C</xsl:when>	<!-- 重号临时居民身份证 -->

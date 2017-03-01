@@ -420,6 +420,15 @@
 	</business>
 	
 	<business>
+		<name>申请非实时投保</name>
+		<funcFlag outcode="P53819121">1060</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.DelayedNewCont</format>
+		<service>com.sinosoft.midplat.newccb.service.DelayedNewContInput</service>
+	</business>
+	
+	<business>
 		<name>更新非实时业务状态</name>
 		<funcFlag outcode="P538191E4">1080</funcFlag>
 		<locktime>200</locktime>

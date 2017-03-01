@@ -26,7 +26,8 @@ public class ContPolDetailQuery extends ServiceImpl{
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into ContPolDetailQuery.service()...");
 		cInXmlDoc = pInXmlDoc;
-		
+		//≤‚ ‘
+		JdomUtil.print(cInXmlDoc);
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mContNo = mBodyEle.getChildText(ContNo);

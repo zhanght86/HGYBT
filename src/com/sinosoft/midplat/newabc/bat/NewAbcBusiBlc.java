@@ -28,23 +28,42 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.service.Service;
 
+/**
+ * @ClassName: NewAbcBusiBlc
+ * @Description: 新农行新单对账
+ * @author sinosoft
+ * @date 2017-2-27 上午10:39:03
+ */
 public class NewAbcBusiBlc extends Balance
 {
 
+	//生成一个本类的日志对象
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
+	/**
+	 * <p>Title: 新农行新单对账批量无参构造</p>
+	 * <p>Description: </p>
+	 */
 	public NewAbcBusiBlc()
 	{
 		super(NewAbcConf.newInstance(), "2001");
 	}
 
+	/**
+	 * 获取文件名
+	 * @return 
+	 */
 	protected String getFileName() throws Exception
 	{
+		//获取当前银行交易配置文件根节点下银行子节点
 		Element mBankEle = cThisConfRoot.getChild("bank");
+		//新建文件下载批量实例[当前交易配置节点,交易码,8位交易日期字符串,银行节点insu属性值]
 		File_download f = new File_download(cThisBusiConf, "RZDZ", DateUtil.getDateStr(cTranDate, "yyyyMMdd"), mBankEle.getAttributeValue("insu"));
+		//获取文件名[POLICY保险公司代码.8位交易日期字符串]
 		String fileName = "POLICY" + mBankEle.getAttributeValue("insu") + "." + DateUtil.getDateStr(cTranDate, "yyyyMMdd");
 		try
 		{
+			//
 			f.bank_dz_file();
 		}
 		catch (Exception ex)
@@ -55,6 +74,9 @@ public class NewAbcBusiBlc extends Balance
 		return fileName;
 	}
 
+	/**
+	 * 运行
+	 */
 	public void run()
 	{
 		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
@@ -257,58 +279,96 @@ public class NewAbcBusiBlc extends Balance
 		return mBodyEle;
 	}
 
+	/**
+	 * 获取报文头
+	 */
 	protected Element getHead()
 	{
+		//进入NewAbcBusiBlc获取报文头方法...
 		cLogger.info("Into NewAbcBusiBlc.getHead()...");
+		//对账标志
 		String tBalanceFlag = "0";
+		//新建交易日期节点
 		Element mTranDate = new Element(TranDate);
+		//交易日期节点设置文本为8位日期字符串
 		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		//获取当前日期字符串
 		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
+		// 对账日期为...8位交易日期字符串
 		cLogger.info(" 对账日期为..." + DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		// 当前日期为...当前日期字符串
 		cLogger.info(" 当前日期为..." + mCurrDate);
 
 		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
+		//8位交易日期字符串非当前日期字符串
 		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate))
 		{
+			//对账标志置为1[手工对账]
 			tBalanceFlag = "1";
 		}
 
+		//新建交易时间节点
 		Element mTranTime = new Element(TranTime);
+		//交易时间节点设置文本为6位交易时间字符串
 		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
 
+		//新建交易机构代码节点
 		Element mTranCom = new Element(TranCom);
+		//交易机构代码节点设置文本为当前银行交易配置文件根节点下交易机构代码子节点文本
 		mTranCom.setText(cThisConfRoot.getChildText("TranCom"));
+		//临时字符串为交易机构代码子节点outcode属性值
 		String tTempStr = cThisConfRoot.getChild("TranCom").getAttributeValue(outcode);
+		//临时字符串非空、空字符串
 		if (null != tTempStr && !"".equals(tTempStr))
 		{
+			//交易机构代码节点设置属性outcode为其赋值为临时字符串
 			mTranCom.setAttribute(outcode, tTempStr);
 		}
-
+		
+		//新建省市代码节点
 		Element mZoneNo = new Element("ZoneNo");
+		//设置文本为当前交易配置节点下省市代码子节点文本
 		mZoneNo.setText(cThisBusiConf.getChildText("zone"));
 
+		//新建银行网点节点
 		Element mNodeNo = new Element(NodeNo);
+		//设置文本为当前交易配置节点下银行网点子节点文本
 		mNodeNo.setText(cThisBusiConf.getChildText("node"));
 
+		//新建柜员代码节点
 		Element mTellerNo = new Element(TellerNo);
+		//设置文本为sys
 		mTellerNo.setText("sys");
-
+		
+		//新建交易流水号节点
 		Element mTranNo = new Element(TranNo);
+		//设置文本为当前线程名
 		mTranNo.setText(Thread.currentThread().getName());
-
+		
+		//新建交易类型节点
 		Element mFuncFlag = new Element(FuncFlag);
-
+		//临时变量为当前交易配置节点下交易类型子节点outcode属性值
 		tTempStr = cThisBusiConf.getChild(funcFlag).getAttributeValue(outcode);
+		//设置文本为临时变量
 		mFuncFlag.setText(tTempStr);
 
+		//新建对账标志节点
 		Element mBalanceFlag = new Element("BalanceFlag");
+		//设置文本为对账标志
 		mBalanceFlag.setText(tBalanceFlag);
-
+		
 		// 报文头结点增加核心的银行编码
+		//新建银行代码节点
 		Element mBankCode = new Element("BankCode");
+		//设置文本为0102
 		mBankCode.setText("0102");
-
+		
+		//新建报文头节点
 		Element mHead = new Element(Head);
+		/**
+		 * 加入交易日期、交易时间、银行代码、交易机构代码、省市代码、
+		 * 银行网点、柜员代码、交易流水号、交易类型、对账标志节点
+		 **/
 		mHead.addContent(mTranDate);
 		mHead.addContent(mTranTime);
 
@@ -322,7 +382,8 @@ public class NewAbcBusiBlc extends Balance
 		mHead.addContent(mTranNo);
 		mHead.addContent(mFuncFlag);
 		mHead.addContent(mBalanceFlag);
-
+		
+		//从NewAbcBusiBlc获取报文头方法出来!
 		cLogger.info("Out NewAbcBusiBlc.getHead()!");
 		return mHead;
 	}

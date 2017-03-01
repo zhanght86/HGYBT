@@ -157,7 +157,13 @@
 				</RelaToInsured>				
 				<RelaToInsured2><xsl:value-of select="Plchd_And_Rcgn_ReTpCd" /></RelaToInsured2>				
 				<!-- 投保人居民类型 -->
-				<DenType><xsl:value-of select="Rsdnt_TpCd" /></DenType>
+				<DenType>
+					<xsl:call-template name="tran_DenType">
+						<xsl:with-param name="Rsdnt_TpCd">
+							<xsl:value-of select="Rsdnt_TpCd"/>
+						</xsl:with-param>
+					</xsl:call-template>
+				</DenType>
 				
 			</Appnt>
 
@@ -475,6 +481,15 @@
 		</Body>
 	</xsl:template>
 	
+	
+	<!-- 居民类型 -->
+	<xsl:template name="tran_DenType">
+		<xsl:param name="Rsdnt_TpCd"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$Rsdnt_TpCd=1">2</xsl:when><!-- 城镇居民 -->
+			<xsl:when test="$Rsdnt_TpCd=2">1</xsl:when><!-- 农村居民 -->
+		</xsl:choose>
+	</xsl:template>
 	
 	<!-- 性别 -->
 	<xsl:template name="tran_sex" >

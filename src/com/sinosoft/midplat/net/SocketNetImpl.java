@@ -61,6 +61,8 @@ public class SocketNetImpl implements XmlTag {
 		cSocket.shutdownInput();
 		Document mXmlDoc = JdomUtil.build(mBodyBytes);
 		
+		//≤‚ ‘
+		JdomUtil.print(mXmlDoc);
 		Element mHeadEle = mXmlDoc.getRootElement().getChild(Head);
 		Element mFuncFlagEle = mHeadEle.getChild(FuncFlag);
 		XPath mXPath = XPath.newInstance(

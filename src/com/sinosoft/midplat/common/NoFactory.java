@@ -117,6 +117,13 @@ public class NoFactory {
 			cLogger.error("初始化最大号异常！", ex);
 		}
 	}
+	/**
+	 * @Title: nextTranLogNo
+	 * @Description: 下一个交易日志号
+	 * @return 交易日志号
+	 * @return int
+	 * @throws
+	 */
 	public final static int nextTranLogNo() {
 		synchronized (cTranLogNoLock) {
 			cTranLogNo += cClusterCount;

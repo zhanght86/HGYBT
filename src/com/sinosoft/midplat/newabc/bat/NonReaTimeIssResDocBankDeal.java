@@ -277,7 +277,7 @@ public class NonReaTimeIssResDocBankDeal extends Balance
 		mZoneNo.setText(cThisBusiConf.getChildText("zone"));
 
 		Element mNodeNo = new Element(NodeNo);
-		mNodeNo.setText(cThisBusiConf.getChildText("node"));
+		mNodeNo.setText(cThisBusiConf.getChildText("NodeNo"));
 
 		Element mTellerNo = new Element(TellerNo);
 		mTellerNo.setText("sys");

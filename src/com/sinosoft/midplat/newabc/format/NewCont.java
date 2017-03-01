@@ -150,7 +150,7 @@ public class NewCont extends XmlSimpFormat {
 	
 	/**
 	 *  
-	 *  
+	 *  处理受益人
 	 *   <BeneficType>N</BeneficType>
          <Type>1</Type>
          <Grade>1</Grade>
@@ -162,43 +162,58 @@ public class NewCont extends XmlSimpFormat {
          <IdExpDate>20200916</IdExpDate>
          <RelaToInsured>02</RelaToInsured>
          <Lot>100</Lot>
-	 *  
+	 *  @param doc 非标准输入报文
 	 * @return
 	 */
 	private List<Element> dealBnf(Document doc){
+		//受益人列表
 		List<Element> bnfs=new ArrayList<Element>();
+		//非标准输入报文受益人列表节点
 		Element noStdBnf=doc.getRootElement().getChild("App").getChild("Req").getChild("Bnfs");
+		//受益人个数
 		String count=noStdBnf.getChild("Count").getText();
 		int countInt=Integer.parseInt(count);
 		cLogger.info("受益人个数:"+countInt);
 		String grade=null;//受益人顺序
 		String type=null;//受益人类型 农行0是生存受益人，1是身故受益人
 		for(int i=1;i<=countInt;i++){
+			//受益人类型i
 			type=noStdBnf.getChildText("Type"+i);
+			//安赢A借贷险第一受益人
 			if(riskcode.equals("211902")&&("1").equals(type)){//20141202 王玮邮件要求：安赢A借贷险把身故受益人顺序+1，即第一受益人修改为第二受益人
+				//第一受益人修改为第二受益人
 				grade=noStdBnf.getChildText("Sequence"+i);
 				grade=String.valueOf(Integer.parseInt(grade)+1);
 				noStdBnf.getChild("Sequence"+i).setText(grade);
 			}
 			
+			//受益人
 			Element bnf=new Element("Bnf");
+			//受益人类型
 			Element BeneficType=new Element("BeneficType");
 			BeneficType.setText("N");
+			//受益人类别
 			Element Type=new Element("Type");
 			Type.setText(noStdBnf.getChild("Type"+i).getText());
+			//受益顺序
 			Element Grade=new Element("Grade");
 			Grade.setText(noStdBnf.getChild("Sequence"+i).getText());
-			
+			//受益人姓名
 			Element Name=new Element("Name");
 			Name.setText(noStdBnf.getChild("Name"+i).getText());
+			//受益人性别
 			Element Sex=new Element("Sex");
 			Sex.setText(noStdBnf.getChild("Sex"+i).getText());
+			//受益人出生日期
 			Element Birthday=new Element("Birthday");
 			Birthday.setText(noStdBnf.getChild("Birthday"+i).getText());
+			//受益人证件类型
 			Element IDType=new Element("IDType");
 			IDType.setText(returnIdType(noStdBnf.getChild("IDKind"+i).getText()));
+			//受益人证件号码
 			Element IDNo=new Element("IDNo");
 			IDNo.setText(noStdBnf.getChild("IDCode"+i).getText());
+			//身份证证件有效期
 			Element IdExpDate=new Element("IdExpDate");
 			String  noStdIdExpDate=noStdBnf.getChild("InvalidDate"+i).getText();
 			if(noStdIdExpDate.equals("20991231")){
@@ -206,10 +221,13 @@ public class NewCont extends XmlSimpFormat {
 			}else{
 				IdExpDate.setText(noStdIdExpDate);
 			}
+			//受益人与被保人关系
 			Element RelaToInsured=new Element("RelaToInsured");
 			RelaToInsured.setText(retion(noStdBnf.getChild("RelationToInsured"+i).getText()));;
+			//受益比例
 			Element Lot=new Element("Lot");
 			Lot.setText(noStdBnf.getChild("Prop"+i).getText());
+			//受益人节点添加:受益人类型、受益人类别、受益顺序、受益人姓名、性别 、出生日期、证件类型、证件号码、身份证证件有效期、与被保人关系、受益比例 子节点
 			bnf.addContent(BeneficType);
 			bnf.addContent(Type);
 			bnf.addContent(Grade);
@@ -221,8 +239,10 @@ public class NewCont extends XmlSimpFormat {
 			bnf.addContent(IdExpDate);
 			bnf.addContent(RelaToInsured);
 			bnf.addContent(Lot);
+			//受益人列表节点添加受益人子节点
 			bnfs.add(bnf);
 		}
+		//返回受益人列表节点
 		return bnfs;
 	}
 	

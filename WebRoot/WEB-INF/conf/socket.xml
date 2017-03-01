@@ -4,7 +4,8 @@
 		<name>农业银行</name><!-- 套接字名称 -->
 		<!-- <port>35001</port> -->
 		<port>35006</port><!-- 套接字端口号 -->
-		<class>com.sinosoft.midplat.abc.AbcYbt</class><!-- 套接字类 -->
+		<!-- <class>com.sinosoft.midplat.abc.AbcYbt</class>套接字类 -->
+		<class>com.sinosoft.midplat.newabc.NewAbcYbt</class>套接字类
 	</socket>
 	<socket>	<!-- 套接字[1] -->
 		<name>贵州银行</name>

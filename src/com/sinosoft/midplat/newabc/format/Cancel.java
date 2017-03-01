@@ -5,6 +5,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.utility.ExeSQL;
@@ -29,6 +30,8 @@ public class Cancel extends XmlSimpFormat {
 		SSRS ssrs0=new ExeSQL().execSQL(sqlStr);
 		Document mStdXml = 
 			CancelInXsl.newInstance().getCache().transform(pNoStdXml);
+		//≤‚ ‘
+		System.out.println(JdomUtil.toStringFmt(mStdXml));
 		mStdXml.getRootElement().getChild("Body").getChild("ProposalPrtNo").setText(ssrs0.GetText(1, 1));
 	        cLogger.info("Out Cancel.noStd2Std()!");
 		return mStdXml;

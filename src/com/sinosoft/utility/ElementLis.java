@@ -6,7 +6,7 @@ import org.jdom.*;
 import com.sinosoft.midplat.common.JdomUtil;
 
 /**
- * <p>Title: </p>
+ * <p>Title: 节点列表</p>
  *
  * <p>Description: </p>
  * 
@@ -20,6 +20,11 @@ import com.sinosoft.midplat.common.JdomUtil;
 public class ElementLis
     extends Element
 {
+  /**
+   * <p>Title: 新建指定名称的节点列表</p>
+   * <p>Description: </p>
+   * @param name
+   */
   public ElementLis(String name)
   {
     super(name);
@@ -43,20 +48,38 @@ public class ElementLis
 	  this.setText(elementValue); 
   }  
   
+  /**
+   * <p>Title: 新建指定名称的节点加入到父节点</p>
+   * <p>Description: </p>
+   * @param elementName
+   * @param parentElement
+   */
   public ElementLis (String elementName,Element parentElement){
 	  
 	  super(elementName);    
 	  parentElement.addContent(this);   
   }   
   
+  /**
+   * <p>Title: 新建指定名称的节点并赋值加入到父节点</p>
+   * <p>Description: </p>
+   * @param elementName 元素名称 
+   * @param elementValue 元素值
+   * @param parentElement 父元素
+   */
   public ElementLis (String elementName,String elementValue,Element parentElement){
-	  
+	  //新建指定元素名称的节点
 	  super(elementName);    
+	  //空字符串
 	  final String nullstr="null";
+	  //元素值为空、为忽略大小写的空字符串
 	   if(elementValue==null||nullstr.equalsIgnoreCase(elementValue)){
+		   //元素值置为空字符串
 		   elementValue="";
 	   }
+	   //设置指定元素文本为元素值
 	   this.setText(elementValue);
+	   //加入到父元素
 	   parentElement.addContent(this); 
   }     
   

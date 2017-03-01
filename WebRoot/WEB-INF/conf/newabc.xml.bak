@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GBK"?>
 <newabc>
-	<bank id="05" insu="3103" />
-	<TranCom outcode="05">05</TranCom>
+	<bank id="12" insu="010079" />
+	<TranCom outcode="12">12</TranCom>
 	<msg path="newabc" />
 	<preNet>com.sinosoft.midplat.newabc.net.NewAbcNetImpl</preNet>
 	<socket ip="202.108.144.40" port="3422" blcagentcom="020000" bankcode="0201"/>
@@ -15,7 +15,7 @@
 	
 	 <business>
 		<name>新单试算</name>
-		<timeout>300</timeout>
+		<timeout>3000</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1002">1012</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.NewCont</format>
@@ -24,7 +24,7 @@
 		
 	<business>
 		<name>新单试算结果查询</name>
-		<timeout>300</timeout>
+		<timeout>3000</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1005">1016</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.NewContQuery</format><!--农行新单试算结果查询:-->
@@ -33,7 +33,7 @@
 	
 	<business>
 		<name>新单缴费</name>
-		<timeout>30</timeout>
+		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1004">1014</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.ContConfirm</format>
@@ -42,7 +42,7 @@
 	
 	<business>
 		<name>当日撤单</name>
-		<timeout>30</timeout>
+		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1010">1015</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.Cancel</format>
@@ -51,7 +51,7 @@
     
     <business>
 		<name>取消交易(自动冲正)</name>
-		<timeout>30</timeout>
+		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1009">4</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.Rollback</format>
@@ -60,7 +60,7 @@
 	
 	<business>
 		<name>保单重打</name>
-		<timeout>30</timeout>
+		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1018">1011</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.RePrint</format>
@@ -89,7 +89,7 @@
 		<name>保全查询</name>
 		<timeout>300</timeout>
 		<locktime>120</locktime>
-		<funcFlag outcode="3012">3012</funcFlag>
+		<funcFlag outcode="1012">3012</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.SecureQuery</format><!--农行保全查询:SecureQueryIn.xsl-->
 		<service>com.sinosoft.midplat.newabc.service.ContSecureQuery</service>
 	</business>
@@ -98,16 +98,34 @@
 		<name>保全申请</name>
 		<timeout>300</timeout>
 		<locktime>120</locktime>
-		<funcFlag outcode="3013">3013</funcFlag>
+		<funcFlag outcode="1013">3013</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.SecureApply</format><!--农行保全申请:SecureApplyIn.xsl-->
 		<service>com.sinosoft.midplat.newabc.service.ContSecureApply</service>
+	</business>
+	
+	<business>
+		<name>续期缴费查询</name><!-- 交易名称 -->
+		<timeout>300</timeout><!-- 超时时间 -->
+		<locktime>120</locktime><!-- 锁定时间 -->
+		<funcFlag outcode="1007">3017</funcFlag><!-- 交易码 -->
+		<format>com.sinosoft.midplat.newabc.format.RenewalPaymentQuery</format><!-- format -->
+		<service>com.sinosoft.midplat.newabc.service.NewRenewalPaymentQuery</service><!-- service -->
+	</business>
+	
+	<business>
+		<name>续期缴费</name>
+		<timeout>300</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="1008">3018</funcFlag>
+		<format>com.sinosoft.midplat.newabc.format.RenewalPayment</format>
+		<service>com.sinosoft.midplat.newabc.service.NewRenewalPayment</service>
 	</business>
 	
 	<business>
 		<name>保全申请状态查询</name>
 		<timeout>300</timeout>
 		<locktime>120</locktime>
-		<funcFlag outcode="3014">3014</funcFlag>
+		<funcFlag outcode="1014">3014</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.SecureStatusQuery</format><!--农行保全申请状态查询:SecureStatusQueryIn.xsl-->
 		<service>com.sinosoft.midplat.newabc.service.SecureStatusQuery</service>
 	</business>
@@ -116,14 +134,14 @@
 		<name>保单查询</name>
 		<timeout>300</timeout>
 		<locktime>120</locktime>
-		<funcFlag outcode="3015">3015</funcFlag>
+		<funcFlag outcode="1016">3015</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.PolQuery</format><!--农行保单查询:PolQueryIn.xsl-->
 		<service>com.sinosoft.midplat.newabc.service.ContPolQuery</service>
 	</business>
 
       <business>
 		<name>保单详情查询</name>
-		<timeout>300</timeout>
+		<timeout>3000</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1021">1021</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.PolDetailQuery</format>

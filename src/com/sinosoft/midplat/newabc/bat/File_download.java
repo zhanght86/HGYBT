@@ -34,8 +34,15 @@ import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.newabc.util.AES;
 import com.sinosoft.midplat.newabc.util.AbcMidplatUtil;
 
+/**
+ * @ClassName: File_download
+ * @Description: 文件下载批量
+ * @author sinosoft
+ * @date 2017-2-27 上午10:47:45
+ */
 public class File_download
 {
+	//生成一个本类的日志对象
 	protected final Logger cLogger = Logger.getLogger(getClass());
 	private String cDate;
 	private final Element cThisConf;
@@ -736,6 +743,13 @@ public class File_download
 		return lastfile;
 	}
 
+	/**
+	 * @Title: bank_dz_file
+	 * @Description: 
+	 * @throws Exception
+	 * @return void
+	 * @throws
+	 */
 	public void bank_dz_file() throws Exception
 	{
 

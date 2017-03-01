@@ -58,20 +58,20 @@ public class NonRealTimeCont extends XmlSimpFormat {
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into NonRealTimeCont.std2NoStd()...");
-		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
-		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
+		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/RetData/Flag");
+		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/RetData/Desc");
 //		Element tInsuTime  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/InsuTime");
 		
 		Document mNoStdXml = 
 			NonRealTimeContOutXsl.newInstance().getCache().transform(pStdXml);
-		JdomUtil.print(mNoStdXml);
+//		JdomUtil.print(mNoStdXml);
 		
-		if (ttFlag.getValue().equals("0")){
+		if (ttFlag.getValue().equals("1")){
 		   cLogger.info("交易成功=========");
 			mNoStdXml.getRootElement().getChild("Header").getChild("RetCode").setText("000000");
 			mNoStdXml.getRootElement().getChild("Header").getChild("RetMsg").setText("交易成功");
 		}
-		if (ttFlag.getValue().equals("1")){
+		if (ttFlag.getValue().equals("0")){
 			cLogger.info("交易失败=========失败信息:"+ttDesc.getText());
 			mNoStdXml.getRootElement().getChild("Header").getChild("RetCode").setText("009999");
 			mNoStdXml.getRootElement().getChild("Header").getChild("RetMsg").setText(ttDesc.getText());
@@ -106,6 +106,8 @@ public class NonRealTimeCont extends XmlSimpFormat {
 //		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("InsuTime").setText(tInsuTime.getText());
 //		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("Reserve").setText(reserve);
 //		mNoStdXml.getRootElement().addContent(header);
+		//测试
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out NonRealTimeCont.std2NoStd()!");
 		return mNoStdXml;
 	}

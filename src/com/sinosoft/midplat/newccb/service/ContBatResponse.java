@@ -366,9 +366,27 @@ public class ContBatResponse extends ServiceImpl {
 	 * @throws 异常
 	 */
 	public String responseCodeTransfer(String code){
-		if("E8201".equals(code)){return "3009";}
-		else if("E3150".equals(code)){return "3009";}//帐户已销户
-		else if("E3150".equals(code)){return "3009";}//帐户已销户
+		if("E8201".equals(code)){return "3039";}//帐户已销户
+		else if("E3150".equals(code)){return "3009";}//帐户不存在
+		else if("E5502".equals(code)){return "3059";}//密码已挂失
+		else if("E4501".equals(code)){return "2005";}//帐户控制状态不允许存入
+		else if("E3001".equals(code)){return "3032";}//币别或钞汇鉴别不存在
+		else if("E4500".equals(code)){return "2006";}//帐户控制状态不允许支取
+		else if("E5000".equals(code)){return "3016";}//存折已挂失
+		else if("E3551".equals(code)){return "3017";}//帐户已冻结
+		else if("E4500".equals(code)){return "3017";}//单向冻结状态不允许支取
+		else if("E5002".equals(code)){return "3006";}//卡已挂失
+		else if("E7102".equals(code)){return "3008";}//余额不足
+		else if("E3266".equals(code)){return "3065";}//客户名称检查失败
+		else if("E1408".equals(code)){return "3057";}//帐号类型不符
+		else if("E8301".equals(code)){return "3999";}//专项账户存入摘要代码错误
+		else if("E8301".equals(code)){return "3039";}//该卡已销户
+		else if("E1085".equals(code)){return "3999";}//挂失标志不正确
+		else if("E3540".equals(code)){return "3999";}//注销状态不正确
+		else if("E3556".equals(code)){return "3999";}//卡状态不正常
+		else if("SHK02".equals(code)){return "3999";}//使用非法账号导致
+		else if("SDB01".equals(code)){return "3999";}//使用非法账号导致
+		else if("E9999".equals(code)){return "3999";}//建行内部处理错误
 		else{return "";}
 	}
 	public static void main(String[] args) throws Exception {

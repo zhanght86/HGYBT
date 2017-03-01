@@ -25,49 +25,46 @@ import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.service.Service;
 import com.sinosoft.utility.ExeSQL;
 
-public class NewAbcCardBlc extends Balance
-{
+public class NewAbcCardBlc extends Balance {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
-	public NewAbcCardBlc()
-	{
+	public NewAbcCardBlc() {
 		super(NewAbcConf.newInstance(), "2000");
 	}
 
 	/**
 	 * 获取新单对账文件名
 	 */
-	protected String getFileName() throws Exception
-	{
+	protected String getFileName() throws Exception {
 		Element mBankEle = cThisConfRoot.getChild("bank");
-		String fileName = "POLICY" + mBankEle.getAttributeValue("insu") + "." + DateUtil.getDateStr(cTranDate, "yyyyMMdd");
+		String fileName = "POLICY" + mBankEle.getAttributeValue("insu") + "."
+				+ DateUtil.getDateStr(cTranDate, "yyyyMMdd");
 
 		return fileName;
 	}
 
-	public void run()
-	{
-		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
+	public void run() {
+		Thread.currentThread().setName(
+				String.valueOf(NoFactory.nextTranLogNo()));
 		this.cLogger.info("Into NewAbcBusiBlc.run()...");
 		this.cResultMsg = null;
-		try
-		{
-			this.cMidplatRoot = MidplatConf.newInstance().getConf().getRootElement();
+		try {
+			this.cMidplatRoot = MidplatConf.newInstance().getConf()
+					.getRootElement();
 			this.cThisConfRoot = this.cThisConf.getConf().getRootElement();
-			this.cThisBusiConf = ((Element) XPath.selectSingleNode(this.cThisConfRoot, "business[funcFlag='" + this.cFuncFlag + "']"));
+			this.cThisBusiConf = ((Element) XPath.selectSingleNode(
+					this.cThisConfRoot, "business[funcFlag='" + this.cFuncFlag
+							+ "']"));
 
 			String nextDate = this.cThisBusiConf.getChildText("nextDate");
 
-			if (this.cTranDate == null)
-			{
-				if ((nextDate != null) && ("Y".equals(nextDate)))
-				{
+			if (this.cTranDate == null) {
+				if ((nextDate != null) && ("Y".equals(nextDate))) {
 					this.cTranDate = new Date();
-					this.cTranDate = new Date(this.cTranDate.getTime() - 86400000L);
-				}
-				else
-				{
+					this.cTranDate = new Date(
+							this.cTranDate.getTime() - 86400000L);
+				} else {
 					this.cTranDate = new Date();
 				}
 			}
@@ -77,11 +74,11 @@ public class NewAbcCardBlc extends Balance
 
 			Element tHeadEle = getHead();
 			tTranData.addContent(tHeadEle);
-			try
-			{
+			try {
 				String ttFileName = getFileName();
 				this.cLogger.info("FileName = " + ttFileName);
-				String ttLocalDir = this.cThisBusiConf.getChildTextTrim("localDir");
+				String ttLocalDir = this.cThisBusiConf
+						.getChildTextTrim("localDir");
 				this.cLogger.info("localDir = " + ttLocalDir);
 				InputStream ttBatIns = null;
 
@@ -89,15 +86,12 @@ public class NewAbcCardBlc extends Balance
 
 				Element ttBodyEle = parse(ttBatIns);
 				tTranData.addContent(ttBodyEle);
-			}
-			catch (Exception ex)
-			{
+			} catch (Exception ex) {
 				this.cLogger.error("生成标准对账报文出错!", ex);
 
 				Element ttError = new Element("Error");
 				String ttErrorStr = ex.getMessage();
-				if ("".equals(ttErrorStr))
-				{
+				if ("".equals(ttErrorStr)) {
 					ttErrorStr = ex.toString();
 				}
 				ttError.setText(ttErrorStr);
@@ -107,31 +101,29 @@ public class NewAbcCardBlc extends Balance
 			String tServiceClassName = "com.sinosoft.midplat.service.ServiceImpl";
 
 			String tServiceValue = this.cMidplatRoot.getChildText("service");
-			if ((tServiceValue != null) && (!"".equals(tServiceValue)))
-			{
+			if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
 				tServiceClassName = tServiceValue;
 			}
 
 			tServiceValue = this.cThisConfRoot.getChildText("service");
-			if ((tServiceValue != null) && (!"".equals(tServiceValue)))
-			{
+			if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
 				tServiceClassName = tServiceValue;
 			}
 			tServiceValue = this.cThisBusiConf.getChildText("service");
-			if ((tServiceValue != null) && (!"".equals(tServiceValue)))
-			{
+			if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
 				tServiceClassName = tServiceValue;
 			}
 			this.cLogger.info("业务处理模块" + tServiceClassName);
-			Constructor tServiceConstructor = Class.forName(tServiceClassName).getConstructor(new Class[] { Element.class });
-			Service tService = (Service) tServiceConstructor.newInstance(new Object[] { this.cThisBusiConf });
+			Constructor tServiceConstructor = Class.forName(tServiceClassName)
+					.getConstructor(new Class[] { Element.class });
+			Service tService = (Service) tServiceConstructor
+					.newInstance(new Object[] { this.cThisBusiConf });
 			Document tOutStdXml = tService.service(tInStdXml);
 
-			this.cResultMsg = tOutStdXml.getRootElement().getChild("Head").getChildText("Desc");
+			this.cResultMsg = tOutStdXml.getRootElement().getChild("Head")
+					.getChildText("Desc");
 
-		}
-		catch (Throwable ex)
-		{
+		} catch (Throwable ex) {
 			this.cLogger.error("交易出错", ex);
 			this.cResultMsg = ex.toString();
 		}
@@ -141,18 +133,17 @@ public class NewAbcCardBlc extends Balance
 		this.cLogger.info("Out NewAbcCardBlc.run()!");
 	}
 
-	protected Element parse(InputStream pBatIs) throws Exception
-	{
+	protected Element parse(InputStream pBatIs) throws Exception {
 		cLogger.info("Into NewAbcBusiBlc.parse()...");
 
 		String mCharset = cThisBusiConf.getChildText(charset);
-		if (null == mCharset || "".equals(mCharset))
-		{
+		if (null == mCharset || "".equals(mCharset)) {
 			mCharset = "GBK";
 		}
 
 		System.out.println(pBatIs);
-		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(pBatIs, mCharset));
+		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(
+				pBatIs, mCharset));
 
 		/*
 		 * 文件第一行：（汇总信息） 格式：保险公司代码|总记录数|总金额|成功总记录数|成功总金额 文件其他内容：（明细记录）
@@ -165,26 +156,22 @@ public class NewAbcCardBlc extends Balance
 		Element mBodyEle = new Element(Body);
 		mBodyEle.addContent(mCountEle);
 
-		for (String tLineMsg; null != (tLineMsg = mBufReader.readLine());)
-		{
+		for (String tLineMsg; null != (tLineMsg = mBufReader.readLine());) {
 
 			// 空行，直接跳过
 			tLineMsg = tLineMsg.trim();
-			if ("".equals(tLineMsg))
-			{
+			if ("".equals(tLineMsg)) {
 				cLogger.warn("空行，直接跳过，继续下一条！");
 				continue;
 			}
 
 			String[] tSubMsgs = tLineMsg.split("\\|", -1);
 
-			if (!"01".equals(tSubMsgs[6]))
-			{
+			if (!"01".equals(tSubMsgs[6])) {
 				cLogger.warn("非承保保单，直接跳过，继续下一条！");
 				continue;
 			}
-			if (!("01".equals(tSubMsgs[7])))
-			{
+			if (!("01".equals(tSubMsgs[7]))) {
 				cLogger.warn("承保保单（冲正或撤单的单子），直接跳过，继续下一条！");
 				continue;
 			}
@@ -195,8 +182,7 @@ public class NewAbcCardBlc extends Balance
 			 * 联调的时候和农行的人员确认的，20130403
 			 */
 			String nodeNo = null;
-			if (tSubMsgs[2] != null && tSubMsgs[3] != null)
-			{
+			if (tSubMsgs[2] != null && tSubMsgs[3] != null) {
 				nodeNo = tSubMsgs[2].trim() + tSubMsgs[3].trim();
 			}
 
@@ -217,13 +203,15 @@ public class NewAbcCardBlc extends Balance
 			tContNoEle.setText(tSubMsgs[4]);
 
 			// 获取保单印刷号
-			String tContPrtNoSql = "select otherno from tranlog where funcflag='1014' and contno='" + tContNoEle.getText() + "' and trancom='05' and rcode='0' ";
+			String tContPrtNoSql = "select otherno from tranlog where funcflag='1014' and contno='"
+					+ tContNoEle.getText()
+					+ "' and trancom='05' and rcode='0' ";
 			this.cLogger.info("保单印刷号sql:" + tContPrtNoSql);
 			String tContPrtNo = new ExeSQL().getOneValue(tContPrtNoSql);
-			//如果查询单证印刷号为空，则抛出异常
-			if(StringUtils.isEmpty(tContPrtNo))
-			{
-				throw new MidplatException("单证对账失败：保单" + tContNoEle.getText() + "的单证号查询失败");
+			// 如果查询单证印刷号为空，则抛出异常
+			if (StringUtils.isEmpty(tContPrtNo)) {
+				throw new MidplatException("单证对账失败：保单" + tContNoEle.getText()
+						+ "的单证号查询失败");
 			}
 			// String tContPrtNo=t[i];i ++ ;
 			Element tCardNoEle = new Element(CardNo);
@@ -235,13 +223,13 @@ public class NewAbcCardBlc extends Balance
 
 			// 获取单证状态
 			Element tCardStateEle = new Element("CardState");
-			tCardStateEle.setText("4");
+//			tCardStateEle.setText("4");
+			tCardStateEle.setText("6");
 
 			// 获取单证类型
 			Element tCardTypeEle = new Element("CardType");
-			if (!"".equals(tContPrtNo) && tContPrtNo != null)
-			{
-				tCardTypeEle.setText(tContPrtNo.substring(0, 7));
+			if (!"".equals(tContPrtNo) && tContPrtNo != null) {
+				tCardTypeEle.setText(tContPrtNo.substring(0, 5));
 			}
 
 			Element tDetailEle = new Element(Detail);
@@ -260,8 +248,7 @@ public class NewAbcCardBlc extends Balance
 		return mBodyEle;
 	}
 
-	protected Element getHead()
-	{
+	protected Element getHead() {
 		cLogger.info("Into NewAbcCardBlc.getHead()...");
 		String tBalanceFlag = "0";
 		Element mTranDate = new Element(TranDate);
@@ -271,8 +258,7 @@ public class NewAbcCardBlc extends Balance
 		cLogger.info(" 当前日期为..." + mCurrDate);
 
 		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
-		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate))
-		{
+		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate)) {
 			tBalanceFlag = "1";
 		}
 
@@ -281,9 +267,9 @@ public class NewAbcCardBlc extends Balance
 
 		Element mTranCom = new Element(TranCom);
 		mTranCom.setText(cThisConfRoot.getChildText("TranCom"));
-		String tTempStr = cThisConfRoot.getChild("TranCom").getAttributeValue(outcode);
-		if (null != tTempStr && !"".equals(tTempStr))
-		{
+		String tTempStr = cThisConfRoot.getChild("TranCom").getAttributeValue(
+				outcode);
+		if (null != tTempStr && !"".equals(tTempStr)) {
 			mTranCom.setAttribute(outcode, tTempStr);
 		}
 
@@ -329,28 +315,33 @@ public class NewAbcCardBlc extends Balance
 		return mHead;
 	}
 
-	/*
-	 * public static void main(String[] args) throws Exception { Logger mLogger
-	 * = Logger.getLogger("com.sinosoft.midplat.Abc.bat.NewAbcBusiBlc.main");
-	 * mLogger.info("程序开始...");
-	 * 
-	 * NewAbcCardBlc mBatch = new NewAbcCardBlc(); //用于补对账，设置补对账日期 if (0 !=
-	 * args.length) { mLogger.info("args[0] = " + args[0]);
-	 *//**
-	 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。 4位年-2位月-2位日。
-	 * 4位年：4位[0-9]的数字。 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
-	 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
-	 * 
-	 * 简单日期校验的正则表达式：\\d{4}\\d{2}\\d{2}。
-	 */
-	/*
-	 * if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
-	 * mBatch.setDate(args[0]); } else { throw new
-	 * MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]); } }
-	 * 
-	 * mBatch.run();
-	 * 
-	 * mLogger.info("成功结束！"); }
-	 */
+	public static void main(String[] args) throws Exception {
+		Logger mLogger = Logger
+				.getLogger("com.sinosoft.midplat.Abc.bat.NewAbcBusiBlc.main");
+		mLogger.info("程序开始...");
+
+		NewAbcCardBlc mBatch = new NewAbcCardBlc(); // 用于补对账，设置补对账日期
+		if (0 != args.length) {
+			mLogger.info("args[0] = " + args[0]);
+			/**
+			 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。
+			 * 4位年-2位月-2位日。 4位年：4位[0-9]的数字。
+			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
+			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
+			 * 
+			 * 简单日期校验的正则表达式：\\d{4}\\d{2}\\d{2}。
+			 */
+
+			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
+				mBatch.setDate(args[0]);
+			} else {
+				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
+			}
+		}
+
+		mBatch.run();
+
+		mLogger.info("成功结束！");
+	}
 
 }

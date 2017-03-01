@@ -59,6 +59,8 @@ public class ServiceImpl implements Service, XmlTag
 	 */
 	protected TranLogDB insertTranLog(Document pXmlDoc) throws MidplatException
 	{
+		//测试
+		JdomUtil.print(pXmlDoc);
 		//Into ServiceImpl.insertTranLog()...
 		//Into ServiceImpl.insertTranLog()...
 		//Into ServiceImpl.insertTranLog()...[进入业务处理实现类.插入交易日志...]

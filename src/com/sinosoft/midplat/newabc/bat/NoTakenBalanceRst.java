@@ -49,7 +49,7 @@ import com.sinosoft.utility.SSRS;
 
 public class NoTakenBalanceRst extends TimerTask implements XmlTag
 {
-	protected final Logger cLogger = Logger.getLogger(getClass());
+	protected final static Logger cLogger = Logger.getLogger(NoTakenBalanceRst.class);
 
 	// 子系统配置文件缓存代理。列:icbc.xml
 	private final XmlConf cThisConf;
@@ -716,5 +716,14 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		}
 
 		cLogger.info("Out Balance.bakFiles()!");
+	}
+	
+public static void main(String[] args){
+		cLogger.info("开始犹豫期退保数据传递 ...");	//没起作用，未打印
+		
+		NoTakenBalanceRst pt = new NoTakenBalanceRst();	//没起作用
+		pt.run();	//没起作用
+		
+		cLogger.info("结束犹豫期退保 ...");	//没起作用，未打印
 	}
 }

@@ -19,8 +19,11 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
  *
  */
 public class SecureStatusQuery extends XmlSimpFormat {
+	//报文头
 	private Element header=null;
+	//险种代码
 	private String riskcode=null;
+	//业务类别
 	private String busitype=null;
 
 	public SecureStatusQuery(Element pThisBusiConf) {

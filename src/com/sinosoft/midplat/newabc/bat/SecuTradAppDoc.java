@@ -29,6 +29,10 @@ import com.sinosoft.midplat.service.Service;
  *
  */
 public class SecuTradAppDoc extends Balance{
+	/**
+	 * <p>Title: 保全交易申请文件批量无参构造</p>
+	 * <p>Description: </p>
+	 */
 	public SecuTradAppDoc() {
 		super(NewAbcConf.newInstance(), "2003");
 	}

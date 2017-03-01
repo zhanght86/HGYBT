@@ -201,7 +201,7 @@ public class NewContConfirm extends ServiceImpl {
 				.append(", SignDate=").append(tOutMainRiskEle.getChildText(SignDate))
 				.append(", ModifyDate=").append(DateUtil.get8Date(tCurDate))
 				.append(", ModifyTime=").append(DateUtil.get6Time(tCurDate))
-				.append(" where RecordNo=").append(tContSchema.getRecordNo())
+				.append(" where Proposalprtno=").append(proposalprtno2)
 				.toString();
 			ExeSQL tExeSQL = new ExeSQL();
 			if (!tExeSQL.execUpdateSQL(tSqlStr)) {

@@ -39,6 +39,8 @@ public class PolDetailQuery extends XmlSimpFormat {
 			cLogger.info("Into PolDetailQuery.noStd2Std()...");
 			Document mStdXml = 
 					PolDetailQueryInXsl.newInstance().getCache().transform(pNoStdXml);
+			//测试
+			JdomUtil.print(mStdXml);
 			Element mBody=mStdXml.getRootElement().getChild("Body");
 			String contno=mBody.getChildText("ContNo");
 			String sql="select proposalprtno from cont where contno= '"+contno+"' ";
@@ -117,8 +119,8 @@ public class PolDetailQuery extends XmlSimpFormat {
 //		String mInFilePath = "E:/Java/报文/新农行保单查询请求.xml";
 //		String mOutFilePath = "E:/Java/报文/新农行保单查询返回.xml";
 
-		String mInFilePath = "C:\\Users\\Administrator\\Desktop\\农行.xml";
-		String mOutFilePath = "C:\\Users\\Administrator\\Desktop\\ccb_20140723Nostd.xml";
+		String mInFilePath = "D:/File/task/20170215/newabc/ybt_test/1021in_noStd.xml";
+		String mOutFilePath = "D:/File/task/20170215/newabc/ybt_test/1021in_Std.xml";
 
 		InputStream mIs = new FileInputStream(mInFilePath);
 		Document mInXmlDoc = JdomUtil.build(mIs);

@@ -1,0 +1,494 @@
+15:36:21,285 INFO bat.NewAbcCardBlc(320) - 程序开始...
+15:36:21,292 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:36:21,294 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:36:21,295 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:36:21,297 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:36:21,299 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:36:21,300 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+15:36:21,304 INFO common.XmlConf(80) - conf file modified at (2017-02-24 14:27:00,477) and length=9774 bytes!
+15:36:21,454 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+15:36:21,456 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:36:21,457 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:36:21,458 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+15:36:21,476 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:36:21,480 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:36:21,481 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:36:21,482 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+15:36:22,044 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.run(NewAbcCardBlc.java:49)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main(NewAbcCardBlc.java:341)
+15:36:22,046 INFO bat.NewAbcCardBlc(50) - Into NewAbcBusiBlc.run()...
+15:36:22,124 INFO bat.NewAbcCardBlc(251) - Into NewAbcCardBlc.getHead()...
+15:36:22,125 INFO bat.NewAbcCardBlc(256) -  对账日期为...20170228
+15:36:22,125 INFO bat.NewAbcCardBlc(257) -  当前日期为...20170228
+15:36:22,126 INFO bat.NewAbcCardBlc(313) - Out NewAbcCardBlc.getHead()!
+15:36:22,126 INFO bat.NewAbcCardBlc(79) - FileName = POLICY010079.20170228
+15:36:22,127 INFO bat.NewAbcCardBlc(82) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+15:36:22,127 INFO bat.NewAbcCardBlc(137) - Into NewAbcBusiBlc.parse()...
+15:36:22,128 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000747' and trancom='05' and rcode='0' 
+15:36:22,260 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000748' and trancom='05' and rcode='0' 
+15:36:22,324 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000749' and trancom='05' and rcode='0' 
+15:36:22,385 INFO bat.NewAbcCardBlc(246) - Out NewAbcBusiBlc.parse()!
+15:36:22,385 INFO bat.NewAbcCardBlc(116) - 业务处理模块com.sinosoft.midplat.newabc.service.NewCardBlc
+15:36:22,414 INFO service.NewCardBlc(29) - Into NewContBlc.service()...
+15:36:22,425 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+15:36:22,480 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+15:36:22,553 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+15:36:22,555 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+15:36:22,556 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+15:36:22,565 INFO common.SaveMessage(94) - 18539_3_7_inSvc.xml IO输出耗时:0.0090s
+15:36:22,565 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！18539_3_7_inSvc.xml
+15:36:22,566 INFO net.CallWebsvcAtomSvc(102) - start call 单证对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+15:36:22,993 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:36:23,002 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:36:23,003 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:36:23,003 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:36:23,004 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+15:36:23,004 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:36:23,004 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:36:23,013 DEBUG httpclient.Wire(70) - >> "6a1[\r][\n]"
+15:36:23,014 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMjI4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTUzNjIyPC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20gb3V0Y29kZT0iMDUiPjA1PC9UcmFuQ29tPjxab25lTm8+MDAwMDA8L1pvbmVObz48Tm9kZU5vPjExMjQwMTwvTm9kZU5vPjxUZWxsZXJObz5zeXM8L1RlbGxlck5vPjxUcmFuTm8+MTg1Mzk8L1RyYW5Obz48RnVuY0ZsYWc+PC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD43PC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxDb3VudD4zPC9Db3VudD48RGV0YWlsPjxBZ2VudENvbT4wMTAxMDEwMTAwMTg2NTIwMTwvQWdlbnRDb20+PENvbnRObz44ODgwMTAwMDAwMDA3NDc8L0NvbnRObz48Q2FyZE5vPjE4MDAxOTAwMDA4MzA2MTwvQ2FyZE5vPjxUcmFuTm8+MTI4MTAxMDAxNzk0MDE3PC9UcmFuTm8+PENhcmRUeXBlPjE4MDAxOTA8L0NhcmRUeXBlPjxDYXJkU3RhdGU+NDwvQ2FyZFN0YXRlPjxUZWxsZXJObz4wMTAxMDEwMDE4NjUyMDE8L1RlbGxlck5vPjwvRGV0YWlsPjxEZXRhaWw+PEFnZW50Q29tPjAxMDEwMTAxMDAxODY1MjAxPC9BZ2VudENvbT48Q29udE5vPjg4ODAxMDAwMDAwMDc0ODwvQ29udE5vPjxDYXJkTm8+MTgwMDE5MDAwMDgzMDYyPC9DYXJkTm8+PFRyYW5Obz4xMjgxMDEwMDE3OTQwMTg8L1RyYW5Obz48Q2FyZFR5cGU+MTgwMDE5MDwvQ2FyZFR5cGU+PENhcmRTdGF0ZT40PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ5PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjM8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxOTwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTkwPC9DYXJkVHlwZT48Q2FyZFN0YXRlPjQ8L0NhcmRTdGF0ZT48VGVsbGVyTm8+MDEwMTAxMDAxODY1MjAxPC9UZWxsZXJObz48L0RldGFpbD48L0JvZHk+PC9UcmFuRGF0YT4NCg==</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:36:23,014 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:36:23,014 DEBUG httpclient.Wire(84) - >> "0"
+15:36:23,015 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:36:23,015 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:36:23,073 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:36:23,073 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:36:23,075 DEBUG httpclient.Wire(70) - << "Date: Tue, 28 Feb 2017 07:32:13 GMT[\r][\n]"
+15:36:23,075 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+15:36:23,076 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:36:23,077 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+15:36:23,077 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:36:23,086 DEBUG httpclient.Wire(84) - << "0"
+15:36:23,086 DEBUG httpclient.Wire(84) - << "1"
+15:36:23,086 DEBUG httpclient.Wire(84) - << "c"
+15:36:23,087 DEBUG httpclient.Wire(84) - << "b"
+15:36:23,087 DEBUG httpclient.Wire(84) - << "[\r]"
+15:36:23,087 DEBUG httpclient.Wire(70) - << "[\n]"
+15:36:23,087 DEBUG httpclient.Wire(84) - << "<?xm"
+15:36:23,089 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+15:36:23,091 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjE8L0ZsYWc+DQogICAgPERlc2M+taXWpLSmwO3Kp7DcPC9EZXNjPg0KICA8L0hlYWQ+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+15:36:23,099 INFO net.CallWebsvcAtomSvc(145) - 投保单号null单证对账(service)耗时：0.533s
+15:36:23,103 INFO common.SaveMessage(94) - 18539_6_7_outSvc.xml IO输出耗时:0.0010s
+15:36:23,103 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！18539_6_7_outSvc.xml
+15:36:23,103 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+15:36:23,103 ERROR service.NewCardBlc(65) - 新农行单证对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 单证处理失败
+	at com.sinosoft.midplat.newabc.service.NewCardBlc.service(NewCardBlc.java:60)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.run(NewAbcCardBlc.java:121)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main(NewAbcCardBlc.java:341)
+15:36:23,168 INFO service.NewCardBlc(85) - Out NewContBlc.service()!
+15:36:23,168 INFO bat.NewAbcCardBlc(133) - Out NewAbcCardBlc.run()!
+15:36:23,168 INFO bat.NewAbcCardBlc(343) - 成功结束！
+15:43:23,043 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@2e39060b
+15:43:23,073 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:43:23,081 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:43:23,081 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:43:23,083 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:43:23,083 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:43:23,084 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:43:23,118 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,746) and length=27405 bytes!
+15:43:23,226 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:43:23,261 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:43:23,262 INFO common.Log4jPrint(20) - End reset System.out!
+15:43:23,265 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:43:23,266 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:43:23,268 INFO common.XmlConf(80) - conf file modified at (2017-02-23 14:30:47,226) and length=852 bytes!
+15:43:23,283 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:43:23,286 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:43:23,341 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:43:23,345 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:43:23,424 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+15:43:23,425 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:43:23,451 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:43:23,451 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+15:43:23,452 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+15:43:23,452 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BocYbt
+15:43:23,468 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+15:43:23,468 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:43:23,470 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+15:43:23,514 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+15:43:23,515 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:43:23,515 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:43:35,810 INFO bat.NewAbcCardBlc(320) - 程序开始...
+15:43:35,813 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:43:35,814 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:43:35,815 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:43:35,816 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:43:35,817 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:43:35,818 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+15:43:35,820 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+15:43:35,972 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+15:43:35,974 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:43:35,974 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:43:35,975 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+15:43:35,991 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:43:35,995 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:43:35,995 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:43:35,997 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+15:43:36,566 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.run(NewAbcCardBlc.java:49)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main(NewAbcCardBlc.java:341)
+15:43:36,571 INFO bat.NewAbcCardBlc(50) - Into NewAbcBusiBlc.run()...
+15:43:36,660 INFO bat.NewAbcCardBlc(251) - Into NewAbcCardBlc.getHead()...
+15:43:36,660 INFO bat.NewAbcCardBlc(256) -  对账日期为...20170228
+15:43:36,660 INFO bat.NewAbcCardBlc(257) -  当前日期为...20170228
+15:43:36,661 INFO bat.NewAbcCardBlc(313) - Out NewAbcCardBlc.getHead()!
+15:43:36,661 INFO bat.NewAbcCardBlc(79) - FileName = POLICY010079.20170228
+15:43:36,662 INFO bat.NewAbcCardBlc(82) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+15:43:36,662 INFO bat.NewAbcCardBlc(137) - Into NewAbcBusiBlc.parse()...
+15:43:36,663 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000747' and trancom='05' and rcode='0' 
+15:43:36,725 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000748' and trancom='05' and rcode='0' 
+15:43:36,791 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000749' and trancom='05' and rcode='0' 
+15:43:36,848 INFO bat.NewAbcCardBlc(246) - Out NewAbcBusiBlc.parse()!
+15:43:36,848 INFO bat.NewAbcCardBlc(116) - 业务处理模块com.sinosoft.midplat.newabc.service.NewCardBlc
+15:43:36,850 INFO service.NewCardBlc(29) - Into NewContBlc.service()...
+15:43:36,856 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+15:43:36,916 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+15:43:37,023 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+15:43:37,025 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+15:43:37,026 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+15:43:37,037 INFO common.SaveMessage(94) - 18542_3_7_inSvc.xml IO输出耗时:0.0090s
+15:43:37,039 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！18542_3_7_inSvc.xml
+15:43:37,042 INFO net.CallWebsvcAtomSvc(102) - start call 单证对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+15:43:37,542 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:43:37,557 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:43:37,558 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:43:37,559 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:43:37,559 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+15:43:37,559 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:43:37,560 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:43:37,574 DEBUG httpclient.Wire(70) - >> "69d[\r][\n]"
+15:43:37,574 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMjI4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTU0MzM2PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20gb3V0Y29kZT0iMDUiPjA1PC9UcmFuQ29tPjxab25lTm8+MDAwMDA8L1pvbmVObz48Tm9kZU5vPjExMjQwMTwvTm9kZU5vPjxUZWxsZXJObz5zeXM8L1RlbGxlck5vPjxUcmFuTm8+MTg1NDI8L1RyYW5Obz48RnVuY0ZsYWc+MjAwMDwvRnVuY0ZsYWc+PEJhbGFuY2VGbGFnPjA8L0JhbGFuY2VGbGFnPjxTZXJ2aWNlSWQ+NzwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MzwvQ291bnQ+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ3PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjE8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxNzwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT40PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ4PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjI8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxODwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT40PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ5PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjM8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxOTwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT40PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:43:37,575 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:43:37,575 DEBUG httpclient.Wire(84) - >> "0"
+15:43:37,576 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:43:37,576 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:43:37,820 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:43:37,821 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:43:37,822 DEBUG httpclient.Wire(70) - << "Date: Tue, 28 Feb 2017 07:39:28 GMT[\r][\n]"
+15:43:37,823 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+15:43:37,824 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:43:37,824 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+15:43:37,824 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:43:37,833 DEBUG httpclient.Wire(84) - << "0"
+15:43:37,834 DEBUG httpclient.Wire(84) - << "1"
+15:43:37,834 DEBUG httpclient.Wire(84) - << "c"
+15:43:37,834 DEBUG httpclient.Wire(84) - << "b"
+15:43:37,834 DEBUG httpclient.Wire(84) - << "[\r]"
+15:43:37,835 DEBUG httpclient.Wire(70) - << "[\n]"
+15:43:37,835 DEBUG httpclient.Wire(84) - << "<?xm"
+15:43:37,838 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+15:43:37,839 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjE8L0ZsYWc+DQogICAgPERlc2M+taXWpLSmwO3Kp7DcPC9EZXNjPg0KICA8L0hlYWQ+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+15:43:37,846 INFO net.CallWebsvcAtomSvc(145) - 投保单号null单证对账(service)耗时：0.803s
+15:43:37,852 INFO common.SaveMessage(94) - 18542_6_7_outSvc.xml IO输出耗时:0.0010s
+15:43:37,852 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！18542_6_7_outSvc.xml
+15:43:37,853 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+15:43:37,854 ERROR service.NewCardBlc(65) - 新农行单证对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 单证处理失败
+	at com.sinosoft.midplat.newabc.service.NewCardBlc.service(NewCardBlc.java:60)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.run(NewAbcCardBlc.java:121)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main(NewAbcCardBlc.java:341)
+15:43:37,908 INFO service.NewCardBlc(85) - Out NewContBlc.service()!
+15:43:37,908 INFO bat.NewAbcCardBlc(133) - Out NewAbcCardBlc.run()!
+15:43:37,908 INFO bat.NewAbcCardBlc(343) - 成功结束！
+16:26:43,267 INFO bat.NewAbcCardBlc(321) - 程序开始...
+16:26:43,270 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+16:26:43,272 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+16:26:43,273 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+16:26:43,274 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:26:43,275 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+16:26:43,276 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+16:26:43,278 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+16:26:43,425 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+16:26:43,426 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+16:26:43,428 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+16:26:43,428 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+16:26:43,447 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+16:26:43,453 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+16:26:43,453 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+16:26:43,454 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+16:26:44,037 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.run(NewAbcCardBlc.java:49)
+	at com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main(NewAbcCardBlc.java:342)
+16:26:44,039 INFO bat.NewAbcCardBlc(50) - Into NewAbcBusiBlc.run()...
+16:26:44,146 INFO bat.NewAbcCardBlc(252) - Into NewAbcCardBlc.getHead()...
+16:26:44,147 INFO bat.NewAbcCardBlc(257) -  对账日期为...20170228
+16:26:44,147 INFO bat.NewAbcCardBlc(258) -  当前日期为...20170228
+16:26:44,148 INFO bat.NewAbcCardBlc(314) - Out NewAbcCardBlc.getHead()!
+16:26:44,149 INFO bat.NewAbcCardBlc(79) - FileName = POLICY010079.20170228
+16:26:44,149 INFO bat.NewAbcCardBlc(82) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+16:26:44,150 INFO bat.NewAbcCardBlc(137) - Into NewAbcBusiBlc.parse()...
+16:26:44,151 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000747' and trancom='05' and rcode='0' 
+16:26:44,215 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000748' and trancom='05' and rcode='0' 
+16:26:44,273 INFO bat.NewAbcCardBlc(209) - 保单印刷号sql:select otherno from tranlog where funcflag='1014' and contno='888010000000749' and trancom='05' and rcode='0' 
+16:26:44,360 INFO bat.NewAbcCardBlc(247) - Out NewAbcBusiBlc.parse()!
+16:26:44,361 INFO bat.NewAbcCardBlc(116) - 业务处理模块com.sinosoft.midplat.newabc.service.NewCardBlc
+16:26:44,367 INFO service.NewCardBlc(29) - Into NewContBlc.service()...
+16:26:44,383 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+16:26:44,444 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+16:26:44,507 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+16:26:44,508 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+16:26:44,508 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+16:26:44,512 INFO common.SaveMessage(94) - 18545_3_7_inSvc.xml IO输出耗时:0.0040s
+16:26:44,512 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！18545_3_7_inSvc.xml
+16:26:44,513 INFO net.CallWebsvcAtomSvc(102) - start call 单证对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+16:26:45,114 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+16:26:45,134 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+16:26:45,135 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+16:26:45,135 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+16:26:45,136 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+16:26:45,137 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+16:26:45,137 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+16:26:45,156 DEBUG httpclient.Wire(70) - >> "69d[\r][\n]"
+16:26:45,157 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMjI4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTYyNjQ0PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20gb3V0Y29kZT0iMDUiPjA1PC9UcmFuQ29tPjxab25lTm8+MDAwMDA8L1pvbmVObz48Tm9kZU5vPjExMjQwMTwvTm9kZU5vPjxUZWxsZXJObz5zeXM8L1RlbGxlck5vPjxUcmFuTm8+MTg1NDU8L1RyYW5Obz48RnVuY0ZsYWc+MjAwMDwvRnVuY0ZsYWc+PEJhbGFuY2VGbGFnPjA8L0JhbGFuY2VGbGFnPjxTZXJ2aWNlSWQ+NzwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MzwvQ291bnQ+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ3PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjE8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxNzwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT42PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ4PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjI8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxODwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT42PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PERldGFpbD48QWdlbnRDb20+MDEwMTAxMDEwMDE4NjUyMDE8L0FnZW50Q29tPjxDb250Tm8+ODg4MDEwMDAwMDAwNzQ5PC9Db250Tm8+PENhcmRObz4xODAwMTkwMDAwODMwNjM8L0NhcmRObz48VHJhbk5vPjEyODEwMTAwMTc5NDAxOTwvVHJhbk5vPjxDYXJkVHlwZT4xODAwMTwvQ2FyZFR5cGU+PENhcmRTdGF0ZT42PC9DYXJkU3RhdGU+PFRlbGxlck5vPjAxMDEwMTAwMTg2NTIwMTwvVGVsbGVyTm8+PC9EZXRhaWw+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+16:26:45,157 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+16:26:45,158 DEBUG httpclient.Wire(84) - >> "0"
+16:26:45,158 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+16:26:45,159 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+16:26:45,391 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+16:26:45,392 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+16:26:45,396 DEBUG httpclient.Wire(70) - << "Date: Tue, 28 Feb 2017 08:22:35 GMT[\r][\n]"
+16:26:45,397 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+16:26:45,398 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+16:26:45,399 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+16:26:45,400 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+16:26:45,420 DEBUG httpclient.Wire(84) - << "0"
+16:26:45,421 DEBUG httpclient.Wire(84) - << "1"
+16:26:45,422 DEBUG httpclient.Wire(84) - << "c"
+16:26:45,422 DEBUG httpclient.Wire(84) - << "b"
+16:26:45,423 DEBUG httpclient.Wire(84) - << "[\r]"
+16:26:45,424 DEBUG httpclient.Wire(70) - << "[\n]"
+16:26:45,425 DEBUG httpclient.Wire(84) - << "<?xm"
+16:26:45,432 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+16:26:45,434 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+taXWpLSmwO2zybmmPC9EZXNjPg0KICA8L0hlYWQ+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+16:26:45,447 INFO net.CallWebsvcAtomSvc(145) - 投保单号null单证对账(service)耗时：0.934s
+16:26:45,453 INFO common.SaveMessage(94) - 18545_6_7_outSvc.xml IO输出耗时:0.0020s
+16:26:45,453 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！18545_6_7_outSvc.xml
+16:26:45,453 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+16:26:45,550 INFO service.NewCardBlc(85) - Out NewContBlc.service()!
+16:26:45,551 INFO bat.NewAbcCardBlc(133) - Out NewAbcCardBlc.run()!
+16:26:45,551 INFO bat.NewAbcCardBlc(344) - 成功结束！
+17:14:11,449 INFO bat.SurRetrDataDocBankDeal(333) - 程序开始...
+17:14:11,451 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:14:11,453 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:14:11,454 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:14:11,455 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:14:11,457 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:14:11,458 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:14:11,459 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+17:14:11,611 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:14:11,613 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:14:11,613 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:14:11,614 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+17:14:11,631 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:14:11,637 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:14:11,638 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:14:11,639 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+17:14:12,240 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:55)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.main(SurRetrDataDocBankDeal.java:359)
+17:14:12,243 INFO bat.SurRetrDataDocBankDeal(56) - Into SurRetrDataDocBankDeal.run()...
+17:14:12,339 INFO bat.SurRetrDataDocBankDeal(262) - Into SurRetrDataDocBankDeal.getHead()...
+17:14:12,340 INFO bat.SurRetrDataDocBankDeal(267) -  对账日期为...20170228
+17:14:12,340 INFO bat.SurRetrDataDocBankDeal(268) -  当前日期为...20170228
+17:14:12,341 INFO bat.SurRetrDataDocBankDeal(326) - Out SurRetrDataDocBankDeal.getHead()!
+17:14:12,389 INFO bat.File_download(899) - TBYCHP=组织好的报文：
+17:14:12,390 INFO bat.File_download(553) - Into File_download.send()...
+17:14:12,390 INFO bat.File_download(570) - 开始加密报文
+17:14:12,391 INFO bat.File_download(575) - 加密报文结束!
+17:14:12,391 INFO bat.File_download(577) - 生成73位报文头:
+17:14:12,421 INFO bat.File_download(581) - 生成73位报文头结束
+17:14:12,421 INFO bat.File_download(582) - 发送给银行的报文头为：X1.000000487010079    00000                                       000000000
+17:14:12,422 INFO bat.File_download(600) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>20170228171412366</InsuSerial><TransDate>20170228</TransDate><TransTime>171412</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>INVALID.BANK010079.20170228</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-02-28 17:14:12</FileTimeStamp></Req></App></ABCB2I> 
+17:14:12,422 INFO bat.File_download(680) - 发送不带对账文件的上传交易报文！
+17:14:12,422 INFO bat.File_download(700) - Out File_download.send()!
+17:14:12,422 INFO bat.File_download(188) - Into File_download.receive()...
+17:14:12,423 INFO bat.File_download(996) - Into readFull() =====1
+17:14:32,544 INFO bat.File_download(256) - 接收长度有问题！
+17:14:32,546 INFO bat.File_download(263) - Out File_download.receive()!
+17:14:32,547 INFO bat.SurRetrDataDocBankDeal(87) - FileName = INVALID.BANK010079.20170228
+17:14:32,548 INFO bat.SurRetrDataDocBankDeal(89) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+17:14:32,550 ERROR bat.SurRetrDataDocBankDeal(99) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\INVALID.BANK010079.20170228 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:92)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.main(SurRetrDataDocBankDeal.java:359)
+17:14:32,552 INFO bat.SurRetrDataDocBankDeal(129) - 业务处理模块com.sinosoft.midplat.newabc.service.SurRetrDataDocBankDeal
+17:14:32,594 INFO service.SurRetrDataDocBankDeal(35) - Into SurRetrDataDocBankDeal.service()...
+17:14:32,596 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:14:32,704 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:14:32,706 INFO service.SurRetrDataDocBankDeal(80) - 退保犹撤数据文件-银行处理结果回盘交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\INVALID.BANK010079.20170228 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SurRetrDataDocBankDeal.service(SurRetrDataDocBankDeal.java:47)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:132)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.main(SurRetrDataDocBankDeal.java:359)
+17:14:32,780 INFO service.SurRetrDataDocBankDeal(104) - Out SurRetrDataDocBankDeal.service()!
+17:14:32,781 INFO bat.SurRetrDataDocBankDeal(145) - Out SurRetrDataDocBankDeal.run()!
+17:14:32,782 INFO bat.SurRetrDataDocBankDeal(361) - 成功结束！
+17:45:41,402 INFO bat.SurRetrDataDocBankDeal(333) - 程序开始...
+17:45:41,405 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:45:41,407 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:45:41,407 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:45:41,408 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:45:41,410 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:45:41,411 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:45:41,414 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+17:45:41,570 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:45:41,572 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:45:41,572 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:45:41,573 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+17:45:41,589 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:45:41,593 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:45:41,594 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:45:41,595 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+17:45:42,170 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:55)
+	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.main(SurRetrDataDocBankDeal.java:359)
+17:45:42,172 INFO bat.SurRetrDataDocBankDeal(56) - Into SurRetrDataDocBankDeal.run()...
+17:45:42,243 INFO bat.SurRetrDataDocBankDeal(262) - Into SurRetrDataDocBankDeal.getHead()...
+17:45:42,243 INFO bat.SurRetrDataDocBankDeal(267) -  对账日期为...20170228
+17:45:42,244 INFO bat.SurRetrDataDocBankDeal(268) -  当前日期为...20170228
+17:45:42,244 INFO bat.SurRetrDataDocBankDeal(326) - Out SurRetrDataDocBankDeal.getHead()!
+17:45:42,253 INFO bat.File_download(899) - TBYCHP=组织好的报文：
+17:45:42,254 INFO bat.File_download(946) - 文件已存在 无需再次下载
+17:45:42,254 INFO bat.SurRetrDataDocBankDeal(87) - FileName = INVALID.BANK010079.20170228
+17:45:42,254 INFO bat.SurRetrDataDocBankDeal(89) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+17:45:42,255 INFO bat.SurRetrDataDocBankDeal(150) - Into SurRetrDataDocBankDeal.parse()...
+17:45:42,255 INFO bat.SurRetrDataDocBankDeal(256) - Out SurRetrDataDocBankDeal.parse()!
+17:45:42,255 INFO bat.SurRetrDataDocBankDeal(129) - 业务处理模块com.sinosoft.midplat.newabc.service.SurRetrDataDocBankDeal
+17:45:42,258 INFO service.SurRetrDataDocBankDeal(35) - Into SurRetrDataDocBankDeal.service()...
+17:45:42,259 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:45:42,327 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:45:42,328 DEBUG service.SurRetrDataDocBankDeal(114) - Into SurRetrDataDocBankDeal.saveDetails()...
+17:45:42,386 INFO service.SurRetrDataDocBankDeal(175) - 退保犹退回盘总数(DtlSet)为：0
+17:45:42,483 DEBUG service.SurRetrDataDocBankDeal(187) - Out SurRetrDataDocBankDeal.saveDetails()!
+17:45:42,544 INFO service.SurRetrDataDocBankDeal(104) - Out SurRetrDataDocBankDeal.service()!
+17:45:42,545 INFO bat.SurRetrDataDocBankDeal(145) - Out SurRetrDataDocBankDeal.run()!
+17:45:42,546 INFO bat.SurRetrDataDocBankDeal(361) - 成功结束！
+18:10:58,391 INFO bat.NonReaTimeIssResDocBankDeal(322) - 程序开始...
+18:10:58,394 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+18:10:58,396 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:10:58,397 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:10:58,399 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:10:58,401 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:10:58,402 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+18:10:58,404 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+18:10:58,563 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+18:10:58,564 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:10:58,564 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+18:10:58,565 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+18:10:58,581 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+18:10:58,587 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:10:58,588 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+18:10:58,589 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+18:10:59,184 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.run(NonReaTimeIssResDocBankDeal.java:55)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.main(NonReaTimeIssResDocBankDeal.java:348)
+18:10:59,186 INFO bat.NonReaTimeIssResDocBankDeal(56) - Into NonReaTimeIssResDocBankDeal.run()...
+18:10:59,305 INFO bat.NonReaTimeIssResDocBankDeal(251) - Into NonReaTimeIssResDocBankDeal.getHead()...
+18:10:59,306 INFO bat.NonReaTimeIssResDocBankDeal(256) -  对账日期为...20170228
+18:10:59,306 INFO bat.NonReaTimeIssResDocBankDeal(257) -  当前日期为...20170228
+18:10:59,307 INFO bat.NonReaTimeIssResDocBankDeal(315) - Out NonReaTimeIssResDocBankDeal.getHead()!
+18:10:59,322 INFO bat.File_download(911) - FSSCDHP=组织好的报文：
+18:10:59,323 INFO bat.File_download(946) - 文件已存在 无需再次下载
+18:10:59,323 INFO bat.NonReaTimeIssResDocBankDeal(85) - FileName = FRESULT.BANK010079.20170228
+18:10:59,323 INFO bat.NonReaTimeIssResDocBankDeal(87) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+18:10:59,324 INFO bat.NonReaTimeIssResDocBankDeal(147) - Into NonReaTimeIssResDocBankDeal.parse()...
+18:10:59,325 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586492|高维生|110001|320304196710256136|012D0100|000101|888010000000705|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083311|240000||||
+18:10:59,326 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586493|高维生|110001|320304196710256136|012D0100|000101|888010000000706|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083312|240000||||
+18:10:59,326 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586494|高维生|110001|320304196710256136|012D0100|000101|888010000000707|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083313|240000||||
+18:10:59,327 INFO bat.NonReaTimeIssResDocBankDeal(245) - Out NonReaTimeIssResDocBankDeal.parse()!
+18:10:59,328 INFO bat.NonReaTimeIssResDocBankDeal(126) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssResDocBankDeal
+18:10:59,430 INFO service.NonReaTimeIssResDocBankDeal(39) - Into NonReaTimeIssResDocBankDeal.service()...
+18:10:59,432 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+18:10:59,525 ERROR service.ServiceImpl(200) - ORA-01400: 无法将 NULL 插入 ( YBT . TRANLOG . NODENO ) 
+18:10:59,526 INFO service.NonReaTimeIssResDocBankDeal(84) - 非实时出单结果文件-银行处理结果回盘交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:205)
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssResDocBankDeal.service(NonReaTimeIssResDocBankDeal.java:45)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.run(NonReaTimeIssResDocBankDeal.java:129)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.main(NonReaTimeIssResDocBankDeal.java:348)
+18:10:59,530 INFO service.NonReaTimeIssResDocBankDeal(108) - Out NonReaTimeIssResDocBankDeal.service()!
+18:10:59,531 INFO bat.NonReaTimeIssResDocBankDeal(142) - Out NonReaTimeIssResDocBankDeal.run()!
+18:10:59,531 INFO bat.NonReaTimeIssResDocBankDeal(350) - 成功结束！
+18:51:04,344 INFO bat.NonReaTimeIssResDocBankDeal(322) - 程序开始...
+18:51:04,346 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+18:51:04,348 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:51:04,349 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:51:04,350 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:51:04,352 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:51:04,353 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+18:51:04,356 INFO common.XmlConf(80) - conf file modified at (2017-02-28 15:43:03,039) and length=9778 bytes!
+18:51:04,509 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+18:51:04,510 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:51:04,510 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+18:51:04,511 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+18:51:04,529 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+18:51:04,534 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:51:04,535 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+18:51:04,537 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+18:51:05,083 ERROR common.NoFactory(193) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:190)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.run(NonReaTimeIssResDocBankDeal.java:55)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssResDocBankDeal.main(NonReaTimeIssResDocBankDeal.java:348)
+18:51:05,084 INFO bat.NonReaTimeIssResDocBankDeal(56) - Into NonReaTimeIssResDocBankDeal.run()...
+18:51:05,156 INFO bat.NonReaTimeIssResDocBankDeal(251) - Into NonReaTimeIssResDocBankDeal.getHead()...
+18:51:05,157 INFO bat.NonReaTimeIssResDocBankDeal(256) -  对账日期为...20170228
+18:51:05,157 INFO bat.NonReaTimeIssResDocBankDeal(257) -  当前日期为...20170228
+18:51:05,160 INFO bat.NonReaTimeIssResDocBankDeal(315) - Out NonReaTimeIssResDocBankDeal.getHead()!
+18:51:05,172 INFO bat.File_download(911) - FSSCDHP=组织好的报文：
+18:51:05,173 INFO bat.File_download(946) - 文件已存在 无需再次下载
+18:51:05,173 INFO bat.NonReaTimeIssResDocBankDeal(85) - FileName = FRESULT.BANK010079.20170228
+18:51:05,174 INFO bat.NonReaTimeIssResDocBankDeal(87) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+18:51:05,174 INFO bat.NonReaTimeIssResDocBankDeal(147) - Into NonReaTimeIssResDocBankDeal.parse()...
+18:51:05,177 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586492|高维生|110001|320304196710256136|012D0100|000101|888010000000705|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083311|240000||||
+18:51:05,178 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586493|高维生|110001|320304196710256136|012D0100|000101|888010000000706|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083312|240000||||
+18:51:05,178 INFO bat.NonReaTimeIssResDocBankDeal(176) - 010079|20170225|810000586494|高维生|110001|320304196710256136|012D0100|000101|888010000000707|20170225|01|高维生|110001|320304196710256136|10000|9600|6225565656565656||30170225|20270225|10||101019000083313|240000||||
+18:51:05,179 INFO bat.NonReaTimeIssResDocBankDeal(245) - Out NonReaTimeIssResDocBankDeal.parse()!
+18:51:05,179 INFO bat.NonReaTimeIssResDocBankDeal(126) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssResDocBankDeal
+18:51:05,218 INFO service.NonReaTimeIssResDocBankDeal(39) - Into NonReaTimeIssResDocBankDeal.service()...
+18:51:05,219 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+18:51:05,330 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+18:51:05,331 DEBUG service.NonReaTimeIssResDocBankDeal(118) - Into NonReaTimeIssResDocBankDeal.saveDetails()...
+18:51:05,357 INFO service.NonReaTimeIssResDocBankDeal(178) - 非实时出单结果银行回盘明细总数(DtlSet)为：0
+18:51:05,420 DEBUG service.NonReaTimeIssResDocBankDeal(190) - Out NonReaTimeIssResDocBankDeal.saveDetails()!
+18:51:05,468 INFO service.NonReaTimeIssResDocBankDeal(108) - Out NonReaTimeIssResDocBankDeal.service()!
+18:51:05,469 INFO bat.NonReaTimeIssResDocBankDeal(142) - Out NonReaTimeIssResDocBankDeal.run()!
+18:51:05,469 INFO bat.NonReaTimeIssResDocBankDeal(350) - 成功结束！

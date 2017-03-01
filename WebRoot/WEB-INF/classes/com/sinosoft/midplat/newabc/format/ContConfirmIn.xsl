@@ -24,12 +24,12 @@
 			
 			<!-- 柜员代码 -->
 			<xsl:choose>
-			<xsl:when test="Header/EntrustWay ='11'">
-			<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
-			</xsl:when>
-			<xsl:otherwise>
-			<TellerNo>0005</TellerNo>
-			</xsl:otherwise>
+				<xsl:when test="Header/EntrustWay ='11'">
+					<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
+				</xsl:when>
+				<xsl:otherwise>
+					<TellerNo>0005</TellerNo>
+				</xsl:otherwise>
 			</xsl:choose>
 			
 			<!-- 银行代码 -->
@@ -52,8 +52,12 @@
 			
 			<!-- 投保单号 -->
 			<ProposalPrtNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/PolicyNo" /></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/></xsl:if>
+				<xsl:if test="Header/EntrustWay = '11'">
+					<xsl:value-of select="App/Req/PolicyNo"/>
+				</xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'">
+					<xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/>
+				</xsl:if>
 			</ProposalPrtNo>
 			<!-- 试算申请顺序号 -->
 			<ApplyNo><xsl:value-of select="App/Req/ApplySerial" /></ApplyNo>

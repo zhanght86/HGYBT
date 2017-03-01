@@ -60,51 +60,86 @@ import com.sinosoft.midplat.format.Format;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.newabc.format.NonRealTimeContOutXsl;
+import com.sinosoft.midplat.newabc.format.NonRealTimeContRstOutXsl;
 import com.sinosoft.midplat.service.Service;
 import com.sinosoft.utility.ElementLis;
 import com.sinosoft.utility.ExeSQL;
 import java.lang.reflect.Constructor;
 
-public class NonRealTimeCont extends TimerTask implements XmlTag
+/**
+ * @ClassName: NonRealTimeContRst
+ * @Description: 非实时出单结果文件
+ * @author sinosoft
+ * @date 2017-2-27 下午8:12:08
+ */
+public class NonRealTimeContRst extends TimerTask implements XmlTag
 {
-	protected final Logger cLogger = Logger.getLogger(getClass());
+	//生成一个本类的日志对象
+	protected final static Logger cLogger = Logger.getLogger(NonRealTimeContRst.class);
 
 	// 子系统配置文件缓存代理。列:icbc.xml
+	//当前银行交易配置文件
 	private final XmlConf cThisConf;
+	//交易码
 	private final int cFuncFlag; // 交易代码
 	/**
 	 * 提供一个全局访问点，只在每次对账开始时初始化， 确保在该次对账处理的整个过程中日期一致性， 不受跨天(前面的处理在0点前，后面的在0点后)的影响。
 	 */
+	//交易日期
 	protected Date cTranDate;
-
+	//返回信息
 	protected String cResultMsg;
 
 	/**
 	 * 提供一个全局访问点，只在每次对账开始时重新初始化， 确保在该次对账处理的整个过程中配置一致性，
 	 * 不受配置文件自动加载的影响。也就是说，本次定时任务一旦启动， 其后配置文件的修改将会在下一次批跑时生效，不影响本次。
 	 */
+	//中间平台配置文件根节点
 	protected Element cMidplatRoot = null;
+	//当前银行交易配置文件根节点
 	protected Element cThisConfRoot = null;
+	//当前交易配置配置节点
 	protected Element cThisBusiConf = null;
-
+	//交易流水号
 	private String stranNo = null;
+	//当前日期
 	private String curDate = null;
+	// 文件日期
 	private String fileDate = null;
-
-	public NonRealTimeCont()
+	
+	/**
+	 * <p>Title: 非实时出单结果文件批量无参构造</p>
+	 * <p>Description: </p>
+	 */
+	public NonRealTimeContRst()
 	{
 		this(NewAbcConf.newInstance(), 2008);
 	}
-
-	public NonRealTimeCont(XmlConf pThisConf, int pFuncFlag)
+	
+	/**
+	 * <p>Title: 非实时出单结果文件批量有参构造</p>
+	 * <p>Description: </p>
+	 * @param pThisConf 当前银行交易配置文件
+	 * @param pFuncFlag 交易码
+	 */
+	public NonRealTimeContRst(XmlConf pThisConf, int pFuncFlag)
 	{
 		cThisConf = pThisConf;
 		cFuncFlag = pFuncFlag;
 	}
 
+	/**
+	 * @Title: getFileName
+	 * @Description: 获取文件名
+	 * @return 标准输入报文头交易流水号子节点文本
+	 * @return String
+	 * @throws
+	 */
 	protected String getFileName()
 	{
+		//获取标准输入报文头交易流水号子节点文本
 		String tTranNo = sendRequest().getRootElement().getChild("Head").getChildText("TranNo");
+		//返回交易流水号
 		return tTranNo;
 	}
 
@@ -116,7 +151,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 
 	protected Element getHead()
 	{
-		cLogger.info("Into NonRealTimeCont.getHead()...");
+		cLogger.info("Into NonRealTimeContRst.getHead()...");
 
 		Element mTranDate = new Element(TranDate);
 		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
@@ -146,15 +181,17 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 		mHead.addContent(mTranNo);
 		mHead.addContent(mFuncFlag);
 
-		cLogger.info("Out NonRealTimeCont.getHead()!");
+		cLogger.info("Out NonRealTimeContRst.getHead()!");
 		return mHead;
 	}
 
 	protected void deal(String ttLocalDir)
 	{
-		cLogger.info("Into NonRealTimeCont.deal()...");
+		cLogger.info("Into NonRealTimeContRst.deal()...");
 		// 发送请求报文至核心
 		Document cInXmlDoc = sendRequest();
+		//测试
+		JdomUtil.print(cInXmlDoc);
 		try
 		{
 			// 处理核心返回报文
@@ -162,7 +199,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 
 			cLogger.info("核心返回的非实时对账结果报文：");
 			JdomUtil.print(cOutXmlDoc);
-			cOutXmlDoc = NonRealTimeContOutXsl.newInstance().getCache().transform(cOutXmlDoc);
+			cOutXmlDoc = NonRealTimeContRstOutXsl.newInstance().getCache().transform(cOutXmlDoc);
 			cLogger.info("转换后的对账结果报文：");
 			JdomUtil.print(cOutXmlDoc);
 			receive(cOutXmlDoc, ttLocalDir);
@@ -174,7 +211,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 		{
 			e.printStackTrace();
 		}
-		cLogger.info("Out NonRealTimeCont.deal()...");
+		cLogger.info("Out NonRealTimeContRst.deal()...");
 	}
 
 	/**
@@ -247,38 +284,58 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 	/**
 	 * 
 	 * sendRequest 组织核心请求报文
-	 *
-	 * @return
+	 * 发送请求报文
+	 * @return 标准请求报文
 	 */
 	private Document sendRequest()
 	{
-		cLogger.info("Into NonRealTimeCont.sendRequest()...");
+		//进入NonRealTimeContRst发送请求报文方法...
+		cLogger.info("Into NonRealTimeContRst.sendRequest()...");
+		//新建根节点
 		ElementLis TranData = new ElementLis("TranData");
+		//新建报文头节点加入到根节点
 		ElementLis Head = new ElementLis("Head", TranData);
+		//获取当前时间毫秒数8位日期
 		int date = DateUtil.get8Date(System.currentTimeMillis());
+		//获取当前日期毫秒数6位时间
 		int time = DateUtil.get6Time(System.currentTimeMillis());
+		//交易时间字符串[简单日期格式化当前日期对象]
 		String trantime = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
+		//新建交易日期节点加入到报文头节点
 		ElementLis TranDate = new ElementLis("TranDate", trantime.substring(0, 8), Head);
+		//新建交易时间节点加入到报文头节点
 		ElementLis TranTime = new ElementLis("TranTime", trantime.substring(8, 14), Head);
+		//新建交易机构代码节点加入到报文头节点
 		ElementLis TranCom = new ElementLis("TranCom", "05", Head);
+		//新建省市代码节点加入到报文头节点
 		ElementLis ZoneNo = new ElementLis("ZoneNo", "11", Head);
+		//新建银行网点节点加入到报文头节点
 		ElementLis NodeNo = new ElementLis("NodeNo", cThisBusiConf.getChildText("NodeNo"), Head);
+		//新建银行代码节点加入到报文头节点
 		ElementLis BankCode = new ElementLis("BankCode", "0102", Head);
+		//新建柜员代码节点加入到报文头节点
 		ElementLis TellerNo = new ElementLis("TellerNo", "11010102110", Head);
+		//公共函数
 		PubFun1 p = new PubFun1();
+		//获取创建16位最大号为交易流水号
 		stranNo = p.CreateMaxNo("TransNo", 16);
+		//新建交易流水号节点加入到报文头节点
 		ElementLis TranNo = new ElementLis("TranNo", stranNo, Head);
+		//新建交易码节点加入到报文头节点
 		ElementLis FuncFlag = new ElementLis("FuncFlag", cThisBusiConf.getChildText("funcFlag"), Head);// 交易代码
+		//新建报文体节点加入到根节点
 		ElementLis Body = new ElementLis("Body", TranData);
+		//新建报文
 		Document pXmlDoc = new Document(TranData);
-		cLogger.info("Out NonRealTimeCont.sendRequest()..." + cTranDate);
+		//从NonRealTimeContRst发送请求报文方法出来+交易日期
+		cLogger.info("Out NonRealTimeContRst.sendRequest()..." + cTranDate);
 		return pXmlDoc;
 	}
 
 	// 处理核心返回报文并存储在固定路径 20140911
 	private void receive(Document cOutXmlDoc, String ttLocalDir) throws Exception
 	{
-		cLogger.info("Into NonRealTimeCont.receive()..." + cTranDate);
+		cLogger.info("Into NonRealTimeContRst.receive()..." + cTranDate);
 		JdomUtil.print(cOutXmlDoc);
 
 		fileDate = String.valueOf(DateUtil.get8Date(cTranDate));
@@ -483,7 +540,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 		}
 
 		System.out.println("文件名：" + fileName);
-		cLogger.info("Out NonRealTimeCont.receive()...");
+		cLogger.info("Out NonRealTimeContRst.receive()...");
 	}
 
 	@Override
@@ -491,7 +548,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 	{
 		// TODO Auto-generated method stub
 		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
-		cLogger.info("Into NonRealTimeCont.run()...");
+		cLogger.info("Into NonRealTimeContRst.run()...");
 
 		// 清空上一次结果信息
 		cResultMsg = null;
@@ -590,7 +647,7 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 
 		cTranDate = null; // 每次跑完，清空日期
 
-		cLogger.info("Out NonRealTimeCont.run()!");
+		cLogger.info("Out NonRealTimeContRst.run()!");
 	}
 
 	// 备份月文件，比如20141201当日，系统会在目录localDir 建立/2014/201411，
@@ -654,4 +711,14 @@ public class NonRealTimeCont extends TimerTask implements XmlTag
 
 		cLogger.info("Out Balance.bakFiles()!");
 	}
+	
+	public static void main(String[] args) throws Exception {
+		cLogger.info("开始非实时出单结果传递 ...");	//没起作用，未打印
+		
+		NonRealTimeContRst pt = new NonRealTimeContRst();	//没起作用
+		pt.run();	//没起作用
+		
+		cLogger.info("结束非实时出单结果传递!");	//没起作用，未打印
+	}
+	
 }

@@ -10,7 +10,8 @@
 	<!-- 对应2个YBT操作 -->
 	<cluster id="2" count="3" />
 	<!-- 保存路径 -->
-	<SavePath>f:\</SavePath>
+	<!-- <SavePath>f:\</SavePath> -->
+	<SavePath>D:\Software\</SavePath>
 	<KeyPath>/ybttest/key/</KeyPath>
 
 	<skip>10.0.6.111</skip><!-- 跳过 -->
@@ -146,11 +147,11 @@
 		<!-- <service id="0" name="录单核保" address="http://10.0.0.193:18080/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<!-- 测试环境 -->
-		<!-- <service id="0" name="录单核保" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
-			method="service" /> -->
-		<service id="0" name="录单核保"
-			address="http://10.0.1.177:8080/ui/services/ServiceForBankInterfaceService"
+		<service id="0" name="录单核保" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" />
+		<!-- <service id="0" name="录单核保"
+			address="http://10.0.1.178:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<!-- <service id="0" name="录单核保"
 			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
@@ -162,12 +163,12 @@
 		<!-- 测试环境 -->
 		<!-- <service id="1" name="收费签单" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
-		<!-- <service id="1" name="收费签单"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="1" name="收费签单"
-			address="http://10.0.1.177:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="1" name="收费签单"
+			address="http://10.0.1.178:8080/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<!-- <service id="1" name="收费签单"
 			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />	 -->
@@ -175,31 +176,31 @@
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="3" name="保单重打"
-			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="5" name="当日撤单"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="6" name="新单日结"
-			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="7" name="单证对账"
-			address="http://10.254.254.127:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="10" name="银保犹豫期退保查询"
-			address="http://10.0.1.169:8080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="11" name="银保犹豫期退保"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="12" name="银保犹豫期退保冲正"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="13" name="银保退保查询"
-			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="14" name="银保退保"
-			address="http://10.0.1.169:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="15" name="银保退保冲正"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
@@ -209,8 +210,11 @@
 			method="service" />
 		<!-- <service id="25" name="工行试算" address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
+		<!-- <service id="20" name="非实时日终对账"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<service id="20" name="非实时日终对账"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="21" name="非实时超时对账"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
@@ -247,7 +251,7 @@
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /><!-- 测试环境 -->
 		<service id="32" name="确认续期缴费"
-			address="http://10.2.0.41:8001/services/ServiceForBankInterfaceService"
+			address="http://192.168.199.227:8080/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="33" name="确认取消续期缴费"
 			address="http://10.2.0.41:8001/services/ServiceForBankInterfaceService"
@@ -277,19 +281,19 @@
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="31" name="新农行试算结果查询"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="45" name="新农行保单查询"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="46" name="新农行保全申请状态查询"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="48" name="新农行犹豫期退保结果文件"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="49" name="新农行非实时出单结果文件"
-			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="50" name="新农行手工单出单结果文件"
 			address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService"
@@ -316,7 +320,7 @@
 			address="http://10.1.41.26:8080/lis_general_dev1/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="62" name="新农行保单详情查询"
-			address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="63" name="建行试算保险产品（寿险）"
 			address="http://10.1.41.4:8080/bugfix/services/ServiceForBankInterfaceService"
@@ -343,5 +347,14 @@
 		<!-- <service id="67" name="批量代收代付送盘"
 		address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 		method="service" /> -->
+		<service id="66" name="建行获取非实时核保状态" 
+		address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
+		method="service" />
+	    <!-- <service id="67" name="建行非实时投保交易" 
+	    address="http://192.168.199.227:8080/ui/services/ServiceForBankInterfaceService" 
+	    method="service" /> -->
+	    <service id="67" name="建行非实时投保交易" 
+	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
+	    method="service" />
 	</atomservices>
 </midplat>

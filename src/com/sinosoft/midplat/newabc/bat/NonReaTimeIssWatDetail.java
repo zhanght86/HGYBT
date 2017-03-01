@@ -12,6 +12,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.f1j.mvc.l;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -136,7 +137,7 @@ public class NonReaTimeIssWatDetail extends Balance{
 		if (null==mCharset || "".equals(mCharset)) {
 			mCharset = "GBK";
 		}
-		// 格式：保险公司代码|总记录数|总金额|成功总记录数|成功总金额
+		//格式：保险公司代码|银行代码|总记录数|总金额|
 		//文件其他内容：（明细记录）
 		//交易日期|试算申请顺序号|投保人姓名|投保人证件类型|投保人证件号码|险种编码|产品编码|投保单号|保费|个性化费率|账号|电话号码|手机号码|地址|邮政编码|附言|省市代码|网点号|
 		System.out.println(pBatIs);
@@ -191,27 +192,49 @@ public class NonReaTimeIssWatDetail extends Balance{
 			Element tTranDateEle = new Element(TranDate);
 			tTranDateEle.setText(tSubMsgs[0]);
 			
-			Element tAppName = new Element("AppntName");
-			tAppName.setText(tSubMsgs[2]);
-					
-			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
-			tProposalPrtNoEle.setText(tSubMsgs[7]);
-			
-			Element tApplyNo = new Element("ApplyNo");
-			tApplyNo.setText(tSubMsgs[1]);
-
-//			Element tContNoEle = new Element(ContNo);
-//			tContNoEle.setText(tSubMsgs[4]);
+			//非实时出单银保通不知道保单号，因此在插入 对账明细表的时候用投保单号插入保单号20141012
+			Element tAgentCom=new Element(AgentCom);
+			tAgentCom.setText(nodeNo);
 			
 			Element tContNoEle = new Element(ContNo);
 			tContNoEle.setText(tSubMsgs[7]);
-			//非实时出单银保通不知道保单号，因此在插入 对账明细表的时候用投保单号插入保单号20141012
-			Element tAgentCom=new Element(AgentCom);
-			tAgentCom.setText(tProposalPrtNoEle.getText());
+			
+			Element tApplyNoEle = new Element("ApplyNo");
+			tApplyNoEle.setText(tSubMsgs[1]);
+			
+			Element tAppNameEle = new Element("AppntName");
+			tAppNameEle.setText(tSubMsgs[2]);
+			
+			Element tIDTypeEle=new Element(IDType);
+			tIDTypeEle.setText(tSubMsgs[3]);
+			
+			Element tIDNoEle=new Element(IDNo);
+			tIDNoEle.setText(tSubMsgs[4]);
+			
+			Element tRiskCodeEle=new Element(RiskCode);
+			tRiskCodeEle.setText(tSubMsgs[5]);
+			
+			Element tProdCodeEle =new Element("ProdCode");
+			tProdCodeEle.setText(tSubMsgs[6]);
+			
+			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
+			tProposalPrtNoEle.setText(tSubMsgs[7]);
 			
 			Element tPremEle = new Element(Prem);
 			long tPremFen = NumberUtil.yuanToFen(tSubMsgs[8]);
 			tPremEle.setText(String.valueOf(tPremFen));
+			
+			Element tSpecialRateEle= new Element("SpecialRate");
+			tSpecialRateEle.setText(tSubMsgs[9]);
+			
+			Element tAccNoEle=new Element("AccNo");
+			tAccNoEle.setText(tSubMsgs[10]);
+			
+			Element tPhoneEle=new Element("Phone");
+			tPhoneEle.setText(tSubMsgs[11]);
+			
+			Element tMobileEle=new Element("Mobile");
+			tMobileEle.setText(tSubMsgs[12]);
 			
 			/*Element tContTypeEle = new Element("ContType");
 			if (!(tSubMsgs[8].trim()).endsWith("88")) {
@@ -223,13 +246,20 @@ public class NonReaTimeIssWatDetail extends Balance{
 			Element tDetailEle = new Element(Detail);
 			tDetailEle.addContent(tTranDateEle);
 			tDetailEle.addContent(tAgentCom);
-			tDetailEle.addContent(tApplyNo);
 //			tDetailEle.addContent(tTranNoEle);
-			tDetailEle.addContent(tProposalPrtNoEle);
 			tDetailEle.addContent(tContNoEle);
 			tDetailEle.addContent(tNodeNo);
-			tDetailEle.addContent(tAppName);
+			tDetailEle.addContent(tApplyNoEle);
+			tDetailEle.addContent(tAppNameEle);
+			tDetailEle.addContent(tIDTypeEle);
+			tDetailEle.addContent(tIDNoEle);
+			tDetailEle.addContent(tRiskCodeEle);
+			tDetailEle.addContent(tProdCodeEle);
+			tDetailEle.addContent(tProposalPrtNoEle);
 			tDetailEle.addContent(tPremEle);
+			tDetailEle.addContent(tSpecialRateEle);
+			tDetailEle.addContent(tPhoneEle);
+			tDetailEle.addContent(tMobileEle);
 			
 			mBodyEle.addContent(tDetailEle);
 		}
