@@ -44,12 +44,12 @@ public class File_download
 {
 	//生成一个本类的日志对象
 	protected final Logger cLogger = Logger.getLogger(getClass());
-	private String cDate;
-	private final Element cThisConf;
+	private String cDate;//
+	private final Element cThisConf;//当前交易配置节点
 	private final String cFuncFlag; // 交易代码
-	private Socket cSocket;
+	private Socket cSocket;//套接字
 	private String insu;// 保险公司编码
-	private String filename;
+	private String filename;//文件名
 	protected Element cThisBusiConf = null;
 	protected Element cThisConfRoot = null;
 
@@ -78,11 +78,14 @@ public class File_download
 	 */
 	public void getsocket() throws MidplatException
 	{
+		//农行socket
 		int abc_socket = 0;
+		//农行IP
 		String abc_ip = "";
 		try
 		{
 			System.out.println("=====哈哈哈哈=====");
+			//
 			JdomUtil.print(cThisConf);
 			Element xml_ftp = cThisConf.getChild("socket");
 			abc_ip = xml_ftp.getAttributeValue("ip");
