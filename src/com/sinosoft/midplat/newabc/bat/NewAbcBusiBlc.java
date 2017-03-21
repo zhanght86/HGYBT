@@ -50,7 +50,7 @@ public class NewAbcBusiBlc extends Balance
 	}
 
 	/**
-	 * 获取文件名
+	 * 获取上传下载文件名
 	 * @return 
 	 */
 	protected String getFileName() throws Exception
@@ -63,7 +63,7 @@ public class NewAbcBusiBlc extends Balance
 		String fileName = "POLICY" + mBankEle.getAttributeValue("insu") + "." + DateUtil.getDateStr(cTranDate, "yyyyMMdd");
 		try
 		{
-			//
+			//上传下载银行文件
 			f.bank_dz_file();
 		}
 		catch (Exception ex)
@@ -71,6 +71,7 @@ public class NewAbcBusiBlc extends Balance
 			ex.printStackTrace();
 			throw new MidplatException(ex.getMessage());
 		}
+		//返回文件名[POLICY保险公司代码.8位交易日期字符串]
 		return fileName;
 	}
 
@@ -79,43 +80,64 @@ public class NewAbcBusiBlc extends Balance
 	 */
 	public void run()
 	{
+		//设置当前线程名称为下一个交易日志号 
 		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
+		//Into NewAbcBusiBlc.run()...
 		this.cLogger.info("Into NewAbcBusiBlc.run()...");
-
+		
+		//返回信息置为空
 		this.cResultMsg = null;
 		try
 		{
+			//获取中间平台配置文件根节点
 			this.cMidplatRoot = MidplatConf.newInstance().getConf().getRootElement();
+			//获取当前银行交易配置文件根节点
 			this.cThisConfRoot = this.cThisConf.getConf().getRootElement();
+			//获取当前交易配置节点[选择当前银行交易配置文件根节点下business子节点funcFlag属性为 交易码的单个节点]
 			this.cThisBusiConf = ((Element) XPath.selectSingleNode(this.cThisConfRoot, "business[funcFlag='" + this.cFuncFlag + "']"));
-
+			//获取下一日期[当前交易配置节点下nextDate子节点文本]
 			String nextDate = this.cThisBusiConf.getChildText("nextDate");
-
+			
+			//交易日期为空
 			if (this.cTranDate == null)
+				//下一日期非空且为Y
 				if ((nextDate != null) && ("Y".equals(nextDate)))
 				{
+					//交易日期赋值为当前日期对象
 					this.cTranDate = new Date();
+					//交易日期赋值为昨天
 					this.cTranDate = new Date(this.cTranDate.getTime() - 86400000L);
 				}
 				else
 				{
+					//交易日期赋值为当前日期对象
 					this.cTranDate = new Date();
 				}
+			//新建根节点
 			Element tTranData = new Element("TranData");
+			//新建标准输入报文
 			Document tInStdXml = new Document(tTranData);
-
+			
+			//获取标准输入报文头
 			Element tHeadEle = getHead();
+			//根节点加入标准输入报文头
 			tTranData.addContent(tHeadEle);
 			try
 			{
+				//获取上传下载文件名
 				String ttFileName = getFileName();
+				//FileName = 上传下载文件名
 				this.cLogger.info("FileName = " + ttFileName);
+				//本地目录字符串
 				String ttLocalDir = this.cThisBusiConf.getChildTextTrim("localDir");
+				//localDir = 本地目录字符串
 				this.cLogger.info("localDir = " + ttLocalDir);
+				//输入字节流
 				InputStream ttBatIns = null;
-
+				//本地目录上传下载文件输入流
 				ttBatIns = new FileInputStream(ttLocalDir + ttFileName);
-
+				
+				//
 				Element ttBodyEle = parse(ttBatIns);
 				tTranData.addContent(ttBodyEle);
 			}
@@ -170,22 +192,32 @@ public class NewAbcBusiBlc extends Balance
 		this.cLogger.info("Out NewAbcBusiBlc.run()!");
 	}
 
+	/**
+	 * 转换文件输入流为报文体
+	 * @return pBatIs 本地目录上传下载文件输入流
+	 * @return 标准输入报文体
+	 */
 	protected Element parse(InputStream pBatIs) throws Exception
 	{
+		//进入NewAbcBusiBlc转换文件输入流为报文体方法...
 		cLogger.info("Into NewAbcBusiBlc.parse()...");
-
+		
+		//字符集[当前交易配置节点下字符集子节点文本]
 		String mCharset = cThisBusiConf.getChildText(charset);
+		//字符集非空、空字符串
 		if (null == mCharset || "".equals(mCharset))
 		{
+			//置为GBK
 			mCharset = "GBK";
 		}
 		// 格式：保险公司代码|总记录数|总金额|成功总记录数|成功总金额
 		// 文件其他内容：（明细记录）
 		// 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|保单状态
-
+		//输出本地目录上传下载文件输入流
 		System.out.println(pBatIs);
+		//创建GBK字符集的 InputStreamReader,使用默认大小输入缓冲区的缓冲字符输入流
 		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(pBatIs, mCharset));
-
+		//缓冲字符输入流读取一行根据匹配给定的正则表达式来拆分此字符串。
 		String[] mSubMsgs = mBufReader.readLine().split("\\|", -1);
 		// 把成功的记录独取出来发给核心
 		Element mCountEle = new Element(Count);
@@ -280,7 +312,7 @@ public class NewAbcBusiBlc extends Balance
 	}
 
 	/**
-	 * 获取报文头
+	 * 获取标准输入报文头
 	 */
 	protected Element getHead()
 	{

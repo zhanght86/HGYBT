@@ -28,8 +28,15 @@ import org.jdom.Element;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 
+/**
+ * @ClassName: AbcMidplatUtil
+ * @Description: 农行中间平台处理类
+ * @author sinosoft
+ * @date 2017-3-2 下午2:29:07
+ */
 public class AbcMidplatUtil implements AbcXmlTag {
 
+	//生成一个本类的日志对象
 	private final static Logger cLogger = Logger.getLogger(AbcMidplatUtil.class);
 	
 	//将字符串按照指定的分隔字符进行拆分,返回从指定序号的分隔符到前一个分隔符之间的字符串
@@ -77,7 +84,7 @@ public class AbcMidplatUtil implements AbcXmlTag {
 	}
 
 	/**
-	 * 
+	 * 字符串8位长度
 	 * @param strValue 字符串值
 	 * @param intLength  长度
 	 * @param tmp  临时
@@ -87,6 +94,7 @@ public class AbcMidplatUtil implements AbcXmlTag {
 		//int strLen = strValue.length();  
 		//字符串值长度
 		int strLen = strValue.getBytes().length;
+		//字符串返回值
 		String strReturn = "";
 		//字符串值长度大于指定长度
 		if (strLen > intLength)

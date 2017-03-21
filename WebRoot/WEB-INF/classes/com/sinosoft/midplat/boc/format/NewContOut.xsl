@@ -3,7 +3,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java" 
 	exclude-result-prefixes="java">
 <xsl:template match="TranData">
-<InsuReq><!-- 中国银行保费试算响应报文 -->
+<InsuReq>
   <Main>
     <TranDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Date()"/></TranDate>
     <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur6Time()"/></TranTime>
@@ -20,7 +20,7 @@
     <ResultCode>0001</ResultCode>
     </xsl:if>
     <ResultInfo><xsl:value-of select="Head/Desc"/></ResultInfo>
-    <ApplyNo><xsl:value-of select="Body/ContNo"/></ApplyNo>
+    <ApplyNo><xsl:value-of select="substring(Body/ProposalPrtNo,1,13)"/></ApplyNo>
     <Premium><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/Prem)"/></Premium>
   </Main>
 </InsuReq>

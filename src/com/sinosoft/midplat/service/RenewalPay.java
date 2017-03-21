@@ -1,71 +1,54 @@
 package com.sinosoft.midplat.service;
 
-import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
 
-import com.sinosoft.lis.db.ContDB;
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
-import com.sinosoft.midplat.common.RuleParser;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
-import com.sinosoft.utility.ExeSQL;
 
 public class RenewalPay extends ServiceImpl {
 	public RenewalPay(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
 	
-	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into RenewalPay.service()...");
 		cInXmlDoc = pInXmlDoc;
 		
-		
+		Element mRootEle = cInXmlDoc.getRootElement();
+		@SuppressWarnings("unused")
+		Element mHeadEle = mRootEle.getChild(Head);
+		Element mBodyEle = mRootEle.getChild(Body);
+		String mProposalPrtNo=mBodyEle.getChildText(ProposalPrtNo);
 		try {
 			cTranLogDB = insertTranLog(cInXmlDoc);
-			Element mRootEle = cInXmlDoc.getRootElement();
-			Element mHeadEle = (Element) mRootEle.getChild(Head).clone();
-			Element mBodyEle = mRootEle.getChild(Body);
-			
-			//中行续期缴费交易 直接组织报文返回给银行   
-			
-			Document mOutStdXml = null;			
-			Element tInsut = new Element("Insut");
-			Element tMaina = new Element("Maina");
-			Element tResultCode = new Element("ResultCode");
-			Element tResultInfo = new Element("ResultInfo");
-			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
-			.append(" and TranDate=").append(cTranLogDB.getTranDate())
-			.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())
-			.append(" and ContNo=").append(cTranLogDB.getContNo())
-			.append(" and TranCom='").append(cTranLogDB.getTranCom()).append('\'')
-			.toString();
-			ExeSQL tExeSQL = new ExeSQL();
-		
-			cLogger.info("状态为："+tExeSQL.getOneValue(tSqlStr));
-			if ("1".equals(tExeSQL.getOneValue(tSqlStr)))
-			{
-				tMaina.addContent(tResultCode.setText("0001"));
-				tMaina.addContent(tResultInfo.setText("已经成功做过续期缴费交易，不能重复操作"));
+			cOutXmlDoc=new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_RenewalPay).call(cInXmlDoc);
+			Element mOutRootEle=cOutXmlDoc.getRootElement();
+			Element mOutHeadEle=mOutRootEle.getChild(Head);
+			long tUsedTime=System.currentTimeMillis()-mStartMillis;
+			int tTimeOut=60;
+			try {
+				tTimeOut=Integer.parseInt(cThisBusiConf.getChildText(timeout));
+			} catch (Exception e) {
+				cLogger.error("未配置超时时间,或配置有误,使用默认超时时间:"+tTimeOut+"s",e);
 			}
-			else{
-				tMaina.addContent(tResultCode.setText("0000"));
-				tMaina.addContent(tResultInfo.setText("交易成功"));
+			if(tUsedTime>tTimeOut*1000){
+				cLogger.error("处理超时,tUsedTime="+tUsedTime/1000.0+"s; tTimeOut="+tTimeOut+"s; 投保单号="+mProposalPrtNo);
+				rollback();
+				throw new MidplatException("系统异常，请稍后再试!");
 			}
-			tInsut.addContent(tMaina);
-			mOutStdXml = new Document(tInsut);
-			cOutXmlDoc = mOutStdXml;
-			
+			if(CodeDef.RCode_ERROR==Integer.parseInt(mOutHeadEle.getChildText(Flag))){
+				throw new MidplatException(mOutHeadEle.getChildText(Desc));
+			}
 		} catch (MidplatException ex) {
 			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
@@ -74,9 +57,9 @@ public class RenewalPay extends ServiceImpl {
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		if (null != cTranLogDB) {
-			Element tMainaEle = cOutXmlDoc.getRootElement().getChild("Maina");
-			cTranLogDB.setRCode(tMainaEle.getChildText("ResultCode"));
-			cTranLogDB.setRText(tMainaEle.getChildText("ResultInfo"));
+			Element tMainaEle = cOutXmlDoc.getRootElement().getChild(Head);
+			cTranLogDB.setRCode(tMainaEle.getChildText(Flag));
+			cTranLogDB.setRText(tMainaEle.getChildText(Desc));
 			long tCurMillis = System.currentTimeMillis();
 			cTranLogDB.setUsedTime((int)(tCurMillis-mStartMillis)/1000);
 			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -89,6 +72,7 @@ public class RenewalPay extends ServiceImpl {
 		cLogger.info("Out RenewalPay.service()!");
 		return cOutXmlDoc;
 	}
+
 	protected TranLogDB insertTranLog(Document pXmlDoc) throws MidplatException {
 		cLogger.debug("Into ServiceImpl.insertTranLog()...");
 		
@@ -124,4 +108,26 @@ public class RenewalPay extends ServiceImpl {
 		cLogger.debug("Out ServiceImpl.insertTranLog()!");
 		return mTranLogDB;
 	}
+	
+	private void rollback() {
+		cLogger.info("Into RenewalPay.rollback()...");
+		Element tRootEle=cInXmlDoc.getRootElement();
+		Element tHeadEle=(Element) tRootEle.getChild(Head).clone();
+		Element tBodyEle=tRootEle.getChild(Body);
+		tHeadEle.getChild(ServiceId).setText(AblifeCodeDef.SID_Bank_ContRollback);
+		Element mBodyEle=new Element(Body);
+		mBodyEle.addContent((Element)tBodyEle.getChild(ProposalPrtNo).clone());
+		mBodyEle.addContent((Element)tBodyEle.getChild(ContNo).clone());
+		Element mRootEle=new Element(TranData);
+		mRootEle.addContent(tHeadEle);
+		mRootEle.addContent(mBodyEle);
+		Document mInXmlDoc=new Document(mRootEle);
+		try {
+			new CallWebsvcAtomSvc(tHeadEle.getChildText(ServiceId)).call(mInXmlDoc);
+		} catch (Exception e) {
+			cLogger.error("回滚数据异常!",e);
+		}
+		cLogger.info("Out RenewalPay.rollback()!");
+	}
+	
 }

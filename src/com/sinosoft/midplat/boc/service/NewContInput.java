@@ -30,7 +30,6 @@ public class NewContInput extends ServiceImpl {
 	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
-		//Into NewContInput.service()...
 		cLogger.info("Into NewContInput.service()...");
 		cInXmlDoc = pInXmlDoc;
 		
@@ -177,16 +176,25 @@ public class NewContInput extends ServiceImpl {
 	private ContDB getContDB() {
 		cLogger.debug("Into NewContInput.getContDB()...");
 		
+		//标准输入报文体节点
 		Element mInBodyEle = cInXmlDoc.getRootElement().getChild(Body);
+		//标准输入报文体险种节点
 		Element mInRiskEle = mInBodyEle.getChild(Risk);
 		
+		//标准输出报文体节点
 		Element mOutBodyEle = cOutXmlDoc.getRootElement().getChild(Body);
+		//标准输出报文体投保人节点
 		Element mOutAppntEle = mOutBodyEle.getChild(Appnt);
+		//标准输出报文体被保人节点
 		Element mOutInsuredEle = mOutBodyEle.getChild(Insured);
 		//前面已经做排序了，第一个节点就是主险信息
+		//标准输出报文体主险种节点
 		Element mOutMainRiskEle = mOutBodyEle.getChild(Risk);	
 		
+		//新建保单数据库操作类实例
 		ContDB mContDB = new ContDB();
+		/**设置记录号为下个保单记录号、保单类型、保单号、投保单(印刷)号、产品号、交易机构、
+		 * 交易网点、代理机构、代理机构名称、代理人、代理人姓名、管理机构、投保人客户号、**/
 		mContDB.setRecordNo(NoFactory.nextContRecordNo());
 		mContDB.setType(AblifeCodeDef.ContType_Bank);
 		mContDB.setContNo(mOutBodyEle.getChildText(ContNo));

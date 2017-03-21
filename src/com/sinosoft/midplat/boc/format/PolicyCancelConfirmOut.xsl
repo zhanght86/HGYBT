@@ -3,7 +3,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java" exclude-result-prefixes="java">
 	<xsl:output indent="yes"/>
 <xsl:template match="TranData">
-<InsuReq><!-- 中国银行退保\满期给付确认响应报文 -->
+<InsuReq>
   <Main>
     <TranDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Date()"/></TranDate>
     <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur6Time()"/></TranTime>

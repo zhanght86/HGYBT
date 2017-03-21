@@ -48,7 +48,7 @@ public class ContRePrintBoc extends ServiceImpl {
 		cLogger.info("第一次重打的单证号:"+motherno1);
 		//如果motherno2为空 则说明没有重打过，则取签单时候的单证号
 		if(motherno1.equals("")){
-			String sql2 = "select otherno from tranlog where trancom = '"+mTranCom+"' and ProposalPrtNo = '"+mProposalPrtNo+"' and funcflag = '101' and rtext= '交易成功！'";
+			String sql2 = "select otherno from tranlog where trancom = '"+mTranCom+"' and ProposalPrtNo = '"+mProposalPrtNo+"' and funcflag = '1014' and rtext= '交易成功！'";
 			String motherno = dExeSQL.getOneValue(sql2);
 			cLogger.info("没有重打过此保单，签单的单证号:"+motherno);
 			mBodyEle.addContent(OldContPrtNo.setText(motherno));
@@ -115,7 +115,7 @@ public class ContRePrintBoc extends ServiceImpl {
 			ContSchema tContSchema = mContSet.get(1);
 			
 			//add by zhj 网点与权限 添加代理   
-			cInXmlDoc = authority(cInXmlDoc);
+//			cInXmlDoc = authority(cInXmlDoc);
 			//add by zhj 网点与权限 添加代理end 
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContRePrint).call(cInXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();

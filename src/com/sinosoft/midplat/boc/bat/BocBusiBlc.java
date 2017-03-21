@@ -59,8 +59,8 @@ public class BocBusiBlc extends Balance {
 			}
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element("AgentCom");
-						tNodeNoEle.setText(tLineMsg.substring(20, 25));
+						Element tNodeNoEle = new Element("NodeNo");
+						tNodeNoEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);

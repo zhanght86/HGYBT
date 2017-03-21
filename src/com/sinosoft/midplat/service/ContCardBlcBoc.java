@@ -28,7 +28,7 @@ public class ContCardBlcBoc extends ServiceImpl {
 		
 		try {
 			cTranLogDB = insertTranLog(cInXmlDoc);
-			cInXmlDoc = authority(cInXmlDoc);
+//			cInXmlDoc = authority(cInXmlDoc);
 			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
 				.append(" and TranDate=").append(cTranLogDB.getTranDate())
 				.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())

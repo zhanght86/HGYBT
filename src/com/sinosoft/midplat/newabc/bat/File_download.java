@@ -44,14 +44,14 @@ public class File_download
 {
 	//生成一个本类的日志对象
 	protected final Logger cLogger = Logger.getLogger(getClass());
-	private String cDate;//
-	private final Element cThisConf;//当前交易配置节点
+	private String cDate;//交易日期
+	private final Element cThisConf;//当前银行交易配置文件
 	private final String cFuncFlag; // 交易代码
 	private Socket cSocket;//套接字
 	private String insu;// 保险公司编码
 	private String filename;//文件名
-	protected Element cThisBusiConf = null;
-	protected Element cThisConfRoot = null;
+	protected Element cThisBusiConf = null;//当前交易配置节点
+	protected Element cThisConfRoot = null;//当前银行交易配置文件根节点
 
 	/**
 	 * 
@@ -78,38 +78,51 @@ public class File_download
 	 */
 	public void getsocket() throws MidplatException
 	{
-		//农行socket
+		//农行端口
 		int abc_socket = 0;
 		//农行IP
 		String abc_ip = "";
 		try
 		{
+			//=====哈哈哈哈=====
 			System.out.println("=====哈哈哈哈=====");
-			//
+			//将当前银行交易配置文件打印到控制台， GBK编码，缩进3空格
 			JdomUtil.print(cThisConf);
+			//获取当前银行交易配置文件socket子节点
 			Element xml_ftp = cThisConf.getChild("socket");
+			//获取农行IP[socket节点下ip属性值]
 			abc_ip = xml_ftp.getAttributeValue("ip");
+			//配置文件IP:农行IP
 			System.out.println("配置文件IP:" + abc_ip);
+			//农行端口[socket节点下port属性值]
 			abc_socket = Integer.parseInt(xml_ftp.getAttributeValue("port"));
+			//配置文件Socket:农行端口
 			System.out.println("配置文件Socket:" + abc_socket);
+			//新建套接字[农行IP,农行端口]
 			cSocket = new Socket(abc_ip, abc_socket);// 10.136.80.52
+			//启用带有60000毫秒超时值的 SO_TIMEOUT
 			cSocket.setSoTimeout(60000);// 设置超时时间
 		}
-		catch (UnknownHostException e)
+		catch (UnknownHostException e)//指示主机 IP 地址无法确定而抛出的异常
 		{
+			//打印堆栈跟踪 
 			e.printStackTrace();
+			//连接银行端异常!ip地址:农行IP端口号:农行端口
 			cLogger.info("连接银行端异常!ip地址:" + abc_ip + "端口号:" + abc_socket);
+			//连接银行端异常!
 			throw new MidplatException("连接银行端异常!");
 		}
 		catch (IOException e)
 		{
+			//连接银行端超时!
 			cLogger.info("连接银行端超时!" + e);
+			//连接银行端超时!
 			throw new MidplatException("连接银行端超时!");
 		}
 	}
 
 	/**
-	 * 
+	 * 获取文件上传下载非标准输入报文
 	 * @param cs_way
 	 *            传输方式 0: 上传 1: 下载
 	 * @param filetype
@@ -122,21 +135,40 @@ public class File_download
 	 */
 	public Document getxml(String cs_way, String filetype, String filename, String filelength)
 	{
+		//新建非标准输入报文根节点
 		Element root = new Element("ABCB2I");
+		//新建非标准输入报文头
 		Element head = new Element("Header");
+		//非标准输入报文根节点加入报文头节点
 		root.addContent(head);
+		//新建银行交易流水号节点
 		Element mSerialNo = new Element("SerialNo"); // 银行交易流水号
+		//新建保险公司流水号节点
 		Element mInsuSerial = new Element("InsuSerial"); // 保险公司流水号
+		//新建交易日期节点
 		Element mTransDate = new Element("TransDate"); // 交易日期
+		//新建交易时间节点
 		Element mTransTime = new Element("TransTime"); // 交易时间
+		//新建银行代码节点
 		Element mBankCode = new Element("BankCode"); // 银行代码
+		//新建保险公司代码节点
 		Element mCorpNo = new Element("CorpNo"); // 保险公司代码
+		//新建交易编码节点
 		Element mTransCode = new Element("TransCode"); // 交易编码
+		//新建交易发起方节点
 		Element mTransSide = new Element("TransSide"); // 交易发起方
+		//新建委托方式节点
 		Element mEntrustWay = new Element("EntrustWay"); // 委托方式
+		//新建省市代码节点
 		Element mProvCode = new Element("ProvCode"); // 省市代码
+		//新建网点号节点
 		Element mBranchNo = new Element("BranchNo"); // 网点号
-		Element mTlid = new Element("Tlid"); // 网点号
+		//新建柜员节点
+		Element mTlid = new Element("Tlid"); // 柜员
+		/**
+		 * 非标准输入报文头加入银行交易流水号、保险公司流水号、交易日期、交易时间、银行代码、
+		 * 保险公司代码、交易编码、交易发起方、委托方式、省市代码、网点号、柜员节点
+		 * */
 		head.addContent(mSerialNo);
 		head.addContent(mInsuSerial);
 		head.addContent(mTransDate);
@@ -149,28 +181,52 @@ public class File_download
 		head.addContent(mProvCode);
 		head.addContent(mBranchNo);
 		head.addContent(mTlid);
+		//返回一个伪随机数，它是取自此随机数生成器序列的、在 0（包括）和9999（不包括）之间均匀分布的 int 
 		int t = new Random().nextInt(9999);
+		//随机数是：伪随机数
 		System.out.println("随机数是：" + t);
+		//分配 Date 对象并初始化此对象，以表示分配它的时间（精确到毫秒）
 		Date d = new Date();
+		//用给定的模式和默认语言环境的日期格式符号构造 SimpleDateFormat
+		//8位日期字符串
 		String date = new SimpleDateFormat("yyyyMMdd").format(d);
+		//6位时间字符串
 		String time = new SimpleDateFormat("HHmmss").format(d);
+		//交易号[8位日期字符串+6位时间字符串+伪随机数]
 		String trans_no = date + time + String.valueOf(t);
+		//保险公司流水号节点设置文本为交易号
 		mInsuSerial.setText(trans_no);
+		//交易日期节点设置文本为8位日期字符串
 		mTransDate.setText(date);
+		//交易时间节点设置文本为6位时间字符串
 		mTransTime.setText(time);
+		//银行代码节点设置文本为03
 		mBankCode.setText("03");
+		//保险公司代码节点设置文本为保险公司编码
 		mCorpNo.setText(insu);
+		//交易编码节点设置文本为1017[文件上传下载]
 		mTransCode.setText("1017");
+		//交易发起方节点设置文本为0[保险公司]
 		mTransSide.setText("0");
+		//新建非标准输入报文体
 		Element mApp = new Element("App");
+		//非标准输入报文根节点加入报文体节点
 		root.addContent(mApp);
+		//新建非标准输入请求报文节点
 		Element body = new Element("Req");
+		//非标准输入报文体加入输入请求报文节点
 		mApp.addContent(body);
+		//新建传送方式节点
 		Element mTransFlag = new Element("TransFlag"); // 传送方式
+		//新建文件类型节点
 		Element mFileType = new Element("FileType"); // 文件类型
+		//新建文件名称节点
 		Element mFIleName = new Element("FileName");// 文件名称
+		//新建文件长度节点
 		Element mFileLen = new Element("FileLen"); // 文件长度
+		//新建文件修改时间戳节点
 		Element FileTimeStamp = new Element("FileTimeStamp");// 文件修改时间戳
+		/**非标准输入请求报文节点加入传送方式[传输方式字符串]、文件类型[文件类型字符串]、文件名称[文件名字字符串]、文件长度[文件长度字符串]、文件修改时间戳[简单日期格式化当前日期对象]**/
 		body.addContent(mTransFlag);
 		body.addContent(mFileType);
 		body.addContent(mFIleName);
@@ -182,41 +238,70 @@ public class File_download
 		// mFileLen.setText(String.valueOf(filelength));
 		mFileLen.setText(filelength);
 		FileTimeStamp.setText(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		//新建非标准输入报文
 		Document doc = new Document(root);
+		//返回非标准输入报文
 		return doc;
 	}
 
+	/**
+	 * @Title: receive
+	 * @Description: 接收文件到本地路径
+	 * @param mFilePath 保存的本地路径
+	 * @return
+	 * @throws Exception
+	 * @return String
+	 * @throws
+	 */
 	public String receive(String mFilePath) throws Exception
 	{
+		//Into File_download.receive()...
 		cLogger.info("Into File_download.receive()...");
+		//输出字节流
 		OutputStream ous = null;
+		//接收标志
 		String js_flag = "0";// 接收是否成功标志 0 -成功 1 -标记
+		//新建文件对象[保存的本地路径]
 		File f = new File(mFilePath);
+		//对账文件存在
 		if (f.exists())
 		{
+			//文件已经存在,先删除掉!
 			cLogger.info("文件已经存在,先删除掉!");
+			// 删除保存本地路径表示的文件
 			f.delete();
 		}
-
+		
+		//无限循环
 		while (true)
 		{
+			//新建标志字节数组
 			byte[] flag_byte = new byte[1];
-
+			
+			//读取全文[标志字节数组,套接字输入流]完毕
 			if (readFull(flag_byte, cSocket.getInputStream()) == 0)
+//			if (readFull(flag_byte, cSocket.getInputStream()) == 1)
 			{
 				// IOTrans.readFull(flag_byte, cSocket.getInputStream());
+				//新建标志字符串
 				String flag = new String(flag_byte);
+				//标志字符串[报文类型]为X
 				if (flag.equals("X"))
 				{
+					//接收银行返回报文！last_baowen
 					cLogger.info("接收银行返回报文！last_baowen");
+					//接收银行的返回报文成功
 					if (last_baowen().equals("0"))
 					{ // 成功直接退出
+						//接收文件结束1
 						cLogger.info("接收文件结束1");
 						break;
 					}
 					else
 					{ // 失败了，也要退出重来
+						//接收标志置为1[标记失败]
 						js_flag = "1";
+						//关闭套接字
 						cSocket.close();// 失败了关闭socket
 						break;
 					}
@@ -224,27 +309,40 @@ public class File_download
 				else
 				{
 					// 首次读取12位文件总长度
+					//新建12位标志字节数组
 					byte[] flag_byte11 = new byte[11];
 
+					//读取全文[12位标志字节数组,套接字输入流]失败
 					if (readFull(flag_byte11, cSocket.getInputStream()) != 0)
 					{
+						//返回1[失败]
 						return "1";
 					}
 
+					//新建文件长度字符串
 					String file_length = new String(flag_byte11);
+					//得出文件总长度：文件长度字符串
 					cLogger.info("得出文件总长度：" + file_length);
-
+					
+					//获取套接字输出流
 					ous = cSocket.getOutputStream();
+					// 将 b.length 个字节从字节数组[0000]写入此输出流
 					ous.write("0000".getBytes());
+					//刷新套接字输出流并强制写出所有缓冲的输出字节
 					ous.flush();
+					//接收长度[文件长度]
 					int receive_length = Integer.parseInt(file_length);// 接收是否成功标志
 																		// 0 -成功
 																		// 1 -标记
+					//接收标志为成功
 					while (js_flag.equals("0"))
 					{
+						//接收文件[接收标志,保存的本地路径,接收长度]成功
 						if (receive_file(js_flag, mFilePath, receive_length).equals("0"))
 						{
+							//对账文件接收完了....continue！
 							cLogger.info("对账文件接收完了....continue！");
+							//接收长度置为1
 							receive_length = 1;
 							// continue;
 							// break;
@@ -267,75 +365,125 @@ public class File_download
 		return null;
 	}
 
+	/**
+	 * @Title: receive_file
+	 * @Description: 接收文件
+	 * @param flag 接收标志
+	 * @param mFilePath 保存的本地路径
+	 * @param receivelength 接收长度
+	 * @return
+	 * @throws MidplatException
+	 * @throws IOException
+	 * @return String
+	 * @throws
+	 */
 	public String receive_file(String flag, String mFilePath, int receivelength) throws MidplatException, IOException
 	{
+		//正在接收文件中……
 		cLogger.info("正在接收文件中……");
+		//flag……接收标志   mFilePath....保存的本地路径
 		cLogger.info("flag……" + flag + "   mFilePath...." + mFilePath);
+		//输出字节流
 		OutputStream ous = null;
+		//文件输出字节流
 		FileOutputStream tFos = null;
+		//长度
 		int length = 0;
+		//接收包次数
 		int i = 1;// 循环接收包次数
+		//接收标志[默认0:成功]
 		String js_flag = "0";// 接收是否成功标志 0 -成功 1 -标记
 
 		try
 		{
+			//开始接受长度：接收长度
 			cLogger.info("开始接受长度：" + receivelength);
+			//接收长度非0
 			while (receivelength > 0)
 			{
+				//1位标记字节数组
 				byte[] flag_byte = new byte[1];
-
+				
+				//读取全文[1位标记字节数组,套接字输入流]成功
 				if (readFull(flag_byte, cSocket.getInputStream()) == 0)
 				{
 					// IOTrans.readFull(flag_byte, cSocket.getInputStream());
+					//新建首个标志字符串[1位标记字节数组:报文类型]
 					String firstflag = new String(flag_byte);
+					//首个标志字符串为X
 					if (firstflag.equals("X"))
 					{
+						//接收银行返回报文！last_baowen
 						cLogger.info("接收银行返回报文！last_baowen");
+						//接收银行的返回报文成功
 						if (last_baowen().equals("0"))
 						{ // 成功直接退出
+							//接收文件结束2
 							cLogger.info("接收文件结束2");
 							break;
 						}
 						else
 						{ // 失败了，也要退出重来
+							//接收标志置为标记
 							js_flag = "1";
+							//关闭套接字
 							cSocket.close();// 失败了关闭socket
 							break;
 						}
 					}
 					else
 					{
+						//12位长度字节数组
 						byte[] length_byte = new byte[11];
+						//获取套接字输入字节流
 						InputStream ins = cSocket.getInputStream();
 						// IOTrans.readFull(length_byte, ins);
+						//读取全文[12位长度字节数组,套接字输入字节流]失败
 						if (readFull(length_byte, ins) != 0)
 						{
+							//返回1[失败]
 							return "1";
 						}
+						//新建长度字符串[12位长度字节数组]
 						String length_str = flag + new String(length_byte);
+						//length_str是这个：长度字符串
 						cLogger.info("length_str是这个：" + length_str);
+						//长度[长度字符串数值]
 						length = Integer.parseInt(length_str);
+						//第i次包接收文件长度:长度
 						cLogger.info("第" + i + "包接收文件长度:" + length);
 						// 接收成功之后返回给银行接收成功标示0000
+						//获取套接字输出流
 						ous = cSocket.getOutputStream();
+						//写入b.length个字节到套接字输出流
 						ous.write("0000".getBytes());
+						//刷新套接字输出流并强制写出所有缓冲的输出字节
 						ous.flush();
+						//循环接收包次数累加
 						i++;
 						// 真正开始接收文件
+						//文件路径:保存的本地路径
 						cLogger.info("文件路径:" + mFilePath);
 
 						try
 						{
+							//长度不大于4 MB
 							if (length <= 4096)
 							{
+								//输入字节流
 								InputStream inst = null;
+								//获取套接字输入字节流
 								inst = cSocket.getInputStream();
+								//文件字节数组[文件长度]
 								byte[] file_byte = new byte[length];
 								// IOTrans.readFull(file_byte,inst);
+								//读取全文[文件字节数组,套接字输入字节流]失败
 								if (readFull(file_byte, inst) != 0)
 								{
+									//返回1[失败]
 									return "1";
 								}
+								//
 								tFos = new FileOutputStream(mFilePath, true); // 追加写入
 								tFos.write(file_byte);
 								receivelength = receivelength - length;
@@ -442,57 +590,83 @@ public class File_download
 	public String last_baowen() throws MidplatException
 	{
 		// 包头72位
+		//新建包头字节数组
 		byte[] mHeadBytes = new byte[72];
+		//连接地址：套接字连接的端点的地址[未连接返回 null]
 		System.out.println("连接地址：" + cSocket.getRemoteSocketAddress());
 		try
 		{
 			// IOTrans.readFull(mHeadBytes, cSocket.getInputStream());
+			//读取全文[包头字节数组,套接字输入流]完毕
 			if (readFull(mHeadBytes, cSocket.getInputStream()) != 0)
 			{
+				//返回1
 				return "1";
 			}
 		}
 		catch (IOException e)
 		{
+			//读取银行72位报文头错误!
 			throw new MidplatException("读取银行72位报文头错误!");
 		}
+		//新建包头字符串[包头字节数组]
 		String package_head = new String(mHeadBytes);
 		// 2-12 位是报文体长度
+		//package_head:包头字符串
 		cLogger.info("package_head:" + package_head);
+		//包体长度[包头字符串从2处开始，直到索引 11 处的字符忽略前导空白和尾部空白]
 		int mBodyLen = Integer.parseInt(package_head.substring(2, 11).trim()); // 包体长度
+		//mBodyLen:包体长度
 		System.out.println("mBodyLen:" + mBodyLen);
+		//mBodyLen:包体长度
 		cLogger.info("mBodyLen:" + mBodyLen);
+		//新建包体字节数组
 		byte[] mBodyBytes = new byte[mBodyLen]; // 所有的body字节不带xml声明
 		// byte[] mBodyBytes = new byte[100]; //所有的body字节不带xml声明
+		//查看是否 套接字的关闭状态
 		cLogger.info("查看是否" + cSocket.isClosed());
 		try
 		{
 			// IOTrans.readFull(mBodyBytes, cSocket.getInputStream());
+			//读取全文[包体字节数组,套接字输入流]完毕
 			if (readFull(mBodyBytes, cSocket.getInputStream()) != 0)
 			{
+				//返回1
 				return "1";
 			}
 			// cSocket.shutdownInput();
 			// cLogger.info("解密开始:============================");
 			// String axx = AES.Decrypt(new String(mBodyBytes,"UTF-8"));
+			//新建包体UTF-8编码字符串
 			String axx = new String(mBodyBytes, "UTF-8");
 			// cLogger.info("解密结束:============================");
 			// String axx = new String (mBodyBytes,"UTF-8");
+			//新建农行报文字符串缓冲
 			StringBuffer abc_xml = new StringBuffer();
+			//追加<?xml version="1.0" encoding="UTF-8"?>
 			abc_xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+			//追加回车换行符
 			abc_xml.append("\n");
+			//追加包体字符串
 			abc_xml.append(axx);
+			//获取农行报文缓冲字符串UTF-8编码字节数组
 			byte[] all_xml = abc_xml.toString().getBytes("UTF-8");// #
+			//采用UTF-8编码构建一个银行报文，忽略标签之间的空字符(空格、换行、制表符等)
 			Document mXmlDoc_bank = JdomUtil.build(all_xml, "UTF-8"); // #
-
+			//文件上传下载银行发送过来的报文:
 			cLogger.info("文件上传下载银行发送过来的报文:");
+			//将银行报文打印到控制台， GBK编码，缩进3空格
 			JdomUtil.print(mXmlDoc_bank);
 
+			//获取银行报文应答报文节点
 			Element body = mXmlDoc_bank.getRootElement().getChild("App").getChild("Ret");
+			//获取应答报文文件长度子节点文本数值
 			int filelength = Integer.parseInt(body.getChildText("FileLen"));
+			//获取应答报文文件名称子节点文本
 			String downfilename = body.getChildText("FileName");// 文件名字
+			//文件上传下载的文件名字：下载文件名称
 			cLogger.info("文件上传下载的文件名字：" + downfilename);
-			// String downfilename1 =downfilename.substring(0, 3);
+			 String downfilename1 =downfilename.substring(0, 3);
 			// 文件名称 文件内容
 			// POLICY$.YYYYMMDD 新保承保保单对账文件
 			// VCH*$&.YYYYMMDD 凭证对账文件
@@ -500,50 +674,54 @@ public class File_download
 			// BQAPPLY$.YYYYMMDD 保全交易申请文件
 			// INVALID$.YYYYMMDD 退保犹撤数据文件
 			// FRESULT$.YYYYMMDD 非实时出单结果文件
-			// String filedetails="";
+			 String filedetails="";
 			// 这段测试的时候再看 ---- 说文件传输的流程变了. 这个流程是返回报文,文件跟在后面。
-			// if(cFuncFlag.equals("RZDZ")){//新保承保保单对账文件（日终对账）
-			// byte[] mfileBodyBytes = new byte[filelength]; //所有的body字节不带xml声明
-			// if(readFull(mfileBodyBytes, cSocket.getInputStream())!=0){
-			// return "1";
-			// }
-			// filedetails= new String(mfileBodyBytes);
-			// cSocket.shutdownInput();
-			// String local_host=cThisConf.getChildText("localPath").trim();
-			// makeLocalBalanceFile(local_host,downfilename,filedetails);
-			// }else if(cFuncFlag.equals("YCXXCD")){//退保犹撤数据文件
-			// String RetCode =
-			// mXmlDoc_bank.getRootElement().getChild("Header").getChildText("RetCode");
-			// cLogger.info("退保犹撤数据文件上传返回码(000000为成功)："+RetCode);
-			// filedetails =RetCode; //犹撤信息传递返回的是银行给的错误代码
-			// }else if(cFuncFlag.equals("MYGX")){
-			// byte[] mfileBodyBytes = new byte[filelength]; //所有的body字节不带xml声明
-			// if(readFull(mfileBodyBytes, cSocket.getInputStream())!=0){
-			// return "1";
-			// }
-			// filedetails= new String(mfileBodyBytes);
-			// cSocket.shutdownInput();
-			// String local_host=SysInfo.cHome+"key/"; //证书文件路径
-			// makeLocalBalanceFile(local_host,downfilename,filedetails);
-			// }
+			 if(cFuncFlag.equals("RZDZ")){//新保承保保单对账文件（日终对账）
+			 byte[] mfileBodyBytes = new byte[filelength]; //所有的body字节不带xml声明
+			 if(readFull(mfileBodyBytes, cSocket.getInputStream())!=0){
+			 return "1";
+			 }
+			 filedetails= new String(mfileBodyBytes);
+			 cSocket.shutdownInput();
+			 String local_host=cThisConf.getChildText("localPath").trim();
+			 makeLocalBalanceFile(local_host,downfilename,filedetails);
+			 }else if(cFuncFlag.equals("YCXXCD")){//退保犹撤数据文件
+			 String RetCode =
+			 mXmlDoc_bank.getRootElement().getChild("Header").getChildText("RetCode");
+			 cLogger.info("退保犹撤数据文件上传返回码(000000为成功)："+RetCode);
+			 filedetails =RetCode; //犹撤信息传递返回的是银行给的错误代码
+			 }else if(cFuncFlag.equals("MYGX")){
+			 byte[] mfileBodyBytes = new byte[filelength]; //所有的body字节不带xml声明
+			 if(readFull(mfileBodyBytes, cSocket.getInputStream())!=0){
+			 return "1";
+			 }
+			 filedetails= new String(mfileBodyBytes);
+			 cSocket.shutdownInput();
+			 String local_host=SysInfo.cHome+"key/"; //证书文件路径
+			 makeLocalBalanceFile(local_host,downfilename,filedetails);
+			 }
+			//关闭套接字
 			cSocket.close();// 接到数据之后将socket通讯关闭
 
 		}
-		catch (IOException e)
+		catch (IOException e)//文件操作异常
 		{
 			e.printStackTrace();
+			//返回1[失败]
 			return "1";
 		}
-		catch (Exception e)
+		catch (Exception e)//程序异常
 		{
 			e.printStackTrace();
+			//返回1[失败]
 			return "1";
 		}
+		//返回0[成功]
 		return "0";
 	}
 
 	/**
-	 * 
+	 * 发送文件上传下载非标准输出报文和文件内容
 	 * @param pOutNoStd
 	 *            发送给银行的报文
 	 * @param file
@@ -553,53 +731,83 @@ public class File_download
 	 */
 	public void send(Document pOutNoStd, String file) throws Exception
 	{
+		//进入File_download发送文件上传下载非标准输出报文和文件内容方法...
 		cLogger.info("Into File_download.send()...");
 
 		// cLogger.info("发送给银行的对账报文file:"+file);
+		//将文件上传下载非标准输出报文打印到控制台， GBK编码，缩进3空格
 		JdomUtil.print(pOutNoStd);
 
 		// String xmlStr = JdomUtil.toString(pOutNoStd);
+		//文件上传下载非标准输出报文保持原格式，忽略声明中的编码后的字符串
 		String xmlStr = JdomUtil.toString(pOutNoStd);
 		// System.out.println("xxxxxssss:"+xmlStr);
 		// xmlStr=xmlStr.trim();
 		// System.out.println("xxxxxssss:"+xmlStr);
 		// xmlStr=xmlStr.replace('\r', ' ');
+		//xxxxxssss:文件上传下载非标准输出报文字符串
 		System.out.println("xxxxxssss:" + xmlStr);
+		//通过用空格 替换文件上传下载非标准输出报文字符串中出现的所有 回车换行 得到新报文字符串
 		xmlStr = xmlStr.replace('\n', ' ');
+		//xxxxxssss:新文件上传下载非标准输出报文字符串
 		System.out.println("xxxxxssss:" + xmlStr);
+		//返回新文件上传下载非标准输出报文字符串的子字符串
 		xmlStr = xmlStr.substring(xmlStr.indexOf("<ABCB2I>"));
 		// cLogger.info("给银行的xml字符串："+xmlStr);
-
+		//开始加密报文
 		cLogger.info("开始加密报文");
 		// xmlStr=AES.rpadEncrypt(xmlStr, ' ');
 		// String endxmlStr=AES.Encrypt(xmlStr);
+		//最终文件上传下载非标准输出报文字符串
 		String endxmlStr = xmlStr; // 不加密;
+		//使用平台的默认字符集将文件上传下载非标准输出报文字符串 编码为 二进制 序列，并将结果存储到一个新的 字节 数组中
 		byte[] outBytes = endxmlStr.getBytes();
+		//加密报文结束!
 		cLogger.info("加密报文结束!");
-
+		
+		//生成73位报文头:
 		cLogger.info("生成73位报文头:");
+		//包头字符串[字符串8位长度]
 		String sHeadBytes = AbcMidplatUtil.lpad(String.valueOf(outBytes.length), 8, '0');
+		//包头字符串[73字节:报文类型+版本号+数据包长度+公司代码+(加密标示+加密算法+数据压缩标志+数据压缩算法+摘要算法+摘要+预留字段)]
 		sHeadBytes = "X1.0" + sHeadBytes + insu + "    00000                                       000000000";
+		//使用平台的默认字符集将包头字符串 编码为二进制 序列，并将结果存储到一个新的 字节数组中
 		byte array[] = sHeadBytes.getBytes();
+		//生成73位报文头结束
 		cLogger.info("生成73位报文头结束");
+		//发送给银行的报文头为：包头字符串
 		cLogger.info("发送给银行的报文头为：" + sHeadBytes);
 
+		//使用平台的默认字符集将对账文件内容 编码为 二进制 序列，并将结果存储到一个新的 字节数组中
 		byte[] file_byte = file.getBytes();
+		//发送报文头长度：包头字节数组长度
 		System.out.println("发送报文头长度：" + array.length);
+		//发送报文体长度：文件上传下载非标准输出报文字节数组长度
 		System.out.println("发送报文体长度：" + outBytes.length);
+		//发送文件长度：对账文件内容字节数组长度
 		System.out.println("发送文件长度：" + file_byte.length);
+		//输出字节流
 		OutputStream ous = null;
+		//返回新文件上传下载非标准输出报文字符串的子字符串
 		xmlStr = xmlStr.substring(xmlStr.indexOf("<ABCB2I>"));
 		try
 		{
+			//新建包头GBK编码字符串
 			String str1 = new String(array, "GBK");
+			//报文头str1==:包头字符串
 			System.out.println("报文头str1==:" + str1);
+			//新建文件上传下载非标准输出报文GBK编码字符串
 			String str2 = new String(outBytes, "GBK");
+			//报文体str2==:文件上传下载非标准输出报文字符串
 			System.out.println("报文体str2==:" + str2);
-
+			
+			//获取此套接字的输出流
 			ous = cSocket.getOutputStream();
+			//将 b.length 个字节从包头字节数组 写入此输出流
 			ous.write(array);
+			//将 b.length 个字节从文件上传下载非标准输出报文字节数组写入此输出流
 			ous.write(xmlStr.getBytes());
+			//给银行的xml字符串：文件上传下载非标准输出报文字符串
 			cLogger.info("给银行的xml字符串：" + xmlStr);
 
 			// if(file.length()>0 ){
@@ -611,75 +819,110 @@ public class File_download
 			// e.printStackTrace();
 			// }
 			// }
+			//对账文件内容的长度非0[对账文件内容非空]
 			if (file.length() > 0)
 			{
 				// ous.flush();
+				//发送带有对账文件的上传交易报文！
 				cLogger.info("发送带有对账文件的上传交易报文！");
+				//新建返回字节数组
 				byte[] returnbyte = new byte[4];
+				//读取全文[返回字节数组,套接字输入流]失败
 				if (readFull(returnbyte, cSocket.getInputStream()) == 0)
 				{
+					//新建包头标志[返回字节数组]
 					String headflag = new String(returnbyte);
+					//headflag:包头标志
 					cLogger.info("headflag:" + headflag);
+					//包头标志为0000
 					if (headflag.equals("0000"))
 					{// 银行发0000表示开始接收
 					// ous = cSocket.getOutputStream();
+						//新建对账文件内容字节数组GBK编码字符串
 						String str3 = new String(file_byte, "GBK");
+						//新建字符串缓冲 
 						StringBuffer s = new StringBuffer();
+						//对账文件内容字节数组长度字符串的长度
 						int k = String.valueOf(file_byte.length).length();
+						//socket 关闭了吗？套接字的关闭状态
 						System.out.println("socket 关闭了吗？" + cSocket.isClosed());
+						//将0追加到字符串缓冲 
 						for (int i = 0; i < 12 - k; i++)
 						{
 							// ous.write("0".getBytes());
 							s.append("0");
 							// cLogger.info("第"+i+"次发送0");
 						}
+						//将对账文件内容字节数组长度追加到字符串缓冲
 						s.append(file_byte.length);
-						cLogger.info("12为长度：" + String.valueOf(s) + "=12为字节：" + String.valueOf(s).getBytes());
+						//12位长度：缓冲字符串=12位字节：使用平台的默认字符集将缓冲字符串编码为 二进制序列
+						cLogger.info("12位长度：" + String.valueOf(s) + "=12位字节：" + String.valueOf(s).getBytes());
+						//将 b.length 个字节从缓冲字符串字节数组写入到输出流
 						ous.write(String.valueOf(s).getBytes());
 						// ous.flush();
+						//将 b.length 个字节从对账文件内容字节数组写入到输出流
 						ous.write(file_byte);
+						//新建发送字节数组 
 						byte[] send_byte = new byte[4];
+						//读取全文[发送字节数组,套接字输入流]
 						readFull(send_byte, cSocket.getInputStream());
+						//新建发送标志字符串[发送字节数组]
 						String sendflag = new String(send_byte);
+						//sendflag:发送标志字符串
 						cLogger.info("sendflag:" + sendflag);
+						//发送标志字符串为0000
 						if (sendflag.equals("0000"))
 						{
+							//返回了0000表示对账文件接收完了
 							cLogger.info("返回了0000表示对账文件接收完了");
 						}
+						//对账文件内容str3==:对账文件内容字符串
 						System.out.println("对账文件内容str3==:" + str3);
 					}
 
 					// socket未关闭，读取银行上传交易返回报文首位
+					//新建标志字节数组
 					byte[] flag_byte = new byte[1];
+					//读取全文[标志字节数组,套接字输入流]
 					if (readFull(flag_byte, cSocket.getInputStream()) == 0)
 					{
+						//新建首个标志字符串
 						String firstflag = new String(flag_byte);
+						//firstflag:首个标志字符串
 						cLogger.info("firstflag:" + firstflag);
+						//首个标志字符串为X
 						if (firstflag.equals("X"))
 						{
+							//上传文件结束后，接收银行返回报文！
 							cLogger.info("上传文件结束后，接收银行返回报文！");
+							//接收银行的返回报文成功
 							if (last_baowen().equals("0"))
 							{ // 成功接收银行返回报文直接退出
+								//发送文件结束！
 								cLogger.info("发送文件结束！");
 							}
 						}
 						else
 						{
+							//银行未返回上传交易报文！
 							cLogger.info("银行未返回上传交易报文！");
 						}
 					}
 					else
 					{
+						//银行未处理
 						cLogger.info("银行未处理");
 					}
 				}
 				else
 				{
+					//银行没有发送0000来确认接收对账包长度和数据
 					cLogger.info("银行没有发送0000来确认接收对账包长度和数据");
 				}
 			}
 			else
 			{
+				//发送不带对账文件的上传交易报文！
 				cLogger.info("发送不带对账文件的上传交易报文！");
 			}
 
@@ -687,7 +930,9 @@ public class File_download
 		catch (Exception ex)
 		{
 			ex.printStackTrace();
+			//File_download.send 
 			cLogger.info("File_download.send " + ex);
+			//抛出中间平台异常[银行端Socket关闭了!]
 			throw new MidplatException("银行端Socket关闭了!");
 		}
 		finally
@@ -700,6 +945,7 @@ public class File_download
 			// throw new MidplatException("关闭输出流异常!");
 			// }
 		}
+		//从File_download发送文件上传下载非标准输出报文和文件内容方法出来!
 		cLogger.info("Out File_download.send()!");
 	}
 
@@ -748,7 +994,7 @@ public class File_download
 
 	/**
 	 * @Title: bank_dz_file
-	 * @Description: 
+	 * @Description: 上传下载银行文件
 	 * @throws Exception
 	 * @return void
 	 * @throws
@@ -761,14 +1007,19 @@ public class File_download
 		String file = ""; // 文件内容
 		String filedetails = ""; // 银行发送的文件内容
 		String mFilePath = ""; // 保存的本地路径
+		//交易代码为RZDZ
 		if (cFuncFlag.equals("RZDZ"))
 		{ // 日终对账文件下载
 			// cs_way 0: 上传 1: 下载
 			// filetype 01: 证书文件 02: 对账文件
 			filename = "POLICY" + insu + "." + cDate; // 这个时间得传入,补对账要用
+			//获取文件上传下载非标准输入报文[传送方式:下载,文件类型:对账文件,文件名称,文件长度:文件下载00000000]
 			dox = getxml("1", "02", filename, "00000000");
+			//交易代码=组织好的报文：
 			cLogger.info(cFuncFlag + "=组织好的报文：");
+			//保存的本地路径[当前银行交易配置文件下localDir子节点文本+文件名]
 			mFilePath = cThisConf.getChildText("localDir") + filename;
+			//将文件上传下载非标准输入报文打印到控制台， GBK编码，缩进3空格
 			JdomUtil.print(dox);
 		}
 		else if (cFuncFlag.equals("FSSCDJGWJ"))
@@ -933,22 +1184,32 @@ public class File_download
 		}
 		try
 		{
+			//新建保存本地路径文件对象
 			File f = new File(mFilePath);
+			//文件绝对路径是:保存的本地路径
 			System.out.println("文件绝对路径是:" + mFilePath);
+			//文件上传下载非标准输入报文根节点下报文体子节点下请求报文子节点下传送方式节点文本为下载
 			if (dox.getRootElement().getChild("App").getChild("Req").getChildText("TransFlag").equals("1"))
 			{
+				//保存本地路径文件不存在
 				if (!f.exists())
 				{
+					//发送文件上传下载非标准输入报文和文件内容
 					send(dox, file);
+					//发送给银行完成
 					System.out.println("发送给银行完成");
+					//socket 关闭了吗？套接字的关闭状态
 					System.out.println("socket 关闭了吗？" + cSocket.isClosed());
 					// 上传交易不receive农行的报文
+					//获取发送文件上传下载非标准输入报文请求报文传送方式子节点文本
 					String flag = dox.getRootElement().getChild("App").getChild("Req").getChildText("TransFlag");
+					//传送方式为下载
 					if (flag.equals("1"))
 					{
+						//接收文件到本地路径
 						receive(mFilePath);
 					}
-
+					//文件内容:银行发送的文件内容
 					System.out.println("文件内容:" + filedetails);
 				}
 				else
@@ -1001,19 +1262,36 @@ public class File_download
 		fw.close();
 	}
 
+	/**
+	 * @Title: readFull
+	 * @Description: 读取全文 
+	 * @param pByte 返回字节数组
+	 * @param pIs 套接字输入流
+	 * @return
+	 * @throws IOException
+	 * @return int
+	 * @throws
+	 */
 	public int readFull(byte[] pByte, InputStream pIs) throws IOException
 	{
+		//Into readFull() =====返回字节数组长度
 		cLogger.info("Into readFull() =====" + pByte.length);
+		//读取大小<4
 		for (int tReadSize = 0; tReadSize < pByte.length;)
 		{
+			//读入缓冲区的总字节数[将输入流中最多 1 个数据字节读入 返回字节数组]
 			int tRead = pIs.read(pByte, tReadSize, 1);
 			// cLogger.info("tReadSize=="+tReadSize+"       tRead=="+tRead);
+			//读取流到文件末尾没有可用字节
 			if (-1 == tRead)
 			{
+				//返回读取完毕
 				return 1;
 			}
+			//读取大小累加上读入缓冲区的总字节数
 			tReadSize += tRead;
 		}
+		//读取成功
 		return 0;
 	}
 

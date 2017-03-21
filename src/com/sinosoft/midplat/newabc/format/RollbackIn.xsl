@@ -17,7 +17,7 @@
 	  		<!-- 交易时间-->
 			<TranTime><xsl:value-of select="Header/TransTime"/></TranTime>
 			<!-- 柜员代码 -->
-			<TellerNo>ABC0101</TellerNo>
+			<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
 			<!-- 银行代码 -->
 			<BankCode>0102</BankCode>
 			<!-- YBT组织的节点信息 -->

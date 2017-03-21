@@ -3,11 +3,11 @@
      xmlns:java="http://xml.apache.org/xslt/java" exclude-result-prefixes="java">
 	<xsl:output method="xml" indent="yes"/>
 <xsl:template match="InsuReq">
-<TranData><!-- 核心满期给付查询请求报文 -->
+<TranData>
    <Head>
       <TranDate><xsl:value-of select="Main/TranDate"/></TranDate>
       <TranTime><xsl:value-of select="Main/TranTime"/></TranTime>
-      <NodeNo><xsl:value-of select="Main/BrNo"/></NodeNo>
+      <NodeNo><xsl:value-of select="Main/ZoneNo" /><xsl:value-of select="Main/BrNo" /></NodeNo>
       <BankCode><xsl:value-of select="Main/BankCode"/></BankCode>
       <TellerNo><xsl:value-of select="Main/TellerNo"/></TellerNo>
       <ZoneNo><xsl:value-of select="Main/ZoneNo"/></ZoneNo>

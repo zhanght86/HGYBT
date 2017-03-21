@@ -55,39 +55,54 @@ public class BOCSocketTest {
 		
 		//新单投保
 		mFuncFlag = "1001";
-		String mInFilePath = "E:\\保险公司（银保通）\\中融人寿\\测试报文\\zrS+Q\\zhonghang\\2477694_7642_201_in.xml";
-		mInFilePath="D:/task/20161129/boc/1001in_noStd.xml";
-		String mOutFilePath = "E:\\boc.xml";
-		mOutFilePath="D:/task/20161129/boc/1001out_noStd.xml";
+		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1001in_noStd.xml";
+		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1001out_noStd.xml";
 		
+		//缴费出单
 //		mFuncFlag = "1002";
-//		String mInFilePath = "E:\\保险公司（银保通）\\中融人寿\\测试报文\\zrS+Q\\zhonghang\\2477700_7646_101_in.xml" ;
-//		String mOutFilePath = "E:\\bo.xml";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1002in_noStd.xml" ;
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1002out_noStd.xml";
 		
+		//保单重打
 //		mFuncFlag = "1003";
-//		String mInFilePath = "E:\\保险公司\\中融\\报文\\中行提供报文\\交易报文模板\\保单重打请求报文.xml" ;
-//		String mOutFilePath = "E\\boc_返回结果.xml";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1003in_noStd.xml" ;
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1003out_noStd.xml";
 		
+		//当日契撤
 //		mFuncFlag = "1004";
-//		String mInFilePath = "E:\\保险公司\\中融\\报文\\中行提供报文\\交易报文模板\\当日契撤请求报文.xml";
-//		String mOutFilePath = "E:\\boc.xml";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1004in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1004out_noStd.xml";
 		
+		//续期缴费查询
 //		mFuncFlag = "1005";
-//		String mInFilePath = "C:\\Documents and Settings\\Administrator\\桌面\\1000031388_25_441_in.xml";
-//		String mOutFilePath = "E\\boc_返回结果.xml";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1005in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1005out_noStd.xml";
+		
+		//续期缴费
 //		mFuncFlag = "1006";
-//		String mInFilePath = "C:\\Documents and Settings\\Administrator\\桌面\\1000031394_27_442_in.xml";
-//		String mOutFilePath = "E\\boc_返回结果.xml";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1006in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1006out_noStd.xml";
+		
+		//退保\满期给付试算
+//		mFuncFlag = "1007";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1007in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1007out_noStd.xml";
+		
+		//退保\满期给付确认
+//		mFuncFlag = "1008";
+//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1008in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1008out_noStd.xml";
 		
 		BOCSocketTest mTestUI = new BOCSocketTest(mIP, mPort);
 		InputStream mIs = new FileInputStream(mInFilePath);
 		byte[] mOutBytes = mTestUI.sendRequest(mFuncFlag, mIs);
 
-		Document mOutXmlDoc = JdomUtil.build(mOutBytes);
+		//测试
+		/*Document mOutXmlDoc = JdomUtil.build(mOutBytes);
 		OutputStream mFos = new FileOutputStream(mOutFilePath);
 		JdomUtil.output(mOutXmlDoc, mFos);
 		mFos.flush();
-		mFos.close();
+		mFos.close();*/
 //		mFos.write(mOutBytes);
 		
 		System.out.println("成功结束！");

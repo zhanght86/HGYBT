@@ -1,0 +1,1403 @@
+15:54:08,017 INFO bat.BocBusiBlc(98) - 程序开始...
+15:54:08,017 INFO boc.BocConf(22) - Into BocConf.load()...
+15:54:08,017 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:54:08,017 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:54:08,017 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:54:08,032 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:54:08,032 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+15:54:08,032 INFO common.XmlConf(80) - conf file modified at (2017-03-17 14:21:19,480) and length=4733 bytes!
+15:54:08,180 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+15:54:08,180 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:54:08,180 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:54:08,180 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+15:54:08,202 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:54:08,202 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:54:08,202 INFO boc.BocConf(47) - Out BocConf.load()!
+15:54:08,202 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+15:54:09,350 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocBusiBlc.main(BocBusiBlc.java:122)
+15:54:09,350 INFO bat.Balance(58) - Into Balance.run()...
+15:54:09,434 INFO bat.Balance(160) - Into Balance.getHead()...
+15:54:09,434 INFO bat.Balance(190) - Out Balance.getHead()!
+15:54:09,434 INFO bat.Balance(87) - FileName = RZDZ0029BOC20170317.txt
+15:54:09,434 INFO bat.Balance(196) - Into Balance.getFtpFile()...
+15:54:09,434 DEBUG bat.Balance(199) - ftp.ip = 127.0.0.1
+15:54:09,434 DEBUG bat.Balance(210) - ftp.port = 21
+15:54:09,434 DEBUG bat.Balance(213) - ftp.user = user
+15:54:09,434 DEBUG bat.Balance(216) - ftp.password = user
+15:54:09,434 DEBUG bat.Balance(231) - ftp.reconn = 5
+15:54:09,434 DEBUG bat.Balance(246) - ftp.timeout = 300s
+15:54:09,434 INFO bat.Balance(258) - LocalPath = D:/MyDownloads/Download/RZDZ0029BOC20170317.txt
+15:54:09,450 INFO bat.Balance(266) - ------1------------
+15:54:09,450 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+15:54:09,481 INFO bat.Balance(283) - ftp登录成功！
+15:54:09,481 INFO bat.Balance(286) - 采用二进制传输！
+15:54:09,481 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+15:54:09,481 DEBUG bat.Balance(298) - CurWorkingDir = /
+15:54:09,481 INFO bat.Balance(326) - ftp下载数据成功！D:/MyDownloads/Download/RZDZ0029BOC20170317.txt
+15:54:09,481 INFO bat.Balance(337) - ftp退出成功！
+15:54:09,481 INFO bat.Balance(361) - ftp连接断开！
+15:54:09,481 INFO bat.Balance(376) - Out Balance.getFtpFile()!
+15:54:09,481 INFO bat.BocBusiBlc(27) - Into BocBusiBlc.parse()...
+15:54:09,481 INFO bat.BocBusiBlc(41) - 2017031700290000020000.00000000020000020000.0000000002
+15:54:09,481 INFO bat.BocBusiBlc(53) - 成功总数:00000002
+15:54:09,481 INFO bat.BocBusiBlc(54) - 成功总保费:0000020000.00
+15:54:09,481 INFO bat.BocBusiBlc(41) - 201705290078129408510000220170317贾媛媛                                                                          888010000000850               0000010000.0001S
+15:54:09,481 INFO bat.BocBusiBlc(70) - 输出2017052900781294
+15:54:09,481 INFO bat.BocBusiBlc(71) - 输出00002
+15:54:09,481 INFO bat.BocBusiBlc(72) - 输出20170317
+15:54:09,481 INFO bat.BocBusiBlc(73) - 输出888010000000850
+15:54:09,481 INFO bat.BocBusiBlc(74) - 输出0000010000.00
+15:54:09,481 INFO bat.BocBusiBlc(41) - 201705290078129508510000220170317贾媛媛                                                                          888010000000851               0000010000.0001S
+15:54:09,481 INFO bat.BocBusiBlc(70) - 输出2017052900781295
+15:54:09,481 INFO bat.BocBusiBlc(71) - 输出00002
+15:54:09,481 INFO bat.BocBusiBlc(72) - 输出20170317
+15:54:09,481 INFO bat.BocBusiBlc(73) - 输出888010000000851
+15:54:09,481 INFO bat.BocBusiBlc(74) - 输出0000010000.00
+15:54:09,481 INFO bat.BocBusiBlc(86) - Count:2
+15:54:09,481 INFO bat.BocBusiBlc(87) - Prem:2000000.0
+15:54:09,501 INFO bat.BocBusiBlc(92) - Out BocBusiBlc.parse()!
+15:54:09,502 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.boc.service.ContCardBlcBoc
+15:54:09,503 INFO service.ContCardBlcBoc(27) - 日终对账报文:<?xml version="1.0"?>
+<TranData>
+   <Head>
+      <TranDate>20170317</TranDate>
+      <TranTime>155408</TranTime>
+      <TranCom outcode="11">11</TranCom>
+      <NodeNo>11019</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>RZDZ0029BOC20170317.txt</TranNo>
+      <FuncFlag>1105</FuncFlag>
+   </Head>
+   <Body>
+      <Count>2</Count>
+      <Prem>2000000.0</Prem>
+      <Detail>
+         <TranDate>20170317</TranDate>
+         <NodeNo>085100002</NodeNo>
+         <TranNo>2017052900781294</TranNo>
+         <ContNo>888010000000850</ContNo>
+         <Prem>1000000.0</Prem>
+      </Detail>
+      <Detail>
+         <TranDate>20170317</TranDate>
+         <NodeNo>085100002</NodeNo>
+         <TranNo>2017052900781295</TranNo>
+         <ContNo>888010000000851</ContNo>
+         <Prem>1000000.0</Prem>
+      </Detail>
+   </Body>
+</TranData>
+
+
+15:54:09,503 INFO service.ContCardBlcBoc(28) - Into ContCardBlcBoc.service()...
+15:54:09,503 DEBUG service.ContCardBlcBoc(78) - Into ServiceImpl.insertTranLog()...
+15:54:09,619 DEBUG service.ContCardBlcBoc(115) - Out ServiceImpl.insertTranLog()!
+15:54:09,782 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+15:54:09,782 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+15:54:09,782 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+15:54:09,835 INFO common.SaveMessage(94) - 21551_3_16_inSvc.xml IO输出耗时:0.053s
+15:54:09,835 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！21551_3_16_inSvc.xml
+15:54:09,835 INFO net.CallWebsvcAtomSvc(102) - start call 保全对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+15:54:10,367 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:54:10,380 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:54:10,380 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:54:10,380 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:54:10,380 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+15:54:10,397 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:54:10,399 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:54:10,405 DEBUG httpclient.Wire(70) - >> "461[\r][\n]"
+15:54:10,405 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzE3PC9UcmFuRGF0ZT48VHJhblRpbWU+MTU1NDA4PC9UcmFuVGltZT48VHJhbkNvbSBvdXRjb2RlPSIxMSI+MTE8L1RyYW5Db20+PE5vZGVObz4xMTAxOTwvTm9kZU5vPjxUZWxsZXJObz5zeXM8L1RlbGxlck5vPjxUcmFuTm8+UlpEWjAwMjlCT0MyMDE3MDMxNy50eHQ8L1RyYW5Obz48RnVuY0ZsYWc+MTEwNTwvRnVuY0ZsYWc+PFNlcnZpY2VJZD4xNjwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MjwvQ291bnQ+PFByZW0+MjAwMDAwMC4wPC9QcmVtPjxEZXRhaWw+PFRyYW5EYXRlPjIwMTcwMzE3PC9UcmFuRGF0ZT48Tm9kZU5vPjA4NTEwMDAwMjwvTm9kZU5vPjxUcmFuTm8+MjAxNzA1MjkwMDc4MTI5NDwvVHJhbk5vPjxDb250Tm8+ODg4MDEwMDAwMDAwODUwPC9Db250Tm8+PFByZW0+MTAwMDAwMC4wPC9QcmVtPjwvRGV0YWlsPjxEZXRhaWw+PFRyYW5EYXRlPjIwMTcwMzE3PC9UcmFuRGF0ZT48Tm9kZU5vPjA4NTEwMDAwMjwvTm9kZU5vPjxUcmFuTm8+MjAxNzA1MjkwMDc4MTI5NTwvVHJhbk5vPjxDb250Tm8+ODg4MDEwMDAwMDAwODUxPC9Db250Tm8+PFByZW0+MTAwMDAwMC4wPC9QcmVtPjwvRGV0YWlsPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:54:10,405 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:54:10,405 DEBUG httpclient.Wire(84) - >> "0"
+15:54:10,405 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:54:10,405 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "Date: Fri, 17 Mar 2017 07:53:46 GMT[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+15:54:10,537 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "0"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "1"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "c"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "7"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "[\r]"
+15:54:10,552 DEBUG httpclient.Wire(70) - << "[\n]"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "<?xm"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+15:54:10,552 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCjwvVHJhbkRhdGE+DQoNCg==</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+15:54:10,552 INFO net.CallWebsvcAtomSvc(145) - 投保单号null保全对账(service)耗时：0.717s
+15:54:10,583 INFO common.SaveMessage(94) - 21551_6_16_outSvc.xml IO输出耗时:0.015s
+15:54:10,583 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！21551_6_16_outSvc.xml
+15:54:10,583 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+15:54:10,706 INFO service.ContCardBlcBoc(74) - Out ContCardBlcBoc.service()!
+15:54:10,706 INFO bat.Balance(533) - Into Balance.ending()...
+15:54:10,706 INFO bat.Balance(535) - do nothing, just out!
+15:54:10,706 INFO bat.Balance(537) - Out Balance.ending()!
+15:54:10,706 INFO bat.Balance(155) - Out Balance.run()!
+15:54:10,706 INFO bat.BocBusiBlc(124) - 成功结束！
+20:08:56,475 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:08:56,475 INFO boc.BocConf(22) - Into BocConf.load()...
+20:08:56,491 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:08:56,491 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:08:56,504 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:08:56,505 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:08:56,505 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:08:56,528 INFO common.XmlConf(80) - conf file modified at (2017-03-17 14:21:19,480) and length=4733 bytes!
+20:08:56,707 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:08:56,707 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:08:56,707 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:08:56,707 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:08:56,729 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:08:56,729 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:08:56,729 INFO boc.BocConf(47) - Out BocConf.load()!
+20:08:56,744 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:08:57,979 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:08:57,979 INFO bat.Balance(58) - Into Balance.run()...
+20:08:58,148 INFO bat.Balance(160) - Into Balance.getHead()...
+20:08:58,148 INFO bat.Balance(190) - Out Balance.getHead()!
+20:08:58,148 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:08:58,148 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:08:58,148 INFO bat.Balance(390) - LocalPath = /web/ybt/ui/WEB-INF/msg/blc/boc/yyqtb/YYQTB0029BOC20170317.txt
+20:08:58,148 ERROR bat.Balance(105) - 生成标准对账报文出错！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！/web/ybt/ui/WEB-INF/msg/blc/boc/yyqtb/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.bat.Balance.getLocalFile(Balance.java:399)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:94)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:08:58,148 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:08:58,180 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:08:58,180 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:08:58,349 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:08:58,527 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！/web/ybt/ui/WEB-INF/msg/blc/boc/yyqtb/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:45)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:08:58,711 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:08:58,711 INFO bat.Balance(533) - Into Balance.ending()...
+20:08:58,711 INFO bat.Balance(535) - do nothing, just out!
+20:08:58,711 INFO bat.Balance(537) - Out Balance.ending()!
+20:08:58,728 INFO bat.Balance(155) - Out Balance.run()!
+20:08:58,728 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:12:50,844 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@78ba6c13
+20:12:50,866 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:12:50,866 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:12:50,866 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+20:12:50,881 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:12:50,881 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+20:12:50,881 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:12:50,897 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:01,099) and length=28503 bytes!
+20:12:50,997 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:12:51,013 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:12:51,013 INFO common.Log4jPrint(20) - End reset System.out!
+20:12:51,029 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:12:51,029 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:12:51,029 INFO common.XmlConf(80) - conf file modified at (2017-03-08 20:53:03,312) and length=860 bytes!
+20:12:51,029 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:12:51,029 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:12:51,066 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+20:12:51,066 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+20:12:51,098 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+20:12:51,098 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+20:12:51,113 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:12:51,129 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+20:12:51,129 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+20:12:51,145 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+20:12:51,167 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+20:12:51,167 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+20:12:51,167 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+20:12:51,182 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+20:12:51,182 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+20:12:51,182 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+20:12:56,088 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:12:56,088 INFO boc.BocConf(22) - Into BocConf.load()...
+20:12:56,088 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:12:56,088 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:12:56,088 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:12:56,088 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:12:56,088 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:12:56,088 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:12:40,562) and length=4698 bytes!
+20:12:56,236 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:12:56,236 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:12:56,236 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:12:56,236 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:12:56,251 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:12:56,251 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:12:56,251 INFO boc.BocConf(47) - Out BocConf.load()!
+20:12:56,251 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:12:57,473 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:12:57,474 INFO bat.Balance(58) - Into Balance.run()...
+20:12:57,552 INFO bat.Balance(160) - Into Balance.getHead()...
+20:12:57,552 INFO bat.Balance(190) - Out Balance.getHead()!
+20:12:57,552 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:12:57,552 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:12:57,552 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:12:57,552 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:12:57,552 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:12:57,552 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:12:57,552 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:12:57,552 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:12:57,552 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:12:57,705 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:12:57,873 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:12:58,005 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:12:58,005 INFO bat.Balance(533) - Into Balance.ending()...
+20:12:58,005 INFO bat.Balance(535) - do nothing, just out!
+20:12:58,005 INFO bat.Balance(537) - Out Balance.ending()!
+20:12:58,005 INFO bat.Balance(155) - Out Balance.run()!
+20:12:58,005 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:15:09,105 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:15:09,120 INFO boc.BocConf(22) - Into BocConf.load()...
+20:15:09,120 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:15:09,120 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:15:09,120 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:15:09,120 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:15:09,120 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:15:09,120 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:12:40,562) and length=4698 bytes!
+20:15:09,268 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:15:09,268 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:15:09,268 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:15:09,268 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:15:09,290 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:15:09,290 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:15:09,290 INFO boc.BocConf(47) - Out BocConf.load()!
+20:15:09,290 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:15:10,368 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:15:10,368 INFO bat.Balance(58) - Into Balance.run()...
+20:15:10,453 INFO bat.Balance(160) - Into Balance.getHead()...
+20:15:10,453 INFO bat.Balance(190) - Out Balance.getHead()!
+20:15:10,453 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:15:10,453 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:15:10,453 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:15:10,453 ERROR bat.Balance(105) - 生成标准对账报文出错！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.bat.Balance.getLocalFile(Balance.java:399)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:94)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:15:10,453 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:15:10,453 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:15:10,453 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:15:10,606 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:15:10,785 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:45)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:15:10,906 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:15:10,906 INFO bat.Balance(533) - Into Balance.ending()...
+20:15:10,906 INFO bat.Balance(535) - do nothing, just out!
+20:15:10,906 INFO bat.Balance(537) - Out Balance.ending()!
+20:15:10,906 INFO bat.Balance(155) - Out Balance.run()!
+20:15:10,906 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:15:51,686 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:15:51,686 INFO boc.BocConf(22) - Into BocConf.load()...
+20:15:51,686 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:15:51,686 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:15:51,686 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:15:51,686 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:15:51,686 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:15:51,701 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:12:40,562) and length=4698 bytes!
+20:15:51,833 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:15:51,833 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:15:51,833 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:15:51,833 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:15:51,855 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:15:51,855 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:15:51,855 INFO boc.BocConf(47) - Out BocConf.load()!
+20:15:51,855 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:15:53,002 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:15:53,002 INFO bat.Balance(58) - Into Balance.run()...
+20:15:53,087 INFO bat.Balance(160) - Into Balance.getHead()...
+20:15:53,087 INFO bat.Balance(190) - Out Balance.getHead()!
+20:15:53,087 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:15:53,087 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:15:53,087 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:15:53,087 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:15:53,087 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:15:53,087 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:15:53,087 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:15:53,087 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:15:53,087 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:15:53,234 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:15:53,418 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:15:53,572 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:15:53,572 INFO bat.Balance(533) - Into Balance.ending()...
+20:15:53,572 INFO bat.Balance(535) - do nothing, just out!
+20:15:53,572 INFO bat.Balance(537) - Out Balance.ending()!
+20:15:53,572 INFO bat.Balance(155) - Out Balance.run()!
+20:15:53,572 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:19:30,961 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:19:30,961 INFO boc.BocConf(22) - Into BocConf.load()...
+20:19:30,961 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:19:30,961 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:19:30,961 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:19:30,977 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:19:30,977 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:19:30,977 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:19:19,846) and length=4714 bytes!
+20:19:31,124 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:19:31,124 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:19:31,124 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:19:31,124 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:19:31,146 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:19:31,146 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:19:31,146 INFO boc.BocConf(47) - Out BocConf.load()!
+20:19:31,146 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:19:32,178 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:19:32,178 INFO bat.Balance(58) - Into Balance.run()...
+20:19:32,263 INFO bat.Balance(160) - Into Balance.getHead()...
+20:19:32,263 INFO bat.Balance(190) - Out Balance.getHead()!
+20:19:32,263 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:19:32,263 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:19:32,263 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:19:32,263 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:19:32,263 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:19:32,263 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:19:32,263 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:19:32,263 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:19:32,278 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:19:32,394 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:19:32,563 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:19:32,694 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:19:32,694 INFO bat.Balance(533) - Into Balance.ending()...
+20:19:32,694 INFO bat.Balance(535) - do nothing, just out!
+20:19:32,694 INFO bat.Balance(537) - Out Balance.ending()!
+20:19:32,694 INFO bat.Balance(155) - Out Balance.run()!
+20:19:32,694 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:20:25,423 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:20:25,423 INFO boc.BocConf(22) - Into BocConf.load()...
+20:20:25,423 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:20:25,423 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:20:25,440 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:20:25,441 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:20:25,442 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:20:25,443 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:19:19,846) and length=4714 bytes!
+20:20:25,577 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:20:25,577 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:20:25,577 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:20:25,577 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:20:25,592 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:20:25,592 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:20:25,592 INFO boc.BocConf(47) - Out BocConf.load()!
+20:20:25,608 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:20:26,693 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:20:26,693 INFO bat.Balance(58) - Into Balance.run()...
+20:20:26,778 INFO bat.Balance(160) - Into Balance.getHead()...
+20:20:26,778 INFO bat.Balance(190) - Out Balance.getHead()!
+20:20:26,778 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:20:26,778 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:20:26,778 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:20:26,778 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:20:26,778 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:20:26,778 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:20:26,778 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:20:26,778 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:20:26,793 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:20:26,924 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:20:27,193 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:20:27,345 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:20:27,346 INFO bat.Balance(533) - Into Balance.ending()...
+20:20:27,346 INFO bat.Balance(535) - do nothing, just out!
+20:20:27,346 INFO bat.Balance(537) - Out Balance.ending()!
+20:20:27,347 INFO bat.Balance(155) - Out Balance.run()!
+20:20:27,347 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:21:35,319 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:21:35,319 INFO boc.BocConf(22) - Into BocConf.load()...
+20:21:35,319 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:21:35,319 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:21:35,319 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:21:35,319 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:21:35,319 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:21:35,319 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:21:19,600) and length=4710 bytes!
+20:21:35,473 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:21:35,473 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:21:35,473 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:21:35,473 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:21:35,488 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:21:35,488 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:21:35,488 INFO boc.BocConf(47) - Out BocConf.load()!
+20:21:35,488 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:21:36,536 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:21:36,553 INFO bat.Balance(58) - Into Balance.run()...
+20:21:36,620 INFO bat.Balance(160) - Into Balance.getHead()...
+20:21:36,620 INFO bat.Balance(190) - Out Balance.getHead()!
+20:21:36,636 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:21:36,636 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:21:36,636 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:21:36,636 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:21:36,636 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:21:36,636 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:21:36,636 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:21:36,636 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:21:36,636 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:21:36,774 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:21:36,959 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:21:37,107 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:21:37,107 INFO bat.Balance(533) - Into Balance.ending()...
+20:21:37,107 INFO bat.Balance(535) - do nothing, just out!
+20:21:37,107 INFO bat.Balance(537) - Out Balance.ending()!
+20:21:37,107 INFO bat.Balance(155) - Out Balance.run()!
+20:21:37,107 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:23:05,145 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:23:05,145 INFO boc.BocConf(22) - Into BocConf.load()...
+20:23:05,145 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:23:05,145 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:23:05,145 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:23:05,145 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:23:05,145 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:23:05,145 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:22:56,216) and length=4709 bytes!
+20:23:05,292 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:23:05,292 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:23:05,292 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:23:05,292 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:23:05,314 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:23:05,314 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:23:05,314 INFO boc.BocConf(47) - Out BocConf.load()!
+20:23:05,314 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:23:06,446 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:23:06,446 INFO bat.Balance(58) - Into Balance.run()...
+20:23:06,514 INFO bat.Balance(160) - Into Balance.getHead()...
+20:23:06,514 INFO bat.Balance(190) - Out Balance.getHead()!
+20:23:06,514 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:23:06,514 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:23:06,514 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:23:06,514 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:23:06,514 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:23:06,514 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:23:06,514 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:23:06,530 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:23:06,530 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:23:06,662 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:23:06,847 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:23:06,994 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:23:06,994 INFO bat.Balance(533) - Into Balance.ending()...
+20:23:06,994 INFO bat.Balance(535) - do nothing, just out!
+20:23:06,994 INFO bat.Balance(537) - Out Balance.ending()!
+20:23:06,994 INFO bat.Balance(155) - Out Balance.run()!
+20:23:06,994 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:23:50,689 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:23:50,692 INFO boc.BocConf(22) - Into BocConf.load()...
+20:23:50,692 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:23:50,692 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:23:50,692 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:23:50,692 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:23:50,692 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:23:50,692 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:22:56,216) and length=4709 bytes!
+20:23:50,840 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:23:50,840 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:23:50,840 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:23:50,840 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:23:50,855 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:23:50,855 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:23:50,855 INFO boc.BocConf(47) - Out BocConf.load()!
+20:23:50,855 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:23:51,893 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:23:51,893 INFO bat.Balance(58) - Into Balance.run()...
+20:23:51,972 INFO bat.Balance(160) - Into Balance.getHead()...
+20:23:51,972 INFO bat.Balance(190) - Out Balance.getHead()!
+20:23:51,972 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:23:51,972 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:23:51,972 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:23:51,972 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:23:51,972 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:23:51,972 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:23:51,972 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:23:51,972 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:23:51,972 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:23:52,094 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:23:52,272 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:23:52,441 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:23:52,441 INFO bat.Balance(533) - Into Balance.ending()...
+20:23:52,441 INFO bat.Balance(535) - do nothing, just out!
+20:23:52,441 INFO bat.Balance(537) - Out Balance.ending()!
+20:23:52,441 INFO bat.Balance(155) - Out Balance.run()!
+20:23:52,441 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:25:25,389 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@75d709a5
+20:25:25,396 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:25:25,396 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:25:25,396 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+20:25:25,396 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:25:25,396 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+20:25:25,396 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:25:25,412 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:01,099) and length=28503 bytes!
+20:25:25,489 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:25:25,504 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:25:25,504 INFO common.Log4jPrint(20) - End reset System.out!
+20:25:25,504 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:25:25,504 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:25:25,504 INFO common.XmlConf(80) - conf file modified at (2017-03-08 20:53:03,312) and length=860 bytes!
+20:25:25,520 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:25:25,520 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:25:25,542 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+20:25:25,542 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+20:25:25,574 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+20:25:25,589 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:25:25,605 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+20:25:25,605 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+20:25:25,605 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+20:25:25,605 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+20:25:25,620 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+20:25:25,620 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+20:25:25,620 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+20:25:25,620 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+20:25:25,650 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+20:25:25,651 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+20:25:31,057 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:25:31,057 INFO boc.BocConf(22) - Into BocConf.load()...
+20:25:31,057 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:25:31,057 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:25:31,057 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:25:31,057 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:25:31,057 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:25:31,057 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:25:19,331) and length=4717 bytes!
+20:25:31,204 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:25:31,220 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:25:31,220 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:25:31,220 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:25:31,238 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:25:31,242 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:25:31,242 INFO boc.BocConf(47) - Out BocConf.load()!
+20:25:31,242 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:25:32,322 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:25:32,322 INFO bat.Balance(58) - Into Balance.run()...
+20:25:32,422 INFO bat.Balance(160) - Into Balance.getHead()...
+20:25:32,422 INFO bat.Balance(190) - Out Balance.getHead()!
+20:25:32,422 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:25:32,422 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:25:32,422 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:25:32,422 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:25:32,422 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:25:32,422 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:25:32,422 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:25:32,422 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:25:32,441 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:25:32,607 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:25:53,866 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:25:54,041 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:25:54,041 INFO bat.Balance(533) - Into Balance.ending()...
+20:25:54,041 INFO bat.Balance(535) - do nothing, just out!
+20:25:54,041 INFO bat.Balance(537) - Out Balance.ending()!
+20:25:54,041 INFO bat.Balance(155) - Out Balance.run()!
+20:25:54,041 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:26:34,255 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@170d9151
+20:26:34,265 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:26:34,271 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:26:34,271 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+20:26:34,273 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:26:34,274 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+20:26:34,275 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:26:34,279 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:01,099) and length=28503 bytes!
+20:26:34,374 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:26:34,391 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:26:34,392 INFO common.Log4jPrint(20) - End reset System.out!
+20:26:34,395 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:26:34,396 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:26:34,397 INFO common.XmlConf(80) - conf file modified at (2017-03-08 20:53:03,312) and length=860 bytes!
+20:26:34,403 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:26:34,403 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:26:34,434 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+20:26:34,434 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+20:26:34,446 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+20:26:34,448 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:26:34,447 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+20:26:34,459 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+20:26:34,460 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+20:26:34,462 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+20:26:34,469 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+20:26:34,470 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+20:26:34,469 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+20:26:34,477 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+20:26:34,478 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+20:26:34,479 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+20:26:40,022 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:26:40,022 INFO boc.BocConf(22) - Into BocConf.load()...
+20:26:40,038 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:26:40,038 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:26:40,038 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:26:40,038 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:26:40,038 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:26:40,038 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:26:27,963) and length=4714 bytes!
+20:26:40,188 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:26:40,189 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:26:40,189 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:26:40,190 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:26:40,207 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:26:40,207 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:26:40,207 INFO boc.BocConf(47) - Out BocConf.load()!
+20:26:40,207 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:26:41,271 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:26:41,271 INFO bat.Balance(58) - Into Balance.run()...
+20:26:41,339 INFO bat.Balance(160) - Into Balance.getHead()...
+20:26:41,355 INFO bat.Balance(190) - Out Balance.getHead()!
+20:26:41,355 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:26:41,355 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:26:41,355 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:26:41,355 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:26:41,355 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:26:41,355 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:26:41,355 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:26:41,355 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:26:41,355 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:26:41,493 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:26:41,671 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:26:41,793 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:26:41,808 INFO bat.Balance(533) - Into Balance.ending()...
+20:26:41,808 INFO bat.Balance(535) - do nothing, just out!
+20:26:41,808 INFO bat.Balance(537) - Out Balance.ending()!
+20:26:41,808 INFO bat.Balance(155) - Out Balance.run()!
+20:26:41,808 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:31:27,984 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:31:27,984 INFO boc.BocConf(22) - Into BocConf.load()...
+20:31:27,984 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:31:27,984 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:31:28,000 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:31:28,000 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:31:28,000 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:31:28,000 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:31:18,299) and length=4714 bytes!
+20:31:28,147 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:31:28,147 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:31:28,147 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:31:28,147 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:31:28,169 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:31:28,169 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:31:28,169 INFO boc.BocConf(47) - Out BocConf.load()!
+20:31:28,169 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:31:29,249 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:31:29,249 INFO bat.Balance(58) - Into Balance.run()...
+20:31:29,318 INFO bat.Balance(160) - Into Balance.getHead()...
+20:31:29,318 INFO bat.Balance(190) - Out Balance.getHead()!
+20:31:29,318 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:31:29,318 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:31:29,318 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:31:29,318 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:31:29,318 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:31:29,333 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:31:29,333 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:31:29,333 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:31:29,333 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:31:29,471 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:31:29,634 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:31:29,771 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:31:29,771 INFO bat.Balance(533) - Into Balance.ending()...
+20:31:29,771 INFO bat.Balance(535) - do nothing, just out!
+20:31:29,771 INFO bat.Balance(537) - Out Balance.ending()!
+20:31:29,771 INFO bat.Balance(155) - Out Balance.run()!
+20:31:29,771 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:32:10,025 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:32:10,025 INFO boc.BocConf(22) - Into BocConf.load()...
+20:32:10,025 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:32:10,025 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:32:10,025 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:32:10,025 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:32:10,025 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:32:10,025 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:31:44,608) and length=4714 bytes!
+20:32:10,172 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:32:10,187 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:32:10,187 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:32:10,187 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:32:10,203 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:32:10,203 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:32:10,203 INFO boc.BocConf(47) - Out BocConf.load()!
+20:32:10,203 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:32:11,305 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:32:11,305 INFO bat.Balance(58) - Into Balance.run()...
+20:32:11,389 INFO bat.Balance(160) - Into Balance.getHead()...
+20:32:11,389 INFO bat.Balance(190) - Out Balance.getHead()!
+20:32:11,389 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:32:11,389 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:32:11,389 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:32:11,389 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:32:11,389 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:32:11,389 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:32:11,389 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:32:11,389 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:32:11,389 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:32:11,526 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:32:11,727 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:32:11,858 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:32:11,858 INFO bat.Balance(533) - Into Balance.ending()...
+20:32:11,874 INFO bat.Balance(535) - do nothing, just out!
+20:32:11,874 INFO bat.Balance(537) - Out Balance.ending()!
+20:32:11,874 INFO bat.Balance(155) - Out Balance.run()!
+20:32:11,874 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:39:56,960 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:39:56,975 INFO boc.BocConf(22) - Into BocConf.load()...
+20:39:56,975 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:39:56,975 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:39:56,975 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:39:56,975 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:39:56,975 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:39:56,975 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:38:59,346) and length=4710 bytes!
+20:39:57,128 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:39:57,128 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:39:57,128 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:39:57,128 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:39:57,144 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:39:57,144 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:39:57,144 INFO boc.BocConf(47) - Out BocConf.load()!
+20:39:57,144 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:39:58,229 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:39:58,229 INFO bat.Balance(58) - Into Balance.run()...
+20:39:58,308 INFO bat.Balance(160) - Into Balance.getHead()...
+20:39:58,308 INFO bat.Balance(190) - Out Balance.getHead()!
+20:39:58,308 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:39:58,308 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:39:58,308 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:39:58,308 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:39:58,308 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:39:58,308 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:39:58,308 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:39:58,308 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:39:58,325 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:39:58,445 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:39:58,625 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:39:58,761 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:39:58,761 INFO bat.Balance(533) - Into Balance.ending()...
+20:39:58,761 INFO bat.Balance(535) - do nothing, just out!
+20:39:58,761 INFO bat.Balance(537) - Out Balance.ending()!
+20:39:58,761 INFO bat.Balance(155) - Out Balance.run()!
+20:39:58,761 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:40:45,750 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:40:45,750 INFO boc.BocConf(22) - Into BocConf.load()...
+20:40:45,750 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:40:45,750 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:40:45,750 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:40:45,750 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:40:45,750 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:40:45,750 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:40:36,512) and length=4710 bytes!
+20:40:45,897 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:40:45,897 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:40:45,897 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:40:45,897 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:40:45,929 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:40:45,934 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:40:45,934 INFO boc.BocConf(47) - Out BocConf.load()!
+20:40:45,935 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:40:46,982 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:40:46,982 INFO bat.Balance(58) - Into Balance.run()...
+20:40:47,036 INFO bat.Balance(160) - Into Balance.getHead()...
+20:40:47,036 INFO bat.Balance(190) - Out Balance.getHead()!
+20:40:47,036 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:40:47,036 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:40:47,036 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:40:47,036 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:40:47,036 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:40:47,036 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:40:47,036 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:40:47,051 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:40:47,051 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:40:47,198 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:40:47,367 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:40:47,514 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:40:47,514 INFO bat.Balance(533) - Into Balance.ending()...
+20:40:47,514 INFO bat.Balance(535) - do nothing, just out!
+20:40:47,514 INFO bat.Balance(537) - Out Balance.ending()!
+20:40:47,514 INFO bat.Balance(155) - Out Balance.run()!
+20:40:47,514 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:41:06,111 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:41:06,111 INFO boc.BocConf(22) - Into BocConf.load()...
+20:41:06,111 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:41:06,111 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:41:06,111 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:41:06,111 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:41:06,111 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:41:06,127 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:40:57,231) and length=4711 bytes!
+20:41:06,265 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:41:06,265 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:41:06,265 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:41:06,265 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:41:06,281 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:41:06,296 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:41:06,296 INFO boc.BocConf(47) - Out BocConf.load()!
+20:41:06,296 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:41:07,398 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:41:07,413 INFO bat.Balance(58) - Into Balance.run()...
+20:41:07,482 INFO bat.Balance(160) - Into Balance.getHead()...
+20:41:07,482 INFO bat.Balance(190) - Out Balance.getHead()!
+20:41:07,482 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:41:07,482 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:41:07,498 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:41:07,498 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:41:07,498 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:41:07,498 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:41:07,498 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:41:07,498 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:41:07,498 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:41:07,629 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:41:07,798 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:41:07,966 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:41:07,966 INFO bat.Balance(533) - Into Balance.ending()...
+20:41:07,966 INFO bat.Balance(535) - do nothing, just out!
+20:41:07,966 INFO bat.Balance(537) - Out Balance.ending()!
+20:41:07,966 INFO bat.Balance(155) - Out Balance.run()!
+20:41:07,966 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:44:33,883 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:44:33,898 INFO boc.BocConf(22) - Into BocConf.load()...
+20:44:33,898 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:44:33,898 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:44:33,898 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:44:33,898 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:44:33,898 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:44:33,898 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:44:26,788) and length=4753 bytes!
+20:44:34,049 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:44:34,050 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:44:34,051 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:44:34,051 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:44:34,067 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:44:34,067 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:44:34,067 INFO boc.BocConf(47) - Out BocConf.load()!
+20:44:34,067 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:44:35,199 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:44:35,199 INFO bat.Balance(58) - Into Balance.run()...
+20:44:35,268 INFO bat.Balance(160) - Into Balance.getHead()...
+20:44:35,268 INFO bat.Balance(190) - Out Balance.getHead()!
+20:44:35,268 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:44:35,268 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:44:35,268 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:44:35,268 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:44:35,268 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:44:35,268 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:44:35,268 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:44:35,268 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:44:35,284 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:44:35,415 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:44:35,584 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:44:35,748 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:44:35,749 INFO bat.Balance(533) - Into Balance.ending()...
+20:44:35,749 INFO bat.Balance(535) - do nothing, just out!
+20:44:35,750 INFO bat.Balance(537) - Out Balance.ending()!
+20:44:35,751 INFO bat.Balance(155) - Out Balance.run()!
+20:44:35,752 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:45:18,579 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:45:18,579 INFO boc.BocConf(22) - Into BocConf.load()...
+20:45:18,579 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:45:18,579 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:45:18,594 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:45:18,594 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:45:18,594 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:45:18,594 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:45:09,377) and length=4759 bytes!
+20:45:18,732 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:45:18,732 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:45:18,732 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:45:18,732 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:45:18,748 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:45:18,748 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:45:18,748 INFO boc.BocConf(47) - Out BocConf.load()!
+20:45:18,763 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:45:19,911 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:45:19,911 INFO bat.Balance(58) - Into Balance.run()...
+20:45:19,979 INFO bat.Balance(160) - Into Balance.getHead()...
+20:45:19,979 INFO bat.Balance(190) - Out Balance.getHead()!
+20:45:19,979 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:45:19,979 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:45:19,979 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:45:19,979 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:45:19,979 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:45:19,979 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:45:19,979 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:45:19,979 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:45:19,979 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:45:20,110 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:45:48,217 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@381eb0c6
+20:45:48,228 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:45:48,232 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+20:45:48,233 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+20:45:48,235 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:45:48,236 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+20:45:48,237 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+20:45:48,241 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:01,099) and length=28503 bytes!
+20:45:48,318 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+20:45:48,333 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:45:48,334 INFO common.Log4jPrint(20) - End reset System.out!
+20:45:48,337 INFO net.SocketConf(27) - Into SocketConf.load()...
+20:45:48,338 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+20:45:48,339 INFO common.XmlConf(80) - conf file modified at (2017-03-08 20:53:03,312) and length=860 bytes!
+20:45:48,343 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+20:45:48,344 INFO net.SocketConf(60) - Out SocketConf.load()!
+20:45:48,368 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+20:45:48,368 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+20:45:48,384 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+20:45:48,384 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+20:45:48,394 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+20:45:48,395 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+20:45:48,409 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+20:45:48,410 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+20:45:48,410 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+20:45:48,411 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+20:45:48,414 INFO net.SocketListenerF5$Server(194) - 监听端口 52004
+20:45:48,420 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+20:45:48,422 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+20:45:48,424 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+20:45:55,644 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:45:55,644 INFO boc.BocConf(22) - Into BocConf.load()...
+20:45:55,644 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:45:55,644 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:45:55,644 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:45:55,644 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:45:55,644 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:45:55,644 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:45:36,220) and length=4756 bytes!
+20:45:55,798 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:45:55,798 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:45:55,798 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:45:55,798 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:45:55,814 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:45:55,829 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:45:55,829 INFO boc.BocConf(47) - Out BocConf.load()!
+20:45:55,829 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:45:56,933 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:45:56,933 INFO bat.Balance(58) - Into Balance.run()...
+20:45:57,001 INFO bat.Balance(160) - Into Balance.getHead()...
+20:45:57,017 INFO bat.Balance(190) - Out Balance.getHead()!
+20:45:57,017 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:45:57,017 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:45:57,017 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:45:57,017 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:45:57,017 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:45:57,017 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:45:57,017 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:45:57,017 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:45:57,017 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:45:57,164 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:45:57,348 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:45:57,499 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:45:57,499 INFO bat.Balance(533) - Into Balance.ending()...
+20:45:57,499 INFO bat.Balance(535) - do nothing, just out!
+20:45:57,499 INFO bat.Balance(537) - Out Balance.ending()!
+20:45:57,500 INFO bat.Balance(155) - Out Balance.run()!
+20:45:57,500 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:47:47,161 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:47:47,161 INFO boc.BocConf(22) - Into BocConf.load()...
+20:47:47,161 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:47:47,161 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:47:47,161 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:47:47,161 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:47:47,161 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:47:47,161 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:47:40,750) and length=4752 bytes!
+20:47:47,314 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:47:47,314 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:47:47,314 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:47:47,314 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:47:47,330 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:47:47,330 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:47:47,330 INFO boc.BocConf(47) - Out BocConf.load()!
+20:47:47,330 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:47:48,496 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:47:48,498 INFO bat.Balance(58) - Into Balance.run()...
+20:47:48,547 INFO bat.Balance(160) - Into Balance.getHead()...
+20:47:48,562 INFO bat.Balance(190) - Out Balance.getHead()!
+20:47:48,562 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:47:48,562 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:47:48,562 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:47:48,562 ERROR bat.Balance(105) - 生成标准对账报文出错！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.bat.Balance.getLocalFile(Balance.java:399)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:94)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:47:48,562 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:47:48,562 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:47:48,562 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:47:48,715 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:47:48,896 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:45)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:47:49,047 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:47:49,047 INFO bat.Balance(533) - Into Balance.ending()...
+20:47:49,047 INFO bat.Balance(535) - do nothing, just out!
+20:47:49,047 INFO bat.Balance(537) - Out Balance.ending()!
+20:47:49,063 INFO bat.Balance(155) - Out Balance.run()!
+20:47:49,063 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:48:19,844 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:48:19,844 INFO boc.BocConf(22) - Into BocConf.load()...
+20:48:19,844 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:48:19,844 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:48:19,844 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:48:19,844 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:48:19,844 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:48:19,859 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:47:40,750) and length=4752 bytes!
+20:48:20,007 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:48:20,007 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:48:20,007 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:48:20,007 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:48:20,022 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:48:20,022 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:48:20,022 INFO boc.BocConf(47) - Out BocConf.load()!
+20:48:20,022 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:48:21,123 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:48:21,140 INFO bat.Balance(58) - Into Balance.run()...
+20:48:21,223 INFO bat.Balance(160) - Into Balance.getHead()...
+20:48:21,223 INFO bat.Balance(190) - Out Balance.getHead()!
+20:48:21,223 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:48:21,223 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:48:21,223 INFO bat.Balance(390) - LocalPath = D:/FTP/BOC/download/YYQTB0029BOC20170317.txt
+20:48:21,223 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:48:21,223 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:48:21,223 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:48:21,223 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:48:21,223 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:48:21,223 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:48:21,377 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:48:21,608 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:48:21,746 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:48:21,746 INFO bat.Balance(533) - Into Balance.ending()...
+20:48:21,746 INFO bat.Balance(535) - do nothing, just out!
+20:48:21,746 INFO bat.Balance(537) - Out Balance.ending()!
+20:48:21,746 INFO bat.Balance(155) - Out Balance.run()!
+20:48:21,746 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:52:41,307 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:52:41,307 INFO boc.BocConf(22) - Into BocConf.load()...
+20:52:41,307 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:52:41,307 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:52:41,307 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:52:41,307 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:52:41,307 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:52:41,307 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:52:33,975) and length=4752 bytes!
+20:52:41,454 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:52:41,454 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:52:41,454 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:52:41,454 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:52:41,486 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:52:41,486 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:52:41,486 INFO boc.BocConf(47) - Out BocConf.load()!
+20:52:41,486 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:52:42,610 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:52:42,610 INFO bat.Balance(58) - Into Balance.run()...
+20:52:42,673 INFO bat.Balance(160) - Into Balance.getHead()...
+20:52:42,673 INFO bat.Balance(190) - Out Balance.getHead()!
+20:52:42,673 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:52:42,673 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:52:42,673 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:52:42,673 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:52:42,673 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:52:42,673 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:52:42,673 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:52:42,673 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:52:42,688 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:52:42,842 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:52:43,057 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:52:43,188 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:52:43,188 INFO bat.Balance(533) - Into Balance.ending()...
+20:52:43,188 INFO bat.Balance(535) - do nothing, just out!
+20:52:43,204 INFO bat.Balance(537) - Out Balance.ending()!
+20:52:43,205 INFO bat.Balance(155) - Out Balance.run()!
+20:52:43,205 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:56:19,604 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:56:19,604 INFO boc.BocConf(22) - Into BocConf.load()...
+20:56:19,604 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:56:19,604 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:56:19,604 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:56:19,604 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:56:19,604 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:56:19,604 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:52:33,975) and length=4752 bytes!
+20:56:19,773 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:56:19,773 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:56:19,773 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:56:19,773 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:56:19,788 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:56:19,788 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:56:19,788 INFO boc.BocConf(47) - Out BocConf.load()!
+20:56:19,804 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:56:20,919 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:56:20,935 INFO bat.Balance(58) - Into Balance.run()...
+20:56:21,029 INFO bat.Balance(160) - Into Balance.getHead()...
+20:56:21,030 INFO bat.Balance(190) - Out Balance.getHead()!
+20:56:21,031 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:56:21,031 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:56:21,032 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:56:21,032 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:56:21,032 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:56:21,033 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:56:21,033 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:56:21,035 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:56:21,041 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:56:21,194 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:56:56,628 INFO service.BocTBBusiBlc(71) - 犹豫期退保对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: FTP上传出错 FileName = YYQTB0029BOC20170317.txt
+	at com.sinosoft.midplat.service.BocTBBusiBlc.service(BocTBBusiBlc.java:65)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:56:56,781 INFO service.BocTBBusiBlc(92) - Out BocTBBusiBlc.service()!
+20:56:56,781 INFO bat.Balance(533) - Into Balance.ending()...
+20:56:56,781 INFO bat.Balance(535) - do nothing, just out!
+20:56:56,781 INFO bat.Balance(537) - Out Balance.ending()!
+20:56:56,781 INFO bat.Balance(155) - Out Balance.run()!
+20:56:56,781 INFO bat.BocTBBusiBlc(107) - 成功结束！
+20:58:44,168 INFO bat.BocTBBusiBlc(81) - 程序开始...
+20:58:44,168 INFO boc.BocConf(22) - Into BocConf.load()...
+20:58:44,168 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:58:44,168 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:58:44,168 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:58:44,168 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:58:44,168 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:58:44,168 INFO common.XmlConf(80) - conf file modified at (2017-03-17 20:58:33,144) and length=4754 bytes!
+20:58:44,322 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:58:44,322 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:58:44,322 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:58:44,322 INFO common.XmlConf(80) - conf file modified at (2017-04-17 15:10:00,930) and length=28503 bytes!
+20:58:44,338 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:58:44,338 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:58:44,338 INFO boc.BocConf(47) - Out BocConf.load()!
+20:58:44,338 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:58:45,363 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocTBBusiBlc.main(BocTBBusiBlc.java:105)
+20:58:45,363 INFO bat.Balance(58) - Into Balance.run()...
+20:58:45,439 INFO bat.Balance(160) - Into Balance.getHead()...
+20:58:45,439 INFO bat.Balance(190) - Out Balance.getHead()!
+20:58:45,439 INFO bat.Balance(87) - FileName = YYQTB0029BOC20170317.txt
+20:58:45,439 INFO bat.Balance(382) - Into Balance.getLocalFile()...
+20:58:45,439 INFO bat.Balance(390) - LocalPath = D:/MyDownloads/Download/YYQTB0029BOC20170317.txt
+20:58:45,439 INFO bat.Balance(402) - Out Balance.getLocalFile()!
+20:58:45,439 INFO bat.BocTBBusiBlc(30) - Into BocTBBusiBlc.parse()...
+20:58:45,439 INFO bat.BocTBBusiBlc(76) - Out BocTBBusiBlc.parse()!
+20:58:45,439 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.BocTBBusiBlc
+20:58:45,439 INFO service.BocTBBusiBlc(21) - Into BocTBBusiBlc.service()...
+20:58:45,454 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:58:45,586 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!

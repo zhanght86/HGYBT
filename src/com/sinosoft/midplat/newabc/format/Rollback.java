@@ -55,6 +55,8 @@ public class Rollback extends XmlSimpFormat {
 		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("OrgTransDate").setText(OrgTransDate);
 		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("TransCode").setText(TransCode);
 		mNoStdXml.getRootElement().addContent(header);
+		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out Rollback.std2NoStd()!");
 		return mNoStdXml;
 	}

@@ -24,18 +24,22 @@ public class RenewalPayQuery extends XmlSimpFormat {
 	
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into RenewalPayQuery.noStd2Std()...");
+		cLogger.info("第三方请求报文:"+JdomUtil.toStringFmt(pNoStdXml));
 		
 		cMain = (Element) pNoStdXml.getRootElement().getChild("Main").clone();
 		
 		Document mStdXml = 
 			RenewalPayQueryInXsl.newInstance().getCache().transform(pNoStdXml);
 		
+		cLogger.info("请求核心报文:"+JdomUtil.toStringFmt(mStdXml));
 		cLogger.info("Out RenewalPayQuery.noStd2Std()!");
 		return mStdXml;
 	}
 	
 	public Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into RenewalPayQuery.std2NoStd()...");
+		cLogger.info("核心返回报文:"+JdomUtil.toStringFmt(pStdXml));
+		
 		Document mNoStdXml = 
 			RenewalPayQueryOutXsl.newInstance().getCache().transform(pStdXml);
 
@@ -128,6 +132,7 @@ public class RenewalPayQuery extends XmlSimpFormat {
 		
 		/*End-组织返回报文头*/
 
+		cLogger.info("返回给第三方报文:"+JdomUtil.toStringFmt(mNoStdXml));
 		cLogger.info("Out RenewalPayQuery.std2NoStd()!");
 		return mNoStdXml;
 	}

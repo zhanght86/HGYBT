@@ -30,10 +30,9 @@
 			<!--保单号 -->
 			<PolicyNo><xsl:value-of select ="Body/ContNo"/></PolicyNo>
 			<!-- 保险公司方险种代码 -->
-			<RiskCode><xsl:apply-templates select="Body/RiskCode"/></RiskCode>
+			<RiskCode><xsl:value-of select="Body/RiskCode"/></RiskCode>
 			<!-- 保费 -->
 			<Prem><xsl:value-of select ="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/Prem)"/></Prem>
-			
 		</Ret>	
 	</App>
 </ABCB2I>

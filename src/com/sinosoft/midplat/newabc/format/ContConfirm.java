@@ -137,7 +137,6 @@ public class ContConfirm extends XmlSimpFormat {
 		
 		Document mNoStdXml = 
 		  ContConfirmOutXsl.newInstance(tXslName).getCache().transform(pStdXml);
-		JdomUtil.print(mNoStdXml);
 		//为请求业务报文头信息加入返回码和返回信息.把请求的业务报文头加入到返回报文中返回给银行。
 		Element  RetCode=new Element("RetCode");
 		Element  RetMsg = new Element("RetMsg");
@@ -162,7 +161,7 @@ public class ContConfirm extends XmlSimpFormat {
 		header.addContent(RetMsg);
 		mNoStdXml.getRootElement().addContent(header);
 		
-		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out ContConfirm.Std2StdnoStd()!");
 		
 		return mNoStdXml;

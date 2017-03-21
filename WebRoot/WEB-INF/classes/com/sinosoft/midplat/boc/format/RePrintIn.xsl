@@ -23,7 +23,7 @@
 						select="/InsuReq/Main/TransNo" />
 				</TranNo>
 				<NodeNo>
-					<xsl:value-of select="/InsuReq/Main/BkBrchNo" />
+					<xsl:value-of select="/InsuReq/Main/ZoneNo" /><xsl:value-of select="/InsuReq/Main/BrNo" />
 				</NodeNo>
 				<!--交易流水号-->
 				<BankCode>0122</BankCode>
@@ -36,16 +36,13 @@
 				</ContNo>
 				<!--保单号 -->
 				<ContPrtNo>
-					<xsl:value-of select="/InsuReq/InsuReq_Body/PrintNo"/>
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(/InsuReq/Main/PrintNo)"/>
 				</ContPrtNo>
 				<!--保单印刷号-->
-				<ProposalPrtNo></ProposalPrtNo>
-					<!--投保单号-->
-					<OldContPrtNo></OldContPrtNo>
-					<!-- 旧保单印刷号 -->
-					<OldTranNo><xsl:value-of select="/InsuReq/InsuReq_Body/BkOthOldSeq"/></OldTranNo>
-					<!-- 原交易流水号 -->
-				<Password></Password>
+				<!-- <ProposalPrtNo></ProposalPrtNo> -->
+				<!--投保单号-->
+				<!-- <OldContPrtNo></OldContPrtNo> -->
+				<!-- 旧保单印刷号 -->
 			</Body>
 		</TranData>
 	</xsl:template>

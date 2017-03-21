@@ -3,16 +3,16 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
 <xsl:template match="InsuReq">
-<TranData><!--核心录单自核请求报文-->
+<TranData>
    <Head>
       <TranDate><xsl:value-of select="Main/TranDate"/></TranDate>
       <TranTime><xsl:value-of select="Main/TranTime"/></TranTime>
-      <NodeNo><xsl:value-of select="Main/BrNo"/></NodeNo>
+      <NodeNo><xsl:value-of select="Main/ZoneNo" /><xsl:value-of select="Main/BrNo" /></NodeNo>
       <BankCode><xsl:value-of select="Main/BankCode"/></BankCode>
       <TellerNo><xsl:value-of select="Main/TellerNo"/></TellerNo>
       <TranNo><xsl:value-of select="Main/TransNo"/></TranNo>
       <ZoneNo><xsl:value-of select="Main/ZoneNo"/></ZoneNo>
-      <ClientIp>127.0.0.1</ClientIp>
+      <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
       <TranCom><xsl:value-of select="Head/TranCom"/></TranCom>
       <FuncFlag><xsl:value-of select="Head/FuncFlag"/></FuncFlag>
       <AgentCom />
@@ -27,7 +27,7 @@
 	    </xsl:with-param>
 	  </xsl:call-template>
       </SaleChannel>
-      <ProposalPrtNo><xsl:value-of select="Main/ApplyNo"/></ProposalPrtNo>
+      <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/></ProposalPrtNo>
       <ContPrtNo />
       <PolApplyDate><xsl:value-of select="Main/ApplyDate"/></PolApplyDate>
       <AccNo><xsl:value-of select="Risks/Appendix/PayAcc"/></AccNo>
@@ -178,7 +178,14 @@
 		   </xsl:with-param>
 		 </xsl:call-template>
          </PayIntv>
-         <PayEndYear><xsl:value-of select="PayEndYear"/></PayEndYear>
+         <xsl:choose>
+         	<xsl:when test="../Appendix/PayIntv=01">
+	        	<PayEndYear>1000</PayEndYear>
+         	</xsl:when>
+         	<xsl:otherwise>
+         		<PayEndYear><xsl:value-of select="PayEndYear"/></PayEndYear>
+         	</xsl:otherwise>
+         </xsl:choose>
          <PayEndYearFlag>
          <xsl:call-template name="tran_PayEndYearFlag">
 		   <xsl:with-param name="PayEndYearFlag">

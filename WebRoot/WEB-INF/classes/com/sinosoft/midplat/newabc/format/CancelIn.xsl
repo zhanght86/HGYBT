@@ -25,7 +25,9 @@
 		<Body>
 			<ContNo><xsl:value-of select="App/Req/PolicyNo"/></ContNo>
 			<ProposalPrtNo></ProposalPrtNo>
-			<ContPrtNo><xsl:value-of select="App/Req/VchNo"/></ContPrtNo>
+			<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/VchNo)"/></ContPrtNo>
+			<TranNo><xsl:value-of select="App/Req/OrgSerialNo"/></TranNo>
+			<AccNo><xsl:value-of select="App/Req/PayAcc"/></AccNo>
 			<Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/PayAmt)"/></Prem>
 		</Body>
 	</TranData>

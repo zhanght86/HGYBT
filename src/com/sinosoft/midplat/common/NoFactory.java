@@ -200,6 +200,13 @@ public class NoFactory {
 			cLogger.error("初始化最大号异常！", ex);
 		}
 	}
+	/**
+	 * @Title: nextContRecordNo
+	 * @Description: 下个保单记录号
+	 * @return
+	 * @return int
+	 * @throws
+	 */
 	public final static int nextContRecordNo() {
 		synchronized (cContRecordNoLock) {
 			cContRecordNo += cClusterCount;

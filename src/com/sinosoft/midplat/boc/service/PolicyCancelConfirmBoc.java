@@ -84,7 +84,7 @@ public class PolicyCancelConfirmBoc extends ServiceImpl{
 //				
 //				cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_Taken).call(cInXmlDoc);
 //			}
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_Taken).call(cInXmlDoc);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_RefundFullPayment).call(cInXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
 			Element tOutBodyEle = tOutRootEle.getChild(Body);  

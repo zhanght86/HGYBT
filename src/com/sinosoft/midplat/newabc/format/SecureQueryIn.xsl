@@ -54,7 +54,7 @@
 			<!-- ±£µ¥Ó¡Ë¢ºÅ -->
 			<xsl:choose>
 			<xsl:when test="Header/EntrustWay ='11'">
-			<ContPrtNo><xsl:value-of select="App/Req/PrintCode"/></ContPrtNo>
+			<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PrintCode)"/></ContPrtNo>
 			</xsl:when>
 			<xsl:when test="Header/EntrustWay ='04'">
 			<ContPrtNo></ContPrtNo>

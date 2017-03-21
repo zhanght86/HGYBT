@@ -24,16 +24,18 @@
 				<NodeNo>
 					<xsl:value-of select="InsuReq/Main/ZoneNo" /><xsl:value-of select="InsuReq/Main/BrNo" />
 				</NodeNo>
-				<TranCom>3</TranCom>
-				<BankCode>03</BankCode>
-				<FuncFlag>442</FuncFlag>
-				<AgentCom></AgentCom>
-				<AgentCode>-</AgentCode>
+				<BankCode>0122</BankCode>
+				<xsl:copy-of select="/InsuReq/Head/*"/>
 			</Head>
 			<Body>
-				<ContNo>
+				<PayMode>B</PayMode><!-- 保费支付方式代码 -->
+				<ProposalPrtNo /><!-- 投保单(印刷)号 -->
+				<TranNo /><!-- 保险公司流水号 -->
+				<ContNo><!-- 保单号码 -->
 					<xsl:value-of select="InsuReq/Main/PolicyNo"/>
 				</ContNo>
+				<Prem><xsl:value-of select="InsuReq/Main/Premium"/></Prem><!-- 应收金额 -->
+				<PayAcc><xsl:value-of select="InsuReq/Main/PayAcc"/></PayAcc><!-- 缴费帐号 -->
 			</Body>
 		</TranData>
 	</xsl:template>

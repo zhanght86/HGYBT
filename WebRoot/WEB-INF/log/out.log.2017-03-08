@@ -1,0 +1,357 @@
+20:58:07,127 INFO bat.BocDownBusiBlc(349) - 程序开始...
+20:58:07,127 INFO boc.BocConf(22) - Into BocConf.load()...
+20:58:07,143 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:58:07,144 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:58:07,145 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:58:07,147 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:58:07,147 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:58:07,149 INFO common.XmlConf(80) - conf file modified at (2017-03-14 19:52:57,474) and length=4729 bytes!
+20:58:07,281 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:58:07,281 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:58:07,281 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:58:07,281 INFO common.XmlConf(80) - conf file modified at (2017-03-15 15:45:44,639) and length=28503 bytes!
+20:58:07,296 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:58:07,312 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:58:07,312 INFO boc.BocConf(47) - Out BocConf.load()!
+20:58:12,599 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:58:15,171 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocDownBusiBlc.main(BocDownBusiBlc.java:373)
+20:58:15,819 INFO bat.Balance(58) - Into Balance.run()...
+20:58:18,305 INFO bat.Balance(160) - Into Balance.getHead()...
+20:58:18,322 INFO bat.Balance(190) - Out Balance.getHead()!
+20:58:19,923 INFO bat.Balance(87) - FileName = RZDZ0029BOC20170316.txt
+20:58:21,741 INFO bat.Balance(196) - Into Balance.getFtpFile()...
+20:58:21,747 DEBUG bat.Balance(199) - ftp.ip = 127.0.0.1
+20:58:21,748 DEBUG bat.Balance(210) - ftp.port = 21
+20:58:21,749 DEBUG bat.Balance(213) - ftp.user = user
+20:58:21,751 DEBUG bat.Balance(216) - ftp.password = user
+20:58:21,752 DEBUG bat.Balance(231) - ftp.reconn = 5
+20:58:21,753 DEBUG bat.Balance(246) - ftp.timeout = 300s
+20:58:21,754 INFO bat.Balance(258) - LocalPath = D:/MyDownloads/Download/RZDZ0029BOC20170316.txt
+20:58:21,763 INFO bat.Balance(266) - ------1------------
+20:58:21,779 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:58:21,779 INFO bat.Balance(283) - ftp登录成功！
+20:58:21,779 INFO bat.Balance(286) - 采用二进制传输！
+20:58:21,779 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:58:21,779 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:58:21,794 WARN bat.Balance(331) - ftp下载数据失败！550-The system cannot find the file specified. 
+ Win32 error:   The system cannot find the file specified. 
+ Error details: File system returned an error.
+550 End
+
+20:58:21,794 INFO bat.Balance(337) - ftp退出成功！
+20:58:21,794 INFO bat.Balance(361) - ftp连接断开！
+20:58:21,794 INFO bat.Balance(266) - ------2------------
+20:58:21,794 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:58:21,794 INFO bat.Balance(283) - ftp登录成功！
+20:58:21,794 INFO bat.Balance(286) - 采用二进制传输！
+20:58:21,794 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:58:21,794 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:58:21,810 WARN bat.Balance(331) - ftp下载数据失败！550-The system cannot find the file specified. 
+ Win32 error:   The system cannot find the file specified. 
+ Error details: File system returned an error.
+550 End
+
+20:58:21,810 INFO bat.Balance(337) - ftp退出成功！
+20:58:21,810 INFO bat.Balance(361) - ftp连接断开！
+20:58:21,810 INFO bat.Balance(266) - ------3------------
+20:58:21,810 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:58:21,810 INFO bat.Balance(283) - ftp登录成功！
+20:58:21,810 INFO bat.Balance(286) - 采用二进制传输！
+20:58:21,810 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:58:21,810 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:58:21,826 WARN bat.Balance(331) - ftp下载数据失败！550-The system cannot find the file specified. 
+ Win32 error:   The system cannot find the file specified. 
+ Error details: File system returned an error.
+550 End
+
+20:58:21,826 INFO bat.Balance(337) - ftp退出成功！
+20:58:21,826 INFO bat.Balance(361) - ftp连接断开！
+20:58:21,826 INFO bat.Balance(266) - ------4------------
+20:58:21,826 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:58:21,826 INFO bat.Balance(283) - ftp登录成功！
+20:58:21,841 INFO bat.Balance(286) - 采用二进制传输！
+20:58:21,841 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:58:21,841 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:58:21,841 WARN bat.Balance(331) - ftp下载数据失败！550-The system cannot find the file specified. 
+ Win32 error:   The system cannot find the file specified. 
+ Error details: File system returned an error.
+550 End
+
+20:58:21,841 INFO bat.Balance(337) - ftp退出成功！
+20:58:21,841 INFO bat.Balance(361) - ftp连接断开！
+20:58:21,841 INFO bat.Balance(266) - ------5------------
+20:58:21,841 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:58:21,859 INFO bat.Balance(283) - ftp登录成功！
+20:58:21,860 INFO bat.Balance(286) - 采用二进制传输！
+20:58:21,861 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:58:21,862 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:58:21,863 WARN bat.Balance(331) - ftp下载数据失败！550-The system cannot find the file specified. 
+ Win32 error:   The system cannot find the file specified. 
+ Error details: File system returned an error.
+550 End
+
+20:58:21,863 INFO bat.Balance(337) - ftp退出成功！
+20:58:21,863 INFO bat.Balance(361) - ftp连接断开！
+20:58:21,959 ERROR bat.Balance(105) - 生成标准对账报文出错！
+com.sinosoft.midplat.exception.MidplatException: 未找到对账文件！RZDZ0029BOC20170316.txt
+	at com.sinosoft.midplat.bat.Balance.getFtpFile(Balance.java:373)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:92)
+	at com.sinosoft.midplat.boc.bat.BocDownBusiBlc.main(BocDownBusiBlc.java:373)
+20:58:27,671 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.ContCardBlcBoc
+20:58:28,349 INFO service.ContCardBlcBoc(26) - Into ContCardBlcBoc.service()...
+20:58:28,349 DEBUG service.ContCardBlcBoc(77) - Into ServiceImpl.insertTranLog()...
+20:58:28,503 DEBUG service.ContCardBlcBoc(114) - Out ServiceImpl.insertTranLog()!
+20:58:28,711 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+20:58:28,711 ERROR service.ContCardBlcBoc(55) - 中行新契约对账读取对账文件交易失败！
+java.lang.NullPointerException
+	at com.sinosoft.midplat.net.CallWebsvcAtomSvc.call(CallWebsvcAtomSvc.java:81)
+	at com.sinosoft.midplat.service.ContCardBlcBoc.service(ContCardBlcBoc.java:45)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:138)
+	at com.sinosoft.midplat.boc.bat.BocDownBusiBlc.main(BocDownBusiBlc.java:373)
+20:58:28,851 INFO service.ContCardBlcBoc(73) - Out ContCardBlcBoc.service()!
+20:58:29,336 INFO bat.Balance(533) - Into Balance.ending()...
+20:58:29,336 INFO bat.Balance(535) - do nothing, just out!
+20:58:29,336 INFO bat.Balance(537) - Out Balance.ending()!
+20:58:30,574 INFO bat.Balance(155) - Out Balance.run()!
+20:58:31,607 INFO bat.BocDownBusiBlc(375) - 成功结束！
+20:59:07,938 INFO bat.BocDownBusiBlc(349) - 程序开始...
+20:59:07,938 INFO boc.BocConf(22) - Into BocConf.load()...
+20:59:07,938 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:59:07,938 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:59:07,938 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:59:07,938 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:59:07,954 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+20:59:07,954 INFO common.XmlConf(80) - conf file modified at (2017-03-14 19:52:57,474) and length=4729 bytes!
+20:59:08,085 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+20:59:08,085 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:59:08,102 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:59:08,102 INFO common.XmlConf(80) - conf file modified at (2017-03-15 15:45:44,639) and length=28503 bytes!
+20:59:08,108 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:59:08,123 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:59:08,123 INFO boc.BocConf(47) - Out BocConf.load()!
+20:59:11,757 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:59:14,415 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocDownBusiBlc.main(BocDownBusiBlc.java:373)
+20:59:15,794 INFO bat.Balance(58) - Into Balance.run()...
+20:59:19,183 INFO bat.Balance(160) - Into Balance.getHead()...
+20:59:19,195 INFO bat.Balance(190) - Out Balance.getHead()!
+20:59:20,801 INFO bat.Balance(87) - FileName = RZDZ0029BOC20170308.txt
+20:59:23,757 INFO bat.Balance(196) - Into Balance.getFtpFile()...
+20:59:23,768 DEBUG bat.Balance(199) - ftp.ip = 127.0.0.1
+20:59:23,770 DEBUG bat.Balance(210) - ftp.port = 21
+20:59:23,770 DEBUG bat.Balance(213) - ftp.user = user
+20:59:23,770 DEBUG bat.Balance(216) - ftp.password = user
+20:59:23,770 DEBUG bat.Balance(231) - ftp.reconn = 5
+20:59:23,770 DEBUG bat.Balance(246) - ftp.timeout = 300s
+20:59:23,770 INFO bat.Balance(258) - LocalPath = D:/MyDownloads/Download/RZDZ0029BOC20170308.txt
+20:59:23,785 INFO bat.Balance(266) - ------1------------
+20:59:23,785 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+20:59:23,801 INFO bat.Balance(283) - ftp登录成功！
+20:59:23,801 INFO bat.Balance(286) - 采用二进制传输！
+20:59:23,801 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+20:59:23,801 DEBUG bat.Balance(298) - CurWorkingDir = /
+20:59:23,801 INFO bat.Balance(326) - ftp下载数据成功！D:/MyDownloads/Download/RZDZ0029BOC20170308.txt
+20:59:23,801 INFO bat.Balance(337) - ftp退出成功！
+20:59:23,801 INFO bat.Balance(361) - ftp连接断开！
+20:59:23,801 INFO bat.Balance(376) - Out Balance.getFtpFile()!
+20:59:26,829 INFO bat.BocDownBusiBlc(33) - Into BocDownBusiBlc.parse()...
+20:59:39,563 INFO bat.BocDownBusiBlc(49) - 2017031400290000040000.00000000040000010000.0000000001
+20:59:44,669 INFO bat.BocDownBusiBlc(58) - 此行长度为:54
+20:59:48,135 INFO bat.BocDownBusiBlc(63) - 成功总数:00000001
+20:59:49,890 INFO bat.BocDownBusiBlc(64) - 成功总保费:0000010000.00
+20:59:57,170 INFO bat.BocDownBusiBlc(49) - 20170529007812690851110201000120170308贾媛媛                                                                          888010000000781              0000010000.0001S
+21:00:01,272 INFO bat.BocDownBusiBlc(58) - 此行长度为:160
+21:00:20,815 INFO bat.BocDownBusiBlc(49) - 			                                                                               
+21:00:23,851 WARN bat.BocDownBusiBlc(54) - 空行，直接跳过，继续下一条！
+21:00:27,874 INFO bat.BocDownBusiBlc(337) - Count:0
+21:00:36,519 INFO bat.BocDownBusiBlc(338) - Prem:0.0
+21:00:36,526 INFO bat.BocDownBusiBlc(343) - Out BocDownBusiBlc.parse()!
+21:00:36,526 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.ContCardBlcBoc
+21:00:36,526 INFO service.ContCardBlcBoc(26) - Into ContCardBlcBoc.service()...
+21:00:36,526 DEBUG service.ContCardBlcBoc(77) - Into ServiceImpl.insertTranLog()...
+21:00:36,716 DEBUG service.ContCardBlcBoc(114) - Out ServiceImpl.insertTranLog()!
+21:00:36,883 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+21:00:36,883 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+21:00:36,883 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+21:00:36,916 INFO common.SaveMessage(94) - 21497_3_6_inSvc.xml IO输出耗时:0.033s
+21:00:36,917 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！21497_3_6_inSvc.xml
+21:00:36,918 INFO net.CallWebsvcAtomSvc(102) - start call 新单日结(http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService.service)...
+21:00:37,338 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "Host: 192.168.199.227:8001[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+21:00:37,353 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:00:37,369 DEBUG httpclient.Wire(70) - >> "2b5[\r][\n]"
+21:00:37,369 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MjA1OTA4PC9UcmFuVGltZT48VHJhbkNvbSBvdXRjb2RlPSIxMSI+MTE8L1RyYW5Db20+PE5vZGVObz4wODUxMDAwMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPlJaRFowMDI5Qk9DMjAxNzAzMDgudHh0PC9UcmFuTm8+PEZ1bmNGbGFnPjgwMjwvRnVuY0ZsYWc+PFNlcnZpY2VJZD42PC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxDb3VudD4wPC9Db3VudD48UHJlbT4wLjA8L1ByZW0+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+21:00:37,369 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:00:37,369 DEBUG httpclient.Wire(84) - >> "0"
+21:00:37,369 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:00:37,369 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:00:38,802 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+21:00:38,814 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+21:00:38,817 DEBUG httpclient.Wire(70) - << "Server: Apache-Coyote/1.1[\r][\n]"
+21:00:38,817 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml;charset=UTF-8[\r][\n]"
+21:00:38,818 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+21:00:38,819 DEBUG httpclient.Wire(70) - << "Date: Wed, 15 Mar 2017 13:00:24 GMT[\r][\n]"
+21:00:38,819 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "1"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "d"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "b"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "[\r]"
+21:00:38,824 DEBUG httpclient.Wire(70) - << "[\n]"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "<?xm"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+21:00:38,824 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+PC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+21:00:38,839 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新单日结(service)耗时：1.921s
+21:00:38,839 INFO common.SaveMessage(94) - 21497_6_6_outSvc.xml IO输出耗时:0.0s
+21:00:38,839 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！21497_6_6_outSvc.xml
+21:00:38,839 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+21:00:38,955 INFO service.ContCardBlcBoc(73) - Out ContCardBlcBoc.service()!
+21:00:38,955 INFO bat.Balance(533) - Into Balance.ending()...
+21:00:38,955 INFO bat.Balance(535) - do nothing, just out!
+21:00:38,955 INFO bat.Balance(537) - Out Balance.ending()!
+21:00:38,955 INFO bat.Balance(155) - Out Balance.run()!
+21:00:38,955 INFO bat.BocDownBusiBlc(375) - 成功结束！
+21:00:54,774 INFO bat.BocDownBusiBlc(349) - 程序开始...
+21:00:54,774 INFO boc.BocConf(22) - Into BocConf.load()...
+21:00:54,774 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+21:00:54,774 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+21:00:54,774 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+21:00:54,774 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+21:00:54,774 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+21:00:54,774 INFO common.XmlConf(80) - conf file modified at (2017-03-14 19:52:57,474) and length=4729 bytes!
+21:00:54,921 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+21:00:54,921 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+21:00:54,921 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+21:00:54,921 INFO common.XmlConf(80) - conf file modified at (2017-03-15 15:45:44,639) and length=28503 bytes!
+21:00:54,943 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+21:00:54,943 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+21:00:54,943 INFO boc.BocConf(47) - Out BocConf.load()!
+21:00:57,725 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+21:01:00,231 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.bat.Balance.run(Balance.java:57)
+	at com.sinosoft.midplat.boc.bat.BocDownBusiBlc.main(BocDownBusiBlc.java:373)
+21:01:00,985 INFO bat.Balance(58) - Into Balance.run()...
+21:01:03,018 INFO bat.Balance(160) - Into Balance.getHead()...
+21:01:03,034 INFO bat.Balance(190) - Out Balance.getHead()!
+21:01:03,688 INFO bat.Balance(87) - FileName = RZDZ0029BOC20170308.txt
+21:01:05,156 INFO bat.Balance(196) - Into Balance.getFtpFile()...
+21:01:05,160 DEBUG bat.Balance(199) - ftp.ip = 127.0.0.1
+21:01:05,161 DEBUG bat.Balance(210) - ftp.port = 21
+21:01:05,162 DEBUG bat.Balance(213) - ftp.user = user
+21:01:05,162 DEBUG bat.Balance(216) - ftp.password = user
+21:01:05,162 DEBUG bat.Balance(231) - ftp.reconn = 5
+21:01:05,162 DEBUG bat.Balance(246) - ftp.timeout = 300s
+21:01:05,162 INFO bat.Balance(258) - LocalPath = D:/MyDownloads/Download/RZDZ0029BOC20170308.txt
+21:01:05,178 INFO bat.Balance(266) - ------1------------
+21:01:05,193 INFO bat.Balance(276) - ftp连接成功！127.0.0.1
+21:01:05,193 INFO bat.Balance(283) - ftp登录成功！
+21:01:05,193 INFO bat.Balance(286) - 采用二进制传输！
+21:01:05,193 WARN bat.Balance(295) - 切换ftp工作目录失败！D:/FTP/BOC/download/; 550 The parameter is incorrect. 
+
+21:01:05,193 DEBUG bat.Balance(298) - CurWorkingDir = /
+21:01:05,193 INFO bat.Balance(326) - ftp下载数据成功！D:/MyDownloads/Download/RZDZ0029BOC20170308.txt
+21:01:05,193 INFO bat.Balance(337) - ftp退出成功！
+21:01:05,193 INFO bat.Balance(361) - ftp连接断开！
+21:01:05,209 INFO bat.Balance(376) - Out Balance.getFtpFile()!
+21:01:07,877 INFO bat.BocDownBusiBlc(33) - Into BocDownBusiBlc.parse()...
+21:01:15,204 INFO bat.BocDownBusiBlc(49) - 2017031400290000040000.00000000040000010000.0000000001
+21:01:18,377 INFO bat.BocDownBusiBlc(58) - 此行长度为:54
+21:01:20,511 INFO bat.BocDownBusiBlc(63) - 成功总数:00000001
+21:01:22,144 INFO bat.BocDownBusiBlc(64) - 成功总保费:0000010000.00
+21:01:47,017 INFO bat.BocDownBusiBlc(49) - 20170529007812690851110201000120170308贾媛媛                                                                          888010000000781              0000010000.0001S
+21:02:10,448 INFO bat.BocDownBusiBlc(58) - 此行长度为:160
+21:02:16,808 INFO bat.BocDownBusiBlc(49) - 			                                                                               
+21:02:19,180 WARN bat.BocDownBusiBlc(54) - 空行，直接跳过，继续下一条！
+21:02:27,973 INFO bat.BocDownBusiBlc(337) - Count:0
+21:02:27,974 INFO bat.BocDownBusiBlc(338) - Prem:0.0
+21:02:27,975 INFO bat.BocDownBusiBlc(343) - Out BocDownBusiBlc.parse()!
+21:02:27,975 INFO bat.Balance(135) - 业务处理模块：com.sinosoft.midplat.service.ContCardBlcBoc
+21:02:27,975 INFO service.ContCardBlcBoc(26) - Into ContCardBlcBoc.service()...
+21:02:27,975 DEBUG service.ContCardBlcBoc(77) - Into ServiceImpl.insertTranLog()...
+21:02:28,136 DEBUG service.ContCardBlcBoc(114) - Out ServiceImpl.insertTranLog()!
+21:02:28,305 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+21:02:28,305 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+21:02:28,320 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+21:02:28,336 INFO common.SaveMessage(94) - 21497_3_6_inSvc.xml IO输出耗时:0.016s
+21:02:28,336 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！21497_3_6_inSvc.xml
+21:02:28,336 INFO net.CallWebsvcAtomSvc(102) - start call 新单日结(http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService.service)...
+21:02:28,790 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "Host: 192.168.199.227:8001[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+21:02:28,806 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:02:28,821 DEBUG httpclient.Wire(70) - >> "2b5[\r][\n]"
+21:02:28,821 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MjEwMDU0PC9UcmFuVGltZT48VHJhbkNvbSBvdXRjb2RlPSIxMSI+MTE8L1RyYW5Db20+PE5vZGVObz4wODUxMDAwMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPlJaRFowMDI5Qk9DMjAxNzAzMDgudHh0PC9UcmFuTm8+PEZ1bmNGbGFnPjgwMjwvRnVuY0ZsYWc+PFNlcnZpY2VJZD42PC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxDb3VudD4wPC9Db3VudD48UHJlbT4wLjA8L1ByZW0+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+21:02:28,821 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:02:28,821 DEBUG httpclient.Wire(84) - >> "0"
+21:02:28,821 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:02:28,821 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+21:02:30,308 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+21:02:30,311 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+21:02:30,313 DEBUG httpclient.Wire(70) - << "Server: Apache-Coyote/1.1[\r][\n]"
+21:02:30,313 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml;charset=UTF-8[\r][\n]"
+21:02:30,313 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+21:02:30,313 DEBUG httpclient.Wire(70) - << "Date: Wed, 15 Mar 2017 13:02:15 GMT[\r][\n]"
+21:02:30,313 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+21:02:30,329 DEBUG httpclient.Wire(84) - << "1"
+21:02:30,329 DEBUG httpclient.Wire(84) - << "d"
+21:02:30,329 DEBUG httpclient.Wire(84) - << "b"
+21:02:30,329 DEBUG httpclient.Wire(84) - << "[\r]"
+21:02:30,329 DEBUG httpclient.Wire(70) - << "[\n]"
+21:02:30,329 DEBUG httpclient.Wire(84) - << "<?xm"
+21:02:30,344 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+21:02:30,344 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+PC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+21:02:30,344 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新单日结(service)耗时：2.008s
+21:02:30,360 INFO common.SaveMessage(94) - 21497_6_6_outSvc.xml IO输出耗时:0.0s
+21:02:30,360 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！21497_6_6_outSvc.xml
+21:02:30,360 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+21:02:30,492 INFO service.ContCardBlcBoc(73) - Out ContCardBlcBoc.service()!
+21:02:30,492 INFO bat.Balance(533) - Into Balance.ending()...
+21:02:30,492 INFO bat.Balance(535) - do nothing, just out!
+21:02:30,492 INFO bat.Balance(537) - Out Balance.ending()!
+21:02:30,492 INFO bat.Balance(155) - Out Balance.run()!
+21:02:30,492 INFO bat.BocDownBusiBlc(375) - 成功结束！
+21:05:35,567 INFO bat.BocBusiBlc(98) - 程序开始...
+21:05:35,583 INFO boc.BocConf(22) - Into BocConf.load()...
+21:05:35,583 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+21:05:35,583 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+21:05:35,583 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+21:05:35,583 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+21:05:35,583 INFO boc.BocConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml...
+21:05:35,583 INFO common.XmlConf(80) - conf file modified at (2017-03-14 19:52:57,474) and length=4729 bytes!
+21:05:35,737 INFO boc.BocConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/boc.xml!
+21:05:35,737 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+21:05:35,737 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+21:05:35,737 INFO common.XmlConf(80) - conf file modified at (2017-03-15 15:45:44,639) and length=28503 bytes!
+21:05:35,752 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+21:05:35,752 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+21:05:35,752 INFO boc.BocConf(47) - Out BocConf.load()!

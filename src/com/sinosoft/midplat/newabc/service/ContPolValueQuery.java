@@ -42,7 +42,7 @@ public class ContPolValueQuery extends ServiceImpl {
 			}
 			Calendar tCalendar=Calendar.getInstance();
 			tCalendar.add(Calendar.SECOND, -tLocktime);
-			String tSql=new StringBuffer("select count(1) from tranLog where RCode=").append(CodeDef.RCode_NULL).append(" and ContNo='").append(mContNo).append("\'").append(" and MakeDate>=").append(DateUtil.get8Date(tCalendar)).append(" and MakeTime>='").append(DateUtil.get6Time(tCalendar)).toString();
+			String tSql=new StringBuffer("select count(1) from tranLog where RCode=").append(CodeDef.RCode_NULL).append(" and ContNo='").append(mContNo).append("\'").append(" and MakeDate>=").append(DateUtil.get8Date(tCalendar)).append(" and MakeTime>=").append(DateUtil.get6Time(tCalendar)).toString();
 			if(!"1".equals(new ExeSQL().getOneValue(tSql))){
 				throw new MidplatException("此保单正在处理中,请稍后!");
 			}
@@ -62,7 +62,7 @@ public class ContPolValueQuery extends ServiceImpl {
 		
 		if(cTranLogDB!=null){
 			Element tHeadEle=cOutXmlDoc.getRootElement().getChild(Head);
-			cTranLogDB.setRCode(tHeadEle.getChildText(Head));
+			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
 			cTranLogDB.setRText(tHeadEle.getChildText(Desc));
 			long mCurrMillis=System.currentTimeMillis();
 			cTranLogDB.setUsedTime((int)(mCurrMillis-mStartMillis)/1000);

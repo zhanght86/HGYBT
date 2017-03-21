@@ -4,6 +4,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 
 public class RenewalPayment extends XmlSimpFormat {
@@ -38,6 +39,14 @@ public class RenewalPayment extends XmlSimpFormat {
 			mRetCode.setText("009999");
 		}
 		mRetMsg.setText(tDesc.getText());
+		
+		mNoStdXml.getRootElement().getChild("Header").getChild("SerialNo").setText(header.getChildText("SerialNo"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("InsuSerial").setText(header.getChildText("InsuSerial"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("TransTime").setText(header.getChildText("TransTime"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("TransDate").setText(header.getChildText("TransDate"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("CorpNo").setText(header.getChildText("CorpNo"));
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out RenewalPayment.std2NoStd()!");
 		return mNoStdXml;
 	}

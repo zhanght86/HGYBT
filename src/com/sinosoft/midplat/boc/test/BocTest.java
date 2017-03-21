@@ -61,7 +61,7 @@ public class BocTest {
 //		
 //	}
    public static void main(String[] args) {
-//	   String ip="192.168.197.1";//本机ip地址
+	   //String ip="192.168.197.1";//本机ip地址
 	   String ip="10.2.0.31";//测试环境ip地址
 		int port=35009;
 		String path="D:\\picchchenjw\\天安\\需求\\贵州\\中国银行和贵州银行\\中国银行\\保费试算1001.xml";
@@ -69,7 +69,6 @@ public class BocTest {
 		//String path="D:\\picchchenjw\\天安\\需求\\贵州\\中国银行和贵州银行\\中国银行\\当日契撤1004.xml";
 		//String path="D:\\picchchenjw\\天安\\需求\\贵州\\中国银行和贵州银行\\中国银行\\退保满期给付试算1007.xml";
 		//String path="D:\\picchchenjw\\天安\\需求\\贵州\\中国银行和贵州银行\\中国银行\\退保满期给付确认1008.xml";
-		path="D:/task/20161122/1001in_noStd.xml";
 		try {
 			FileInputStream input=new FileInputStream(path);
 			byte[] bytes=IOTrans.toBytes(input);

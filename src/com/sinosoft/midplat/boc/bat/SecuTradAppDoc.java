@@ -1,4 +1,3 @@
-
 package com.sinosoft.midplat.boc.bat;
 
 import java.io.BufferedReader;
@@ -114,32 +113,32 @@ public class SecuTradAppDoc extends Balance{
 		return mBodyEle;
 	}
 	public static void main(String[] args) throws Exception {
-//		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.Abc.bat.SecuTradAppDoc.main");
-//		mLogger.info("程序开始...");
-//		
-//		SecuTradAppDoc mBatch = new SecuTradAppDoc();
-//		//用于补对账，设置补对账日期
-//		if (0 != args.length) {
-//			mLogger.info("args[0] = " + args[0]);
-//			
-//			/**
-//			 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。
-//			 * 4位年-2位月-2位日。
-//			 * 4位年：4位[0-9]的数字。
-//			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
-//			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
-//			 * 
-//			 * 简单日期校验的正则表达式：\\d{4}\\d{2}\\d{2}。
-//			 */
-//			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
-//				mBatch.setDate(args[0]);
-//			} else {
-//				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
-//			}
-//		}
-//		
-//		mBatch.run();
-//		
-//		mLogger.info("成功结束！");
+		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.Abc.bat.SecuTradAppDoc.main");
+		mLogger.info("程序开始...");
+		
+		SecuTradAppDoc mBatch = new SecuTradAppDoc();
+		//用于补对账，设置补对账日期
+		if (0 != args.length) {
+			mLogger.info("args[0] = " + args[0]);
+			
+			/**
+			 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。
+			 * 4位年-2位月-2位日。
+			 * 4位年：4位[0-9]的数字。
+			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
+			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
+			 * 
+			 * 简单日期校验的正则表达式：\\d{4}\\d{2}\\d{2}。
+			 */
+			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
+				mBatch.setDate(args[0]);
+			} else {
+				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
+			}
+		}
+		
+		mBatch.run();
+		
+		mLogger.info("成功结束！");
 	}
 }

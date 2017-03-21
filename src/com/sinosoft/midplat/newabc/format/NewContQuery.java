@@ -51,11 +51,13 @@ public class NewContQuery extends XmlSimpFormat {
 		cLogger.info("Into NewContQuery.std2NoStd()...");
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
+		Element ttContNo  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Body/ContNo");
 		Document mNoStdXml = 
 			NewContQueryOutXsl.newInstance().getCache().transform(pStdXml);
 		//为请求业务报文头信息加入返回码和返回信息.把请求的业务报文头加入到返回报文中返回给银行。
 		Element  RetCode= mNoStdXml.getRootElement().getChild("Header").getChild("RetCode");
 		Element  RetMsg = mNoStdXml.getRootElement().getChild("Header").getChild("RetMsg");
+		//核保结果
 		Element  AppResult = mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("AppResult");
 		
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
@@ -65,7 +67,10 @@ public class NewContQuery extends XmlSimpFormat {
 		   cLogger.info("交易成功=========");
 		   RetCode.setText("000000");
 		   RetMsg.setText("交易成功");
-		   AppResult.setText("0");
+		   if(ttContNo.getText()==null)
+			   AppResult.setText("A");
+		   else
+			   AppResult.setText("0");
 		}
 		if (ttFlag.getValue().equals("1")){
 			cLogger.info("交易失败=========失败信息:"+RetMsg.getText());
@@ -77,7 +82,7 @@ public class NewContQuery extends XmlSimpFormat {
 		cLogger.info(RetCode.getText());
 		cLogger.info(RetMsg.getText());
 		
-		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out NewContQuery.std2NoStd()!");
 		return mNoStdXml;
 	}

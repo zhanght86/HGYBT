@@ -67,7 +67,7 @@
 				</Risks>
 				<!--投保单印刷号 -->
 				<ProposalContNo>
-					<xsl:value-of select="App/Req/PolicyApplyNo" />
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PolicyApplyNo)" />
 				</ProposalContNo>
 				<!-- 预算金额 -->
 				<xsl:variable name="BudGet" select="App/Req/Prem"/>
@@ -94,44 +94,44 @@
 	<!-- 证件类型-->
 	<xsl:template name="tran_AppntIDType" match="App/Req/Appl/IDKind">
 		<xsl:choose>
-			<xsl:when test=".=110001">0</xsl:when>	<!-- 身份证 -->
+			<xsl:when test=".=110001">0</xsl:when>	<!-- 居民身份证 -->
 			<xsl:when test=".=110002">0</xsl:when>	<!-- 重号居民身份证-->
-			<xsl:when test=".=110003">C</xsl:when>	<!-- 临时居民身份证 -->
-			<xsl:when test=".=110004">C</xsl:when>	<!-- 重号临时居民身份证 -->
+			<xsl:when test=".=110003">0</xsl:when>	<!-- 临时居民身份证 -->
+			<xsl:when test=".=110004">0</xsl:when>	<!-- 重号临时居民身份证 -->
 			<xsl:when test=".=110005">4</xsl:when>  <!-- 户口簿 -->
 			<xsl:when test=".=110006">4</xsl:when>  <!-- 重号户口簿  -->
 			<xsl:when test=".=110007">2</xsl:when>  <!-- 中国人民解放军军人身份证  -->
 			<xsl:when test=".=110008">2</xsl:when>  <!-- 重号中国人民解放军军人身份证  -->
 			<xsl:when test=".=110009">D</xsl:when>  <!-- 中国人民武装警察身份证件  -->
 			<xsl:when test=".=110010">D</xsl:when>  <!-- 重号中国人民武装警察身份证件  -->
-			<xsl:when test=".=110011">8</xsl:when>  <!-- 离休干部荣誉证 -->
-			<xsl:when test=".=110012">8</xsl:when>  <!-- 重号离休干部荣誉证 -->
-			<xsl:when test=".=110013">8</xsl:when>  <!-- 军官退休证 -->
-			<xsl:when test=".=110014">8</xsl:when>  <!-- 重号军官退休证 -->
-			<xsl:when test=".=110015">8</xsl:when>  <!-- 文职干部退休证 -->
-			<xsl:when test=".=110016">8</xsl:when>  <!-- 重号文职干部退休证 -->
-			<xsl:when test=".=110017">5</xsl:when>  <!-- 军事院校学员证 -->
-			<xsl:when test=".=110018">5</xsl:when>  <!-- 重号军事院校学员证 -->
-			<xsl:when test=".=110019">8</xsl:when>  <!-- 港澳居民往来内地通行证 -->
-			<xsl:when test=".=110020">8</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
-			<xsl:when test=".=110021">E</xsl:when>  <!-- 台湾居民往来大陆通行证 -->
-			<xsl:when test=".=110022">E</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
+			<xsl:when test=".=110011">99</xsl:when>  <!-- 离休干部荣誉证 -->
+			<xsl:when test=".=110012">99</xsl:when>  <!-- 重号离休干部荣誉证 -->
+			<xsl:when test=".=110013">99</xsl:when>  <!-- 军官退休证 -->
+			<xsl:when test=".=110014">99</xsl:when>  <!-- 重号军官退休证 -->
+			<xsl:when test=".=110015">99</xsl:when>  <!-- 文职干部退休证 -->
+			<xsl:when test=".=110016">99</xsl:when>  <!-- 重号文职干部退休证 -->
+			<xsl:when test=".=110017">99</xsl:when>  <!-- 军事院校学员证 -->
+			<xsl:when test=".=110018">99</xsl:when>  <!-- 重号军事院校学员证 -->
+			<xsl:when test=".=110019">F</xsl:when>  <!-- 港澳居民往来内地通行证 -->
+			<xsl:when test=".=110020">F</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
+			<xsl:when test=".=110021">F</xsl:when>  <!-- 台湾居民往来大陆通行证 -->
+			<xsl:when test=".=110022">F</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
 			<xsl:when test=".=110023">1</xsl:when>  <!-- 中华人民共和国护照 -->
 			<xsl:when test=".=110024">1</xsl:when>  <!-- 重号中华人民共和国护照 -->
 			<xsl:when test=".=110025">1</xsl:when>  <!-- 外国护照 -->
 			<xsl:when test=".=110026">1</xsl:when>  <!-- 重号外国护照 -->
 			<xsl:when test=".=110027">2</xsl:when>  <!-- 军官证 -->
 			<xsl:when test=".=110028">2</xsl:when>  <!-- 重号军官证 -->
-			<xsl:when test=".=110029">8</xsl:when>  <!-- 文职干部证 -->
-			<xsl:when test=".=110030">8</xsl:when>  <!-- 重号文职干部证 -->
+			<xsl:when test=".=110029">99</xsl:when>  <!-- 文职干部证 -->
+			<xsl:when test=".=110030">99</xsl:when>  <!-- 重号文职干部证 -->
 			<xsl:when test=".=110031">D</xsl:when>  <!-- 警官证 -->
 			<xsl:when test=".=110032">D</xsl:when>  <!-- 重号警官证 -->
-			<xsl:when test=".=110033">A</xsl:when>  <!-- 军人士兵证 -->
-			<xsl:when test=".=110034">A</xsl:when>  <!-- 重号军人士兵证 -->
-			<xsl:when test=".=110035">A</xsl:when>  <!-- 武警士兵证 -->
-			<xsl:when test=".=110036">A</xsl:when>  <!-- 重号武警士兵证 -->
-			<xsl:when test=".=119998">8</xsl:when>  <!-- 系统使用的个人证件识别标识 -->
-			<xsl:when test=".=119999">8</xsl:when>  <!-- 其他个人证件识别标识 -->
+			<xsl:when test=".=110033">2</xsl:when>  <!-- 军人士兵证 -->
+			<xsl:when test=".=110034">2</xsl:when>  <!-- 重号军人士兵证 -->
+			<xsl:when test=".=110035">D</xsl:when>  <!-- 武警士兵证 -->
+			<xsl:when test=".=110036">D</xsl:when>  <!-- 重号武警士兵证 -->
+			<xsl:when test=".=119998">99</xsl:when>  <!-- 系统使用的个人证件识别标识 -->
+			<xsl:when test=".=119999">99</xsl:when>  <!-- 其他个人证件识别标识 -->
 			<xsl:otherwise>--</xsl:otherwise>  
 		</xsl:choose>
 	</xsl:template>

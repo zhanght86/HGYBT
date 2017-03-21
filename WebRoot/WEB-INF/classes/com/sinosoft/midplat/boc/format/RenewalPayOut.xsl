@@ -4,11 +4,16 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
 	exclude-result-prefixes="java">
 	<xsl:output method="xml" indent="yes" />
-	<xsl:template match="/">
+	<xsl:template match="TranData">
 		<InsuRet><!-- 中国银行续期缴费响应报文 -->
 			<Main>
-				<ResultCode><xsl:value-of select="Insut/Maina/ResultCode" /></ResultCode>
-				<ResultInfo><xsl:value-of select="Insut/Maina/ResultInfo" /></ResultInfo>
+				<xsl:if test="Head/Flag='0'">
+					<ResultCode>0000</ResultCode>
+				</xsl:if>
+				<xsl:if test="Head/Flag='1'">
+					<ResultCode>0001</ResultCode>
+				</xsl:if>
+				<ResultInfo><xsl:value-of select="Head/Desc" /></ResultInfo>
 			</Main>
 		</InsuRet>
 	</xsl:template>

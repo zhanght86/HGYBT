@@ -80,12 +80,12 @@
 			<ApplyNo><xsl:value-of  select ="App/Req/AppNo"/></ApplyNo >	
 			<!-- 投保单号 -->
 			<ProposalPrtNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/PolicyApplySerial"/></xsl:if>
+			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/PolicyApplySerial)"/></xsl:if>
 			<xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/></xsl:if>
 			</ProposalPrtNo>  
 			<!-- 保单印刷号 -->
 			<ContPrtNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/VchNo"/></xsl:if>
+			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/VchNo)"/></xsl:if>
 			<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
 			</ContPrtNo>
 			<!-- 投保日期 -->
@@ -140,21 +140,7 @@
 			<!-- 缴费形式 -->
 			<PayMode>B</PayMode>
 			<!-- 缴费频次 -->
-			<!--<xsl:choose> 农行借贷险的缴费频次为0-趸交-放开在rule.xsl做校验
-			<xsl:when test="$MainProductCode=211901"><PayIntv>0</PayIntv></xsl:when>
-			<xsl:otherwise>
-			<PayIntv><xsl:apply-templates select="PayIntv"/></PayIntv>
-			</xsl:otherwise>
-			</xsl:choose>
-			-->
-			<xsl:choose>
-			<xsl:when test="App/Req/Risks/RiskCode='145201'">
-			<PayIntv>0</PayIntv>
-			</xsl:when>
-			<xsl:otherwise>
 			<PayIntv><xsl:apply-templates select="App/Req/Risks/PayType"/></PayIntv>
-			</xsl:otherwise>
-			</xsl:choose>
 			<xsl:choose>
 				<xsl:when test="App/Req/Risks/PayType=1"><!-- 趸交传1000Y -->
 				<!-- 缴费年期年龄标志 -->
@@ -162,18 +148,12 @@
 				<!-- 缴费年期年龄 -->
 				<PayEndYear>1000</PayEndYear>
 				</xsl:when>
-				<xsl:when test="App/Req/Risks/RiskCode=211901"><!-- 趸交传1000Y -->
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag>Y</PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear>1000</PayEndYear>
-				</xsl:when>
-				<xsl:otherwise>
+				<xsl:when test="App/Req/Risks/PayType=5"><!-- 年交传2Y -->
 				<!-- 缴费年期年龄标志 -->
 				<PayEndYearFlag><xsl:apply-templates select="App/Req/Risks/PayDueType"/></PayEndYearFlag>			
 				<!-- 缴费年期年龄 -->
 				<PayEndYear><xsl:value-of select="App/Req/Risks/PayDueDate"/></PayEndYear>
-				</xsl:otherwise>
+				</xsl:when>
 			</xsl:choose>
 			
 			<!-- 保险年期年龄标志 -->
@@ -227,19 +207,19 @@
 			<!-- 电子邮件 -->
 			<Email><xsl:value-of select="Email"/></Email>
 			<!-- 职业代码 --><!-- 和核心以及客户确认过，农行不传，传默认值3010101（一般内勤），有确认邮件 -->
-			 <JobCode>3010101</JobCode>
+			 <JobCode><xsl:value-of select="JobCode"/></JobCode>
 			<!-- 国籍 -->
-			<Nationality>CHN</Nationality>
-			<!-- 体重 -->
-			<Stature/>
+			<Nationality><xsl:apply-templates select="Country"/></Nationality>
 			<!-- 身高 -->
+			<Stature/>
+			<!-- 体重 -->
 			<Weight/>
 			<!-- 收入 -->
 			<YearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/></YearSalary>
 			
-			<!-- 证件有效期 --><!-- 8位日期，长期有效为20991231 -->
+			<!-- 证件有效期 --><!-- 8位日期，长期有效为99991231 -->
 			<xsl:choose>
-				<xsl:when test = "InvalidDate=20991231"><IdExpDate>99990101</IdExpDate></xsl:when>
+				<xsl:when test = "InvalidDate=99991231"><IdExpDate>99990101</IdExpDate></xsl:when>
 				<xsl:otherwise><IdExpDate><xsl:value-of select="InvalidDate"/></IdExpDate></xsl:otherwise>
 			</xsl:choose>
 			<!-- 婚否 -->
@@ -278,12 +258,12 @@
 			<!-- 电子邮件 -->
 			<Email><xsl:value-of select="Email"/></Email>
 			<!-- 职业代码 --><!-- 和核心以及客户确认过，农行不传，传默认值3010101（一般内勤），有确认邮件 -->
-			<JobCode>3010101</JobCode>
+			<JobCode><xsl:value-of select="JobCode"/></JobCode>
 			<!-- 国籍 -->
-			<Nationality>CHN</Nationality>
-			<!-- 体重 -->
-			<Stature><xsl:value-of select="Tall"/></Stature>
+			<Nationality><xsl:apply-templates select="Country"/></Nationality>
 			<!-- 身高 -->
+			<Stature><xsl:value-of select="Tall"/></Stature>
+			<!-- 体重 -->
 			<Weight><xsl:value-of select="Weight"/></Weight>
 			
 			
@@ -306,10 +286,10 @@
 			
 			
 			
-			<!-- 证件有效期 --><!-- 8位日期，长期有效为20991231 -->
+			<!-- 证件有效期 --><!-- 8位日期，长期有效为99991231 -->
 			<xsl:choose>
-				<xsl:when test = "InvalidDate=20991231"><IdExpDate>99990101</IdExpDate></xsl:when>
-				<xsl:otherwise><IdExpDate><xsl:value-of select="InvalidDate"/></IdExpDate></xsl:otherwise>
+				<xsl:when test = "ValidDate=99991231"><IdExpDate>99990101</IdExpDate></xsl:when>
+				<xsl:otherwise><IdExpDate><xsl:value-of select="ValidDate"/></IdExpDate></xsl:otherwise>
 			</xsl:choose>
 			<!-- 婚否 -->
 			<MaritalStatus/>
@@ -374,9 +354,9 @@
 			
 			
 			<!-- 保险年期年龄标志 -->
-			<InsuYearFlag><xsl:apply-templates select="//App/Req/Risks/InsuDueType"/></InsuYearFlag>
+			<InsuYearFlag><xsl:apply-templates select="//App/Req/Addt/InsuDueType1"/></InsuYearFlag>
 			<!-- 保险年期年龄 -->
-			<InsuYear><xsl:value-of select="//App/Req/Risks/InsuDueDate"/></InsuYear>
+			<InsuYear><xsl:value-of select="//App/Req/Addt/InsuDueDate1"/></InsuYear>
 			<!-- 红利领取方式 -->
 			<BonusGetMode></BonusGetMode>
 			<!-- 待定 --> <!-- 满期领取金领取方式 -->
@@ -437,7 +417,6 @@
 <!-- 关系代码 -->
 <xsl:template name="tran_relatoinsured" match="RelaToInsured">
 	<xsl:choose>
-		<xsl:when test=".=00">00</xsl:when> <!-- 本人              -->
 		<xsl:when test=".=01">00</xsl:when> <!-- 本人              -->
 		<xsl:when test=".=02">02</xsl:when> <!-- 丈夫              -->
 		<xsl:when test=".=03">02</xsl:when> <!-- 妻子              -->
@@ -488,42 +467,42 @@
 	<xsl:choose>
 		<xsl:when test=".=110001">0</xsl:when>	<!-- 居民身份证 -->
 		<xsl:when test=".=110002">0</xsl:when>	<!-- 重号居民身份证-->
-		<xsl:when test=".=110003">C</xsl:when>	<!-- 临时居民身份证 -->
-		<xsl:when test=".=110004">C</xsl:when>	<!-- 重号临时居民身份证 -->
+		<xsl:when test=".=110003">0</xsl:when>	<!-- 临时居民身份证 -->
+		<xsl:when test=".=110004">0</xsl:when>	<!-- 重号临时居民身份证 -->
 		<xsl:when test=".=110005">4</xsl:when>  <!-- 户口簿 -->
 		<xsl:when test=".=110006">4</xsl:when>  <!-- 重号户口簿  -->
 		<xsl:when test=".=110007">2</xsl:when>  <!-- 中国人民解放军军人身份证  -->
 		<xsl:when test=".=110008">2</xsl:when>  <!-- 重号中国人民解放军军人身份证  -->
 		<xsl:when test=".=110009">D</xsl:when>  <!-- 中国人民武装警察身份证件  -->
 		<xsl:when test=".=110010">D</xsl:when>  <!-- 重号中国人民武装警察身份证件  -->
-		<xsl:when test=".=110011">8</xsl:when>  <!-- 离休干部荣誉证 -->
-		<xsl:when test=".=110012">8</xsl:when>  <!-- 重号离休干部荣誉证 -->
-		<xsl:when test=".=110013">8</xsl:when>  <!-- 军官退休证 -->
-		<xsl:when test=".=110014">8</xsl:when>  <!-- 重号军官退休证 -->
-		<xsl:when test=".=110015">8</xsl:when>  <!-- 文职干部退休证 -->
-		<xsl:when test=".=110016">8</xsl:when>  <!-- 重号文职干部退休证 -->
-		<xsl:when test=".=110017">5</xsl:when>  <!-- 军事院校学员证 -->
-		<xsl:when test=".=110018">5</xsl:when>  <!-- 重号军事院校学员证 -->
-		<xsl:when test=".=110019">8</xsl:when>  <!-- 港澳居民往来内地通行证 -->
-		<xsl:when test=".=110020">8</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
-		<xsl:when test=".=110021">E</xsl:when>  <!-- 台湾居民往来大陆通行证 -->
-		<xsl:when test=".=110022">E</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
+		<xsl:when test=".=110011">99</xsl:when>  <!-- 离休干部荣誉证 -->
+		<xsl:when test=".=110012">99</xsl:when>  <!-- 重号离休干部荣誉证 -->
+		<xsl:when test=".=110013">99</xsl:when>  <!-- 军官退休证 -->
+		<xsl:when test=".=110014">99</xsl:when>  <!-- 重号军官退休证 -->
+		<xsl:when test=".=110015">99</xsl:when>  <!-- 文职干部退休证 -->
+		<xsl:when test=".=110016">99</xsl:when>  <!-- 重号文职干部退休证 -->
+		<xsl:when test=".=110017">99</xsl:when>  <!-- 军事院校学员证 -->
+		<xsl:when test=".=110018">99</xsl:when>  <!-- 重号军事院校学员证 -->
+		<xsl:when test=".=110019">F</xsl:when>  <!-- 港澳居民往来内地通行证 -->
+		<xsl:when test=".=110020">F</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
+		<xsl:when test=".=110021">F</xsl:when>  <!-- 台湾居民往来大陆通行证 -->
+		<xsl:when test=".=110022">F</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
 		<xsl:when test=".=110023">1</xsl:when>  <!-- 中华人民共和国护照 -->
 		<xsl:when test=".=110024">1</xsl:when>  <!-- 重号中华人民共和国护照 -->
 		<xsl:when test=".=110025">1</xsl:when>  <!-- 外国护照 -->
 		<xsl:when test=".=110026">1</xsl:when>  <!-- 重号外国护照 -->
 		<xsl:when test=".=110027">2</xsl:when>  <!-- 军官证 -->
 		<xsl:when test=".=110028">2</xsl:when>  <!-- 重号军官证 -->
-		<xsl:when test=".=110029">8</xsl:when>  <!-- 文职干部证 -->
-		<xsl:when test=".=110030">8</xsl:when>  <!-- 重号文职干部证 -->
+		<xsl:when test=".=110029">99</xsl:when>  <!-- 文职干部证 -->
+		<xsl:when test=".=110030">99</xsl:when>  <!-- 重号文职干部证 -->
 		<xsl:when test=".=110031">D</xsl:when>  <!-- 警官证 -->
 		<xsl:when test=".=110032">D</xsl:when>  <!-- 重号警官证 -->
-		<xsl:when test=".=110033">A</xsl:when>  <!-- 军人士兵证 -->
-		<xsl:when test=".=110034">A</xsl:when>  <!-- 重号军人士兵证 -->
-		<xsl:when test=".=110035">A</xsl:when>  <!-- 武警士兵证 -->
-		<xsl:when test=".=110036">A</xsl:when>  <!-- 重号武警士兵证 -->
-		<xsl:when test=".=119998">8</xsl:when>  <!-- 系统使用的个人证件识别标识 -->
-		<xsl:when test=".=119999">8</xsl:when>  <!-- 其他个人证件识别标识 -->
+		<xsl:when test=".=110033">2</xsl:when>  <!-- 军人士兵证 -->
+		<xsl:when test=".=110034">2</xsl:when>  <!-- 重号军人士兵证 -->
+		<xsl:when test=".=110035">D</xsl:when>  <!-- 武警士兵证 -->
+		<xsl:when test=".=110036">D</xsl:when>  <!-- 重号武警士兵证 -->
+		<xsl:when test=".=119998">99</xsl:when>  <!-- 系统使用的个人证件识别标识 -->
+		<xsl:when test=".=119999">99</xsl:when>  <!-- 其他个人证件识别标识 -->
 		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>
@@ -556,35 +535,37 @@
 -->
 <xsl:template name="tran_payintv" match="PayType">
 	<xsl:choose>
+		<xsl:when test=".=0">-1</xsl:when>	<!-- 不定期 -->
 		<xsl:when test=".=1">0</xsl:when>	<!-- 趸交 -->
 		<xsl:when test=".=2">1</xsl:when>	<!-- 月交 -->
 		<xsl:when test=".=3">3</xsl:when>	<!-- 季交 -->
 		<xsl:when test=".=4">6</xsl:when>	<!-- 半年交 -->
 		<xsl:when test=".=5">12</xsl:when>	<!-- 年交 -->
-		<xsl:when test=".=0">-1</xsl:when>	<!-- 不定期 -->
 		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>
 
 <xsl:template name="tran_payendyearflag" match="PayDueType">
 	<xsl:choose>
-		<xsl:when test=".='1'">A</xsl:when>	<!-- 缴至某确定年龄 -->
 		<xsl:when test=".='0'">A</xsl:when>	<!-- 趸缴-->
+		<xsl:when test=".='1'">A</xsl:when>	<!-- 缴至某确定年龄 -->
 		<xsl:when test=".='2'">M</xsl:when>	<!-- 月 -->
 		<xsl:when test=".='3'">D</xsl:when>	<!-- 日 -->
 		<xsl:when test=".='4'">Y</xsl:when>	<!-- 年 -->
-		<xsl:otherwise></xsl:otherwise>  
+		<xsl:when test=".=5"></xsl:when><!-- 核心没有终身 -->
+		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>	
 
 <xsl:template name="tran_payendyearflag1" match="PayDueType1">
 	<xsl:choose>
-		<xsl:when test=".='1'">A</xsl:when>	<!-- 缴至某确定年龄 -->
 		<xsl:when test=".='0'">A</xsl:when>	<!-- 趸缴-->
+		<xsl:when test=".='1'">A</xsl:when>	<!-- 缴至某确定年龄 -->
 		<xsl:when test=".='2'">M</xsl:when>	<!-- 月 -->
 		<xsl:when test=".='3'">D</xsl:when>	<!-- 日 -->
 		<xsl:when test=".='4'">Y</xsl:when>	<!-- 年 -->
-		<xsl:otherwise></xsl:otherwise>  
+		<xsl:when test=".=5"></xsl:when><!-- 核心没有终身 -->
+		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>	
 
@@ -600,11 +581,13 @@
  -->
 <xsl:template name="tran_insuyearflag" match="InsuDueType">
 	<xsl:choose>
-		<xsl:when test=".=5">A</xsl:when>	<!-- 年龄 -->
-		<xsl:when test=".=2">M</xsl:when>	<!-- 月 -->
+		<xsl:when test=".=0"></xsl:when><!-- 无关 -->
 		<xsl:when test=".=1">D</xsl:when>	<!-- 日 -->
+		<xsl:when test=".=2">M</xsl:when>	<!-- 月 -->
+		<xsl:when test=".=3"></xsl:when><!-- 季 -->
 		<xsl:when test=".=4">Y</xsl:when>	<!-- 年 -->
-		<xsl:when test=".=6">A</xsl:when>	<!-- 终身 ?待确认，保险年期年龄类型核心保终身对应代码是多少-->
+		<xsl:when test=".=5">A</xsl:when>	<!-- 年龄 -->
+		<xsl:when test=".=6"></xsl:when>	<!-- 终身 ?待确认，保险年期年龄类型核心保终身对应代码是多少-->
 		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>
@@ -617,10 +600,8 @@
  -->
 <xsl:template name="tran_getYearFlag" match="GetYearFlag">
 	<xsl:choose>
-		<xsl:when test=".=1">A</xsl:when>	<!-- 年龄 -->
-		<xsl:when test=".=2">M</xsl:when>	<!-- 月 -->
-		<xsl:when test=".=3">D</xsl:when>	<!-- 日 -->
-		<xsl:when test=".=4">Y</xsl:when>	<!-- 年 -->
+		<xsl:when test=".=0">Y</xsl:when>	<!-- 按年 -->
+		<xsl:when test=".=1">A</xsl:when>	<!-- 按年龄 -->
 		<xsl:otherwise></xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>
@@ -633,10 +614,24 @@
  -->
 <xsl:template name="tran_bonusgetmode" match="BonusGetMode">
 		<xsl:choose>
-		<xsl:when test=".=2">1</xsl:when>	<!-- 积累生息 -->
+		<xsl:when test=".=0">2</xsl:when>	<!-- 直接给付 -->
 		<xsl:when test=".=1">3</xsl:when>	<!-- 抵交保费 -->
-		<xsl:when test=".=0">2</xsl:when>	<!-- 现金领取 -->
-		<xsl:otherwise>1</xsl:otherwise>  
+		<xsl:when test=".=2">1</xsl:when>	<!-- 累积生息 -->
+		<xsl:when test=".=3">5</xsl:when>	<!-- 增额交清 -->
+		<xsl:when test=".=''"></xsl:when><!-- 年金产品没有红利领取方式 -->
+		<xsl:otherwise>4</xsl:otherwise>  
+	</xsl:choose>
+</xsl:template>
+
+<!-- 满期领取金领取方式 -->
+<xsl:template name="tran_FullBonusGetMode" match="FullBonusGetMode">
+	<xsl:choose>
+		<xsl:when test=".=0"></xsl:when><!-- 趸领 -->
+		<xsl:when test=".=1">M</xsl:when><!-- 月领 -->
+		<xsl:when test=".=2"></xsl:when><!-- 季领 -->
+		<xsl:when test=".=3"></xsl:when><!-- 半年领 -->
+		<xsl:when test=".=4">Y</xsl:when><!-- 年领 -->
+		<xsl:otherwise></xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
 
@@ -655,14 +650,14 @@
 <!-- 投保人居民类型 -->
 <xsl:template name="cust_Source" match="CustSource">
 	<xsl:choose>
-		<xsl:when test=".=0">1</xsl:when>	<!-- 城镇 -->
-		<xsl:when test=".=1">2</xsl:when>	<!-- 农村 -->
+		<xsl:when test=".=0">2</xsl:when>	<!-- 城镇 -->
+		<xsl:when test=".=1">1</xsl:when>	<!-- 农村 -->
 		<xsl:otherwise></xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>
 
 <!-- 国籍  -->
-<xsl:template name="tran_nativeplace" match="nativeplace">
+<xsl:template name="tran_Country" match="Country">
 	<xsl:choose>
 		<xsl:when test=".=156">CHN</xsl:when> <!--中国                      -->
 		<xsl:when test=".=344">HK</xsl:when> <!--中国香港                  -->

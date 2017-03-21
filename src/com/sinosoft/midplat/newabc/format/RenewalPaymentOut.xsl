@@ -21,7 +21,7 @@
 		<!--保险公司代码 -->
 		<CorpNo></CorpNo>
 		<!-- 银行代码-->
-		<TransCode>1013</TransCode>
+		<TransCode>1008</TransCode>
 	</Header>
 	<App>
 		<Ret>

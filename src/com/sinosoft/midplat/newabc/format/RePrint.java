@@ -44,6 +44,8 @@ public class RePrint extends XmlSimpFormat {
 		ContConfirm contConfirm=new ContConfirm(rr);
 		contConfirm.setHeader(header);
 		Document mNoStdXml = contConfirm.std2NoStd(pStdXml);
+		
+//		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out RePrint.std2NoStd()!");
 		return mNoStdXml;
 	}

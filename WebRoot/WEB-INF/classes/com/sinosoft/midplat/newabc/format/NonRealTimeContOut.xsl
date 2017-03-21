@@ -42,7 +42,7 @@
 					</Appl>
 					<!--投保单号 -->
 					<PolicyApplyNo>
-						<xsl:value-of select="LCCont/ProposalContNo" />
+						<xsl:value-of select="substring(LCCont/ProposalContNo,1,13)" />
 					</PolicyApplyNo>
 					<!--保险公司方险种代码 -->
 					<RiskCode>

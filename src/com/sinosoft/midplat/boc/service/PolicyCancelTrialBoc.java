@@ -62,7 +62,8 @@ public class PolicyCancelTrialBoc extends ServiceImpl{
 			
 			JdomUtil.print(cInXmlDoc);
 		
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_TakenQuery).call(cInXmlDoc);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_RefundFullPaymentQuery).call(cInXmlDoc);
+//			cOutXmlDoc = new CallWebsvcAtomSvc("13").call(cInXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
 			Element tOutBodyEle = tOutRootEle.getChild(Body);  

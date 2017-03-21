@@ -57,7 +57,13 @@ public class PolQuery extends XmlSimpFormat {
 		cLogger.info(RetCode.getText());
 		cLogger.info(RetMsg.getText());
 		
-		
+		mNoStdXml.getRootElement().getChild("Header").getChild("SerialNo").setText(header.getChildText("SerialNo"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("InsuSerial").setText(header.getChildText("InsuSerial"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("TransTime").setText(header.getChildText("TransTime"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("TransDate").setText(header.getChildText("TransDate"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
+		mNoStdXml.getRootElement().getChild("Header").getChild("CorpNo").setText(header.getChildText("CorpNo"));
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out PolQuery.std2NoStd()!");
 		return mNoStdXml;
 	}

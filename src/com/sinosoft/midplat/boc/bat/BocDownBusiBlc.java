@@ -17,7 +17,7 @@ import com.sinosoft.midplat.boc.BocConf;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.exception.MidplatException;
-import com.sinosoft.midplat.boc.bat.Balance;
+import com.sinosoft.midplat.bat.Balance;
 
 public class BocDownBusiBlc extends Balance {
 	public BocDownBusiBlc() {
@@ -43,7 +43,8 @@ public class BocDownBusiBlc extends Balance {
 		Element mPremEle = new Element(Prem);
 		mBodyEle.addContent(mCountEle);
 		mBodyEle.addContent(mPremEle);
-
+		int count=0;
+	    double  prem=0.0;
 		for (String tLineMsg; null != (tLineMsg=mBufReader.readLine());) {
 			cLogger.info(tLineMsg);
 			
@@ -62,31 +63,37 @@ public class BocDownBusiBlc extends Balance {
 				cLogger.info("成功总数:"+tLineMsg.substring(46,54));
 				cLogger.info("成功总保费:"+tLineMsg.substring(33,46));
 			}
+			//保单明细行
 			if(number>60){
+				//行长度为157
 				if(number==157)
 				{
 					String type =  tLineMsg.substring(154,156);
 					cLogger.info("对账类型:"+type);
+					//交易类型01：新单承保
 					if(type.equals("01"))
 					{
 					    String state = tLineMsg.substring(156,157);
 					    cLogger.info("状态:"+state);
+					    //保单状态W：契撤保单
 					    if(state.equals("W"))
 					    {
+					    	//跳过
 					     	continue;
 					    }
+					    //保单状态S：成功保单
 					    if(state.equals("S"))
 					    {
 						    Element tTranNoEle = new Element(TranNo);
 						    tTranNoEle.setText(tLineMsg.substring(0, 16));
-						    Element tNodeNoEle = new Element(NodeNo);
-						    tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						    Element tAgentComEle = new Element(AgentCom);
+						    tAgentComEle.setText(tLineMsg.substring(16, 25));
 							Element tTranDateEle = new Element(TranDate);
 							tTranDateEle.setText(tLineMsg.substring(25, 33));
 							Element tContNoEle = new Element(ContNo);
 							tContNoEle.setText(tLineMsg.substring(111, 141).trim());
 							Element tPremEle = new Element(Prem);
-							tPremEle.setText(tLineMsg.substring(141, 154));
+							tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(141, 154).trim())*100));
 							cLogger.info("输出"+tLineMsg.substring(0,16));
 							cLogger.info("输出"+tLineMsg.substring(16,25));
 							cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -95,27 +102,30 @@ public class BocDownBusiBlc extends Balance {
 
 							Element tDetailEle = new Element(Detail);
 							tDetailEle.addContent(tTranDateEle);
-							tDetailEle.addContent(tNodeNoEle);
+							tDetailEle.addContent(tAgentComEle);
 							tDetailEle.addContent(tTranNoEle);
 							tDetailEle.addContent(tContNoEle);
 							tDetailEle.addContent(tPremEle);
 						
 							mBodyEle.addContent(tDetailEle);
+							count++;
+							prem+=Double.parseDouble(tLineMsg.substring(141, 154).trim())*100;
 							JdomUtil.print(mBodyEle);
 					    }
 					}
+					//交易类型02：续期缴费
 					if(type.equals("02"))
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(112, 142).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(142, 155));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(142, 155).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -124,7 +134,7 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
@@ -133,26 +143,29 @@ public class BocDownBusiBlc extends Balance {
 						JdomUtil.print(mBodyEle);
 					}
 				}
+				//行长度为156
 				if(number==156)
 				{
 					String type =  tLineMsg.substring(154,156);
 					cLogger.info("对账类型:"+type);
+					//交易类型01：新单承保、保单状态W：契撤保单
 					if(type.equals("1W"))
 					{
 						continue;
 					}
+					//交易类型01：新单承保、保单状态S：成功保单 
 					if(type.equals("1S"))
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(110, 140).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(140, 153));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(140, 153).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -161,26 +174,28 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
 						
 						mBodyEle.addContent(tDetailEle);
+						count++;
+						prem+=Double.parseDouble(tLineMsg.substring(140, 153).trim())*100;
 						JdomUtil.print(mBodyEle);
 					}
 					if(type.equals("02"))
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(111, 141).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(141, 154));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(141, 154).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -189,7 +204,7 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
@@ -210,14 +225,14 @@ public class BocDownBusiBlc extends Balance {
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(109, 139).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(139, 152));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(139, 152).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -226,26 +241,28 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
 						
 						mBodyEle.addContent(tDetailEle);
+						count++;
+						prem+=Double.parseDouble(tLineMsg.substring(139, 152).trim())*100;
 						JdomUtil.print(mBodyEle);
 					}
 					if(type.equals("02"))
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(110, 140).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(140, 153));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(140, 153).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -254,7 +271,7 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
@@ -275,14 +292,14 @@ public class BocDownBusiBlc extends Balance {
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(108, 138).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(138, 151));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(138, 151).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -291,26 +308,28 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
 						
 						mBodyEle.addContent(tDetailEle);
+						count++;
+						prem+=Double.parseDouble(tLineMsg.substring(138, 151).trim())*100;
 						JdomUtil.print(mBodyEle);
 					}
 					if(type.equals("02"))
 					{
 						Element tTranNoEle = new Element(TranNo);
 						tTranNoEle.setText(tLineMsg.substring(0, 16));
-						Element tNodeNoEle = new Element(NodeNo);
-						tNodeNoEle.setText(tLineMsg.substring(16, 25));
+						Element tAgentComEle = new Element(AgentCom);
+						tAgentComEle.setText(tLineMsg.substring(16, 25));
 						Element tTranDateEle = new Element(TranDate);
 						tTranDateEle.setText(tLineMsg.substring(25, 33));
 						Element tContNoEle = new Element(ContNo);
 						tContNoEle.setText(tLineMsg.substring(109, 139).trim());
 						Element tPremEle = new Element(Prem);
-						tPremEle.setText(tLineMsg.substring(139, 152));
+						tPremEle.setText(String.valueOf(Double.parseDouble(tLineMsg.substring(139, 152).trim())*100));
 						cLogger.info("输出"+tLineMsg.substring(0,16));
 						cLogger.info("输出"+tLineMsg.substring(16,25));
 						cLogger.info("输出"+tLineMsg.substring(25,33));
@@ -319,7 +338,7 @@ public class BocDownBusiBlc extends Balance {
 
 						Element tDetailEle = new Element(Detail);
 						tDetailEle.addContent(tTranDateEle);
-						tDetailEle.addContent(tNodeNoEle);
+						tDetailEle.addContent(tAgentComEle);
 						tDetailEle.addContent(tTranNoEle);
 						tDetailEle.addContent(tContNoEle);
 						tDetailEle.addContent(tPremEle);
@@ -331,6 +350,10 @@ public class BocDownBusiBlc extends Balance {
 			}
 		} 
 		
+		cLogger.info("Count:"+count);
+		cLogger.info("Prem:"+prem);
+		mBodyEle.getChild("Count").setText(String.valueOf(count));
+		mBodyEle.getChild("Prem").setText(String.valueOf(prem));
 		mBufReader.close();	//关闭流 
 		JdomUtil.print(mBodyEle);
 		cLogger.info("Out BocDownBusiBlc.parse()!");

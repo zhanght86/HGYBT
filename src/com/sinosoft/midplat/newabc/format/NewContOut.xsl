@@ -12,7 +12,7 @@
 			<App>
 				<Ret>
 					<!-- Í¶±£µ¥£¨Ó¡Ë¢ £©ºÅ-->
-					<PolicyNo><xsl:value-of select="Body/ContNo"/></PolicyNo>
+					<PolicyNo><xsl:value-of select="substring(Body/ContNo,1,13)"/></PolicyNo>
 					<CorpCheckNo></CorpCheckNo>
 	                <ValidDate></ValidDate>
 	                <PolicyDueDate></PolicyDueDate>

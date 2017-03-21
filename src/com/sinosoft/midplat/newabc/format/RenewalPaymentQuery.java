@@ -4,6 +4,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.utility.ExeSQL;
 
@@ -65,6 +66,8 @@ public class RenewalPaymentQuery extends XmlSimpFormat {
 			mRetCode.setText("009999");
 		}
 		mRetMsg.setText(tDesc.getText());
+		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out RenewalPaymentQuery.std2NoStd()!");
 		return mNoStdXml;
 	}

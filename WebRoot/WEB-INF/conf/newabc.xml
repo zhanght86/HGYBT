@@ -3,8 +3,9 @@
 	<bank id="05" insu="010079" />
 	<TranCom outcode="05">05</TranCom>
 	<msg path="newabc" />
+	<!-- 套接字网络通讯实现类 -->
 	<preNet>com.sinosoft.midplat.newabc.net.NewAbcNetImpl</preNet>
-	<socket ip="202.108.144.40" port="3422" blcagentcom="020000" bankcode="0201"/>
+	<socket ip="127.0.0.1" port="6000" blcagentcom="020000" bankcode="0201"/>
 	<!-- 银行端代码定义，用于日终类交易 -->
 	<business>
 		<name>心跳交易</name>
@@ -153,7 +154,7 @@
 		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1019">3019</funcFlag>
-		<format>com.sinosoft.midplat.newabc.format.PolValueQuery </format>
+		<format>com.sinosoft.midplat.newabc.format.PolValueQuery</format>
 		<service>com.sinosoft.midplat.newabc.service.ContPolValueQuery</service>
 	</business>
 
@@ -180,7 +181,7 @@
 	
 	<business>
 		<name>非实时出单流水明细</name>
-		<socket ip="127.0.0.1"  port="8080"/>
+		<socket ip="127.0.0.1"  port="6000"/>
 		<funcFlag outcode="2002">2002</funcFlag>
 		<zone>00000</zone>
 		<node>11010102</node>

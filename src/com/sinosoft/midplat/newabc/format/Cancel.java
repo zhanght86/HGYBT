@@ -30,10 +30,10 @@ public class Cancel extends XmlSimpFormat {
 		SSRS ssrs0=new ExeSQL().execSQL(sqlStr);
 		Document mStdXml = 
 			CancelInXsl.newInstance().getCache().transform(pNoStdXml);
+		mStdXml.getRootElement().getChild("Body").getChild("ProposalPrtNo").setText(ssrs0.GetText(1, 1));
 		//≤‚ ‘
 		System.out.println(JdomUtil.toStringFmt(mStdXml));
-		mStdXml.getRootElement().getChild("Body").getChild("ProposalPrtNo").setText(ssrs0.GetText(1, 1));
-	        cLogger.info("Out Cancel.noStd2Std()!");
+	    cLogger.info("Out Cancel.noStd2Std()!");
 		return mStdXml;
 	}
 	
@@ -58,6 +58,8 @@ public class Cancel extends XmlSimpFormat {
 		header.addContent(RetMsg);
 		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("OrgSerialNo").setText(OrgSerialNo);
 		mNoStdXml.getRootElement().addContent(header);
+		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out Cancel.std2NoStd()!");
 		return mNoStdXml;
 	}

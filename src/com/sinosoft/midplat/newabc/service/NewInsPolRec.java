@@ -126,7 +126,7 @@ public class NewInsPolRec extends ServiceImpl {
 			tContBlcDtlSchema.setContNo(tDetailEle.getChildText(ContNo));
 			tContBlcDtlSchema.setProposalPrtNo(tDetailEle.getChildText(ProposalPrtNo));	//有些银行传
 			tContBlcDtlSchema.setTranDate(cTranLogDB.getTranDate());
-			tContBlcDtlSchema.setPrem((int) NumberUtil.yuanToFen(tDetailEle.getChildText(Prem)));
+			tContBlcDtlSchema.setPrem(tDetailEle.getChildText(Prem));
 			tContBlcDtlSchema.setTranCom(cTranLogDB.getTranCom());
 			tContBlcDtlSchema.setNodeNo(tDetailEle.getChildText(NodeNo));
 			tContBlcDtlSchema.setAppntName(tDetailEle.getChildText("AppntName"));	//有些银行传

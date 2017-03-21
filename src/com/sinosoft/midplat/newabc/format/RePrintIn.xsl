@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="GBK"?>
 
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:java="http://xml.apache.org/xslt/java" 
+	exclude-result-prefixes="java">
 
 <xsl:template match="ABCB2I">
 <TranData><!-- 核心保单重打请求报文 -->
@@ -28,9 +30,9 @@
 	  	</Head>
 	<Body>
 		<ContNo></ContNo>
-		<ProposalPrtNo><xsl:value-of select="App/Req/PolicyApplyNo"/></ProposalPrtNo>
-		<ContPrtNo><xsl:value-of select="App/Req/NewVchNo"/></ContPrtNo>
-		<OldContPrtNo><xsl:value-of select="App/Req/OldVchNo"/></OldContPrtNo>
+		<ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PolicyApplyNo)"/></ProposalPrtNo>
+		<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/NewVchNo)"/></ContPrtNo>
+		<OldContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/OldVchNo)"/></OldContPrtNo>
 	</Body>
 </TranData>
 </xsl:template>

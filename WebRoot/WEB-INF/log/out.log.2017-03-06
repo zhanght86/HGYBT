@@ -1,0 +1,506 @@
+20:08:40,987 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:08:41,006 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:08:41,008 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:08:41,009 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:08:41,010 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:08:41,011 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:08:41,012 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:08:41,014 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:08:41,206 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:08:41,207 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:08:41,208 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:08:41,208 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:08:41,226 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:08:41,232 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:08:41,232 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:08:41,234 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:08:42,423 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:08:42,425 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:08:42,484 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:08:42,485 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:08:42,485 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:08:42,486 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:08:42,505 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:08:42,506 INFO bat.File_download(734) - Into File_download.send()...
+20:08:42,506 INFO bat.File_download(757) - 开始加密报文
+20:08:42,507 INFO bat.File_download(765) - 加密报文结束!
+20:08:42,507 INFO bat.File_download(768) - 生成73位报文头:
+20:08:42,593 INFO bat.File_download(776) - 生成73位报文头结束
+20:08:42,593 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:08:42,594 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062008421999</InsuSerial><TransDate>20170306</TransDate><TransTime>200842</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:08:42</FileTimeStamp></Req></App></ABCB2I> 
+20:08:42,594 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+20:08:42,595 INFO bat.File_download(948) - Out File_download.send()!
+20:08:42,595 INFO bat.File_download(259) - Into File_download.receive()...
+20:09:18,034 INFO bat.File_download(1277) - Into readFull() =====1
+20:11:00,555 INFO bat.File_download(356) - 接收长度有问题！
+20:11:01,875 INFO bat.File_download(363) - Out File_download.receive()!
+20:11:12,907 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:11:12,907 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:11:12,908 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:11:12,912 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:11:12,916 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:11:12,917 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:11:13,074 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:11:13,074 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:11:13,257 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:11:13,257 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:11:13,257 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:11:27,401 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:11:27,403 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:11:27,405 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:11:27,406 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:11:27,407 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:11:27,408 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:11:27,408 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:11:27,410 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:11:27,571 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:11:27,572 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:11:27,572 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:11:27,573 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:11:27,591 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:11:27,597 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:11:27,598 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:11:27,599 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:11:28,710 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:11:28,711 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:11:28,764 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:11:28,764 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:11:28,764 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:11:28,765 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:11:28,776 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:11:28,777 INFO bat.File_download(734) - Into File_download.send()...
+20:11:28,778 INFO bat.File_download(757) - 开始加密报文
+20:11:28,778 INFO bat.File_download(765) - 加密报文结束!
+20:11:28,779 INFO bat.File_download(768) - 生成73位报文头:
+20:11:28,782 INFO bat.File_download(776) - 生成73位报文头结束
+20:11:28,782 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:11:28,783 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062011286079</InsuSerial><TransDate>20170306</TransDate><TransTime>201128</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:11:28</FileTimeStamp></Req></App></ABCB2I> 
+20:11:28,783 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+20:11:28,783 INFO bat.File_download(948) - Out File_download.send()!
+20:11:28,784 INFO bat.File_download(259) - Into File_download.receive()...
+20:11:28,784 INFO bat.File_download(1277) - Into readFull() =====1
+20:11:48,784 INFO bat.File_download(356) - 接收长度有问题！
+20:11:48,785 INFO bat.File_download(363) - Out File_download.receive()!
+20:11:48,785 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:11:48,785 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:11:48,786 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:11:48,786 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:11:48,788 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:11:48,789 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:11:48,928 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:11:48,929 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:11:49,071 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:11:49,071 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:11:49,072 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:12:08,511 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:12:08,515 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:12:08,517 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:12:08,517 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:12:08,519 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:12:08,522 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:12:08,523 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:12:08,525 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:12:08,701 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:12:08,702 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:12:08,702 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:12:08,703 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:12:08,719 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:12:08,729 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:12:08,730 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:12:08,732 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:12:09,824 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:12:09,825 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:12:09,913 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:12:09,914 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:12:09,914 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:12:09,915 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:12:09,934 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:12:09,934 INFO bat.File_download(734) - Into File_download.send()...
+20:12:09,935 INFO bat.File_download(757) - 开始加密报文
+20:12:09,935 INFO bat.File_download(765) - 加密报文结束!
+20:12:09,935 INFO bat.File_download(768) - 生成73位报文头:
+20:12:09,938 INFO bat.File_download(776) - 生成73位报文头结束
+20:12:09,938 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:12:09,939 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062012099392</InsuSerial><TransDate>20170306</TransDate><TransTime>201209</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:12:09</FileTimeStamp></Req></App></ABCB2I> 
+20:12:09,939 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+20:12:09,940 INFO bat.File_download(948) - Out File_download.send()!
+20:12:09,940 INFO bat.File_download(259) - Into File_download.receive()...
+20:13:07,140 INFO bat.File_download(1277) - Into readFull() =====1
+20:15:18,475 INFO bat.File_download(356) - 接收长度有问题！
+20:15:18,477 INFO bat.File_download(363) - Out File_download.receive()!
+20:15:25,694 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:15:25,694 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:15:25,695 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:15:25,696 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:15:25,700 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:15:25,701 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:15:25,869 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:15:25,869 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:15:26,036 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:15:26,036 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:15:26,037 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:15:36,535 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:15:36,537 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:15:36,539 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:15:36,539 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:15:36,541 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:15:36,543 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:15:36,544 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:15:36,546 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:15:36,725 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:15:36,726 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:15:36,727 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:15:36,727 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:15:36,746 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:15:36,753 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:15:36,753 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:15:36,755 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:15:37,901 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:15:37,902 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:15:37,963 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:15:37,964 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:15:37,964 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:15:37,965 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:15:37,983 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:15:37,983 INFO bat.File_download(734) - Into File_download.send()...
+20:15:37,984 INFO bat.File_download(757) - 开始加密报文
+20:15:37,984 INFO bat.File_download(765) - 加密报文结束!
+20:15:37,985 INFO bat.File_download(768) - 生成73位报文头:
+20:15:37,988 INFO bat.File_download(776) - 生成73位报文头结束
+20:15:37,988 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:15:37,989 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062015373351</InsuSerial><TransDate>20170306</TransDate><TransTime>201537</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:15:37</FileTimeStamp></Req></App></ABCB2I> 
+20:15:37,989 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+20:15:37,989 INFO bat.File_download(948) - Out File_download.send()!
+20:15:37,990 INFO bat.File_download(259) - Into File_download.receive()...
+20:15:56,312 INFO bat.File_download(1277) - Into readFull() =====1
+20:17:29,639 INFO bat.File_download(356) - 接收长度有问题！
+20:18:59,840 INFO bat.File_download(259) - Into File_download.receive()...
+20:19:01,280 INFO bat.File_download(1277) - Into readFull() =====1
+20:19:01,280 INFO bat.File_download(356) - 接收长度有问题！
+20:19:01,281 INFO bat.File_download(363) - Out File_download.receive()!
+20:19:01,281 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:19:01,281 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:19:01,283 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:19:01,283 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:19:01,286 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:19:01,287 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:19:02,182 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:19:02,183 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:19:02,348 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:19:02,348 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:19:02,348 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:20:24,916 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:20:24,919 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:20:24,921 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:20:24,921 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:20:24,923 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:20:24,924 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:20:24,925 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:20:24,927 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:20:25,112 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:20:25,114 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:20:25,114 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:20:25,115 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:20:25,139 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:20:25,145 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:20:25,146 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:20:25,148 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:20:26,298 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:20:26,300 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:20:26,363 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:20:26,364 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:20:26,364 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:20:26,365 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:20:26,384 INFO bat.File_download(1148) - BQSQ=组织好的报文：
+20:20:26,384 INFO bat.File_download(735) - Into File_download.send()...
+20:20:26,385 INFO bat.File_download(758) - 开始加密报文
+20:20:26,386 INFO bat.File_download(766) - 加密报文结束!
+20:20:26,386 INFO bat.File_download(769) - 生成73位报文头:
+20:20:26,388 INFO bat.File_download(777) - 生成73位报文头结束
+20:20:26,388 INFO bat.File_download(779) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:20:26,389 INFO bat.File_download(811) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062020266795</InsuSerial><TransDate>20170306</TransDate><TransTime>202026</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:20:26</FileTimeStamp></Req></App></ABCB2I> 
+20:20:26,389 INFO bat.File_download(926) - 发送不带对账文件的上传交易报文！
+20:20:26,389 INFO bat.File_download(949) - Out File_download.send()!
+20:20:26,389 INFO bat.File_download(259) - Into File_download.receive()...
+20:20:31,250 INFO bat.File_download(1278) - Into readFull() =====1
+20:21:52,995 INFO bat.File_download(1278) - Into readFull() =====11
+20:33:53,697 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:33:53,700 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:33:53,702 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:33:53,702 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:33:53,704 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:33:53,705 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:33:53,706 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:33:53,708 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:33:53,888 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:33:53,889 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:33:53,890 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:33:53,890 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:33:53,915 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:33:53,921 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:33:53,922 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:33:53,924 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:33:55,027 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:33:55,028 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:33:55,095 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:33:55,096 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:33:55,096 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:33:55,097 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:34:22,813 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:34:22,815 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:34:22,818 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:34:22,821 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:34:22,829 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:34:22,830 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:34:22,976 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:34:22,977 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:34:23,145 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:34:23,145 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:34:23,146 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:34:30,861 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:34:30,865 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:34:30,867 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:34:30,868 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:34:30,869 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:34:30,871 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:34:30,872 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:34:30,874 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:34:31,066 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:34:31,068 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:34:31,068 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:34:31,069 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:34:31,090 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:34:31,097 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:34:31,097 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:34:31,100 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:34:32,166 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:34:32,167 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:34:32,227 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:34:32,228 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:34:32,228 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:34:32,229 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:34:32,242 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:34:32,243 INFO bat.File_download(734) - Into File_download.send()...
+20:34:32,244 INFO bat.File_download(757) - 开始加密报文
+20:34:32,244 INFO bat.File_download(765) - 加密报文结束!
+20:34:32,244 INFO bat.File_download(768) - 生成73位报文头:
+20:34:32,247 INFO bat.File_download(776) - 生成73位报文头结束
+20:34:32,247 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:34:32,248 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703062034327893</InsuSerial><TransDate>20170306</TransDate><TransTime>203432</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>BQAPPLY010079.20170306</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-06 20:34:32</FileTimeStamp></Req></App></ABCB2I> 
+20:34:32,248 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+20:34:32,248 INFO bat.File_download(948) - Out File_download.send()!
+20:34:32,248 INFO bat.File_download(259) - Into File_download.receive()...
+20:34:32,249 INFO bat.File_download(1277) - Into readFull() =====1
+20:34:52,249 INFO bat.File_download(356) - 接收长度有问题！
+20:34:52,250 INFO bat.File_download(363) - Out File_download.receive()!
+20:34:52,250 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170306
+20:34:52,251 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+20:34:52,252 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.io.FileInputStream.<init>(FileInputStream.java:66)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:88)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:34:52,252 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:34:52,255 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:34:52,256 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:34:52,411 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:34:52,411 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\BQAPPLY010079.20170306 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:34:52,567 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:34:52,567 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:34:52,567 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:35:25,649 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:35:25,653 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:35:25,655 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:35:25,655 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:35:25,657 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:35:25,658 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:35:25,658 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:35:25,661 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:35:25,854 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:35:25,856 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:35:25,857 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:35:25,857 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:35:25,874 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:35:25,881 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:35:25,882 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:35:25,884 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:35:27,051 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:35:27,052 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:35:27,110 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:35:27,110 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:35:27,111 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:35:27,112 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:37:08,847 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:37:31,823 INFO bat.File_download(734) - Into File_download.send()...
+20:38:08,703 INFO bat.File_download(757) - 开始加密报文
+20:40:08,376 INFO bat.File_download(765) - 加密报文结束!
+20:40:10,648 INFO bat.File_download(768) - 生成73位报文头:
+20:40:42,129 INFO bat.File_download(776) - 生成73位报文头结束
+20:40:43,985 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:48:18,830 INFO bat.File_download(933) - File_download.send java.net.SocketException: Software caused connection abort: socket write error
+20:48:56,903 ERROR bat.SecuTradAppDoc(93) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: 银行端Socket关闭了!
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.getFileName(SecuTradAppDoc.java:47)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:82)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:49:02,023 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+20:49:02,034 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+20:49:02,035 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+20:49:02,177 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+20:49:02,178 INFO service.SecuTradAppDoc(75) - 保全交易申请文件交易失败！
+com.sinosoft.midplat.exception.MidplatException: 银行端Socket关闭了!
+	at com.sinosoft.midplat.newabc.service.SecuTradAppDoc.service(SecuTradAppDoc.java:56)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:123)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:49:02,325 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+20:49:02,325 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+20:49:02,325 INFO bat.SecuTradAppDoc(350) - 成功结束！
+20:49:11,291 INFO bat.SecuTradAppDoc(325) - 程序开始...
+20:49:11,294 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+20:49:11,296 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+20:49:11,298 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+20:49:11,301 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+20:49:11,304 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+20:49:11,305 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+20:49:11,308 INFO common.XmlConf(80) - conf file modified at (2017-02-28 19:19:42,741) and length=10071 bytes!
+20:49:11,526 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+20:49:11,530 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+20:49:11,532 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+20:49:11,533 INFO common.XmlConf(80) - conf file modified at (2017-02-27 11:40:09,499) and length=27405 bytes!
+20:49:11,558 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+20:49:11,565 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+20:49:11,566 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+20:49:11,567 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+20:49:12,700 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:468)
+	at java.lang.Integer.parseInt(Integer.java:497)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+20:49:12,701 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+20:49:12,772 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+20:49:12,773 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170306
+20:49:12,773 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170306
+20:49:12,774 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+20:52:08,173 INFO bat.File_download(1147) - BQSQ=组织好的报文：
+20:52:13,593 INFO bat.File_download(734) - Into File_download.send()...
+20:52:13,599 INFO bat.File_download(757) - 开始加密报文
+20:52:13,602 INFO bat.File_download(765) - 加密报文结束!
+20:52:13,604 INFO bat.File_download(768) - 生成73位报文头:
+20:52:13,610 INFO bat.File_download(776) - 生成73位报文头结束
+20:52:13,612 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000483010079    00000                                       000000000
+20:52:13,620 INFO bat.File_download(933) - File_download.send java.net.SocketException: Software caused connection abort: socket write error

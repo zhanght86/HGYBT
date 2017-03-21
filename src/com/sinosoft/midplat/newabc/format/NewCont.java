@@ -87,6 +87,8 @@ public class NewCont extends XmlSimpFormat {
 		header.addContent(RetCode);
 		header.addContent(RetMsg);
 		mNoStdXml.getRootElement().addContent(header);
+		
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out newABCNewCont.std2NoStd()!");
 		return mNoStdXml;
 	}

@@ -41,7 +41,7 @@
 			<!-- Í¶±£µ¥(Ó¡Ë¢)ºÅ -->
 		     <ProposalPrtNo>
 		     	<xsl:if test="Header/EntrustWay = '11'">
-					<xsl:value-of select="App/Req/PolicyApplyNo"/>
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PolicyApplyNo)"/>
 				</xsl:if>
 				<xsl:if test="Header/EntrustWay = '04'">
 					<xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/>

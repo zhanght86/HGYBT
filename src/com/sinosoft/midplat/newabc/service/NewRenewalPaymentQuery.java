@@ -4,6 +4,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
@@ -32,7 +33,7 @@ public class NewRenewalPaymentQuery extends ServiceImpl {
 		//监控异常
 		try {
 			//插入交易日志
-			insertTranLog(cInXmlDoc);
+			cTranLogDB=insertTranLog(cInXmlDoc);
 			//调用WebService原子服务[查询(续期)保费]返回标准输出报文
 			cOutXmlDoc=new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_QueryPrem).call(cInXmlDoc);
 			//将标准输出报文打印到控制台， GBK编码，缩进3空格
@@ -48,22 +49,26 @@ public class NewRenewalPaymentQuery extends ServiceImpl {
 			if(AblifeCodeDef.RCode_ERROR==Integer.parseInt(mOutHeadEle.getChildText(Flag)))
 				throw new MidplatException(mOutHeadEle.getChildText(Desc));
 			//使用时间毫秒数
-			long tUseTime=(System.currentTimeMillis()-mStartMillis)/1000;
+			long tUseTime=System.currentTimeMillis()-mStartMillis;
 			//默认超时1分钟
 			int timeOut=60;
 			//交易配置超时时间
-			timeOut=Integer.parseInt(cThisBusiConf.getChildText(timeout));
+			try {
+				timeOut=Integer.parseInt(cThisBusiConf.getChildText(timeout));
+			} catch (Exception e) {
+				cLogger.error("未配置超时时间,或配置有误!使用默认值:"+timeOut+"s",e);
+			}
 			//使用时间毫秒数>超时时间毫秒数 处理超时 回滚系统数据 抛出异常[系统繁忙]
 			if(tUseTime>timeOut*1000){
-				cLogger.info("处理超时! tUseTime:"+tUseTime/1000+"s; timeOut:"+timeOut+"s; 投保单(印刷)号:"+mProposalPrtNo);
+				cLogger.info("处理超时! UseTime="+tUseTime/1000.0+"s; TimeOut="+timeOut+"s; 投保单(印刷)号:"+mProposalPrtNo);
 				rollback();
 				throw new MidplatException("系统繁忙，请稍后再试!");
 			}
 		//捕获异常
 		} catch (Exception e) {
 			//交易配置交易失败 根据交易结果和交易结果描述，生成简单的标准输出报文。
-			cLogger.info(cThisBusiConf.getChild(name)+"交易失败！",e);
-			MidplatUtil.getSimpOutXml(AblifeCodeDef.RCode_ERROR, e.getMessage());
+			cLogger.error(cThisBusiConf.getChild(name)+"交易失败！",e);
+			cOutXmlDoc=MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, e.getMessage());
 		}
 		
 		//交易日志非空
@@ -99,9 +104,9 @@ public class NewRenewalPaymentQuery extends ServiceImpl {
 		//新建报文体节点
 		Element mBody=new Element(Body);
 		//加入标准输入报文:投保单(印刷)号[克隆]、保单合同印刷号[克隆]、标准输出报文体:保险单号[克隆] 子节点
-		mBody.addContent(tBody.getChild(ProposalPrtNo));
-		mBody.addContent(tBody.getChildText(ContPrtNo));
-		mBody.addContent(cOutXmlDoc.getRootElement().getChild(Body).getChildText(ContNo));
+		mBody.addContent((Element)tBody.getChild(ProposalPrtNo).clone());
+		mBody.addContent((Element)tBody.getChild(ContPrtNo).clone());
+		mBody.addContent((Element)cOutXmlDoc.getRootElement().getChild(Body).getChild(ContNo).clone());
 		//新建标准输入报文根节点
 		Element mRootEle=new Element(TranData);
 		//加入标准输入报文头节点、新建报文体节点

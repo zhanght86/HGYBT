@@ -27,20 +27,9 @@
 		<xsl:copy-of select="Head/*"/> <!-- -->
   	</Head>
 	<Body>
-	<!-- 交易渠道 -->
-		<!-- 险种编号 -->
-		<RiskCode><xsl:value-of select="App/Req/RiskCode"/></RiskCode>
 		<!-- 保单号码 -->
 		<ContNo><xsl:value-of select="App/Req/PolicyNo"/></ContNo>
-		<!-- 保单密码 -->
-		<Password></Password>
 	</Body>
 </TranData>
-</xsl:template>
-<!-- 网银渠道代码映射 -->
-<xsl:template name="tran_Channel">
-    <xsl:param name="chnl"/>
-    <xsl:if test="$chnl = '11'">0</xsl:if><!-- 柜台 -->
-    <xsl:if test="$chnl = '04'">8</xsl:if><!-- 自助终端 -->
 </xsl:template>
 </xsl:stylesheet>

@@ -81,7 +81,7 @@ public class ContCancelBoc extends ServiceImpl {
 				.append(" and MakeDate>=").append(DateUtil.get8Date(tCurCalendar))
 				.append(" and MakeTime>=").append(DateUtil.get6Time(tCurCalendar))
 				.toString();
-			if ("1".equals(new ExeSQL().getOneValue(tSqlStr))) {
+			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
 				throw new MidplatException("此保单数据正在处理中，请稍候！");
 			}
 			//当天、同一网点，成功出过单
