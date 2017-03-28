@@ -177,7 +177,7 @@ public class NonReaTimeIssResDocBankDeal extends Balance
 
 			String[] tSubMsgs = tLineMsg.split("\\|", -1);
 
-			if ("3103".equals(tSubMsgs[0]))
+			if (!"3103".equals(tSubMsgs[0]))
 			{// 如果回盘正确，首行为记录；错误的时候第二行为错误信息
 
 				// 空行，直接跳过

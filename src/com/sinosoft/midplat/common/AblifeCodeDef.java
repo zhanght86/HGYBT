@@ -143,6 +143,8 @@ public interface AblifeCodeDef extends CodeDef {
 	String SID_PolDetailQuery="62";
 	/**新农行保单价值查询*/
 	String SID_PolValueQuery="68";
+	/**新农行非实时出单对账结果明细文件**/
+	String SID_NonRealTimeContRstDtl="71";
 	
 	
 	/**中行退保\满期给付查询**/

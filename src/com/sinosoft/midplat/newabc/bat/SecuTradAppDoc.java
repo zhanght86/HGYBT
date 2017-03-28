@@ -197,13 +197,13 @@ public class SecuTradAppDoc extends Balance{
 			tNodeNo.setText(nodeNo);
 			
 			Element tBusiType = new Element("BusiType");
-			if("01".equals(tSubMsgs[0])){//犹撤
+			if("01".equals(tSubMsgs[1])){//犹撤
 				tBusiType.setText("07");
 			}
-			if("02".equals(tSubMsgs[0])){//满期
+			if("02".equals(tSubMsgs[1])){//满期
 				tBusiType.setText("09");
 			}
-			if("03".equals(tSubMsgs[0])){//退保
+			if("03".equals(tSubMsgs[1])){//退保
 				tBusiType.setText("11");
 			}
 			

@@ -552,7 +552,7 @@
 		<xsl:when test=".='2'">M</xsl:when>	<!-- 月 -->
 		<xsl:when test=".='3'">D</xsl:when>	<!-- 日 -->
 		<xsl:when test=".='4'">Y</xsl:when>	<!-- 年 -->
-		<xsl:when test=".=5"></xsl:when><!-- 核心没有终身 -->
+		<xsl:when test=".='5'"></xsl:when><!-- 核心没有终身 -->
 		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>	
@@ -564,7 +564,7 @@
 		<xsl:when test=".='2'">M</xsl:when>	<!-- 月 -->
 		<xsl:when test=".='3'">D</xsl:when>	<!-- 日 -->
 		<xsl:when test=".='4'">Y</xsl:when>	<!-- 年 -->
-		<xsl:when test=".=5"></xsl:when><!-- 核心没有终身 -->
+		<xsl:when test=".='5'"></xsl:when><!-- 核心没有终身 -->
 		<xsl:otherwise>--</xsl:otherwise>  
 	</xsl:choose>
 </xsl:template>	

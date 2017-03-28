@@ -258,6 +258,7 @@ public class NonReaTimeIssWatDetail extends Balance{
 			tDetailEle.addContent(tProposalPrtNoEle);
 			tDetailEle.addContent(tPremEle);
 			tDetailEle.addContent(tSpecialRateEle);
+			tDetailEle.addContent(tAccNoEle);
 			tDetailEle.addContent(tPhoneEle);
 			tDetailEle.addContent(tMobileEle);
 			

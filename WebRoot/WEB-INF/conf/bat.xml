@@ -161,6 +161,14 @@
 		<com>05</com>
 		<funcFlag>2008</funcFlag>
 	</batch>
+	
+	<batch>
+		<name>非实时出单结果明细文件</name>
+		<startTime>20:15:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.NonRealTimeContRstDetail</class>
+		<com>05</com>
+		<funcFlag>2005</funcFlag>
+	</batch>
 
 	<batch>
 		<name>退保犹撤数据文件</name>

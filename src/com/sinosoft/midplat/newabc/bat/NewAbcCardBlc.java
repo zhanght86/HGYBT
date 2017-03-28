@@ -203,7 +203,7 @@ public class NewAbcCardBlc extends Balance {
 			tContNoEle.setText(tSubMsgs[4]);
 
 			// 获取保单印刷号
-			String tContPrtNoSql = "select otherno from tranlog where funcflag='1014' and contno='"
+			String tContPrtNoSql = "select ProposalPrtNo from tranlog where funcflag='1014' and contno='"
 					+ tContNoEle.getText()
 					+ "' and trancom='05' and rcode='0' ";
 			this.cLogger.info("保单印刷号sql:" + tContPrtNoSql);

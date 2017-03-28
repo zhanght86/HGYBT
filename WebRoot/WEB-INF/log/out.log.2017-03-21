@@ -1,0 +1,1218 @@
+11:47:55,605 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+11:47:55,661 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:47:55,662 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:47:55,664 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:47:55,665 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:47:56,006 INFO test.NewABCTest(213) - 发送报文头！X1.0000014403103    00000                                       000000000
+11:47:56,006 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.385s
+11:47:56,006 INFO test.NewABCTest(224) - 收到返回报文！
+11:48:17,877 INFO test.NewABCTest(232) - package_head:X1.0000010243103    00000                                       000000000
+11:48:17,885 INFO test.NewABCTest(234) - mBodyLen:1024
+11:48:17,885 INFO test.NewABCTest(239) - 解密开始
+11:48:17,887 INFO test.NewABCTest(241) - 解密完成
+11:48:17,890 INFO test.NewABCTest(254) - UTF-8 农行的报文: 
+11:48:17,891 INFO test.NewABCTest(258) - 客户端接收返回报文完毕！耗时：22.27s
+) - 解密完成
+11:47:56,022 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170321</TransDate><TransTime>173720</TransTime><TransCode>1012</TransCode><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><SerialNo>810000578939</SerialNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PolicyNo>888010000000860</PolicyNo><PrintCode>1800190000837</PrintCode><PolicyPwd /><ClientName>黄学彦</ClientName><IdKind>110001</IdKind><IdCode>652823197001221247</IdCode><PayAcc>6228452508010633671</PayAcc><Amt>100000.00</Amt><BusiType>01</BusiType><PayeetName>黄学彦</PayeetName><PayeeIdKind>110001</PayeeIdKind><PayeeIdCode>652823197001221247</PayeeIdCode></Req></App></ABCB2I>
+   
+11:47:56,037 INFO net.NewAbcNetImpl(59) - UTF-8 农行的报文: 
+11:47:56,037 INFO net.NewAbcNetImpl(79) - 农行交易码为=======:1012
+11:47:56,037 INFO common.SaveMessage(94) - 22022_54_3012_in.xml IO输出耗时:0.0s
+11:47:56,037 INFO net.NewAbcNetImpl(99) - 保存报文完毕！22022_54_3012_in.xml
+11:47:56,037 INFO net.NewAbcNetImpl(122) - Out NewAbcNetImp.receive()!
+11:47:56,037 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.SecureQuery
+11:47:56,037 INFO format.SecureQuery(28) - Into SecureQuery.noStd2Std()...
+11:47:56,053 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.ContSecureQuery
+11:47:56,053 INFO service.ContSecureQuery(31) - Into ContSecureQuery.service()...
+11:47:56,053 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+11:47:56,053 INFO common.Log4jPrint(20) - 进程名：22022
+11:47:56,053 INFO common.Log4jPrint(20) - trancom:5
+11:47:56,053 INFO common.Log4jPrint(20) - FuncFlag:3012
+11:47:56,053 INFO common.Log4jPrint(20) - mHeadEle.getChildText22022_54_3012_in.xml
+11:48:16,645 INFO common.Log4jPrint(20) - DBConn Exception1: Io 异常: Read timed out
+11:48:16,655 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:180)
+11:48:16,655 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:222)
+11:48:16,655 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:335)
+11:48:16,655 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleStatement.<init>(OracleStatement.java:503)
+11:48:16,655 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleConnection.privateCreateStatement(OracleConnection.java:683)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleConnection.createStatement(OracleConnection.java:560)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBConn.createConnection(DBConn.java:149)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBConnPool.getConnection(DBConnPool.java:84)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBOper.insert(DBOper.java:64)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.lis.db.TranLogDB.insert(TranLogDB.java:66)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:197)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.service.ContSecureQuery.service(ContSecureQuery.java:40)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+11:48:16,657 INFO common.Log4jPrint(20) - DBConn : recreate DBConn
+11:48:16,657 INFO common.Log4jPrint(20) - DBConn Exception2: Io 异常: Connection reset by peer: socket write error
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:180)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:222)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:335)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleStatement.<init>(OracleStatement.java:503)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleConnection.privateCreateStatement(OracleConnection.java:683)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at oracle.jdbc.driver.OracleConnection.createStatement(OracleConnection.java:560)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBConn.createConnection(DBConn.java:149)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBConnPool.getConnection(DBConnPool.java:84)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.utility.DBOper.insert(DBOper.java:64)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.lis.db.TranLogDB.insert(TranLogDB.java:66)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:197)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.service.ContSecureQuery.service(ContSecureQuery.java:40)
+11:48:16,657 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+11:48:17,016 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:48:17,016 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ContNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 22022,5,'01','01010101001865201','810000578939','apky',3012,20170321,173720,'888010000000860','180019000083719',-1,-1,'127.0.0.1','22022_54_3012_in.xml',20170321,114756,20170321,114756 )
+11:48:17,047 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+11:48:17,047 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ContNo='888010000000860' and MakeDate>=20170321 and MakeTime>=114617
+11:48:17,261 INFO service.ContSecureQuery(56) - 1
+11:48:17,261 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ContNo='888010000000860' and MakeDate>=20170321 and MakeTime>=114617
+11:48:17,414 INFO service.ContSecureQuery(65) - ---------------------------------------------
+11:48:17,414 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:48:17,430 INFO common.SaveMessage(94) - 22022_57_10_inSvc.xml IO输出耗时:0.016s
+11:48:17,430 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22022_57_10_inSvc.xml
+11:48:17,445 INFO common.Log4jPrint(20) - start call 银保犹豫期退保查询(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:48:17,445 INFO net.CallWebsvcAtomSvc(102) - start call 银保犹豫期退保查询(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:48:17,493 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:48:17,494 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:48:17,495 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:48:17,495 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:48:17,496 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:48:17,496 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:48:17,497 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:48:17,498 DEBUG httpclient.Wire(70) - >> "509[\r][\n]"
+11:48:17,499 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5Obz44MTAwMDA1Nzg5Mzk8L1RyYW5Obz48Wm9uZU5vPjAxPC9ab25lTm8+PE5vZGVObz4wMTAxMDEwMTAwMTg2NTIwMTwvTm9kZU5vPjxUcmFuRGF0ZT4yMDE3MDMyMTwvVHJhbkRhdGU+PFRyYW5UaW1lPjE3MzcyMDwvVHJhblRpbWU+PFRlbGxlck5vPmFwa3k8L1RlbGxlck5vPjxCYW5rQ29kZT4wMTAyPC9CYW5rQ29kZT48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MzAxMjwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjIyMDIyXzU0XzMwMTJfaW4ueG1sPC9Jbk5vRG9jPjxTZXJ2aWNlSWQ+MTA8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PFNhbGVDaGFubmVsPjA8L1NhbGVDaGFubmVsPjxDb250Tm8+ODg4MDEwMDAwMDAwODYwPC9Db250Tm8+PENvbnRQcnRObz4xODAwMTkwMDAwODM3MTk8L0NvbnRQcnRObz48UGFzc3dvcmQgLz48QWNjTmFtZT67xtGn0eU8L0FjY05hbWU+PElEVHlwZT4wPC9JRFR5cGU+PElETm8+NjUyODIzMTk3MDAxMjIxMjQ3PC9JRE5vPjxEcndOYW1lPrvG0afR5TwvRHJ3TmFtZT48RHJ3SURUeXBlPjA8L0Ryd0lEVHlwZT48RHJ3SURObz42NTI4MjMxOTcwMDEyMjEyNDc8L0Ryd0lETm8+PFBheUFjY05vPjYyMjg0NTI1MDgwMTA2MzM2NzE8L1BheUFjY05vPjxQcmVtPjEwMDAwMDAwPC9QcmVtPjxCdXNpVHlwZT4wNzwvQnVzaVR5cGU+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:48:17,499 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:48:17,499 DEBUG httpclient.Wire(84) - >> "0"
+11:48:17,499 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:48:17,499 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:48:17,699 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:48:17,699 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:48:17,710 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 03:46:51 GMT[\r][\n]"
+11:48:17,711 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:48:17,711 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:48:17,711 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:48:17,711 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "0"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "5"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "d"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "b"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "[\r]"
+11:48:17,711 DEBUG httpclient.Wire(70) - << "[\n]"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "<?xm"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:so"
+11:48:17,711 DEBUG httpclient.Wire(84) - << "apenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPFRyYW5EYXRlPjIwMTctMDMtMjE8L1RyYW5EYXRlPg0KICAgIDxUcmFuVGltZT4xNzM3MjA8L1RyYW5UaW1lPg0KICAgIDxUcmFuTm8+NTc2MDwvVHJhbk5vPg0KICAgIDxGdW5jRmxhZz4xMDwvRnVuY0ZsYWc+DQogICAgPEFwcG50SWRUeXBlPjA8L0FwcG50SWRUeXBlPg0KICAgIDxOYW1lTGlzdD4NCiAgICAgIDxSY2duTmFtZT7A7svEPC9SY2duTmFtZT4NCiAgICA8L05hbWVMaXN0Pg0KICAgIDxFZG9yVHlwZT4xPC9FZG9yVHlwZT4NCiAgICA8Umlza05hbWU+u6q587bgssrTrrzSxOq98LGjz9U8L1Jpc2tOYW1lPg0KICAgIDxDVmFsaURhdGU+MjAxNy0wMy0yMTwvQ1ZhbGlEYXRlPg0KICAgIDxJbnN1RW5kRGF0ZT4yMDI3LTAzLTIxPC9JbnN1RW5kRGF0ZT4NCiAgICA8Q29udE5vPjg4ODAxMDAwMDAwMDg2MDwvQ29udE5vPg0KICAgIDxQb2xpY3lTdGF0dXM+09DQpzwvUG9saWN5U3RhdHVzPg0KICAgIDxFZG9yQ1RQcmVtPjEwMDAwMDA8L0Vkb3JDVFByZW0+DQogICAgPEJvbnVzR2V0TW9kZT7Su7TO0NS4+Li2PC9Cb251c0dldE1vZGU+DQogICAgPEJvbnVzQW1udD4wPC9Cb251c0FtbnQ+DQogICAgPFJpc2tDb2RlPjAxMkQwMTAwPC9SaXNrQ29kZT4NCiAgICA8QXBwbnROYW1lPsDuy8Q8L0FwcG50TmFtZT4NCiAgICA8SW5TdU5hbWU+wO7LxDwvSW5TdU5hbWU+DQogICAgPEFwcG50SWRObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0FwcG50SWRObz4NCiAgICA8QmFua0FjY05vPjYyMjU1NjU2NTY1NjU2NTY8L0JhbmtBY2NObz4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:48:17,711 INFO net.CallWebsvcAtomSvc(145) - 投保单号null银保犹豫期退保查询(service)耗时：0.266s
+11:48:17,727 INFO common.SaveMessage(94) - 22022_60_10_outSvc.xml IO输出耗时:0.016s
+11:48:17,727 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22022_60_10_outSvc.xml
+11:48:17,727 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:48:17,727 INFO service.ContSecureQuery(78) - ---------------------------------------------
+11:48:17,815 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:48:17,815 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:48:17,815 INFO common.Log4jPrint(20) - 810000578939
+11:48:17,815 INFO common.Log4jPrint(20) - 810000578939
+11:48:17,815 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=22022,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000578939',Operator='apky',FuncFlag=3012,TranDate=20170321,TranTime=173720,ProposalPrtNo=null,ContNo='888010000000860',OtherNo='180019000083719',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='交易成功',UsedTime=21,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='22022_54_3012_in.xml',MakeDate=20170321,InDoc=null,OutDoc=null,MakeTime=114756,ModifyDate=20170321,ModifyTime=114817,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000578939'
+11:48:17,862 INFO service.ContSecureQuery(108) - Out ContSecureQuery.service()!
+11:48:17,862 INFO format.SecureQuery(36) - Into SecureQuery.std2NoStd()...
+11:48:17,862 INFO format.SecureQuery(55) - 交易成功=========
+11:48:17,862 INFO format.SecureQuery(63) - 000000
+11:48:17,862 INFO format.SecureQuery(64) - 交易成功
+11:48:17,862 INFO format.SecureQuery(67) - Out SecureQuery.std2NoStd()!
+11:48:17,862 INFO net.NewAbcNetImpl(127) - Into NewAbcNetImp.send()...
+11:48:17,862 INFO common.SaveMessage(94) - 22022_63_3012_out.xml IO输出耗时:0.0s
+11:48:17,862 INFO net.NewAbcNetImpl(142) - 保存报文完毕！22022_63_3012_out.xml
+11:48:17,862 INFO net.NewAbcNetImpl(149) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>173720</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1012</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><ValidDate>20170321</ValidDate><ExpireDate>20270321</ExpireDate><PrntCount>5</PrntCount><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+
+11:48:17,862 INFO common.Log4jPrint(20) - strLen:511
+11:48:17,877 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>173720</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1012</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><ValidDate>20170321</ValidDate><ExpireDate>20270321</ExpireDate><PrntCount>5</PrntCount><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+ 
+11:48:17,877 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+11:48:17,877 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+11:48:17,877 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+11:48:17,877 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>173720</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1012</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><ValidDate>20170321</ValidDate><ExpireDate>20270321</ExpireDate><PrntCount>5</PrntCount><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+ 
+11:48:17,877 INFO common.Log4jPrint(20) - xml字符串的报文长度：1024
+11:48:17,877 INFO net.NewAbcNetImpl(220) - Out NewAbcNetImp.send()!
+11:48:17,976 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:48:17,976 INFO common.Log4jPrint(20) - null
+11:48:17,976 INFO common.Log4jPrint(20) - null
+11:48:17,976 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+11:48:18,046 INFO common.Log4jPrint(20) - i=0
+11:48:18,046 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+11:48:18,046 INFO midplat.Ybt4Socket(192) - 处理总耗时：22.402s
+11:48:18,046 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+11:51:37,749 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+11:51:37,764 INFO midplat.Ybt4Socket(34) - TranLogNo:22025
+11:51:37,770 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+11:51:37,770 INFO net.SocketNetImpl(40) - 客户端IP：127.0.0.1；服务端口：35006
+11:51:37,771 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+11:51:37,771 INFO net.NewAbcNetImpl(28) - Into NewAbcNetImp.receive()...
+11:51:37,771 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:51:37,771 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:51:37,771 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:51:37,771 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:51:38,049 INFO test.NewABCTest(213) - 发送报文头！X1.0000012803103    00000                                       000000000
+11:51:38,049 INFO net.NewAbcNetImpl(35) - package_head:X1.0000012803103    00000                                       000000000
+11:51:38,049 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.285s
+11:51:38,049 INFO net.NewAbcNetImpl(40) - cInsuID:3103
+11:51:38,049 INFO net.NewAbcNetImpl(42) - mBodyLen:1280
+11:51:38,049 INFO net.NewAbcNetImpl(47) - 解密开始
+11:51:38,049 INFO test.NewABCTest(224) - 收到返回报文！
+11:51:38,049 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+11:51:38,049 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+11:51:38,049 INFO net.NewAbcNetImpl(49) - 解密完成
+11:51:38,049 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170321</TransDate><TransTime>153747</TransTime><TransCode>1013</TransCode><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><SerialNo>810000578902</SerialNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PolicyNo>888010000000860</PolicyNo><PrintCode>1800190000837</PrintCode><PolicyPwd /><ClientName>高维生</ClientName><IdKind>110001</IdKind><IdCode>320304196710256136</IdCode><PayAcc>6225565656565656</PayAcc><Amt>100000.00</Amt><GetAmt>3000</GetAmt><PicFileName /><BusiType>01</BusiType></Req></App></ABCB2I>
+  
+11:51:38,049 INFO net.NewAbcNetImpl(59) - UTF-8 农行的报文: 
+11:51:38,049 INFO net.NewAbcNetImpl(79) - 农行交易码为=======:1013
+11:51:38,049 INFO common.SaveMessage(94) - 22028_66_3013_in.xml IO输出耗时:0.0s
+11:51:38,049 INFO net.NewAbcNetImpl(99) - 保存报文完毕！22028_66_3013_in.xml
+11:51:38,049 INFO net.NewAbcNetImpl(122) - Out NewAbcNetImp.receive()!
+11:51:38,065 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.SecureApply
+11:51:38,149 INFO format.SecureApply(27) - Into SecureApply.noStd2Std()...
+11:51:38,181 INFO format.SecureApplyInXsl(26) - Into SecureApplyInXsl.load()...
+11:51:38,181 INFO format.SecureApplyInXsl(29) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureApplyIn.xsl...
+11:51:38,181 INFO common.XslCache(70) - conf file modified at (2017-03-18 14:15:06,856) and length=5897 bytes!
+11:51:38,196 INFO format.SecureApplyInXsl(45) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureApplyIn.xsl!
+11:51:38,196 INFO format.SecureApplyInXsl(56) - <?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" version="1.0" exclude-result-prefixes="java"><xsl:template match="ABCB2I"><TranData><!-- 核心农行保全申请请求报文 --><!--基本信息--><Head><!-- 银行交易流水号 --><TranNo><xsl:value-of select="Header/SerialNo" /></TranNo><!-- 地区代码 --><ZoneNo><xsl:value-of select="Header/ProvCode" /></ZoneNo><!-- 网点代码 --><NodeNo><xsl:value-of select="Header/ProvCode" /><xsl:value-of select="Header/BranchNo" /></NodeNo><!-- 银行交易日期 --><TranDate><xsl:value-of select="Header/TransDate" /></TranDate><!-- 交易时间--><TranTime><xsl:value-of select="Header/TransTime" /></TranTime><!-- 柜员代码 --><xsl:choose><xsl:when test="Header/EntrustWay ='11'"><TellerNo><xsl:value-of select="Header/Tlid" /></TellerNo></xsl:when><xsl:otherwise><TellerNo>0005</TellerNo></xsl:otherwise></xsl:choose><!-- 银行代码 --><BankCode>0102</BankCode><!-- YBT组织的节点信息 --><xsl:copy-of select="Head/*" /><!-- --></Head><Body><!-- 农行自助终端渠道 0柜面 8自助终端 --><xsl:choose><xsl:when test="Header/EntrustWay ='11'"><SaleChannel>0</SaleChannel></xsl:when><xsl:when test="Header/EntrustWay ='04'"><SaleChannel>8</SaleChannel></xsl:when></xsl:choose><!--保单号 --><ContNo><xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/PolicyNo" /></xsl:if><xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)" /></xsl:if></ContNo><!-- 保单印刷号 --><xsl:choose><xsl:when test="Header/EntrustWay ='11'"><ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PrintCode)" /></ContPrtNo></xsl:when><xsl:when test="Header/EntrustWay ='04'"><ContPrtNo /></xsl:when></xsl:choose><!-- 保单密码  --><Password><xsl:value-of select="App/Req/PolicyPwd" /></Password><!--申请人姓名  --><AccName><xsl:value-of select="App/Req/ClientName" /></AccName><!--证件类型 --><IDType><xsl:apply-templates select="App/Req/IdKind" /></IDType><!-- 证件号码 --><IDNo><xsl:value-of select="App/Req/IdCode" /></IDNo><!--领款人账（卡）号 --><PayAcc><xsl:value-of select="App/Req/PayAcc" /></PayAcc><!--保费 --><Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Amt)" /></Prem><!--业务类型  --><BusiType><xsl:call-template name="busitype"><xsl:with-param name="BusiType"><xsl:value-of select="App/Req/BusiType" /></xsl:with-param></xsl:call-template></BusiType></Body></TranData></xsl:template><!--  业务类型 --><xsl:template name="busitype"><xsl:param name="BusiType" /><xsl:if test="$BusiType = 01">07</xsl:if><!-- 犹撤  --><xsl:if test="$BusiType = 02">09</xsl:if><!-- 满期 --><xsl:if test="$BusiType = 03">10</xsl:if><!-- 退保 --></xsl:template><!-- 证件类型--><xsl:template name="tran_idtype" match="IdKind"><xsl:choose><xsl:when test=".=110001">0</xsl:when><!-- 身份证 --><xsl:when test=".=110002">0</xsl:when><!-- 重号居民身份证--><xsl:when test=".=110003">C</xsl:when><!-- 临时居民身份证 --><xsl:when test=".=110004">C</xsl:when><!-- 重号临时居民身份证 --><xsl:when test=".=110005">4</xsl:when><!-- 户口簿 --><xsl:when test=".=110006">4</xsl:when><!-- 重号户口簿  --><xsl:when test=".=110007">2</xsl:when><!-- 中国人民解放军军人身份证  --><xsl:when test=".=110008">2</xsl:when><!-- 重号中国人民解放军军人身份证  --><xsl:when test=".=110009">D</xsl:when><!-- 中国人民武装警察身份证件  --><xsl:when test=".=110010">D</xsl:when><!-- 重号中国人民武装警察身份证件  --><xsl:when test=".=110011">8</xsl:when><!-- 离休干部荣誉证 --><xsl:when test=".=110012">8</xsl:when><!-- 重号离休干部荣誉证 --><xsl:when test=".=110013">8</xsl:when><!-- 军官退休证 --><xsl:when test=".=110014">8</xsl:when><!-- 重号军官退休证 --><xsl:when test=".=110015">8</xsl:when><!-- 文职干部退休证 --><xsl:when test=".=110016">8</xsl:when><!-- 重号文职干部退休证 --><xsl:when test=".=110017">5</xsl:when><!-- 军事院校学员证 --><xsl:when test=".=110018">5</xsl:when><!-- 重号军事院校学员证 --><xsl:when test=".=110019">8</xsl:when><!-- 港澳居民往来内地通行证 --><xsl:when test=".=110020">8</xsl:when><!-- 重号港澳居民往来内地通行证 --><xsl:when test=".=110021">E</xsl:when><!-- 台湾居民往来大陆通行证 --><xsl:when test=".=110022">E</xsl:when><!-- 重号台湾居民往来大陆通行证 --><xsl:when test=".=110023">1</xsl:when><!-- 中华人民共和国护照 --><xsl:when test=".=110024">1</xsl:when><!-- 重号中华人民共和国护照 --><xsl:when test=".=110025">1</xsl:when><!-- 外国护照 --><xsl:when test=".=110026">1</xsl:when><!-- 重号外国护照 --><xsl:when test=".=110027">2</xsl:when><!-- 军官证 --><xsl:when test=".=110028">2</xsl:when><!-- 重号军官证 --><xsl:when test=".=110029">8</xsl:when><!-- 文职干部证 --><xsl:when test=".=110030">8</xsl:when><!-- 重号文职干部证 --><xsl:when test=".=110031">D</xsl:when><!-- 警官证 --><xsl:when test=".=110032">D</xsl:when><!-- 重号警官证 --><xsl:when test=".=110033">A</xsl:when><!-- 军人士兵证 --><xsl:when test=".=110034">A</xsl:when><!-- 重号军人士兵证 --><xsl:when test=".=110035">A</xsl:when><!-- 武警士兵证 --><xsl:when test=".=110036">A</xsl:when><!-- 重号武警士兵证 --><xsl:when test=".=119998">8</xsl:when><!-- 系统使用的个人证件识别标识 --><xsl:when test=".=119999">8</xsl:when><!-- 其他个人证件识别标识 --></xsl:choose></xsl:template></xsl:stylesheet>
+
+11:51:38,196 INFO format.SecureApplyInXsl(64) - Out SecureApplyInXsl.load()!
+11:51:38,196 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.ContSecureApply
+11:51:38,218 INFO service.ContSecureApply(32) - Into ContSecureApply.service()...
+11:51:38,218 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+11:51:38,218 INFO common.Log4jPrint(20) - 进程名：22028
+11:51:38,218 INFO common.Log4jPrint(20) - trancom:5
+11:51:38,218 INFO common.Log4jPrint(20) - FuncFlag:3013
+11:51:38,218 INFO common.Log4jPrint(20) - mHeadEle.getChildText22028_66_3013_in.xml
+11:51:38,318 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:51:38,318 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ContNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 22028,5,'01','01010101001865201','810000578902','apky',3013,20170321,153747,'888010000000860','180019000083719',-1,-1,'127.0.0.1','22028_66_3013_in.xml',20170321,115138,20170321,115138 )
+11:51:38,350 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+11:51:38,350 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ContNo='888010000000860' and MakeDate>=20170321 and MakeTime>=114938
+11:51:38,519 INFO service.ContSecureApply(64) - 判断是否重发，1为重发，重发Body增加ResendFlag节点
+11:51:38,519 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=0 and contno='888010000000860' and funcflag='3013' and MakeDate =20170321
+11:51:38,681 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:51:38,681 INFO common.SaveMessage(94) - 22028_69_11_inSvc.xml IO输出耗时:0.0s
+11:51:38,681 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22028_69_11_inSvc.xml
+11:51:38,681 INFO common.Log4jPrint(20) - start call 银保犹豫期退保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:51:38,681 INFO net.CallWebsvcAtomSvc(102) - start call 银保犹豫期退保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:51:38,714 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:51:38,715 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:51:38,715 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:51:38,716 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:51:38,716 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:51:38,716 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:51:38,717 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:51:38,718 DEBUG httpclient.Wire(70) - >> "48d[\r][\n]"
+11:51:38,718 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5Obz44MTAwMDA1Nzg5MDI8L1RyYW5Obz48Wm9uZU5vPjAxPC9ab25lTm8+PE5vZGVObz4wMTAxMDEwMTAwMTg2NTIwMTwvTm9kZU5vPjxUcmFuRGF0ZT4yMDE3MDMyMTwvVHJhbkRhdGU+PFRyYW5UaW1lPjE1Mzc0NzwvVHJhblRpbWU+PFRlbGxlck5vPmFwa3k8L1RlbGxlck5vPjxCYW5rQ29kZT4wMTAyPC9CYW5rQ29kZT48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MzAxMzwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjIyMDI4XzY2XzMwMTNfaW4ueG1sPC9Jbk5vRG9jPjxTZXJ2aWNlSWQ+MTE8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PFNhbGVDaGFubmVsPjA8L1NhbGVDaGFubmVsPjxDb250Tm8+ODg4MDEwMDAwMDAwODYwPC9Db250Tm8+PENvbnRQcnRObz4xODAwMTkwMDAwODM3MTk8L0NvbnRQcnRObz48UGFzc3dvcmQgLz48QWNjTmFtZT64386syfo8L0FjY05hbWU+PElEVHlwZT4wPC9JRFR5cGU+PElETm8+MzIwMzA0MTk2NzEwMjU2MTM2PC9JRE5vPjxQYXlBY2M+NjIyNTU2NTY1NjU2NTY1NjwvUGF5QWNjPjxQcmVtPjEwMDAwMDAwPC9QcmVtPjxCdXNpVHlwZT4wNzwvQnVzaVR5cGU+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:51:38,718 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:51:38,719 DEBUG httpclient.Wire(84) - >> "0"
+11:51:38,719 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:51:38,719 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:51:38,781 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:51:38,781 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:51:38,789 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 03:50:12 GMT[\r][\n]"
+11:51:38,790 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:51:38,790 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:51:38,790 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:51:38,790 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "0"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "1"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "e"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "7"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "[\r]"
+11:51:38,790 DEBUG httpclient.Wire(70) - << "[\n]"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "<?xm"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:so"
+11:51:38,790 DEBUG httpclient.Wire(84) - << "apenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjE8L0ZsYWc+DQogICAgPERlc2M+ytW/7tXLu6e7p8P70+vNtrGjyMvQ1cP7srvSu9bCoaM8L0Rlc2M+DQogIDwvSGVhZD4NCjwvVHJhbkRhdGE+DQoNCg==</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:51:38,790 INFO net.CallWebsvcAtomSvc(145) - 投保单号null银保犹豫期退保(service)耗时：0.109s
+11:51:38,790 INFO common.SaveMessage(94) - 22028_72_11_outSvc.xml IO输出耗时:0.0s
+11:51:38,790 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22028_72_11_outSvc.xml
+11:51:38,790 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:51:38,790 INFO service.ContSecureApply(97) - 保全申请交易失败！
+com.sinosoft.midplat.exception.MidplatException: 收款账户户名与投保人姓名不一致。
+	at com.sinosoft.midplat.newabc.service.ContSecureApply.service(ContSecureApply.java:92)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+11:51:38,881 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:51:38,881 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:51:38,881 INFO common.Log4jPrint(20) - 810000578902
+11:51:38,881 INFO common.Log4jPrint(20) - 810000578902
+11:51:38,881 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=22028,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000578902',Operator='apky',FuncFlag=3013,TranDate=20170321,TranTime=153747,ProposalPrtNo=null,ContNo='888010000000860',OtherNo='180019000083719',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='收款账户户名与投保人姓名不一致。',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='22028_66_3013_in.xml',MakeDate=20170321,InDoc=null,OutDoc=null,MakeTime=115138,ModifyDate=20170321,ModifyTime=115138,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000578902'
+11:51:38,919 INFO service.ContSecureApply(117) - Out ContSecureApply.service()!
+11:51:38,919 INFO format.SecureApply(35) - Into SecureApply.std2NoStd()...
+11:51:38,919 INFO format.SecureApplyOutXsl(26) - Into SecureApplyOutXsl.load()...
+11:51:38,919 INFO format.SecureApplyOutXsl(29) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureApplyOut.xsl...
+11:51:38,919 INFO common.XslCache(70) - conf file modified at (2017-03-18 14:15:06,895) and length=1652 bytes!
+11:51:38,934 INFO format.SecureApplyOutXsl(45) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureApplyOut.xsl!
+11:51:38,934 INFO format.SecureApplyOutXsl(56) - <?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" version="1.0" exclude-result-prefixes="java"><xsl:template match="TranData"><ABCB2I><!-- 农业银行保全申请应答报文 --><Header><!--返回码 --><RetCode /><!--返回信息 --><RetMsg /><!--银行交易流水号 --><SerialNo><xsl:value-of select="Head/TranNo" /></SerialNo><!--保险公司流水号 --><InsuSerial /><!-- 交易日期--><TransTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(Body/TranDate)" /></TransTime><!-- 交易时--><TransDate><xsl:value-of select="Body/TranTime" /></TransDate><!-- 银行代码--><BankCode /><!--保险公司代码 --><CorpNo /><!-- 银行代码--><TransCode>1013</TransCode></Header><App><Ret><!--险种名称--><InsuName><xsl:value-of select="Body/RiskName" /></InsuName><!--保单号 --><PolicyNo><xsl:value-of select="Body/ContNo" /></PolicyNo><!-- 拟领取金额 --><OccurBala><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/EdorCTPrem)" /></OccurBala><!--保全生效日--><BQValidDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(Body/CValiDate)" /></BQValidDate><!--逐行打印行数--><PrntCount>5</PrntCount><!--逐行打印内容--><Prnt1>　　　　受理号：<xsl:value-of select="Body/EdorAcceptNo" />，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I></xsl:template></xsl:stylesheet>
+
+11:51:38,934 INFO format.SecureApplyOutXsl(64) - Out SecureApplyOutXsl.load()!
+11:51:38,934 INFO format.SecureApply(50) - 交易失败=========失败信息:收款账户户名与投保人姓名不一致。
+11:51:38,934 INFO format.SecureApply(54) - 009999
+11:51:38,934 INFO format.SecureApply(55) - 收款账户户名与投保人姓名不一致。
+11:51:38,934 INFO format.SecureApply(58) - Out SecureApply.std2NoStd()!
+11:51:38,934 INFO net.NewAbcNetImpl(127) - Into NewAbcNetImp.send()...
+11:51:38,950 INFO common.SaveMessage(94) - 22028_75_3013_out.xml IO输出耗时:0.016s
+11:51:38,950 INFO net.NewAbcNetImpl(142) - 保存报文完毕！22028_75_3013_out.xml
+11:51:38,950 INFO net.NewAbcNetImpl(149) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><RetCode>009999</RetCode><RetMsg>收款账户户名与投保人姓名不一致。</RetMsg><SerialNo /><InsuSerial /><TransTime /><TransDate /><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName /><PolicyNo /><OccurBala /><BQValidDate /><PrntCount>5</PrntCount><Prnt1>　　　　受理号：，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+
+11:51:38,950 INFO common.Log4jPrint(20) - strLen:461
+11:51:38,950 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><RetCode>009999</RetCode><RetMsg>收款账户户名与投保人姓名不一致。</RetMsg><SerialNo /><InsuSerial /><TransTime /><TransDate /><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName /><PolicyNo /><OccurBala /><BQValidDate /><PrntCount>5</PrntCount><Prnt1>　　　　受理号：，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+   
+11:51:38,950 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+11:51:38,950 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+11:51:38,950 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+11:51:38,950 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><RetCode>009999</RetCode><RetMsg>收款账户户名与投保人姓名不一致。</RetMsg><SerialNo /><InsuSerial /><TransTime /><TransDate /><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName /><PolicyNo /><OccurBala /><BQValidDate /><PrntCount>5</PrntCount><Prnt1>　　　　受理号：，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+   
+11:51:38,950 INFO common.Log4jPrint(20) - xml字符串的报文长度：928
+11:51:38,950 INFO net.NewAbcNetImpl(220) - Out NewAbcNetImp.send()!
+11:51:38,950 INFO test.NewABCTest(232) - package_head:X1.0000009283103    00000                                       000000000
+11:51:38,960 INFO test.NewABCTest(234) - mBodyLen:928
+11:51:38,960 INFO test.NewABCTest(239) - 解密开始
+11:51:38,962 INFO test.NewABCTest(241) - 解密完成
+11:51:38,962 INFO test.NewABCTest(254) - UTF-8 农行的报文: 
+11:51:38,962 INFO test.NewABCTest(258) - 客户端接收返回报文完毕！耗时：1.198s
+11:51:39,050 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:51:39,050 INFO common.Log4jPrint(20) - null
+11:51:39,050 INFO common.Log4jPrint(20) - null
+11:51:39,050 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+11:51:39,119 INFO common.Log4jPrint(20) - i=0
+11:51:39,119 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+11:51:39,119 INFO midplat.Ybt4Socket(192) - 处理总耗时：1.349s
+11:51:39,119 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+11:52:37,602 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+11:52:37,618 INFO midplat.Ybt4Socket(34) - TranLogNo:22031
+11:52:37,621 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+11:52:37,621 INFO net.SocketNetImpl(40) - 客户端IP：127.0.0.1；服务端口：35006
+11:52:37,622 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+11:52:37,622 INFO net.NewAbcNetImpl(28) - Into NewAbcNetImp.receive()...
+11:52:37,622 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:52:37,622 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:52:37,622 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:52:37,622 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:52:37,949 INFO test.NewABCTest(213) - 发送报文头！X1.0000012803103    00000                                       000000000
+11:52:37,949 INFO net.NewAbcNetImpl(35) - package_head:X1.0000012803103    00000                                       000000000
+11:52:37,949 INFO net.NewAbcNetImpl(40) - cInsuID:3103
+11:52:37,949 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.331s
+11:52:37,949 INFO net.NewAbcNetImpl(42) - mBodyLen:1280
+11:52:37,949 INFO net.NewAbcNetImpl(47) - 解密开始
+11:52:37,949 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+11:52:37,949 INFO test.NewABCTest(224) - 收到返回报文！
+11:52:37,949 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+11:52:37,949 INFO net.NewAbcNetImpl(49) - 解密完成
+11:52:37,949 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170321</TransDate><TransTime>153747</TransTime><TransCode>1013</TransCode><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><SerialNo>810000578903</SerialNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PolicyNo>888010000000860</PolicyNo><PrintCode>1800190000837</PrintCode><PolicyPwd /><ClientName>李四</ClientName><IdKind>110001</IdKind><IdCode>320304196710256136</IdCode><PayAcc>6225565656565656</PayAcc><Amt>100000.00</Amt><GetAmt>3000</GetAmt><PicFileName /><BusiType>01</BusiType></Req></App></ABCB2I>
+     
+11:52:37,965 INFO net.NewAbcNetImpl(59) - UTF-8 农行的报文: 
+11:52:37,965 INFO net.NewAbcNetImpl(79) - 农行交易码为=======:1013
+11:52:37,965 INFO common.SaveMessage(94) - 22034_78_3013_in.xml IO输出耗时:0.0s
+11:52:37,965 INFO net.NewAbcNetImpl(99) - 保存报文完毕！22034_78_3013_in.xml
+11:52:37,965 INFO net.NewAbcNetImpl(122) - Out NewAbcNetImp.receive()!
+11:52:37,965 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.SecureApply
+11:52:37,965 INFO format.SecureApply(27) - Into SecureApply.noStd2Std()...
+11:52:37,965 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.ContSecureApply
+11:52:37,965 INFO service.ContSecureApply(32) - Into ContSecureApply.service()...
+11:52:37,965 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+11:52:37,965 INFO common.Log4jPrint(20) - 进程名：22034
+11:52:37,965 INFO common.Log4jPrint(20) - trancom:5
+11:52:37,965 INFO common.Log4jPrint(20) - FuncFlag:3013
+11:52:37,965 INFO common.Log4jPrint(20) - mHeadEle.getChildText22034_78_3013_in.xml
+11:52:38,081 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:52:38,096 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ContNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 22034,5,'01','01010101001865201','810000578903','apky',3013,20170321,153747,'888010000000860','180019000083719',-1,-1,'127.0.0.1','22034_78_3013_in.xml',20170321,115237,20170321,115237 )
+11:52:38,119 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+11:52:38,119 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ContNo='888010000000860' and MakeDate>=20170321 and MakeTime>=115038
+11:52:38,265 INFO service.ContSecureApply(64) - 判断是否重发，1为重发，重发Body增加ResendFlag节点
+11:52:38,265 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=0 and contno='888010000000860' and funcflag='3013' and MakeDate =20170321
+11:52:38,435 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:52:38,450 INFO common.SaveMessage(94) - 22034_81_11_inSvc.xml IO输出耗时:0.015s
+11:52:38,450 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22034_81_11_inSvc.xml
+11:52:38,450 INFO common.Log4jPrint(20) - start call 银保犹豫期退保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:52:38,450 INFO net.CallWebsvcAtomSvc(102) - start call 银保犹豫期退保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:52:38,503 DEBUG httpclient.Wire(70) - >> "489[\r][\n]"
+11:52:38,519 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5Obz44MTAwMDA1Nzg5MDM8L1RyYW5Obz48Wm9uZU5vPjAxPC9ab25lTm8+PE5vZGVObz4wMTAxMDEwMTAwMTg2NTIwMTwvTm9kZU5vPjxUcmFuRGF0ZT4yMDE3MDMyMTwvVHJhbkRhdGU+PFRyYW5UaW1lPjE1Mzc0NzwvVHJhblRpbWU+PFRlbGxlck5vPmFwa3k8L1RlbGxlck5vPjxCYW5rQ29kZT4wMTAyPC9CYW5rQ29kZT48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MzAxMzwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjIyMDM0Xzc4XzMwMTNfaW4ueG1sPC9Jbk5vRG9jPjxTZXJ2aWNlSWQ+MTE8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PFNhbGVDaGFubmVsPjA8L1NhbGVDaGFubmVsPjxDb250Tm8+ODg4MDEwMDAwMDAwODYwPC9Db250Tm8+PENvbnRQcnRObz4xODAwMTkwMDAwODM3MTk8L0NvbnRQcnRObz48UGFzc3dvcmQgLz48QWNjTmFtZT7A7svEPC9BY2NOYW1lPjxJRFR5cGU+MDwvSURUeXBlPjxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzNjwvSURObz48UGF5QWNjPjYyMjU1NjU2NTY1NjU2NTY8L1BheUFjYz48UHJlbT4xMDAwMDAwMDwvUHJlbT48QnVzaVR5cGU+MDc8L0J1c2lUeXBlPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:52:38,519 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:52:38,519 DEBUG httpclient.Wire(84) - >> "0"
+11:52:38,519 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:52:38,519 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:52:39,867 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:52:39,867 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:52:39,871 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 03:51:12 GMT[\r][\n]"
+11:52:39,872 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:52:39,873 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:52:39,873 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:52:39,873 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "0"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "c"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "f"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "b"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "[\r]"
+11:52:39,873 DEBUG httpclient.Wire(70) - << "[\n]"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "<?xm"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:so"
+11:52:39,873 DEBUG httpclient.Wire(84) - << "apenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPFRyYW5EYXRlPjIwMTctMDMtMjE8L1RyYW5EYXRlPg0KICAgIDxUcmFuVGltZT4xNTM3NDc8L1RyYW5UaW1lPg0KICAgIDxUcmFuTm8+NTc2MjwvVHJhbk5vPg0KICAgIDxGdW5jRmxhZz4xMTwvRnVuY0ZsYWc+DQogICAgPEVkb3JBY2NlcHRObz43NDAyMTIxMDAwMDA2NTU8L0Vkb3JBY2NlcHRObz4NCiAgICA8RWRvclR5cGU+MTwvRWRvclR5cGU+DQogICAgPFJpc2tDb2RlPjAxMkQwMTAwPC9SaXNrQ29kZT4NCiAgICA8Umlza05hbWU+u6q587bgssrTrrzSxOq98LGjz9U8L1Jpc2tOYW1lPg0KICAgIDxDVmFsaURhdGU+MjAxNy0wMy0yMTwvQ1ZhbGlEYXRlPg0KICAgIDxDb250Tm8+ODg4MDEwMDAwMDAwODYwPC9Db250Tm8+DQogICAgPEVkb3JDVFByZW0+MTAwMDAwMDwvRWRvckNUUHJlbT4NCiAgICA8UGFwZXJUaXRsZT48L1BhcGVyVGl0bGU+DQogICAgPENhcmRObz4zMTQwMTEwMDAwODc0ODI8L0NhcmRObz4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT7F+s7ExNrI3TwvQXR0YWNobWVudERhdGE+DQogICAgPC9BdHRhY2htZW50Pg0KICAgIDxBdHRhY2htZW50Pg0KICAgICAgPEF0dGFjaG1lbnREYXRhPsrcwO3B98uuusXC66O6NzQwMjEyMTAwMDAwNjU1PC9BdHRhY2htZW50RGF0YT4NCiAgICA8L0F0dGFjaG1lbnQ+DQogICAgPEF0dGFjaG1lbnQ+DQogICAgICA8QXR0YWNobWVudERhdGE+18i+rc22saPIy8Duy8TT2jIwMTctMDMtMjHI1cbatcTJ6sfro6y7qrnzyMvK2bGjz9W5ybfd09DP3rmry77K2sio1tC5+r2oyejS+NDQttQ4ODgwMTAwMDAwMDA4NjC6xbGjtaU8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT7X9sjnz8LF+teio7o8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT48L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT6x5Lj8z+7Ev6O608zUpcbazcuxo6GjPC9BdHRhY2htZW50RGF0YT4NCiAgICA8L0F0dGFjaG1lbnQ+DQogICAgPEF0dGFjaG1lbnQ+DQogICAgICA8QXR0YWNobWVudERhdGE+zcu30b3wtu66z7zGo7oxMDAwMC4wICAgtPPQtKO6yMvD8bHS0rzN8tSq1fs8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT7Ny7fRt73KvaO60vjQ0Neq1cs8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT7S+NDQw/uzxqO61tC5+sWp0rXS+NDQPC9BdHRhY2htZW50RGF0YT4NCiAgICA8L0F0dGFjaG1lbnQ+DQogICAgPEF0dGFjaG1lbnQ+DQogICAgICA8QXR0YWNobWVudERhdGE+uPi4ttXLu6e7p8P7o7rA7svEPC9BdHRhY2htZW50RGF0YT4NCiAgICA8L0F0dGFjaG1lbnQ+DQogICAgPEF0dGFjaG1lbnQ+DQogICAgICA8QXR0YWNobWVudERhdGE+uPi4ttXLusWjujYyMjU1NjU2NTY1NjU2NTY8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT7F+teiyNXG2qO6MjAxNy0wMy0yMTwvQXR0YWNobWVudERhdGE+DQogICAgPC9BdHRhY2htZW50Pg0KICAgIDxBdHRhY2htZW50Pg0KICAgICAgPEF0dGFjaG1lbnREYXRhPrG+tM6x5Lj819TF+tei1q7I1cbwyfrQp6GjPC9BdHRhY2htZW50RGF0YT4NCiAgICA8L0F0dGFjaG1lbnQ+DQogICAgPEF0dGFjaG1lbnQ+DQogICAgICA8QXR0YWNobWVudERhdGE+zfi147T6wuujujAxMDEwMTAxMDAxODY1MjAxICAgufHUsbT6wuujumFwa3k8L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT48L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgICA8QXR0YWNobWVudD4NCiAgICAgIDxBdHRhY2htZW50RGF0YT67qrnzyMvK2bGjz9W5ybfd09DP3rmry748L0F0dGFjaG1lbnREYXRhPg0KICAgIDwvQXR0YWNobWVudD4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:52:39,873 INFO net.CallWebsvcAtomSvc(145) - 投保单号null银保犹豫期退保(service)耗时：1.423s
+11:52:39,892 INFO common.SaveMessage(94) - 22034_84_11_outSvc.xml IO输出耗时:0.019s
+11:52:39,893 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22034_84_11_outSvc.xml
+11:52:39,893 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:52:39,967 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:52:39,967 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:52:39,967 INFO common.Log4jPrint(20) - 810000578903
+11:52:39,967 INFO common.Log4jPrint(20) - 810000578903
+11:52:39,967 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=22034,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000578903',Operator='apky',FuncFlag=3013,TranDate=20170321,TranTime=153747,ProposalPrtNo=null,ContNo='888010000000860',OtherNo='180019000083719',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='交易成功',UsedTime=1,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='22034_78_3013_in.xml',MakeDate=20170321,InDoc=null,OutDoc=null,MakeTime=115237,ModifyDate=20170321,ModifyTime=115239,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000578903'
+11:52:40,021 INFO service.ContSecureApply(117) - Out ContSecureApply.service()!
+11:52:40,021 INFO format.SecureApply(35) - Into SecureApply.std2NoStd()...
+11:52:40,036 INFO format.SecureApply(46) - 交易成功=========
+11:52:40,036 INFO format.SecureApply(54) - 000000
+11:52:40,036 INFO format.SecureApply(55) - 交易成功
+11:52:40,036 INFO format.SecureApply(58) - Out SecureApply.std2NoStd()!
+11:52:40,036 INFO net.NewAbcNetImpl(127) - Into NewAbcNetImp.send()...
+11:52:40,052 INFO common.SaveMessage(94) - 22034_87_3013_out.xml IO输出耗时:0.016s
+11:52:40,052 INFO net.NewAbcNetImpl(142) - 保存报文完毕！22034_87_3013_out.xml
+11:52:40,052 INFO net.NewAbcNetImpl(149) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>153747</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><BQValidDate>20170321</BQValidDate><PrntCount>5</PrntCount><Prnt1>　　　　受理号：740212100000655，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+
+11:52:40,052 INFO common.Log4jPrint(20) - strLen:575
+11:52:40,052 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>153747</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><BQValidDate>20170321</BQValidDate><PrntCount>5</PrntCount><Prnt1>　　　　受理号：740212100000655，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+ 
+11:52:40,052 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+11:52:40,052 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+11:52:40,052 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+11:52:40,052 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>交易成功</RetMsg><SerialNo /><InsuSerial /><TransTime>20170321</TransTime><TransDate>153747</TransDate><BankCode>03</BankCode><CorpNo /><TransCode>1013</TransCode></Header><App><Ret><InsuName>华贵多彩赢家年金保险</InsuName><PolicyNo>888010000000860</PolicyNo><OccurBala>10000.00</OccurBala><BQValidDate>20170321</BQValidDate><PrntCount>5</PrntCount><Prnt1>　　　　受理号：740212100000655，上述保单自申请之日起效力终止。</Prnt1><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /></Ret></App></ABCB2I>
+ 
+11:52:40,052 INFO common.Log4jPrint(20) - xml字符串的报文长度：1152
+11:52:40,052 INFO net.NewAbcNetImpl(220) - Out NewAbcNetImp.send()!
+11:52:40,052 INFO test.NewABCTest(232) - package_head:X1.0000011523103    00000                                       000000000
+11:52:40,064 INFO test.NewABCTest(234) - mBodyLen:1152
+11:52:40,064 INFO test.NewABCTest(239) - 解密开始
+11:52:40,066 INFO test.NewABCTest(241) - 解密完成
+11:52:40,066 INFO test.NewABCTest(254) - UTF-8 农行的报文: 
+11:52:40,066 INFO test.NewABCTest(258) - 客户端接收返回报文完毕！耗时：2.448s
+11:52:40,152 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:52:40,152 INFO common.Log4jPrint(20) - null
+11:52:40,152 INFO common.Log4jPrint(20) - null
+11:52:40,152 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+11:52:40,252 INFO common.Log4jPrint(20) - i=0
+11:52:40,252 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+11:52:40,252 INFO midplat.Ybt4Socket(192) - 处理总耗时：2.63s
+11:52:40,252 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+12:00:04,287 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+12:00:04,302 INFO midplat.Ybt4Socket(34) - TranLogNo:22037
+12:00:04,315 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+12:00:04,315 INFO net.SocketNetImpl(40) - 客户端IP：127.0.0.1；服务端口：35006
+12:00:04,317 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+12:00:04,317 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+12:00:04,317 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+12:00:04,317 INFO net.NewAbcNetImpl(28) - Into NewAbcNetImp.receive()...
+12:00:04,317 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+12:00:04,317 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+12:00:04,754 INFO test.NewABCTest(213) - 发送报文头！X1.0000008323103    00000                                       000000000
+12:00:04,754 INFO net.NewAbcNetImpl(35) - package_head:X1.0000008323103    00000                                       000000000
+12:00:04,754 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.452s
+12:00:04,754 INFO net.NewAbcNetImpl(40) - cInsuID:3103
+12:00:04,754 INFO net.NewAbcNetImpl(42) - mBodyLen:832
+12:00:04,754 INFO net.NewAbcNetImpl(47) - 解密开始
+12:00:04,754 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+12:00:04,754 INFO test.NewABCTest(224) - 收到返回报文！
+12:00:04,754 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+12:00:04,754 INFO net.NewAbcNetImpl(49) - 解密完成
+12:00:04,754 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170321</TransDate><TransTime>092119</TransTime><TransCode>1014</TransCode><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><SerialNo>01200000335222</SerialNo><Tlid>apky</Tlid></Header><App><Req><RiskCode /><PolicyNo>888010000000860</PolicyNo><BusinType>01</BusinType></Req></App></ABCB2I>
+               
+12:00:04,754 INFO net.NewAbcNetImpl(59) - UTF-8 农行的报文: 
+12:00:04,754 INFO net.NewAbcNetImpl(79) - 农行交易码为=======:1014
+12:00:04,770 INFO common.SaveMessage(94) - 22040_90_3014_in.xml IO输出耗时:0.016s
+12:00:04,770 INFO net.NewAbcNetImpl(99) - 保存报文完毕！22040_90_3014_in.xml
+12:00:04,770 INFO net.NewAbcNetImpl(122) - Out NewAbcNetImp.receive()!
+12:00:04,770 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.SecureStatusQuery
+12:00:04,835 INFO format.SecureStatusQuery(34) - Into SecureStatusQuery.noStd2Std()...
+12:00:04,850 INFO format.SecureStatusQueryInXsl(26) - Into SecureStatusQueryInXsl.load()...
+12:00:04,850 INFO format.SecureStatusQueryInXsl(29) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureStatusQueryIn.xsl...
+12:00:04,850 INFO common.XslCache(70) - conf file modified at (2017-03-18 14:15:07,071) and length=2420 bytes!
+12:00:04,850 INFO format.SecureStatusQueryInXsl(45) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureStatusQueryIn.xsl!
+12:00:04,866 INFO format.SecureStatusQueryInXsl(56) - <?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" version="1.0" exclude-result-prefixes="java"><xsl:template match="ABCB2I"><TranData><!--基本信息--><Head><!-- 银行交易流水号 --><TranNo><xsl:value-of select="Header/SerialNo" /></TranNo><!-- 地区代码 --><ZoneNo><xsl:value-of select="Header/ProvCode" /></ZoneNo><!-- 网点代码 --><NodeNo><xsl:value-of select="Header/ProvCode" /><xsl:value-of select="Header/BranchNo" /></NodeNo><!-- 银行交易日期 --><TranDate><xsl:value-of select="Header/TransDate" /></TranDate><!-- 交易时间--><TranTime><xsl:value-of select="Header/TransTime" /></TranTime><!-- 柜员代码 --><TellerNo><xsl:value-of select="Header/Tlid" /></TellerNo><!-- 银行代码 --><BankCode>0102</BankCode><!-- YBT组织的节点信息 --><xsl:copy-of select="Head/*" /></Head><Body><!--保单号 --><ContNo><xsl:value-of select="App/Req/PolicyNo" /></ContNo><!-- 险种代码 --><RiskCode><xsl:apply-templates select="App/Req/RiskCode" /></RiskCode><!--业务类型  --><BusiType><xsl:call-template name="busitype"><xsl:with-param name="BusiType"><xsl:value-of select="App/Req/BusinType" /></xsl:with-param></xsl:call-template></BusiType></Body></TranData></xsl:template><!--  业务类型 --><xsl:template name="busitype"><xsl:param name="BusiType" /><xsl:if test="$BusiType = 01">07</xsl:if><!-- 犹撤 --><xsl:if test="$BusiType = 02">09</xsl:if><!-- 满期 --><xsl:if test="$BusiType = 03">10</xsl:if><!-- 退保 --></xsl:template><!-- 险种代码 --><xsl:template name="Code" match="RiskCode"><xsl:choose><xsl:when test=".=231201">231201</xsl:when><!-- 中韩智赢财富两全保险（分红型）A款 --><xsl:when test=".=231202">231202</xsl:when><!-- 中韩智赢财富两全保险（分红型）B款 --><xsl:when test=".=231203">231203</xsl:when><!-- 中韩卓越财富两全保险（分红型） --><xsl:when test=".=211901">211901</xsl:when><!-- 中韩安赢借款人意外伤害保险 --><xsl:when test=".=221201">221201</xsl:when><!-- 中韩保驾护航两全保险A款 --><xsl:when test=".=231204">231204</xsl:when><!-- 中韩智赢财富两全保险（分红型）C款 --><xsl:when test=".=211902">211902</xsl:when><!-- 中韩安赢借款人意外伤害保险 A款--></xsl:choose></xsl:template></xsl:stylesheet>
+
+12:00:04,866 INFO format.SecureStatusQueryInXsl(64) - Out SecureStatusQueryInXsl.load()!
+12:00:04,866 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.SecureStatusQuery
+12:00:04,919 INFO service.SecureStatusQuery(31) - Into SecureStatusQuery.service()...
+12:00:04,919 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+12:00:04,919 INFO common.Log4jPrint(20) - 进程名：22040
+12:00:04,919 INFO common.Log4jPrint(20) - trancom:5
+12:00:04,919 INFO common.Log4jPrint(20) - FuncFlag:3014
+12:00:04,919 INFO common.Log4jPrint(20) - mHeadEle.getChildText22040_90_3014_in.xml
+12:00:05,049 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+12:00:05,049 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ContNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 22040,5,'01','01010101001865201','01200000335222','apky',3014,20170321,92119,'888010000000860',-1,-1,'127.0.0.1','22040_90_3014_in.xml',20170321,120004,20170321,120004 )
+12:00:05,077 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+12:00:05,079 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ContNo='888010000000860' and MakeDate>=20170321 and MakeTime>=115805
+12:00:05,290 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+12:00:05,296 INFO common.SaveMessage(94) - 22040_93_46_inSvc.xml IO输出耗时:0.0050s
+12:00:05,297 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22040_93_46_inSvc.xml
+12:00:05,297 INFO common.Log4jPrint(20) - start call 新农行保全申请状态查询(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+12:00:05,298 INFO net.CallWebsvcAtomSvc(102) - start call 新农行保全申请状态查询(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+12:00:05,318 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+12:00:05,324 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+12:00:05,324 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+12:00:05,325 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+12:00:05,325 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+12:00:05,325 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+12:00:05,326 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+12:00:05,326 DEBUG httpclient.Wire(70) - >> "38d[\r][\n]"
+12:00:05,326 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5Obz4wMTIwMDAwMDMzNTIyMjwvVHJhbk5vPjxab25lTm8+MDE8L1pvbmVObz48Tm9kZU5vPjAxMDEwMTAxMDAxODY1MjAxPC9Ob2RlTm8+PFRyYW5EYXRlPjIwMTcwMzIxPC9UcmFuRGF0ZT48VHJhblRpbWU+MDkyMTE5PC9UcmFuVGltZT48VGVsbGVyTm8+YXBreTwvVGVsbGVyTm8+PEJhbmtDb2RlPjAxMDI8L0JhbmtDb2RlPjxDbGllbnRJcD4xMjcuMC4wLjE8L0NsaWVudElwPjxUcmFuQ29tPjA1PC9UcmFuQ29tPjxGdW5jRmxhZz4zMDE0PC9GdW5jRmxhZz48QWdlbnRDb20gLz48QWdlbnRDb2RlIC8+PEluTm9Eb2M+MjIwNDBfOTBfMzAxNF9pbi54bWw8L0luTm9Eb2M+PFNlcnZpY2VJZD40NjwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q29udE5vPjg4ODAxMDAwMDAwMDg2MDwvQ29udE5vPjxSaXNrQ29kZSAvPjxCdXNpVHlwZT4wNzwvQnVzaVR5cGU+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+12:00:05,326 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+12:00:05,326 DEBUG httpclient.Wire(84) - >> "0"
+12:00:05,326 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+12:00:05,326 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 03:58:39 GMT[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "0"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "4"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "c"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "f"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "[\r]"
+12:00:05,404 DEBUG httpclient.Wire(70) - << "[\n]"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "<?xm"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:so"
+12:00:05,404 DEBUG httpclient.Wire(84) - << "apenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+saPIq8nqx+vXtMyssunRr7PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT4NCiAgICA8Q29udE5vPjg4ODAxMDAwMDAwMDg2MDwvQ29udE5vPg0KICAgIDxSaXNrQ29kZT4wMTJEMDEwMDwvUmlza0NvZGU+DQogICAgPFN0YXRlPjA4PC9TdGF0ZT4NCiAgICA8QlFTdGF0ZT5hPC9CUVN0YXRlPg0KICAgIDxBcHBseURhdGU+MjAxNy0wMy0yMTwvQXBwbHlEYXRlPg0KICAgIDxDVmFsaURhdGU+MjAxNy0wMy0yMTwvQ1ZhbGlEYXRlPg0KICAgIDxQcmludD4NCiAgICAgIDxQcmludERhdGE+PC9QcmludERhdGE+DQogICAgPC9QcmludD4NCiAgICA8UHJpbnQ+DQogICAgICA8UHJpbnREYXRhPjwvUHJpbnREYXRhPg0KICAgIDwvUHJpbnQ+DQogICAgPFByaW50Pg0KICAgICAgPFByaW50RGF0YT48L1ByaW50RGF0YT4NCiAgICA8L1ByaW50Pg0KICAgIDxQcmludD4NCiAgICAgIDxQcmludERhdGE+PC9QcmludERhdGE+DQogICAgPC9QcmludD4NCiAgICA8UHJpbnQ+DQogICAgICA8UHJpbnREYXRhPjwvUHJpbnREYXRhPg0KICAgIDwvUHJpbnQ+DQogICAgPFByaW50Pg0KICAgICAgPFByaW50RGF0YT48L1ByaW50RGF0YT4NCiAgICA8L1ByaW50Pg0KICA8L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+12:00:05,404 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行保全申请状态查询(service)耗时：0.106s
+12:00:05,419 INFO common.SaveMessage(94) - 22040_96_46_outSvc.xml IO输出耗时:0.015s
+12:00:05,419 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22040_96_46_outSvc.xml
+12:00:05,419 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+12:00:05,520 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+12:00:05,520 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+12:00:05,521 INFO common.Log4jPrint(20) - 01200000335222
+12:00:05,521 INFO common.Log4jPrint(20) - 01200000335222
+12:00:05,521 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=22040,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='01200000335222',Operator='apky',FuncFlag=3014,TranDate=20170321,TranTime=92119,ProposalPrtNo=null,ContNo='888010000000860',OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='保全申请状态查询成功！',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='22040_90_3014_in.xml',MakeDate=20170321,InDoc=null,OutDoc=null,MakeTime=120004,ModifyDate=20170321,ModifyTime=120005,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='01200000335222'
+12:00:05,563 INFO service.SecureStatusQuery(92) - Out SecureStatusQuery.service()!
+12:00:05,564 INFO format.SecureStatusQuery(44) - Into SecureStatusQuery.std2NoStd()...
+12:00:05,595 INFO format.SecureStatusQueryOutXsl(26) - Into SecureStatusQueryOutXsl.load()...
+12:00:05,595 INFO format.SecureStatusQueryOutXsl(29) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureStatusQueryOut.xsl...
+12:00:05,596 INFO common.XslCache(70) - conf file modified at (2017-03-18 14:15:07,109) and length=2328 bytes!
+12:00:05,607 INFO format.SecureStatusQueryOutXsl(45) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/SecureStatusQueryOut.xsl!
+12:00:05,612 INFO format.SecureStatusQueryOutXsl(56) - <?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:java="http://xml.apache.org/xslt/java" version="1.0" exclude-result-prefixes="java"><xsl:template match="TranData"><ABCB2I><Header><!--返回码 --><RetCode /><!--返回信息 --><RetMsg /><!--银行交易流水号 --><SerialNo><xsl:value-of select="Head/TranNo" /></SerialNo><!--保险公司流水号 --><InsuSerial /><!-- 交易日期--><TransTime /><!-- 交易时--><TransDate /><!-- 银行代码--><BankCode /><!--保险公司代码 --><CorpNo /><!-- 交易编码--><TransCode>1014</TransCode></Header><App><Ret><!--险种代码 format类中添加--><RiskCode /><!-- 保单号--><PolicyNo><xsl:value-of select="Body/ContNo" /></PolicyNo><!--保单状态 --><PolicyStatus><xsl:call-template name="policyStatus"><xsl:with-param name="PolicyStatus"><xsl:value-of select="Body/State" /></xsl:with-param></xsl:call-template></PolicyStatus><!--申请日期 --><ApplyDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(Body/ApplyDate)" /></ApplyDate><!--生效日期 --><ValidDate><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(Body/CValiDate)" /></ValidDate><!--业务类别  format类中添加--><BusinType /><!--保全申请状态 --><BQStatus><xsl:call-template name="bQStatus"><xsl:with-param name="BQStatus"><xsl:value-of select="Body/BQState" /></xsl:with-param></xsl:call-template></BQStatus></Ret></App></ABCB2I></xsl:template><!--  保单状态 --><xsl:template name="policyStatus"><xsl:param name="PolicyStatus" /><xsl:if test="$PolicyStatus = 08">00</xsl:if><!-- 成功 --><xsl:if test="$PolicyStatus = 02">01</xsl:if><!-- 退保 --><xsl:if test="$PolicyStatus = 06">03</xsl:if><!-- 犹撤 --><xsl:if test="$PolicyStatus = 04">07</xsl:if><!-- 理赔终止 --></xsl:template><!--  保全申请状态 --><xsl:template name="bQStatus"><xsl:param name="BQStatus" /><xsl:if test="$BQStatus= 0">S</xsl:if><!-- 成功 --><xsl:if test="$BQStatus = 3">D</xsl:if><!-- 处理中 --></xsl:template></xsl:stylesheet>
+
+12:00:05,613 INFO format.SecureStatusQueryOutXsl(64) - Out SecureStatusQueryOutXsl.load()!
+12:00:05,616 INFO format.SecureStatusQuery(72) - 交易成功=========
+12:00:05,617 INFO format.SecureStatusQuery(80) - 000000
+12:00:05,617 INFO format.SecureStatusQuery(81) - 保全申请状态查询成功！
+12:00:05,617 INFO format.SecureStatusQuery(84) - Out SecureStatusQuery.std2NoStd()!
+12:00:05,617 INFO net.NewAbcNetImpl(127) - Into NewAbcNetImp.send()...
+12:00:05,621 INFO common.SaveMessage(94) - 22040_99_3014_out.xml IO输出耗时:0.0040s
+12:00:05,622 INFO net.NewAbcNetImpl(142) - 保存报文完毕！22040_99_3014_out.xml
+12:00:05,622 INFO net.NewAbcNetImpl(149) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>保全申请状态查询成功！</RetMsg><SerialNo>01200000335222</SerialNo><InsuSerial>01200000335222</InsuSerial><TransTime>120005</TransTime><TransDate>20170321</TransDate><BankCode /><CorpNo>1141</CorpNo><TransCode>1014</TransCode></Header><App><Ret><RiskCode></RiskCode><PolicyNo>888010000000860</PolicyNo><PolicyStatus>00</PolicyStatus><ApplyDate>20170321</ApplyDate><ValidDate>20170321</ValidDate><BusinType>01</BusinType><BQStatus /></Ret></App></ABCB2I>
+
+12:00:05,622 INFO common.Log4jPrint(20) - strLen:516
+12:00:05,623 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>保全申请状态查询成功！</RetMsg><SerialNo>01200000335222</SerialNo><InsuSerial>01200000335222</InsuSerial><TransTime>120005</TransTime><TransDate>20170321</TransDate><BankCode /><CorpNo>1141</CorpNo><TransCode>1014</TransCode></Header><App><Ret><RiskCode></RiskCode><PolicyNo>888010000000860</PolicyNo><PolicyStatus>00</PolicyStatus><ApplyDate>20170321</ApplyDate><ValidDate>20170321</ValidDate><BusinType>01</BusinType><BQStatus /></Ret></App></ABCB2I>
+            
+12:00:05,623 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+12:00:05,623 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+12:00:05,623 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+12:00:05,627 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><RetCode>000000</RetCode><RetMsg>保全申请状态查询成功！</RetMsg><SerialNo>01200000335222</SerialNo><InsuSerial>01200000335222</InsuSerial><TransTime>120005</TransTime><TransDate>20170321</TransDate><BankCode /><CorpNo>1141</CorpNo><TransCode>1014</TransCode></Header><App><Ret><RiskCode></RiskCode><PolicyNo>888010000000860</PolicyNo><PolicyStatus>00</PolicyStatus><ApplyDate>20170321</ApplyDate><ValidDate>20170321</ValidDate><BusinType>01</BusinType><BQStatus /></Ret></App></ABCB2I>
+            
+12:00:05,627 INFO common.Log4jPrint(20) - xml字符串的报文长度：1056
+12:00:05,628 INFO net.NewAbcNetImpl(220) - Out NewAbcNetImp.send()!
+12:00:05,628 INFO test.NewABCTest(232) - package_head:X1.0000010563103    00000                                       000000000
+12:00:05,628 INFO test.NewABCTest(234) - mBodyLen:1056
+12:00:05,629 INFO test.NewABCTest(239) - 解密开始
+12:00:05,630 INFO test.NewABCTest(241) - 解密完成
+12:00:05,633 INFO test.NewABCTest(254) - UTF-8 农行的报文: 
+12:00:05,634 INFO test.NewABCTest(258) - 客户端接收返回报文完毕！耗时：1.332s
+12:00:05,718 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+12:00:05,718 INFO common.Log4jPrint(20) - null
+12:00:05,719 INFO common.Log4jPrint(20) - null
+12:00:05,719 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+12:00:05,801 INFO common.Log4jPrint(20) - i=0
+12:00:05,802 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+12:00:05,802 INFO midplat.Ybt4Socket(192) - 处理总耗时：1.486s
+12:00:05,803 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+14:22:08,527 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:22:08,527 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:22:08,527 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:22:08,527 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:22:08,543 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:22:08,543 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:22:08,543 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:22:08,543 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:22:08,695 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:22:08,695 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:22:08,695 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:22:08,695 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:22:08,711 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:22:08,711 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:22:08,711 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:22:08,711 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:22:09,781 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:22:09,781 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:22:09,859 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:22:09,860 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:22:09,860 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:22:09,861 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:22:09,866 INFO bat.File_download(1135) - FSSCDLSMX=组织好的报文：
+14:22:09,866 INFO bat.File_download(734) - Into File_download.send()...
+14:22:09,866 INFO bat.File_download(757) - 开始加密报文
+14:22:09,866 INFO bat.File_download(765) - 加密报文结束!
+14:22:09,866 INFO bat.File_download(768) - 生成73位报文头:
+14:22:09,866 INFO bat.File_download(776) - 生成73位报文头结束
+14:22:09,866 INFO bat.File_download(778) - 发送给银行的报文头为：X1.000000482010079    00000                                       000000000
+14:22:09,866 INFO bat.File_download(810) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703211422093858</InsuSerial><TransDate>20170321</TransDate><TransTime>142209</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>FAPPLY010079.20170321</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-21 14:22:09</FileTimeStamp></Req></App></ABCB2I> 
+14:22:09,866 INFO bat.File_download(925) - 发送不带对账文件的上传交易报文！
+14:22:09,866 INFO bat.File_download(948) - Out File_download.send()!
+14:22:09,866 INFO bat.File_download(259) - Into File_download.receive()...
+14:22:09,866 INFO bat.File_download(1277) - Into readFull() =====1
+14:22:29,866 INFO bat.File_download(356) - 接收长度有问题！
+14:22:29,872 INFO bat.File_download(363) - Out File_download.receive()!
+14:22:29,872 INFO bat.NonReaTimeIssWatDetail(77) - FileName = FAPPLY010079.20170321
+14:22:29,873 INFO bat.NonReaTimeIssWatDetail(79) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+14:22:29,874 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\FAPPLY010079.20170321 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:82)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:22:29,875 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:22:29,919 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:22:29,919 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:22:30,088 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:22:30,088 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\FAPPLY010079.20170321 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:22:30,219 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:22:30,219 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:22:30,219 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:26:01,508 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:26:01,508 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:26:01,508 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:26:01,508 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:26:01,508 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:26:01,508 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:26:01,508 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:26:01,524 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:26:01,671 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:26:01,671 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:26:01,671 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:26:01,671 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:26:01,693 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:26:01,693 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:26:01,693 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:26:01,693 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:26:02,810 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:26:02,825 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:26:02,910 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:26:02,910 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:26:02,910 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:26:02,910 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:26:02,926 INFO bat.File_download(1136) - FSSCDLSMX=组织好的报文：
+14:26:02,926 INFO bat.File_download(735) - Into File_download.send()...
+14:26:02,926 INFO bat.File_download(758) - 开始加密报文
+14:26:02,926 INFO bat.File_download(766) - 加密报文结束!
+14:26:02,926 INFO bat.File_download(769) - 生成73位报文头:
+14:26:02,926 INFO bat.File_download(777) - 生成73位报文头结束
+14:26:02,926 INFO bat.File_download(779) - 发送给银行的报文头为：X1.000000482010079    00000                                       000000000
+14:26:02,926 INFO bat.File_download(811) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703211426021682</InsuSerial><TransDate>20170321</TransDate><TransTime>142602</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>FAPPLY010079.20170321</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-21 14:26:02</FileTimeStamp></Req></App></ABCB2I> 
+14:26:02,926 INFO bat.File_download(926) - 发送不带对账文件的上传交易报文！
+14:26:02,926 INFO bat.File_download(949) - Out File_download.send()!
+14:26:02,926 INFO bat.File_download(259) - Into File_download.receive()...
+14:26:02,926 INFO bat.File_download(1278) - Into readFull() =====1
+14:26:22,928 INFO bat.File_download(1278) - Into readFull() =====11
+14:26:22,928 INFO bat.NonReaTimeIssWatDetail(77) - FileName = FAPPLY010079.20170321
+14:26:22,931 INFO bat.NonReaTimeIssWatDetail(79) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+14:26:22,933 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+java.io.FileNotFoundException: D:\YBT_SAVE_XML\ZHH\newabc\FAPPLY010079.20170321 (系统找不到指定的文件。)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:82)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:26:22,933 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:26:22,933 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:26:22,933 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:26:23,091 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:26:23,091 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: D:\YBT_SAVE_XML\ZHH\newabc\FAPPLY010079.20170321 (系统找不到指定的文件。)
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:26:23,213 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:26:23,213 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:26:23,213 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:31:43,581 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:31:43,581 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:31:43,581 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:31:43,581 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:31:43,581 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:31:43,581 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:31:43,581 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:31:43,597 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:31:43,751 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:31:43,751 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:31:43,751 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:31:43,751 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:31:43,766 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:31:43,782 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:31:43,782 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:31:43,782 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:31:44,936 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:31:44,936 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:31:44,999 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:31:44,999 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:31:44,999 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:31:44,999 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:41:23,230 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:41:23,230 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:41:23,230 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:41:23,230 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:41:23,230 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:41:23,230 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:41:23,230 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:41:23,230 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:41:23,399 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:41:23,399 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:41:23,399 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:41:23,399 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:41:23,414 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:41:23,414 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:41:23,414 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:41:23,414 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:41:24,546 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:41:24,546 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:41:24,615 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:41:24,615 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:41:24,630 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:41:24,630 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:41:32,367 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: Illegal pattern character 'x'
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.getFileName(NonReaTimeIssWatDetail.java:41)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:76)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:41:32,367 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:41:32,374 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:41:32,374 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:41:32,489 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:41:32,489 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: Illegal pattern character 'x'
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:41:32,705 ERROR service.NonReaTimeIssWatDetail(94) - 更新日志信息失败！ORA-00933: SQL 命令未正确结束 
+14:41:32,705 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:41:32,720 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:41:32,720 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:41:42,973 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: Illegal pattern character 'X'
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.getFileName(NonReaTimeIssWatDetail.java:41)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:76)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:41:42,973 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:41:42,973 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:41:42,973 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:41:43,133 ERROR service.ServiceImpl(200) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+14:41:43,133 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:205)
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:37)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:41:43,149 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:41:43,149 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:41:44,120 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:42:22,578 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:42:22,578 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:42:22,578 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:42:22,578 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:42:22,578 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:42:22,578 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:42:22,578 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:42:22,578 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:42:22,748 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:42:22,748 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:42:22,748 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:42:22,748 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:42:22,763 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:42:22,779 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:42:22,779 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:42:22,779 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:42:23,848 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:42:23,848 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:42:23,911 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:42:23,911 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:42:23,911 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:42:23,911 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:43:24,437 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: Illegal pattern character 'X'
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.getFileName(NonReaTimeIssWatDetail.java:41)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:76)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:43:24,444 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:43:24,446 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:43:24,446 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:43:24,583 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:43:24,583 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: Illegal pattern character 'X'
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:43:24,736 ERROR service.NonReaTimeIssWatDetail(94) - 更新日志信息失败！ORA-00933: SQL 命令未正确结束 
+14:43:24,736 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:43:24,736 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:43:24,736 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:44:40,936 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:44:40,936 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:44:40,936 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:44:40,936 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:44:40,936 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:44:40,936 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:44:40,936 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:44:40,936 INFO common.XmlConf(80) - conf file modified at (2017-03-20 20:45:35,418) and length=10096 bytes!
+14:44:41,090 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:44:41,106 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:44:41,106 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:44:41,106 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:44:41,121 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:44:41,121 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:44:41,121 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:44:41,121 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:44:42,223 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:44:42,223 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:44:42,292 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:44:42,292 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:44:42,292 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:44:42,292 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:44:52,279 INFO bat.File_download(1136) - FSSCDLSMX=组织好的报文：
+14:49:21,515 INFO bat.File_download(735) - Into File_download.send()...
+14:49:40,583 INFO bat.File_download(758) - 开始加密报文
+14:49:43,833 INFO bat.File_download(766) - 加密报文结束!
+14:49:44,281 INFO bat.File_download(769) - 生成73位报文头:
+14:50:03,020 INFO bat.File_download(777) - 生成73位报文头结束
+14:50:03,519 INFO bat.File_download(779) - 发送给银行的报文头为：X1.000000482010079    00000                                       000000000
+14:51:58,975 INFO bat.File_download(934) - File_download.send java.net.SocketException: Software caused connection abort: socket write error
+14:52:07,872 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: 银行端Socket关闭了!
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.getFileName(NonReaTimeIssWatDetail.java:41)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:76)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:52:07,874 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:52:07,874 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:52:07,874 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:52:08,004 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:52:08,004 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: 银行端Socket关闭了!
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:52:08,151 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:52:08,151 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:52:08,151 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:52:49,390 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:52:49,390 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:52:49,390 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:52:49,390 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:52:49,390 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:52:49,390 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:52:49,390 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:52:49,390 INFO common.XmlConf(80) - conf file modified at (2017-03-21 14:52:35,207) and length=10096 bytes!
+14:52:49,559 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:52:49,559 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:52:49,559 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:52:49,559 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:52:49,575 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:52:49,575 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:52:49,575 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:52:49,575 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:52:50,642 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:52:50,644 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:52:50,723 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:52:50,723 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:52:50,723 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:52:50,723 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:52:57,868 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:52:57,868 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml...
+14:52:57,882 INFO common.XmlConf(80) - conf file modified at (2017-03-21 14:52:35,929) and length=10096 bytes!
+14:52:57,897 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml!
+14:52:57,897 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:53:43,573 INFO bat.File_download(1136) - FSSCDLSMX=组织好的报文：
+14:54:43,449 INFO bat.File_download(735) - Into File_download.send()...
+14:54:45,554 INFO bat.File_download(758) - 开始加密报文
+14:54:48,087 INFO bat.File_download(766) - 加密报文结束!
+14:54:48,387 INFO bat.File_download(769) - 生成73位报文头:
+14:54:49,656 INFO bat.File_download(777) - 生成73位报文头结束
+14:54:49,872 INFO bat.File_download(779) - 发送给银行的报文头为：X1.000000481010079    00000                                       000000000
+14:55:10,782 INFO bat.File_download(811) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>20170321145331413</InsuSerial><TransDate>20170321</TransDate><TransTime>145331</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>FAPPLY010079.20170321</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-03-21 14:53:38</FileTimeStamp></Req></App></ABCB2I> 
+14:55:18,544 INFO bat.File_download(926) - 发送不带对账文件的上传交易报文！
+14:55:19,761 INFO bat.File_download(949) - Out File_download.send()!
+14:55:32,486 INFO bat.File_download(259) - Into File_download.receive()...
+14:55:44,399 INFO bat.File_download(1278) - Into readFull() =====1
+14:57:05,725 ERROR bat.NonReaTimeIssWatDetail(87) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException: Read timed out
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.getFileName(NonReaTimeIssWatDetail.java:41)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:76)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:57:10,613 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:57:10,618 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:57:10,618 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:57:10,744 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:57:10,744 INFO service.NonReaTimeIssWatDetail(77) - 非实时出单流水明细交易失败！
+com.sinosoft.midplat.exception.MidplatException: Read timed out
+	at com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail.service(NonReaTimeIssWatDetail.java:56)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:117)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:57:10,881 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:57:10,881 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:57:10,881 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+14:58:51,564 INFO bat.NonReaTimeIssWatDetail(342) - 程序开始...
+14:58:51,564 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:58:51,564 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:58:51,564 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:58:51,564 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:58:51,564 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:58:51,564 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:58:51,582 INFO common.XmlConf(80) - conf file modified at (2017-03-21 14:52:35,207) and length=10096 bytes!
+14:58:51,718 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:58:51,718 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:58:51,718 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:58:51,718 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+14:58:51,734 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:58:51,749 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:58:51,749 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:58:51,749 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+14:58:52,903 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.run(NonReaTimeIssWatDetail.java:49)
+	at com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main(NonReaTimeIssWatDetail.java:365)
+14:58:52,903 INFO bat.NonReaTimeIssWatDetail(50) - Into NonReaTimeIssWatDetail.run()...
+14:58:52,988 INFO bat.NonReaTimeIssWatDetail(273) - Into NonReaTimeIssWatDetail.getHead()...
+14:58:52,988 INFO bat.NonReaTimeIssWatDetail(278) -  对账日期为...20170321
+14:58:52,988 INFO bat.NonReaTimeIssWatDetail(279) -  当前日期为...20170321
+14:58:52,988 INFO bat.NonReaTimeIssWatDetail(335) - Out NonReaTimeIssWatDetail.getHead()!
+14:58:59,514 INFO bat.File_download(1136) - FSSCDLSMX=组织好的报文：
+14:58:59,514 INFO bat.File_download(1217) - 文件已存在 无需再次下载
+14:58:59,514 INFO bat.NonReaTimeIssWatDetail(77) - FileName = FAPPLY010079.20170321
+14:58:59,514 INFO bat.NonReaTimeIssWatDetail(79) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+14:58:59,514 INFO bat.NonReaTimeIssWatDetail(134) - Into NonReaTimeIssWatDetail.parse()...
+14:58:59,514 INFO bat.NonReaTimeIssWatDetail(158) - 20170321|71200000428897|黄文|110001|22018319910209561X|012D0100|000101|101010001176811|10000||6228451036002138864|02145637548|13517860167|黄海路156号|100000||01|010101001865201|
+14:58:59,530 INFO bat.NonReaTimeIssWatDetail(268) - Out NonReaTimeIssWatDetail.parse()!
+14:58:59,530 INFO bat.NonReaTimeIssWatDetail(113) - 业务处理模块com.sinosoft.midplat.newabc.service.NonReaTimeIssWatDetail
+14:58:59,530 INFO service.NonReaTimeIssWatDetail(31) - Into NonReaTimeIssWatDetail.service()...
+14:58:59,530 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+14:58:59,674 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+14:58:59,674 DEBUG service.NonReaTimeIssWatDetail(107) - Into NonReaTimeIssWatDetail.saveDetails()...
+14:58:59,674 INFO service.NonReaTimeIssWatDetail(151) - 对账明细总数(DtlSet)为：1
+14:58:59,842 DEBUG service.NonReaTimeIssWatDetail(162) - Out NonReaTimeIssWatDetail.saveDetails()!
+14:58:59,842 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+14:58:59,858 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+14:58:59,858 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+14:58:59,858 INFO common.SaveMessage(94) - 22043_3_20_inSvc.xml IO输出耗时:0.0s
+14:58:59,858 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22043_3_20_inSvc.xml
+14:58:59,858 INFO net.CallWebsvcAtomSvc(102) - start call 非实时日终对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+14:59:00,313 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+14:59:00,313 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "575[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzIxPC9UcmFuRGF0ZT48VHJhblRpbWU+MTQ1ODUyPC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20gb3V0Y29kZT0iMDUiPjA1PC9UcmFuQ29tPjxab25lTm8+MDAwMDA8L1pvbmVObz48Tm9kZU5vPjExMDEwMTAyPC9Ob2RlTm8+PFRlbGxlck5vPnN5czwvVGVsbGVyTm8+PFRyYW5Obz4yMjA0MzwvVHJhbk5vPjxGdW5jRmxhZz4yMDAyPC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD4yMDwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MTwvQ291bnQ+PFByZW0+MTAwMDAwMDwvUHJlbT48RGV0YWlsPjxUcmFuRGF0ZT4yMDE3MDMyMTwvVHJhbkRhdGU+PEFnZW50Q29tPjAxMDEwMTAxMDAxODY1MjAxPC9BZ2VudENvbT48Q29udE5vPjEwMTAxMDAwMTE3NjgxMTwvQ29udE5vPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48QXBwbHlObz43MTIwMDAwMDQyODg5NzwvQXBwbHlObz48QXBwbnROYW1lPrvGzsQ8L0FwcG50TmFtZT48SURUeXBlPjExMDAwMTwvSURUeXBlPjxJRE5vPjIyMDE4MzE5OTEwMjA5NTYxWDwvSURObz48Umlza0NvZGU+MDEyRDAxMDA8L1Jpc2tDb2RlPjxQcm9kQ29kZT4wMDAxMDE8L1Byb2RDb2RlPjxQcm9wb3NhbFBydE5vPjEwMTAxMDAwMTE3NjgxMTwvUHJvcG9zYWxQcnRObz48UHJlbT4xMDAwMDAwPC9QcmVtPjxTcGVjaWFsUmF0ZT48L1NwZWNpYWxSYXRlPjxQaG9uZT4wMjE0NTYzNzU0ODwvUGhvbmU+PE1vYmlsZT4xMzUxNzg2MDE2NzwvTW9iaWxlPjwvRGV0YWlsPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(84) - >> "0"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:59:00,328 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:59:01,076 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+14:59:01,076 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+14:59:01,085 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 06:57:34 GMT[\r][\n]"
+14:59:01,086 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+14:59:01,088 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+14:59:01,089 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+14:59:01,090 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+14:59:01,098 DEBUG httpclient.Wire(84) - << "0"
+14:59:01,098 DEBUG httpclient.Wire(84) - << "1"
+14:59:01,098 DEBUG httpclient.Wire(84) - << "d"
+14:59:01,098 DEBUG httpclient.Wire(84) - << "f"
+14:59:01,114 DEBUG httpclient.Wire(84) - << "[\r]"
+14:59:01,114 DEBUG httpclient.Wire(70) - << "[\n]"
+14:59:01,114 DEBUG httpclient.Wire(84) - << "<?xm"
+14:59:01,114 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+14:59:01,114 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxusuxo7bU1cu9u9LXtKbA7bPJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+14:59:01,129 INFO net.CallWebsvcAtomSvc(145) - 投保单号null非实时日终对账(service)耗时：1.271s
+14:59:01,145 INFO common.SaveMessage(94) - 22043_6_20_outSvc.xml IO输出耗时:0.0s
+14:59:01,145 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22043_6_20_outSvc.xml
+14:59:01,145 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+14:59:01,275 INFO service.NonReaTimeIssWatDetail(98) - Out NonReaTimeIssWatDetail.service()!
+14:59:01,291 INFO bat.NonReaTimeIssWatDetail(130) - Out NonReaTimeIssWatDetail.run()!
+14:59:01,292 INFO bat.NonReaTimeIssWatDetail(367) - 成功结束！
+15:09:01,467 INFO bat.SecuTradAppDoc(325) - 程序开始...
+15:09:01,467 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:09:01,467 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:09:01,467 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:09:01,483 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:09:01,483 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:09:01,483 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+15:09:01,483 INFO common.XmlConf(80) - conf file modified at (2017-03-21 14:52:35,207) and length=10096 bytes!
+15:09:01,652 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+15:09:01,652 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:09:01,652 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:09:01,652 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+15:09:01,668 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:09:01,668 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:09:01,668 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:09:01,668 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+15:09:02,769 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.run(SecuTradAppDoc.java:55)
+	at com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main(SecuTradAppDoc.java:348)
+15:09:02,784 INFO bat.SecuTradAppDoc(56) - Into SecuTradAppDoc.run()...
+15:09:02,853 INFO bat.SecuTradAppDoc(256) - Into SecuTradAppDoc.getHead()...
+15:09:02,853 INFO bat.SecuTradAppDoc(261) -  对账日期为...20170321
+15:09:02,853 INFO bat.SecuTradAppDoc(262) -  当前日期为...20170321
+15:09:02,853 INFO bat.SecuTradAppDoc(318) - Out SecuTradAppDoc.getHead()!
+15:09:02,869 INFO bat.File_download(1148) - BQSQ=组织好的报文：
+15:09:02,869 INFO bat.File_download(1217) - 文件已存在 无需再次下载
+15:09:02,869 INFO bat.SecuTradAppDoc(83) - FileName = BQAPPLY010079.20170321
+15:09:02,869 INFO bat.SecuTradAppDoc(85) - localDir = D:/YBT_SAVE_XML/ZHH/newabc/
+15:09:02,869 INFO bat.SecuTradAppDoc(140) - Into SecuTradAppDoc.parse()...
+15:09:02,869 INFO bat.SecuTradAppDoc(163) - 010079|01|20170321|888010000000860|110001|320304196710256136|李四|10000|0|01|010101001865201|1010100001973|10000|
+15:09:02,869 INFO bat.SecuTradAppDoc(251) - Out SecuTradAppDoc.parse()!
+15:09:02,869 INFO bat.SecuTradAppDoc(119) - 业务处理模块com.sinosoft.midplat.newabc.service.SecuTradAppDoc
+15:09:02,900 INFO service.SecuTradAppDoc(32) - Into SecuTradAppDoc.service()...
+15:09:02,900 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+15:09:03,022 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+15:09:03,022 DEBUG service.SecuTradAppDoc(105) - Into SecuTradAppDoc.saveDetails()...
+15:09:03,038 INFO service.SecuTradAppDoc(148) - 对账明细总数(DtlSet)为：1
+15:09:03,185 DEBUG service.SecuTradAppDoc(159) - Out SecuTradAppDoc.saveDetails()!
+15:09:03,200 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+15:09:03,200 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+15:09:03,200 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+15:09:03,217 INFO common.SaveMessage(94) - 22046_3_16_inSvc.xml IO输出耗时:0.017s
+15:09:03,218 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22046_3_16_inSvc.xml
+15:09:03,219 INFO net.CallWebsvcAtomSvc(102) - start call 保全对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+15:09:03,639 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:09:03,651 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:09:03,666 DEBUG httpclient.Wire(70) - >> "44d[\r][\n]"
+15:09:03,666 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzIxPC9UcmFuRGF0ZT48VHJhblRpbWU+MTUwOTAyPC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20gb3V0Y29kZT0iMDUiPjA1PC9UcmFuQ29tPjxab25lTm8+MDAwMDA8L1pvbmVObz48Tm9kZU5vPjExMjQwMTwvTm9kZU5vPjxUZWxsZXJObz5zeXM8L1RlbGxlck5vPjxUcmFuTm8+MjIwNDY8L1RyYW5Obz48RnVuY0ZsYWc+MjAwMzwvRnVuY0ZsYWc+PEJhbGFuY2VGbGFnPjA8L0JhbGFuY2VGbGFnPjxTZXJ2aWNlSWQ+MTY8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PENvdW50PjE8L0NvdW50PjxQcmVtPjEwMDAwMDA8L1ByZW0+PERldGFpbD48VHJhbkRhdGU+MjAxNzAzMjE8L1RyYW5EYXRlPjxCdXNpVHlwZSAvPjxBZ2VudENvbT4wMTAxMDEwMTAwMTg2NTIwMTwvQWdlbnRDb20+PFByb3Bvc2FsUHJ0Tm8+MTAxMDEwMDAwMTk3MzwvUHJvcG9zYWxQcnRObz48Q29udE5vPjg4ODAxMDAwMDAwMDg2MDwvQ29udE5vPjxQcmVtPjEwMDAwMDA8L1ByZW0+PE5vZGVObz4wMTAxMDEwMTAwMTg2NTIwMTwvTm9kZU5vPjxab25lTm8+MDE8L1pvbmVObz48L0RldGFpbD48L0JvZHk+PC9UcmFuRGF0YT4NCg==</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:09:03,666 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:09:03,666 DEBUG httpclient.Wire(84) - >> "0"
+15:09:03,666 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:09:03,666 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:09:04,855 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:09:04,860 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:09:04,861 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 07:07:37 GMT[\r][\n]"
+15:09:04,862 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+15:09:04,862 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:09:04,862 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+15:09:04,862 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "0"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "1"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "c"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "7"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "[\r]"
+15:09:04,862 DEBUG httpclient.Wire(70) - << "[\n]"
+15:09:04,862 DEBUG httpclient.Wire(84) - << "<?xm"
+15:09:04,878 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+15:09:04,878 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCjwvVHJhbkRhdGE+DQoNCg==</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+15:09:04,878 INFO net.CallWebsvcAtomSvc(145) - 投保单号null保全对账(service)耗时：1.658s
+15:09:04,894 INFO common.SaveMessage(94) - 22046_6_16_outSvc.xml IO输出耗时:0.0s
+15:09:04,894 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22046_6_16_outSvc.xml
+15:09:04,894 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+15:09:05,039 INFO service.SecuTradAppDoc(96) - Out SecuTradAppDoc.service()!
+15:09:05,039 INFO bat.SecuTradAppDoc(136) - Out SecuTradAppDoc.run()!
+15:09:05,039 INFO bat.SecuTradAppDoc(350) - 成功结束！
+15:20:20,838 INFO bat.NoTakenBalanceRst(722) - 开始犹豫期退保数据传递 ...
+15:20:20,838 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:20:20,838 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:20:20,838 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:20:20,853 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:20:20,853 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:20:20,853 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+15:20:20,853 INFO common.XmlConf(80) - conf file modified at (2017-03-21 14:52:35,207) and length=10096 bytes!
+15:20:21,007 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+15:20:21,007 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:20:21,007 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:20:21,007 INFO common.XmlConf(80) - conf file modified at (2017-03-21 10:13:36,001) and length=28827 bytes!
+15:20:21,022 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:20:21,022 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:20:21,022 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:20:21,022 DEBUG common.NoFactory(36) - ClusterId=2; ClusterCount=3
+15:20:22,123 ERROR common.NoFactory(200) - 初始化最大号异常！
+java.lang.NumberFormatException: For input string: ""
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:470)
+	at java.lang.Integer.parseInt(Integer.java:499)
+	at com.sinosoft.midplat.common.NoFactory.<clinit>(NoFactory.java:197)
+	at com.sinosoft.midplat.newabc.bat.NoTakenBalanceRst.run(NoTakenBalanceRst.java:555)
+	at com.sinosoft.midplat.newabc.bat.NoTakenBalanceRst.main(NoTakenBalanceRst.java:725)
+15:20:22,123 INFO bat.NoTakenBalanceRst(556) - Into NoTakenBalanceRst.run()...
+15:20:22,223 INFO bat.NoTakenBalanceRst(101) - Into NoTakenBalanceRst.getHead()...
+15:20:22,223 INFO bat.NoTakenBalanceRst(266) - Into NoTakenBalanceRst.sendRequest()...
+15:20:22,554 INFO bat.NoTakenBalanceRst(137) - Into NoTakenBalanceRst.getBody()...
+15:20:22,739 INFO bat.NoTakenBalanceRst(154) - Out NoTakenBalanceRst.getBody()!
+15:20:22,739 INFO bat.NoTakenBalanceRst(288) - Out NoTakenBalanceRst.sendRequest()...Tue Mar 21 15:20:22 CST 2017
+15:20:22,739 INFO bat.NoTakenBalanceRst(131) - Out NoTakenBalanceRst.getHead()!
+15:20:22,739 INFO bat.NoTakenBalanceRst(160) - Into NoTakenBalanceRst.deal()...
+15:20:22,739 INFO bat.NoTakenBalanceRst(266) - Into NoTakenBalanceRst.sendRequest()...
+15:20:22,985 INFO bat.NoTakenBalanceRst(137) - Into NoTakenBalanceRst.getBody()...
+15:20:23,170 INFO bat.NoTakenBalanceRst(154) - Out NoTakenBalanceRst.getBody()!
+15:20:23,170 INFO bat.NoTakenBalanceRst(288) - Out NoTakenBalanceRst.sendRequest()...Tue Mar 21 15:20:22 CST 2017
+15:20:23,186 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+15:20:23,186 DEBUG common.SaveMessage(23) - SavePath_HOME = D:\Software\
+15:20:23,186 DEBUG common.SaveMessage(41) - SavePath_HOME = D:/Software/
+15:20:23,208 INFO common.SaveMessage(94) - 22049_3_48_inSvc.xml IO输出耗时:0.022s
+15:20:23,208 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！22049_3_48_inSvc.xml
+15:20:23,208 INFO net.CallWebsvcAtomSvc(102) - start call 新农行犹豫期退保结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+15:20:23,656 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "2ad[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwMzIxPC9UcmFuRGF0ZT48VHJhblRpbWU+MTUyMDIyPC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48Wm9uZU5vPjExPC9ab25lTm8+PE5vZGVObz4xMTI0MDE8L05vZGVObz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDAwNDA8L1RyYW5Obz48RnVuY0ZsYWc+MjAwNDwvRnVuY0ZsYWc+PFNlcnZpY2VJZD40ODwvU2VydmljZUlkPjwvSGVhZD48Qm9keSAvPjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(84) - >> "0"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:20:23,672 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+15:20:23,771 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:20:23,771 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+15:20:23,787 DEBUG httpclient.Wire(70) - << "Date: Tue, 21 Mar 2017 07:18:57 GMT[\r][\n]"
+15:20:23,787 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+15:20:23,787 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+15:20:23,787 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+15:20:23,787 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+15:20:23,807 DEBUG httpclient.Wire(84) - << "0"
+15:20:23,808 DEBUG httpclient.Wire(84) - << "3"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "4"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "f"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "[\r]"
+15:20:23,809 DEBUG httpclient.Wire(70) - << "[\n]"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "<?xm"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+15:20:23,809 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+zcuxo9PMs7fK/b7dzsS8/r270tezybmmo6E8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPERldGFpbD4NCiAgICAgIDxDaGFubmVsPjA8L0NoYW5uZWw+DQogICAgICA8QnVzaVR5cGU+MDc8L0J1c2lUeXBlPg0KICAgICAgPFRyYW5EYXRlPjIwMTctMDMtMjE8L1RyYW5EYXRlPg0KICAgICAgPENvbnRObz44ODgwMTAwMDAwMDA4NjA8L0NvbnRObz4NCiAgICAgIDxBcHBudE5hbWU+wO7LxDwvQXBwbnROYW1lPg0KICAgICAgPFN0YXR1cz4yPC9TdGF0dXM+DQogICAgICA8UHJlbT4xMDAwMDAwPC9QcmVtPg0KICAgIDwvRGV0YWlsPg0KICA8L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+15:20:23,825 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行犹豫期退保结果文件(service)耗时：0.617s
+15:20:23,840 INFO common.SaveMessage(94) - 22049_6_48_outSvc.xml IO输出耗时:0.015s
+15:20:23,840 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！22049_6_48_outSvc.xml
+15:20:23,840 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+15:20:23,840 INFO bat.NoTakenBalanceRst(169) - 核心返回的非实时对账结果报文：
+15:20:23,887 INFO format.NoTakenBalanceRstOutXsl(24) - Into NoTakenBalanceRstOutXsl.load()...
+15:20:23,887 INFO format.NoTakenBalanceRstOutXsl(27) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NoTakenBalanceRstOut.xsl...
+15:20:23,892 INFO common.XslCache(70) - conf file modified at (2016-12-01 20:14:31,000) and length=1461 bytes!
+15:20:24,326 INFO format.NoTakenBalanceRstOutXsl(34) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NoTakenBalanceRstOut.xsl!
+15:20:24,326 INFO format.NoTakenBalanceRstOutXsl(47) - Out NoTakenBalanceRstOutXsl.load()!
+15:20:24,442 INFO bat.NoTakenBalanceRst(172) - 转换后的对账结果报文：
+15:20:24,442 INFO bat.NoTakenBalanceRst(295) - Into NoTakenBalanceRst.receive()...Tue Mar 21 15:20:22 CST 2017
+15:20:24,442 INFO bat.NoTakenBalanceRst(331) - 生成返回文件头记录null
+15:20:24,442 INFO bat.NoTakenBalanceRst(332) - 生成返回文件总记录1
+15:20:24,458 INFO bat.NoTakenBalanceRst(467) - 第0个文件生成返回文件总记录010079|03|1|10000.00|1|10000.00|0|0.00|0|0.00
+01|20170321|888010000000860|李四|0||||2|10000.00|
+
+15:20:24,458 INFO bat.NoTakenBalanceRst(548) - Out NoTakenBalanceRst.receive()...
+15:20:24,458 INFO bat.NoTakenBalanceRst(182) - 今天生成的文件名为：20170321
+15:20:24,458 INFO bat.File_download(1061) - TBYCSJWJ=组织好的报文：
+15:20:24,458 INFO bat.File_download(1222) - 发送文件内容：010079|03|1|10000.00|1|10000.00|0|0.00|0|0.00
+01|20170321|888010000000860|李四|0||||2|10000.00|
+
+15:20:24,458 INFO bat.File_download(735) - Into File_download.send()...
+15:20:24,458 INFO bat.File_download(758) - 开始加密报文
+15:20:24,458 INFO bat.File_download(766) - 加密报文结束!
+15:20:24,458 INFO bat.File_download(769) - 生成73位报文头:
+15:20:24,473 INFO bat.File_download(777) - 生成73位报文头结束
+15:20:24,473 INFO bat.File_download(779) - 发送给银行的报文头为：X1.000000477010079    00000                                       000000000
+15:20:24,473 INFO bat.File_download(811) - 给银行的xml字符串：<ABCB2I><Header><SerialNo /><InsuSerial>201703211520245793</InsuSerial><TransDate>20170321</TransDate><TransTime>152024</TransTime><BankCode>03</BankCode><CorpNo>010079</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay /><ProvCode /><BranchNo /><Tlid /></Header><App><Req><TransFlag>0</TransFlag><FileType>02</FileType><FileName>INVALID010079.20170321</FileName><FileLen>96</FileLen><FileTimeStamp>2017-03-21 15:20:24</FileTimeStamp></Req></App></ABCB2I> 
+15:20:24,473 INFO bat.File_download(827) - 发送带有对账文件的上传交易报文！
+15:20:24,473 INFO bat.File_download(1278) - Into readFull() =====4
+15:20:44,480 INFO bat.File_download(920) - 银行没有发送0000来确认接收对账包长度和数据
+15:20:44,480 INFO bat.File_download(949) - Out File_download.send()!
+15:20:44,483 INFO bat.NoTakenBalanceRst(191) - Out NoTakenBalanceRst.deal()...
+15:20:44,484 INFO bat.NoTakenBalanceRst(633) - 业务处理模块：com.sinosoft.midplat.service.SimpService
+15:20:44,565 INFO service.SimpService(25) - Into SimpService.service()...
+15:20:44,580 INFO common.SaveMessage(94) - 22049_9_Simp_in.xml IO输出耗时:0.015s
+15:20:44,580 INFO service.SimpService(33) - 保存报文完毕！22049_9_Simp_in.xml
+15:20:44,580 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+15:20:44,712 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+15:20:44,712 INFO common.SaveMessage(94) - 22049_12_Simp_Out.xml IO输出耗时:0.0s
+15:20:44,712 INFO service.SimpService(49) - 保存报文完毕！22049_12_Simp_Out.xml
+15:20:44,849 INFO service.SimpService(64) - Out SimpService.service()!
+15:20:44,849 INFO bat.NoTakenBalanceRst(656) - Out NoTakenBalanceRst.run()!
+15:20:44,849 INFO bat.NoTakenBalanceRst(727) - 结束犹豫期退保 ...

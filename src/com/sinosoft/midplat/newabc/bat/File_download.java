@@ -24,6 +24,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.f1j.io.by;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.IOTrans;
@@ -1041,6 +1042,23 @@ public class File_download
 			dox = getxml("0", "02", filename, String.valueOf(length));
 
 			cLogger.info(cFuncFlag + "=组织好的报文：");
+			JdomUtil.print(dox);
+		}
+		else if(cFuncFlag.equals("FSSCDJGWJD"))
+		{//非实时出单结果明细文件 FRESULTKZ$.YYYYMMDD
+			filename="FRESULTKZ"+insu+"."+cDate;
+			String ttLocalDir=cThisConf.getChildTextTrim("localDir");
+			mFilePath=ttLocalDir+filename;
+			InputStream fis=new FileInputStream(mFilePath);
+			byte[] bytes=IOTrans.toBytes(fis);
+			int FileLen=bytes.length;
+			System.out.println("组织好的文件:"+mFilePath);
+			file=new String(bytes,"GBK");
+			int length=file.getBytes("GBK").length;
+			System.out.println("组织好的文件长度:"+FileLen+"     "+file);
+			dox=getxml("0", "02", filename, String.valueOf(length));
+			
+			cLogger.info(cFuncFlag+"=组织好的报文:");
 			JdomUtil.print(dox);
 		}
 		else if (cFuncFlag.equals("TBYCSJWJ"))

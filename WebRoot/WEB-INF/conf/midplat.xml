@@ -144,7 +144,7 @@
 	<!-- 本地测试调 10.254.254.127:8001/ui/ -->
 	<atomservices>
 		<!-- 本地环境 -->
-		<!-- <service id="0" name="录单核保" address="http://10.0.0.193:18080/ui/services/ServiceForBankInterfaceService" 
+		<!-- <service id="0" name="录单核保" address="http://10.0.1.177:8001/ui/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<!-- 测试环境 -->
 		<service id="0" name="录单核保" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
@@ -170,7 +170,7 @@
 			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
 		<!-- <service id="1" name="收费签单"
-			address="http://10.0.1.160:8080/ui/services/ServiceForBankInterfaceService"
+			address="http://10.0.1.177:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />	 -->
 		<service id="2" name="新单回滚"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
@@ -193,8 +193,11 @@
 		<!-- <service id="6" name="新单日结"
 			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
-		<service id="7" name="单证对账"
+		<!-- <service id="7" name="单证对账"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
+		<service id="7" name="单证对账"
+			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<service id="10" name="银保犹豫期退保查询"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
@@ -374,13 +377,16 @@
 	    <service id="67" name="建行非实时投保交易" 
 	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 	    method="service" />
-	     <service id="68" name="新农行保单价值查询" 
+	    <service id="68" name="新农行保单价值查询" 
 	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 	    method="service" />
-	     <service id="69" name="中行退保\满期给付试算" 
+	    <service id="69" name="中行退保\满期给付试算" 
 	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 	    method="service" />
-	     <service id="70" name="中行退保\满期给付确认" 
+	    <service id="70" name="中行退保\满期给付确认" 
+	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
+	    method="service" />
+	    <service id="71" name="新农行非实时出单结果明细文件" 
 	    address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" 
 	    method="service" />
 	</atomservices>

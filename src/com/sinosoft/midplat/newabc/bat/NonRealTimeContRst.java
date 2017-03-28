@@ -394,7 +394,7 @@ public class NonRealTimeContRst extends TimerTask implements XmlTag
 					fileName = "FRESULT" + tComCode + "." + fileDate;
 				}
 				File file = new File(ttLocalDir + "/" + fileName);
-				// 如果文件不存在穿件文件
+				// 如果文件不存在创建文件
 				if (!file.exists())
 				{
 					try

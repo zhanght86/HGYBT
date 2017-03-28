@@ -167,7 +167,7 @@ public class SurRetrDataDocBankDeal extends Balance
 		mBodyEle.addContent(mCountEle);
 		mBodyEle.addContent(mSumPremEle);
 
-		if ("3103".equals(mHeadMsgs.substring(0, 4)))
+		if (!"3103".equals(mHeadMsgs.substring(0, 4)))
 		{// 如果回盘正确，首行为记录；错误的时候为错误信息
 			cLogger.info(mHeadMsgs.substring(0, 4));
 			String[] tHeadMsgs = mHeadMsgs.split("\\|", -1);
@@ -190,7 +190,7 @@ public class SurRetrDataDocBankDeal extends Balance
 				String[] tSubMsgs = tLineMsg.split("\\|", -1);
 
 				Element tTranDateEle = new Element(TranDate);
-				tTranDateEle.setText(tSubMsgs[0]);
+				tTranDateEle.setText(tSubMsgs[1]);
 				//
 				Element tTranNoEle = new Element(TranNo);
 				tTranNoEle.setText(tSubMsgs[10]);
