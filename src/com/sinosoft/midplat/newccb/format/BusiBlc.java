@@ -40,20 +40,15 @@ public class BusiBlc extends XmlSimpFormat
 		super(pThisConf);
 	}
 
-	/**
-	 * 
-	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception
 	{
-		//
 		cLogger.info("Into BusiBlc.noStd2Std()...");
 		noStdDoc = pNoStdXml;
-
+		cLogger.info("非标准报文："+JdomUtil.toStringFmt(pNoStdXml));
 		oldTxHeader = (Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		oldComEntity = (Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
-		//服务名
 		sysTxCode = oldTxHeader.getChildText("SYS_TX_CODE");
-		
+
 		// 临时保存保险公司方交易流水号
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 
@@ -63,6 +58,7 @@ public class BusiBlc extends XmlSimpFormat
 		// 服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		typeCode = pNoStdXml.getRootElement().getChild("TX_HEADER").getChildTextTrim("SYS_TX_CODE");
+		cLogger.info("非标准转为标准报文："+JdomUtil.toStringFmt(pNoStdXml));
 		cLogger.info("Out BusiBlc.noStd2Std()!");
 		return pNoStdXml;
 	}

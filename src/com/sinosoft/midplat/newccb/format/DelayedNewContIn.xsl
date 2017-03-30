@@ -15,10 +15,10 @@
 		<BankDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(TX_HEADER/SYS_REQ_TIME,0,8)" /></BankDate>
 		<!--交易时间 -->
 		<BankTime><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(TX_HEADER/SYS_REQ_TIME,8,14)" /></BankTime>
-		<!-- 一级分行号(地区编号) -->
+		<!-- 一级分行号(地区编号)：核心对此有非空校验 -->
 		<ZoneNo>99999</ZoneNo>
-		<!-- 保险客户名单提供地区编号(分支编号) -->
-		<BrNo>99999</BrNo>
+		<!-- 此节点作为备用节点存储：保费缴费方式代码|保费缴费期数|保费缴费周期代码 作为更新非实时核保状态交易使用-->
+		<BrNo><xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Bu_List/Bu_Detail/InsPrem_PyF_MtdCd" />|<xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Bu_List/Bu_Detail/InsPrem_PyF_Prd_Num" />|<xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Bu_List/Bu_Detail/InsPrem_PyF_Cyc_Cd" /></BrNo>
 		<!--柜员编号 -->
 		<TellerNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCB_EmpID" /></TellerNo>
 		<!--#服务方流水号 -->

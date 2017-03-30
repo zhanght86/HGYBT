@@ -46,25 +46,18 @@ public class QueryExpirationPay extends XmlSimpFormat {
 		
 //		JdomUtil.print(cTransaction_Header);
 		
-		//对6个成员变量赋值
 		//服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		
-		//报文头
 		oldTxHeader = (Element)pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
-		//公共域
 		oldComEntity = (Element)pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
-		//服务名
 		sysTxCode= oldTxHeader.getChildText("SYS_TX_CODE");
 		
 		//临时保存保险公司方交易流水号
-		//交易流水号
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 		//临时保存银行发起交易日期作为保险公司账务日期 
-		//交易日期
 		tranDate = NewCcbFormatUtil.getTimeAndDate(pNoStdXml.getRootElement().getChild("TX_HEADER").getChildText("SYS_REQ_TIME"), 0, 8);
 		
-		//XSL将非标准输入报文转换为标准输入报文并返回
 		Document mStdXml = 
 			QueryExpirationPayInXsl.newInstance().getCache().transform(pNoStdXml);
 		
@@ -98,24 +91,19 @@ public class QueryExpirationPay extends XmlSimpFormat {
 		//当核保成功的时候，返回TX_BODY时，增加COM_ENTITY节点
 //		String resultCode = pStdXml.getRootElement().getChild("Head").getChildText("Flag");
 //		if(resultCode.equals("0")){
-			//设置公共域节点信息
 			mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
 //		}
 		
 		//COM_ENTITY节点加入服务方流水号
-		//设置服务方流水号文本内容
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText(tranNo);
-		//设置保险公司账务日期文本内容
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("Ins_Co_Acg_Dt").setText(tranDate);
-		
+
 		//COM_ENTITY节点加入保险公司方流水号
-		//设置保险公司流水号文本内容
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("Ins_Co_Jrnl_No").setText(tranNo);		
-		//获取非标准输出报文应用域保单号[查询满期给付(1036)]
+		
 		sContno=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("InsPolcy_No");
 		if(sContno!=null&&!sContno.equals("")){
 			//从cont表中查找对应的投保单号的建行一级分行号，实时投保时已存入备用字段10 bak10
-			//select bak10 from cont where contno = '[保单号]'
 			String getLv1BrNoSQL = new StringBuilder("select bak10 from cont where contno = '").append(sContno).append("'").toString();
 			sLv1BrNo = new ExeSQL().getOneValue(getLv1BrNoSQL);
 			//APP_ENTITY节点加入建行一级分行号

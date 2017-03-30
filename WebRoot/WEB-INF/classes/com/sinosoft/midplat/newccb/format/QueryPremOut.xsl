@@ -95,7 +95,7 @@
 							<AgInsPyFBsnSbdvsn_Cd>11</AgInsPyFBsnSbdvsn_Cd>
 							</xsl:if>
 							<!-- 投保单号 -->
-							<Ins_BillNo><xsl:value-of select="/TranData/Body/ProposalPrtNo"/></Ins_BillNo>
+							<Ins_BillNo><xsl:value-of select="substring(/TranData/Body/ProposalPrtNo,1,13)"/></Ins_BillNo>
 							<!-- 套餐名称 -->
 							<Pkg_Nm></Pkg_Nm>
 							<!-- 险种名称 -->

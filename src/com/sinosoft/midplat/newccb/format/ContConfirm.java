@@ -16,6 +16,7 @@ import org.jdom.xpath.XPath;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
+import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
 public class ContConfirm extends XmlSimpFormat {
@@ -69,11 +70,8 @@ public class ContConfirm extends XmlSimpFormat {
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element tRiskCode  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Body/Risk/RiskCode");
 		if (ttFlag.getValue().equals("0")){
-			   //处理标准输入报文受益人
 			   pStdXml =  dealBnf(pStdXml);	
-			//
 			if("221301".equals(tRiskCode.getValue())){
-				//处理标准输入报文现金价值表
 			   pStdXml =  dealCashValues2(pStdXml);
 			}else if("231302".equals(tRiskCode.getValue())){//20140918 新增永利年年分红险 
 				tXslName="ContConfirmOut_PensionCash";
@@ -88,7 +86,6 @@ public class ContConfirm extends XmlSimpFormat {
 				pStdXml =  dealCashValues(pStdXml);
 			}
 		}	
-		
 		System.out.println("使用的样式表："+tXslName);
 		Document mNoStdXml =  
 			ContConfirmOutXsl.newInstance(tXslName).getCache().transform(pStdXml);
@@ -148,11 +145,8 @@ public class ContConfirm extends XmlSimpFormat {
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element tRiskCode  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Body/Risk/RiskCode");
 		if (ttFlag.getValue().equals("0")){
-			//标准输入报文加入序列号节点
 			pStdXml =  dealBnf(pStdXml);	
-			//险种代码为221301
 			if("221301".equals(tRiskCode.getValue())){
-				//
 				pStdXml =  dealCashValues2(pStdXml);
 			}if("231302".equals(tRiskCode.getValue())){//20140918 新增永利年年分红险 
 				tXslName="ContConfirmOut_PensionCash";
@@ -177,29 +171,15 @@ public class ContConfirm extends XmlSimpFormat {
 		return mNoStdXml;
 	}
 		
-		/**
-		 * @Title: dealBnf
-		 * @Description: 处理标准输入报文受益人
-		 * @param InStdDoc
-		 * @return 返回加入序列号节点后的标准输入报文
-		 * @return Document 返回加入序列号节点后的标准输入报文
-		 * @throws 异常
-		 */
+		
 		private Document dealBnf(Document InStdDoc){
-			//标准输入报文受益人列表
 			List bnfList = InStdDoc.getRootElement().getChild(Body).getChildren(Bnf);
-			//遍历受益人列表
 			for(int i = 0;i<bnfList.size();i++){
-				//获取当前受益人
 				Element bnfEle = (Element) bnfList.get(i);
-				//序列号节点
 				Element SeqNoELe = new Element("SeqNo");
-				//设置序列号节点文本内容为[下标+1:受益人顺序]
 				SeqNoELe.setText(String.valueOf(i+1));
-				//受益人节点加入序列号子节点
 				bnfEle.addContent(SeqNoELe);
 			}
-			//返回加入序列号节点后的标准输入报文
 			return InStdDoc;
 		}
 		
@@ -228,49 +208,26 @@ public class ContConfirm extends XmlSimpFormat {
 			return InStdDoc;
 	}
 		
-		/**
-		 * @Title: dealCashValues2
-		 * @Description: 处理现金价值表2
-		 * @param InStdDoc 标准输入报文
-		 * @return 返回现金价值表加入结束年节点、现金节点后的标准输入报文
-		 * @return Document 返回现金价值表加入结束年节点、现金节点后的标准输入报文
-		 * @throws 异常
-		 */
 		private Document dealCashValues2 (Document InStdDoc){
-			//现金价值表节点
 			Element CashValuesEle = InStdDoc.getRootElement().getChild(Body).getChild(Risk).getChild(CashValues);
-			//现金价值表列表
 			List cashValuesList = CashValuesEle.getChildren(CashValue);
-			//现金价值表列表元素个数
 			int cashValuesListSize = cashValuesList.size();
-			//cashValuesListSize：元素个数
 			cLogger.info("cashValuesListSize："+cashValuesListSize);
-			//元素个数少于33
 			if(cashValuesListSize<33){
-				//遍历现金价值表列表
 				for(int i=0 ;i<33-cashValuesListSize;i++){
-					//现金价值表节点
 					Element cashValueELe = new Element(CashValue);
-					//结束年节点
 					Element EndYearEle = new Element("EndYear");
-					//设置结束年节点文本内容为元素个数与下标之和
 					EndYearEle.setText(String.valueOf(cashValuesListSize+i));
-					//现金节点
 					Element CashEle = new Element("Cash");
-					//文本内容为-
 					CashEle.setText("-");
 					
-					//<CashValue><EndYear>1</EndYear></CashValue>
 					cashValueELe.addContent(EndYearEle);
-					//<CashValue><EndYear>1</EndYear><Cash>-</Cash></CashValue>
 					cashValueELe.addContent(CashEle);
-					//<CashValues><CashValue><EndYear>1</EndYear><Cash>-</Cash></CashValue></CashValues>
+					
 					CashValuesEle.addContent(cashValueELe);
 				}
 			}
-			//将标准输入报文打印到控制台[GBK编码，缩进3空格]
 			JdomUtil.print(InStdDoc);
-			//返回现金价值表加入结束年节点、现金节点后的标准输入报文
 			return InStdDoc;
 		}
 		
@@ -328,24 +285,13 @@ public class ContConfirm extends XmlSimpFormat {
 			return InStdDoc;
 		}
 		public static void main(String[] args) throws Exception {
-			System.out.println("程序开始…");
-
-			String mInFilePath = "C:/Users/liuzk/Desktop/11.xml";
-			String mOutFilePath = "C:/Users/liuzk/Desktop/13.xml";
-
-			InputStream mIs = new FileInputStream(mInFilePath);
-			Document mInXmlDoc = JdomUtil.build(mIs);
-			mIs.close();
-
-			Document mOutXmlDoc = new ContConfirm(null).std2NoStd(mInXmlDoc);
-
+            InputStream in=new FileInputStream("C:\\Users\\anico\\Desktop\\11914_632_1_outSvc.xml");
+			Document mInXmlDoc=JdomUtil.build(in);
+            Document mOutXmlDoc = ContConfirmOutXsl.newInstance(null).getCache().transform(mInXmlDoc);;
+//			Document mOutXmlDoc =new ContConfirm(
+//			NewCcbConf.newInstance().getConf().getRootElement()		
+//			).std2NoStd(mInXmlDoc);
 			JdomUtil.print(mOutXmlDoc);
 
-			OutputStream mOs = new FileOutputStream(mOutFilePath);
-			JdomUtil.output(mOutXmlDoc, mOs);
-			mOs.flush();
-			mOs.close();
-
-			System.out.println("成功结束！");
 		}
 }

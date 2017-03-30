@@ -28,9 +28,10 @@ public class NewABCTest {
 	private String cIP = null; 
 	private int cPort = 0;
 	public static void main(String[] args) throws Exception {
-		String mIP = "127.0.0.1";
-//		String mIP="10.2.0.31";
-		int mPort = 35006;
+//		String mIP = "127.0.0.1";
+		String mIP="10.2.0.31";
+//		int mPort = 35006;
+		int mPort = 9002;
 		/**
 		 * 1000 	心跳交易      1000   HeartBeat
 		 * 1002 	新单试算
@@ -60,8 +61,8 @@ public class NewABCTest {
 //		mFuncFlag = "1008";//续期缴费
 //		mFuncFlag = "1021";//保单详情查询
 //		mFuncFlag = "1014";//保全申请状态查询
-		mFuncFlag = "1013";//保全申请（支持犹撤申请、满期给付申请、退保申请）
-//		mFuncFlag = "1005";//新单试算结果查询
+//		mFuncFlag = "1013";//保全申请（支持犹撤申请、满期给付申请、退保申请）
+		mFuncFlag = "1005";//新单试算结果查询
 //		mFuncFlag = "1011";//账户变更
 //		mFuncFlag = "1019";//保单价值查询
 		
@@ -94,9 +95,9 @@ public class NewABCTest {
 		//保全申请状态查询
 //		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1014in_noStd.xml";
 		//保全申请（支持犹撤申请、满期给付申请、退保申请）
-		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1013in_noStd.xml";
+//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1013in_noStd.xml";
 		//新单试算结果查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1005in_noStd.xml";
+		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1005in_noStd.xml";
 		//账户变更
 //		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1011in_noStd.xml";
 		//保单价值查询
@@ -117,7 +118,7 @@ public class NewABCTest {
 //		mFos.flush();
 //		mFos.close();
 //		OutputStream pOs = new FileOutputStream("D:/task/20161124/test/newabc/"+mFuncFlag+"_out.xml");
-		OutputStream pOs = new FileOutputStream("D:/File/task/20170330/newabc/ybt_test/1013out_noStd.xml");
+		OutputStream pOs = new FileOutputStream("D:/File/task/20170330/newabc/ybt_test/1005out_noStd.xml");
 		JdomUtil.output(mOutXmlDoc, pOs);
 		pOs.flush();
 		pOs.close();

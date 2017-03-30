@@ -10,47 +10,23 @@ import org.jdom.Element;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
-/**
- * @ClassName: BatRequest
- * @Description: 批量代收代付取盘
- * @author yuantongxin
- * @date 2017-1-18 下午4:55:50
- */
+
 public class BatRequest extends XmlSimpFormat {
 	
-	//非标准输入报文头
 	private Element cTransaction_Header = null;
-	//服务接受时间
 	private String mSYS_RECV_TIME = null;
-	//服务响应时间
 	private String mSYS_RESP_TIME = null;
-	//交易流水号
 	private String tranNo = null;
-	//交易日期
 	private String tranDate = null;
-	//服务名
 	private String sysTxCode = null;
-	//非标准输入报文头
 	private Element oldTxHeader = null;
-	//非标准输入报文公共域
 	private Element oldComEntity = null;
 	
-	/**
-	 * <p>Title: BatRequest</p>
-	 * <p>Description: 批量代收代付取盘</p>
-	 * @param pThisConf 当前交易配置文件
-	 */
 	public BatRequest(Element pThisConf) {
 		super(pThisConf);
 	}
 	
-	/**
-	 * 非标准输入报文转标准输入报文
-	 * @param pNoStdXml 非标准输入报文
-	 * @return 标准输入报文
-	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
-		//Into BatRequest.noStd2Std()...
 		cLogger.info("Into BatRequest.noStd2Std()...");
 		
 		//此处备份一下请求报文头相关信息，组织返回报文时会用到
@@ -73,7 +49,6 @@ public class BatRequest extends XmlSimpFormat {
 		
 		Document mStdXml = BatRequestInXsl.newInstance().getCache().transform(pNoStdXml);
 		
-		//Out BatRequest.noStd2Std()!
 		cLogger.info("Out BatRequest.noStd2Std()!");
 		return mStdXml;
 	}

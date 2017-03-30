@@ -1,57 +1,36 @@
 
 package com.sinosoft.midplat.newccb.format;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.jdom.Document;
 import org.jdom.Element;
 
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
-/**
- * @ClassName: BatResponse 
- * @Description: 批量代收代付送盘报文转换类
- * @author yuantongxin
- * @date 2017-1-17 下午7:10:08
- */
+
 public class BatResponse extends XmlSimpFormat {
 	
-	//非标准输入报文头
 	private Element cTransaction_Header = null;
-	//服务接受时间
 	private String mSYS_RECV_TIME = null;
-	//服务响应时间
 	private String mSYS_RESP_TIME = null;
-	//交易流水号
 	private String tranNo = null;
-	//交易日期
 	private String tranDate = null;
-	//服务名
 	private String sysTxCode = null;
-	//非标准输入报文头
 	private Element oldTxHeader = null;
-	//非标准输入报文公共域
 	private Element oldComEntity = null;
 	
-	/**
-	 * <p>Title: BatResponse</p>
-	 * <p>Description: 批量代收代付送盘报文转换类构造函数</p>
-	 * @param pThisConf 当前交易配置文件
-	 */
 	public BatResponse(Element pThisConf) {
 		super(pThisConf);
 	}
 	
-	/**
-	 * 非标准输入报文转标准输入报文
-	 * @pNoStdXml 非标准输入报文
-	 * @return 标准输入报文
-	 * @exception 异常
-	 */
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
-		//
 		cLogger.info("Into BatResponse.noStd2Std()...");
 		//此处备份一下请求报文头相关信息，组织返回报文时会用到
 		cTransaction_Header =
@@ -117,5 +96,9 @@ public class BatResponse extends XmlSimpFormat {
 		cLogger.info("Out BatResponse.std2NoStd()!");
 		return mNoStdXml;
 	}
- 
+//    public static void main(String[] args) throws FileNotFoundException {
+//		File file=new File("C:\\Users\\anico\\Desktop\\unencrypt\\AL01100792017011801_RESULT.XML");
+//		FileInputStream in=new FileInputStream(file);
+//		System.out.println(JdomUtil.toStringFmt(JdomUtil.build(in,"UTF-8")));
+//	}
 }

@@ -108,7 +108,7 @@
 										<!-- 缴费截止日期 -->
 										<PyF_CODt><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(PayEndDate)"/></PyF_CODt>
 										<xsl:choose>
-											<xsl:when test="RiskCode='011A0100'">
+											<xsl:when test="RiskCode='011A0100'"><!-- 万能险 -->
 												<!-- 保险年期类别代码 -->
 												<Ins_Yr_Prd_CgyCd>03</Ins_Yr_Prd_CgyCd><!-- 按周期 -->
 												<!-- 保险期限 -->
@@ -126,35 +126,15 @@
 												<!-- 保险年期类别代码 -->
 												<Ins_Yr_Prd_CgyCd>03</Ins_Yr_Prd_CgyCd>
 												<!-- 保险期限 -->
-												<Ins_Ddln><xsl:value-of select="InsuYear"/></Ins_Ddln>
+												<Ins_Ddln>10</Ins_Ddln>
 												<!-- 保险周期代码 -->
-												<Ins_Cyc_Cd>
-													<xsl:call-template name="tran_insCycCd">
-														<xsl:with-param name="insCycCd">
-															<xsl:value-of select="InsuYearFlag"/>
-														</xsl:with-param>
-													</xsl:call-template>
-												</Ins_Cyc_Cd>
+												<Ins_Cyc_Cd>03</Ins_Cyc_Cd>
 												<!-- 保费缴费方式代码 -->
-												<InsPrem_PyF_MtdCd>
-													<xsl:call-template name="tran_insPremPyFMtdCd">
-														<xsl:with-param name="insPremPyFMtdCd">
-															<!-- <xsl:value-of select="PayEndYearFlag"/> -->
-															<xsl:value-of select="PayIntv"/>
-														</xsl:with-param>
-													</xsl:call-template>
-												</InsPrem_PyF_MtdCd>
+												<InsPrem_PyF_MtdCd></InsPrem_PyF_MtdCd>
 												<!-- 保费缴费期数 -->
-												<InsPrem_PyF_Prd_Num><xsl:value-of select="PayEndYear"/></InsPrem_PyF_Prd_Num>
+												<InsPrem_PyF_Prd_Num></InsPrem_PyF_Prd_Num>
 												<!-- 保费缴费周期代码 format类中添加 -->
-												<InsPrem_PyF_Cyc_Cd>
-													<xsl:call-template name="tran_insPremPyFCycCd">
-														<xsl:with-param name="insPremPyFCycCd">
-															<!-- <xsl:value-of select="PayEndYearFlag"/> -->
-															<xsl:value-of select="PayIntv"/>
-														</xsl:with-param>
-													</xsl:call-template>
-												</InsPrem_PyF_Cyc_Cd>
+												<InsPrem_PyF_Cyc_Cd></InsPrem_PyF_Cyc_Cd>
 											</xsl:otherwise>
 										</xsl:choose>
 									</Insu_Detail>

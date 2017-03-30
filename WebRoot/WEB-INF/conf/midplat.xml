@@ -15,9 +15,10 @@
 	<KeyPath>/ybttest/key/</KeyPath>
 
 	<skip>10.0.6.111</skip><!-- 跳过 -->
+	<database type="WEBLOGICPOOL" name="YBTPool" />
 	<!-- 数据库类型、数据库名称、网络之间互连的协议、端口、用户名、密码 -->
-	<database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521"
-		user="ybt" password="ybt123" />
+	<!-- <database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" /> -->
+		
 
 	<!-- <database type="ORACLE" name="ORCL" ip="127.0.0.1" port="1521" user="ybt_wangheng" 
 		password="ybt_wangheng" /> --><!-- 本地 -->

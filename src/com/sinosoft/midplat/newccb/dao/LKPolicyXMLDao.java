@@ -207,9 +207,26 @@ public class LKPolicyXMLDao
         //查询
         rs = preSt.executeQuery();
         while(rs.next())
-        {
-        	BLOB xmlContentBLOB = (BLOB)rs.getBlob(1);
-        	xmlContent = xmlContentBLOB.getBytes(1, (int)xmlContentBLOB.length());
+        {    /**
+             * 对于weblogic连接池的连接获取的BLob对象转换成oracle.sql.BLOB处理
+             */
+	        Object objBlob=rs.getBlob(1);
+	        BLOB xmlContentB=null;
+	        if("weblogic.jdbc.wrapper.Blob_oracle_sql_BLOB".equals(objBlob.getClass().getName())){
+	        	
+	        	 try {
+	        		 Method  method = objBlob.getClass().getMethod("getVendorObj",new Class[]{});
+					xmlContentB=(BLOB)method.invoke(objBlob);
+				} catch (Exception e) {
+					e.printStackTrace();
+				} 
+	        }else{
+	        	xmlContentB = (BLOB) rs.getBlob(1);
+	        }
+        	xmlContent = xmlContentB.getBytes(1, (int)xmlContentB.length());
+	        
+//        	BLOB xmlContentBLOB = (BLOB)rs.getBlob(1);
+//        	xmlContent = xmlContentBLOB.getBytes(1, (int)xmlContentBLOB.length());
         }
         
         //关闭结果集

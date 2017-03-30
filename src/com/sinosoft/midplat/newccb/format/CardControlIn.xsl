@@ -42,9 +42,9 @@
 							<xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Ins_IBVoch_Tp_ECD" />
 				</CardType>
 				<!-- 保险重空起始案号 -->
-				<StartNo><xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Ins_IBVoch_Beg_ID"/></StartNo>
+				<StartNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(TX_BODY/ENTITY/APP_ENTITY/Ins_IBVoch_Beg_ID)"/></StartNo>
 				<!-- 保险重空结束案号 -->
-				<EndNo><xsl:value-of select="TX_BODY/ENTITY/APP_ENTITY/Ins_IBVoch_End_ID"/></EndNo>
+				<EndNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(TX_BODY/ENTITY/APP_ENTITY/Ins_IBVoch_End_ID)"/></EndNo>
 			</Body>
 		</TranData>
 	</xsl:template>

@@ -1,6 +1,7 @@
 //获取保单详情取数
 package com.sinosoft.midplat.newccb.service;
 
+import java.io.FileInputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +64,7 @@ public class NewGetContList2 extends ServiceImpl
 
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
+		cLogger.info(JdomUtil.toStringFmt(pInXmlDoc));
 
 		cLogger.info("Into NewGetContList2.service()...");
 
@@ -73,7 +75,8 @@ public class NewGetContList2 extends ServiceImpl
 
 
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_GetContList2).call(cInXmlDoc);
-
+//			cOutXmlDoc=JdomUtil.build(new FileInputStream("C:\\Users\\anico\\Desktop\\33732_165_38_outSvc.xml"));
+//			cLogger.info(JdomUtil.toStringFmt(cOutXmlDoc));
 			cLogger.info("调用核心获取保单详情完成");
 			// JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();

@@ -245,8 +245,8 @@ public class PrintCont extends XmlSimpFormat{
 	public static void main(String[] args) throws Exception {
 		System.out.println("³ÌÐò¿ªÊ¼¡­");
 
-		String mInFilePath = "C:/Users/liuzk/Desktop/11.xml";
-		String mOutFilePath = "C:/Users/liuzk/Desktop/13.xml";
+		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\18666_183_0_outSvc.xml";
+		String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";
 
 		InputStream mIs = new FileInputStream(mInFilePath);
 		Document mInXmlDoc = JdomUtil.build(mIs);

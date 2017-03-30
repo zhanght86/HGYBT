@@ -1,91 +1,80 @@
 package com.sinosoft.midplat.newccb.service;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.net.ftp.FTPFile;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.xpath.XPath;
+
 
 import cn.ccb.secapi.SecAPI;
 
-import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newccb.NewCcbConf;
+import com.sinosoft.midplat.newccb.util.FTPFILEMAPDao;
+import com.sinosoft.midplat.newccb.util.RegisterFtp;
 import com.sinosoft.midplat.service.ServiceImpl;
-import com.sun.xml.internal.bind.util.Which;
-
+import com.sinosoft.utility.DBOper;
+import com.sinosoft.utility.ExeSQL;
 /**
- * @ClassName: ContBatRequest
- * @Description: 批量代收代付取盘业务处理类
- * @author yuantongxin
- * @date 2017-1-18 下午6:18:23
+ * 批量代收付取盘交易
+ * @author anico
+ *
  */
 public class ContBatRequest extends ServiceImpl {
 
-	/**
-	 * <p>Title: ContBatRequest</p>
-	 * <p>Description: 批量代收代付取盘业务处理类构造函数</p>
-	 * @param pThisBusiConf 当前业务配置文件
-	 */
+	
 	public ContBatRequest(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
-	
-	/**
-	 * 标准输入报文处理为标准输出报文
-	 * @param pInXmlDoc 标准输入报文
-	 * @return 标准输出报文
-	 */
+
 	public Document service(Document pInXmlDoc) throws Exception {
-		//Into ContBatRequest()...
 		cLogger.info("Into ContBatRequest()...");
-		//开始时间毫秒数
+		Element FTPEle = NewCcbConf.newInstance().getConf().getRootElement().getChild("FTP");
+		String ip=FTPEle.getAttributeValue("ip");
+		String user=FTPEle.getAttributeValue("user");
+		String password=FTPEle.getAttributeValue("password");
+		String remoteStr=FTPEle.getAttributeValue("remoteStr");
+		//下载FTP批量包本地存储路径
+		Element LocalDownloadZipFileEle = NewCcbConf.newInstance().getConf().getRootElement().getChild("LocalDownloadZipFile");
+		String localDownloadZipPath=LocalDownloadZipFileEle.getText();
+		Element tHeadEle = pInXmlDoc.getRootElement().getChild(Head);
+		String tTranCom=tHeadEle.getChildText("TranCom");
 		long mStartMillis = System.currentTimeMillis();
-		//标准输入报文[缩进3空格，忽略声明中的编码]
 		cLogger.info(JdomUtil.toStringFmt(pInXmlDoc));
-		//本地安全节点号
 		String localID=pInXmlDoc.getRootElement().getChild("Head").getChildText("LocalID");
-		//建行安全节点号
 		String remoteID=pInXmlDoc.getRootElement().getChild("Head").getChildText("RemoteID");
-		//银行端安全节点号:建行安全节点号
 		cLogger.info("银行端安全节点号:"+remoteID);
-		//保险公司端安全节点号:本地安全节点号
 		cLogger.info("保险公司端安全节点号:"+localID);
-		//标准输入报文体
 		Element tBodyEle = pInXmlDoc.getRootElement().getChild(Body);
-		//代理保险批量包名称
 		String tFileName = tBodyEle.getChildText("FileName");
-		//代收代付标志
 		String tType = tBodyEle.getChildText("Type");
-		//当日批次号
+		String coreType=tType.equals("0")?"S":"F";
 		String tOrderNo=tBodyEle.getChildText("OrderNo");
-		//提交日期
 		final String dateStr=tFileName.substring(9,17);
-		//文件名为:代理保险批量包名称
 		cLogger.info("文件名为:"+tFileName);
-		//文件序号:当日批次号
 		cLogger.info("文件序号:"+tOrderNo);
-		//文件日期:提交日期
 		cLogger.info("文件日期:"+dateStr);
-		//文件类型:代收代付标志
-		cLogger.info("文件类型:"+tType+(tType.equals("0")?"代收":"代付"));
-		String coreUploadFilePath=NewCcbConf.newInstance().getConf().getRootElement().getChildText("coreUploadFilePath");
+		cLogger.info("文件类型:"+tType+"|"+coreType);
+		String dateFmt=new SimpleDateFormat("/yyyy-MM-dd").format(new Date());
+		String checkRemoteFilePath=remoteStr+dateFmt;
 		try {
 			// 1:记录日志
 			cTranLogDB = insertTranLog(pInXmlDoc);
@@ -97,52 +86,71 @@ public class ContBatRequest extends ServiceImpl {
 			}
 			//响应银行文件加密后路径
 			String ccbLocalDir=this.cThisBusiConf.getChildText("ccbLocalDir");
-			File file=new File(coreUploadFilePath);
-			if(!file.exists()){
-				throw new MidplatException("核心FTP上传文件路径不存在:"+coreUploadFilePath);
+			//FTP登录
+			RegisterFtp ftp=new RegisterFtp(ip, user, password);
+			boolean loginFlag=ftp.loginFTP();
+			FTPFile[] fileList=null;
+			if(!loginFlag){
+				throw new MidplatException("FTP登录失败!");
 			}
-			//取文件包的序号位数不足5位前面补0
-			if(tOrderNo.length()<5){
-				int num=5-tOrderNo.length();
-				for (int i = 0; i <num; i++) {
-					tOrderNo="0"+tOrderNo;
+			ExeSQL exeSql=new ExeSQL();
+			//查询是否已经成功生成对应银行文件名的取盘文件，有可能由于网络延时导致取盘交易失败，但取盘文件已经生成
+			String sql="select count(1) from FTPFILEMAP where bankname='"+tFileName+"' and disposeflag='0' and bankflag='"+tTranCom+"'";
+			String val=exeSql.getOneValue(sql);
+			if(Integer.parseInt(val)!=1){
+				//获取核心上传的批量包
+				fileList=ftp.checkRemoteFile(checkRemoteFilePath);
+				String dateStr1=new SimpleDateFormat("yyyy/MM/dd").format(new Date());
+				//对银行文件和核心文件做映射
+				FTPFile file1=null;
+				String fileName=null;
+				//银行文件和核心文件已经做过映射，但处理未成功就不用再做映射
+				sql="select localname from FTPFILEMAP where bankname='"+tFileName+"' and disposeflag='1' and bankflag='"+tTranCom+"'";
+				val=exeSql.getOneValue(sql);
+				if(!val.contains("zip")){
+					for (int i = 0; i < fileList.length; i++) {
+					    file1=fileList[i];
+					    fileName=file1.getName();
+					    //查看核心文件是否已成功做过取盘处理，对于已成功的不再做处理
+					    sql="select count(1) from FTPFILEMAP where localname='"+fileName+"' and disposeflag='0' and bankflag='"+tTranCom+"'";
+						String val1=exeSql.getOneValue(sql);
+						if(Integer.parseInt(val1)==1||!fileName.contains(coreType)){
+							//如果核心文件以做映射且处理成功跳过本次循环
+							continue;
+						}
+						sql="insert into FTPFILEMAP values('"+tFileName+"','"+fileName+"','1','"+dateStr1+"','"+tTranCom+"')";
+					    FTPFILEMAPDao.insert(sql);
+						break;
+					}
+				}else{
+					fileName=val;
 				}
-			}
-			final String ttOrderNo=tOrderNo;
-			//S:代收 F:代付
-	        final String SFflag="0".equals(tType)?"S":"F";
-	        cLogger.info("代收付交易文件匹配正则表达式:"+"^\\w{10,15}_"+SFflag+"02"+dateStr+"_"+ttOrderNo+".zip$");
-	        File[] fileList=file.listFiles(new FileFilter() {
-			   Pattern pattern=Pattern.compile("^\\w{10,15}_"+SFflag+"02"+dateStr+"_"+ttOrderNo+".zip$");
-			   @Override
-			   public boolean accept(File filePath) {
-			      String fileName=filePath.getName();
-				  Matcher matcher=pattern.matcher(fileName);
-				  return matcher.matches();
-			   }
-			});
-		    if(fileList.length>1){
-		       cLogger.info("符合规则的文件个数为:"+fileList.length+"!请核对");
-		       throw new MidplatException("交易失败");
-		    }
-		    if(fileList.length==0){
-			       cLogger.info("符合规则的文件个数为:"+fileList.length+"!请核对");
-			       throw new MidplatException("交易失败");
+			    cLogger.info("获取到的代收付包文件名为:"+fileName);
+			    //判断文件是否已经下载到本地
+			    if(!(new File(localDownloadZipPath+fileName).exists())){
+			    	//下载文件到本地
+			    	boolean downloadFlag=ftp.downloadFile(checkRemoteFilePath,fileName,localDownloadZipPath);
+			    	//关闭FTP连接
+				    ftp.closeConnect();
+				    if(!downloadFlag){
+			    		throw new MidplatException("FTP下载文件失败!");
+			    	}
 			    }
-		    cLogger.info("获取到的代收包文件名为:"+fileList[0].getPath());
-		    File file0=new File(fileList[0].getPath().substring(0,fileList[0].getPath().lastIndexOf("."))+".txt");
-		    if(!file0.exists()){
-		        //如果文件未解压，先解压文件
-		        uncompressZipFile (coreUploadFilePath,fileList[0].getName());
-		    }
-		    cLogger.info(fileList[0].getName()+"文件已解压！"+"解压路径为:"+file0.getPath());
-		    //在本地生成响应银行未加密文件
-		    generateBankFile(LocalDir,tFileName,file0.getName());
-		    //加密文件
-			cLogger.info("加密文件入参localID:"+localID+",remoteID:"+remoteID
-						     +",加密前文件:"+LocalDir+tFileName+"_SOURCE.xml"
+			    File file0=new File(localDownloadZipPath+fileName.substring(0,fileName.lastIndexOf("."))+".txt");
+			    if(!file0.exists()){
+				    //如果文件未解压，先解压文件
+				    uncompressZipFile (localDownloadZipPath,fileName);
+				}
+			    cLogger.info(fileName+"文件已解压！"+"解压路径为:"+file0.getPath());
+			    //在本地生成响应银行未加密文件
+				generateBankFile(LocalDir,tFileName,file0.getPath());
+				//加密文件
+			    cLogger.info("加密文件入参localID:"+localID+",remoteID:"+remoteID
+							 +",加密前文件:"+LocalDir+tFileName+"_SOURCE.xml"
 						     +",加密后文件:"+ccbLocalDir+tFileName+"_SOURCE.xml");
-			SecAPI.fileEnvelop(localID, remoteID,LocalDir+tFileName+"_SOURCE.xml",ccbLocalDir+tFileName+"_SOURCE.xml");
+			   SecAPI.fileEnvelop(localID, remoteID,LocalDir+tFileName+"_SOURCE.xml",ccbLocalDir+tFileName+"_SOURCE.xml");
+			}
+		   
 			Document tReturnDoc = JdomUtil.build(new FileInputStream(LocalDir+tFileName+"_SOURCE.xml"),"UTF-8");
 			String tSumNum = tReturnDoc.getRootElement().getChild(Head).getChildText("Cur_Btch_Dtl_TDnum");
 			String tSumAmt = tReturnDoc.getRootElement().getChild(Head).getChildText("Cur_Btch_Dtl_TAmt");
@@ -161,7 +169,7 @@ public class ContBatRequest extends ServiceImpl {
 			eBody.addContent(eSumAmt);
 			
 			Element eFilePath = new Element("FilePath");
-			eFilePath.setText(ccbLocalDir);
+			eFilePath.setText(ccbLocalDir.substring(0,ccbLocalDir.length()-1));
 			eBody.addContent(eFilePath);
 		
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(0, "交易成功");
@@ -170,6 +178,9 @@ public class ContBatRequest extends ServiceImpl {
 			cTranLogDB.setBak1(tFileName);
 			cTranLogDB.setRText("银行取盘成功");
 			cTranLogDB.setRCode(0);
+			//取盘成功，跟新数据库处理状态
+			sql="update  FTPFILEMAP set disposeflag='0' where bankname='"+tFileName+"'";
+			exeSql.execUpdateSQL(sql);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			cLogger.error(cThisBusiConf.getChildText(name) + "交易失败！", ex);
@@ -199,27 +210,22 @@ public class ContBatRequest extends ServiceImpl {
 	 * @param fileName 读取文件名
 	 * @throws Exception
 	 */
-	 public void generateBankFile(String LocalDir,String localFileName,String fileName) throws Exception{
-		 String coreUploadFilePath=NewCcbConf.newInstance().getConf().getRootElement().getChildText("coreUploadFilePath");
-		 File file=new File(coreUploadFilePath+fileName);
-		 if(!file.exists()){
-			 throw new MidplatException(file.getPath()+"文件不存在！");
-		 }
+	 public void generateBankFile(String LocalDir,String localFileName,String unzipPath) throws Exception{
 		 FileInputStream fileInputStream=null;
          InputStreamReader inputStreamReader=null;
          BufferedReader bufferedReader=null;
          FileOutputStream fileOutputStream=null;
          BufferedOutputStream bufferedOutputStream=null;
 		 try {
-			 fileInputStream=new FileInputStream(file);
+			 fileInputStream=new FileInputStream(unzipPath);
 			 inputStreamReader=new InputStreamReader(fileInputStream,"GBK");
 			 bufferedReader=new BufferedReader(inputStreamReader);
 			 String oneLineData=null;
-			 Element rootEle=new Element("root");
+			 Element rootEle=new Element("Root");
 			 Element HeadEle=new Element("Head");
 			 rootEle.addContent(HeadEle);
 			 Element AgIns_BtchBag_NmEle=new Element("AgIns_BtchBag_Nm");//代理保险批量包名称
-			 AgIns_BtchBag_NmEle.setText(localFileName);
+			 AgIns_BtchBag_NmEle.setText(localFileName+"_SOURCE.xml");
 			 Element Cur_Btch_Dtl_TDnumEle=new Element("Cur_Btch_Dtl_TDnum");//当前批明细总数
 			 Element CCur_Btch_Dtl_TAmtEle=new Element("Cur_Btch_Dtl_TAmt");//当前批明细总金额
 			 Element AgIns_BtchBag_TpCdEle=new Element("AgIns_BtchBag_TpCd");//代理保险批量包类型代码
@@ -230,12 +236,16 @@ public class ContBatRequest extends ServiceImpl {
 			 Element Detail_ListEle=new Element("Detail_List");
 			 rootEle.addContent(Detail_ListEle);
 			 String codeSF=null;
-			 while ((oneLineData=bufferedReader.readLine())!=null&&!"".equals(oneLineData)) {
+//			 while ((oneLineData=bufferedReader.readLine())!=null&&!"".equals(oneLineData)) {
+			 while ((oneLineData=bufferedReader.readLine())!=null) {
+				 if("".equals(oneLineData)){
+					continue; 
+				 }
 				 String[] strs=oneLineData.split(",");
 				 if(strs.length==6){
 					 Cur_Btch_Dtl_TDnumEle.setText(strs[3]);
 					 CCur_Btch_Dtl_TAmtEle.setText(NumberUtil.fenToYuan(strs[4]));
-					 codeSF=strs[5];//代收业务代码
+					 codeSF=strs[5];//代收付业务代码
 				 }
 				 if(strs.length>6){
 					Element DetailEle=new Element("Detail");
@@ -245,17 +255,19 @@ public class ContBatRequest extends ServiceImpl {
 					Element Cst_AccNoEle=new Element("Cst_AccNo");//客户账号
 					Cst_AccNoEle.setText(strs[4]);
 					Element CcyCdEle=new Element("CcyCd");//币种代码
-					CcyCdEle.setText(strs[11].equals("")?"CNY":strs[11]);//如果为空默认为CNY人民币
+					CcyCdEle.setText("156");//建行只有一种币种156:人民币
 					Element CshEx_CdEle=new Element("CshEx_Cd");//钞汇代码
 					CshEx_CdEle.setText("1");
 					Element Btch_Dtl_SNEle=new Element("Btch_Dtl_SN");//批量明细序号
 					Btch_Dtl_SNEle.setText(Integer.valueOf(strs[0])+"");
 					Element Ins_Co_SRP_Bsn_CtCdEle=new Element("Ins_Co_SRP_Bsn_CtCd");//保险公司代收付业务种类代码
-					Ins_Co_SRP_Bsn_CtCdEle.setText(codeSF.equals("10600")?"01":codeSF.equals("10601")?"02":codeSF.equals("00600")?"12":codeSF.equals("00601")?"13":"--");
+					//银行代收付代码类型(01:首期缴费  02:续期缴费  03:其他代收 12:理赔 13:红利代发  15:其他代付)
+					Ins_Co_SRP_Bsn_CtCdEle.setText(codeSF.equals("10600")?"01":codeSF.equals("10601")?"02":codeSF.equals("00600")?"12":codeSF.equals("00601")?"13":codeSF.startsWith("1")?"03":"15");
 					Element InsPolcy_NoEle=new Element("InsPolcy_No");//保单号码
-					if(codeSF.equals("10600")){
+					if(codeSF.equals("10601")){//续期缴费
 					   //保险公司代收付业务种类代码为“续期缴费”、“追加保费”、“退保”、“部分支取”时，公司必须上送该收付业务的保单号码
-					   InsPolcy_NoEle.setText("待定");
+					   //核心的批量包暂时未提供保单号,核心确认不会生成“续期缴费”、“追加保费”、“退保”、“部分支取”数据
+					   InsPolcy_NoEle.setText("");
 					}
 					Element AmtEle=new Element("Amt");//金额
 					AmtEle.setText(NumberUtil.fenToYuan(strs[10]));
@@ -277,7 +289,7 @@ public class ContBatRequest extends ServiceImpl {
 		} catch (Exception e) {
 			e.printStackTrace();
 			cLogger.info("生成银行未加密文件失败！");
-			throw  new MidplatException(e.getMessage());
+			throw  new MidplatException("取盘交易失败!"+e.getMessage());
 		}finally{
 			if(bufferedReader!=null){
 				bufferedReader.close();
@@ -307,8 +319,7 @@ public class ContBatRequest extends ServiceImpl {
 				ZipEntry zipEntry=null;
 				byte[] bytes=new byte[1024];//1KB
 				while ((zipEntry=zipInputStream.getNextEntry())!=null) {
-					//cLogger.info(zipEntry.getName());
-					System.out.println(zipEntry.getName());
+					cLogger.info(zipFilePath+zipEntry.getName());
 					if(!zipEntry.isDirectory()){
 						fileOutputStream=new FileOutputStream(zipFilePath+zipEntry.getName());
 						int i=-1;
@@ -341,5 +352,10 @@ public class ContBatRequest extends ServiceImpl {
 //		InputStream mIs = new FileInputStream(mFilePath);
 //		Document pInXmlDoc = JdomUtil.build(mIs);
 //		JdomUtil.print(batch.service(pInXmlDoc));
+//		String[] strs=new String[1];
+//		strs[0]="CNY";
+//		System.out.println(strs[0].equals("")?"156":strs[0].equals("CNY")?"156":strs[0]);
+		String codeSF="10600";
+		System.out.println(codeSF.startsWith("1") ? "03" : codeSF.equals("00601") ? "13" : codeSF.equals("00600") ? "12" : codeSF.equals("10601") ? "02" : codeSF.equals("10600") ? "01" : "15");
 	}
 }

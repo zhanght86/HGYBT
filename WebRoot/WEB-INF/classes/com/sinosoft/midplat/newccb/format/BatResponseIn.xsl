@@ -19,20 +19,10 @@
 					<TellerNo><xsl:value-of select="//TX/TX_BODY/ENTITY/COM_ENTITY/CCB_EmpID" /></TellerNo>
 					<!-- 交易流水号 -->
 					<TranNo><xsl:value-of select="//TX/TX_BODY/ENTITY/COM_ENTITY/SvPt_Jrnl_No" /></TranNo>
-					<!-- 银行端ip[非必须] 
-					<ClientIp>127.0.0.1</ClientIp> -->
 					<!-- 交易渠道 -->
 					<TranCom>03</TranCom> 
-					<!-- 交易类型 -->
-			         <!-- <FuncFlag><xsl:value-of select="TX_HEADER/SYS_TX_CODE" /></FuncFlag>  -->	
-					<!-- 服务id 
-					<ServiceId>1</ServiceId> -->
-					
-					<!-- 生产上用下面方式，上面为了测试所以加上下面字段-->
-					
-					<!-- 交易类型 服务类中添加-->
-					<!-- 服务id 服务类中添加-->
-					<!-- 银行端ip[非必须] 服务类中添加-->
+					<LocalID><xsl:value-of select="//TX/TX_HEADER/LocalID" /></LocalID>
+                    <RemoteID><xsl:value-of select="//TX/TX_HEADER/remoteID" /></RemoteID>
 				    <xsl:copy-of select="//TX/Head/*"/>
 			  </Head>
 			<!-- 报文体 -->
@@ -44,7 +34,7 @@
 	<xsl:template match="APP_ENTITY">
 		<Body>
 			<xsl:variable name="FileName" select="//AgIns_BtchBag_Nm" />
-			<FileName><xsl:value-of select="//AgIns_BtchBag_Nm" /><xsl:text>_RESULT.xml</xsl:text></FileName>
+			<FileName><xsl:value-of select="//AgIns_BtchBag_Nm" /><xsl:text>_RESULT.XML</xsl:text></FileName>
 			<BatFlag><xsl:value-of select="//AgInsBtchBagPcsg_StCd" /></BatFlag>
 			<Num><xsl:value-of select="//Cur_Btch_Dtl_TDnum" /></Num><!--当前批明细总笔数-->
 			<SumAmt><xsl:value-of select="//Cur_Btch_Dtl_TAmt" /></SumAmt><!--当前批明细总金额-->

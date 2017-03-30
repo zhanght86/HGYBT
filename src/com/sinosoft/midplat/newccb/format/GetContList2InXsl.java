@@ -12,12 +12,6 @@ import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
-/**
- * @ClassName: GetContList2InXsl
- * @Description: 获取保单详情取数(寿险)非标准输入报文
- * @author yuantongxin
- * @date 2017-1-14 下午1:00:56
- */
 public class GetContList2InXsl extends XslCache {
 	private static GetContList2InXsl cThisIns = new GetContList2InXsl();
 	

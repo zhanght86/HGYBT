@@ -23,67 +23,37 @@ import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
 
-/**
- * @ClassName: NewContConfirm
- * @Description: 新单确认[新单确认]
- * @author yuantongxin
- * @date 2017-1-8 下午3:01:42
- */
 public class NewContConfirm extends ServiceImpl {
 
-	/**
-	 * <p>Title: NewContConfirm</p>
-	 * <p>Description: 新单确认</p>
-	 * @param pThisBusiConf 当前交易配置文件
-	 */
 	public NewContConfirm(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
 
-	/**
-	 * 标准输入报文业务处理
-	 * @param pInXmlDoc 标准输入报文
-	 * @return 标准输出报文
-	 */
+	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
-		//开始时间毫秒数
 		long mStartMillis = System.currentTimeMillis();
-		//Into NewContConfirm.service()...[进入service()]
 		cLogger.info("Into NewContConfirm.service()...");
-		//为成员标准输入报文赋值
 		cInXmlDoc = pInXmlDoc;
-		
-		//获取[成员]标准输入报文根节点
+
 		Element mRootEle = cInXmlDoc.getRootElement();
-		//报文体
 		Element mBodyEle = mRootEle.getChild(Body);
-		//投保单印刷号
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
-		//保单印刷号
 		String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
-		
+
 		try {
-			//插入交易日志记录返回交易日志数据库操作对象
 			cTranLogDB = insertTranLog(pInXmlDoc);
-			//Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理
+
 			cLogger.info("Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理");
 
 			// 校验系统中是否有相同保单正在处理，尚未返回
-			//锁定时间[默认:300s]
 			int tLockTime = 300; // 默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try {
-				//获取newccb.xml的business/锁定时间节点文本内容
 				tLockTime = Integer.parseInt(cThisBusiConf
 						.getChildText(locktime));
 			} catch (Exception ex) { // 使用默认值
-				//未配置锁定时间[无锁定时间节点]，或配置有误[节点值为空]，使用默认值[未赋值](s)：300
-				//默认为初始值[300]
 				cLogger.debug("未配置锁定时间，或配置有误，使用默认值(s)：" + tLockTime, ex);
 			}
-			
-			//日历对象获取单一实例
 			Calendar tCurCalendar = Calendar.getInstance();
-			//日历对象加上-锁定时间秒
 			tCurCalendar.add(Calendar.SECOND, -tLockTime);
 			// String tSqlStr = new
 			// StringBuilder("select count(1) from TranLog where RCode=-1")
@@ -96,46 +66,34 @@ public class NewContConfirm extends ServiceImpl {
 			// }
 
 			// 建行此处特殊处理，根据保费试算的交易流水号，到交易日志表中查询出投保单号（mProposalPrtNo)
-			//交易机构为建行
 			if ("13".equals(mRootEle.getChild(Head).getChildText(TranCom))) {// 建行的交易
-				//获取投保单印刷号结构化查询语句
-				//在交易日志表查询交易日期为8位日期、交易流水号为[标准输入报文]流水号、交易结果为成功的投保单印刷号
 				String getProposalPrtNoSQL = "select ProposalPrtNo from TranLog where TranDate = "
 						+ DateUtil.getCur8Date()
 						+ " and TranNo = '"
 						+ mBodyEle.getChildText(TranNo) + "' and RCode=0 ";
-				
-				//日志记录:获取投保单印刷号结构化查询语句
-				//select ProposalPrtNo from TranLog where TranDate = 20170108 and TranNo = 'null' and RCode=0 
+
 				cLogger.info(getProposalPrtNoSQL);
-				
+
 				// mProposalPrtNo = new
 				// ExeSQL().getOneValue(getProposalPrtNoSQL);
 				// Element tProposalPrtNo = mBodyEle.getChild(ProposalPrtNo);
 				// tProposalPrtNo.setText(mProposalPrtNo);
-				
-				//获取保单合同印刷号结构化查询语句
+
 				// 获取录单核保的保单印刷号
-				//在交易日志表查询交易日期为8位日期、交易流水号为[标准输入报文]交易流水号、交易结果为成功的保单合同印刷号
 				String getoldPrtNo = "select otherNo from TranLog where TranDate = "
 						+ DateUtil.getCur8Date()
 						+ " and TranNo = '"
 						+ mBodyEle.getChildText(TranNo) + "' and RCode=0 ";
-				//日志记录:获取保单合同印刷号结构化查询语句
-				//select otherNo from TranLog where TranDate = 20170108 and TranNo = 'null' and RCode=0 
 				cLogger.info(getoldPrtNo);
-				//获取旧投保单印刷号执行SQL获取一个字段值
 				String oldPrtNo = new ExeSQL().getOneValue(getoldPrtNo);
-				//设置其他关联号
+
 				cTranLogDB.setOtherNo(oldPrtNo);
 				// cTranLogDB.setProposalPrtNo(mProposalPrtNo);
-				
+
 				// 把核保的保单印刷号给核心传过去
-				//获取核保过的保单印刷号元素
 				Element tContPrtNo = mBodyEle.getChild(ContPrtNo);
-				//设置文本内容
 				tContPrtNo.setText(oldPrtNo);
-				
+
 			}
 
 			// //农行传保单印刷号给核心
@@ -163,8 +121,6 @@ public class NewContConfirm extends ServiceImpl {
 			// JdomUtil.print(cInXmlDoc);
 
 			// 当天、同一网点，成功录过单
-			//获取同一网点、同一天出的YBT保单结构化查询语句
-			//从保单表查询保单类型为银保保单[0]、保单状态为录单[1-录单；2-签单；3-撤单]、投保单印刷号为[投保单印刷号]、入库日期为[交易日志入库日期]、交易机构代码为[交易日志交易机构代码]、网点代码[交易日志网点代码]的记录
 			String tSqlStr = new StringBuilder("select * from Cont where Type=")
 					.append(AblifeCodeDef.ContType_Bank).append(" and State=")
 					.append(AblifeCodeDef.ContState_Input)
@@ -173,24 +129,18 @@ public class NewContConfirm extends ServiceImpl {
 					.append(cTranLogDB.getMakeDate()).append(" and TranCom=")
 					.append(cTranLogDB.getTranCom()).append(" and NodeNo='")
 					.append(cTranLogDB.getNodeNo()).append('\'').toString();
-			//日志记录:获取同一网点、同一天出的YBT保单结构化查询语句
 			cLogger.info(tSqlStr);
-			//执行查询获取保单记录集
 			ContSet mContSet = new ContDB().executeQuery(tSqlStr);
-			// if (1 != mContSet.size()) {
-			// throw new MidplatException("非当日同一网点所出保单，不能进行该操作！");
-			// }
-			//获取第二个保单数据库操作类对象
+			 if (1 != mContSet.size()) {
+			 throw new MidplatException("非当日同一网点所出保单，不能进行该操作！");
+			 }
 			ContSchema tContSchema = mContSet.get(1);
-			
+
 			// //和核心联调的时候放开 begin
-			//			银保收费签单					核心收费签单请求报文
-			//调用WebService[银保收费签单]标准输入报文原子服务
-			//调用WebService的银保收费签单原子服务处理标准输入报文返回标准输出报文
 			cOutXmlDoc = new CallWebsvcAtomSvc(
 					AblifeCodeDef.SID_Bank_ContConfirm).call(cInXmlDoc);
 			// 和核心联调的时候放开 end
-			
+
 			// 和核心联调的时候注视掉begin
 			// String mInStr = "G:/test/11019_55_1_outSvc.xml";
 			// InputStream mIs = null;
@@ -202,21 +152,15 @@ public class NewContConfirm extends ServiceImpl {
 			// byte[] mInClearBodyBytes = IOTrans.toBytes(mIs);
 			// cOutXmlDoc = JdomUtil.build(mInClearBodyBytes, "GBK");
 			// 和核心联调的时候注视掉end
-			
-			//标准输出报文根节点
+
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
-			//报文头
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
-			//报文体
 			Element tOutBodyEle = tOutRootEle.getChild(Body);
-			//交易结果为失败[1]
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle
 					.getChildText(Flag))) {
-				//抛出中间平台异常
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
 			// modified by chengqi 20121129
-			//标准输出报文保单印刷号
 			String mContNo = tOutBodyEle.getChildText(ContNo);
 			cTranLogDB.setContNo(mContNo);
 			// end
@@ -298,8 +242,8 @@ public class NewContConfirm extends ServiceImpl {
 					.append(DateUtil.get8Date(tCurDate))
 					.append(", ModifyTime=")
 					.append(DateUtil.get6Time(tCurDate))
-					.append(" where RecordNo=")
-					.append(tContSchema.getRecordNo()).toString();
+					.append(" where ContNo=")
+					.append(tContSchema.getContNo()).toString();
 			ExeSQL tExeSQL = new ExeSQL();
 			if (!tExeSQL.execUpdateSQL(tSqlStr)) {
 				cLogger.error("更新保单状态(Cont)失败！"

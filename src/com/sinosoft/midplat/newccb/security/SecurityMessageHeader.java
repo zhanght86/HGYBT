@@ -1,11 +1,5 @@
 package com.sinosoft.midplat.newccb.security;
 
-/**
- * @ClassName: SecurityMessageHeader
- * @Description: 安全报文头
- * @author yuantongxin
- * @date 2017-1-16 上午11:38:29
- */
 public class SecurityMessageHeader {
 	private boolean isEnc;
 	private boolean isContext;

@@ -41,7 +41,7 @@ public class ContCancel extends ServiceImpl {
 		/**
 		 * 新建行根据保单号查找投保单号
 		 */
-		if("13".equals(mHeadEle.getChildText(TranCom))){
+		if("03".equals(mHeadEle.getChildText(TranCom))){
 		String contno = mBodyEle.getChildText("ContNo");
 		String getProposalPrtNoSQL ="select ProposalPrtNo from tranlog where contno = '"+contno+"' and"+" funcflag='"+"1014'";
 		mProposalPrtNo = new ExeSQL().getOneValue(getProposalPrtNoSQL);
@@ -53,11 +53,11 @@ public class ContCancel extends ServiceImpl {
 		try { 
 			cTranLogDB = insertTranLog(pInXmlDoc);
 			
-			cLogger.info("Into ContCancel.service()...-->authorityCheck.submitData(mHeadEle)交易权限");	
-			AuthorityCheck authorityCheck = new AuthorityCheck();
-			if(!authorityCheck.submitData(mHeadEle)){ 
-				throw new MidplatException("该网点无权限！");
-			} 
+//			cLogger.info("Into ContCancel.service()...-->authorityCheck.submitData(mHeadEle)交易权限");	
+//			AuthorityCheck authorityCheck = new AuthorityCheck();
+//			if(!authorityCheck.submitData(mHeadEle)){ 
+//				throw new MidplatException("该网点无权限！");
+//			} 
 			
 			
 			//校验系统中是否有相同保单正在处理，尚未返回
@@ -93,7 +93,7 @@ public class ContCancel extends ServiceImpl {
 				.toString();
 			cLogger.info(tSqlStr);
 			ContSet mContSet = new ContDB().executeQuery(tSqlStr);
-			if (1 != mContSet.size()) {
+			if (1!= mContSet.size()) {
 				throw new MidplatException("非当日同一网点所出保单，不能进行该操作！");
 			}
 			ContSchema tContSchema = mContSet.get(1);

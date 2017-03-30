@@ -27,24 +27,17 @@ public class CcbNetImpl extends SocketNetImpl
   private String cFuncFlag = null;
   private Document mInNoStd = null;
 
-  //发送报文开始时间
   private String startTime = null;
 
   public CcbNetImpl(Socket pSocket, Element pThisConfRoot) throws MidplatException {
     super(pSocket, pThisConfRoot);
   }
 
-  /**
-   * 发送非标准输入报文
-   * @return 
-   */
   public Document receive() throws Exception {
     this.cLogger.info("Into CcbNetImpl.receive()...");
-    //获取发送报文开始时间
     this.startTime = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 
     byte[] mHeadBytes = new byte[6];
-    //从输入字节流中读取数据，填满传入的字节数组，不关闭流
     IOTrans.readFull(mHeadBytes, this.cSocket.getInputStream());
     int mBodyLength = Integer.parseInt(new String(mHeadBytes, 0, 6).trim());
     this.cLogger.debug("请求报文长度：" + mBodyLength);

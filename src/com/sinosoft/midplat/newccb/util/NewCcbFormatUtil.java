@@ -61,54 +61,46 @@ public class NewCcbFormatUtil {
 		mTelPhoneNo.setText("4009-800-800");
 		oldComEntity.addContent(mTelPhoneNo);
 		
-		//非标准输出报文加入公共域
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").addContent(oldComEntity);
-		//返回公共域加入了[服务名、保险公司账务日期、保险公司流水号、保险公司客服电话]4个节点的非标准输出报文、
+		
 		return mNoStdXml;
 	}
 	
 	
 	/**
-	 * 设置非标准报文头
+	 * 
 	 * @param mNoStdXml  返回给银行的非标准报文
 	 * @param oldTxHeader	银行发过来的非标准报文的头节点
-	 * @param startTime		服务接受时间[开始时间毫秒数]
-	 * @param endTime	服务响应时间[结束时间毫秒数]
-	 * @return 设置非标准报文头后的非标准输出报文
+	 * @param startTime		服务接受时间
+	 * @param endTime	服务响应时间
+	 * @return
 	 */
 	public static Document setNoStdTxHeader(Document mNoStdXml,Element oldTxHeader,String startTime,String endTime){
-		//设置非标准输出报文字段
-		//全局事件跟踪号[in_noStd.xml:<SYS_EVT_TRACE_ID>1020018031483262927006140</SYS_EVT_TRACE_ID>]
-		String mSYS_EVT_TRACE_ID = oldTxHeader.getChildText("SYS_EVT_TRACE_ID");
 		//全局事件跟踪号
+		String mSYS_EVT_TRACE_ID = oldTxHeader.getChildText("SYS_EVT_TRACE_ID");
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_EVT_TRACE_ID").setText(mSYS_EVT_TRACE_ID);
 		
-		//发起方安全节点编号[in_noStd.xml:<SYS_REQ_SEC_ID>102001</SYS_REQ_SEC_ID>]
-		String mSYS_REQ_SEC_ID = oldTxHeader.getChildText("SYS_REQ_SEC_ID"); 
 		//发起方安全节点编号
+		String mSYS_REQ_SEC_ID = oldTxHeader.getChildText("SYS_REQ_SEC_ID"); 
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_REQ_SEC_ID").setText(mSYS_REQ_SEC_ID);
-		
-		//子交易序号[in_noStd.xml:<SYS_SND_SERIAL_NO>1000000000</SYS_SND_SERIAL_NO>]
-		String mSYS_SND_SERIAL_NO = oldTxHeader.getChildText("SYS_SND_SERIAL_NO");
+		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_REQ_SEC_ID").setText("105005");
 		//子交易序号
+		String mSYS_SND_SERIAL_NO = oldTxHeader.getChildText("SYS_SND_SERIAL_NO");
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_SND_SERIAL_NO").setText(mSYS_SND_SERIAL_NO);
 		
-		//服务接受时间[开始时间毫秒数]
+		//服务接受时间
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RECV_TIME").setText(startTime);
 		
-		//服务响应时间[结束时间毫秒数]
+		//服务响应时间
 		mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_TIME").setText(endTime);
 		
-		 //应用报文长度节点[in_noStd.xml:<SYS_MSG_LEN />][获取节点，无内容]
+		 //应用报文长度
         Element mSYS_MSG_LEN = mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_MSG_LEN");
-        
-        //非标准输出报文头元素转换为UTF-8编码的字节数组[保持原格式]的长度[字节数]
-        int length = JdomUtil.toBytes(mNoStdXml.getRootElement().getChild("TX_HEADER"),"utf-8").length;//726
-        //
-        length += String.valueOf(length).length()-1;//726+(3-1)=728
+        int length = JdomUtil.toBytes(mNoStdXml.getRootElement().getChild("TX_HEADER"),"utf-8").length;
+        length += String.valueOf(length).length()-1;
         mSYS_MSG_LEN.setText(Integer.toString(length));
 		
-        //返回设置了[发起方安全节点编号、全局事件跟踪号、子交易序号、应用报文长度、服务接受时间、服务响应时间]6个节点的非标准输出报文
+		
 		return mNoStdXml;
 	}
 	

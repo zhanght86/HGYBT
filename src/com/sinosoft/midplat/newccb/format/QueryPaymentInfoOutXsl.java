@@ -12,12 +12,6 @@ import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
-/**
- * @ClassName: QueryPaymentInfoOutXsl
- * @Description: 
- * @author yuantongxin
- * @date 2017-1-4 ионГ10:58:25
- */
 public class QueryPaymentInfoOutXsl extends XslCache {
 
 	private static QueryPaymentInfoOutXsl cThisIns = new QueryPaymentInfoOutXsl();

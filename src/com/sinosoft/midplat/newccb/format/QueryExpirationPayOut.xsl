@@ -87,7 +87,7 @@
 							<!-- 险种名称  必填-->
 							<Cvr_Nm><xsl:value-of select="/TranData/Body/RiskName"/></Cvr_Nm>
 							<!-- 保单号码 必填-->
-							<InsPolcy_No><xsl:value-of select="/TranData/Body/ContNo"/></InsPolcy_No>
+							<InsPolcy_No><xsl:value-of select="substring(/TranData/Body/ContNo,1,13)"/></InsPolcy_No>
 							<!-- 回收标志  必填-->
 							<Rcyc_Ind>0</Rcyc_Ind>
 							<!-- 保费金额 -->
@@ -102,7 +102,6 @@
 							<Btch_BillNo><xsl:value-of select="/TranData/Body/Btch_BillNo"/></Btch_BillNo>
 							<!-- 险种编号  -->
 					        <Cvr_ID><xsl:value-of select="/TranData/Body/RiskCode" /></Cvr_ID>
-							
 			        	</APP_ENTITY>
 			        </ENTITY>
 	      	</TX_BODY>

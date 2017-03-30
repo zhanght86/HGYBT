@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import org.apache.commons.net.ftp.FTPFile;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -21,7 +22,11 @@ import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newccb.NewCcbConf;
+import com.sinosoft.midplat.newccb.util.FTPFILEMAPDao;
+import com.sinosoft.midplat.newccb.util.RegisterFtp;
 import com.sinosoft.midplat.service.ServiceImpl;
+import com.sinosoft.utility.ExeSQL;
+import com.sinosoft.utility.SSRS;
 
 public class ContBatQuery extends ServiceImpl {
 
@@ -34,52 +39,58 @@ public class ContBatQuery extends ServiceImpl {
 	}
 
 	public Document service(Document pInXmlDoc) throws Exception {
-
 		cLogger.info("Into ContBatQuery()...");
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info(JdomUtil.toStringFmt(pInXmlDoc));
-//		JdomUtil.print(pInXmlDoc);
-//		Element tHeadEle = pInXmlDoc.getRootElement().getChild(Head);
-//		String tTranDate = tHeadEle.getChildText(TranDate);
-//		String tNodeNo = tHeadEle.getChildText(NodeNo);
-//		String tBatchFTPPaht4LIS = NewCcbConf.newInstance().getConf().getRootElement().getChildText("BatchFTPPaht4LIS");
-//		String tLocalFilePathSnd = NewCcbConf.newInstance().getConf().getRootElement().getChildText("LocalFilePathSnd");
-		String coreUploadFilePath=NewCcbConf.newInstance().getConf().getRootElement().getChildText("coreUploadFilePath");
-		cLogger.info("核心FTP上传文件路径:"+coreUploadFilePath);
+		Element tHeadEle = pInXmlDoc.getRootElement().getChild(Head);
+		String tTranCom=tHeadEle.getChildText("TranCom");
+		Element FTPEle = NewCcbConf.newInstance().getConf().getRootElement().getChild("FTP");
+		String ip=FTPEle.getAttributeValue("ip");
+		String user=FTPEle.getAttributeValue("user");
+		String password=FTPEle.getAttributeValue("password");
+		String remoteStr=FTPEle.getAttributeValue("remoteStr");
 		try {
 			// 1:记录日志
 			cTranLogDB = insertTranLog(pInXmlDoc);
-			File file=new File(coreUploadFilePath);
-			if(!file.exists()){
-				throw new MidplatException("核心FTP上传文件路径不存在:"+coreUploadFilePath);
+			String checkRemoteFilePath=remoteStr+new SimpleDateFormat("/yyyy-MM-dd").format(new Date());
+			RegisterFtp ftp=new RegisterFtp(ip, user, password);
+			boolean loginFlag=ftp.loginFTP();
+			FTPFile[] fileList=null;
+			if(!loginFlag){
+				cLogger.info("FTP登录失败!");
+			}else{
+				//检查核心是否已上传批量文件
+				fileList=ftp.checkRemoteFile(checkRemoteFilePath);
 			}
-			SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMdd");
-			final String currentDateStr=simpleDateFormat.format(new Date());
-			cLogger.info("代收代付包文件名匹配的正则表达式为:"+"^\\w{10,15}_[SF]02"+currentDateStr+"_\\d{5}.zip$");
-			cLogger.info("文件总数为:"+file.listFiles().length);
-			File[] fileList=file.listFiles(new FileFilter() {
-				Pattern pattern=Pattern.compile("^\\w{10,15}_[SF]02"+currentDateStr+"_\\d{5}.zip$");
-				@Override
-				public boolean accept(File filePath) {
-					String fileName=filePath.getName();
-					Matcher matcher=pattern.matcher(fileName);
-					return matcher.matches();
-				}
-			});
-			cLogger.info("代收代付包的总数为:"+fileList.length);
+			String dateFmt=new SimpleDateFormat("yyyyMMdd").format(new Date());
 			//代扣包个数
 			int withholdFileSum=0;
 			//代付包个数
 			int paymentFileSum=0;
-			for (File file1 : fileList) {
-				String fileName=file1.getName();
-				if(fileName.contains("S")){
-					//代扣包
-					withholdFileSum++;
-				}else if(fileName.contains("F")){
-					//代付包
-					paymentFileSum++;
+			if(fileList!=null&&fileList.length>0){
+				cLogger.info("批量代收付包的总数为:"+fileList.length);
+				ExeSQL exeSql=new ExeSQL();
+				for (int i = 0; i < fileList.length; i++) {
+					String fileName=fileList[i].getName();
+					//查询之前有取盘成功的处理记录，如果有则跳过，没有则记录
+					String sql="select count(1) from FTPFILEMAP where localname='"+fileName+"' and disposeflag='0' and bankflag='"+tTranCom+"'";
+					cLogger.info(sql);
+					String val=exeSql.getOneValue(sql);
+					if(Integer.parseInt(val)==1){
+						continue;
+					}
+					if(fileName.contains("S")){
+						//代收包
+						++withholdFileSum;
+					}else if(fileName.contains("F")){
+						//代付包
+						++paymentFileSum;
+					}
 				}
+			}
+			if(loginFlag==true){
+				//关闭FTP连接
+				ftp.closeConnect();
 			}
 			cLogger.info("代扣包的个数为:"+withholdFileSum);
 			cLogger.info("代付包的个数为:"+paymentFileSum);
@@ -103,7 +114,7 @@ public class ContBatQuery extends ServiceImpl {
 			cTranLogDB.setRCode(0);
 			cTranLogDB.setBak2(""+withholdFileSum);
 			cTranLogDB.setBak3(""+paymentFileSum);
-			cTranLogDB.setRText("建行查询成功。代收文件数："+withholdFileSum + " 代付文件数："+paymentFileSum);
+			cTranLogDB.setRText("建行批量查询成功。代收文件数："+withholdFileSum + " 代付文件数："+paymentFileSum);
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name) + "交易失败！", ex);
 			if (null != cTranLogDB) { // 插入日志失败时cTranLogDB=null
@@ -130,5 +141,8 @@ public class ContBatQuery extends ServiceImpl {
 //		System.exit(0);
 		File file=new File("C:/Users/anico/Desktop/test/test.zip");
 		System.out.println(file.getPath().substring(0,file.getPath().lastIndexOf(".")));
+		String[][] st=new String[1][1];
+		st[0][0]="sss";
+		System.out.println(st[0][0]);
 	}
 }

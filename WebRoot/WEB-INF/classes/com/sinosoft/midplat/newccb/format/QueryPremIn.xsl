@@ -26,7 +26,7 @@
 		<xsl:template match="TX_BODY/ENTITY/APP_ENTITY">	
 			<Body>
 				<!-- 投保单(印刷)号 -->
-                <ProposalPrtNo><xsl:value-of select="Ins_BillNo" /></ProposalPrtNo>
+                <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Ins_BillNo)" /></ProposalPrtNo>
 				<!-- 保险单号 -->
 				<ContNo><xsl:value-of select="InsPolcy_No" /></ContNo> 
 				<!--保单密码-->

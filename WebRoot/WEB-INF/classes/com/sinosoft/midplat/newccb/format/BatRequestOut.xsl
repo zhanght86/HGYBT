@@ -15,7 +15,7 @@
 			     <!-- 报文总长度 -->
 				<SYS_TTL_LEN></SYS_TTL_LEN>
 			     <!-- 发送方安全节点编号 -->
-				<SYS_SND_SEC_ID>510050</SYS_SND_SEC_ID>
+				<SYS_SND_SEC_ID>510096</SYS_SND_SEC_ID>
 			     <!-- 发起发安全节点编号  转换类中添加-->
 				<SYS_REQ_SEC_ID></SYS_REQ_SEC_ID>
 			     <!--服务种类-->

@@ -260,11 +260,12 @@
 								<Ret_Inf><xsl:text>         </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' ', 76,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtilZR.date8to11($MainRisk/SignDate)"/></Ret_Inf>
 								<Ret_Inf /> 
 							    </Detail>
-								 </Detail_List>
-								 <Detail_List>
-								  <xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(TranData/Body/Amnt)"/>
-								  <xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('false')" />
-								  <xsl:variable name="MainRisk" select="TranData/Body/Risk[RiskCode=MainRiskCode]"/>
+							</Detail_List>
+							<xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '011A0100'">
+							<Detail_List>
+								<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(TranData/Body/Amnt)"/>
+								<xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('false')" />
+								<xsl:variable name="MainRisk" select="TranData/Body/Risk[RiskCode=MainRiskCode]"/>
 								<!-- 提示信息描述 -->
 								<Prmpt_Inf_Dsc>保单第二页</Prmpt_Inf_Dsc>
 								<!-- 代理保险凭证代码 ?-->
@@ -309,6 +310,7 @@
 								 <Ret_Inf/>
 								</Detail>	 
 							</Detail_List>
+							</xsl:if>
 							<Detail_List>
 							    <xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />
 								<!-- 提示信息描述 -->

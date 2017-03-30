@@ -46,7 +46,7 @@
 	<xsl:template match="TX_BODY/ENTITY/APP_ENTITY">
 		<Body>
 			<!-- 保险单号 -->
-			<ContNo><xsl:value-of select="InsPolcy_No" /></ContNo>
+			<ContNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(InsPolcy_No)" /></ContNo>
 			<!--待冲正的交易流水号-->
 			<TranNo><xsl:value-of select="Ins_Co_Jrnl_No" /></TranNo>
 			<!-- 交易金额 -->

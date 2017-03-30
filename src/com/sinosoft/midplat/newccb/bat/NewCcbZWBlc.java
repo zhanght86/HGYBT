@@ -6,8 +6,10 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
@@ -113,7 +115,6 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 			try
 			{
 				sTranDate = String.valueOf(DateUtil.get8Date(this.cTranDate));
-				
 				// 新单
 				String mSqlStr01 = "select * from ContBlcDtl where trancom='03' and trandate="+sTranDate+"  and type='01'";
 				SSRS ssrs01 = new ExeSQL().execSQL(mSqlStr01);
@@ -171,12 +172,10 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 
 				ElementLis sumCount11 = new ElementLis("Count", String.valueOf(ssrs11.getMaxRow()), tBodyEle11);// 总比数
 				ElementLis sumPrem11 = new ElementLis("Prem", String.valueOf(tSumPrem11), tBodyEle11);// 总保费
-
 			}
 			catch (Exception ex)
 			{
 				this.cLogger.error("生成标准对账报文出错!", ex);
-
 				Element ttError = new Element("Error");
 				String ttErrorStr = ex.getMessage();
 				if ("".equals(ttErrorStr))
@@ -185,7 +184,7 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 				}
 				ttError.setText(ttErrorStr);
 				tTranData01.addContent(ttError);
-				tTranData11.addContent(ttError);
+				tTranData11.addContent((Element)ttError.clone());
 			}
 
 			String rMesg01 = "";
@@ -200,16 +199,14 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 
 					cOutStdXml01 = new CallWebsvcAtomSvc("6").call(tInStdXml01);
 					rMesg01 = cOutStdXml01.getRootElement().getChild("Head").getChildText("Desc");
-
-					JdomUtil.print(cOutStdXml01);
-
+                    JdomUtil.print(cOutStdXml01);
 					if (cTranLogDB01 != null)
 					{ // 插入日志失败时cTranLogDB=null
 						Element tHeadEle = cOutStdXml01.getRootElement().getChild(Head);
 						cTranLogDB01.setRCode(tHeadEle.getChildText(Flag));
-						cTranLogDB01.setRText(tHeadEle.getChildText(Desc));
-						cTranLogDB01.setRCode("0");
-						cTranLogDB01.setRText("新单对账成功！");
+						cTranLogDB01.setRText("新单对账"+tHeadEle.getChildText(Desc));
+//						cTranLogDB01.setRCode("0");
+//						cTranLogDB01.setRText("新单对账成功！");
 						long tCurMillis = System.currentTimeMillis();
 						cTranLogDB01.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 						cTranLogDB01.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -227,7 +224,7 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 					cOutStdXml01 = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, e.getMessage());
 					// 插入日志失败时cTranLogDB=null
 					cTranLogDB01.setRCode("1");
-					cTranLogDB01.setRText(e.getMessage());
+					cTranLogDB01.setRText("新单对账"+e.getMessage());
 					long tCurMillis01 = System.currentTimeMillis();
 					cTranLogDB01.setUsedTime((int) (tCurMillis01 - mStartMillis) / 1000);
 					cTranLogDB01.setModifyDate(DateUtil.get8Date(tCurMillis01));
@@ -252,9 +249,9 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 					{ // 插入日志失败时cTranLogDB=null
 						Element tHeadEle = cOutStdXml11.getRootElement().getChild(Head);
 						cTranLogDB11.setRCode(tHeadEle.getChildText(Flag));
-						cTranLogDB11.setRText(tHeadEle.getChildText(Desc));
-						cTranLogDB11.setRCode("0");
-						cTranLogDB11.setRText("续期对账成功！");
+						cTranLogDB11.setRText("续期对账"+tHeadEle.getChildText(Desc));
+//						cTranLogDB11.setRCode("0");
+//						cTranLogDB11.setRText("续期对账成功！");
 						long tCurMillis = System.currentTimeMillis();
 						cTranLogDB11.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 						cTranLogDB11.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -272,7 +269,7 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 					cOutStdXml11 = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, e.getMessage());
 					// 插入日志失败时cTranLogDB=null
 					cTranLogDB11.setRCode("1");
-					cTranLogDB11.setRText(e.getMessage());
+					cTranLogDB11.setRText("续期对账"+e.getMessage());
 					long tCurMillis11 = System.currentTimeMillis();
 					cTranLogDB11.setUsedTime((int) (tCurMillis11 - mStartMillis) / 1000);
 					cTranLogDB11.setModifyDate(DateUtil.get8Date(tCurMillis11));
@@ -390,7 +387,7 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
 		mTranLogDB.setZoneNo(mHeadEle.getChildText("ZoneNo"));
 		mTranLogDB.setNodeNo(mHeadEle.getChildText(NodeNo));
-		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo));
+		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo)+(new Random().nextInt(9999-1000)+1000));
 		mTranLogDB.setOperator(mHeadEle.getChildText(TellerNo));
 		mTranLogDB.setFuncFlag(mHeadEle.getChildText(FuncFlag));
 		mTranLogDB.setTranDate(mHeadEle.getChildText(TranDate));
@@ -415,16 +412,19 @@ public class NewCcbZWBlc extends TimerTask implements XmlTag
 
 	public static void main(String[] args) throws Exception
 	{
-		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.jhyh.bat.NewCcbZWBlc.main");
-		mLogger.info("程序开始...");
-
-		NewCcbZWBlc mBatch = new NewCcbZWBlc();
-		mBatch.run();
-		// File file = new File("D://cest//down//DAYCHECKNBYH100020140812.xml");
-		// InputStream in = new FileInputStream(file);
-		// Element mBodyEle = mBatch.parse(in);
-		// JdomUtil.print(mBodyEle);
-		mLogger.info("成功结束！");
+//		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.jhyh.bat.NewCcbZWBlc.main");
+//		mLogger.info("程序开始...");
+//
+//		NewCcbZWBlc mBatch = new NewCcbZWBlc();
+//		mBatch.run();
+//		// File file = new File("D://cest//down//DAYCHECKNBYH100020140812.xml");
+//		// InputStream in = new FileInputStream(file);
+//		// Element mBodyEle = mBatch.parse(in);
+//		// JdomUtil.print(mBodyEle);
+//		mLogger.info("成功结束！");
+		for (int i = 0; i <100; i++) {
+			System.out.println(new Random().nextInt(9999-1000)+1000);
+		}
 	}
 
 }

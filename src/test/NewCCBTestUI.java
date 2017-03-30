@@ -35,9 +35,9 @@ public class NewCCBTestUI {
 		//程序开始...
 		System.out.println("程序开始...");
 		//定义局部网络之间互连的协议并赋值
-		String mIP = "10.2.0.31";
-//		String mIP = "127.0.0.1";//[127.0.0.1]
-//		String mIP = "10.0.4.14";
+//		String mIP = "10.2.0.31";
+		String mIP = "127.0.0.1";//[127.0.0.1]
+//		String mIP = "10.1.3.65";
 		//定义局部端口并赋值
 		int mPort = 39871;//[39871]
 		
@@ -47,22 +47,22 @@ public class NewCCBTestUI {
 //		String mInFilePath = "D:/File/task/20170330/newccb/core_test/9704_15_111_in.xml";
 //		String mOutFilePath = "D:/File/task/20170330/newccb/core_test/9704_15_111_out.xml";
 		//新单试算
-//		String funcflag = "P53819113";//交易码[P53819113]
+		String funcflag = "P53819113";//交易码[P53819113]
 		//[D:/File/task/20170330/newccb/core_local/10452_551_1012_in.xml]
-//		String mInFilePath = "D:/File/task/20170330/newccb/core_test/32670_159_1012_in.xml";//输入文件路径
-//		mInFilePath = "D:/File/task/20170330/newccb/core_test/50022_2673_1012_in.xml";//输入文件路径
+		String mInFilePath = "D:/File/task/20170330/newccb/core_test/32670_159_1012_in.xml";//输入文件路径
+		mInFilePath = "D:/File/task/20170330/newccb/core_test/50022_2673_1012_in.xml";//输入文件路径
 		//[D:/File/task/20170330/newccb/local/1012/P53819113in_noStd.xml]
 //		mInFilePath="D:/File/task/20170330/newccb/ybt_local/P53819113in_noStd.xml";
 //		[D:/File/task/20170330/newccb/core_local/10452_551_1012_out.xml]
-//		String mOutFilePath = "D:/File/task/20170330/newccb/core_test/32670_159_1012_out.xml";//输出文件路径
-//		mOutFilePath = "D:/File/task/20170330/newccb/core_test/50022_2673_1012_out.xml";//输出文件路径
+		String mOutFilePath = "D:/File/task/20170330/newccb/core_test/32670_159_1012_out.xml";//输出文件路径
+		mOutFilePath = "D:/File/task/20170330/newccb/core_test/50022_2673_1012_out.xml";//输出文件路径
 		//D:/File/task/20170330/newccb/local/1012/P53819113out_noStd.xml
 //		mOutFilePath="D:/File/task/20170330/newccb/ybt_local/P53819113out_noStd.xml";
 //		
 		//新单确认
-		String funcflag = "P53819152";
-		String mInFilePath = "D:/File/task/20170330/newccb/core_test/32676_171_1014_in.xml";
-		String mOutFilePath = "D:/File/task/20170330/newccb/core_test/32676_171_1014_out.xml";
+//		String funcflag = "P53819152";
+//		String mInFilePath = "D:/File/task/20170330/newccb/core_test/32676_171_1014_in.xml";
+//		String mOutFilePath = "D:/File/task/20170330/newccb/core_test/32676_171_1014_out.xml";
 		//打印保单
 //		String funcflag = "P53819182";
 //		String mInFilePath = "D:/File/task/20170330/newccb/core_test/18294_1707_1032_in.xml";

@@ -41,7 +41,7 @@
 				<!--保险公司代码-->
 				<CarrierCode></CarrierCode > 
 				<!-- 保险单号 -->
-				<ContNo><xsl:value-of select="InsPolcy_No" /></ContNo> 
+				<ContNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(InsPolcy_No)" /></ContNo> 
 				<!-- 险种编号 -->
 				<RiskCode><xsl:value-of select="Cvr_ID" /></RiskCode>
 				<!--保单密码-->

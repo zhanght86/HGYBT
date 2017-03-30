@@ -16,7 +16,7 @@
 			     <!-- 报文总长度 -->
 				<SYS_TTL_LEN></SYS_TTL_LEN>
 			     <!-- 发送方安全节点编号 -->
-				<SYS_SND_SEC_ID>510050</SYS_SND_SEC_ID>
+				<SYS_SND_SEC_ID>510096</SYS_SND_SEC_ID>
 			     <!-- 发起发安全节点编号  转换类中添加-->
 				<SYS_REQ_SEC_ID></SYS_REQ_SEC_ID>
 			     <!--服务种类-->
@@ -94,9 +94,9 @@
 			        			<xsl:for-each select="/TranData/Body/Detail">
 			        			<Insu_Detail>
 					        		<!-- 保险公司编号  -->
-									<Ins_Co_ID>010072</Ins_Co_ID>
+									<Ins_Co_ID>010079</Ins_Co_ID>
 									<!-- 保险公司名称  -->
-									<Ins_Co_Nm>中韩人寿保险有限公司</Ins_Co_Nm>
+									<Ins_Co_Nm>华贵人寿保险有限公司</Ins_Co_Nm>
 								    <!-- 建行代理标志  -->
 								    <CCB_Agnc_Ind>1</CCB_Agnc_Ind>
 								    <!-- 代理保险套餐编号 -->

@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
@@ -103,9 +104,9 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 				// sTranDate = String.valueOf(DateUtil.get8Date(new
 				// Date().getTime() - 86400000L));//设置对账日期为前一天
 				// 退保(目前的保全，只有退保，没有满期业务，后续有满期业务时为09)
+				ElementLis TranType10 = new ElementLis("TranType", "10", tBodyEle10);
 				String mSqlStr10 = "select * from ContBlcDtl where trancom='03' " + " and trandate='" + sTranDate + "'" + " and type='10'";
 				SSRS ssrs10 = new ExeSQL().execSQL(mSqlStr10);
-				ElementLis TranType10 = new ElementLis("TranType", "10", tBodyEle10);
 				for (int i = 0; i < ssrs10.getMaxRow(); i++)
 				{
 					ElementLis Detail = new ElementLis("Detail", tBodyEle10);
@@ -123,7 +124,6 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 			catch (Exception ex)
 			{
 				this.cLogger.error("生成标准对账报文出错!", ex);
-
 				Element ttError = new Element("Error");
 				String ttErrorStr = ex.getMessage();
 				if ("".equals(ttErrorStr))
@@ -137,7 +137,8 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 			try
 			{
 				if ("10".equals(tInStdXml10.getRootElement().getChild("Body").getChildText("TranType")))
-				{// 退保对账
+				{
+					// 退保对账
 					try
 					{
 						cTranLogDB = insertTranLog(tInStdXml10);
@@ -166,7 +167,7 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 						cOutStdXml10 = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, e.getMessage());
 						// 插入日志失败时cTranLogDB=null
 						cTranLogDB.setRCode("1");
-						cTranLogDB.setRText(e.getMessage());
+						cTranLogDB.setRText("退保对账"+e.getMessage());
 						long tCurMillis = System.currentTimeMillis();
 						cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 						cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -181,7 +182,7 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 					{ // 插入日志失败时cTranLogDB=null
 						Element tHeadEle = cOutStdXml10.getRootElement().getChild(Head);
 						cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
-						cTranLogDB.setRText(tHeadEle.getChildText(Desc));
+						cTranLogDB.setRText("退保对账"+tHeadEle.getChildText(Desc));
 						long tCurMillis = System.currentTimeMillis();
 						cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 						cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -294,7 +295,7 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
 		mTranLogDB.setZoneNo(mHeadEle.getChildText("ZoneNo"));
 		mTranLogDB.setNodeNo(mHeadEle.getChildText(NodeNo));
-		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo));
+		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo)+(new Random().nextInt(9999-1000)+1000));
 		mTranLogDB.setOperator(mHeadEle.getChildText(TellerNo));
 		mTranLogDB.setFuncFlag(mHeadEle.getChildText(FuncFlag));
 		mTranLogDB.setTranDate(mHeadEle.getChildText(TranDate));
@@ -321,7 +322,6 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 	{
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newccb.bat.NewCcbBQBlc.main");
 		mLogger.info("程序开始...");
-
 		NewCcbBQBlc mBatch = new NewCcbBQBlc();
 		mBatch.run();
 		// File file = new File("D://cest//down//DAYCHECKNBYH100020140812.xml");

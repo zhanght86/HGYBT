@@ -55,7 +55,7 @@ public class ActInsuSaleRemindAccess extends ServiceImpl {
 			
 			String mBagName = cInXmlDoc.getRootElement().getChild("Body").getChildText("BagName");
 			
-			checkDate = mBagName.substring(10, 18);
+			checkDate = mBagName.substring(10, 18);//anico:截取报名中日期
 			
 			
 			//本地加密前路徑 

@@ -44,31 +44,19 @@ import com.sinosoft.midplat.service.Service;
 import com.sinosoft.utility.ElementLis;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
-/**
- * @ClassName: FileUtil
- * @Description: 文件工具类
- * @author yuantongxin
- * @date 2017-1-8 下午6:35:40
- */
 public class FileUtil
 {
 	protected final Logger cLogger = Logger.getLogger(getClass());
-	/**类型代码*/
 	private String typeCode = null;
-	/**发送方安全节点编号*/
 	private String secNodeId = null;
-	/**目标安全节点号*/
 	private String rmtSecNodeId = null;
 	/**文件名*/
 	private String fileName = null;
 	/**文件路径*/
 	private String filePath = null;
-	/**交易配置文件根节点*/
 	private Element cBusiConfRoot = null;
-	/**当前配置文件根节点*/
 	protected Element cThisBusiConf = null;
 	/**解密后的非标准报文*/
-	//
 	private Document returnNoStd = null;
 	/**转换后的标准报文*/
 	private Document cInXmlDoc = null;
@@ -76,12 +64,6 @@ public class FileUtil
 	private Document cNoStdXml;
 	private Element cTransaction_Header = null;
 
-	/**
-	 * <p>Title: FileUtil</p>
-	 * <p>Description: 文件工具类构造器</p>
-	 * @param pInXmlDoc 标准输入报文
-	 * @throws JDOMException 文档对象模型异常
-	 */
 	public FileUtil(Document pInXmlDoc) throws JDOMException
 	{
 		cLogger.info("into init FileUtil()..");
@@ -89,18 +71,15 @@ public class FileUtil
 		JdomUtil.print(pInXmlDoc);
 		cNoStdXml = pInXmlDoc;
 
-		//服务名非获取保单详情取数（寿险）
 		if (!pInXmlDoc.getRootElement().getChild("TX_HEADER").getChildText("SYS_TX_CODE").equals("P53816107"))
-		{
+		{   
+			//备份Head节点
 			cTransaction_Header = (Element) pInXmlDoc.getRootElement().getChild("Head").clone();
 		}
 		cBusiConfRoot = NewCcbConf.newInstance().getConf().getRootElement();
 		Element TX_HEADER = pInXmlDoc.getRootElement().getChild("TX_HEADER");
-		//服务名
 		typeCode = TX_HEADER.getChildTextTrim("SYS_TX_CODE");
-		//发送方安全节点编号
 		secNodeId = TX_HEADER.getChildTextTrim("LocalID");
-		//目标安全节点号
 		rmtSecNodeId = TX_HEADER.getChildTextTrim("remoteID");
 
 		//获取保单详情取数(寿险)
@@ -121,6 +100,7 @@ public class FileUtil
 			Element mTranNo = new Element("TranNo");
 			mTranNo.setText(pInXmlDoc.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No"));
 			cTransaction_Header.addContent(mTranNo);
+			//加密报文的文件名
 			fileName = pInXmlDoc.getRootElement().getChild("TX_BODY").getChild("COMMON").getChild("FILE_LIST_PACK").getChild("FILE_INFO").getChildTextTrim("FILE_NAME");
 			// 加密报文路径
 			filePath = pInXmlDoc.getRootElement().getChild("TX_BODY").getChild("COMMON").getChild("FILE_LIST_PACK").getChild("FILE_INFO").getChildTextTrim("FILE_PATH");
@@ -136,13 +116,13 @@ public class FileUtil
 	// 解密银行发送过来的加密文件，并且读取文件，根据不同交易转换成不同标准报文。
 	public Document fileSecurity() throws MidplatException
 	{
-		//Into FileUtil.fileSecurity()...
 		cLogger.info("Into FileUtil.fileSecurity()...");
 		try
 		{
 			
 			if (typeCode.equals("P53817103"))
-			{// 日终对账
+			{
+				// 日终对账
 				try
 				{
 					cThisBusiConf = (Element) XPath.selectSingleNode(cBusiConfRoot, "business[funcFlag='3005']");
@@ -153,22 +133,20 @@ public class FileUtil
 				}
 				try
 				{
-					//
 					cLogger.info("FileName = " + fileName);
 					cLogger.info("FilePath==" + filePath);
 					// 解密后的报文路径
 					String mFilePath = cThisBusiConf.getChildTextTrim("LocalDir");
 
 					// 解密：本地节点，对端节点，密文文件存放路径，解密后明文文件绝对路径
-					//解密前的对账文件存放路径：/home/ap/fserver2/rcv/RcnclFile_20161231_010079_510000000_001.xml
 					cLogger.info("解密前的对账文件存放路径：" + filePath + fileName);
-					//解密后的对账文件存放路径：/ybttest/newccb/zw/RcnclFile_20161231_010079_510000000_001.xml
 					cLogger.info("解密后的对账文件存放路径：" + mFilePath + fileName);
 					
 					//文件解密
 					SecAPI.fileUnEnvelop(secNodeId, rmtSecNodeId, filePath + "/" + fileName, mFilePath + fileName);
 					// 根据解密后报文路径和名称获取数据流
 					InputStream ttBatIns = getLocalFile(mFilePath, fileName);
+					//InputStream ttBatIns=new FileInputStream("C:\\Users\\anico\\Desktop\\建行测试报文\\RcnclFile_20161231_010079_120000000_001.xml");
 					if (ttBatIns == null)
 					{
 						cLogger.info("===============null");
@@ -193,7 +171,7 @@ public class FileUtil
 					cLogger.info("开始解析对账文件里的报文，并组装成标准报文！");
 					cInXmlDoc = balanceTo(returnNoStd);
 					cLogger.info("发往核心的保准对账报文:");
-					JdomUtil.print(cInXmlDoc);
+					cLogger.info(JdomUtil.toStringFmt(cInXmlDoc));
 				}
 				catch (Exception ex)
 				{
@@ -201,7 +179,8 @@ public class FileUtil
 				}
 			}
 			else if (typeCode.equals("P53817104"))
-			{// 保全对账
+			{
+				// 保全对账
 				try
 				{
 					cThisBusiConf = (Element) XPath.selectSingleNode(cBusiConfRoot, "business[funcFlag='1048']");
@@ -246,7 +225,8 @@ public class FileUtil
 				}
 			}
 			else if (typeCode.equals("P53817105"))
-			{// 发送银行端单证信息
+			{
+				// 发送银行端单证信息
 				try
 				{
 					cThisBusiConf = (Element) XPath.selectSingleNode(cBusiConfRoot, "business[funcFlag='3006']");
@@ -404,9 +384,9 @@ public class FileUtil
 					Element tempEle = Detail.get(i);
 					ElementLis listDetail = new ElementLis("Detail", Body);
 					// 重空类型
-					ElementLis CardType = new ElementLis("CardType", tempEle.getChildTextTrim("Ins_IBVoch_ID").substring(0, 7), listDetail);
+					ElementLis CardType = new ElementLis("CardType", tempEle.getChildTextTrim("Ins_IBVoch_ID").substring(0,5), listDetail);
 					// 重空印刷号
-					ElementLis CardNo = new ElementLis("CardNo", tempEle.getChildTextTrim("Ins_IBVoch_ID"), listDetail);
+					ElementLis CardNo = new ElementLis("CardNo",NumberUtil.no13To15(tempEle.getChildTextTrim("Ins_IBVoch_ID")), listDetail);
 					// 重空状态
 					ElementLis CardState = new ElementLis("CardState", tempEle.getChildTextTrim("IpOpR_Crcl_StCd"), listDetail);
 					if (CardState.getText().equals("01"))
@@ -473,8 +453,8 @@ public class FileUtil
 		TranData.addContent(cTransaction_Header);
 
 		if (Detail_List != null)
-		{// 当对账文件为空的时候是没有Detail_List节点的
-
+		{
+			// 当对账文件为空的时候是没有Detail_List节点的
 			try
 			{
 				Detail = Detail_List.getChildren("Detail");
@@ -608,7 +588,8 @@ public class FileUtil
 
 		}
 		else
-		{// 对账文件内容为空
+		{
+			// 对账文件内容为空
 			tInXmlDoc = new Document(TranData);
 			ElementLis sumCount = new ElementLis("Count", Body);// 总比数
 			ElementLis sumPrem = new ElementLis("Prem", Body);// 总保费

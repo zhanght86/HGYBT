@@ -87,7 +87,7 @@ public class NewRenewalPay extends ServiceImpl {
 			
 			
 			
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_RenewPayment).call(cInXmlDoc);
+//			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_RenewPayment).call(cInXmlDoc);
 			System.out.println("-----------------------------------------------");
 			cLogger.info("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 			JdomUtil.print(cOutXmlDoc);

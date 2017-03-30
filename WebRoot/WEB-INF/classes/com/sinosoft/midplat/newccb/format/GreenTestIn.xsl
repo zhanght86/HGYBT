@@ -21,7 +21,7 @@
 					<!-- 交易流水号 -->
 					<TranNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/SvPt_Jrnl_No" /></TranNo>
 					<!-- 交易渠道 -->
-					<TranCom>03</TranCom> 
+					<!-- <TranCom>03</TranCom> -->
 				    <xsl:copy-of select="Head/*"/>
 			  </Head>
 			  <!-- 报文体 -->

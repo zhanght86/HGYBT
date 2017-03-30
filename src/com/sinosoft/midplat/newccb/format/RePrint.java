@@ -16,6 +16,7 @@ import org.jdom.xpath.XPath;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.XmlConf;
 import com.sinosoft.midplat.format.XmlSimpFormat;
+import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.utility.ExeSQL;
 
@@ -42,7 +43,6 @@ public class RePrint extends XmlSimpFormat {
 		
 		cTransaction_Header =
 			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
-		
 //		JdomUtil.print(cTransaction_Header);
 		
 		//服务接受时间
@@ -87,7 +87,7 @@ public class RePrint extends XmlSimpFormat {
 		return mStdXml;
 	}
 	
-	public Document std2NoStd(Document pStdXml) throws Exception {
+	public  Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into RePrint.std2NoStd()...");
 		
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
@@ -103,14 +103,15 @@ public class RePrint extends XmlSimpFormat {
 		}
 		
 		Document mNoStdXml = null;
-		if("221206".equals(tRiskCode.getValue())){
-			 mNoStdXml = 
-					RePrintOutXsl.newInstance().getCache().transform(pStdXml);
-		}else{
-			 mNoStdXml = new ContConfirm(cThisBusiConf).std2NoStd(pStdXml,"1011");
-		}
-		
-		
+//		if("221206".equals(tRiskCode.getValue())){
+//			 mNoStdXml = 
+//					RePrintOutXsl.newInstance().getCache().transform(pStdXml);
+//		}else{
+//			 mNoStdXml = new ContConfirm(cThisBusiConf).std2NoStd(pStdXml,"1011");
+//		}
+//		mNoStdXml = new ContConfirm(cThisBusiConf).std2NoStd(pStdXml,"1011");
+		pStdXml =  dealCashValues(pStdXml);
+		mNoStdXml=PrintContOutXsl.newInstance(null).getCache().transform(pStdXml);
 		//服务响应时间
 		mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		
@@ -277,22 +278,37 @@ public class RePrint extends XmlSimpFormat {
 	
 	public static void main(String[] args) throws Exception {
 		System.out.println("程序开始…");
-
-		String mInFilePath = "C:/Users/liuzk/Desktop/11.xml";
-		String mOutFilePath = "C:/Users/liuzk/Desktop/13.xml";
-
-		InputStream mIs = new FileInputStream(mInFilePath);
-		Document mInXmlDoc = JdomUtil.build(mIs);
-		mIs.close();
-
-		Document mOutXmlDoc = new RePrint(null).std2NoStd(mInXmlDoc);
-
-		JdomUtil.print(mOutXmlDoc);
-
-		OutputStream mOs = new FileOutputStream(mOutFilePath);
-		JdomUtil.output(mOutXmlDoc, mOs);
-		mOs.flush();
-		mOs.close();
+        Element TranData=new Element("TranData");
+        Element Head=new Element("Head");
+        Element Flag=new Element("Flag");
+        Flag.setText("1");
+        Element Desc=new Element("Desc");
+        Desc.setText("重打交易失败");
+        Head.addContent(Flag);
+        Head.addContent(Desc);
+        TranData.addContent(Head);
+        Document TranDataDoc=new Document(TranData);
+        Element newccb=NewCcbConf.newInstance().getConf().getRootElement();
+        Element xpath= (Element) XPath.selectSingleNode(newccb,"business[funcFlag='1011']");
+        System.out.println("-------"+JdomUtil.toStringFmt(xpath));
+        RePrint  rrrr=new RePrint(xpath);
+        Document TranDataDocOut= rrrr.std2NoStd(TranDataDoc);
+        System.out.println("======"+JdomUtil.toStringFmt(TranDataDocOut));
+//		String mInFilePath = "C:/Users/liuzk/Desktop/11.xml";
+//		String mOutFilePath = "C:/Users/liuzk/Desktop/13.xml";
+//
+//		InputStream mIs = new FileInputStream(mInFilePath);
+//		Document mInXmlDoc = JdomUtil.build(mIs);
+//		mIs.close();
+//
+//		Document mOutXmlDoc = new RePrint(null).std2NoStd(mInXmlDoc);
+//
+//		JdomUtil.print(mOutXmlDoc);
+//
+//		OutputStream mOs = new FileOutputStream(mOutFilePath);
+//		JdomUtil.output(mOutXmlDoc, mOs);
+//		mOs.flush();
+//		mOs.close();
 
 		System.out.println("成功结束！");
 	}

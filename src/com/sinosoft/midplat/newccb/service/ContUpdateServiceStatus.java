@@ -13,16 +13,22 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
+import com.sinosoft.lis.db.ContDB;
 import com.sinosoft.lis.db.TranLogDB;
+import com.sinosoft.lis.schema.ContSchema;
+import com.sinosoft.lis.vschema.ContSet;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
+import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.SaveMessage;
 import com.sinosoft.midplat.exception.MidplatException;
+import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
+import com.sinosoft.utility.ExeSQL;
 
 /**
  * @ClassName: ContUpdateServiceStatus
@@ -44,7 +50,12 @@ public class ContUpdateServiceStatus extends ServiceImpl {
 		//Java文档对象模型工具将输入标准报文打印到控制台[GBK编码，缩进3空格]
 		//打印标准输入报文
 //		JdomUtil.print(cInXmlDoc);//[Element:<TranData/>]
-		cLogger.info(cInXmlDoc);
+		cLogger.info(JdomUtil.toStringFmt(cInXmlDoc));
+		Element mRootEle = cInXmlDoc.getRootElement();
+		//标准输入报文Body报文体节点
+		Element mLCConts = mRootEle.getChild("LCConts");
+		Element mLCCont = mLCConts.getChild("LCCont");
+//		String mProposalContNo = mLCCont.getChildText("ProposalContNo");
 		
 		try {
 			cTranLogDB = insertTranLog(pInXmlDoc);
@@ -245,7 +256,6 @@ public class ContUpdateServiceStatus extends ServiceImpl {
 		return mTranLogDB;
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Document call(Document pInXmlDoc) throws Exception{
 		cLogger.info("Into ContUpdateServiceStatus.call()...");
 		String cServiceId=AblifeCodeDef.SID_UpdateServiceStatus;
@@ -286,7 +296,7 @@ public class ContUpdateServiceStatus extends ServiceImpl {
 
 		Options options = serviceClient.getOptions();
 		// 设置超时时间
-		options.setTimeOutInMilliSeconds(60000);
+		options.setTimeOutInMilliSeconds(800000);
 		// 指定调用WebService的URL
 		String servicePath = mServAddress + "?wsdl";
 		EndpointReference targetEPR = new EndpointReference(servicePath);

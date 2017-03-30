@@ -40,7 +40,7 @@
 		<xsl:template match="TX_BODY/ENTITY/APP_ENTITY">	
 			<Body>
 				<!-- 保险单号 -->
-				<ContNo><xsl:value-of select="InsPolcy_No" /></ContNo> 
+				<ContNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(InsPolcy_No)" /></ContNo> 
 				<!-- 保单密码 -->
 				<Password><xsl:value-of select="InsPolcy_Pswd" /></Password>
 				<!--保险公司代码-->
@@ -63,27 +63,26 @@
 				<Channel></Channel>
   			</Body>
 		</xsl:template>
-
-	<!-- 证件类型 -->
+    <!-- 证件类型 -->
 	<xsl:template name="tran_idtype">
 		<xsl:param name="idtype"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$idtype = '1010'">0</xsl:when><!-- 公民身份证号码 -->
-			<xsl:when test="$idtype = '1022'">2</xsl:when><!-- 军官证 -->
-			<xsl:when test="$idtype = '1032'">D</xsl:when><!-- 警官证 -->
-			<xsl:when test="$idtype = '1021'">A</xsl:when><!-- 解放军士兵证 -->
+			<xsl:when test="$idtype = '1010'">0</xsl:when><!-- 居民身份证 -->
+			<xsl:when test="$idtype = '1011'">0</xsl:when><!-- 临时居民身份证 -->
+			<xsl:when test="$idtype = '1020'">2</xsl:when><!-- 军人身份证件 -->
+			<xsl:when test="$idtype = '1030'">2</xsl:when><!-- 武警身份证件 -->
 			<xsl:when test="$idtype = '1040'">4</xsl:when><!-- 户口簿 -->
-			<xsl:when test="$idtype = '1080'">B</xsl:when><!-- (港澳)回乡证及通行证 -->
-			<xsl:when test="$idtype = '1070'">B</xsl:when><!-- 台湾来内地通行证-->
-			<xsl:when test="$idtype = '1050'">1</xsl:when><!-- 护照-->
-			<xsl:when test="$idtype = '1051'">1</xsl:when><!-- (外国)护照-->
-			<xsl:when test="$idtype = '1052'">1</xsl:when><!-- (中国)护照-->
-			<xsl:when test="$idtype = '1060'">5</xsl:when><!-- 学生证-->
-			<xsl:when test="$idtype = '1999'">6</xsl:when><!-- 个人其他证件-->
-			<xsl:when test="$idtype = '2999'">6</xsl:when><!-- 对公其他证件-->
-			<xsl:when test="$idtype = '1100'">3</xsl:when><!-- 驾照 -->
-			<xsl:when test="$idtype = '1011'">C</xsl:when><!-- 临时居民身份证 -->
-			<xsl:when test="$idtype = '1160'">E</xsl:when><!-- 台湾居民身份证 台胞证 -->
+			<xsl:when test="$idtype = '1052'">1</xsl:when><!-- 外国护照 -->
+			<xsl:when test="$idtype = '1070'">F</xsl:when><!-- 港澳居民往来内地通行证-->
+			<xsl:when test="$idtype = '1080'">F</xsl:when><!-- 台湾居民来往大陆通行证-->
+			<xsl:when test="$idtype = '1120'">1</xsl:when><!-- (外国)护照-->
+			<xsl:when test="$idtype = '1999'">8</xsl:when><!-- 其他证件（个人）-->
+			<xsl:when test="$idtype = '2010'">8</xsl:when><!-- 营业执照-->
+			<xsl:when test="$idtype = '2020'">8</xsl:when><!-- 组织机构代码证-->
+			<xsl:when test="$idtype = '2030'">8</xsl:when><!-- 社会团体法人登记证书-->
+			<xsl:when test="$idtype = '2040'">8</xsl:when><!-- 事业法人登记证书-->
+			<xsl:when test="$idtype = '2090'">8</xsl:when><!-- 税务登记证-->
+			<xsl:when test="$idtype = '2999'">8</xsl:when><!-- 其他证件（对公）-->
 			<xsl:otherwise>
 					<xsl:value-of select="8" /><!-- 其他 -->
 			</xsl:otherwise>

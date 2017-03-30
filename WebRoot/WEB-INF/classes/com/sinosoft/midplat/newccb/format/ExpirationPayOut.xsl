@@ -83,7 +83,7 @@
 	      			<ENTITY>
 			        	<APP_ENTITY>
 							<!-- 保单号码 -->
-							<InsPolcy_No><xsl:value-of select="/TranData/Body/ContNo"/></InsPolcy_No>
+							<InsPolcy_No><xsl:value-of select="substring(/TranData/Body/ContNo,1,13)"/></InsPolcy_No>
 							<!-- 险种编号 -->
 					        <Cvr_ID><xsl:value-of select="/TranData/Body/RiskCode" /></Cvr_ID>
 							<!-- 批单号  -->
@@ -104,7 +104,7 @@
 											7	客户权益保障确认书 -->
 						        	<AgIns_Vchr_TpCd>5</AgIns_Vchr_TpCd>
 						        	<!-- 保险重空编号 -->
-						        	<Ins_IBVoch_ID><xsl:value-of select="/TranData/Body/CardNo"/></Ins_IBVoch_ID>
+						        	<Ins_IBVoch_ID><xsl:value-of select="substring(/TranData/Body/CardNo,1,13)"/></Ins_IBVoch_ID>
 						        	<!-- #循环记录条数 -->
 						        	<Rvl_Rcrd_Num>35</Rvl_Rcrd_Num>
 						        	<Detail>

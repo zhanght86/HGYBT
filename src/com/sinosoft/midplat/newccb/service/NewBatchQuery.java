@@ -3,11 +3,13 @@ package com.sinosoft.midplat.newccb.service;
 import org.jdom.Document;
 import org.jdom.Element;
 
+import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.exception.MidplatException;
+import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
 
 
@@ -20,7 +22,7 @@ public class NewBatchQuery extends ServiceImpl {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into BatchQuery.service()...");
 		cInXmlDoc = pInXmlDoc;
-
+        cLogger.info(JdomUtil.toStringFmt(pInXmlDoc));
 		Element mRootEle = cInXmlDoc.getRootElement(); 
 		Element mHeadEle = (Element) mRootEle.getChild(Head).clone();
 		
@@ -28,10 +30,8 @@ public class NewBatchQuery extends ServiceImpl {
 		try {
 			cTranLogDB = insertTranLog(pInXmlDoc);
 			long mStartContConfirm = System.currentTimeMillis();
-			cLogger.info("Into BatchQuery.service()...-->authorityCheck.submitData(mHeadEle)交易权限");	
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContBatQuery).call(cInXmlDoc);
 			mUsedContConfirm = (System.currentTimeMillis() - mStartContConfirm);
-			//保险公司没有此业务，但建行要求查询必做，字段返回值为0即可
-			cOutXmlDoc = cInXmlDoc;
 			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			Element tFlag = new Element(Flag);
 			tFlag.setText("0");
@@ -42,10 +42,6 @@ public class NewBatchQuery extends ServiceImpl {
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"批量查询交易失败！", ex);			
-			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		} 
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"批量查询交易失败！", ex);

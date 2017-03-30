@@ -17,18 +17,13 @@ import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
+import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.SaveMessage;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
 
-/**
- * @ClassName: NewQueryPaymentInfo
- * @Description: 
- * @author yuantongxin
- * @date 2017-1-4 上午10:58:01
- */
 public class NewQueryPaymentInfo extends ServiceImpl {
 
 	public NewQueryPaymentInfo(Element pThisBusiConf) {
@@ -45,11 +40,11 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 		String mProposalPrtNo = mBodyEle.getChildText("PrtNo");
 		
 		try {
-			cTranLogDB = insertTranLog(cInXmlDoc);//TranLogDB insertTranLog(Document pXmlDoc)
+			cTranLogDB = insertTranLog(cInXmlDoc);
 			JdomUtil.print(cInXmlDoc);
 			
 //			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_QueryPaymentInfo).call(cInXmlDoc);
-			cOutXmlDoc=call(pInXmlDoc);//Document call(Document pInXmlDoc)
+			cOutXmlDoc=call(pInXmlDoc);
 			System.out.println("-----------------------------------------------");
 			cLogger.info("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 			JdomUtil.print(cOutXmlDoc);
@@ -77,7 +72,7 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
 			
-			cOutXmlDoc = getSimpOutXml(CodeDef.RCode_OK, ex.getMessage());//Document getSimpOutXml(int pFlag, String pMessage)
+			cOutXmlDoc = getSimpOutXml(CodeDef.RCode_OK, ex.getMessage());
 		}
 		
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
@@ -258,7 +253,6 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 		return mTranLogDB;
 	}
 	
-	@SuppressWarnings("rawtypes")
 	public Document call(Document pInXmlDoc) throws Exception{
 		cLogger.info("Into NewQueryPaymentInfo.call()...");
 		String cServiceId=AblifeCodeDef.SID_QueryPaymentInfo;
@@ -314,7 +308,7 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 		Options options = serviceClient.getOptions();
 		// 设置超时时间
 //				options.setTimeOutInMilliSeconds(600000);
-		options.setTimeOutInMilliSeconds(60000);
+		options.setTimeOutInMilliSeconds(800000);
 		// 指定调用WebService的URL
 		String servicePath = mServAddress + "?wsdl";
 		EndpointReference targetEPR = new EndpointReference(servicePath);

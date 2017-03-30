@@ -52,7 +52,7 @@ public class NewQueryExpirationPay extends ServiceImpl {
 			
 			JdomUtil.print(cInXmlDoc);
 			
-			new RuleParser().check(cInXmlDoc);
+//			new RuleParser().check(cInXmlDoc);
 			
 //			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ManPaymentQuery).call(cInXmlDoc);
 			

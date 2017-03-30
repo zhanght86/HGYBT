@@ -1,7 +1,6 @@
 package com.sinosoft.midplat.newccb.service;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -110,8 +109,6 @@ public class NewContBlc extends ServiceImpl
 			Element mHeadEle = mRootEle.getChild("Head");
 			String FuncFlag = mHeadEle.getChildText("FuncFlag");
 			mTranCom = mHeadEle.getChildText("TranCom");
-
-			JdomUtil.print(cInXmlDoc);
 
 			cTranLogDB = insertTranLog(cInXmlDoc);
 			
@@ -405,8 +402,8 @@ public class NewContBlc extends ServiceImpl
 			JdomUtil.print(cOutXmlDoc);
 
 			if (null != cTranLogDB)
-			{ // 插入日志失败时cTranLogDB=null
-
+			{ 
+				// 插入日志失败时cTranLogDB=null
 				Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 				cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
 				cTranLogDB.setRText(tHeadEle.getChildText(Desc));
@@ -421,7 +418,7 @@ public class NewContBlc extends ServiceImpl
 				}
 			}
 		}
-		catch (MidplatException ex)
+		catch (Exception ex)
 		{
 			cLogger.info(cThisBusiConf.getChildText(name) + "交易失败！", ex);
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
@@ -566,12 +563,4 @@ public class NewContBlc extends ServiceImpl
 
 	}
 
-	public static void main(String[] args) throws Exception {
-		String mInFilePath="D:/task/20170117/newccb/core_test/32592_6_6_inSvc.xml";
-		InputStream mIs = new FileInputStream(mInFilePath);
-		Document document = JdomUtil.build(mIs,"UTF-8");
-		Document cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(document);
-		JdomUtil.print(cOutXmlDoc);
-	}
-	
 }

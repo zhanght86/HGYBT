@@ -27,8 +27,6 @@
 					<LocalID><xsl:value-of select="//TX/TX_HEADER/LocalID" /></LocalID>
 					<!-- 建行安全节点号 -->
 					<RemoteID><xsl:value-of select="//TX/TX_HEADER/remoteID" /></RemoteID>
-					<LocalID><xsl:value-of select="//TX/TX_HEADER/LocalID" /></LocalID>
-                    <RemoteID><xsl:value-of select="//TX/TX_HEADER/remoteID" /></RemoteID>
 				    <xsl:copy-of select="//TX/Head/*"/>
 			  </Head>
 			<!-- 报文体 -->
