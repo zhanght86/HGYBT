@@ -187,15 +187,8 @@ public class SecuTradAppDoc extends Balance{
 			 * 
 			 * 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|保单状态
 			 */
-			String nodeNo=null;
-			if(tSubMsgs[9]!=null&&tSubMsgs[10]!=null){
-				nodeNo=tSubMsgs[9].trim()+tSubMsgs[10].trim();
-			}
-			Element tZoneNo=new Element("ZoneNo");
-			tZoneNo.setText(tSubMsgs[9].trim());
-			Element tNodeNo=new Element("NodeNo");
-			tNodeNo.setText(nodeNo);
 			
+			//业务类别
 			Element tBusiType = new Element("BusiType");
 			if("01".equals(tSubMsgs[1])){//犹撤
 				tBusiType.setText("07");
@@ -207,24 +200,47 @@ public class SecuTradAppDoc extends Balance{
 				tBusiType.setText("11");
 			}
 			
+			//交易日期
 			Element tTranDateEle = new Element(TranDate);
 			tTranDateEle.setText(tSubMsgs[2]);
 			
-//			Element tTranNoEle = new Element(TranNo);
-//			tTranNoEle.setText(tSubMsgs[1]);
-//			
-			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
-			tProposalPrtNoEle.setText(tSubMsgs[11]);
-			
+			//保单号
 			Element tContNoEle = new Element(ContNo);
 			tContNoEle.setText(tSubMsgs[3]);
 			
-			Element tAgentCom=new Element(AgentCom);
-			tAgentCom.setText(nodeNo);
+			//申请人姓名
+			Element tAppntNameEle=new Element("AppntName");
 			
+			//投保人证件类型
+			Element tIDTypeEle=new Element(IDType);
+			
+			//证件号码
+			Element tIDNoEle=new Element(IDNo);
+			
+			//投保单号
+			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
+			tProposalPrtNoEle.setText(tSubMsgs[11]);
+			
+			//金额
 			Element tPremEle = new Element(Prem);
 			long tPremFen = NumberUtil.yuanToFen(tSubMsgs[12]);
 			tPremEle.setText(String.valueOf(tPremFen));
+			
+			//省代码
+			Element tZoneNo=new Element("ZoneNo");
+			tZoneNo.setText(tSubMsgs[9].trim());
+			
+			//网点代码
+			String nodeNo=null;
+			if(tSubMsgs[9]!=null&&tSubMsgs[10]!=null){
+				nodeNo=tSubMsgs[9].trim()+tSubMsgs[10].trim();
+			}
+			Element tNodeNo=new Element("NodeNo");
+			tNodeNo.setText(nodeNo);
+			
+			
+			Element tAgentCom=new Element(AgentCom);
+			tAgentCom.setText(nodeNo);
 			
 			/*Element tContTypeEle = new Element("ContType");
 			if (!(tSubMsgs[8].trim()).endsWith("88")) {
@@ -234,16 +250,18 @@ public class SecuTradAppDoc extends Balance{
 			}*/
 			
 			Element tDetailEle = new Element(Detail);
-			tDetailEle.addContent(tTranDateEle);
 			tDetailEle.addContent(tBusiType);
-			tDetailEle.addContent(tAgentCom);
-//			tDetailEle.addContent(tTranNoEle);
-			tDetailEle.addContent(tProposalPrtNoEle);
+			tDetailEle.addContent(tTranDateEle);
 			tDetailEle.addContent(tContNoEle);
+			tDetailEle.addContent(tAppntNameEle);
+			tDetailEle.addContent(tIDTypeEle);
+			tDetailEle.addContent(tIDNoEle);
+			tDetailEle.addContent(tProposalPrtNoEle);
 			tDetailEle.addContent(tPremEle);
-			tDetailEle.addContent(tNodeNo);
 			tDetailEle.addContent(tZoneNo);
+			tDetailEle.addContent(tNodeNo);
 			
+			tDetailEle.addContent(tAgentCom);
 			mBodyEle.addContent(tDetailEle);
 		}
 		mBufReader.close();	//关闭流
@@ -255,8 +273,7 @@ public class SecuTradAppDoc extends Balance{
 	protected Element getHead() {
 		cLogger.info("Into SecuTradAppDoc.getHead()...");
 		String tBalanceFlag = "0";
-		Element mTranDate = new Element(TranDate);
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		
 		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
 		cLogger.info(" 对账日期为..."+DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
 		cLogger.info(" 当前日期为..."+mCurrDate);
@@ -266,9 +283,15 @@ public class SecuTradAppDoc extends Balance{
 			tBalanceFlag = "1";
 		}
 		
+		//交易日期
+		Element mTranDate = new Element(TranDate);
+		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		
+		//交易时间
 		Element mTranTime = new Element(TranTime);
 		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
 		
+		//交易机构代码(银行/农信社/经代公司)
 		Element mTranCom = new Element(TranCom);
 		mTranCom.setText(cThisConfRoot.getChildText("TranCom"));
 		String tTempStr = cThisConfRoot.getChild("TranCom").getAttributeValue(outcode);
@@ -276,43 +299,46 @@ public class SecuTradAppDoc extends Balance{
 			mTranCom.setAttribute(outcode, tTempStr);
 		}
 		
+		//银行代码
+		Element mBankCode = new Element("BankCode");
+		mBankCode.setText("0102");
+		
+		//地区代码
 		Element mZoneNo = new Element("ZoneNo");
 		mZoneNo.setText(cThisBusiConf.getChildText("zone"));
 		
+		//银行网点
 		Element mNodeNo = new Element(NodeNo);
 		mNodeNo.setText(cThisBusiConf.getChildText("node"));
 		
+		//柜员代码
 		Element mTellerNo = new Element(TellerNo);
 		mTellerNo.setText("sys");
 		
+		//交易流水号
 		Element mTranNo = new Element(TranNo);
 		mTranNo.setText(Thread.currentThread().getName());
 		
+		//交易类型
 		Element mFuncFlag = new Element(FuncFlag);
-
 		tTempStr = cThisBusiConf.getChild(funcFlag).getAttributeValue(outcode);
 		mFuncFlag.setText(tTempStr);
+		
 		
 		Element mBalanceFlag = new Element("BalanceFlag");
 		mBalanceFlag.setText(tBalanceFlag);
 		
-		//报文头结点增加核心的银行编码
-		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
-		
 		Element mHead = new Element(Head);
 		mHead.addContent(mTranDate);
 		mHead.addContent(mTranTime);
-		
-		//报文头结点增加核心的银行编码
-		mHead.addContent(mBankCode);
-		
 		mHead.addContent(mTranCom);
+		mHead.addContent(mBankCode);
 		mHead.addContent(mZoneNo);
 		mHead.addContent(mNodeNo);
 		mHead.addContent(mTellerNo);
 		mHead.addContent(mTranNo);
 		mHead.addContent(mFuncFlag);
+		
 		mHead.addContent(mBalanceFlag);
 
 		cLogger.info("Out SecuTradAppDoc.getHead()!");

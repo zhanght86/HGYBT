@@ -8,7 +8,7 @@ import com.sinosoft.midplat.newabc.NewAbcConf;
 
 
 /**
- * 密钥更新交易
+ * 密钥重置交易
  * @author chenjin
  *
  */
@@ -20,7 +20,7 @@ public class MYZH_Timing extends MYZH_TimingImpl{
 	}//SpdbConf.newInstance() 对应bc.xml
 	public static void main(String[] args){
 		
-		cLogger.info("开始犹豫期退保数据传递 ...");	//没起作用，未打印
+		cLogger.info("开始密钥重置数据传递 ...");	//没起作用，未打印
 		
 		MYZH_Timing pt = new MYZH_Timing();	//没起作用
 		pt.run();	//没起作用
@@ -40,7 +40,7 @@ public class MYZH_Timing extends MYZH_TimingImpl{
 			mLogger.info("删除本地备份的犹撤对账文件成功了吗？"+delFlag);
 		}*/
 		
-		cLogger.info("结束犹豫期退保 ...");	//没起作用，未打印
+		cLogger.info("结束密钥重置 ...");	//没起作用，未打印
 	}
 	
 }

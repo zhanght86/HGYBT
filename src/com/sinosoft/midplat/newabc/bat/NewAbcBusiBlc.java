@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Constructor;
 import java.util.Date;
-import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
 import org.jdom.Document;
@@ -19,11 +18,8 @@ import org.jdom.xpath.XPath;
 
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.DateUtil;
-import com.sinosoft.midplat.common.DateUtilZR;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
-import com.sinosoft.midplat.common.XmlConf;
-import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.service.Service;
@@ -174,6 +170,7 @@ public class NewAbcBusiBlc extends Balance
 				tServiceClassName = tServiceValue;
 			}
 			this.cLogger.info("业务处理模块" + tServiceClassName);
+			@SuppressWarnings("rawtypes")
 			Constructor tServiceConstructor = Class.forName(tServiceClassName).getConstructor(new Class[] { Element.class });
 			Service tService = (Service) tServiceConstructor.newInstance(new Object[] { this.cThisBusiConf });
 			Document tOutStdXml = tService.service(tInStdXml);
@@ -273,19 +270,28 @@ public class NewAbcBusiBlc extends Balance
 			Element tTranNoEle = new Element(TranNo);
 			tTranNoEle.setText(tSubMsgs[1]);
 
-			// Element tProposalPrtNoEle = new Element(ProposalPrtNo);
-			// tProposalPrtNoEle.setText(tSubMsgs[7]);
-
+			//保险单号
 			Element tContNoEle = new Element(ContNo);
 			tContNoEle.setText(tSubMsgs[4]);
-
-			Element tAgentCom = new Element(AgentCom);
-			tAgentCom.setText(nodeNo);
-
+			
+			//保费(分)
 			Element tPremEle = new Element(Prem);
 			long tPremFen = NumberUtil.yuanToFen(tSubMsgs[5]);
 			tPremEle.setText(String.valueOf(tPremFen));
 
+			//代理机构
+			Element tAgentComEle = new Element(AgentCom);
+			tAgentComEle.setText(nodeNo);
+
+			//投保单(印刷)号[非必须]
+			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
+			
+			//投保人姓名[非必须，有些银行传]
+			Element tAppntNameEle=new Element("AppntName");
+			
+			//被保人姓名[非必须]
+			Element tInsuredNameEle=new Element("InsuredName");
+			
 			/*
 			 * Element tContTypeEle = new Element("ContType"); if
 			 * (!(tSubMsgs[8].trim()).endsWith("88")) {
@@ -296,12 +302,12 @@ public class NewAbcBusiBlc extends Balance
 			 */
 
 			Element tDetailEle = new Element(Detail);
-			// tDetailEle.addContent(tTranDateEle);
-			tDetailEle.addContent(tAgentCom);
-			// tDetailEle.addContent(tTranNoEle);
-			// tDetailEle.addContent(tProposalPrtNoEle);
 			tDetailEle.addContent(tContNoEle);
 			tDetailEle.addContent(tPremEle);
+			tDetailEle.addContent(tAgentComEle);
+			tDetailEle.addContent(tProposalPrtNoEle);
+			tDetailEle.addContent(tAppntNameEle);
+			tDetailEle.addContent(tInsuredNameEle);
 
 			mBodyEle.addContent(tDetailEle);
 		}

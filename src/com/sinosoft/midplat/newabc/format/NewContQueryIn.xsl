@@ -11,10 +11,7 @@
 			<!-- 地区代码 -->
 			<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
 			<!-- 网点代码 -->
-			<NodeNo>
-			<xsl:value-of select="Header/ProvCode"/>
-			<xsl:value-of select="Header/BranchNo"/>
-			</NodeNo>
+			<NodeNo><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></NodeNo>
 	  		<!-- 银行交易日期 -->
 	  		<TranDate><xsl:value-of select="Header/TransDate"/></TranDate>
 	  		<!-- 交易时间-->

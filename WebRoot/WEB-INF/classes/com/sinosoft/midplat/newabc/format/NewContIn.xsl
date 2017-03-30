@@ -1,183 +1,173 @@
 <?xml version="1.0" encoding="GBK"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:java="http://xml.apache.org/xslt/java"
- 	exclude-result-prefixes="java">
-
- 
+	xmlns:java="http://xml.apache.org/xslt/java"  exclude-result-prefixes="java">
+ 	
 <xsl:template match="ABCB2I">
 	  <TranData><!-- 核心录单自核请求报文 -->
 	     <Head>
-	        <!-- 银行交易流水号 -->
-			<TranNo><xsl:value-of select="Header/SerialNo"/></TranNo>
-			<!-- 地区代码 -->
-			<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
-			<!-- 网点代码 -->
-			<NodeNo>
-			<xsl:value-of select="Header/ProvCode"/>
-			<xsl:value-of select="Header/BranchNo"/>
-			</NodeNo>
-	  		<!-- 银行交易日期 -->
+	  		<!-- 交易日期 -->
 	  		<TranDate><xsl:value-of select="Header/TransDate"/></TranDate>
 	  		<!-- 交易时间-->
 			<TranTime><xsl:value-of select="Header/TransTime"/></TranTime>
-			
-			<!-- 柜员代码 -->
-			<xsl:choose>
-			<xsl:when test="Header/EntrustWay ='11'">
-			<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
-			</xsl:when>
-			<xsl:otherwise>
-			<TellerNo>0005</TellerNo>
-			</xsl:otherwise>
-			</xsl:choose>
-			
-			
-			
 			<!-- 银行代码 -->
 			<BankCode>0102</BankCode>
+			<!-- 地区代码 -->
+			<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
+			<!-- 银行网点 -->
+			<NodeNo><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></NodeNo>
+			<!-- 柜员代码 -->
+			<xsl:choose>
+				<xsl:when test="Header/EntrustWay ='11'">
+					<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
+				</xsl:when>
+				<xsl:otherwise>
+					<TellerNo>0005</TellerNo>
+				</xsl:otherwise>
+			</xsl:choose>
+			<!-- 交易流水号 -->
+			<TranNo><xsl:value-of select="Header/SerialNo"/></TranNo>
 			<!-- YBT组织的节点信息 -->
-			 <xsl:copy-of select="Head/*"/> <!-- -->
+			<xsl:copy-of select="Head/*"/>
 	  	</Head>
 	  	
 		<!--投保信息-->
 		<Body>
-			<!-- 农行自助终端渠道 0柜面 8自助终端 -->
+			<!-- 
+			销售渠道:
+			核心:0 柜面； 01银行网银渠道 ；
+			农行:04-银行自助终端渠道；02-掌上银行渠道 ；
+			8自助终端；20-保险公司渠道；  11-银行柜台渠道 ；
+			 -->
 			<xsl:choose>
-			<xsl:when test="Header/EntrustWay ='11'">
-			<SaleChannel>0</SaleChannel>
-			</xsl:when>
-			<xsl:when test="Header/EntrustWay ='04'">
-			<SaleChannel>8</SaleChannel>
-			</xsl:when>
-			
+				<xsl:when test="Header/EntrustWay ='11'">
+					<SaleChannel>0</SaleChannel>
+				</xsl:when>
+				<xsl:when test="Header/EntrustWay ='04'">
+					<SaleChannel>8</SaleChannel>
+				</xsl:when>
 			</xsl:choose>
 		    <!-- 销售人员工号   与农行约定备用字段2为销售人员工号-->
-		   
-		    <xsl:choose>
-			<xsl:when test="Header/EntrustWay ='11'">
-			 <SaleStaff><xsl:value-of select="App/Req/Base/SalerCertNo" /></SaleStaff>
-			</xsl:when>
-			<xsl:when test="Header/EntrustWay ='04'">
-			  <SaleStaff>0007 </SaleStaff>
-			</xsl:when>
-			</xsl:choose>
+            <!-- 申请顺序号（新农行加入字段，试算查询用到） -->
+			<ApplyNo><xsl:value-of  select ="App/Req/AppNo"/></ApplyNo >	
+		   <!-- 投保单(印刷)号 -->
+			<ProposalPrtNo>
+				<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/PolicyApplySerial)"/></xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/></xsl:if>
+			</ProposalPrtNo>  
+		   	<!-- 保单合同印刷号 (单证)  -->
+			<ContPrtNo>
+				<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/VchNo)"/></xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
+			</ContPrtNo>
+		   <!-- 投保日期 -->
+			<PolApplyDate><xsl:value-of select="App/Req/Base/ApplyDate"/></PolApplyDate>
+		   <!-- 保单递送方式 默认全为1-->
+			<GetPolMode>1</GetPolMode><!-- 默认为1，所以写死成1 -->
+		   <!-- 健康告知(N/Y) ,取被保人健康告知  0否  1是-->
+			<HealthNotice><xsl:apply-templates select="App/Req/Insu/HealthNotice"/></HealthNotice>
+		   <!-- 交费账户姓名 续期缴费账号姓名ConAccName，农行没传首期账户姓名  -->
+		   <AccName>
+				<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/ConAccName"/></xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
+		   </AccName>
+		   <!-- 交费银行账户 续期缴费账号 ConAccNo，首期缴费账号在新单确认交易中会传过来的， 和农行的联调人员沟通过20141203 -->
+		   <AccNo>
+		   		<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/ConAccNo"/></xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
+			</AccNo>
 		    <!-- 销售人员姓名  -->
             <xsl:choose>
-			<xsl:when test="Header/EntrustWay ='11'">
-			 <SaleName>
-            <xsl:value-of select="App/Req/Base/Saler" />
-            </SaleName>
-			</xsl:when>
-			<xsl:when test="Header/EntrustWay ='04'">
-			 <SaleName>0007</SaleName>
-			</xsl:when>
+				<xsl:when test="Header/EntrustWay ='11'">
+					<SaleName>
+		            <xsl:value-of select="App/Req/Base/Saler" />
+		            </SaleName>
+				</xsl:when>
+				<xsl:when test="Header/EntrustWay ='04'">
+					<SaleName>0007</SaleName>
+				</xsl:when>
 			</xsl:choose>
-			
-            
+		   	<!-- 销售人员工号 -->
+		    <xsl:choose>
+				<xsl:when test="Header/EntrustWay ='11'">
+				 <SaleStaff><xsl:value-of select="App/Req/Base/SalerCertNo" /></SaleStaff>
+				</xsl:when>
+				<xsl:when test="Header/EntrustWay ='04'">
+				  <SaleStaff>0007 </SaleStaff>
+				</xsl:when>
+			</xsl:choose>
             <!-- 销售人员资格证号  -->
             <SaleCertNo><xsl:value-of select="App/Req/Base/SalerCertNo" /></SaleCertNo>
-            <!-- 试算申请顺序号 -->
-			<ApplyNo><xsl:value-of  select ="App/Req/AppNo"/></ApplyNo >	
-			<!-- 投保单号 -->
-			<ProposalPrtNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/PolicyApplySerial)"/></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/></xsl:if>
-			</ProposalPrtNo>  
-			<!-- 保单印刷号 -->
-			<ContPrtNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/Base/VchNo)"/></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
-			</ContPrtNo>
-			<!-- 投保日期 -->
-			<PolApplyDate><xsl:value-of select="App/Req/Base/ApplyDate"/></PolApplyDate>
-			<!-- 账户姓名 -->
-			<!--
-			<AccName><xsl:value-of select="Appl/Name"/></AccName>
-			-->
-			<!-- 交费帐号姓名 续期缴费账号姓名ConAccName，农行没传首期账户姓名  -->
-			<AccName>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/ConAccName"/></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
-			</AccName>
-			<!-- 账户银行代码 -->
-			<AccBankCode/>
-			<!-- 交费帐号 续期缴费账号 ConAccNo，首期缴费账号在新单确认交易中会传过来的， 和农行的联调人员沟通过20141203 -->
-			<AccNo>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Base/ConAccNo"/></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'"></xsl:if>
-			</AccNo>
-			
-			<!--缴费形式 和朱诚沟通，从银保通出单的中韩这边缴费形式都置为B -工行对应处的说明-->
-			<PayMode>B</PayMode>
-			<!-- 保单传送方式 -->
-			<GetPolMode>1</GetPolMode><!-- 默认为1，所以写死成1 -->
-			<!-- 职业告知 -->
-			<JobNotice/>
-			<!-- 健康告知 ,取被保人健康告知  0否  1是-->
-			<HealthNotice><xsl:apply-templates select="App/Req/Insu/HealthNotice"/></HealthNotice>
 			<!-- 投保人 -->
 			<xsl:apply-templates select="App/Req/Appl"/>
 			<!-- 被保人 -->
 			<xsl:apply-templates select="App/Req/Insu"/>
-			
 			<!-- 主险种信息 -->
 		    <Risk>
-		    <!-- 险种代码 -->
-			<!-- <RiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></RiskCode> -->
-			<RiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></RiskCode>
-			<!-- 主险险种代码 -->
-			<!-- <MainRiskCode><xsl:apply-templates select="App/Req/Risks/RiskCode"/></MainRiskCode> -->
-			<MainRiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></MainRiskCode>
-			<!-- 保额 -->
-			<Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Risks/Amnt)"/></Amnt>
-			<!-- 保费 -->
-			<Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Risks/Prem)"/></Prem>
-			<!-- 投保份数 -->
-			<Mult>
-			<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Risks/Share"/></xsl:if>
-			<xsl:if test="Header/EntrustWay = '04'">1</xsl:if>
-			</Mult>
-			<!-- 缴费形式 -->
-			<PayMode>B</PayMode>
-			<!-- 缴费频次 -->
-			<PayIntv><xsl:apply-templates select="App/Req/Risks/PayType"/></PayIntv>
-			<xsl:choose>
-				<xsl:when test="App/Req/Risks/PayType=1"><!-- 趸交传1000Y -->
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag>Y</PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear>1000</PayEndYear>
-				</xsl:when>
-				<xsl:when test="App/Req/Risks/PayType=5"><!-- 年交传2Y -->
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag><xsl:apply-templates select="App/Req/Risks/PayDueType"/></PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear><xsl:value-of select="App/Req/Risks/PayDueDate"/></PayEndYear>
-				</xsl:when>
-			</xsl:choose>
-			
-			<!-- 保险年期年龄标志 -->
-			<InsuYearFlag><xsl:apply-templates select="App/Req/Risks/InsuDueType"/></InsuYearFlag>
-			<!-- 保险年期年龄 -->
-			<InsuYear><xsl:value-of select="App/Req/Risks/InsuDueDate"/></InsuYear>
-			<!-- 红利领取方式 -->
-			<BonusGetMode><xsl:apply-templates select="App/Req/Risks/BonusGetMode"/></BonusGetMode>
-			<!-- 待定 --> <!-- 满期领取金领取方式 -->
-			<FullBonusGetMode><xsl:apply-templates select="App/Req/Risks/FullBonusGetMode"/></FullBonusGetMode>
-			<!-- 待定 --> <!-- 领取年龄年期标志 -->
-			<GetYearFlag><xsl:apply-templates select="App/Req/Risks/GetYearFlag"/></GetYearFlag>
-			<!-- 待定 --> <!-- 领取年龄 -->
-			<GetYear><xsl:value-of select="App/Req/Risks/GetYear"/></GetYear>
-			<!-- 农行不传 -->
-			<GetIntv/>
-			<GetBankCode/>
-			<GetBankAccNo/>
-			<GetAccName/>
-		</Risk>
+		    	<!-- 险种代码 -->
+				<RiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></RiskCode>
+				<!-- 主险险种代码 -->
+				<MainRiskCode><xsl:value-of select="App/Req/Risks/RiskCode"/></MainRiskCode>
+				<!-- 保额(分)  -->
+				<Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Risks/Amnt)"/></Amnt>
+				<!-- 保险费(分) -->
+				<Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(App/Req/Risks/Prem)"/></Prem>
+				<!-- 投保份数 -->
+				<Mult>
+					<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/Risks/Share"/></xsl:if>
+					<xsl:if test="Header/EntrustWay = '04'">1</xsl:if>
+				</Mult>
+				<!-- 缴费形式 -->
+				<PayMode>B</PayMode>
+				<!-- 缴费频次 -->
+				<PayIntv><xsl:apply-templates select="App/Req/Risks/PayType"/></PayIntv>
+				<!-- 保险年期年龄标志 -->
+				<InsuYearFlag><xsl:apply-templates select="App/Req/Risks/InsuDueType"/></InsuYearFlag>
+				<!-- 保险年期年龄 -->
+				<InsuYear><xsl:value-of select="App/Req/Risks/InsuDueDate"/></InsuYear>
+				<xsl:choose>
+					<xsl:when test="App/Req/Risks/PayType=1"><!-- 趸交传1000Y -->
+						<!-- 缴费年期年龄标志 -->
+						<PayEndYearFlag>Y</PayEndYearFlag>			
+						<!-- 缴费年期年龄 -->
+						<PayEndYear>1000</PayEndYear>
+					</xsl:when>
+						<xsl:when test="App/Req/Risks/PayType=5"><!-- 年交传2Y -->
+						<!-- 缴费年期年龄标志 -->
+						<PayEndYearFlag><xsl:apply-templates select="App/Req/Risks/PayDueType"/></PayEndYearFlag>			
+						<!-- 缴费年期年龄 -->
+						<PayEndYear><xsl:value-of select="App/Req/Risks/PayDueDate"/></PayEndYear>
+					</xsl:when>
+				</xsl:choose>
+				<!-- 红利领取方式 -->
+				<BonusGetMode><xsl:apply-templates select="App/Req/Risks/BonusGetMode"/></BonusGetMode>
+				<!-- 满期领取金领取方式 -->
+				<FullBonusGetMode><xsl:apply-templates select="App/Req/Risks/FullBonusGetMode"/></FullBonusGetMode>
+				<!-- 领取年龄年期标志 -->
+				<GetYearFlag><xsl:apply-templates select="App/Req/Risks/GetYearFlag"/></GetYearFlag>
+				<!-- 领取年龄 -->
+				<GetYear><xsl:value-of select="App/Req/Risks/GetYear"/></GetYear>
+				<!-- 领取年期-->
+				<GetTerms/>
+				<!-- 领取方式 传空 -->
+				<GetIntv/>
+				<!-- 领取银行编码 传空 -->
+				<GetBankCode/>
+				<!-- 领取银行账户 传空 -->
+				<GetBankAccNo/>
+				<!-- 领取银行户名  传空 -->
+				<GetAccName/>
+				<!-- 自动垫交标志 传空 -->
+		    	<AutoPayFlag/>
+		    </Risk>
 			<!-- 附加险信息 -->
 			<xsl:apply-templates select="App/Req/Addt"/>
 			<!-- 贷款信息 -->
 			<xsl:apply-templates select="App/Req/Loan"/>
+			
+			<!--缴费形式 和朱诚沟通，从银保通出单的中韩这边缴费形式都置为B -工行对应处的说明-->
+			<PayMode>B</PayMode>
+			<!-- 职业告知 -->
+			<JobNotice/>
 		</Body>
 	</TranData>
 </xsl:template>	
@@ -187,47 +177,58 @@
 			<Name><xsl:value-of select="Name"/></Name>
 			<!-- 性别 -->
 			<Sex><xsl:apply-templates select="Sex"/></Sex>
-			<!-- 生日 -->
+			<!-- 出生日期 -->
 			<Birthday><xsl:value-of select="Birthday"/></Birthday>
 			<!-- 证件类型 -->
 			<IDType><xsl:apply-templates select="IDKind"/></IDType>
 			<!-- 证件号码 -->
 			<IDNo><xsl:value-of select="IDCode"/></IDNo>
-			<!-- 地址 -->
-			<Prov><xsl:value-of select="Prov"/></Prov>
-			<City><xsl:value-of select="City"/></City>
-			<Zone><xsl:value-of select="Zone"/></Zone>
-			<Address><xsl:value-of select="Address"/></Address>
-			<!-- 邮编 -->
-			<ZipCode><xsl:value-of select="ZipCode"/></ZipCode>
-			<!-- 家庭电话 -->
-			<Phone><xsl:value-of select="Phone"/></Phone>
-			<!-- 手机号码 -->
-			<Mobile><xsl:value-of select="Mobile"/></Mobile>
-			<!-- 电子邮件 -->
-			<Email><xsl:value-of select="Email"/></Email>
 			<!-- 职业代码 --><!-- 和核心以及客户确认过，农行不传，传默认值3010101（一般内勤），有确认邮件 -->
-			 <JobCode><xsl:value-of select="JobCode"/></JobCode>
+			<JobCode><xsl:value-of select="JobCode"/></JobCode>
 			<!-- 国籍 -->
 			<Nationality><xsl:apply-templates select="Country"/></Nationality>
-			<!-- 身高 -->
+			<!-- 身高(cm)  空值 -->
 			<Stature/>
-			<!-- 体重 -->
+			<!-- 体重(kg)  -->
 			<Weight/>
-			<!-- 收入 -->
+			<!-- 婚否(N/Y) 空值 -->
+			<MaritalStatus/>
+			<!-- 年收入(万元) -->
 			<YearSalary><xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/></YearSalary>
-			
-			<!-- 证件有效期 --><!-- 8位日期，长期有效为99991231 -->
+			<!-- 投保人家庭年收入 -->
+			<FamilyYearSalary/>
+			<!-- 身份证证件有效期格式:yyyyMMdd --><!-- 8位日期，长期有效为99991231 -->
 			<xsl:choose>
 				<xsl:when test = "InvalidDate=99991231"><IdExpDate>99990101</IdExpDate></xsl:when>
 				<xsl:otherwise><IdExpDate><xsl:value-of select="InvalidDate"/></IdExpDate></xsl:otherwise>
 			</xsl:choose>
-			<!-- 婚否 -->
-			<MaritalStatus/>
-				<!-- 投保人与背保人关系 -->
-		<RelaToInsured><xsl:apply-templates select="RelaToInsured"/></RelaToInsured>
-		<!-- 投保人居民类型 -->
-		 <DenType><xsl:apply-templates select="CustSource" /></DenType>
+			<!-- 投保人详细地址内容 -->
+			<AddressContent/>
+			<!-- 投保人固定电话国内区号 -->
+			<FixTelDmstDstcNo/>
+			<!-- 投保人移动电话国际区号 -->
+			<MobileItlDstcNo/>
+			<!-- 投保人国家地区代码 -->
+			<NationalityCode/>
+			<!-- 投保人地址 -->
+			<Address><xsl:value-of select="Address"/></Address>
+			<!-- 投保人邮政编码 -->
+			<ZipCode><xsl:value-of select="ZipCode"/></ZipCode>
+			<!-- 移动电话 -->
+			<Mobile><xsl:value-of select="Mobile"/></Mobile>
+			<!-- 家庭电话 -->
+			<Phone><xsl:value-of select="Phone"/></Phone>
+			<!-- 电子邮件 -->
+			<Email><xsl:value-of select="Email"/></Email>
+			<!-- 投保人与被保人关系 -->
+			<RelaToInsured><xsl:apply-templates select="RelaToInsured"/></RelaToInsured>
+			<!-- 投保人居民类型 -->
+		 	<DenType><xsl:apply-templates select="CustSource" /></DenType>
+			
+			<!-- 地址 -->
+			<Prov><xsl:value-of select="Prov"/></Prov>
+			<City><xsl:value-of select="City"/></City>
+			<Zone><xsl:value-of select="Zone"/></Zone>
 		</Appnt>
 </xsl:template>
 		
@@ -238,61 +239,52 @@
 			<Name><xsl:value-of select="Name"/></Name>
 			<!-- 性别 -->
 			<Sex><xsl:apply-templates select="Sex"/></Sex>
-			<!-- 生日 -->
+			<!-- 出生日期 -->
 			<Birthday><xsl:value-of select="Birthday"/></Birthday>
 			<!-- 证件类型 -->
 			<IDType><xsl:apply-templates select="IDKind"/></IDType>
 			<!-- 证件号码 -->
 			<IDNo><xsl:value-of select="IDCode"/></IDNo>
-			<!-- 地址 -->
-			<Prov><xsl:value-of select="Prov"/></Prov>
-			<City><xsl:value-of select="City"/></City>
-			<Zone><xsl:value-of select="Zone"/></Zone>
-			<Address><xsl:value-of select="Address"/></Address>
-			<!-- 邮编 -->
-			<ZipCode><xsl:value-of select="ZipCode"/></ZipCode>
-			<!-- 家庭电话 -->
-			<Phone><xsl:value-of select="Phone"/></Phone>
-			<!-- 手机号码 -->
-			<Mobile><xsl:value-of select="Mobile"/></Mobile>
-			<!-- 电子邮件 -->
-			<Email><xsl:value-of select="Email"/></Email>
 			<!-- 职业代码 --><!-- 和核心以及客户确认过，农行不传，传默认值3010101（一般内勤），有确认邮件 -->
 			<JobCode><xsl:value-of select="JobCode"/></JobCode>
 			<!-- 国籍 -->
 			<Nationality><xsl:apply-templates select="Country"/></Nationality>
-			<!-- 身高 -->
+			<!-- 身高(cm)  空值 -->
 			<Stature><xsl:value-of select="Tall"/></Stature>
-			<!-- 体重 -->
+			<!-- 体重(g)  空值 -->
 			<Weight><xsl:value-of select="Weight"/></Weight>
-			
-			
-			<!-- 年收入 -->
+			<!-- 婚否(N/Y) 空值 -->
+			<MaritalStatus/>
+			<!-- 年收入(万元) -->
 			<!-- 根据交易渠道的不同金额的显示方式不同 -->
-			
-			
 			<YearSalary>
-			<xsl:if  test="Header/EntrustWay = '04' ">
-			<xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/>
-			</xsl:if>
-			
-			<xsl:if  test="Header/EntrustWay = '11' ">
-			<xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/>
-			</xsl:if>
+				<xsl:if  test="Header/EntrustWay = '04' ">
+					<xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/>
+				</xsl:if>
+				<xsl:if  test="Header/EntrustWay = '11' ">
+					<xsl:value-of select="java:com.sinosoft.midplat.common.CalculateUtil.yuanToWYuan(AnnualIncome)"/>
+				</xsl:if>
 			</YearSalary>
-			
-			
-			
-			
-			
-			
-			<!-- 证件有效期 --><!-- 8位日期，长期有效为99991231 -->
+			<!-- 身份证证件有效期 --><!-- 8位日期，长期有效为99991231 -->
 			<xsl:choose>
 				<xsl:when test = "ValidDate=99991231"><IdExpDate>99990101</IdExpDate></xsl:when>
 				<xsl:otherwise><IdExpDate><xsl:value-of select="ValidDate"/></IdExpDate></xsl:otherwise>
 			</xsl:choose>
-			<!-- 婚否 -->
-			<MaritalStatus/>
+			<!-- 被保人地址 -->
+			<Address><xsl:value-of select="Address"/></Address>
+			<!-- 邮编 -->
+			<ZipCode><xsl:value-of select="ZipCode"/></ZipCode>
+			<!-- 移动电话 -->
+			<Mobile><xsl:value-of select="Mobile"/></Mobile>
+			<!-- 固定电话 -->
+			<Phone><xsl:value-of select="Phone"/></Phone>
+			<!-- 电子邮件 -->
+			<Email><xsl:value-of select="Email"/></Email>
+			
+			<!-- 地址 -->
+			<Prov><xsl:value-of select="Prov"/></Prov>
+			<City><xsl:value-of select="City"/></City>
+			<Zone><xsl:value-of select="Zone"/></Zone>
 		</Insured>
 </xsl:template>
 
@@ -307,69 +299,67 @@
 			<RiskCode><xsl:apply-templates select="RiskCode1"/></RiskCode>
 			<!-- 主险险种代码 -->
 			<MainRiskCode><xsl:apply-templates select="$MainProductCode"/></MainRiskCode>
-			<!-- 保额 -->
+			<!-- 保额(分)  -->
 			<Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Amnt1)"/></Amnt>
-			<!-- 保费 -->
+			<!-- 保险费(分) -->
 			<Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Prem1)"/></Prem>
 			<!-- 投保份数 -->
 			<Mult><xsl:value-of select="Share1"/></Mult>
-			<!-- 缴费形式 --><!-- 农行无 -->
+			<!-- 缴费形式 -->
 			<PayMode>B</PayMode>
 			<!-- 缴费频次 -->
-			<!--<xsl:choose> 农行借贷险的缴费频次为0-趸交-放开在rule.xsl做校验
-			<xsl:when test="$MainProductCode=211901"><PayIntv>0</PayIntv></xsl:when>
-			<xsl:otherwise>
-			<PayIntv><xsl:apply-templates select="PayIntv"/></PayIntv>
-			</xsl:otherwise>
-			</xsl:choose>
-			-->
 			<xsl:choose>
-			<xsl:when test="RiskCode1='145201'">
-			<PayIntv>0</PayIntv>
-			</xsl:when>
-			<xsl:otherwise>
-			<PayIntv><xsl:apply-templates select="PayType1"/></PayIntv>
-			</xsl:otherwise>
-			</xsl:choose>
-			<xsl:choose>
-				<xsl:when test="PayType1=1"><!-- 趸交传1000Y -->
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag>Y</PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear>1000</PayEndYear>
-				</xsl:when>
-				<xsl:when test="$MainProductCode=211901"><!-- 趸交传1000Y -->
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag>Y</PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear>1000</PayEndYear>
+				<xsl:when test="RiskCode1='145201'">
+					<PayIntv>0</PayIntv>
 				</xsl:when>
 				<xsl:otherwise>
-				<!-- 缴费年期年龄标志 -->
-				<PayEndYearFlag><xsl:apply-templates select="PayDueType1"/></PayEndYearFlag>			
-				<!-- 缴费年期年龄 -->
-				<PayEndYear><xsl:value-of select="PayDueDate1"/></PayEndYear>
+					<PayIntv><xsl:apply-templates select="PayType1"/></PayIntv>
 				</xsl:otherwise>
 			</xsl:choose>
-			
-			
 			<!-- 保险年期年龄标志 -->
 			<InsuYearFlag><xsl:apply-templates select="//App/Req/Addt/InsuDueType1"/></InsuYearFlag>
 			<!-- 保险年期年龄 -->
 			<InsuYear><xsl:value-of select="//App/Req/Addt/InsuDueDate1"/></InsuYear>
+			<xsl:choose>
+				<xsl:when test="PayType1=1"><!-- 趸交传1000Y -->
+					<!-- 缴费年期年龄标志 -->
+					<PayEndYearFlag>Y</PayEndYearFlag>			
+					<!-- 缴费年期年龄 -->
+					<PayEndYear>1000</PayEndYear>
+				</xsl:when>
+				<xsl:when test="$MainProductCode=211901">
+					<!-- 缴费年期年龄标志 -->
+					<PayEndYearFlag>Y</PayEndYearFlag>			
+					<!-- 缴费年期年龄 -->
+					<PayEndYear>1000</PayEndYear>
+				</xsl:when>
+				<xsl:otherwise>
+					<!-- 缴费年期年龄标志 -->
+					<PayEndYearFlag><xsl:apply-templates select="PayDueType1"/></PayEndYearFlag>			
+					<!-- 缴费年期年龄 -->
+					<PayEndYear><xsl:value-of select="PayDueDate1"/></PayEndYear>
+				</xsl:otherwise>
+			</xsl:choose>
 			<!-- 红利领取方式 -->
 			<BonusGetMode></BonusGetMode>
-			<!-- 待定 --> <!-- 满期领取金领取方式 -->
+			<!-- 满期领取金领取方式 传空 -->
 			<FullBonusGetMode></FullBonusGetMode>
-			<!-- 待定 --> <!-- 领取年龄年期标志 -->
+			<!-- 领取年龄年期标志 -->
 			<GetYearFlag></GetYearFlag>
-			<!-- 待定 --> <!-- 领取年龄 -->
+			<!-- 领取年龄 -->
 			<GetYear></GetYear>
-			<!-- 农行不传 -->
+			<!-- 领取年期 -->
+			<GetTerms/>
+			<!-- 领取方式 传空 -->
 			<GetIntv/>
+			 <!-- 领取银行编码 传空 -->
 			<GetBankCode/>
+			<!-- 领取银行账户 传空 -->
 			<GetBankAccNo/>
+			<!-- 领取银行户名  传空 -->
 			<GetAccName/>
+			<!-- 自动垫交标志 传空 -->
+			<AutoPayFlag/>
 		</Risk>
 		</xsl:if>
 </xsl:template>
@@ -380,8 +370,8 @@
 		<Loan>
 			<!-- 贷款合同号 -->
 			<LoanNo><xsl:value-of select="ContNo"/></LoanNo>
-			<!-- 贷款机构 -->
-			<LoanBank><xsl:value-of select="LoanBank"/></LoanBank>
+			<!-- 贷款机构名称 -->
+			<LoanBankName><xsl:value-of select="LoanBank"/></LoanBankName>
 			<!-- 贷款日期 -->
 			<LoanDate><xsl:value-of select="BegDate"/></LoanDate>
 			<!-- 贷款到期日 -->
@@ -392,14 +382,14 @@
 			<AccNo><xsl:value-of select="AccNo"/></AccNo>
 			<!-- 贷款金额 -->
 			<xsl:choose><!-- 这里判断choose下，不然空的话在yuanToFen的时候变成0了，数据不原汁原味了 -->
-			<xsl:when test = "Prem=''"><LoanPrem/></xsl:when>
-			<xsl:otherwise>
-			<LoanPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Prem)"/></LoanPrem>
-			</xsl:otherwise>
+				<xsl:when test = "Prem=''"><LoanPrem/></xsl:when>
+				<xsl:otherwise>
+					<LoanPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Prem)"/></LoanPrem>
+				</xsl:otherwise>
 			</xsl:choose>
 			<!-- 保险起始日 -->
 			<InsuDate><xsl:value-of select="/ABCB2I/App/Req/Risks/RiskBeginDate"/></InsuDate>
-			<!-- 保险期满日 -->
+			<!-- 保险终止日 -->
 			<InsuEndDate><xsl:value-of select="/ABCB2I/App/Req/Risks/RiskEndDate"/></InsuEndDate>
 		</Loan>
 </xsl:template>
@@ -445,7 +435,7 @@
 		<xsl:when test=".=26">06</xsl:when> <!--其他亲属        -->
 		<xsl:when test=".=27">06</xsl:when> <!--同事     -->
 		<xsl:when test=".=28">06</xsl:when> <!--朋友     -->
-		<xsl:when test=".=29">06</xsl:when> <!--雇主     -->
+		<xsl:when test=".=29">09</xsl:when> <!--雇主     -->
 		<xsl:when test=".=30">06</xsl:when> <!--其他     -->
 		<xsl:otherwise>--</xsl:otherwise>
 	</xsl:choose>
@@ -471,10 +461,6 @@
 		<xsl:when test=".=110004">0</xsl:when>	<!-- 重号临时居民身份证 -->
 		<xsl:when test=".=110005">4</xsl:when>  <!-- 户口簿 -->
 		<xsl:when test=".=110006">4</xsl:when>  <!-- 重号户口簿  -->
-		<xsl:when test=".=110007">2</xsl:when>  <!-- 中国人民解放军军人身份证  -->
-		<xsl:when test=".=110008">2</xsl:when>  <!-- 重号中国人民解放军军人身份证  -->
-		<xsl:when test=".=110009">D</xsl:when>  <!-- 中国人民武装警察身份证件  -->
-		<xsl:when test=".=110010">D</xsl:when>  <!-- 重号中国人民武装警察身份证件  -->
 		<xsl:when test=".=110011">99</xsl:when>  <!-- 离休干部荣誉证 -->
 		<xsl:when test=".=110012">99</xsl:when>  <!-- 重号离休干部荣誉证 -->
 		<xsl:when test=".=110013">99</xsl:when>  <!-- 军官退休证 -->

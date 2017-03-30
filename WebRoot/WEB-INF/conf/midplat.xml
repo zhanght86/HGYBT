@@ -181,24 +181,24 @@
 		<!-- <service id="3" name="保单重打"
 			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
-		<!-- <service id="5" name="当日撤单"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="5" name="当日撤单"
-			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="5" name="当日撤单"
+			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<service id="6" name="新单日结"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
 		<!-- <service id="6" name="新单日结"
 			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
-		<!-- <service id="7" name="单证对账"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
-			method="service" /> -->
 		<service id="7" name="单证对账"
-			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
+		<!-- <service id="7" name="单证对账"
+			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
+			method="service" /> -->
 		<service id="10" name="银保犹豫期退保查询"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" />
@@ -232,7 +232,7 @@
 		<!-- <service id="25" name="工行试算" address="http://10.1.41.110:8080/bugfix/services/ServiceForBankInterfaceService" 
 			method="service" /> -->
 		<!-- <service id="20" name="非实时日终对账"
-			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"
+			address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService"
 			method="service" /> -->
 		<service id="20" name="非实时日终对账"
 			address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService"

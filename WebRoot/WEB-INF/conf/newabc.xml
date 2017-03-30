@@ -36,7 +36,7 @@
 		<name>新单缴费</name>
 		<timeout>300</timeout>
 		<locktime>120</locktime>
-		<funcFlag outcode="1004">1014</funcFlag>
+		<funcFlag outcode="1004">1004</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.ContConfirm</format>
 		<service>com.sinosoft.midplat.newabc.service.NewContConfirm</service>
 	</business>
@@ -136,7 +136,7 @@
 		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1014">1014</funcFlag>
-		<format>com.sinosoft.midplat.newabc.format.SecureStatusQuery</format><!--农行保全申请状态查询:SecureStatusQueryIn.xsl-->
+		<format>com.sinosoft.midplat.newabc.format.SecureStatusQuery</format>
 		<service>com.sinosoft.midplat.newabc.service.SecureStatusQuery</service>
 	</business>
 	
@@ -145,7 +145,7 @@
 		<timeout>300</timeout>
 		<locktime>120</locktime>
 		<funcFlag outcode="1016">1016</funcFlag>
-		<format>com.sinosoft.midplat.newabc.format.PolQuery</format><!--农行保单查询:PolQueryIn.xsl-->
+		<format>com.sinosoft.midplat.newabc.format.PolQuery</format>
 		<service>com.sinosoft.midplat.newabc.service.ContPolQuery</service>
 	</business>
 

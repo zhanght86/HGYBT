@@ -249,6 +249,8 @@
 								<Prnt><xsl:text>         </xsl:text>银行网点名称：<xsl:value-of select="/TranData/Body/AgentComName"/></Prnt>
 								<Prnt><xsl:text>         </xsl:text>银行销售人员姓名/代码：<xsl:value-of select="/TranData/Body/SaleName"/>/<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/SaleStaff,40)"/>打印时间：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur10Date()"/><xsl:text> </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Time()"/></Prnt>
 								<Prnt><xsl:text>         </xsl:text>银保经理姓名：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/AgentName, 54)"/>银保经理电话：<xsl:value-of select="/TranData/Body/AgentPhone"/></Prnt>
+								<Prnt><xsl:text>         </xsl:text>签发机构：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ComLocation, 54)"/></Prnt>
+								<Prnt><xsl:text>         </xsl:text>机构地址：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ComName, 54)"/></Prnt>
 								<Prnt></Prnt>
 								<Prnt></Prnt>
 								<Prnt></Prnt>

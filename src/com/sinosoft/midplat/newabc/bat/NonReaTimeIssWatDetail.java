@@ -12,7 +12,6 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
-import com.f1j.mvc.l;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -111,7 +110,8 @@ public class NonReaTimeIssWatDetail extends Balance{
 	           tServiceClassName = tServiceValue;
 	    }
 	         this.cLogger.info("业务处理模块" + tServiceClassName);
-	         Constructor tServiceConstructor = Class.forName(
+	         @SuppressWarnings("rawtypes")
+			Constructor tServiceConstructor = Class.forName(
 	           tServiceClassName).getConstructor(new Class[] { Element.class });
 	         Service tService = (Service)tServiceConstructor.newInstance(new Object[] { this.cThisBusiConf });
 	         Document tOutStdXml = tService.service(tInStdXml);
@@ -182,6 +182,57 @@ public class NonReaTimeIssWatDetail extends Balance{
 			 * 
 			 * 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|保单状态
 			 */
+			
+			//试算申请序号
+			Element tApplyNoEle = new Element("ApplyNo");
+			tApplyNoEle.setText(tSubMsgs[1]);
+			
+			//投保人姓名
+			Element tAppNameEle = new Element("AppntName");
+			tAppNameEle.setText(tSubMsgs[2]);
+			
+			//投保人证件类型
+			Element tIDTypeEle=new Element(IDType);
+			tIDTypeEle.setText(tSubMsgs[3]);
+			
+			//证件号码
+			Element tIDNoEle=new Element(IDNo);
+			tIDNoEle.setText(tSubMsgs[4]);
+			
+			//险种代码-
+			Element tRiskCodeEle=new Element(RiskCode);
+			tRiskCodeEle.setText(tSubMsgs[5]);
+			
+			//产品代码
+			Element tProdCodeEle =new Element("ProdCode");
+			tProdCodeEle.setText(tSubMsgs[6]);
+			
+			//投保单号
+			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
+			tProposalPrtNoEle.setText(tSubMsgs[7]);
+			
+			//保费
+			Element tPremEle = new Element(Prem);
+			long tPremFen = NumberUtil.yuanToFen(tSubMsgs[8]);
+			tPremEle.setText(String.valueOf(tPremFen));
+			
+			//费率
+			Element tSpecialRateEle= new Element("SpecialRate");
+			tSpecialRateEle.setText(tSubMsgs[9]);
+			
+			//账号
+			Element tAccNoEle=new Element("AccNo");
+			tAccNoEle.setText(tSubMsgs[10]);
+			
+			//电话号码
+			Element tPhoneEle=new Element("Phone");
+			tPhoneEle.setText(tSubMsgs[11]);
+			
+			//手机号码
+			Element tMobileEle=new Element("Mobile");
+			tMobileEle.setText(tSubMsgs[12]);
+			
+			//银行网点
 			String nodeNo=null;
 			if(tSubMsgs[16]!=null&&tSubMsgs[17]!=null){
 				nodeNo=tSubMsgs[16].trim()+tSubMsgs[17].trim();
@@ -192,63 +243,11 @@ public class NonReaTimeIssWatDetail extends Balance{
 			Element tTranDateEle = new Element(TranDate);
 			tTranDateEle.setText(tSubMsgs[0]);
 			
-			//非实时出单银保通不知道保单号，因此在插入 对账明细表的时候用投保单号插入保单号20141012
-			Element tAgentCom=new Element(AgentCom);
-			tAgentCom.setText(nodeNo);
-			
-			Element tContNoEle = new Element(ContNo);
-			tContNoEle.setText(tSubMsgs[7]);
-			
-			Element tApplyNoEle = new Element("ApplyNo");
-			tApplyNoEle.setText(tSubMsgs[1]);
-			
-			Element tAppNameEle = new Element("AppntName");
-			tAppNameEle.setText(tSubMsgs[2]);
-			
-			Element tIDTypeEle=new Element(IDType);
-			tIDTypeEle.setText(tSubMsgs[3]);
-			
-			Element tIDNoEle=new Element(IDNo);
-			tIDNoEle.setText(tSubMsgs[4]);
-			
-			Element tRiskCodeEle=new Element(RiskCode);
-			tRiskCodeEle.setText(tSubMsgs[5]);
-			
-			Element tProdCodeEle =new Element("ProdCode");
-			tProdCodeEle.setText(tSubMsgs[6]);
-			
-			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
-			tProposalPrtNoEle.setText(tSubMsgs[7]);
-			
-			Element tPremEle = new Element(Prem);
-			long tPremFen = NumberUtil.yuanToFen(tSubMsgs[8]);
-			tPremEle.setText(String.valueOf(tPremFen));
-			
-			Element tSpecialRateEle= new Element("SpecialRate");
-			tSpecialRateEle.setText(tSubMsgs[9]);
-			
-			Element tAccNoEle=new Element("AccNo");
-			tAccNoEle.setText(tSubMsgs[10]);
-			
-			Element tPhoneEle=new Element("Phone");
-			tPhoneEle.setText(tSubMsgs[11]);
-			
-			Element tMobileEle=new Element("Mobile");
-			tMobileEle.setText(tSubMsgs[12]);
-			
-			/*Element tContTypeEle = new Element("ContType");
-			if (!(tSubMsgs[8].trim()).endsWith("88")) {
-				tContTypeEle.setText(String.valueOf(HxlifeCodeDef.ContType_Group));
-			} else {
-				tContTypeEle.setText(String.valueOf(HxlifeCodeDef.ContType_Bank));
-			}*/
+			//非实时出单银保通不知道保单号，因此在插入对账明细表的时候用投保单号插入保单号20141012
+ 			Element tContNo=new Element(ContNo);
+ 			tContNo.setText(tSubMsgs[7]);
 			
 			Element tDetailEle = new Element(Detail);
-			tDetailEle.addContent(tTranDateEle);
-			tDetailEle.addContent(tAgentCom);
-//			tDetailEle.addContent(tTranNoEle);
-			tDetailEle.addContent(tContNoEle);
-			tDetailEle.addContent(tNodeNo);
 			tDetailEle.addContent(tApplyNoEle);
 			tDetailEle.addContent(tAppNameEle);
 			tDetailEle.addContent(tIDTypeEle);
@@ -262,6 +261,9 @@ public class NonReaTimeIssWatDetail extends Balance{
 			tDetailEle.addContent(tPhoneEle);
 			tDetailEle.addContent(tMobileEle);
 			
+			tDetailEle.addContent(tNodeNo);
+			tDetailEle.addContent(tTranDateEle);
+			tDetailEle.addContent(tContNo);
 			mBodyEle.addContent(tDetailEle);
 		}
 		mBufReader.close();	//关闭流

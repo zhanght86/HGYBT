@@ -53,7 +53,7 @@ public class ContConfirm extends XmlSimpFormat {
 		String cTransDate = mRootEle.getChild("Header").getChildText("TransDate");
 		String cTranCom = mRootEle.getChild("Head").getChildText(TranCom);
 		cLogger.info("查询===================================!");
-		String sqlStr = "select proposalprtno,otherno,logno,Operator from tranlog where trancom='"+cTranCom+"' and rcode='0' and funcflag='1012' and tranno='"+uwTransId+"' and MakeDate='"+cTransDate+"' order by logno desc";
+		String sqlStr = "select proposalprtno,otherno,logno,Operator from tranlog where trancom='"+cTranCom+"' and rcode='0' and funcflag='1002' and tranno='"+uwTransId+"' and MakeDate='"+cTransDate+"' order by logno desc";
 		SSRS ssrs0=new ExeSQL().execSQL(sqlStr);
 		cLogger.info("查询结果："+ssrs0.MaxNumber);
 		Document mStdXml = 

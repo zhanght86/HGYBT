@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="GBK"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:java="http://xml.apache.org/xslt/java"
-	exclude-result-prefixes="java">
+	xmlns:java="http://xml.apache.org/xslt/java"  exclude-result-prefixes="java">
+	
 	<xsl:template match="ABCB2I">
 		<TranData>
 			<Head>
@@ -11,10 +11,7 @@
 			<BaseInfo>
 				<!--银行编号 -->
 				<!-- <BankCode>0102</BankCode> -->
-				<BankCode>
-					<xsl:value-of select="Header/ProvCode"/>
-					<xsl:value-of select="Header/BranchNo"/>
-				</BankCode>
+				<BankCode><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></BankCode>
 				<!--交易日期 -->
 				<BankDate>
 					<xsl:value-of select="Header/TransDate" />
@@ -28,10 +25,7 @@
 					<xsl:value-of select="Header/ProvCode"/>
 				</ZoneNo>
 				<!-- 保险客户名单提供地区编号(分支编号) -->
-				<BrNo>
-					<xsl:value-of select="Header/ProvCode"/>
-					<xsl:value-of select="Header/BranchNo"/>
-				</BrNo>
+				<BrNo><!-- <xsl:value-of select="Header/ProvCode"/> --><xsl:value-of select="Header/BranchNo"/></BrNo>
 				<!--柜员编号 -->
 				<TellerNo>
 					<xsl:value-of select="Header/Tlid" />
@@ -91,6 +85,7 @@
 			</LCCont>
 		</TranData>
 	</xsl:template>
+	
 	<!-- 证件类型-->
 	<xsl:template name="tran_AppntIDType" match="App/Req/Appl/IDKind">
 		<xsl:choose>
@@ -100,10 +95,6 @@
 			<xsl:when test=".=110004">0</xsl:when>	<!-- 重号临时居民身份证 -->
 			<xsl:when test=".=110005">4</xsl:when>  <!-- 户口簿 -->
 			<xsl:when test=".=110006">4</xsl:when>  <!-- 重号户口簿  -->
-			<xsl:when test=".=110007">2</xsl:when>  <!-- 中国人民解放军军人身份证  -->
-			<xsl:when test=".=110008">2</xsl:when>  <!-- 重号中国人民解放军军人身份证  -->
-			<xsl:when test=".=110009">D</xsl:when>  <!-- 中国人民武装警察身份证件  -->
-			<xsl:when test=".=110010">D</xsl:when>  <!-- 重号中国人民武装警察身份证件  -->
 			<xsl:when test=".=110011">99</xsl:when>  <!-- 离休干部荣誉证 -->
 			<xsl:when test=".=110012">99</xsl:when>  <!-- 重号离休干部荣誉证 -->
 			<xsl:when test=".=110013">99</xsl:when>  <!-- 军官退休证 -->
