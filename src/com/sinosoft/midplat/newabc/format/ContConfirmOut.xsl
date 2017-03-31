@@ -128,12 +128,12 @@
 			     				<Prnt><xsl:text>         </xsl:text>------------------------------------------------------------------------------------------------</Prnt>
 								<Prnt><xsl:text>         </xsl:text><xsl:text>投保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Appnt/Name, 18)"/>
 																										   <xsl:text>性别：</xsl:text><xsl:apply-templates select="Appnt/Sex"/><xsl:text>   </xsl:text>
-																										   <xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.DateUtil.getAge(Appnt/Birthday), 2)"/><xsl:text>            </xsl:text>  
+																										   <xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(string(java:com.sinosoft.midplat.common.DateUtil.getAge(Appnt/Birthday)), 2)"/><xsl:text>            </xsl:text>  
 																										   <xsl:text>证件号码：</xsl:text><xsl:value-of select="Appnt/IDNo"/>
 								</Prnt>
 								<Prnt><xsl:text>         </xsl:text><xsl:text>被保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Insured/Name, 18)"/>
 																										   <xsl:text>性别：</xsl:text><xsl:apply-templates select="Insured/Sex"/><xsl:text>   </xsl:text>
-																										   <xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.DateUtil.getAge(Insured/Birthday), 2)"/><xsl:text>            </xsl:text>
+																										   <xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(string(java:com.sinosoft.midplat.common.DateUtil.getAge(Insured/Birthday)), 2)"/><xsl:text>            </xsl:text>
 																										   <xsl:text>证件号码：</xsl:text><xsl:value-of select="Insured/IDNo"/>
 								</Prnt>				
 						    	<xsl:variable name="flag" select="java:java.lang.Boolean.parseBoolean('false')" />  

@@ -62,46 +62,46 @@ public class NewABCTest {
 //		mFuncFlag = "1021";//保单详情查询
 //		mFuncFlag = "1014";//保全申请状态查询
 //		mFuncFlag = "1013";//保全申请（支持犹撤申请、满期给付申请、退保申请）
-		mFuncFlag = "1005";//新单试算结果查询
+//		mFuncFlag = "1005";//新单试算结果查询
 //		mFuncFlag = "1011";//账户变更
-//		mFuncFlag = "1019";//保单价值查询
+		mFuncFlag = "1019";//保单价值查询
 		
 		
 		String mInFilePath = "f://xml/ABC1//"+mFuncFlag+".xml";
 		//新单试算
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1002in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1002in_noStd.xml";
 		//新单缴费
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1004in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1004in_noStd.xml";
 		//保单重打
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1018in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1018in_noStd.xml";
 		//当日撤单
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1010in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1010in_noStd.xml";
 		//取消交易
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1009in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1009in_noStd.xml";
 		//保全查询（支持犹撤申请、满期给付申请、退保申请查询）
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1012in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1012in_noStd.xml";
 		//心跳交易
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1000in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1000in_noStd.xml";
 		//非实时出单申请
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1006in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1006in_noStd.xml";
 		//续期缴费信息查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1007in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1007in_noStd.xml";
 		//续期缴费
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1008in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1008in_noStd.xml";
 		//保单详情查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1021in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1021in_noStd.xml";
 		//保单查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1016in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1016in_noStd.xml";
 		//保全申请状态查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1014in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1014in_noStd.xml";
 		//保全申请（支持犹撤申请、满期给付申请、退保申请）
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1013in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1013in_noStd.xml";
 		//新单试算结果查询
-		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1005in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1005in_noStd.xml";
 		//账户变更
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1011in_noStd.xml";
+//		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1011in_noStd.xml";
 		//保单价值查询
-//		mInFilePath="D:/File/task/20170330/newabc/ybt_test/1019in_noStd.xml";
+		mInFilePath="D:/File/task/20170331/newabc/ybt_test/1019in_noStd.xml";
 		
 		InputStream mIs = new FileInputStream(mInFilePath);
 		
@@ -118,7 +118,7 @@ public class NewABCTest {
 //		mFos.flush();
 //		mFos.close();
 //		OutputStream pOs = new FileOutputStream("D:/task/20161124/test/newabc/"+mFuncFlag+"_out.xml");
-		OutputStream pOs = new FileOutputStream("D:/File/task/20170330/newabc/ybt_test/1005out_noStd.xml");
+		OutputStream pOs = new FileOutputStream("D:/File/task/20170331/newabc/ybt_test/1019out_noStd.xml");
 		JdomUtil.output(mOutXmlDoc, pOs);
 		pOs.flush();
 		pOs.close();

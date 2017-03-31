@@ -26,7 +26,7 @@ public class Cancel extends XmlSimpFormat {
 		String cTransDate = pNoStdXml.getRootElement().getChild("Header").getChildText("TransDate");
 		String mTranCom = pNoStdXml.getRootElement().getChild("Head").getChildText(TranCom);
 		OrgSerialNo=eOrgSerialNo.getText();
-		String sqlStr = "select proposalprtno from tranlog where trancom='"+mTranCom+"' and rcode='0' and funcflag='1014' and contno='"+eContNo.getText()+"' and MakeDate='"+cTransDate+"' order by logno desc";
+		String sqlStr = "select proposalprtno from tranlog where trancom='"+mTranCom+"' and rcode='0' and funcflag='1004' and contno='"+eContNo.getText()+"' and MakeDate='"+cTransDate+"' order by logno desc";
 		SSRS ssrs0=new ExeSQL().execSQL(sqlStr);
 		Document mStdXml = 
 			CancelInXsl.newInstance().getCache().transform(pNoStdXml);

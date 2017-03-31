@@ -56,7 +56,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1009">1009</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.Rollback</format>
-		<service>com.sinosoft.midplat.service.ContRollback</service>
+		<service>com.sinosoft.midplat.newabc.service.ContRollback</service>
 	</business>
 	
 	<business>
