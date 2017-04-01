@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170331</TranDate>
+      <TranTime>104131</TranTime>
+      <TranCom outcode="05">05</TranCom>
+      <NodeNo>112401</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>0000000000000127</TranNo>
+      <FuncFlag>2008</FuncFlag>
+   </Head>
+</TranData>
+

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>非实时出单结果文件交易成功！</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContEndDate>2027-04-01</ContEndDate>
+         <TranDate />
+         <ApplyNo />
+         <Appnt>
+            <AppntName>张三</AppntName>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Appnt>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode />
+         <ContNo>888010000001010</ContNo>
+         <ApplyDate />
+         <SignDate>2017-03-31</SignDate>
+         <RelationToInusre>00</RelationToInusre>
+         <Insured>
+            <Name>张三</Name>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Insured>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <AccNo>6222023100036930000</AccNo>
+         <PayIntv>0</PayIntv>
+         <PayEndDate>3017-04-01</PayEndDate>
+         <Mult>10.0</Mult>
+         <ContPrtNo>102011000051762</ContPrtNo>
+         <SpecialRate>1</SpecialRate>
+         <EtraRiskCnt>0</EtraRiskCnt>
+      </Detail>
+      <Detail>
+         <ContEndDate>2027-04-01</ContEndDate>
+         <TranDate />
+         <ApplyNo />
+         <Appnt>
+            <AppntName>张三</AppntName>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Appnt>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode />
+         <ContNo>888010000001011</ContNo>
+         <ApplyDate />
+         <SignDate>2017-03-31</SignDate>
+         <RelationToInusre>00</RelationToInusre>
+         <Insured>
+            <Name>张三</Name>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Insured>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <AccNo>6222023100036930000</AccNo>
+         <PayIntv>0</PayIntv>
+         <PayEndDate>3017-04-01</PayEndDate>
+         <Mult>10.0</Mult>
+         <ContPrtNo>102011000051869</ContPrtNo>
+         <SpecialRate>1</SpecialRate>
+         <EtraRiskCnt>0</EtraRiskCnt>
+      </Detail>
+   </Body>
+</TranData>
+

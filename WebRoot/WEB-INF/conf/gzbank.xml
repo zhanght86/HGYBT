@@ -51,7 +51,7 @@
 		<NodeNo>060150001222</NodeNo> 
 		<nextDate>N</nextDate>
 		<service>com.sinosoft.midplat.gzbank.service.NewContBlc</service>
-		<localDir>F:/xml/HG/</localDir>
+		<localDir>D:/xml/HG/</localDir>
 		<charset>GBK</charset>
 	</business>
 
