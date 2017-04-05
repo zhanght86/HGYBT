@@ -1,176 +1,44 @@
-14:53:00,548 INFO bat.GZContBlc(261) - 程序开始...
-14:53:00,548 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
-14:53:00,548 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
-14:53:00,548 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
-14:53:00,563 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
-14:53:00,566 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
-14:53:00,567 INFO gzbank.GZBankConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml...
-14:53:00,570 INFO common.XmlConf(80) - conf file modified at (2016-12-24 11:28:21,000) and length=1763 bytes!
-14:53:00,786 INFO gzbank.GZBankConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml!
-14:53:00,786 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
-14:53:00,786 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
-14:53:00,786 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
-14:53:00,817 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
-14:53:00,833 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
-14:53:00,833 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
-14:53:00,833 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
-14:53:01,535 INFO bat.GZContBlc(41) - Into GZContBlc.run()...
-14:53:01,604 INFO bat.GZContBlc(211) - Into GZContBlc.getHead()...
-14:53:01,619 INFO bat.GZContBlc(254) - Out GZContBlc.getHead()!
-14:53:01,619 INFO bat.GZContBlc(69) - FileName = 009920170401.txt
-14:53:01,619 INFO bat.GZContBlc(72) - localDir = F:/xml/HG/
-14:53:01,619 ERROR bat.GZContBlc(80) - 生成标准对账报文出错!
-java.io.FileNotFoundException: F:\xml\HG\009920170401.txt (系统找不到指定的路径。)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.<init>(FileInputStream.java:120)
-	at java.io.FileInputStream.<init>(FileInputStream.java:79)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.run(GZContBlc.java:75)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.main(GZContBlc.java:264)
-14:53:01,619 INFO bat.GZContBlc(106) - 业务处理模块com.sinosoft.midplat.gzbank.service.NewContBlc
-14:53:01,751 INFO service.NewContBlc(31) - Into NewContBlc.service()...
-14:53:01,767 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
-14:53:01,889 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
-14:53:01,967 INFO service.NewContBlc(74) - 贵州银行业务对账交易失败！
-com.sinosoft.midplat.exception.MidplatException: F:\xml\HG\009920170401.txt (系统找不到指定的路径。)
-	at com.sinosoft.midplat.gzbank.service.NewContBlc.service(NewContBlc.java:55)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.run(GZContBlc.java:111)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.main(GZContBlc.java:264)
-14:53:02,051 INFO service.NewContBlc(95) - Out NewContBlc.service()!
-14:53:02,051 INFO bat.GZContBlc(123) - Out GZContBlc.run()!
-14:53:02,051 INFO bat.GZContBlc(269) - 成功结束！
-14:54:25,756 INFO bat.GZContBlc(261) - 程序开始...
-14:54:25,761 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
-14:54:25,764 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
-14:54:25,765 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
-14:54:25,768 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
-14:54:25,771 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
-14:54:25,772 INFO gzbank.GZBankConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml...
-14:54:25,780 INFO common.XmlConf(80) - conf file modified at (2017-04-01 14:53:31,315) and length=1763 bytes!
-14:54:26,021 INFO gzbank.GZBankConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml!
-14:54:26,022 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
-14:54:26,022 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
-14:54:26,022 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
-14:54:26,038 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
-14:54:26,038 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
-14:54:26,038 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
-14:54:26,054 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
-14:54:26,693 INFO bat.GZContBlc(41) - Into GZContBlc.run()...
-14:54:26,760 INFO bat.GZContBlc(211) - Into GZContBlc.getHead()...
-14:54:26,760 INFO bat.GZContBlc(254) - Out GZContBlc.getHead()!
-14:54:26,760 INFO bat.GZContBlc(69) - FileName = 009920170401.txt
-14:54:26,760 INFO bat.GZContBlc(72) - localDir = D:/xml/HG/
-14:54:26,760 INFO bat.GZContBlc(128) - Into GZContBlc.parse()...
-14:54:26,760 INFO bat.GZContBlc(206) - Out GZContBlc.parse()!
-14:54:26,760 INFO bat.GZContBlc(106) - 业务处理模块com.sinosoft.midplat.gzbank.service.NewContBlc
-14:54:26,776 INFO service.NewContBlc(31) - Into NewContBlc.service()...
-14:54:26,776 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
-14:54:26,876 ERROR service.ServiceImpl(200) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
-14:54:26,876 INFO service.NewContBlc(74) - 贵州银行业务对账交易失败！
-com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
-	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:205)
-	at com.sinosoft.midplat.gzbank.service.NewContBlc.service(NewContBlc.java:37)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.run(GZContBlc.java:111)
-	at com.sinosoft.midplat.gzbank.bat.GZContBlc.main(GZContBlc.java:264)
-14:54:26,876 INFO service.NewContBlc(95) - Out NewContBlc.service()!
-14:54:26,876 INFO bat.GZContBlc(123) - Out GZContBlc.run()!
-14:54:26,876 INFO bat.GZContBlc(269) - 成功结束！
-14:56:22,389 INFO bat.GZContBlc(261) - 程序开始...
-14:56:22,389 INFO gzbank.GZBankConf(22) - Into GZBankConf.load()...
-14:56:22,389 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
-14:56:22,389 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
-14:56:22,389 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
-14:56:22,389 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
-14:56:22,389 INFO gzbank.GZBankConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml...
-14:56:22,405 INFO common.XmlConf(80) - conf file modified at (2017-04-01 14:53:31,315) and length=1763 bytes!
-14:56:22,620 INFO gzbank.GZBankConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/gzbank.xml!
-14:56:22,620 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
-14:56:22,620 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
-14:56:22,620 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
-14:56:22,636 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
-14:56:22,652 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
-14:56:22,652 INFO gzbank.GZBankConf(47) - Out GZBankConf.load()!
-14:56:22,652 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
-14:56:23,307 INFO bat.GZContBlc(41) - Into GZContBlc.run()...
-14:56:23,376 INFO bat.GZContBlc(211) - Into GZContBlc.getHead()...
-14:56:23,376 INFO bat.GZContBlc(254) - Out GZContBlc.getHead()!
-14:56:23,376 INFO bat.GZContBlc(69) - FileName = 009920170401.txt
-14:56:23,376 INFO bat.GZContBlc(72) - localDir = D:/xml/HG/
-14:56:23,376 INFO bat.GZContBlc(128) - Into GZContBlc.parse()...
-14:56:23,376 INFO bat.GZContBlc(206) - Out GZContBlc.parse()!
-14:56:23,376 INFO bat.GZContBlc(106) - 业务处理模块com.sinosoft.midplat.gzbank.service.NewContBlc
-14:56:23,376 INFO service.NewContBlc(31) - Into NewContBlc.service()...
-14:56:23,392 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
-14:56:23,461 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
-14:56:23,508 INFO service.NewContBlc(58) - <?xml version="1.0"?>
-<TranData>
-   <Head>
-      <TranDate>20170401</TranDate>
-      <TranTime>145623</TranTime>
-      <TranCom outcode="09">09</TranCom>
-      <ZoneNo>-</ZoneNo>
-      <NodeNo>060150001222</NodeNo>
-      <TellerNo>sys</TellerNo>
-      <TranNo>009920170401.txt</TranNo>
-      <FuncFlag>9005</FuncFlag>
-      <TranLogNo>82017</TranLogNo>
-      <BankCode>9</BankCode>
-   </Head>
-   <Body>
-      <Count>0</Count>
-      <Prem>0</Prem>
-   </Body>
-</TranData>
-
-
-14:56:23,577 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
-14:56:23,592 DEBUG common.SaveMessage(23) - SavePath_HOME = null
-14:56:23,592 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
-14:56:23,608 INFO common.SaveMessage(94) - 82017_3_6_inSvc.xml IO输出耗时:0.016s
-14:56:23,608 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！82017_3_6_inSvc.xml
-14:56:23,608 INFO net.CallWebsvcAtomSvc(102) - start call 新单日结(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
-14:56:25,882 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
-14:56:25,911 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
-14:56:25,960 DEBUG httpclient.Wire(70) - >> "309[\r][\n]"
-14:56:25,961 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNDAxPC9UcmFuRGF0ZT48VHJhblRpbWU+MTQ1NjIzPC9UcmFuVGltZT48VHJhbkNvbSBvdXRjb2RlPSIwOSI+MDk8L1RyYW5Db20+PFpvbmVObz4tPC9ab25lTm8+PE5vZGVObz4wNjAxNTAwMDEyMjI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPjAwOTkyMDE3MDQwMS50eHQ8L1RyYW5Obz48RnVuY0ZsYWc+OTAwNTwvRnVuY0ZsYWc+PFRyYW5Mb2dObz44MjAxNzwvVHJhbkxvZ05vPjxCYW5rQ29kZT45PC9CYW5rQ29kZT48U2VydmljZUlkPjY8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PENvdW50PjA8L0NvdW50PjxQcmVtPjA8L1ByZW0+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
-14:56:25,961 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
-14:56:25,962 DEBUG httpclient.Wire(84) - >> "0"
-14:56:25,962 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
-14:56:25,963 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
-14:56:26,144 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
-14:56:26,144 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
-14:56:26,161 DEBUG httpclient.Wire(70) - << "Date: Sat, 01 Apr 2017 06:56:36 GMT[\r][\n]"
-14:56:26,162 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
-14:56:26,163 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
-14:56:26,164 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
-14:56:26,164 DEBUG httpclient.Wire(70) - << "[\r][\n]"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "0"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "1"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "d"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "b"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "[\r]"
-14:56:26,182 DEBUG httpclient.Wire(70) - << "[\n]"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "<?xm"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
-14:56:26,182 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+PC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
-14:56:26,198 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新单日结(service)耗时：2.59s
-14:56:26,213 INFO common.SaveMessage(94) - 82017_6_6_outSvc.xml IO输出耗时:0.0s
-14:56:26,213 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！82017_6_6_outSvc.xml
-14:56:26,213 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
-14:56:26,213 INFO service.NewContBlc(67) - 日终对账核心返回数据:<?xml version="1.0"?>
-<TranData>
-   <Head>
-      <Flag>0</Flag>
-      <Desc>交易成功</Desc>
-   </Head>
-   <Body />
-</TranData>
-
-
-14:56:26,282 INFO service.NewContBlc(95) - Out NewContBlc.service()!
-14:56:26,282 INFO bat.GZContBlc(123) - Out GZContBlc.run()!
-14:56:26,282 INFO bat.GZContBlc(269) - 成功结束！
+17:17:59,067 INFO bat.NewAbcBusiBlc(448) - 程序开始...
+17:17:59,067 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:17:59,067 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:17:59,067 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:17:59,067 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:17:59,067 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:17:59,082 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:17:59,082 INFO common.XmlConf(80) - conf file modified at (2017-03-31 11:19:32,657) and length=10328 bytes!
+17:17:59,350 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:17:59,352 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:17:59,352 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:17:59,352 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
+17:17:59,383 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:17:59,383 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:17:59,383 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:17:59,383 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+17:18:00,332 INFO bat.NewAbcBusiBlc(98) - Into NewAbcBusiBlc.run()...
+17:18:00,486 INFO bat.NewAbcBusiBlc(342) - Into NewAbcBusiBlc.getHead()...
+17:18:00,498 INFO bat.NewAbcBusiBlc(352) -  对账日期为...20170331
+17:18:00,499 INFO bat.NewAbcBusiBlc(354) -  当前日期为...20170331
+17:18:00,500 INFO bat.NewAbcBusiBlc(441) - Out NewAbcBusiBlc.getHead()!
+17:18:00,500 INFO bat.BatConf(28) - Into BatConf.load()...
+17:18:00,500 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+17:18:00,500 INFO common.XmlConf(80) - conf file modified at (2017-03-23 16:39:31,483) and length=6235 bytes!
+17:18:00,500 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+17:18:00,500 INFO bat.BatConf(50) - Out BatConf.load()!
+17:18:00,500 INFO bat.BatUtils(75) - 读取配置文件异常，请检查路径是否正确及文件是否存在......
+17:18:00,516 ERROR bat.NewAbcBusiBlc(158) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.getFileName(NewAbcBusiBlc.java:84)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:140)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
+17:18:00,516 INFO bat.NewAbcBusiBlc(188) - 业务处理模块com.sinosoft.midplat.newabc.service.NewInsPolRec
+17:18:00,516 INFO service.NewInsPolRec(31) - Into NewInsPolRec.service()...
+17:18:00,532 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:18:00,602 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:18:00,602 INFO service.NewInsPolRec(76) - 新保承保保单对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 
+	at com.sinosoft.midplat.newabc.service.NewInsPolRec.service(NewInsPolRec.java:55)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:192)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
+17:18:00,702 INFO service.NewInsPolRec(97) - Out NewInsPolRec.service()!
+17:18:00,702 INFO bat.NewAbcBusiBlc(205) - Out NewAbcBusiBlc.run()!
+17:18:00,702 INFO bat.NewAbcBusiBlc(476) - 成功结束！

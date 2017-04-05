@@ -20,7 +20,6 @@ import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.newabc.NewAbcConf;
-import com.sinosoft.midplat.newabc.bat.File_download;
 import com.sinosoft.midplat.service.Service;
 import com.sinosoft.midplat.bat.Balance;
 
