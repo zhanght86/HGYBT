@@ -2,16 +2,16 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
  	exclude-result-prefixes="java">
-<xsl:template match="TXLife"><!-- 贵州银行请求报文转换为核心请求报文 -->
+<xsl:template match="TXLife">
 <TranData>
    <Head>
       <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
-      <ZoneNo><xsl:value-of select="BankCode"/></ZoneNo>	<!-- 地区代码 -->
-      <NodeNo><xsl:value-of select="Branch"/></NodeNo>		<!-- 网点代码 -->
-      <BankCode>0105</BankCode>								<!--  -->
-      <TellerNo><xsl:value-of select="Teller"/></TellerNo>	<!-- 柜员代码 -->
-      <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>	<!-- 流水号 -->
+      <ZoneNo><xsl:value-of select="BankCode"/></ZoneNo>			<!-- 地区代码 -->
+      <NodeNo><xsl:value-of select="Branch"/></NodeNo>				<!-- 网点代码 -->
+      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>	<!-- 银行代码 -->
+      <TellerNo><xsl:value-of select="Teller"/></TellerNo>			<!-- 柜员代码 -->
+      <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>		<!-- 流水号 -->
       <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
       <TranCom><xsl:value-of select="Head/TranCom"/></TranCom>
       <FuncFlag><xsl:value-of select="Head/FuncFlag"/></FuncFlag>
@@ -29,7 +29,7 @@
       <PolApplyDate><xsl:value-of select="SubmissionDate"/></PolApplyDate>	
       <AccNo><xsl:value-of select="Banking[AccountType='0' or AccountType='2']/AccountNumber"/></AccNo>
       <AccName><xsl:value-of select="PolicyHolder/FullName"/></AccName>
-      <!--缴费形式 和朱诚沟通，从银保通出单的中韩这边缴费形式都置为B -工行对应处的说明-->
+      <!--缴费形式，从银保通出单的中韩这边缴费形式都置为B -工行对应处的说明-->
 	  <PayMode>B</PayMode>
       <GetPolMode>1</GetPolMode>
       <JobNotice/>
@@ -84,20 +84,26 @@
 		 <MaritalStatus><xsl:value-of select="PolicyHolder/Marriage"/></MaritalStatus>
          <YearSalary><xsl:value-of select="PolicyHolder/AnnualIncome div 10000"/></YearSalary>
          <FamilyYearSalary><xsl:value-of select="PolicyHolder/AnnualHomeIncome div 10000"/></FamilyYearSalary>
-         <xsl:variable name="tAppBirthDay" 	select="PolicyHolder/BirthDate" />
-         <xsl:variable name="tInsuBirthDay" 	select="Insured/BirthDate" />
+         <!-- 投保人与被保人关系 -->
          <RelaToInsured>
-         	<xsl:call-template name="tran_relation">
-				<xsl:with-param name="relation">
-					<xsl:value-of select="PolicyHolder/RelatedToInsuredRoleCode" />
-				</xsl:with-param>
-				<xsl:with-param name="tApp">
-					<xsl:value-of select="$tAppBirthDay" />
-				</xsl:with-param>
-				<xsl:with-param name="tInsu">
-					<xsl:value-of select="$tInsuBirthDay" />
-				</xsl:with-param>
-			</xsl:call-template> 
+	         <xsl:choose>
+	         	<!-- 投保人出生日期大于等于被保人 -->
+	         	<xsl:when test="java:com.sinosoft.lis.pubfun.PubFun.calInterval(PolicyHolder/BirthDate,Insured/BirthDate,'D')>=0">
+	         		<xsl:call-template name="tran_relation1">
+				      <xsl:with-param name="relation">
+					    <xsl:value-of select="PolicyHolder/RelatedToInsuredRoleCode" />
+					  </xsl:with-param>
+				</xsl:call-template> 
+	         	</xsl:when>
+	         	<!-- 投保人出生日期小于被保人 -->
+	         	<xsl:otherwise>
+	         		<xsl:call-template name="tran_relation2">
+				      <xsl:with-param name="relation">
+					    <xsl:value-of select="PolicyHolder/RelatedToInsuredRoleCode" />
+					  </xsl:with-param>
+				</xsl:call-template> 
+	         	</xsl:otherwise>
+	         </xsl:choose>
          </RelaToInsured>
          <DenType><xsl:value-of select="PolicyHolder/ResidentsType" /></DenType>
       </Appnt>
@@ -156,6 +162,9 @@
          <RiskAssessmentEndDate></RiskAssessmentEndDate>
          <PremiumBudget></PremiumBudget>
       </Insured>
+      <!-- 被保人出生日期 -->
+      <xsl:variable name="tInsuBirthDay" select="Insured/BirthDate" />
+      <!--身故受益人节点 -->
       <xsl:choose>
 		 <xsl:when test="BeneficiaryCount !='0'">
 		 	<xsl:variable name="count" 	select="BeneficiaryCount" /><!-- 身故受益人个数 -->
@@ -166,7 +175,14 @@
 		 			<xsl:variable name="tnode" select="node()" /><!-- 声明局部变量匹配除属性节点和根节点之外的其他任何节点[非根节点、属性节点的元素(根节点子元素)] -->
 			 		<Bnf>
 			 			<Type>1</Type> <!-- 身故受益人 -->
-						<Grade><xsl:value-of select="No " /></Grade>
+						<Grade>
+						  <xsl:if test="../ProductCode='022J0300'"><!--借意险 -->
+						    <xsl:value-of select="No+1" /><!--对于借意险身故受益人顺序从2开始，1默认为机构受益人 -->
+						  </xsl:if>
+						  <xsl:if test="../ProductCode!='022J0300'"><!--非借意险 -->
+						    <xsl:value-of select="No" />
+						  </xsl:if>
+						</Grade>
 						<Name><xsl:value-of select="FullName" /></Name>
 							<!-- 受益人性别 -->
 						<Sex>
@@ -183,8 +199,7 @@
 						<IDType><!-- 受益人证件类型 -->
 							<xsl:call-template name="tran_idtype">
 								<xsl:with-param name="idtype">
-									<xsl:value-of
-										select="GovtIDTC" />
+									<xsl:value-of select="GovtIDTC" />
 								</xsl:with-param>
 							</xsl:call-template>
 						</IDType>
@@ -192,24 +207,36 @@
 						<!-- 受益人证件有效期-->
 							<IdExpDate><xsl:value-of select="ExpireDate" /></IdExpDate>
 						<Lot>
-							<xsl:value-of
-								select="InterestPercent" />
+							<xsl:value-of select="InterestPercent" />
 						</Lot>
-				<!-- 		<RelaToInsured>
-								<xsl:call-template name="tran_relation">
-									<xsl:with-param name="RelaToInsured">
-										<xsl:value-of
-											select="PbBenfHoldRela" />
-									</xsl:with-param>
-								</xsl:call-template>
-							</RelaToInsured> -->
-							
-						<xsl:choose>
-							<xsl:when test="PbBenfHoldRela = '' ">
-							<RelaToInsured>--</RelaToInsured>
-							</xsl:when>
-							<xsl:otherwise><RelaToInsured><xsl:value-of	select="PbBenfHoldRela" /></RelaToInsured></xsl:otherwise>
-						</xsl:choose>
+				 		<!-- <RelaToInsured>
+				 		  <xsl:call-template name="tran_relation">
+		                     <xsl:with-param name="relation">
+			                   <xsl:value-of select="RelatedToInsuredRoleCode" />
+			                 </xsl:with-param>
+			              </xsl:call-template>
+					   </RelaToInsured> -->
+					   <!-- 受益人与被保人关系 -->
+					   <RelaToInsured>
+					   	<xsl:choose>
+				         	<!-- 投保人出生日期大于等于被保人 -->
+				         	<xsl:when test="java:com.sinosoft.lis.pubfun.PubFun.calInterval(BirthDate,$tInsuBirthDay,'D')>=0">
+				         		<xsl:call-template name="tran_relation1">
+							      <xsl:with-param name="relation">
+								    <xsl:value-of select="RelatedToInsuredRoleCode" />
+								  </xsl:with-param>
+							</xsl:call-template> 
+				         	</xsl:when>
+				         	<!-- 投保人出生日期小于被保人 -->
+				         	<xsl:otherwise>
+				         		<xsl:call-template name="tran_relation2">
+							      <xsl:with-param name="relation">
+								    <xsl:value-of select="RelatedToInsuredRoleCode" />
+								  </xsl:with-param>
+							</xsl:call-template> 
+				         	</xsl:otherwise>
+				         </xsl:choose>
+	         			</RelaToInsured>
 						<BeneficType>N</BeneficType>
 			 		</Bnf>
 			 		</xsl:if>
@@ -217,42 +244,106 @@
 		 	</xsl:for-each>
 		 </xsl:when>
 	  </xsl:choose>
+	  <!--生存受益人节点 -->
+	  <xsl:for-each select="LifeBnft">
+	     <Bnf>
+           <Type>0</Type>
+           <Grade>
+             <xsl:if test="../ProductCode='022J0300'">
+               <xsl:call-template name="tran_Grade1">
+		         <xsl:with-param name="Grade">
+			       <xsl:value-of select="No" />
+			     </xsl:with-param>
+		       </xsl:call-template>
+		     </xsl:if>
+		     <xsl:if test="../ProductCode!='022J0300'">
+               <xsl:call-template name="tran_Grade">
+		         <xsl:with-param name="Grade">
+			       <xsl:value-of select="No" />
+			     </xsl:with-param>
+		       </xsl:call-template>
+		     </xsl:if>
+           </Grade>
+           <Name><xsl:value-of select="Name"/></Name>
+           <Sex>
+             <xsl:call-template name="tran_sex">
+				<xsl:with-param name="sex">
+					<xsl:value-of select="Sex" />
+				</xsl:with-param>
+			</xsl:call-template> 
+           </Sex>
+           <Birthday><xsl:value-of select="BirthDate"/></Birthday>
+           <IDType>
+             <xsl:call-template name="tran_idtype">
+				<xsl:with-param name="idtype">
+					<xsl:value-of select="IdType" />
+				</xsl:with-param>
+			</xsl:call-template>
+           </IDType>
+           <IDNo><xsl:value-of select="IdNo"/></IDNo>
+           <IdExpDate><xsl:value-of select="ExpireDate"/></IdExpDate>
+           <Lot><xsl:value-of select="InterestPercent"/></Lot>
+           <!--  <RelaToInsured>
+             <xsl:call-template name="tran_relation">
+		       <xsl:with-param name="relation">
+			       <xsl:value-of select="Relation" />
+			   </xsl:with-param>
+			 </xsl:call-template>
+           </RelaToInsured>-->
+           <!-- 受益人与被保人关系 -->
+		   <RelaToInsured>
+		   	<xsl:choose>
+	         	<!-- 投保人出生日期大于等于被保人 -->
+	         	<xsl:when test="java:com.sinosoft.lis.pubfun.PubFun.calInterval(BirthDate,$tInsuBirthDay,'D')>=0">
+	         		<xsl:call-template name="tran_relation1">
+				      <xsl:with-param name="relation">
+					    <xsl:value-of select="Relation" />
+					  </xsl:with-param>
+				</xsl:call-template> 
+	         	</xsl:when>
+	         	<!-- 投保人出生日期小于被保人 -->
+	         	<xsl:otherwise>
+	         		<xsl:call-template name="tran_relation2">
+				      <xsl:with-param name="relation">
+					    <xsl:value-of select="Relation" />
+					  </xsl:with-param>
+				</xsl:call-template> 
+	         	</xsl:otherwise>
+	         </xsl:choose>
+    	   </RelaToInsured>
+           <BeneficType>N</BeneficType>
+      </Bnf>
+	  </xsl:for-each>
     	<Risk>
          <RiskCode><xsl:value-of select="ProductCode"/></RiskCode>
          <MainRiskCode><xsl:value-of select="ProductCode"/></MainRiskCode>
          <Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(PaymentAmt)"/></Amnt>
-         <Prem>1000</Prem>
+         <Prem>1000</Prem><!--核心根据保额来计算保费,但是对保费节点有非空校验,所以1000为非空校验值无实际意义 -->
          <Mult><xsl:value-of select="IntialNumberOfUnits"/></Mult>
          <PayMode>B</PayMode>
-         <xsl:choose>
-         	<!-- 万能险PayIntv值固定 -->
-         	<xsl:when test="ProductCode='011A0100'">
-         		<PayIntv>0</PayIntv><!-- 趸交 -->
-         		<PayEndYear>1000</PayEndYear>
-        		<PayEndYearFlag>Y</PayEndYearFlag>
-         		<!-- <InsuYearFlag>Y</InsuYearFlag>按年
-         		<InsuYear>5</InsuYear>5年 -->
-         	</xsl:when>
-         	<xsl:otherwise>
-         		<PayIntv>
-		         	<xsl:call-template name="tran_payintv">
-						<xsl:with-param name="payintv">
-							<xsl:value-of
-								select="PaymentMode" />
-						</xsl:with-param>
-					</xsl:call-template>
-		         </PayIntv>
-		         <PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
-		   		 <PayEndYearFlag>
-		         	<xsl:call-template name="tran_payendyearflag">
-						<xsl:with-param name="payendyearflag">
-							<xsl:value-of
-								select="PaymentMode" />
-						</xsl:with-param>
-					</xsl:call-template>
-		         </PayEndYearFlag>
-         	</xsl:otherwise>
-         </xsl:choose>
+         <!-- 保费缴纳方式代码 -->
+		 <xsl:if test="ProductCode='011A0100'"><!--万能险缴费方式固定 -->
+		   <PayIntv>0</PayIntv>
+		   <PayEndYear>1000</PayEndYear>
+		   <PayEndYearFlag>Y</PayEndYearFlag>
+		 </xsl:if>
+		 <xsl:if test="ProductCode!='011A0100'">
+           <PayIntv>
+         	  <xsl:call-template name="tran_payintv">
+				<xsl:with-param name="payintv">
+					<xsl:value-of select="PaymentMode" />
+				</xsl:with-param>
+			  </xsl:call-template>
+           </PayIntv>
+           <PayEndYear><xsl:value-of select="PaymentDuration"/></PayEndYear>
+           <PayEndYearFlag>
+         	 <xsl:call-template name="tran_payendyearflag">
+				<xsl:with-param name="payendyearflag">
+					<xsl:value-of select="PaymentMode" />
+				</xsl:with-param>
+			 </xsl:call-template>
+           </PayEndYearFlag>
+         </xsl:if>
          <GetIntv><xsl:value-of select="BenefitMode"/>
          	<xsl:call-template name="tran_BenefitMode">
 				<xsl:with-param name="BenefitMode">
@@ -303,11 +394,11 @@
 				         <Mult><xsl:value-of select="IntialNumberOfUnits"/></Mult>
 				         <PayMode>B</PayMode>
 				         <PayIntv>
-					         <xsl:call-template name="tran_payintv">
-							   <xsl:with-param name="payintv">
-							     <xsl:value-of select="PaymentMode" />
-							   </xsl:with-param>
-						     </xsl:call-template>
+				         <xsl:call-template name="tran_payintv">
+						   <xsl:with-param name="payintv">
+						     <xsl:value-of select="PaymentMode" />
+						   </xsl:with-param>
+					     </xsl:call-template>
 				         </PayIntv>
 				         <PayEndYear><xsl:value-of select="PayoutDuration"/></PayEndYear>
 				         <PayEndYearFlag><xsl:value-of select="PaymentMode"/>
@@ -357,24 +448,43 @@
 		 	</xsl:for-each>
 		 </xsl:when>
 	  </xsl:choose>
-	  <!-- 借意险添加贷款节点 -->
-	  <xsl:if test="ProductCode='022J0300'">
-			 <Loan>
-			       <LoanNo><xsl:value-of select="Loan/LoanNo"/></LoanNo>                <!-- 贷款合同号-->
-			       <LoanBankName><xsl:value-of select="Loan/LoanBankName"/></LoanBankName>    <!-- 贷款机构名称-->
-			       <LoanDate><xsl:value-of select="Loan/LoanDate"/></LoanDate>            <!-- 贷款日期yyyyMMdd -->
-			       <LoanEndDate><xsl:value-of select="Loan/LoanEndDate"/></LoanEndDate>      <!-- 贷款到期日yyyyMMdd-->
-			       <LoanPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/LoanPrem)"/></LoanPrem><!-- 贷款金额-->
-			       <InsuDate><xsl:value-of select="Loan/InsuDate"/></InsuDate>            <!--保险期限:月 -->
-			       <IsPrepayInsu><xsl:value-of select="Loan/IsPrepayInsu"/></IsPrepayInsu>    <!-- 是否预交保费-->
-			       <PrepayInsuPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/PrepayInsuPrem)"/></PrepayInsuPrem><!--预交保费金额-->
-			       <PrepayYear><xsl:value-of select="Loan/PrepayYear"/></PrepayYear>        <!--预交年期:月-->
-			 </Loan>
-	  </xsl:if>
+	  <xsl:if test="ProductCode='022J0300'"><!-- 借意险新添节点 -->
+	    <Loan>
+          <LoanNo><xsl:value-of select="Loan/LoanNo"/></LoanNo>                <!-- 贷款合同号-->
+          <LoanBankName><xsl:value-of select="Loan/LoanBankName"/></LoanBankName>    <!-- 贷款机构名称-->
+          <LoanDate><xsl:value-of select="Loan/LoanDate"/></LoanDate>            <!-- 贷款日期yyyyMMdd -->
+          <LoanEndDate><xsl:value-of select="Loan/LoanEndDate"/></LoanEndDate>      <!-- 贷款到期日yyyyMMdd-->
+          <LoanPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/LoanPrem)"/></LoanPrem><!-- 贷款金额-->
+          <InsuDate><xsl:value-of select="Loan/InsuDate"/></InsuDate>            <!--保险期限:月 -->
+          <IsPrepayInsu><xsl:value-of select="Loan/IsPrepayInsu"/></IsPrepayInsu>    <!-- 是否预交保费-->
+          <PrepayInsuPrem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Loan/PrepayInsuPrem)"/></PrepayInsuPrem><!--预交保费金额-->
+          <PrepayYear><xsl:value-of select="Loan/PrepayYear"/></PrepayYear>        <!--预交年期:月-->
+        </Loan>
+      </xsl:if>
   </Body>
 </TranData>
 </xsl:template>
-
+    <!--生存收益顺序装换 ：非借意险-->
+    <xsl:template name="tran_Grade">
+		<xsl:param name="Grade"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$Grade = 'a'">1</xsl:when>
+			<xsl:when test="$Grade = 'b'">2</xsl:when>
+			<xsl:when test="$Grade = 'c'">3</xsl:when>
+			<xsl:when test="$Grade = 'd'">4</xsl:when>
+		</xsl:choose>
+	</xsl:template>
+	 <!--生存收益顺序转换换 ：借意险022J0300-->
+    <xsl:template name="tran_Grade1">
+		<xsl:param name="Grade"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$Grade = 'a'">3</xsl:when>
+			<xsl:when test="$Grade = 'b'">4</xsl:when>
+			<xsl:when test="$Grade = 'c'">5</xsl:when>
+			<xsl:when test="$Grade = 'd'">6</xsl:when>
+		</xsl:choose>
+	</xsl:template>
+    <!--性别转换 -->
 	<xsl:template name="tran_sex">
 		<xsl:param name="sex"></xsl:param>
 		<xsl:choose>
@@ -456,19 +566,101 @@
 			<xsl:when test="$insuyearflag = 5">D</xsl:when><!-- 天 -->
 		</xsl:choose>
 	</xsl:template>
-	
-	<xsl:template name="tran_relation">
-		<xsl:param name="relation"></xsl:param>
-		<xsl:param name="tApp"></xsl:param>
-		<xsl:param name="tInsu"></xsl:param>
+	<!-- 投保人出生日期大于、等于被保人出生日期
+		    投保人、受益人与被保人关系 -->
+	<xsl:template name="tran_relation1">
+	  <xsl:param name="relation"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$relation = 301">00</xsl:when><!-- 本人 -->
-			<xsl:when test="$relation = 303 or $relation = 304 or $relation = 306 or $relation = 309">
-				<xsl:if test="$tApp >=  $tInsu">03</xsl:if><!-- 子女 -->
-				<xsl:if test="$tApp &lt; $tInsu">01</xsl:if><!-- 父母 -->
-			</xsl:when>
-			<xsl:when test="$relation = 305">04</xsl:when><!-- 配偶 -->
-			<xsl:otherwise>06</xsl:otherwise><!-- 其他 -->
+			<xsl:when test="$relation = '301'">00</xsl:when><!-- 本人 -->
+			<xsl:when test="$relation = '302'">05</xsl:when><!--法定 -->
+			<xsl:when test="$relation = '303'">01</xsl:when><!--母女 -->
+			<xsl:when test="$relation = '304'">01</xsl:when><!-- 父女 -->
+			<xsl:when test="$relation = '305'">04</xsl:when><!-- 祖孙 -->
+			<xsl:when test="$relation = '306'">01</xsl:when><!-- 母子 -->
+			<xsl:when test="$relation = '307'">06</xsl:when><!-- 兄弟 -->
+			<xsl:when test="$relation = '308'">06</xsl:when><!-- 姐妹 -->
+			<xsl:when test="$relation = '309'">01</xsl:when><!-- 父子 -->
+			<xsl:when test="$relation = '310'">02</xsl:when><!-- 夫妻 -->
+			<xsl:when test="$relation = '311'">06</xsl:when><!-- 岳婿 -->
+			<xsl:when test="$relation = '312'">09</xsl:when><!-- 雇佣 -->
+			<xsl:when test="$relation = '313'">06</xsl:when><!-- 侄儿 -->
+			<xsl:when test="$relation = '314'">06</xsl:when><!-- 侄女 -->
+			<xsl:when test="$relation = '315'">06</xsl:when><!-- 姐弟 -->
+			<xsl:when test="$relation = '316'">06</xsl:when><!-- 朋友 -->
+			<xsl:when test="$relation = '317'">06</xsl:when><!-- 外甥女 -->
+			<xsl:when test="$relation = '318'">06</xsl:when><!-- 外甥 -->
+			<xsl:when test="$relation = '319'">06</xsl:when><!-- 兄妹 -->
+			<xsl:when test="$relation = '320'">06</xsl:when><!-- 婆媳 -->
+			<xsl:when test="$relation = '321'">06</xsl:when><!-- 姑嫂 -->
+			<xsl:when test="$relation = '322'">06</xsl:when><!-- 未婚夫妻 -->
+			<xsl:when test="$relation = '323'">06</xsl:when><!-- 妯娌 -->
+			<xsl:when test="$relation = '324'">06</xsl:when><!-- 亲属 -->
+			<xsl:when test="$relation = '325'">06</xsl:when><!-- 抚养 -->
+			<xsl:when test="$relation = '326'">06</xsl:when><!-- 公媳 -->
+			<xsl:when test="$relation = '333'">06</xsl:when><!-- 其它 -->
+			<xsl:when test="$relation = '371'">06</xsl:when><!-- 外甥 -->
+			<xsl:when test="$relation = '380'">05</xsl:when><!-- 法人 -->
+			<xsl:when test="$relation = '381'">06</xsl:when><!-- 兄妹 -->
+			<xsl:when test="$relation = '382'">06</xsl:when><!-- 姐弟 -->
+			<xsl:when test="$relation = '391'">09</xsl:when><!-- 雇佣 -->
+			<xsl:when test="$relation = '392'">06</xsl:when><!-- 亲属 -->
+			<xsl:when test="$relation = '393'">06</xsl:when><!-- 朋友 -->
+			<xsl:when test="$relation = '394'">06</xsl:when><!-- 同学或同事 -->
+			<xsl:when test="$relation = '395'">06</xsl:when><!-- 未婚夫妻 -->
+			<xsl:when test="$relation = '396'">06</xsl:when><!-- 职员 -->
+			<xsl:when test="$relation = '397'">06</xsl:when><!-- 其他 -->
+			<xsl:when test="$relation = '398'">06</xsl:when><!-- 叔侄关系 -->
+			<xsl:when test="$relation = '399'">06</xsl:when><!-- 其他 -->
+			<xsl:when test="$relation = ''">00</xsl:when><!--本人：和被保人关系未输入时，默认为本人 -->
+		</xsl:choose>
+	</xsl:template>
+	
+	<!-- 投保人出生日期小于被保人出生日期
+		    投保人、受益人与被保人关系 -->
+	<xsl:template name="tran_relation2">
+	  <xsl:param name="relation"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$relation = '301'">00</xsl:when><!-- 本人 -->
+			<xsl:when test="$relation = '302'">05</xsl:when><!--法定 -->
+			<xsl:when test="$relation = '303'">03</xsl:when><!--母女 -->
+			<xsl:when test="$relation = '304'">03</xsl:when><!-- 父女 -->
+			<xsl:when test="$relation = '305'">04</xsl:when><!-- 祖孙 -->
+			<xsl:when test="$relation = '306'">03</xsl:when><!-- 母子 -->
+			<xsl:when test="$relation = '307'">06</xsl:when><!-- 兄弟 -->
+			<xsl:when test="$relation = '308'">06</xsl:when><!-- 姐妹 -->
+			<xsl:when test="$relation = '309'">03</xsl:when><!-- 父子 -->
+			<xsl:when test="$relation = '310'">02</xsl:when><!-- 夫妻 -->
+			<xsl:when test="$relation = '311'">06</xsl:when><!-- 岳婿 -->
+			<xsl:when test="$relation = '312'">09</xsl:when><!-- 雇佣 -->
+			<xsl:when test="$relation = '313'">06</xsl:when><!-- 侄儿 -->
+			<xsl:when test="$relation = '314'">06</xsl:when><!-- 侄女 -->
+			<xsl:when test="$relation = '315'">06</xsl:when><!-- 姐弟 -->
+			<xsl:when test="$relation = '316'">06</xsl:when><!-- 朋友 -->
+			<xsl:when test="$relation = '317'">06</xsl:when><!-- 外甥女 -->
+			<xsl:when test="$relation = '318'">06</xsl:when><!-- 外甥 -->
+			<xsl:when test="$relation = '319'">06</xsl:when><!-- 兄妹 -->
+			<xsl:when test="$relation = '320'">06</xsl:when><!-- 婆媳 -->
+			<xsl:when test="$relation = '321'">06</xsl:when><!-- 姑嫂 -->
+			<xsl:when test="$relation = '322'">06</xsl:when><!-- 未婚夫妻 -->
+			<xsl:when test="$relation = '323'">06</xsl:when><!-- 妯娌 -->
+			<xsl:when test="$relation = '324'">06</xsl:when><!-- 亲属 -->
+			<xsl:when test="$relation = '325'">06</xsl:when><!-- 抚养 -->
+			<xsl:when test="$relation = '326'">06</xsl:when><!-- 公媳 -->
+			<xsl:when test="$relation = '333'">06</xsl:when><!-- 其它 -->
+			<xsl:when test="$relation = '371'">06</xsl:when><!-- 外甥 -->
+			<xsl:when test="$relation = '380'">05</xsl:when><!-- 法人 -->
+			<xsl:when test="$relation = '381'">06</xsl:when><!-- 兄妹 -->
+			<xsl:when test="$relation = '382'">06</xsl:when><!-- 姐弟 -->
+			<xsl:when test="$relation = '391'">09</xsl:when><!-- 雇佣 -->
+			<xsl:when test="$relation = '392'">06</xsl:when><!-- 亲属 -->
+			<xsl:when test="$relation = '393'">06</xsl:when><!-- 朋友 -->
+			<xsl:when test="$relation = '394'">06</xsl:when><!-- 同学或同事 -->
+			<xsl:when test="$relation = '395'">06</xsl:when><!-- 未婚夫妻 -->
+			<xsl:when test="$relation = '396'">06</xsl:when><!-- 职员 -->
+			<xsl:when test="$relation = '397'">06</xsl:when><!-- 其他 -->
+			<xsl:when test="$relation = '398'">06</xsl:when><!-- 叔侄关系 -->
+			<xsl:when test="$relation = '399'">06</xsl:when><!-- 其他 -->
+			<xsl:when test="$relation = ''">00</xsl:when><!--本人：和被保人关系未输入时，默认为本人 -->
 		</xsl:choose>
 	</xsl:template>
 	

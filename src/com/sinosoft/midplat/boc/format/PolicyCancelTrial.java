@@ -2,11 +2,8 @@ package com.sinosoft.midplat.boc.format;
 
 
 import java.io.FileInputStream;
-
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.transform.XSLTransformException;
-
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 /**
@@ -26,7 +23,6 @@ public class PolicyCancelTrial extends XmlSimpFormat {
 	}
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into ContConfirm.noStd2Std()...");
-		cLogger.info("第三方请求报文:"+JdomUtil.toStringFmt(pNoStdXml));
 		Element mainEle=pNoStdXml.getRootElement().getChild("Main");
 		InsuId=mainEle.getChildText("InsuId");
 		ZoneNo=mainEle.getChildText("ZoneNo");

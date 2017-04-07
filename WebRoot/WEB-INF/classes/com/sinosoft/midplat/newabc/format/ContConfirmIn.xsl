@@ -44,7 +44,14 @@
 			</xsl:choose>
 			
 			<!-- 保险单号 -->
-			<ContNo/>
+			<ContNo>
+				<xsl:if test="Header/EntrustWay = '11'">
+					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PolicyNo)"/>
+				</xsl:if>
+				<xsl:if test="Header/EntrustWay = '04'">
+					<xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/>
+				</xsl:if>
+			</ContNo>
 			<!-- 投保单(印刷)号 -->
 			<ProposalPrtNo>
 				<xsl:if test="Header/EntrustWay = '11'">

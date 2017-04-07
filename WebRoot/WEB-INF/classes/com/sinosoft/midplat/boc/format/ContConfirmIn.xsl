@@ -7,8 +7,8 @@
    <Head>
       <TranDate><xsl:value-of select="Main/TranDate"/></TranDate>
       <TranTime><xsl:value-of select="Main/TranTime"/></TranTime>
-      <NodeNo><xsl:value-of select="Main/ZoneNo" /><xsl:value-of select="Main/BrNo" /></NodeNo>
-      <BankCode><xsl:value-of select="Main/BankCode"/></BankCode>
+      <NodeNo><xsl:value-of select="Main/BrNo"/></NodeNo>
+      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
       <TellerNo><xsl:value-of select="Main/TellerNo"/></TellerNo>
       <ZoneNo><xsl:value-of select="Main/ZoneNo"/></ZoneNo>
       <TranNo><xsl:value-of select="Main/TransNo"/></TranNo>
@@ -20,14 +20,21 @@
       <InNoDoc><xsl:value-of select="Head/InNoDoc"/></InNoDoc>
    </Head>
    <Body>
-   		
-      <ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/></ProposalPrtNo>
-      <Prem><xsl:value-of select="Main/Premium"/></Prem>
+      <ProposalPrtNo>
+        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/>
+      </ProposalPrtNo>
+      <Prem>
+        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Main/Premium)"/>
+      </Prem>
       <OldTranNo><xsl:value-of select="Main/OriginTransNo"/></OldTranNo>
       <ContNo />
-      <ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/PrintNo)"/></ContPrtNo>
-      <BkPayMode />
+      <ContPrtNo>
+        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/PrintNo)"/>
+      </ContPrtNo>
+      <PayMode />
       <BkAcctNo><xsl:value-of select="Main/PayAcc"/></BkAcctNo>
+      <!-- ½É·Ñ·½Ê½ -->
+      <BkPayMode></BkPayMode>
    </Body>
 </TranData>
 </xsl:template>

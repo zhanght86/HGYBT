@@ -19,7 +19,6 @@ import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
-import com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc;
 import com.sinosoft.utility.ExeSQL;
 import com.sinosoft.utility.SSRS;
 
@@ -152,10 +151,10 @@ public  class BalanceCheck extends TimerTask
     	    		  }
     	    		  if("05".equals(mTranCom[i])){
     	    			  cLogger.info(mTranDate+mBank[i]+mTranName[i]+"不成功，现在开始补对账！");
-    	    			  NewAbcBusiBlc tNewAbcBlc=new NewAbcBusiBlc();
-    	    			  tNewAbcBlc.setDate(mTranDate);
-    	    			  tNewAbcBlc.run();
-    	    			  mResultMsg = tNewAbcBlc.getResultMsg();
+//    	    			  NewAbcBusiBlc tNewAbcBlc=new NewAbcBusiBlc();
+//    	    			  tNewAbcBlc.setDate(mTranDate);
+//    	    			  tNewAbcBlc.run();
+//    	    			  mResultMsg = tNewAbcBlc.getResultMsg();
 	    				  cResultMsg=cResultMsg+"["+mBank[i]+mTranName[i]+":"+mResultMsg+"];";
     	    		  }
 //    	    		  if("07".equals(mTranCom[i])){

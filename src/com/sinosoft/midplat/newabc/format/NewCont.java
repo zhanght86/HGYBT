@@ -5,21 +5,12 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-
-
 import java.util.List;
-
-import javax.validation.constraints.Min;
-
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
-
-import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
-import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.format.XmlSimpFormat;
-import com.sinosoft.utility.ExeSQL;
 
 public class NewCont extends XmlSimpFormat {
 	private Element header=null;

@@ -10,35 +10,20 @@ import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XslCache;
 import com.sinosoft.midplat.common.cache.FileCacheManage;
 
-/**
- * 新单试算贵州银行非标准输入报文转核心标准输入报文可扩展样式表
- * @author yuantongxin
- */
 public class PolicyContTrialInXsl extends XslCache {
-	//构建当前类的实例
 	private static PolicyContTrialInXsl cThisIns = new PolicyContTrialInXsl();
 	
-	//新单试算贵州银行非标准输入报文转核心标准输入报文XSL文件路径
 	private String cPath = "com/sinosoft/midplat/gzbank/format/PolicyContTrialIn.xsl";
 	
-	//新单试算核心标准输入请求报文扩展样式表构造器
 	private PolicyContTrialInXsl() {
-		//加载XSL文件
 		load();
 		FileCacheManage.newInstance().register(cPath, this);
 	}
 	
-	/**
-	 * 加载XSL文件
-	 */
 	public void load() {
-		//Into PolicyContTrialInXsl.load()...
 		cLogger.info("Into PolicyContTrialInXsl.load()...");
-		//XSL文件绝对路径[F:/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/XSL文件路径]
 		String mFilePath = SysInfo.cBasePath + cPath;
-		//Start load XSL文件绝对路径...[开始加载XSL文件绝对路径...]
 		cLogger.info("Start load " + mFilePath + "...");
-		//XSL文件绝对路径构建文件对象
 		cXslFile = new File(mFilePath);
 		/**
 		 * 一定要在加载之前记录文件属性。

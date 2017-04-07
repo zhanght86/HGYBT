@@ -8,7 +8,7 @@
 			      <TranDate><xsl:value-of select="TransExeDate"/></TranDate>
 			      <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
 			      <NodeNo><xsl:value-of select="Branch"/></NodeNo>
-			      <BankCode>0105</BankCode>
+			      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>	<!-- 银行代码 -->		
 			      <TellerNo><xsl:value-of select="Teller"/></TellerNo>
 			      <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>
 			      <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
@@ -18,7 +18,6 @@
 			      <AgentCode />
 			      <InNoDoc><xsl:value-of select="Head/InNoDoc"/></InNoDoc>
 			   </Head>
-
 			<Body>
 				<!--保单号 -->
 				<ContNo>

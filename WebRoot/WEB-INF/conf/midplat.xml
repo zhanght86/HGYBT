@@ -188,7 +188,7 @@
 		<service id="45" name="新农行保单查询" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="46" name="新农行保全申请状态查询" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="48" name="新农行犹豫期退保结果文件" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
-		<service id="49" name="新农行非实时出单结果文件" address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="49" name="新农行非实时出单结果文件" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="50" name="新农行手工单出单结果文件" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
 		<service id="51" name="新农行非实时/手工单出单险种明细" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
 		<service id="52" name="新建行退保申请" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
@@ -206,7 +206,7 @@
 	  	<service id="68" name="新农行保单价值查询" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 	   	<service id="69" name="中行退保\满期给付试算" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 	    <service id="70" name="中行退保\满期给付确认" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
-		<service id="71" name="新农行非实时出单结果明细文件" address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<service id="71" name="新农行非实时出单结果明细文件" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 	    
 	</atomservices> 
 </midplat>

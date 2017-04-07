@@ -10,40 +10,35 @@ public class PolicyWriteOff extends XmlSimpFormat {
 	public PolicyWriteOff(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
-
-	Document cInNoStd = null;
-
+	//复制银行请求报文中的节点
+	Element mOldTransRefGUID = null;
+	Element mOldTransCpicID = null;
+	Element mOldTransNo = null;
+	Element mOldTransExeDate = null;
+	Element mOldTransExeTime = null;
 	public Document noStd2Std(Document pInNoStd) throws Exception {
 		cLogger.info("Into PolicyWriteOff.noStd2Std()...");
-		cLogger.info("第三方请求报文:" + JdomUtil.toStringFmt(pInNoStd));
-
-		this.cInNoStd = pInNoStd;
+		//复制银行请求报文中的节点
+		 mOldTransRefGUID = (Element) pInNoStd.getRootElement().getChild("OldTransRefGUID").clone();
+		 mOldTransCpicID = (Element) pInNoStd.getRootElement().getChild("OldTransCpicID").clone();
+		 mOldTransNo = (Element) pInNoStd.getRootElement().getChild("OldTransNo").clone();
+		 mOldTransExeDate = (Element) pInNoStd.getRootElement().getChild("OldTransExeDate").clone();
+		 mOldTransExeTime = (Element) pInNoStd.getRootElement().getChild("OldTransExeTime").clone();
+		
 		Document mStdXml = PolicyWriteOffInXsl.newInstance().getCache()
 				.transform(pInNoStd);
-		cLogger.info("请求核心报文：" + JdomUtil.toStringFmt(mStdXml));
+		JdomUtil.print(mStdXml);
 		cLogger.info("Out PolicyWriteOff.noStd2Std()!");
 		return mStdXml;
 	}
-
 	public Document std2NoStd(Document pOutStd) throws Exception {
 		cLogger.info("Into PolicyWriteOff.std2NoStd()...");
-		cLogger.info("核心返回报文:" + JdomUtil.toStringFmt(pOutStd));
-		
-		String mOldTransRefGUID = cInNoStd.getRootElement().getChildText("OldTransRefGUID");
-		String mOldTransCpicID = cInNoStd.getRootElement().getChildText("OldTransCpicID");
-		String mOldTransNo = cInNoStd.getRootElement().getChildText("OldTransNo");
-		String mOldTransExeDate = cInNoStd.getRootElement().getChildText("OldTransExeDate");
-		String mOldTransExeTime = cInNoStd.getRootElement().getChildText("OldTransExeTime");
-		
 		Document mNoStdXml = PolicyWriteOffOutXsl.newInstance().getCache()
 				.transform(pOutStd);
-		
-		mNoStdXml.getRootElement().getChild("OldTransExeTime").setText(mOldTransExeTime);
-		mNoStdXml.getRootElement().getChild("OldTransCpicID").setText(mOldTransCpicID);
-		mNoStdXml.getRootElement().getChild("OldTransNo").setText(mOldTransNo);
-		mNoStdXml.getRootElement().getChild("OldTransExeDate").setText(mOldTransExeDate);
-		mNoStdXml.getRootElement().getChild("OldTransRefGUID").setText(mOldTransRefGUID);
-		cLogger.info("返回给第三方报文:" + JdomUtil.toStringFmt(mNoStdXml));
+		//把请求报文中的节点返回给银行
+		mNoStdXml.getRootElement().addContent(mOldTransRefGUID).addContent(mOldTransCpicID).addContent(mOldTransNo)
+		.addContent(mOldTransExeDate).addContent(mOldTransExeTime);
+		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out PolicyWriteOff.std2NoStd()!");
 		return mNoStdXml;
 	}

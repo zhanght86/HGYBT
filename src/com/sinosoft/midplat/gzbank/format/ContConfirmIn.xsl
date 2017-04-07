@@ -9,7 +9,7 @@
       <TranTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.time8to6(TransExeTime)"/></TranTime>
       <ZoneNo><xsl:value-of select="BankCode"/></ZoneNo>	<!-- 地区代码 -->
       <NodeNo><xsl:value-of select="Branch"/></NodeNo>		<!-- 网点代码 -->
-      <BankCode>0105</BankCode>		
+      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>	<!-- 银行代码 -->		
       <TellerNo><xsl:value-of select="Teller"/></TellerNo>
       <TranNo><xsl:value-of select="TransRefGUID"/></TranNo>
       <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
@@ -18,7 +18,6 @@
       <AgentCom />
       <AgentCode />
       <InNoDoc><xsl:value-of select="Head/InNoDoc"/></InNoDoc>
-      <ServiceId>1</ServiceId>
    </Head>
    <Body>
    	  <SaleChannel>0</SaleChannel>
@@ -40,7 +39,6 @@
    </Body>
 </TranData>
 </xsl:template>
-
 	<xsl:template name="tran_BKPayMode">
 		<xsl:param name="PayMode"></xsl:param>
 		<xsl:if test="$PayMode = 'CS'">0</xsl:if><!-- 现金 -->

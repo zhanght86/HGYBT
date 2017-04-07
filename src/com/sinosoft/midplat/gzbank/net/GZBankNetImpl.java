@@ -12,33 +12,35 @@ import com.sinosoft.midplat.common.SaveMessage;
 import com.sinosoft.midplat.net.SocketNetImpl;
 
 public class GZBankNetImpl extends SocketNetImpl {
-	
 	/**
 	 * 必须返回的基本信息
 	 */
-	String mTransNo = "";		//交易码
-	String mQdBankCode = "";	//签到银行代码
-	String mBankCode = "";		//区域银行代码
-	String mBranch = "";		//银行网点代码
-	String mInsuOrgNo = "";		//保险公司统一编码
-	String mTransExeDate = "";	//银行交易日期
-	String mTransExeTime = "";	//银行交易时间
-	String mTransRefGUID = "";	//银行流水号
-	String mTeller = "";		//银行操作员、柜员
-	String mTellerName = "";	//银行操作员
-	String mCpicWater = "";		//保险公司流水号
-	String m = "";				//备用
+	private Element mTransNo = null;		//签到银行代码
+	private Element mQdBankCode = null;		//签到银行代码
+	private Element mBankCode = null;		//区域银行代码
+	private Element mBranch = null;			//银行网点代码
+	private Element mInsuOrgNo = null;		//保险公司机构代码
+	private Element mTransExeDate = null;	//银行交易日期
+	private Element mTransRefGUID = null;	//银行流水号
+	private Element mTeller = null;			//银行操作员、柜员
+	private Element mTellerName = null;		//银行操作员
 	
+	private String cInsuID="";      //保险公司代码
 	
-	String cOutFuncFlag = "";
-	String cInsuID="";
+	private String cFuncFlag = null;
+	private String cOutFuncFlag = null;
+	
 	public GZBankNetImpl(Socket pSocket, Element pThisConfRoot) throws MidplatException {
 		super(pSocket, pThisConfRoot);
 	}
 	public Document receive() throws Exception {
-		cLogger.info("Into GZBankNetImpl.receive()...");
+		cLogger.info(Thread.currentThread().getName() +"Into GZBankNetImpl.receive()...");
+		
+		/** 第一步 处理报文头 */
 		byte[] mHeadBytes = new byte[19];
 		IOTrans.readFull(mHeadBytes, cSocket.getInputStream());
+		cLogger.info("Head：" + new String(mHeadBytes));
+		
 		int mBodyLength = Integer.parseInt(new String(mHeadBytes, 0, 6).trim());
 		cLogger.info("请求报文长度：" + mBodyLength);
 		cOutFuncFlag = new String(mHeadBytes, 6, 7).trim();
@@ -46,27 +48,25 @@ public class GZBankNetImpl extends SocketNetImpl {
 		cInsuID = new String(mHeadBytes, 13, 6).trim();
 		cLogger.info("保险公司代码：" + cInsuID);
 		
-		
+		// 处理报文体
 		byte[] mBodyBytes = new byte[mBodyLength];
 		IOTrans.readFull(mBodyBytes, cSocket.getInputStream());
 		cSocket.shutdownInput();
 		
 		Document mXmlDoc = JdomUtil.build(mBodyBytes);
 		Element mRootEle = mXmlDoc.getRootElement();
-		Element mTXLife = mXmlDoc.getRootElement();
-		
 		/**
 		 * 赋值部分
 		 */
-		this.mTransNo = mTXLife.getChildText("TransNo");
-		this.mQdBankCode = mTXLife.getChildText("QdBankCode");
-		this.mBankCode = mTXLife.getChildText("BankCode");
-		this.mBranch = mTXLife.getChildText("Branch");
-		this.mTransExeDate = mTXLife.getChildText("TransExeDate");
-		this.mTransExeTime = mTXLife.getChildText("TransExeTime");
-		this.mTransRefGUID = mTXLife.getChildText("TransRefGUID");
-		this.mTeller = mTXLife.getChildText("Teller");
-		this.mTellerName = mTXLife.getChildText("TellerName");
+		mTransNo = (Element) mRootEle.getChild("TransNo").clone();
+		mQdBankCode = (Element) mRootEle.getChild("QdBankCode").clone();
+		mInsuOrgNo = (Element) mRootEle.getChild("InsuOrgNo").clone();
+		mBankCode = (Element) mRootEle.getChild("BankCode").clone();
+		mBranch = (Element) mRootEle.getChild("Branch").clone();
+		mTransExeDate = (Element) mRootEle.getChild("TransExeDate").clone();
+		mTransRefGUID = (Element) mRootEle.getChild("TransRefGUID").clone();
+		mTeller = (Element) mRootEle.getChild("Teller").clone();
+		mTellerName = (Element) mRootEle.getChild("TellerName").clone();
 		
 		String mTranCom = cThisConfRoot.getChildText("TranCom");
 		
@@ -75,10 +75,10 @@ public class GZBankNetImpl extends SocketNetImpl {
 		if (null==mMsgPath || "".equals(mMsgPath)) {
 			mMsgPath = mTranCom;
 		} 
-		
 		XPath mXPath2 = XPath.newInstance(
 				"business/funcFlag[@outcode='" + cOutFuncFlag + "']");
 		cFuncFlag = mXPath2.valueOf(cThisConfRoot);
+		
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())
 		.append('_').append(NoFactory.nextAppNo())
 		.append('_').append(cFuncFlag)
@@ -96,35 +96,35 @@ public class GZBankNetImpl extends SocketNetImpl {
 		mFuncFlagEle.setText(cFuncFlag);
 		Element mAgentCom = new Element(AgentCom);
 		Element mAgentCode = new Element(AgentCode);
-		Element mTranNo = new Element(TranNo);
-		mTranNo.setText(this.mTransRefGUID);
+		Element mBankCode = new Element("BankCode");
+		mBankCode.setText(cThisConfRoot.getChildText("BankCode"));
 		Element mHeadEle = new Element(Head);
+		
 		mHeadEle.addContent(mClientIpEle);
 		mHeadEle.addContent(mTranComEle);
 		mHeadEle.addContent(mFuncFlagEle);
 		mHeadEle.addContent(mAgentCom);
 		mHeadEle.addContent(mAgentCode);
 		mHeadEle.addContent(mInNoDoc);
-		mHeadEle.addContent(mTranNo);
-		mRootEle.addContent(mHeadEle);
-	    JdomUtil.print(mXmlDoc);
+		mHeadEle.addContent(mBankCode);
+		
+		mXmlDoc = JdomUtil.build(mBodyBytes);
+		
+		Element tRootEle = mXmlDoc.getRootElement();
+		
+		tRootEle.addContent(mHeadEle);	
+		JdomUtil.print(mXmlDoc);
 		cLogger.info("Out GZBankNetImpl.receive()!");
 		return mXmlDoc;
 	}
 	
 	public void send(Document pOutNoStd) throws Exception {
 		cLogger.info("Into GZBankNetImpl.send()...");	
+		//赋值报文头信息
 		Element mRootEle = pOutNoStd.getRootElement();
-		mRootEle.getChild("TransNo").setText(this.mTransNo);
-		mRootEle.getChild("QdBankCode").setText(this.mQdBankCode);
-		mRootEle.getChild("BankCode").setText(this.mBankCode);
-		mRootEle.getChild("Branch").setText(this.mBranch);
-		mRootEle.getChild("TransExeDate").setText(this.mTransExeDate);
-		mRootEle.getChild("TransExeTime").setText(this.mTransExeTime);
-		mRootEle.getChild("TransRefGUID").setText(this.mTransRefGUID);
-		mRootEle.getChild("Teller").setText(this.mTeller);
-		mRootEle.getChild("TellerName").setText(this.mTellerName);
-		mRootEle.getChild("CpicWater").setText(this.mTransRefGUID);
+		mRootEle.addContent(mTransNo).addContent(mQdBankCode).addContent(mBankCode).addContent(mBranch)
+		.addContent(mInsuOrgNo).addContent(mTransExeDate).addContent(mTransRefGUID).addContent(mTeller)
+		.addContent(mTellerName);
 		
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())
 		.append('_').append(NoFactory.nextAppNo())
@@ -133,20 +133,30 @@ public class GZBankNetImpl extends SocketNetImpl {
 		SaveMessage.save(pOutNoStd, cTranComEle.getText(), mSaveName.toString());
 		cOutNoStdDoc = mSaveName.toString();
 		cLogger.info("保存报文完毕！"+mSaveName);
-	    cLogger.info("返回非标准报文:"+JdomUtil.toStringFmt(pOutNoStd));
+		
 		byte[] mBodyBytes = JdomUtil.toBytes(pOutNoStd);
-		String head="";
-		String byteLength=mBodyBytes.length+"";
-		int count=6-byteLength.length();
-		if(byteLength.length()<6){
-		    for (int i = 0; i <count; i++) {
-		    	byteLength+=" ";
-			}
+		cLogger.info("返回报文：" + new String(mBodyBytes));
+		
+		byte[] mHeadBytes = new byte[19];
+		// 初始化前19位报文头为0
+		for (int i = 0; i < 19; i++) {
+			mHeadBytes[i] = ' ';
 		}
-		head=byteLength+cOutFuncFlag+cInsuID+"   ";
-		byte[] mHeadBytes = head.getBytes();
-		cLogger.info("send消息头长度为:"+head.getBytes().length);
-
+		// 报文体长度
+		String mLengthString = String.valueOf(mBodyBytes.length);
+		cLogger.info("返回报文长度：" + mLengthString);
+		byte[] mLengthBytes = mLengthString.getBytes();
+		System.arraycopy(mLengthBytes, 0, mHeadBytes, 0, mLengthBytes.length);
+		
+		// 交易代码
+		byte[] mFuncFlagBytes = cOutFuncFlag.getBytes();
+		System.arraycopy(mFuncFlagBytes, 0, mHeadBytes, 6,
+				mFuncFlagBytes.length);
+		
+		//目标保险公司代码
+		System.arraycopy(cInsuID.getBytes(), 0, mHeadBytes, 13,
+				cInsuID.getBytes().length);
+		
 		//发送报文体
 		cSocket.getOutputStream().write(mHeadBytes);
 		cSocket.getOutputStream().write(mBodyBytes);

@@ -1,0 +1,44 @@
+17:17:59,067 INFO bat.NewAbcBusiBlc(448) - 程序开始...
+17:17:59,067 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:17:59,067 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:17:59,067 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:17:59,067 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:17:59,067 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:17:59,082 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:17:59,082 INFO common.XmlConf(80) - conf file modified at (2017-03-31 11:19:32,657) and length=10328 bytes!
+17:17:59,350 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:17:59,352 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:17:59,352 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:17:59,352 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
+17:17:59,383 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:17:59,383 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:17:59,383 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:17:59,383 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+17:18:00,332 INFO bat.NewAbcBusiBlc(98) - Into NewAbcBusiBlc.run()...
+17:18:00,486 INFO bat.NewAbcBusiBlc(342) - Into NewAbcBusiBlc.getHead()...
+17:18:00,498 INFO bat.NewAbcBusiBlc(352) -  对账日期为...20170331
+17:18:00,499 INFO bat.NewAbcBusiBlc(354) -  当前日期为...20170331
+17:18:00,500 INFO bat.NewAbcBusiBlc(441) - Out NewAbcBusiBlc.getHead()!
+17:18:00,500 INFO bat.BatConf(28) - Into BatConf.load()...
+17:18:00,500 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+17:18:00,500 INFO common.XmlConf(80) - conf file modified at (2017-03-23 16:39:31,483) and length=6235 bytes!
+17:18:00,500 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+17:18:00,500 INFO bat.BatConf(50) - Out BatConf.load()!
+17:18:00,500 INFO bat.BatUtils(75) - 读取配置文件异常，请检查路径是否正确及文件是否存在......
+17:18:00,516 ERROR bat.NewAbcBusiBlc(158) - 生成标准对账报文出错!
+com.sinosoft.midplat.exception.MidplatException
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.getFileName(NewAbcBusiBlc.java:84)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:140)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
+17:18:00,516 INFO bat.NewAbcBusiBlc(188) - 业务处理模块com.sinosoft.midplat.newabc.service.NewInsPolRec
+17:18:00,516 INFO service.NewInsPolRec(31) - Into NewInsPolRec.service()...
+17:18:00,532 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:18:00,602 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:18:00,602 INFO service.NewInsPolRec(76) - 新保承保保单对账交易失败！
+com.sinosoft.midplat.exception.MidplatException: 
+	at com.sinosoft.midplat.newabc.service.NewInsPolRec.service(NewInsPolRec.java:55)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:192)
+	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
+17:18:00,702 INFO service.NewInsPolRec(97) - Out NewInsPolRec.service()!
+17:18:00,702 INFO bat.NewAbcBusiBlc(205) - Out NewAbcBusiBlc.run()!
+17:18:00,702 INFO bat.NewAbcBusiBlc(476) - 成功结束！

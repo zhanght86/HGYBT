@@ -1,44 +1,1385 @@
-17:17:59,067 INFO bat.NewAbcBusiBlc(448) - 程序开始...
-17:17:59,067 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
-17:17:59,067 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
-17:17:59,067 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
-17:17:59,067 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
-17:17:59,067 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
-17:17:59,082 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
-17:17:59,082 INFO common.XmlConf(80) - conf file modified at (2017-03-31 11:19:32,657) and length=10328 bytes!
-17:17:59,350 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
-17:17:59,352 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
-17:17:59,352 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
-17:17:59,352 INFO common.XmlConf(80) - conf file modified at (2017-03-31 09:13:27,963) and length=24234 bytes!
-17:17:59,383 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
-17:17:59,383 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
-17:17:59,383 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
-17:17:59,383 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
-17:18:00,332 INFO bat.NewAbcBusiBlc(98) - Into NewAbcBusiBlc.run()...
-17:18:00,486 INFO bat.NewAbcBusiBlc(342) - Into NewAbcBusiBlc.getHead()...
-17:18:00,498 INFO bat.NewAbcBusiBlc(352) -  对账日期为...20170331
-17:18:00,499 INFO bat.NewAbcBusiBlc(354) -  当前日期为...20170331
-17:18:00,500 INFO bat.NewAbcBusiBlc(441) - Out NewAbcBusiBlc.getHead()!
-17:18:00,500 INFO bat.BatConf(28) - Into BatConf.load()...
-17:18:00,500 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
-17:18:00,500 INFO common.XmlConf(80) - conf file modified at (2017-03-23 16:39:31,483) and length=6235 bytes!
-17:18:00,500 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
-17:18:00,500 INFO bat.BatConf(50) - Out BatConf.load()!
-17:18:00,500 INFO bat.BatUtils(75) - 读取配置文件异常，请检查路径是否正确及文件是否存在......
-17:18:00,516 ERROR bat.NewAbcBusiBlc(158) - 生成标准对账报文出错!
-com.sinosoft.midplat.exception.MidplatException
-	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.getFileName(NewAbcBusiBlc.java:84)
-	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:140)
-	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
-17:18:00,516 INFO bat.NewAbcBusiBlc(188) - 业务处理模块com.sinosoft.midplat.newabc.service.NewInsPolRec
-17:18:00,516 INFO service.NewInsPolRec(31) - Into NewInsPolRec.service()...
-17:18:00,532 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
-17:18:00,602 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
-17:18:00,602 INFO service.NewInsPolRec(76) - 新保承保保单对账交易失败！
-com.sinosoft.midplat.exception.MidplatException: 
-	at com.sinosoft.midplat.newabc.service.NewInsPolRec.service(NewInsPolRec.java:55)
-	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.run(NewAbcBusiBlc.java:192)
-	at com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main(NewAbcBusiBlc.java:474)
-17:18:00,702 INFO service.NewInsPolRec(97) - Out NewInsPolRec.service()!
-17:18:00,702 INFO bat.NewAbcBusiBlc(205) - Out NewAbcBusiBlc.run()!
-17:18:00,702 INFO bat.NewAbcBusiBlc(476) - 成功结束！
+14:35:15,728 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:35:33,255 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:35:48,122 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:35:53,780 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@57e87539
+14:35:53,787 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:35:53,789 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:35:53,790 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:35:53,798 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:35:53,799 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:35:53,800 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:35:53,803 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,028) and length=24222 bytes!
+14:35:53,911 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:35:53,921 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:35:53,924 INFO common.Log4jPrint(20) - End reset System.out!
+14:35:53,927 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:35:53,927 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:35:53,928 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,071) and length=860 bytes!
+14:35:53,948 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:35:53,949 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:35:53,976 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:35:53,979 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:35:53,982 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+14:35:53,983 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:35:53,983 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+14:35:53,986 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+14:35:53,987 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+14:35:53,988 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+14:35:54,000 ERROR net.SocketListenerF5(108) - 2_Socket加载失败!
+java.lang.ClassNotFoundException: com.sinosoft.midplat.boc.BankOfChinaYbt
+	at weblogic.utils.classloaders.GenericClassLoader.findLocalClass(GenericClassLoader.java:297)
+	at weblogic.utils.classloaders.GenericClassLoader.findClass(GenericClassLoader.java:270)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.findClass(ChangeAwareClassLoader.java:64)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at weblogic.utils.classloaders.GenericClassLoader.loadClass(GenericClassLoader.java:179)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.loadClass(ChangeAwareClassLoader.java:43)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.<init>(SocketListenerF5.java:179)
+	at com.sinosoft.midplat.net.SocketListenerF5.contextInitialized(SocketListenerF5.java:98)
+	at weblogic.servlet.internal.EventsManager$FireContextListenerAction.run(EventsManager.java:481)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.internal.EventsManager.notifyContextCreatedEvent(EventsManager.java:181)
+	at weblogic.servlet.internal.WebAppServletContext.preloadResources(WebAppServletContext.java:1868)
+	at weblogic.servlet.internal.WebAppServletContext.start(WebAppServletContext.java:3154)
+	at weblogic.servlet.internal.WebAppModule.startContexts(WebAppModule.java:1518)
+	at weblogic.servlet.internal.WebAppModule.start(WebAppModule.java:484)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.ScopedModuleDriver.start(ScopedModuleDriver.java:200)
+	at weblogic.application.internal.flow.ModuleListenerInvoker.start(ModuleListenerInvoker.java:247)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.StartModulesFlow.activate(StartModulesFlow.java:27)
+	at weblogic.application.internal.BaseDeployment$2.next(BaseDeployment.java:671)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.BaseDeployment.activate(BaseDeployment.java:212)
+	at weblogic.application.internal.SingleModuleDeployment.activate(SingleModuleDeployment.java:44)
+	at weblogic.application.internal.DeploymentStateChecker.activate(DeploymentStateChecker.java:161)
+	at weblogic.deploy.internal.targetserver.AppContainerInvoker.activate(AppContainerInvoker.java:79)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activate(BasicDeployment.java:184)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activateFromServerLifecycle(BasicDeployment.java:361)
+	at weblogic.management.deploy.internal.DeploymentAdapter$1.doActivate(DeploymentAdapter.java:51)
+	at weblogic.management.deploy.internal.DeploymentAdapter.activate(DeploymentAdapter.java:200)
+	at weblogic.management.deploy.internal.AppTransition$2.transitionApp(AppTransition.java:30)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.transitionApps(ConfiguredDeployments.java:240)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.activate(ConfiguredDeployments.java:169)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.deploy(ConfiguredDeployments.java:123)
+	at weblogic.management.deploy.internal.DeploymentServerService.resume(DeploymentServerService.java:180)
+	at weblogic.management.deploy.internal.DeploymentServerService.start(DeploymentServerService.java:96)
+	at weblogic.t3.srvr.SubsystemRequest.run(SubsystemRequest.java:64)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+14:35:54,004 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:35:54,006 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+14:35:54,006 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:35:54,007 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:36:00,703 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:36:25,862 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:38:45,876 INFO test.BOCSocketTest(117) - Socket连接127.0.0.1:52004
+14:39:07,661 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1804e4
+14:39:07,743 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:39:07,756 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:39:07,757 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:39:07,758 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:39:07,759 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:39:07,759 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:39:07,779 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,028) and length=24222 bytes!
+14:39:07,863 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:39:07,876 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:39:07,885 INFO common.Log4jPrint(20) - End reset System.out!
+14:39:07,888 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:39:07,889 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:39:07,890 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,071) and length=860 bytes!
+14:39:07,911 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:39:07,911 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:39:07,937 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:39:07,960 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:39:07,996 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+14:39:07,996 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=35017; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:39:07,997 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+14:39:08,025 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+14:39:08,025 INFO net.SocketListenerF5$Server(194) - 监听端口 35017
+14:39:08,026 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=52004; class=com.sinosoft.midplat.boc.BankOfChinaYbt
+14:39:08,028 ERROR net.SocketListenerF5(108) - 2_Socket加载失败!
+java.lang.ClassNotFoundException: com.sinosoft.midplat.boc.BankOfChinaYbt
+	at weblogic.utils.classloaders.GenericClassLoader.findLocalClass(GenericClassLoader.java:297)
+	at weblogic.utils.classloaders.GenericClassLoader.findClass(GenericClassLoader.java:270)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.findClass(ChangeAwareClassLoader.java:64)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at weblogic.utils.classloaders.GenericClassLoader.loadClass(GenericClassLoader.java:179)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.loadClass(ChangeAwareClassLoader.java:43)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.<init>(SocketListenerF5.java:179)
+	at com.sinosoft.midplat.net.SocketListenerF5.contextInitialized(SocketListenerF5.java:98)
+	at weblogic.servlet.internal.EventsManager$FireContextListenerAction.run(EventsManager.java:481)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.internal.EventsManager.notifyContextCreatedEvent(EventsManager.java:181)
+	at weblogic.servlet.internal.WebAppServletContext.preloadResources(WebAppServletContext.java:1868)
+	at weblogic.servlet.internal.WebAppServletContext.start(WebAppServletContext.java:3154)
+	at weblogic.servlet.internal.WebAppModule.startContexts(WebAppModule.java:1518)
+	at weblogic.servlet.internal.WebAppModule.start(WebAppModule.java:484)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.ScopedModuleDriver.start(ScopedModuleDriver.java:200)
+	at weblogic.application.internal.flow.ModuleListenerInvoker.start(ModuleListenerInvoker.java:247)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.StartModulesFlow.activate(StartModulesFlow.java:27)
+	at weblogic.application.internal.BaseDeployment$2.next(BaseDeployment.java:671)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.BaseDeployment.activate(BaseDeployment.java:212)
+	at weblogic.application.internal.SingleModuleDeployment.activate(SingleModuleDeployment.java:44)
+	at weblogic.application.internal.DeploymentStateChecker.activate(DeploymentStateChecker.java:161)
+	at weblogic.deploy.internal.targetserver.AppContainerInvoker.activate(AppContainerInvoker.java:79)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activate(BasicDeployment.java:184)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activateFromServerLifecycle(BasicDeployment.java:361)
+	at weblogic.management.deploy.internal.DeploymentAdapter$1.doActivate(DeploymentAdapter.java:51)
+	at weblogic.management.deploy.internal.DeploymentAdapter.activate(DeploymentAdapter.java:200)
+	at weblogic.management.deploy.internal.AppTransition$2.transitionApp(AppTransition.java:30)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.transitionApps(ConfiguredDeployments.java:240)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.activate(ConfiguredDeployments.java:169)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.deploy(ConfiguredDeployments.java:123)
+	at weblogic.management.deploy.internal.DeploymentServerService.resume(DeploymentServerService.java:180)
+	at weblogic.management.deploy.internal.DeploymentServerService.start(DeploymentServerService.java:96)
+	at weblogic.t3.srvr.SubsystemRequest.run(SubsystemRequest.java:64)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+14:39:08,033 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:39:08,068 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+14:39:08,071 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:39:08,070 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:52:22,144 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@573c3ba2
+14:52:22,154 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:52:22,157 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:52:22,158 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:52:22,162 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:52:22,163 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:52:22,164 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:52:22,169 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,028) and length=24222 bytes!
+14:52:22,255 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:52:22,267 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:52:22,270 INFO common.Log4jPrint(20) - End reset System.out!
+14:52:22,272 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:52:22,273 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:52:22,274 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:52:05,530) and length=759 bytes!
+14:52:22,278 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:52:22,279 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:52:22,297 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:52:22,300 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:52:22,304 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+14:52:22,305 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:52:22,306 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:52:22,311 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+14:52:22,312 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:52:22,315 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:52:22,337 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+14:52:22,340 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:52:22,337 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:52:22,343 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+14:52:22,344 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:52:22,345 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:52:58,212 INFO test.NewABCTest(137) - Socket连接127.0.0.1:9002
+14:52:58,257 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:52:58,257 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+14:52:58,258 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:50,041) and length=6886 bytes!
+14:52:58,262 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:52:58,263 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:52:58,265 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:52:58,266 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:52:58,301 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: 
+org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+14:52:58,306 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+14:52:58,306 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:52:58,342 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+14:52:58,383 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+14:52:58,897 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+14:52:58,899 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.672s
+14:52:58,900 INFO test.NewABCTest(223) - 收到返回报文！
+14:52:59,112 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+14:52:59,134 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+14:52:59,145 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+14:52:59,146 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+14:53:46,515 INFO test.NewABCTest(137) - Socket连接127.0.0.1:9002
+14:54:08,202 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@3e006649
+14:54:08,247 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:54:08,261 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:54:08,262 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:54:08,264 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:54:08,265 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:54:08,288 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:54:08,330 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:53:43,009) and length=24222 bytes!
+14:54:08,402 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:54:08,411 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:54:08,419 INFO common.Log4jPrint(20) - End reset System.out!
+14:54:08,421 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:54:08,422 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:54:08,423 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:53:43,040) and length=759 bytes!
+14:54:08,428 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:54:08,429 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:54:08,448 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:54:08,459 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:54:08,485 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+14:54:08,486 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:54:08,486 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:54:08,491 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+14:54:08,492 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:54:08,492 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:54:08,505 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+14:54:08,505 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:54:08,506 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:54:08,517 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+14:54:08,518 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:54:08,526 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:54:09,348 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+14:54:09,349 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+14:54:09,350 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@5601cb79
+14:54:09,351 INFO common.Log4jPrint(20) - Start revert System.out...
+14:54:09,353 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+14:54:09,352 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:54:09,352 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:54:09,353 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:54:09,353 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:54:10,115 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@3e006649
+14:54:10,130 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:54:10,133 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:54:10,134 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:54:10,135 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:54:10,136 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:54:10,137 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:54:10,140 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:53:43,009) and length=24222 bytes!
+14:54:10,197 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:54:10,208 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:54:10,210 INFO common.Log4jPrint(20) - End reset System.out!
+14:54:10,212 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:54:10,212 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:54:10,213 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:53:43,040) and length=759 bytes!
+14:54:10,216 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:54:10,216 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:54:10,232 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:54:10,234 INFO net.SocketListenerF5(91) - 0_Socket(农业银行): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:54:10,237 INFO net.SocketListenerF5(104) - 0_Socket(农业银行)加载成功!
+14:54:10,237 INFO net.SocketListenerF5(91) - 1_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:54:10,238 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:54:10,241 INFO net.SocketListenerF5(104) - 1_Socket(贵州银行)加载成功!
+14:54:10,242 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:54:10,242 INFO net.SocketListenerF5(91) - 2_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:54:10,245 INFO net.SocketListenerF5(104) - 2_Socket(中国银行)加载成功!
+14:54:10,245 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:54:10,246 INFO net.SocketListenerF5(91) - 3_Socket(建设银行): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:54:10,249 INFO net.SocketListenerF5(104) - 3_Socket(建设银行)加载成功!
+14:54:10,249 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:54:10,249 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:54:38,911 INFO test.NewABCTest(137) - Socket连接127.0.0.1:9002
+14:54:38,934 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:54:38,935 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:54:38,937 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:54:38,940 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:54:38,944 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:54:38,945 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+14:54:38,946 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:53:43,013) and length=6886 bytes!
+14:54:38,965 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: 
+org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+14:54:38,970 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+14:54:38,970 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:54:38,982 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+14:54:38,989 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+14:54:39,319 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+14:54:39,333 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+14:54:39,345 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+14:54:39,346 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+14:54:39,439 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+14:56:18,660 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@58c04c2b
+14:56:18,666 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:56:18,668 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:56:18,669 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:56:18,671 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:56:18,672 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:56:18,672 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:56:18,674 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,630) and length=24222 bytes!
+14:56:18,734 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:56:18,746 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:56:18,749 INFO common.Log4jPrint(20) - End reset System.out!
+14:56:18,752 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:56:18,752 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:56:18,754 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,663) and length=584 bytes!
+14:56:18,758 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:56:18,759 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:56:18,778 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:56:18,781 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:56:18,784 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:56:18,786 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:56:18,785 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:56:18,791 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:56:18,792 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:56:18,795 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+14:56:18,796 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:56:18,795 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:56:18,796 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:56:18,801 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+14:56:18,801 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:56:18,806 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:56:19,378 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+14:56:19,379 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+14:56:19,381 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@76c197b6
+14:56:19,381 INFO common.Log4jPrint(20) - Start revert System.out...
+14:56:19,383 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:56:19,384 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:56:19,384 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:56:19,384 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:56:19,383 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+14:56:20,191 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@58c04c2b
+14:56:20,198 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:56:20,200 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:56:20,201 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:56:20,201 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:56:20,202 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:56:20,202 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:56:20,204 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,630) and length=24222 bytes!
+14:56:20,243 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:56:20,250 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:56:20,252 INFO common.Log4jPrint(20) - End reset System.out!
+14:56:20,254 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:56:20,255 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:56:20,256 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,663) and length=584 bytes!
+14:56:20,261 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:56:20,262 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:56:20,280 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:56:20,283 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:56:20,285 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:56:20,287 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:56:20,287 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:56:20,290 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:56:20,291 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:56:20,291 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:56:20,294 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+14:56:20,295 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:56:20,294 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:56:20,297 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+14:56:20,298 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:56:20,298 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:57:01,940 INFO test.NewABCTest(137) - Socket连接127.0.0.1:9002
+14:57:01,962 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:57:01,963 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+14:57:01,964 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,637) and length=6886 bytes!
+14:57:01,963 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:57:01,965 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:57:01,967 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:57:01,968 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:57:01,982 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: 
+org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+14:57:01,987 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+14:57:01,987 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:57:01,990 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+14:57:01,996 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+14:57:02,265 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+14:57:02,280 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+14:57:02,290 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+14:57:02,291 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+14:57:02,439 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+14:59:45,500 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@e8ae59a
+14:59:45,549 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:59:45,562 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+14:59:45,563 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+14:59:45,566 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:59:45,567 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+14:59:45,568 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+14:59:45,578 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,058) and length=24222 bytes!
+14:59:45,785 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+14:59:45,825 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:59:45,827 INFO common.Log4jPrint(20) - End reset System.out!
+14:59:45,832 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:59:45,833 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+14:59:45,834 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:27,622) and length=584 bytes!
+14:59:45,838 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+14:59:45,839 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:59:45,904 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:59:45,914 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:59:46,002 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:59:46,005 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:59:46,025 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:59:46,026 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:59:46,061 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:59:46,126 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:59:46,140 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+14:59:46,141 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:59:46,148 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:59:46,162 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+14:59:46,162 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:59:46,164 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:59:53,296 INFO test.NewABCTest(137) - Socket连接127.0.0.1:9002
+14:59:53,313 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:59:53,314 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml...
+14:59:53,314 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,069) and length=6886 bytes!
+14:59:53,316 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:59:53,317 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:59:53,319 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:59:53,320 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:59:53,466 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+14:59:53,486 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml!
+14:59:53,487 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:59:53,567 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+14:59:53,597 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+14:59:54,076 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+14:59:54,078 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.766s
+14:59:54,080 INFO test.NewABCTest(223) - 收到返回报文！
+14:59:55,029 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+14:59:55,081 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+14:59:55,139 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+14:59:55,140 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+15:00:45,906 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:00:45,907 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:00:45,908 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:00:43,944) and length=585 bytes!
+15:00:45,910 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:00:45,910 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+15:00:45,910 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+15:00:45,912 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:00:45,913 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@c4a3158
+15:00:45,915 INFO common.Log4jPrint(20) - Start revert System.out...
+15:00:45,914 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:00:45,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:00:45,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:00:45,916 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+15:00:45,920 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:00:45,920 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:00:45,921 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:00:45,921 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:00:45,922 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:00:45,922 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:00:45,923 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+15:00:45,923 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:00:45,924 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+15:00:45,925 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:00:45,925 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:00:45,925 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:00:45,929 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:00:45,932 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:00:45,934 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:01:02,697 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7d01f935
+15:01:02,726 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:01:02,737 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+15:01:02,737 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+15:01:02,740 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:01:02,741 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+15:01:02,741 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+15:01:02,764 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,630) and length=24222 bytes!
+15:01:02,877 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+15:01:02,888 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:01:02,908 INFO common.Log4jPrint(20) - End reset System.out!
+15:01:02,910 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:01:02,912 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+15:01:02,913 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:00:43,942) and length=585 bytes!
+15:01:02,918 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+15:01:02,920 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:01:02,944 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:01:02,963 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:01:02,988 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:01:02,989 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:01:02,989 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:01:02,994 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:01:02,994 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:01:02,995 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:01:03,012 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+15:01:03,013 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:01:03,013 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:01:03,016 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+15:01:03,017 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:01:03,019 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:01:27,210 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+15:01:27,232 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:01:27,232 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+15:01:27,233 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,637) and length=6886 bytes!
+15:01:27,232 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:01:27,235 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:01:27,238 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:01:27,239 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:01:27,283 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: 
+org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+15:01:27,288 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+15:01:27,288 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:01:27,294 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+15:01:27,301 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+15:01:27,652 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+15:01:27,667 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+15:01:27,679 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+15:01:27,680 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+15:01:27,806 INFO test.NewABCTest(213) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:03:16,693 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@4df2868
+15:03:16,700 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:03:16,711 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+15:03:16,711 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+15:03:16,713 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:03:16,714 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+15:03:16,715 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+15:03:16,737 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,630) and length=24222 bytes!
+15:03:16,812 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+15:03:16,822 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:03:16,826 INFO common.Log4jPrint(20) - End reset System.out!
+15:03:16,828 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:03:16,829 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+15:03:16,830 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:00:43,942) and length=585 bytes!
+15:03:16,841 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+15:03:16,842 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:03:16,861 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:03:16,872 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:03:16,902 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:03:16,903 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:03:16,903 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:03:16,907 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:03:16,908 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:03:16,908 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:03:16,912 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+15:03:16,913 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:03:16,913 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:03:16,917 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+15:03:16,917 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:03:16,919 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:04:25,712 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+15:04:25,736 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:04:25,737 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:04:25,740 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:04:25,741 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:04:25,778 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:04:25,779 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+15:04:25,780 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:55:48,637) and length=6886 bytes!
+15:04:25,799 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: 
+org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:195)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(ErrorHandlerWrapper.java:174)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:388)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(XMLScanner.java:1427)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.seekCloseOfStartTag(XMLDocumentFragmentScannerImpl.java:1395)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:285)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2756)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at weblogic.xml.jaxp.WebLogicXMLReader.parse(WebLogicXMLReader.java:133)
+	at weblogic.xml.jaxp.RegistryXMLReader.parse(RegistryXMLReader.java:173)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+15:04:25,803 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+15:04:25,803 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:04:25,828 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+15:04:25,833 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+15:04:26,174 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+15:04:26,189 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+15:04:26,200 INFO midplat.Ybt4Socket(34) - TranLogNo:83712
+15:04:26,201 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+15:04:26,246 INFO test.NewABCTest(213) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:07:07,470 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@5b5a5cf
+15:07:07,499 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:07:07,520 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:07:07,520 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:07:07,523 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:07:07,524 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:07:07,525 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:07:07,534 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,058) and length=24222 bytes!
+15:07:07,766 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:07:07,815 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:07:07,817 INFO common.Log4jPrint(20) - End reset System.out!
+15:07:07,823 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:07:07,828 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:07:07,830 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:00:43,944) and length=585 bytes!
+15:07:07,834 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:07:07,834 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:07:07,879 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:07:07,880 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:07:07,930 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:07:07,931 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:07:07,965 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:07:07,967 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:07:07,968 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:07:07,994 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+15:07:07,994 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:07:08,010 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:07:08,012 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:07:08,030 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+15:07:08,031 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:07:08,042 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:07:11,034 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+15:07:11,048 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:07:11,048 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml...
+15:07:11,049 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,069) and length=6886 bytes!
+15:07:11,053 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:07:11,054 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:07:11,057 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:07:11,058 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:07:11,152 ERROR common.JdomUtil(88) - xml格式有误，解析失败！
+org.jdom.input.JDOMParseException: Error on line 8: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:504)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	... 12 more
+Caused by: org.xml.sax.SAXParseException: Element type "socket" must be followed by either attribute specifications, ">" or "/>".
+	at org.apache.xerces.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at org.apache.xerces.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLErrorReporter.reportError(Unknown Source)
+	at org.apache.xerces.impl.XMLScanner.reportFatalError(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanStartElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jdom.input.SAXBuilder.build(SAXBuilder.java:489)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:86)
+	at com.sinosoft.midplat.common.JdomUtil.build(JdomUtil.java:68)
+	at com.sinosoft.midplat.common.XmlConf.loadXml(XmlConf.java:47)
+	at com.sinosoft.midplat.newabc.NewAbcConf.load(NewAbcConf.java:40)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<init>(NewAbcConf.java:17)
+	at com.sinosoft.midplat.newabc.NewAbcConf.<clinit>(NewAbcConf.java:12)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+15:07:11,155 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml!
+15:07:11,156 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:07:11,182 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+15:07:11,199 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+15:07:11,866 INFO test.NewABCTest(213) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:07:11,867 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.82s
+15:07:11,868 INFO test.NewABCTest(224) - 收到返回报文！
+15:07:12,383 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+15:07:12,429 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+15:07:12,477 INFO midplat.Ybt4Socket(34) - TranLogNo:83715
+15:07:12,478 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+15:11:28,804 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+15:11:28,819 INFO midplat.Ybt4Socket(34) - TranLogNo:83718
+15:11:28,820 ERROR net.SocketListenerF5$Server(242) - 加载本次请求的处理线程失败!
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:222)
+Caused by: java.lang.NullPointerException
+	at com.sinosoft.midplat.Ybt4Socket.<init>(Ybt4Socket.java:35)
+	at com.sinosoft.midplat.newabc.NewAbcYbt.<init>(NewAbcYbt.java:9)
+	... 5 more
+15:11:28,823 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:11:28,824 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:11:28,826 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:11:28,827 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:11:29,316 INFO test.NewABCTest(213) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:12:07,868 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:12:07,868 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml...
+15:12:07,869 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:11:17,907) and length=6895 bytes!
+15:12:07,877 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml!
+15:12:07,878 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:12:18,795 DEBUG net.SocketListenerF5(40) - System.out = org.apache.tomcat.util.log.SystemLogHandler@4d16318b
+15:12:18,812 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:12:18,830 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/basepath.r
+15:12:18,831 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/
+15:12:18,834 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:12:18,835 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:12:18,836 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml...
+15:12:18,846 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,058) and length=24222 bytes!
+15:12:18,990 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/midplat.xml!
+15:12:19,015 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:12:19,016 INFO common.Log4jPrint(20) - End reset System.out!
+15:12:19,021 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:12:19,022 INFO net.SocketConf(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml...
+15:12:19,024 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:00:43,944) and length=585 bytes!
+15:12:19,031 INFO net.SocketConf(46) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/socket.xml!
+15:12:19,032 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:12:19,092 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:12:19,094 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:12:19,131 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:12:19,132 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=35006; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:12:19,133 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:12:19,149 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:12:19,150 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:12:19,158 INFO net.SocketListenerF5$Server(194) - 监听端口 35006
+15:12:19,169 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+15:12:19,170 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:12:19,171 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:12:19,188 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:12:19,189 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+15:12:19,189 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:12:24,763 INFO test.NewABCTest(138) - Socket连接127.0.0.1:35006
+15:12:24,783 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+15:12:24,783 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml...
+15:12:24,784 INFO common.XmlConf(80) - conf file modified at (2017-04-07 15:11:17,907) and length=6895 bytes!
+15:12:24,788 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:12:24,793 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/newabc.xml!
+15:12:24,792 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:12:24,793 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+15:12:24,796 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:12:24,799 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:12:24,844 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+15:12:24,907 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+15:12:25,546 INFO test.NewABCTest(213) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:12:25,547 INFO test.NewABCTest(218) - 客户端请求发送完毕！耗时：0.765s
+15:12:25,549 INFO test.NewABCTest(224) - 收到返回报文！
+15:12:26,045 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+15:12:26,096 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+15:12:26,151 INFO midplat.Ybt4Socket(34) - TranLogNo:83715
+15:12:26,152 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+15:12:26,205 INFO net.SocketNetImpl(40) - 客户端IP：127.0.0.1；服务端口：35006
+15:12:26,206 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+15:12:26,208 INFO net.NewAbcNetImpl(28) - Into NewAbcNetImp.receive()...
+15:12:26,226 INFO net.NewAbcNetImpl(35) - package_head:X1.0000117123103    00000                                       000000000
+15:12:26,226 INFO net.NewAbcNetImpl(40) - cInsuID:3103
+15:12:26,227 INFO net.NewAbcNetImpl(42) - mBodyLen:11712
+15:12:26,227 INFO net.NewAbcNetImpl(47) - 解密开始
+15:12:26,244 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+15:12:26,248 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+15:12:26,490 INFO net.NewAbcNetImpl(49) - 解密完成
+15:12:26,491 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170407</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000585780</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><AppNo>810000585780</AppNo><Appl><!--投保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><InvalidDate>20310131</InvalidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><OtherConnect /><ShortMsg /><FixIncome>0</FixIncome><AnnualIncome>500000</AnnualIncome><Company /><JobType /><JobCode>3010101</JobCode><Notice /><CustSource>1</CustSource><RelaToInsured>01</RelaToInsured></Appl><Insu><!--被保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><ValidDate>20310131</ValidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><JobType /><JobCode>3010101</JobCode><Company /><AnnualIncome>50000</AnnualIncome><Tall>0</Tall><Weight>0</Weight><IsRiskJob /><HealthNotice>0</HealthNotice><Notice /><CreditCard /><CreditType /><Immaturity>0</Immaturity></Insu><Bnfs><!--受益人--><Count>0</Count><Type1 /><Name1 /><Sex1 /><Birthday1 /><IDCode1 /><BeginDate1 /><InvalidDate1 /><IDKind1 /><RelationToInsured1 /><Sequence1>0</Sequence1><Prop1>0</Prop1><Phone1 /><Country1 /><Address1 /><Prov1 /><City1 /><Zone1 /><Type2 /><Name2 /><Sex2 /><Birthday2 /><IDCode2 /><BeginDate2 /><InvalidDate2 /><IDKind2 /><RelationToInsured2 /><Sequence2>0</Sequence2><Prop2>0</Prop2><Phone2 /><Country2 /><Address2 /><Prov2 /><City2 /><Zone2 /><Type3 /><Name3 /><Sex3 /><Birthday3 /><IDCode3 /><BeginDate3 /><InvalidDate3 /><IDKind3 /><RelationToInsured3 /><Sequence3>0</Sequence3><Prop3>0</Prop3><Phone3 /><Country3 /><Address3 /><Prov3 /><City3 /><Zone3 /></Bnfs><Risks><!--险种--><Count /><InsuCode>0204</InsuCode><RiskCode>012D0100</RiskCode><Name>华贵多彩赢家年金保险</Name><Policypwd /><Share>10</Share><Prem>10000</Prem><Price>0</Price><Amnt>0</Amnt><PayType>1</PayType><!--交费方式:趸交,年交--><PayDueType>0</PayDueType><!--交费期间类型:趸交--><PayDueDate>2</PayDueDate><!--交费期间:2年交--><InsuDueType>4</InsuDueType><!--保险期间类型--><InsuDueDate>10</InsuDueDate><!--保险期间:10年--><FullBonusGetMode /><GetYearFlag>0</GetYearFlag><GetYear>6</GetYear><BonusPayMode /><BonusGetMode /><WNRiskAccCount /><WNRiskAccType /><InvestProtion /><AutoPayFlag /><AutoPayForFlag /><SubFlag /><RiskBeginDate /><RiskEndDate /><InvestType /><ContinuePay /><ContinuePayAmt /><ContinuePayDue /><ContinuePayBeginDate /><SameFlag /></Risks><Inv><!--基本保费投资帐户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></Inv><ContinuePay><!--定期追加保险费的投资账户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></ContinuePay><Objt><!--保险目标--><Prov /><City /><Zone /><Address /><Amnt /><ZipCode /><Area /><PreFlag /><NoPayPortion /><NoPayPrem /><Struts /><Usage /><FasAmnt /><FloAmnt /><Count /><Name1 /><Amnt1 /><Name2 /><Amnt2 /><Name3 /><Amnt3 /><Name4 /><Amnt4 /><Name5 /><Amnt5 /><Name6 /><Amnt6 /><Name7 /><Amnt7 /></Objt><Loan><!--贷款信息--><ContNo /><LoanType /><LoanBank /><VchCheckNo /><Flag /><HurtAmnt /><VchNo /><AccNo /><Prem /><BegDate /><EndDate /></Loan><Addt><!--附加险--><Count>0</Count><RiskCode1 /><InsuCode1 /><Name1 /><Share1>0</Share1><AutoPayFlag1 /><Prem1>0</Prem1><Amnt1 /><PayType1 /><PayDueType1 /><PayDueDate1 /><InsuDueType1 /><InsuDueDate1 /><RiskCode2 /><InsuCode2 /><Name2 /><Share2>0</Share2><AutoPayFlag2 /><Prem2>0</Prem2><Amnt2 /><PayType2 /><PayDueType2 /><PayDueDate2 /><InsuDueType2 /><InsuDueDate2 /><RiskCode3 /><InsuCode3 /><Name3 /><Share3>0</Share3><AutoPayFlag3 /><Prem3>0</Prem3><Amnt3 /><PayType3 /><PayDueType3 /><PayDueDate3 /><InsuDueType3 /><InsuDueDate3 /><RiskCode4 /><InsuCode4 /><Name4 /><Share4>0</Share4><AutoPayFlag4 /><Prem4>0</Prem4><Amnt4 /><PayType4 /><PayDueType4 /><PayDueDate4 /><InsuDueType4 /><InsuDueDate4 /><RiskCode5 /><InsuCode5 /><Name5 /><Share5>0</Share5><AutoPayFlag5 /><Prem5>0</Prem5><Amnt5 /><PayType5 /><PayDueType5 /><PayDueDate5 /><InsuDueType5 /><InsuDueDate5 /><RiskCode6 /><InsuCode6 /><Name6 /><Share6>0</Share6><AutoPayFlag6 /><Prem6>0</Prem6><Amnt6 /><PayType6 /><PayDueType6 /><PayDueDate6 /><InsuDueType6 /><InsuDueDate6 /></Addt><Base><!--基本信息--><SpecArranged /><ArugeFlag /><ArbteName /><ConAccName>李四</ConAccName><ConAccNo>12345678</ConAccNo><!--续期缴费账号--><ApplGetAccNo /><InsuGetAccNo /><ApplyDate>20170406</ApplyDate><PolicyApplySerial>1010100004058</PolicyApplySerial><VchType>8055</VchType><VchName>渤海保单</VchName><VchNo>1800100000594</VchNo><Saler>郝海峰</Saler><BranchCertNo>4401008906584400</BranchCertNo><SalerCertNo>00201009440000026065</SalerCertNo><BranchName>中国农业银行广州东城支行</BranchName><RenewPayType /><ApplGetAccName /><InsuGetAccName /><PoliValidDate /></Base><Reserve1>婚姻状况</Reserve1><Reserve2 /><Reserve3>家庭年收入</Reserve3><Reserve4 /><Reserve5>投保人保费预算</Reserve5><Reserve6 /><Reserve7 /><Reserve8 /><Reserve9 /><Reserve10 /><Reserve11 /><Reserve12 /><Reserve13 /><Reserve14 /><Reserve15 /><Reserve16 /><Reserve17 /><Reserve18 /><Reserve19 /><Reserve20 /></Req></App></ABCB2I>
+ 
+15:12:26,504 INFO net.NewAbcNetImpl(59) - UTF-8 农行的报文: 
+15:12:26,557 INFO net.NewAbcNetImpl(79) - 农行交易码为=======:1002
+15:12:27,035 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+15:12:27,036 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/
+15:12:27,056 INFO common.SaveMessage(94) - 83718_3_1002_in.xml IO输出耗时:0.02s
+15:12:27,056 INFO net.NewAbcNetImpl(99) - 保存报文完毕！83718_3_1002_in.xml
+15:12:27,056 INFO net.NewAbcNetImpl(122) - Out NewAbcNetImp.receive()!
+15:12:27,058 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.NewCont
+15:12:27,095 INFO format.NewCont(34) - Into newABCNewCont.noStd2Std()...
+15:12:27,095 INFO format.NewCont(178) - 受益人个数:0
+15:12:27,124 INFO format.NewContInXsl(27) - Into NewContInXsl.load()...
+15:12:27,124 INFO format.NewContInXsl(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContIn.xsl...
+15:12:27,125 INFO common.XslCache(70) - conf file modified at (2017-04-07 14:20:44,994) and length=25936 bytes!
+15:12:28,008 INFO format.NewContInXsl(37) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContIn.xsl!
+15:12:28,009 INFO format.NewContInXsl(50) - Out NewContInXsl.load()!
+15:12:28,569 INFO common.Log4jPrint(20) - sdfsdfsdfewre===5.0E7
+15:12:28,584 INFO format.NewCont(50) - Out newABCNewCont.noStd2Std()!
+15:12:28,584 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContInput
+15:12:28,688 INFO service.NewContInput(37) - Into NewContInput.service()...
+15:12:28,689 INFO service.NewContInput(52) - 判断是否重发，1为重发，重发Body增加ResendFlag节点
+15:12:28,690 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=0 and ProposalPrtNo='101010000405870' and bak3='810000585780' and MakeDate =20170407
+15:12:28,745 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+15:12:28,825 INFO common.Log4jPrint(20) - 进程名：83718
+15:12:28,826 INFO common.Log4jPrint(20) - trancom:5
+15:12:28,826 INFO common.Log4jPrint(20) - FuncFlag:1002
+15:12:28,827 INFO common.Log4jPrint(20) - mHeadEle.getChildText83718_3_1002_in.xml
+15:12:28,857 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+15:12:28,858 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 83718,5,'01','01010101001865201','810000585780','apky',1002,20170407,152647,'101010000405870','180010000059429',-1,-1,'127.0.0.1','83718_3_1002_in.xml',20170407,151228,20170407,151228 )
+15:12:28,872 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+15:12:28,875 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from cont where bak8='810000585780' and trancom ='05'
+15:12:28,929 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101010000405870' and MakeDate>=20170407 and MakeTime>=151028
+15:12:29,032 INFO common.RuleXsl(176) - Into RuleXsl.load()...
+15:12:29,032 INFO common.RuleXsl(179) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl...
+15:12:29,033 INFO common.XslCache(70) - conf file modified at (2017-04-07 14:20:46,100) and length=15623 bytes!
+15:12:29,103 INFO common.RuleXsl(188) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xsl!
+15:12:29,104 INFO common.RuleXsl(202) - Out RuleXsl.load()!
+15:12:29,105 INFO common.RuleXml(228) - Into RuleXml.load()...
+15:12:29,106 INFO common.RuleXml(231) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml...
+15:12:29,107 INFO common.XmlConf(80) - conf file modified at (2017-04-07 14:20:46,087) and length=9884 bytes!
+15:12:29,146 INFO common.RuleXml(238) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/conf/rule.xml!
+15:12:29,147 INFO common.RuleXml(245) - Out RuleXml.load()!
+15:12:29,148 INFO common.RuleParser(54) - Into RuleParser.check()...
+15:12:29,148 INFO common.RuleParser(76) - Into RuleParser.checkByXsl()...
+15:12:29,175 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:12:29,178 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:12:29,179 INFO common.Log4jPrint(20) - 返回的结果是:0
+15:12:29,182 INFO common.Log4jPrint(20) - 对邮编进行校验
+15:12:29,186 INFO common.RuleParser(80) - <?xml version="1.0"?>
+<rules><msg>投保日期必须为当天</msg></rules>
+
+15:12:29,189 ERROR service.NewContInput(250) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 投保日期必须为当天
+	at com.sinosoft.midplat.common.RuleParser.checkByXsl(RuleParser.java:84)
+	at com.sinosoft.midplat.common.RuleParser.check(RuleParser.java:58)
+	at com.sinosoft.midplat.newabc.service.NewContInput.service(NewContInput.java:146)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+15:12:29,250 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+15:12:29,251 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:12:29,251 INFO common.Log4jPrint(20) - 810000585780
+15:12:29,251 INFO common.Log4jPrint(20) - 810000585780
+15:12:29,252 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=83718,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000585780',Operator='apky',FuncFlag=1002,TranDate=20170407,TranTime=152647,ProposalPrtNo='101010000405870',ContNo=null,OtherNo='180010000059429',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3='810000585780',Bak4=null,Bak5=null,InNoDoc='83718_3_1002_in.xml',MakeDate=20170407,InDoc=null,OutDoc=null,MakeTime=151228,ModifyDate=20170407,ModifyTime=151229,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000585780'
+15:12:29,267 INFO service.NewContInput(268) - Out NewContInput.service()!
+15:12:29,267 INFO format.NewCont(56) - Into newABCNewCont.std2NoStd()...
+15:12:29,279 INFO format.NewContOutXsl(27) - Into NewContInXsl.load()...
+15:12:29,279 INFO format.NewContOutXsl(30) - Start load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContOut.xsl...
+15:12:29,280 INFO common.XslCache(70) - conf file modified at (2017-04-07 14:20:44,998) and length=959 bytes!
+15:12:29,317 INFO format.NewContOutXsl(37) - End load /D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContOut.xsl!
+15:12:29,318 INFO format.NewContOutXsl(50) - Out NewContInXsl.load()!
+15:12:29,319 INFO format.NewCont(78) - 交易失败=========失败信息:投保日期必须为当天
+15:12:29,320 INFO format.NewCont(92) - Out newABCNewCont.std2NoStd()!
+15:12:29,320 INFO net.NewAbcNetImpl(127) - Into NewAbcNetImp.send()...
+15:12:29,327 INFO common.SaveMessage(94) - 83718_6_1002_out.xml IO输出耗时:0.0060s
+15:12:29,327 INFO net.NewAbcNetImpl(142) - 保存报文完毕！83718_6_1002_out.xml
+15:12:29,328 INFO net.NewAbcNetImpl(149) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><TransDate>20170407</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000585780</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+
+15:12:29,328 INFO common.Log4jPrint(20) - strLen:412
+15:12:29,328 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><TransDate>20170407</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000585780</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+    
+15:12:29,329 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/MyEclipse/workspace/.metadata/.me_tcat/webapps/HGLIFE/WEB-INF/key/newABCKey.dat
+15:12:29,329 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+15:12:29,329 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+15:12:29,331 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><TransDate>20170407</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000585780</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+    
+15:12:29,332 INFO common.Log4jPrint(20) - xml字符串的报文长度：832
+15:12:29,381 INFO test.NewABCTest(232) - package_head:X1.0000008323103    00000                                       000000000
+15:12:29,381 INFO net.NewAbcNetImpl(220) - Out NewAbcNetImp.send()!
+15:12:29,381 INFO test.NewABCTest(234) - mBodyLen:832
+15:12:29,382 INFO test.NewABCTest(239) - 解密开始
+15:12:29,384 INFO test.NewABCTest(241) - 解密完成
+15:12:29,387 INFO test.NewABCTest(254) - UTF-8 农行的报文: 
+15:12:29,388 INFO test.NewABCTest(258) - 客户端接收返回报文完毕！耗时：4.606s
+15:12:29,417 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+15:12:29,417 INFO common.Log4jPrint(20) - null
+15:12:29,418 INFO common.Log4jPrint(20) - null
+15:12:29,418 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+15:12:29,448 INFO common.Log4jPrint(20) - i=0
+15:12:29,453 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+15:12:29,454 INFO midplat.Ybt4Socket(192) - 处理总耗时：3.248s
+15:12:29,454 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!

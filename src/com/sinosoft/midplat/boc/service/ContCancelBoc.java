@@ -2,10 +2,8 @@ package com.sinosoft.midplat.boc.service;
 
 import java.util.Calendar;
 import java.util.Date;
-
 import org.jdom.Document;
 import org.jdom.Element;
-
 import com.sinosoft.lis.db.ContDB;
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.lis.schema.ContSchema;
@@ -17,7 +15,6 @@ import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
-import com.sinosoft.midplat.service.AuthorityCheck;
 import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
 
@@ -31,42 +28,10 @@ public class ContCancelBoc extends ServiceImpl {
 		cLogger.info("Into ContCancelBoc.service()...");
 		cInXmlDoc = pInXmlDoc;
 		Element mRootEle = cInXmlDoc.getRootElement();
-//		Element mHeadEle = (Element) mRootEle.getChild(Head).clone();
 		Element mBodyEle = mRootEle.getChild(Body);
-//		String mTranDate = mHeadEle.getChildText("TranDate");
-//		String mTranCom = mHeadEle.getChildText("TranCom");
-//		Element ContPrtNo = new Element("ContPrtNo");
 		String mContNo = mBodyEle.getChildText(ContNo);
-//		String sql = "select ProposalPrtNo from cont where trancom = '"+mTranCom+"' and contno = '"+mContNo+"'";
-//		ExeSQL dExeSQL = new ExeSQL();
-//		String mProposalPrtNo = dExeSQL.getOneValue(sql);
-//		//要是重打了在撤单的话 系统就得查找重打后的单证号  有可能重打了两次在撤单  那么取交易成功且单证号最大的哪个单证号 
-//		String sql1 = "select max(otherno) from tranlog where trandate = '"+mTranDate+"' and trancom = '"+mTranCom+"' and ProposalPrtNo = '"+mProposalPrtNo+"' and funcflag = '102'  and rtext = '交易成功！'";
-//		String motherno1 = dExeSQL.getOneValue(sql1);
-//		cLogger.info("重打之后的单证号:"+motherno1);
-//		//如果取重打的单证号为空，则说明在扯淡之前未操作宠大交易  那么就取签单的单证号
-//		if(motherno1.equals(""))
-//		{
-//			String sql2 = "select otherno from tranlog where trandate = '"+mTranDate+"' and trancom = '"+mTranCom+"' and ProposalPrtNo = '"+mProposalPrtNo+"' and funcflag = '101'";
-//			String motherno2 = dExeSQL.getOneValue(sql2);
-//			cLogger.info("签单时候的单证号:"+motherno2);
-//			mBodyEle.addContent(ContPrtNo.setText(motherno2));
-//		}
-//		else
-//		{
-//			mBodyEle.addContent(ContPrtNo.setText(motherno1));
-//		}
-
 		try { 
 			cTranLogDB = insertTranLog(pInXmlDoc);
-//			
-//			cLogger.info("Into ContCancelBoc.service()...-->authorityCheck.submitData(mHeadEle)交易权限");	
-//			AuthorityCheck authorityCheck = new AuthorityCheck();
-//			if(!authorityCheck.submitData(mHeadEle)){ 
-//				throw new MidplatException("该网点无权限！");
-//			} 
-//			
-//			
 			//校验系统中是否有相同保单正在处理，尚未返回
 			int tLockTime = 300;	//默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try {
@@ -90,7 +55,6 @@ public class ContCancelBoc extends ServiceImpl {
 				.append(" and ContNo='").append(mContNo).append('\'')
 				.append(" and MakeDate=").append(cTranLogDB.getMakeDate())
 				.append(" and TranCom=").append(cTranLogDB.getTranCom())
-				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
 				.toString();
 			cLogger.info(tSqlStr);
 			ContSet mContSet = new ContDB().executeQuery(tSqlStr);
@@ -99,38 +63,36 @@ public class ContCancelBoc extends ServiceImpl {
 			}
 			ContSchema tContSchema = mContSet.get(1);
 			
-
-			//add by zhj 网点与权限 添加代理   
-			//cInXmlDoc = authority(cInXmlDoc);
-//			//add by zhj 网点与权限 添加代理end 			
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContCancel).call(cInXmlDoc);
-//			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
-//			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
-//				throw new MidplatException(tOutHeadEle.getChildText(Desc));
+			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
+			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
+				throw new MidplatException(tOutHeadEle.getChildText(Desc));
+			}
+			//置为撤单状态
+//			Date tCurDate = new Date();
+//			tSqlStr = new StringBuilder("update Cont set State=").append(AblifeCodeDef.ContState_Cancel)
+//				.append(", ModifyDate=").append(DateUtil.get8Date(tCurDate))
+//				.append(", ModifyTime=").append(DateUtil.get6Time(tCurDate))
+//				.append(" where ContNo=").append(tContSchema.getContNo())
+//				.toString();
+//			ExeSQL tExeSQL = new ExeSQL();
+//			if (!tExeSQL.execUpdateSQL(tSqlStr)) {
+//				cLogger.error("更新保单状态(Cont)失败！" + tExeSQL.mErrors.getFirstError());
 //			}
-			
 			//置为撤单状态
 			Date tCurDate = new Date();
-			tSqlStr = new StringBuilder("update Cont set State=").append(AblifeCodeDef.ContState_Cancel)
-				.append(", ModifyDate=").append(DateUtil.get8Date(tCurDate))
-				.append(", ModifyTime=").append(DateUtil.get6Time(tCurDate))
-				.append(" where RecordNo=").append(tContSchema.getRecordNo())
-				.toString();
-			ExeSQL tExeSQL = new ExeSQL();
-			if (!tExeSQL.execUpdateSQL(tSqlStr)) {
-				cLogger.error("更新保单状态(Cont)失败！" + tExeSQL.mErrors.getFirstError());
+			tContSchema.setState(AblifeCodeDef.ContState_Cancel);
+			tContSchema.setModifyDate(DateUtil.get8Date(tCurDate));
+			tContSchema.setMakeTime(DateUtil.get6Time(tCurDate));
+			ContDB tContDB = tContSchema.getDB();
+			if (!tContDB.update()) {
+				cLogger.error("更新保单状态(Cont)失败！" + tContDB.mErrors.getFirstError());
 			}
 		}
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);			
-			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
-		} 
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
-		
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
@@ -143,7 +105,6 @@ public class ContCancelBoc extends ServiceImpl {
 				cLogger.error("更新日志信息失败！" + cTranLogDB.mErrors.getFirstError());
 			}
 		}
-		
 		cLogger.info("Out ContCancelBoc.service()!");
 		return cOutXmlDoc;
 	} 
@@ -184,7 +145,6 @@ public class ContCancelBoc extends ServiceImpl {
 			cLogger.error(mTranLogDB.mErrors.getFirstError());
 			throw new MidplatException("插入日志失败！");
 		}
-		
 		cLogger.debug("Out ServiceImpl.insertTranLog()!");
 		return mTranLogDB;
 	}
@@ -196,6 +156,7 @@ public class ContCancelBoc extends ServiceImpl {
 	 * create by zhj 2010 11 05
 	 * 网点 权限 添加校验方法
 	 */
+	@SuppressWarnings("unused")
 	private Document authority(Document mInXmlDoc) throws MidplatException{
 		
   

@@ -6,8 +6,8 @@
    <Head>
       <TranDate><xsl:value-of select="Main/TranDate"/></TranDate>
       <TranTime><xsl:value-of select="Main/TranTime"/></TranTime>
-      <NodeNo><xsl:value-of select="Main/ZoneNo" /><xsl:value-of select="Main/BrNo" /></NodeNo>
-      <BankCode><xsl:value-of select="Main/BankCode"/></BankCode>
+      <NodeNo><xsl:value-of select="Main/BrNo"/></NodeNo>
+      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
       <TellerNo><xsl:value-of select="Main/TellerNo"/></TellerNo>
       <ZoneNo><xsl:value-of select="Main/ZoneNo"/></ZoneNo>
       <TranNo><xsl:value-of select="Main/TransNo"/></TranNo>
@@ -22,9 +22,6 @@
      <ContNo><xsl:value-of select="Main/PolicyNo"/></ContNo>
      <ProposalPrtNo></ProposalPrtNo>
      <ContPrtNo></ContPrtNo>
-     <TranNo><xsl:value-of select="Main/OriginTransNo"/></TranNo>
-     <AccNo></AccNo>
-     <AccName></AccName>
    </Body>
 </TranData>
 </xsl:template>

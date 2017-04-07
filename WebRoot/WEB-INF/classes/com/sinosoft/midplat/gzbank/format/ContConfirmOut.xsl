@@ -4,26 +4,8 @@
  	exclude-result-prefixes="java">
 <xsl:template match="TranData"><!-- 核心收费签单应答报文 -->
 <TXLife><!-- 贵州银行缴费出单应答报文 -->
-	<!-- 交易码-->
-	<TransNo></TransNo>
-	<!-- 签到银行代码-->
-	<QdBankCode></QdBankCode>
-	<!-- 区域银行代码-->
-	<BankCode></BankCode>
-	<!--银行网点代码 -->
-	<Branch></Branch>
-	<!--保险机构代码-->
-	<InsuOrgNo></InsuOrgNo>
-	<!-- 银行交易日期-->
-	<TransExeDate></TransExeDate>
 	<!-- 银行交易时间-->
-	<TransExeTime></TransExeTime>
-	<!-- 银行流水号-->
-	<TransRefGUID></TransRefGUID>
-	<!-- 银行操作员-->
-	<Teller></Teller>
-	<!-- 银行操作员姓名-->
-	<TellerName></TellerName>
+	<TransExeTime><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Time()"/></TransExeTime>
 	<ResultCode>0<xsl:value-of select ="Head/Flag"/></ResultCode>
 	<ResultInfoDesc><xsl:value-of select ="Head/Desc"/></ResultInfoDesc>
 	<CpicWater><xsl:value-of select="Body/AgentName"/></CpicWater>
@@ -55,7 +37,7 @@
 	<BankNetCredentialsNo></BankNetCredentialsNo><!-- 银行保险兼业代理业务许可证 -->
 	<BankNetName></BankNetName><!-- 网点名称 -->
 	<PolicyHolder>
-		<GovtIDTC><!-- 投保人证件类型 -->
+		<GovtIDTC>
 			<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="Body/Appnt/IDType" />
@@ -80,7 +62,7 @@
 		<FullName>
 			<xsl:value-of select="Body/Appnt/Name"/>
 		</FullName>
-		<OccupationType><!-- 投保人职业代码 -->
+		<OccupationType>
 			<xsl:value-of select="Body/Appnt/JobCode"/>
 		</OccupationType>
 		<Line1>
@@ -109,7 +91,7 @@
 		<Email><xsl:value-of select="Body/Appnt/Email"/></Email>
 	</PolicyHolder>
 	<Insured>
-		<GovtIDTC><!-- 被保人证件类型 -->
+		<GovtIDTC>
 			<xsl:call-template name="tran_idtype">
 				<xsl:with-param name="idtype">
 					<xsl:value-of select="Body/Insured/IDType" />
@@ -134,7 +116,7 @@
 		<FullName>
 			<xsl:value-of select="Body/Insured/Name" />
 		</FullName>
-		<OccupationType><!-- 被保人职业代码 -->
+		<OccupationType>
 			<xsl:value-of select="Body/Insured/JobCode" />
 		</OccupationType>
 		<Line1>
@@ -175,7 +157,7 @@
 		<xsl:element name="{'Beneficiary'}{position()}">
 			<No><xsl:value-of select="Grade" /></No>
 			<BeneficiaryMethod>3</BeneficiaryMethod>
-			<GovtIDTC><!-- 受益人证件类型 -->
+			<GovtIDTC>
 				<xsl:call-template name="tran_idtype">
 					<xsl:with-param name="idtype">
 						<xsl:value-of select="IDType" />
@@ -187,7 +169,7 @@
 			<EffectDate></EffectDate>
 			<ExpireDate></ExpireDate>
 			<FullName><xsl:value-of select="Name" /></FullName>
-			<OccupationType></OccupationType><!-- 受益人职业代码 -->
+			<OccupationType></OccupationType>
 			<Line1></Line1>
 			<DialCode></DialCode>
 			<DialNumber></DialNumber>
@@ -292,7 +274,7 @@
 				<xsl:value-of select="RiskCode " />
 			</ProductCode>
 			<PlanName><xsl:value-of select="RiskName " /></PlanName>
-			<ModalPremAmt><xsl:value-of select="Prem " /></ModalPremAmt>
+			<ModalPremAmt><xsl:value-of select="Prem" /></ModalPremAmt>
 			<IntialNumberOfUnits><xsl:value-of select="Mult " /></IntialNumberOfUnits>
 			<FeeStd><xsl:value-of select="Prem " /></FeeStd>
 			<FeeCon></FeeCon>

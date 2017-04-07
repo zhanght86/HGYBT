@@ -4,139 +4,222 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Constructor;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.xpath.XPath;
 
-import com.sinosoft.midplat.MidplatConf;
+import com.sinosoft.lis.db.TranLogDB;
+import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.DateUtil;
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
+import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
-import com.sinosoft.midplat.newabc.NewAbcConf;
-import com.sinosoft.midplat.service.Service;
+import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 
 /**
- * 非实时出单流水明细
- * @author liuzk
- *
+ * @ClassName: NonReaTimeIssWatDetail
+ * @Description: 非实时出单流水明细
+ * @author sinosoft
+ * @date 2017-4-7 下午2:09:59
  */
-public class NonReaTimeIssWatDetail extends Balance{
-	public NonReaTimeIssWatDetail() {
-		super(NewAbcConf.newInstance(), "2002");
-	}
-	protected String getFileName()throws Exception {
-		Element mBankEle = cThisConfRoot.getChild("bank");
-		File_download f = new File_download(cThisBusiConf,"FSSCDLSMX",DateUtil.getDateStr(cTranDate,"yyyyMMdd"),mBankEle.getAttributeValue("insu"));
-		String fileName="FAPPLY"+mBankEle.getAttributeValue("insu")+"."+DateUtil.getDateStr(cTranDate, "yyyyMMdd");
-		try {
-			f.bank_dz_file();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			throw new MidplatException(ex.getMessage());
-		} 
-		return fileName;
-	}
-	
-	public void run()
-	   {
-	        Thread.currentThread().setName(
-	          String.valueOf(NoFactory.nextTranLogNo()));
-	        this.cLogger.info("Into NonReaTimeIssWatDetail.run()...");
-	 
-	        this.cResultMsg = null;
-	     try
-	     {
-	         this.cMidplatRoot = MidplatConf.newInstance().getConf().getRootElement();
-	         this.cThisConfRoot = this.cThisConf.getConf().getRootElement();
-	         this.cThisBusiConf = ((Element)XPath.selectSingleNode(
-	           this.cThisConfRoot, "business[funcFlag='" + this.cFuncFlag + "']"));
-	 
-	         String nextDate = this.cThisBusiConf.getChildText("nextDate");
-	 
-	         if (this.cTranDate == null)
-	           if ((nextDate != null) && ("Y".equals(nextDate))) {
-	             this.cTranDate = new Date();
-	             this.cTranDate = new Date(this.cTranDate.getTime() - 86400000L);
-	      } else {
-	             this.cTranDate = new Date();
-	      }
-	         Element tTranData = new Element("TranData");
-	         Document tInStdXml = new Document(tTranData);
-	 
-	         Element tHeadEle = getHead();
-	         tTranData.addContent(tHeadEle);
-	    try
-	    {
-	           String ttFileName = getFileName();
-	           this.cLogger.info("FileName = " + ttFileName);
-	           String ttLocalDir = this.cThisBusiConf.getChildTextTrim("localDir");
-	           this.cLogger.info("localDir = "+ttLocalDir);
-	           InputStream ttBatIns = null;
+public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 
-	           ttBatIns = new FileInputStream(ttLocalDir+ttFileName);
-	           Element ttBodyEle = parse(ttBatIns);
-	           
-	           tTranData.addContent(ttBodyEle);
-	    } catch (Exception ex) {
-	           this.cLogger.error("生成标准对账报文出错!", ex);
-	 
-	           Element ttError = new Element("Error");
-	           String ttErrorStr = ex.getMessage();
-	           if ("".equals(ttErrorStr)) {
-	             ttErrorStr = ex.toString();
-	      }
-	           ttError.setText(ttErrorStr);
-	           tTranData.addContent(ttError);
-	    }
-	 
-	         String tServiceClassName = "com.sinosoft.midplat.service.ServiceImpl";
-	 
-	         String tServiceValue = this.cMidplatRoot.getChildText("service");
-	         if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
-	           tServiceClassName = tServiceValue;
-	    }
-	 
-	         tServiceValue = this.cThisConfRoot.getChildText("service");
-	         if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
-	           tServiceClassName = tServiceValue;
-	    }
-	         tServiceValue = this.cThisBusiConf.getChildText("service");
-	         if ((tServiceValue != null) && (!"".equals(tServiceValue))) {
-	           tServiceClassName = tServiceValue;
-	    }
-	         this.cLogger.info("业务处理模块" + tServiceClassName);
-	         @SuppressWarnings("rawtypes")
-			Constructor tServiceConstructor = Class.forName(
-	           tServiceClassName).getConstructor(new Class[] { Element.class });
-	         Service tService = (Service)tServiceConstructor.newInstance(new Object[] { this.cThisBusiConf });
-	         Document tOutStdXml = tService.service(tInStdXml);
-	 
-	         this.cResultMsg = tOutStdXml.getRootElement().getChild(
-	           "Head").getChildText("Desc");
-	 
-	  }
-	  catch (Throwable ex) {
-	         this.cLogger.error("交易出错", ex);
-	         this.cResultMsg = ex.toString();
-	  }
-	 
-	       this.cTranDate = null;
-	 
-	       this.cLogger.info("Out NonReaTimeIssWatDetail.run()!");
-	   }
-	
-	protected Element parse(InputStream pBatIs) throws Exception {
+	protected final Logger cLogger = Logger.getLogger(getClass());
+
+	protected static Element cConfigEle;
+	private static String cCurDate = "";
+	@SuppressWarnings("unused")
+	private String mFileData = "";
+	private Document cOutXmlDoc;
+	private TranLogDB cTranLogDB;
+
+	public void run() {
+		cLogger.info("Into NonReaTimeIssWatDetail.run()...");
+		try {
+			cTranLogDB = insertTranLog();
+			cConfigEle = BatUtils.getConfigEle("2002"); // 得到bat.xml文件中的对应节点.
+
+			if ("".equals(cCurDate)) {
+				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date());
+			}
+			String mComCode = cConfigEle.getChildTextTrim("ComCode").trim();
+
+			String mFIleName = "FAPPLY" + mComCode + "." + cCurDate; // 初始化文件名称POLICY3002
+			if (!new BatUtils().downLoadFile(mFIleName, "02", "10173", cCurDate)) {
+				cTranLogDB.setRCode("1");
+				cTranLogDB.setRText("非实时出单流水明细文件下载异常");
+				cTranLogDB.setModifyDate(DateUtil.getCur8Date());
+				cTranLogDB.setModifyTime(DateUtil.getCur6Time());
+				cTranLogDB.update();
+				throw new MidplatException("非实时出单流水明细文件下载异常");
+			}
+
+			// // 处理对账
+			cLogger.info("处理非实时出单流水明细文件开始...");
+			cTranLogDB = insertTranLog();
+			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
+//			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/BQAPPLY010079.20170405";
+			// 得到请求标准报文
+			Document mInStd = parse(myFilePath);
+			JdomUtil.print(mInStd);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_NonRealTimeContBlc).call(mInStd);
+			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
+			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
+			cLogger.info("非实时出单流水明细对账结果代码：" + reCode + "      结果说明：" + reMsg);
+			if (cTranLogDB != null) {
+				cTranLogDB.setRCode(reCode);
+				cTranLogDB.setRText(reMsg);
+				cTranLogDB.setModifyDate(DateUtil.getCur8Date());
+				cTranLogDB.setModifyTime(DateUtil.getCur6Time());
+				cTranLogDB.update();
+			}
+			
+		} catch (Exception e) {
+			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常...");
+			e.printStackTrace();
+			cTranLogDB.setRCode("1");
+			cTranLogDB.setRText("非实时出单流水明细文件处理失败");
+			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
+			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
+			cTranLogDB.update();
+		} finally {
+			cCurDate = "";
+		}
+		cLogger.info("处理非实时出单流水明细文件结束!");
+		cLogger.info("Out NonReaTimeIssWatDetail.run()!");
+	}
+
+	protected TranLogDB insertTranLog() throws MidplatException {
+		this.cLogger.debug("Into NonReaTimeIssWatDetail.insertTranLog()...");
+		TranLogDB mTranLogDB = new TranLogDB();
+		mTranLogDB.setLogNo(NoFactory.nextTranLogNo());
+		mTranLogDB.setTranCom("05");
+		mTranLogDB.setNodeNo("0000000");
+		mTranLogDB.setFuncFlag("2002");
+		mTranLogDB.setOperator("YBT");
+		mTranLogDB.setTranNo(NoFactory.nextTranLogNo() + "");
+		mTranLogDB.setTranDate(DateUtil.getCur8Date());
+		mTranLogDB.setTranTime(DateUtil.getCur6Time());
+		Date mCurDate = new Date();
+		mTranLogDB.setTranTime(DateUtil.get6Time(mCurDate));
+		mTranLogDB.setRCode(0);
+		mTranLogDB.setUsedTime(0);
+		mTranLogDB.setBak1("");
+		mTranLogDB.setRCode("-1");
+		mTranLogDB.setMakeDate(DateUtil.get8Date(mCurDate));
+		mTranLogDB.setMakeTime(DateUtil.get6Time(mCurDate));
+		mTranLogDB.setModifyDate(mTranLogDB.getMakeDate());
+		mTranLogDB.setModifyTime(mTranLogDB.getMakeTime());
+		if (!(mTranLogDB.insert())) {
+			this.cLogger.error(mTranLogDB.mErrors.getFirstError());
+			throw new MidplatException("插入日志失败！");
+		}
+		this.cLogger.debug("Out NonReaTimeIssWatDetail.insertTranLog()!");
+		return mTranLogDB;
+	}
+
+	public byte[] appendHeadBytes(byte[] mBodyBytes) {
+
+		byte[] mInTotalBytes = new byte[mBodyBytes.length + 73];
+
+		// 剪切xml头部之后报文体
+		String mBodyStr = new String(mBodyBytes);
+		byte[] xBodyBytes = mBodyStr.substring(mBodyStr.indexOf("<ABCB2I>"),
+				mBodyStr.length()).getBytes();
+		String xBodyBytesLength = String.valueOf(xBodyBytes.length);
+		System.arraycopy("X".getBytes(), 0, mInTotalBytes, 0,
+				"X".getBytes().length);// 报文类型
+		System.arraycopy("1.0".getBytes(), 0, mInTotalBytes, 1,
+				"1.0".getBytes().length);// 版本号
+		System.arraycopy(xBodyBytesLength.getBytes(), 0, mInTotalBytes, 4,
+				xBodyBytesLength.length());// 报文体长度
+		byte[] mComCode = cConfigEle.getChildText("ComCode").trim().getBytes();
+		System.arraycopy(mComCode, 0, mInTotalBytes, 12, mComCode.length);// 公司代码
+		System.arraycopy("1".getBytes(), 0, mInTotalBytes, 20,
+				"1".getBytes().length);// 加密标示 0-不加密；1-关键数据加密；2-报文整体加密。
+		System.arraycopy("RSA".getBytes(), 0, mInTotalBytes, 21,
+				"RSA".getBytes().length);// 加密算法
+		System.arraycopy("0".getBytes(), 0, mInTotalBytes, 22,
+				"0".getBytes().length);// 数据压缩标志 0-不压缩；1-压缩
+		System.arraycopy(" ".getBytes(), 0, mInTotalBytes, 23,
+				" ".getBytes().length);// 数据压缩算法
+		System.arraycopy(" ".getBytes(), 0, mInTotalBytes, 24,
+				" ".getBytes().length);// 摘要算法
+		System.arraycopy(" ".getBytes(), 0, mInTotalBytes, 25,
+				" ".getBytes().length);// 摘要
+		System.arraycopy("00000000".getBytes(), 0, mInTotalBytes, 65,
+				"00000000".getBytes().length);// 预留字段
+
+		System.arraycopy(xBodyBytes, 0, mInTotalBytes, 73, xBodyBytes.length);// 预留字段
+		return mInTotalBytes;
+	}
+
+	protected Document parse(String nFileURL) throws Exception {
 		cLogger.info("Into NonReaTimeIssWatDetail.parse()...");
+		String mCharset = "";
+		// 组织根节点以及BaseInfo节点内容
+		Element mTranData = new Element("TranData");
+		String tBalanceFlag = "0";
+		Date cTranDate = new Date();
+		Element mTranDate = new Element(TranDate);
+		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
+		cLogger.info(" 对账日期为..."+DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		cLogger.info(" 当前日期为..."+mCurrDate);
 		
-		String mCharset = cThisBusiConf.getChildText(charset);
-		if (null==mCharset || "".equals(mCharset)) {
+		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
+		if(!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate)){
+			tBalanceFlag = "1";
+		}
+		
+		Element mTranTime = new Element(TranTime);
+		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
+		
+		Element mTranCom = new Element(TranCom);
+		mTranCom.setText(cConfigEle.getChildText("tranCom"));
+		
+		Element mZoneNo = new Element("ZoneNo");
+		mZoneNo.setText(cConfigEle.getChildText("zone"));
+		
+		Element mNodeNo = new Element(NodeNo);
+		mNodeNo.setText(cConfigEle.getChildText("node"));
+		
+		Element mTellerNo = new Element(TellerNo);
+		mTellerNo.setText("sys");
+		
+		Element mTranNo = new Element(TranNo);
+		mTranNo.setText(Thread.currentThread().getName());
+		
+		Element mFuncFlag = new Element(FuncFlag);
+		mFuncFlag.setText(funcFlag);
+		
+		Element mBalanceFlag = new Element("BalanceFlag");
+		mBalanceFlag.setText(tBalanceFlag);
+		
+		//报文头结点增加核心的银行编码
+		Element mBankCode = new Element("BankCode");
+		mBankCode.setText("0102");
+		
+		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
+		Element mHead = new Element(Head);
+		mHead.addContent(mTranDate).addContent(mTranTime)
+		.addContent(mBankCode).addContent(mTranCom)
+		.addContent(mZoneNo).addContent(mNodeNo)
+		.addContent(mTellerNo).addContent(mTranNo)
+		.addContent(mFuncFlag).addContent(mBalanceFlag);
+		mTranData.addContent(mHead);
+		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
+		
+		if (null == mCharset || "".equals(mCharset)) {
 			mCharset = "GBK";
 		}
+		InputStream pBatIs = new FileInputStream(nFileURL);
 		//格式：保险公司代码|银行代码|总记录数|总金额|
 		//文件其他内容：（明细记录）
 		//交易日期|试算申请顺序号|投保人姓名|投保人证件类型|投保人证件号码|险种编码|产品编码|投保单号|保费|个性化费率|账号|电话号码|手机号码|地址|邮政编码|附言|省市代码|网点号|
@@ -266,107 +349,39 @@ public class NonReaTimeIssWatDetail extends Balance{
 			tDetailEle.addContent(tContNo);
 			mBodyEle.addContent(tDetailEle);
 		}
+		mTranData.addContent(mBodyEle);
 		mBufReader.close();	//关闭流
-		
+
 		cLogger.info("Out NonReaTimeIssWatDetail.parse()!");
-		return mBodyEle;
+		return new Document(mTranData);
 	}
-	
-	protected Element getHead() {
-		cLogger.info("Into NonReaTimeIssWatDetail.getHead()...");
-		String tBalanceFlag = "0";
-		Element mTranDate = new Element(TranDate);
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
-		cLogger.info(" 对账日期为..."+DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		cLogger.info(" 当前日期为..."+mCurrDate);
-		
-		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
-		if(!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate)){
-			tBalanceFlag = "1";
-		}
-		
-		Element mTranTime = new Element(TranTime);
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
-		
-		Element mTranCom = new Element(TranCom);
-		mTranCom.setText(cThisConfRoot.getChildText("TranCom"));
-		String tTempStr = cThisConfRoot.getChild("TranCom").getAttributeValue(outcode);
-		if (null!=tTempStr && !"".equals(tTempStr)) {
-			mTranCom.setAttribute(outcode, tTempStr);
-		}
-		
-		Element mZoneNo = new Element("ZoneNo");
-		mZoneNo.setText(cThisBusiConf.getChildText("zone"));
-		
-		Element mNodeNo = new Element(NodeNo);
-		mNodeNo.setText(cThisBusiConf.getChildText("node"));
-		
-		Element mTellerNo = new Element(TellerNo);
-		mTellerNo.setText("sys");
-		
-		Element mTranNo = new Element(TranNo);
-		mTranNo.setText(Thread.currentThread().getName());
-		
-		Element mFuncFlag = new Element(FuncFlag);
 
-		tTempStr = cThisBusiConf.getChild(funcFlag).getAttributeValue(outcode);
-		mFuncFlag.setText(tTempStr);
-		
-		Element mBalanceFlag = new Element("BalanceFlag");
-		mBalanceFlag.setText(tBalanceFlag);
-		
-		//报文头结点增加核心的银行编码
-		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
-		
-		Element mHead = new Element(Head);
-		mHead.addContent(mTranDate);
-		mHead.addContent(mTranTime);
-		
-		//报文头结点增加核心的银行编码
-		mHead.addContent(mBankCode);
-		
-		mHead.addContent(mTranCom);
-		mHead.addContent(mZoneNo);
-		mHead.addContent(mNodeNo);
-		mHead.addContent(mTellerNo);
-		mHead.addContent(mTranNo);
-		mHead.addContent(mFuncFlag);
-		mHead.addContent(mBalanceFlag);
-
-		cLogger.info("Out NonReaTimeIssWatDetail.getHead()!");
-		return mHead;
-	}
-	
-	
 	public static void main(String[] args) throws Exception {
-		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.Abc.bat.NonReaTimeIssWatDetail.main");
-		mLogger.info("程序开始...");
-		
-		NonReaTimeIssWatDetail mBatch = new NonReaTimeIssWatDetail();
-		//用于补对账，设置补对账日期
+		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main");
+		mLogger.info("新农行非实时出单流水明细对账程序启动...");
+
+		NonReaTimeIssWatDetail abcAES = new NonReaTimeIssWatDetail();
+
+		// 用于补对账，设置补对账日期
 		if (0 != args.length) {
 			mLogger.info("args[0] = " + args[0]);
-			
+
 			/**
-			 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。
-			 * 4位年-2位月-2位日。
-			 * 4位年：4位[0-9]的数字。
+			 * 严格日期校验的正则表达式：\\d{4}-((0\\d)|(1[012]))-(([012]\\d)|(3[01]))。
+			 * 4位年-2位月-2位日。 4位年：4位[0-9]的数字。
 			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
 			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
 			 * 
-			 * 简单日期校验的正则表达式：\\d{4}\\d{2}\\d{2}。
+			 * 简单日期校验的正则表达式：\\d{4}-\\d{2}-\\d{2}。
 			 */
 			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
-				mBatch.setDate(args[0]);
+				cCurDate = args[0];
 			} else {
-				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
+				throw new MidplatException("日期格式有误，应为yyyy-MM-dd！" + args[0]);
 			}
 		}
-		
-		mBatch.run();
-		
-		mLogger.info("成功结束！");
+		abcAES.run();
+		System.out.println("新农行非实时出单流水明细对账程序完成!");
 	}
+
 }

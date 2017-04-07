@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170406</TranDate>
+      <TranTime>112545</TranTime>
+      <TranCom>05</TranCom>
+      <BankCode>0102</BankCode>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>112401</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>main</TranNo>
+      <FuncFlag>2003</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>16</ServiceId>
+   </Head>
+   <Body>
+      <Count>0</Count>
+      <Prem>0</Prem>
+   </Body>
+</TranData>
+

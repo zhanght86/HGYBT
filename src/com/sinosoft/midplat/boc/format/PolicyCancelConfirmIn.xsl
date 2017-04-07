@@ -7,13 +7,13 @@
    <Head>
       <TranDate><xsl:value-of select="Main/TranDate"/></TranDate>
       <TranTime><xsl:value-of select="Main/TranTime"/></TranTime>
-      <NodeNo><xsl:value-of select="Main/ZoneNo"/><xsl:value-of select="Main/BrNo"/></NodeNo>
-      <BankCode><xsl:value-of select="Main/BankCode"/></BankCode>
+      <NodeNo><xsl:value-of select="Main/BrNo"/></NodeNo>
+      <BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
       <TellerNo><xsl:value-of select="Main/TellerNo"/></TellerNo>
       <ZoneNo><xsl:value-of select="Main/ZoneNo"/></ZoneNo>
       <TranNo><xsl:value-of select="Main/TransNo"/></TranNo>
       <TranCom><xsl:value-of select="Head/TranCom"/></TranCom>
-      <ClientIp>127.0.0.1</ClientIp>
+      <ClientIp><xsl:value-of select="Head/ClientIp"/></ClientIp>
       <FuncFlag><xsl:value-of select="Head/FuncFlag"/></FuncFlag>
       <AgentCom />
       <AgentCode />

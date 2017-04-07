@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>05</TranDate>
+      <TranTime />
+      <TranTime />
+      <BankCode>0102</BankCode>
+      <NodeNo>11010102</NodeNo>
+      <TellerNo>midplat</TellerNo>
+      <TranNo />
+      <FuncFlag>2001</FuncFlag>
+      <ServiceId>6</ServiceId>
+   </Head>
+   <Body>
+      <Count>15</Count>
+      <Prem>15000000</Prem>
+      <Detail>
+         <ContNo>888010000000978</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+   </Body>
+</TranData>
+

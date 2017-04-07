@@ -20,7 +20,9 @@
     <ResultCode>0001</ResultCode>
     </xsl:if>
     <ResultInfo><xsl:value-of select="Head/Desc"/></ResultInfo>
-    <ApplyNo><xsl:value-of select="substring(Body/ProposalPrtNo,1,13)"/></ApplyNo>
+    <ApplyNo>
+      <xsl:value-of select="substring(Body/ProposalPrtNo,1,13)"/>
+    </ApplyNo>
     <Premium><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/Prem)"/></Premium>
   </Main>
 </InsuReq>

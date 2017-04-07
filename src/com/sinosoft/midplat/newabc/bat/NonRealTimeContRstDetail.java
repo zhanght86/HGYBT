@@ -5,7 +5,6 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,24 +14,18 @@ import java.util.TimerTask;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.xpath.XPath;
 
 import com.sinosoft.lis.pubfun.PubFun1;
-import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.AblifeCodeDef;
-import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
-import com.sinosoft.midplat.common.XmlConf;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
-import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.midplat.newabc.format.NonRealTimeContRstDetailOutXsl;
-import com.sinosoft.midplat.service.Service;
 import com.sinosoft.utility.ElementLis;
 
 /**
@@ -44,69 +37,49 @@ import com.sinosoft.utility.ElementLis;
 public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 
 	protected final static Logger cLogger=Logger.getLogger(NonRealTimeContRstDetail.class);
-	private final XmlConf cThisConf;
-	private final int cFuncFlag;
 	protected Date cTranDate;
 	protected String cResultMsg;
-	protected Element cMidplatRoot=null;
-	protected Element cThisConfRoot=null;
-	protected Element cThisBusiConf=null;
+	protected static Element cConfigEle;
+	private static String cCurDate = "";
 	private String sTranNo=null;
 	@SuppressWarnings("unused")
 	private String curDate=null;
 	private String fileDate=null;
 	
-	public NonRealTimeContRstDetail() {
-		this(NewAbcConf.newInstance(),2005);
-	}
-	
-	public NonRealTimeContRstDetail(XmlConf pThisConf, int pFuncFlag) {
-		this.cThisConf=pThisConf;
-		this.cFuncFlag=pFuncFlag;
-	}
-
-	@SuppressWarnings({ "unused", "static-access" })
+	@SuppressWarnings("static-access")
 	private Document sendRequest() {
 		cLogger.info("Into NonRealTimeContRstDetail.sendRequest()...");
 		ElementLis tTranData=new ElementLis(TranData);
 		ElementLis tHead=new ElementLis(Head,tTranData);
-		int date=DateUtil.get8Date(System.currentTimeMillis());
-		int time=DateUtil.get6Time(System.currentTimeMillis());
-		String sTranTime=new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-		ElementLis tTranDate=new ElementLis(TranDate,sTranTime.substring(0,8),tHead);
-		ElementLis tTranTime=new ElementLis(TranTime,sTranTime.substring(8,14),tHead);
-		ElementLis tTranCom=new ElementLis(TranCom,"05",tHead);
-		ElementLis tBankCode=new ElementLis("BankCode","0102",tHead);
-		ElementLis tZoneNo=new ElementLis(ZoneNo,"11",tHead);
-		ElementLis tNodeNo=new ElementLis(NodeNo,cThisBusiConf.getChildText(NodeNo),tHead);
-		ElementLis tTellerNo=new ElementLis(TellerNo,"11010102110",tHead);
+		new ElementLis(TranDate,DateUtil.getDateStr(cTranDate, "yyyyMMdd"),tHead);
+		new ElementLis(TranTime,DateUtil.getDateStr(cTranDate, "HHmmss"),tHead);
+		new ElementLis(TranCom,"05",tHead);
+		new ElementLis("BankCode","0102",tHead);
+		new ElementLis(ZoneNo,"11",tHead);
+		new ElementLis(NodeNo,cConfigEle.getChildText(NodeNo),tHead);
+		new ElementLis(TellerNo,"11010102110",tHead);
 		PubFun1 p=new PubFun1();
 		sTranNo=p.CreateMaxNo("TransNo", 16);
-		ElementLis tTranNo=new ElementLis(TranNo,sTranNo,tHead);
-		ElementLis tFuncFlag=new ElementLis(FuncFlag,cThisBusiConf.getChildText(funcFlag),tHead);
-		ElementLis tBody=new ElementLis(Body,tTranData);
-		ElementLis ttTranDate=new ElementLis(TranDate,sTranTime.substring(0,8),tBody);
+		new ElementLis(TranNo,sTranNo,tHead);
+		new ElementLis(FuncFlag,cConfigEle.getChildText(funcFlag),tHead);
+		new ElementLis(Body,tTranData);
 		Document pXmlDoc=new Document(tTranData);
 		cLogger.info("Out NonRealTimeContRstDetail.sendRequest()!");
 		return pXmlDoc;
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
 	public void run() {
 		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
 		cLogger.info("Into NonRealTimeContRstDetail.run()...");
 		cResultMsg=null;
 		try {
-			cMidplatRoot=MidplatConf.newInstance().getConf().getRootElement();
-			System.out.println(cThisConf.getConf().getRootElement().getChildText(TranCom));
-			cThisConfRoot=cThisConf.getConf().getRootElement();
-			System.out.println(cThisConfRoot);
-			System.out.println(cFuncFlag);
-			cThisBusiConf=(Element) XPath.selectSingleNode(cThisConfRoot, "business[funcFlag='"+cFuncFlag+"']");
-			JdomUtil.print(cThisBusiConf);
-			System.out.println(cThisBusiConf.getContent());
-			String nextDate=cThisBusiConf.getChildText("nextDate");
+			cConfigEle = BatUtils.getConfigEle("2008"); // 得到bat.xml文件中的对应节点.
+			if ("".equals(cCurDate)) {
+				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date());
+			}
+			System.out.println(cConfigEle.getContent());
+			String nextDate = cConfigEle.getChildText("nextDate");
 			if(null==cTranDate)
 				if((null!=nextDate)&&("Y".equals(nextDate))){
 					cTranDate=new Date();
@@ -114,14 +87,8 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 				}else{
 					cTranDate=new Date();
 				}
-			Element tTranData=new Element(TranData);
-			Document tInStdXml=new Document(tTranData);
-			System.out.println("====此处打印:发给核心的报文====");
-			JdomUtil.print(tInStdXml);
-			Element tHeadEle=getHead();
-			tTranData.addContent(tHeadEle);
 			try {
-				String ttLocalDir=cThisBusiConf.getChildTextTrim(localDir);
+				String ttLocalDir=cConfigEle.getChildTextTrim("FilePath");
 				deal(ttLocalDir);
 			} catch (Exception e) {
 				cLogger.error("生成标准对账报文出错!",e);
@@ -130,30 +97,14 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 				if("".equals(tErrorStr))
 					tErrorStr=e.toString();
 				tError.setText(tErrorStr);
-				tTranData.addContent(tError);
+				Element tTranData = new Element(TranData);
+				Element tHeadEle = ((Document) sendRequest().clone()).getRootElement().getChild("Head");
+				tTranData.addContent(tHeadEle);
+				tTranData.addContent(tErrorStr);
 			}
-			String tServiceClassName="com.sinosoft.midplat.service.ServiceImpl";
-			String tServiceValue=cMidplatRoot.getChildText(service);
-			if(null!=tServiceValue&&!"".equals(tServiceValue)){
-				tServiceClassName=tServiceValue;
-			}
-			tServiceValue=cThisConfRoot.getChildText(service);
-			if(null!=tServiceValue&&!"".equals(tServiceValue)){
-				tServiceClassName=tServiceValue;
-			}
-			tServiceValue=cThisBusiConf.getChildText(service);
-			if(null!=tServiceValue&&!"".equals(tServiceValue)){
-				tServiceClassName=tServiceValue;
-			}
-			cLogger.info("业务处理模块:"+tServiceClassName);
-			Constructor<Service> tServiceConstructor=(Constructor<Service>) Class.forName(tServiceClassName).getConstructor(new Class[]{Element.class});
-			Service tService=(Service)tServiceConstructor.newInstance(new Object[]{cThisBusiConf});
-			System.out.println("看看是啥:");
-			JdomUtil.print(tInStdXml);
-			Document tOutStdXml=tService.service(tInStdXml);
-			cResultMsg=tOutStdXml.getRootElement().getChild(Head).getChildText(Desc);
+			
 			if("01".equals(DateUtil.getDateStr(cTranDate, "dd"))){
-				bakFiles(cThisBusiConf.getChildTextTrim(localDir));
+				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
 			}
 		} catch (Throwable e) {
 			cLogger.error("交易出错!",e);
@@ -161,37 +112,6 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		}
 		cTranDate=null;
 		cLogger.info("Out NonRealTimeContRstDetail.run()!");
-	}
-
-	private Element getHead() {
-		cLogger.info("Into NonRealTimeContRstDetail.getHead()...");
-		Element mTranDate=new Element(TranDate); 
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		Element mTranTime=new Element(TranTime); 
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
-		Element mTranCom=(Element)cThisConfRoot.getChild(TranCom).clone();
-		Element mNodeNo=(Element)cThisBusiConf.getChild(NodeNo).clone();
-		Element mTellerNo=new Element(TellerNo); 
-		mTellerNo.setText(CodeDef.SYS);
-		Element mTranNo=new Element(TranNo); 
-		mTranNo.setText(getFileName());
-		Element mFuncFlag=new Element(FuncFlag); 
-		mFuncFlag.setText(cThisBusiConf.getChildText(funcFlag));
-		Element mHead=new Element(Head); 
-		mHead.addContent(mTranDate);
-		mHead.addContent(mTranTime);
-		mHead.addContent(mTranCom);
-		mHead.addContent(mNodeNo);
-		mHead.addContent(mTellerNo);
-		mHead.addContent(mTranNo);
-		mHead.addContent(mFuncFlag);
-		cLogger.info("Out NonRealTimeContRstDetail.getHead()!");
-		return mHead;
-	}
-	
-	protected String getFileName(){
-		String tTranNo=sendRequest().getRootElement().getChild(Head).getChildText(TranNo);
-		return tTranNo;
 	}
 
 	protected void deal(String ttLocalDir) {
@@ -206,19 +126,25 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 			cLogger.info("转换后的对账结果明细报文:");
 			JdomUtil.print(cOutXmlDoc);
 			receive(cOutXmlDoc,ttLocalDir);
-			getFileName2();
+			
+			Element mComCodeEle=cConfigEle.getChild("ComCode");
+			String mFIleName="FRESULTKZ"+mComCodeEle.getText()+"."+fileDate;
+			if(!new BatUtils().upLoadFile(ttLocalDir+"/"+mFIleName, "02","2005",new SimpleDateFormat("yyyyMMdd").format(new Date()),mFIleName)){
+				throw new MidplatException(cConfigEle.getChildText(name)+"文件上传失败！");
+			}
+			cLogger.info(cConfigEle.getChildText(name)+"文件上传成功！");
 		}  catch (Exception e) {
 			e.printStackTrace();
 		}
 		cLogger.info("Out NonRealTimeContRstDetail.deal()!");
 	}
 	
-	@SuppressWarnings({ "unused", "unchecked" })
 	private void receive(Document cOutXmlDoc, String ttLocalDir) throws Exception{
 		cLogger.info("Into NonRealTimeContRstDetail.receive()..."+cTranDate);
 		JdomUtil.print(cOutXmlDoc);
 		fileDate=String.valueOf(DateUtil.get8Date(cTranDate))	;
 		String sOutHead=null;
+		@SuppressWarnings("unused")
 		String sSerialNo="";
 		String sFileName="";
 		String sOut="";
@@ -227,12 +153,11 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		Element tRoot=cOutXmlDoc.getRootElement();
 		Element tHead=tRoot.getChild(Head);
 		System.out.println(tRoot+"           ===========      "+tHead);
-		String tFlag=tHead.getChildText(Flag);
-		String tCorpNo=cThisConfRoot.getChild("bank").getAttributeValue("insu");
-		String tFuncFlag=cThisBusiConf.getChildText(funcFlag);
+		String tComCode=cConfigEle.getChildText("ComCode");// 保险公司代码
 		String tCount=null;
 		String tSumMoney=null;
 		Element tBody=tRoot.getChild(Body);
+		@SuppressWarnings("unchecked")
 		List<Element> list=tBody.getChildren("Detail");
 		tCount=Integer.toString(list.size());
 		tSumMoney="0000";
@@ -248,10 +173,10 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 			for (int i = 0; i <= list.size()/maxNo; i++) {
 				if(i<10){
 					sSerialNo="0"+Integer.toString(i);
-					sFileName="FRESULTKZ"+tCorpNo+"."+fileDate;
+					sFileName="FRESULTKZ"+tComCode+"."+fileDate;
 				}else{
 					sSerialNo=Integer.toString(i);
-					sFileName="FRESULTKZ"+tCorpNo+"."+fileDate;
+					sFileName="FRESULTKZ"+tComCode+"."+fileDate;
 				}
 				File file=new File(ttLocalDir+"/"+sFileName);
 				if(!file.exists()){
@@ -286,7 +211,7 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 				System.out.println("总金额:"+tSumMoney);
 				if("".equals(tSumMoney)||tSumMoney==null)
 					tSumMoney="0.00";
-				sOutHead=tCorpNo+"|"+"03"+"|"+tCount+"|"+tSumMoney+"|"+"\n";
+				sOutHead=tComCode+"|"+"03"+"|"+tCount+"|"+tSumMoney+"|"+"\n";
 				sOut=sOutHead+sOutBody;
 				cLogger.info("第"+i+"个文件生成返回文件总记录:"+sOut);
 				byte[] m=sOut.getBytes("GBK");
@@ -308,7 +233,7 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 				sOut="";
 			}
 		}else{	
-			sFileName="FRESULTKZ"+tCorpNo+"."+fileDate;
+			sFileName="FRESULTKZ"+tComCode+"."+fileDate;
 			File file=new File(ttLocalDir+"/"+sFileName);
 			if(!file.exists()){
 				try {
@@ -319,7 +244,7 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 			}
 			tCount="0";
 			tSumMoney="0.00";
-			sOutHead=tCorpNo+"|"+"03"+"|"+tCount+"|"+tSumMoney+"|"+"\n";
+			sOutHead=tComCode+"|"+"03"+"|"+tCount+"|"+tSumMoney+"|"+"\n";
 			sOut=sOutHead;
 			cLogger.info("只返回文件头，核心未返回保单险种信息!"+sOut);
 			byte[] m=sOut.getBytes("GBK");
@@ -338,19 +263,6 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		}
 		System.out.println("文件名:"+sFileName);
 		cLogger.info("Out NonRealTimeContRstDetail.receive()!");
-	}
-
-	protected String getFileName2() throws Exception{
-		Element mBankEle=cThisConfRoot.getChild("bank");
-		File_download f=new File_download(cThisBusiConf,"FSSCDJGWJD",fileDate,mBankEle.getAttributeValue("insu"));
-		String sFileName="FRESULTKZ"+mBankEle.getAttributeValue("insu")+"."+fileDate;
-		try {
-			f.bank_dz_file();
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new MidplatException(e.getMessage());
-		}
-		return sFileName;
 	}
 
 	private void bakFiles(String pFileDir) {
@@ -396,13 +308,33 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		cLogger.info("Out NonRealTimeContRstDetail.bakFiles()!");
 	}
 	
-	public static void main(String[] args) {
-		cLogger.info("开始非实时出单结果明细传递...");	//没起作用，未打印
+	public static void main(String[] args) throws Exception{
+		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NonRealTimeContRstDetail.main");
+		cLogger.info("开始非实时出单结果明细文件对账程序...");	//没起作用，未打印
 		
-		NonRealTimeContRstDetail pt=new NonRealTimeContRstDetail();	//没起作用
-		pt.run();	//没起作用
+		NonRealTimeContRstDetail abcAES=new NonRealTimeContRstDetail();	//没起作用
 		
-		cLogger.info("结束非实时出单结果明细传递!");	//没起作用，未打印
+		// 用于补对账，设置补对账日期
+		if (0 != args.length) {
+			mLogger.info("args[0] = " + args[0]);
+
+			/**
+			 * 严格日期校验的正则表达式：\\d{4}-((0\\d)|(1[012]))-(([012]\\d)|(3[01]))。
+			 * 4位年-2位月-2位日。 4位年：4位[0-9]的数字。
+			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
+			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
+			 * 
+			 * 简单日期校验的正则表达式：\\d{4}-\\d{2}-\\d{2}。
+			 */
+			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
+				cCurDate = args[0];
+			} else {
+				throw new MidplatException("日期格式有误，应为yyyy-MM-dd！" + args[0]);
+			}
+		}
+		abcAES.run();
+		
+		cLogger.info("结束非实时出单结果明细文件对账程序!");	//没起作用，未打印
 	}
 	
 }

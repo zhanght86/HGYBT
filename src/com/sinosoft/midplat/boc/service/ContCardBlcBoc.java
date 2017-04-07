@@ -24,25 +24,38 @@ public class ContCardBlcBoc extends ServiceImpl {
 	
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
-		cLogger.info("日终对账报文:"+JdomUtil.toStringFmt(pInXmlDoc));
 		cLogger.info("Into ContCardBlcBoc.service()...");
-		cInXmlDoc = pInXmlDoc;
+		//华贵核心需要有BankCode节点
+		String mBankCode = cThisBusiConf.getChildText("BankCode");
+		if(mBankCode.equals("") || mBankCode == null){
+			try {
+				throw new MidplatException("新单对账信息配置有误，请重新配置！");
+			} catch (MidplatException e) {
+				e.printStackTrace();
+			}
+		}
+		//增加BankCode节点
+		Element BankCode = new Element("BankCode");
+		BankCode.setText(mBankCode);
+		pInXmlDoc.getRootElement().getChild(Head).addContent(BankCode);
 		
+		cInXmlDoc = pInXmlDoc;
+		JdomUtil.print(cInXmlDoc);
 		try {
 			cTranLogDB = insertTranLog(cInXmlDoc);
-			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
-				.append(" and TranDate=").append(cTranLogDB.getTranDate())
-				.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())
-				.append(" and TranCom=").append(cTranLogDB.getTranCom())
-				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
-				.toString();
-			ExeSQL tExeSQL = new ExeSQL();
-			if ("1".equals(tExeSQL.getOneValue(tSqlStr))) {
-				throw new MidplatException("已成功做过单证对账，不能重复操作！");
-			} else if (tExeSQL.mErrors.needDealError()) {
-				throw new MidplatException("查询历史对账信息异常！");
-			}
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(cInXmlDoc);
+//			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK)
+//				.append(" and TranDate=").append(cTranLogDB.getTranDate())
+//				.append(" and FuncFlag=").append(cTranLogDB.getFuncFlag())
+//				.append(" and TranCom=").append(cTranLogDB.getTranCom())
+//				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
+//				.toString();
+//			ExeSQL tExeSQL = new ExeSQL();
+//			if ("1".equals(tExeSQL.getOneValue(tSqlStr))) {
+//				throw new MidplatException("已成功做过新单对账，不能重复操作！");
+//			} else if (tExeSQL.mErrors.needDealError()) {
+//				throw new MidplatException("查询历史对账信息异常！");
+//			}
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(cInXmlDoc);
 			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				//交易失败
@@ -85,7 +98,7 @@ public class ContCardBlcBoc extends ServiceImpl {
 		mTranLogDB.setLogNo(NoFactory.nextTranLogNo());
 		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
 		mTranLogDB.setNodeNo(mHeadEle.getChildText(NodeNo));
-		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo));
+		mTranLogDB.setTranNo(DateUtil.getCur8Date() + ""+ DateUtil.getCur6Time());
 		mTranLogDB.setOperator(mHeadEle.getChildText(TellerNo));
 		mTranLogDB.setFuncFlag(mHeadEle.getChildText(FuncFlag));
 		mTranLogDB.setTranDate(mHeadEle.getChildText(TranDate));
@@ -115,6 +128,7 @@ public class ContCardBlcBoc extends ServiceImpl {
 		cLogger.debug("Out ServiceImpl.insertTranLog()!");
 		return mTranLogDB;
 	}
+	@SuppressWarnings("unused")
 	private Document authority(Document mInXmlDoc) throws MidplatException{
 		
 		  

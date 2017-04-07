@@ -1,32 +1,19 @@
+
 package com.sinosoft.midplat.boc.bat;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Constructor;
-import java.util.Date;
-
 import org.apache.log4j.Logger;
-import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.xpath.XPath;
-
-import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.boc.BocConf;
 import com.sinosoft.midplat.common.DateUtil;
-import com.sinosoft.midplat.common.JdomUtil;
-import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.exception.MidplatException;
-import com.sinosoft.midplat.newabc.NewAbcConf;
-import com.sinosoft.midplat.service.Service;
 import com.sinosoft.midplat.bat.Balance;
-
-
 /**
- *保全交易申请文件
- * @author liuzk
+ *	保全对账
+ * 	@author PengYF
  *
  */
 public class SecuTradAppDoc extends Balance{
@@ -52,7 +39,7 @@ public class SecuTradAppDoc extends Balance{
 		
 		mBodyEle.addContent(mCountEle);
 		mBodyEle.addContent(mPremEle);
-		double  prem=0.0;
+		long prem=0;
 		for (String tLineMsg; null != (tLineMsg=mBufReader.readLine());) {
 			cLogger.info(tLineMsg);
 			//空行，直接跳过
@@ -88,10 +75,13 @@ public class SecuTradAppDoc extends Balance{
 				Element tAgentCom=new Element(AgentCom);
 				tAgentCom.setText(tLineMsg.substring(16,21).trim());
 				Element tPremEle = new Element(Prem);
-				long tPremFen = NumberUtil.yuanToFen(tLineMsg.substring(tLineMsg.length()-17,tLineMsg.length()-4).trim());
-				tPremEle.setText(String.valueOf(tPremFen));
-				prem+=Double.parseDouble(tLineMsg.substring(tLineMsg.length()-17,tLineMsg.length()-4).trim());
+				tPremEle.setText(NumberUtil.yuanToFen(tLineMsg.substring(tLineMsg.length()-17,tLineMsg.length()-4).trim())+"");
+				prem+=NumberUtil.yuanToFen(tLineMsg.substring(tLineMsg.length()-17,tLineMsg.length()-4).trim());
 				Element tDetailEle = new Element(Detail);
+				cLogger.info("交易日期："+ tLineMsg.substring(21,29).trim());
+				cLogger.info("保单号："+tLineMsg.substring(29,59).trim());
+				cLogger.info("金额："+NumberUtil.yuanToFen(tLineMsg.substring(tLineMsg.length()-17,tLineMsg.length()-4).trim()));
+				cLogger.info("网点："+tLineMsg.substring(16,21).trim());
 				tDetailEle.addContent(tTranDateEle);
 				tDetailEle.addContent(tBusiType);
 				tDetailEle.addContent(tAgentCom);
@@ -104,22 +94,20 @@ public class SecuTradAppDoc extends Balance{
 				mBodyEle.addContent(tDetailEle);
 			}
 		}
-		mBufReader.close();	//关闭流
-		cLogger.info("Prem:"+prem);
+		cLogger.info("总金额:"+prem);
 		mBodyEle.getChild("Prem").setText(String.valueOf(prem));
-		JdomUtil.print(mBodyEle);
+		mBufReader.close();	//关闭流
 		cLogger.info("Out SecuTradAppDoc.parse()!");
 		return mBodyEle;
 	}
 	public static void main(String[] args) throws Exception {
-		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.Abc.bat.SecuTradAppDoc.main");
-		mLogger.info("程序开始...");
+		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.boc.bat.SecuTradAppDoc.main");
+		mLogger.info("中国银行保全对账程序开始...");
 		
 		SecuTradAppDoc mBatch = new SecuTradAppDoc();
 		//用于补对账，设置补对账日期
 		if (0 != args.length) {
 			mLogger.info("args[0] = " + args[0]);
-			
 			/**
 			 * 严格日期校验的正则表达式：\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))。
 			 * 4位年-2位月-2位日。
@@ -135,9 +123,7 @@ public class SecuTradAppDoc extends Balance{
 				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
 			}
 		}
-		
 		mBatch.run();
-		
-		mLogger.info("成功结束！");
+		mLogger.info("中国银行保全对账成功结束！");
 	}
 }

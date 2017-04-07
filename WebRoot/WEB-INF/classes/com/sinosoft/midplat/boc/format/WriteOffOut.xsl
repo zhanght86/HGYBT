@@ -20,7 +20,7 @@
     <ResultCode>0001</ResultCode>
     </xsl:if>
     <ResultInfo><xsl:value-of select="Head/Desc"/></ResultInfo>
-    <PolicyNo><xsl:value-of select="Body/ContNo"/></PolicyNo>
+    <ApplyNo><xsl:value-of select="Body/ContNo"/></ApplyNo>
   </Main>
 </InsuReq>
 </xsl:template>

@@ -128,7 +128,6 @@ encoding//src/com/sinosoft/lis/schema/YBT_DMS_PolicyTempSchema.java=UTF-8
 encoding//src/com/sinosoft/lis/vschema/TranLogSet.java=UTF-8
 encoding//src/com/sinosoft/midplat/common/DateUtilZR.java=GBK
 encoding//src/com/sinosoft/midplat/common/JdomUtil.java=UTF-8
-encoding//src/com/sinosoft/midplat/gzbank/test/GZBankTest.java=GBK
 encoding//src/com/sinosoft/midplat/jhyh/format/ContConfirm.java=GBK
 encoding//src/com/sinosoft/midplat/net/CallWebsvcAtomSvc.java=GBK
 encoding//src/com/sinosoft/midplat/net/SocketListenerF5.java=GBK
