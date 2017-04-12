@@ -51,6 +51,7 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		cLogger.info("Into NonRealTimeContRstDetail.sendRequest()...");
 		ElementLis tTranData=new ElementLis(TranData);
 		ElementLis tHead=new ElementLis(Head,tTranData);
+		String sTranTime=new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		new ElementLis(TranDate,DateUtil.getDateStr(cTranDate, "yyyyMMdd"),tHead);
 		new ElementLis(TranTime,DateUtil.getDateStr(cTranDate, "HHmmss"),tHead);
 		new ElementLis(TranCom,"05",tHead);
@@ -62,7 +63,8 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		sTranNo=p.CreateMaxNo("TransNo", 16);
 		new ElementLis(TranNo,sTranNo,tHead);
 		new ElementLis(FuncFlag,cConfigEle.getChildText(funcFlag),tHead);
-		new ElementLis(Body,tTranData);
+		ElementLis tBody=new ElementLis(Body,tTranData);
+		new ElementLis(TranDate,sTranTime.substring(0,8),tBody);
 		Document pXmlDoc=new Document(tTranData);
 		cLogger.info("Out NonRealTimeContRstDetail.sendRequest()!");
 		return pXmlDoc;
@@ -74,7 +76,7 @@ public class NonRealTimeContRstDetail extends TimerTask implements XmlTag {
 		cLogger.info("Into NonRealTimeContRstDetail.run()...");
 		cResultMsg=null;
 		try {
-			cConfigEle = BatUtils.getConfigEle("2008"); // 得到bat.xml文件中的对应节点.
+			cConfigEle = BatUtils.getConfigEle("2005"); // 得到bat.xml文件中的对应节点.
 			if ("".equals(cCurDate)) {
 				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date());
 			}

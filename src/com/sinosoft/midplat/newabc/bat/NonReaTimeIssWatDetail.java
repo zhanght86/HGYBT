@@ -21,6 +21,7 @@ import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
+import com.sinosoft.midplat.newabc.NewAbcConf;
 
 /**
  * @ClassName: NonReaTimeIssWatDetail
@@ -50,8 +51,8 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			}
 			String mComCode = cConfigEle.getChildTextTrim("ComCode").trim();
 
-			String mFIleName = "FAPPLY" + mComCode + "." + cCurDate; // 初始化文件名称POLICY3002
-			if (!new BatUtils().downLoadFile(mFIleName, "02", "10173", cCurDate)) {
+			String mFIleName = "FAPPLY" + mComCode + "." + cCurDate; // 初始化文件名称
+			if (!new BatUtils().downLoadFile(mFIleName, "02", "2002", cCurDate)) {
 				cTranLogDB.setRCode("1");
 				cTranLogDB.setRText("非实时出单流水明细文件下载异常");
 				cTranLogDB.setModifyDate(DateUtil.getCur8Date());
@@ -60,7 +61,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 				throw new MidplatException("非实时出单流水明细文件下载异常");
 			}
 
-			// // 处理对账
+			//处理对账
 			cLogger.info("处理非实时出单流水明细文件开始...");
 			cTranLogDB = insertTranLog();
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
@@ -204,7 +205,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		
 		//报文头结点增加核心的银行编码
 		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
+		mBankCode.setText(NewAbcConf.newInstance().getConf().getRootElement().getChildText("BankCode"));
 		
 		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
 		Element mHead = new Element(Head);

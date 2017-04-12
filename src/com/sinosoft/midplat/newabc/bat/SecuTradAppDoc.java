@@ -4,9 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
@@ -14,7 +14,12 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.lis.db.TranLogDB;
+import com.sinosoft.lis.pubfun.MMap;
+import com.sinosoft.lis.pubfun.PubSubmit;
+import com.sinosoft.lis.schema.ContBlcDtlSchema;
+import com.sinosoft.lis.vschema.ContBlcDtlSet;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -22,8 +27,8 @@ import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
-import com.sinosoft.utility.ExeSQL;
-import com.sinosoft.utility.SSRS;
+import com.sinosoft.midplat.newabc.NewAbcConf;
+import com.sinosoft.utility.VData;
 
 public class SecuTradAppDoc extends TimerTask implements XmlTag {
 
@@ -48,22 +53,22 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 			}
 
 			String mCorNo = cConfigEle.getChildTextTrim("ComCode");
-			String mFIleName = "BQAPPLY" + mCorNo + "." + cCurDate; // 初始化文件名称POLICY3002
-			// //3002公司编号 + 当前时间
-			// // 组织Document
-			 if(!new BatUtils().downLoadFile(mFIleName,"02","2003",cCurDate)){
+			// 初始化文件名称		BQAPPLY 	+公司编号	+. 	+ 当前时间
+			String mFIleName = "BQAPPLY" + mCorNo + "." + cCurDate; 
+			if(!new BatUtils().downLoadFile(mFIleName,"02","2003",cCurDate)){
 				 throw new MidplatException("保全交易申请对账文件下载失败!");
 			 }
 			// 处理对账
 			cLogger.info("处理保全交易申请对账文件开始...");
 			// 得到请求标准报文
-			//
 			cTranLogDB = insertTranLog();
 			 String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/BQAPPLY010079.20170405";
 			Document mInStd = parse(myFilePath, "YBT");
 
 			JdomUtil.print(mInStd);
+			//保存对账明细
+			saveDetails(mInStd);
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(mInStd);
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
@@ -73,51 +78,6 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
-			// =========================保全网银渠道对账=========================
-			/*Thread.sleep(5000);
-			cTranLogDB = insertTranLog();
-			mInStd = parseWY(myFilePath, "ABCWEB");
-			JdomUtil.print(mInStd);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(mInStd);
-			reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
-			reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
-			cLogger.info("保全对账结果代码：" + reCode + "      结果说明：" + reMsg);
-			cTranLogDB.setRCode(reCode);
-			cTranLogDB.setRText(reMsg);
-			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
-			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
-			cTranLogDB.update();*/
-			// =========================保全网银渠道对账结束=========================
-			// =========================保全自助终端渠道对账=========================
-			/*Thread.sleep(5000);
-			cTranLogDB = insertTranLog();
-			mInStd = parseZD(myFilePath, "ABCWEB");
-			JdomUtil.print(mInStd);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(mInStd);
-			reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
-			reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
-			cLogger.info("保全对账结果代码：" + reCode + "      结果说明：" + reMsg);
-			cTranLogDB.setRCode(reCode);
-			cTranLogDB.setRText(reMsg);
-			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
-			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
-			cTranLogDB.update();*/
-			// =========================保全自助终端渠道对账结束=========================
-			// =========================保全手机银行渠道对账============================
-			/*Thread.sleep(5000);
-			cTranLogDB = insertTranLog();
-			mInStd = parseSJ(myFilePath, "ABCWEB");
-			JdomUtil.print(mInStd);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(mInStd);
-			reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
-			reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
-			cLogger.info("保全对账结果代码：" + reCode + "      结果说明：" + reMsg);
-			cTranLogDB.setRCode(reCode);
-			cTranLogDB.setRText(reMsg);
-			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
-			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
-			cTranLogDB.update();*/
-			// =========================保全手机银行渠道对账结束===========================
 		} catch (Exception e) {
 			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常...");
 			e.printStackTrace();
@@ -195,7 +155,7 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 		
 		//银行代码
 		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
+		mBankCode.setText(NewAbcConf.newInstance().getConf().getRootElement().getChildText("BankCode"));
 		
 		//地区代码
 		Element mZoneNo = new Element("ZoneNo");
@@ -363,542 +323,70 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 		cLogger.info("Out SecuTradAppDoc.parse()!");
 		return new Document(mTranData);
 	}
-
-	// 网银渠道保全对账
-	protected Document parseWY(String nFileURL, String channel)
-			throws Exception {
-		cLogger.info("Into ABCBalance.getAbcDetails()...");
-		String mCharset = "";
-		// 组织根节点以及BaseInfo节点内容
-		Element TransData = new Element("TransData");
-		Element BaseInfo = new Element("BaseInfo");
-		Element TransType = new Element("TransType");
-		TransType.setText("02");
-		Element TransCode = new Element("TransCode");
-		TransCode.setText("020019");
-		Element SubTransCode = new Element("SubTransCode");
-		SubTransCode.setText("1");
-		Element TransDate = new Element("TransDate");
-		TransDate.setText(DateUtil.get10Date(new Date()));
-		Element TransTime = new Element("TransTime");
-		TransTime.setText(DateUtil.get8Time(new Date()));
-		Element TransSeq = new Element("TransSeq");
-		TransSeq.setText(new Date().getTime() + "");
-		Element Operator = new Element("Operator");
-		// Operator.setText("YBT");
-		Operator.setText(channel);
-		Element PageFlag = new Element("PageFlag");
-		Element TotalRowNum = new Element("TotalRowNum");
-		Element RowNumStart = new Element("RowNumStart");
-		RowNumStart.setText("1");
-		Element PageRowNum = new Element("PageRowNum");
-		PageRowNum.setText("1000");
-		Element ResultCode = new Element("ResultCode");
-		Element ResultMsg = new Element("ResultMsg");
-		Element OrderFlag = new Element("OrderFlag");
-		Element OrderField = new Element("OrderField");
-		Element PayTypeFlag = new Element("PayTypeFlag");
-		PayTypeFlag.setText("1");
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-		BaseInfo.addContent(TransType).addContent(TransCode)
-				.addContent(SubTransCode).addContent(TransDate)
-				.addContent(TransTime).addContent(TransSeq)
-				.addContent(Operator).addContent(PageFlag)
-				.addContent(TotalRowNum).addContent(RowNumStart)
-				.addContent(PageRowNum).addContent(ResultCode)
-				.addContent(ResultMsg).addContent(OrderFlag)
-				.addContent(OrderField).addContent(PayTypeFlag);
-		TransData.addContent(BaseInfo);
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-
-		// ExeSQL exe = new ExeSQL();
-		if (null == mCharset || "".equals(mCharset)) {
-			mCharset = "GBK";
+	
+	/** 
+	 * 保存对账明细，返回保存的明细数据(ContBlcDtlSet)
+	 */
+	@SuppressWarnings("unchecked")
+	protected ContBlcDtlSet saveDetails(Document pXmlDoc) throws Exception {
+		cLogger.debug("Into SecuTradAppDoc.saveDetails()...");
+		
+		Element mTranDataEle = pXmlDoc.getRootElement();
+		Element mBodyEle = mTranDataEle.getChild(Body);
+		
+		int mCount = Integer.parseInt(mBodyEle.getChildText(Count));
+	//	long mSumPrem = Long.parseLong(mBodyEle.getChildText(Prem));
+		double mSumPrem = Double.parseDouble(mBodyEle.getChildText(Prem));
+		List<Element> mDetailList = mBodyEle.getChildren(Detail);
+		ContBlcDtlSet mContBlcDtlSet = new ContBlcDtlSet();
+		if (mDetailList.size() != mCount) {
+			throw new MidplatException("汇总笔数与明细笔数不符！"+ mCount + "!=" + mDetailList.size());
 		}
-		InputStream pBatIs = new FileInputStream(nFileURL);
-
-		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(
-				pBatIs, mCharset));
-
-		Element mInputData = new Element("InputData");
-		Element mAppType = new Element("AppType");
-		Element mSumGetMoney = new Element("SumGetMoney");
-		Element mSumPayMoney = new Element("SumPayMoney");
-		Element mBalanceDate = new Element("BalanceDate");
-
-		Element mWebEdorBalance = new Element("WebEdorBalance");
-		String tLineMsg = mBufReader.readLine(); // 从第一行读取
-		String[] str = tLineMsg.split("\\|");
-		// mSumGetMoney.setText("-" + str[3]);
-		mSumPayMoney.setText("0.00");
-		double premSum = 0;
-		mAppType.setText("41");// 网银渠道
-		mBalanceDate.setText(DateUtil.getCur10Date());
-		mInputData.addContent(mAppType);
-		mInputData.addContent(mSumPayMoney);
-		mInputData.addContent(mSumGetMoney);
-		// 从第二行读取
-		for (; null != (tLineMsg = mBufReader.readLine());) {
-			cLogger.info("正在读取文件###################");
-			cLogger.info(tLineMsg);
-			if ("".equals(tLineMsg)) {
-				cLogger.warn("空行，直接跳过，继续下一条！");
-				continue;
-			}
-			String[] tSubMsgs = tLineMsg.split("\\|");
-			// 根据保单号查询保全申请方式
-			String mSql = "select Bak4 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + mSql);
-			SSRS sr = new ExeSQL().execSQL(mSql);
-			if (sr.MaxRow != 0) {
-				cAppType = sr.GetText(1, 1);
-			} else {
-				cAppType = cAppType + "";
-			}
-			if (cAppType.equals("21") || cAppType.equals("48")
-					|| cAppType.equals("65")) {// 21-柜面;41-网银;48-自助终端;65-手机银行;
-				cLogger.warn("网银渠道保全对账，柜面、自助终端、手机银行渠道数据直接跳过，继续下一条！");
-				continue;
-			}
-			cLogger.info("@@@@@@@@@@@@@@@@@@@@" + tSubMsgs.length);
-			Element mEdorType = new Element("EdorType");
-			String ywlb = tSubMsgs[1];
-
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-				break;
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mDetail = new Element("Detail");
-			Element mEdorTransSeq = new Element("EdorTransSeq");
-
-			// String toubaoNo = tSubMsgs[11]; // 根据保单号查询保全流水号
-			String sql = "select t.TranNo , Bak3 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info(sql + "!!!!!!!!!!!!!!!!!!!");
-			sr = new ExeSQL().execSQL(sql);
-			if (sr.MaxRow != 0) {
-				mEdorTransSeq.setText(sr.GetText(1, 1));
-				if (!sr.GetText(1, 2).equals(channel)) {
-					continue;
-				}
-			}
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mMoney = new Element("Money"); // 保费
-			cLogger.info("金额" + tSubMsgs[12]);
-			mMoney.setText("-" + tSubMsgs[12]);
-			String premStr = tSubMsgs[12];
-			premSum += Double.parseDouble(premStr);
-			Element mEdorState = new Element("EdorState"); // 保全状态
-			mEdorState.setText("0" + tSubMsgs[8]);
-			Element mBankCode = new Element("BankCode"); // 银行代码
-			// mBankCode.setText("0411");
-			String sql_Type = "select ManageCom from Cont where ContNo = '"
-					+ tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + sql_Type);
-			ExeSQL es = new ExeSQL();
-			SSRS mmSSRS = es.execSQL(sql_Type);
-			if (mmSSRS.getMaxRow() >= 1) {
-				if (!mmSSRS.GetText(1, 1).equals("")
-						&& mmSSRS.GetText(1, 1) != null) {
-					if (mmSSRS.GetText(1, 1).substring(0, 4).equals("8611")) {// 北京
-						mBankCode.setText("0411");
-					} else if (mmSSRS.GetText(1, 1).substring(0, 4)
-							.equals("8641")) {// 河南
-						mBankCode.setText("0441");
-					}
-				}
-			}
-			mDetail.addContent(mEdorTransSeq);
-			mDetail.addContent(mEdorType);
-			mDetail.addContent(mMoney);
-			mDetail.addContent(mEdorState);
-			mDetail.addContent(mBankCode);
-			mWebEdorBalance.addContent(mDetail);
-			mBalanceDate.setText(DateUtil.date8to10(tSubMsgs[2]));
+		double mSumDtlPrem = 0;
+		for (Element tDetailEle : mDetailList) {
+		//	mSumDtlPrem += Integer.parseInt(tDetailEle.getChildText(Prem));
+			mSumDtlPrem += Double.parseDouble(tDetailEle.getChildText(Prem));
+			
+			ContBlcDtlSchema tContBlcDtlSchema = new ContBlcDtlSchema();
+			tContBlcDtlSchema.setBlcTranNo(cTranLogDB.getLogNo());
+			tContBlcDtlSchema.setContNo(tDetailEle.getChildText(ContNo));
+			tContBlcDtlSchema.setProposalPrtNo(tDetailEle.getChildText(ProposalPrtNo));	//有些银行传
+			tContBlcDtlSchema.setTranDate(cTranLogDB.getTranDate());
+			tContBlcDtlSchema.setPrem((int) NumberUtil.yuanToFen(tDetailEle.getChildText(Prem)));
+			tContBlcDtlSchema.setTranCom(cTranLogDB.getTranCom());
+			tContBlcDtlSchema.setNodeNo(tDetailEle.getChildText(NodeNo));
+			tContBlcDtlSchema.setAppntName(tDetailEle.getChildText("AppntName"));	//有些银行传
+			tContBlcDtlSchema.setInsuredName(tDetailEle.getChildText("InsuredName")); //有些银行传
+			tContBlcDtlSchema.setMakeDate(cTranLogDB.getMakeDate());
+			tContBlcDtlSchema.setMakeTime(cTranLogDB.getMakeTime());
+			tContBlcDtlSchema.setModifyDate(tContBlcDtlSchema.getMakeDate());
+			tContBlcDtlSchema.setModifyTime(tContBlcDtlSchema.getMakeTime());
+			tContBlcDtlSchema.setOperator(CodeDef.SYS);
+			
+			mContBlcDtlSet.add(tContBlcDtlSchema);
 		}
-		DecimalFormat decimalFormat = new DecimalFormat("#0.00");// 格式化设置
-		mSumGetMoney.setText("-" + decimalFormat.format(premSum));
-		mWebEdorBalance.addContent(mBalanceDate);
-		mInputData.addContent(mWebEdorBalance);
-
-		mBufReader.close();
-
-		TransData.addContent(mInputData);
-		// TransData.addContent(getHead());
-		cLogger.info("Out ABCBalance.getAbcDetails()!");
-		return new Document(TransData);
+		if (mSumPrem != mSumDtlPrem) {
+			throw new MidplatException("汇总金额与明细总金额不符！"+ mSumPrem + "!=" + mSumDtlPrem);
+		}
+		
+		/** 
+		 * 将银行发过来的对账明细存储到对账明细表(ContBlcDtl)中
+		 */
+		cLogger.info("对账明细总数(DtlSet)为：" + mContBlcDtlSet.size());
+		MMap mSubmitMMap = new MMap();
+		mSubmitMMap.put(mContBlcDtlSet, "INSERT");
+		VData mSubmitVData = new VData();
+		mSubmitVData.add(mSubmitMMap);
+		PubSubmit mPubSubmit = new PubSubmit();
+		if (!mPubSubmit.submitData(mSubmitVData, "")) {
+			cLogger.error("保存对账明细失败！" + mPubSubmit.mErrors.getFirstError());
+			throw new MidplatException("保存对账明细失败！");
+		}
+		
+		cLogger.debug("Out SecuTradAppDoc.saveDetails()!");
+		return mContBlcDtlSet;
 	}
-
-	// 自助终端渠道保全对账
-	protected Document parseZD(String nFileURL, String channel)
-			throws Exception {
-		cLogger.info("Into ABCBalance.getAbcDetails()...");
-		String mCharset = "";
-		// 组织根节点以及BaseInfo节点内容
-		Element TransData = new Element("TransData");
-		Element BaseInfo = new Element("BaseInfo");
-		Element TransType = new Element("TransType");
-		TransType.setText("02");
-		Element TransCode = new Element("TransCode");
-		TransCode.setText("020019");
-		Element SubTransCode = new Element("SubTransCode");
-		SubTransCode.setText("1");
-		Element TransDate = new Element("TransDate");
-		TransDate.setText(DateUtil.get10Date(new Date()));
-		Element TransTime = new Element("TransTime");
-		TransTime.setText(DateUtil.get8Time(new Date()));
-		Element TransSeq = new Element("TransSeq");
-		TransSeq.setText(new Date().getTime() + "");
-		Element Operator = new Element("Operator");
-		Operator.setText(channel);
-		Element PageFlag = new Element("PageFlag");
-		Element TotalRowNum = new Element("TotalRowNum");
-		Element RowNumStart = new Element("RowNumStart");
-		RowNumStart.setText("1");
-		Element PageRowNum = new Element("PageRowNum");
-		PageRowNum.setText("1000");
-		Element ResultCode = new Element("ResultCode");
-		Element ResultMsg = new Element("ResultMsg");
-		Element OrderFlag = new Element("OrderFlag");
-		Element OrderField = new Element("OrderField");
-		Element PayTypeFlag = new Element("PayTypeFlag");
-		PayTypeFlag.setText("1");
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-		BaseInfo.addContent(TransType).addContent(TransCode)
-				.addContent(SubTransCode).addContent(TransDate)
-				.addContent(TransTime).addContent(TransSeq)
-				.addContent(Operator).addContent(PageFlag)
-				.addContent(TotalRowNum).addContent(RowNumStart)
-				.addContent(PageRowNum).addContent(ResultCode)
-				.addContent(ResultMsg).addContent(OrderFlag)
-				.addContent(OrderField).addContent(PayTypeFlag);
-		TransData.addContent(BaseInfo);
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-
-		// ExeSQL exe = new ExeSQL();
-		if (null == mCharset || "".equals(mCharset)) {
-			mCharset = "GBK";
-		}
-		InputStream pBatIs = new FileInputStream(nFileURL);
-
-		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(
-				pBatIs, mCharset));
-
-		Element mInputData = new Element("InputData");
-		Element mAppType = new Element("AppType");
-		Element mSumGetMoney = new Element("SumGetMoney");
-		Element mSumPayMoney = new Element("SumPayMoney");
-		Element mBalanceDate = new Element("BalanceDate");
-
-		Element mWebEdorBalance = new Element("WebEdorBalance");
-		String tLineMsg = mBufReader.readLine(); // 从第一行读取
-		String[] str = tLineMsg.split("\\|");
-		// mSumGetMoney.setText("-" + str[3]);
-		mSumPayMoney.setText("0.00");
-		double premSum = 0;
-		mAppType.setText("48");// 自助终端渠道
-		channel = "ABCWEB";
-		mBalanceDate.setText(DateUtil.getCur10Date());
-		mInputData.addContent(mAppType);
-		mInputData.addContent(mSumPayMoney);
-		mInputData.addContent(mSumGetMoney);
-
-		// 从第二行读取
-		for (; null != (tLineMsg = mBufReader.readLine());) {
-			cLogger.info("正在读取文件###################");
-			cLogger.info(tLineMsg);
-			if ("".equals(tLineMsg)) {
-				cLogger.warn("空行，直接跳过，继续下一条！");
-				continue;
-			}
-			String[] tSubMsgs = tLineMsg.split("\\|");
-			// 根据保单号查询保全申请方式
-			String mSql = "select Bak4 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + mSql);
-			SSRS sr = new ExeSQL().execSQL(mSql);
-			if (sr.MaxRow != 0) {
-				cAppType = sr.GetText(1, 1);
-			} else {
-				cAppType = cAppType + "";
-			}
-			if (cAppType.equals("21") || cAppType.equals("41")
-					|| cAppType.equals("65")) {// 21-柜面;41-网银;48-自助终端;65-手机银行
-				cLogger.warn("自助终端渠道保全对账，柜面、网银渠道、手机银行数据直接跳过，继续下一条！");
-				continue;
-			}
-			cLogger.info("@@@@@@@@@@@@@@@@@@@@" + tSubMsgs.length);
-			Element mEdorType = new Element("EdorType");
-			String ywlb = tSubMsgs[1];
-
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-				break;
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mDetail = new Element("Detail");
-			Element mEdorTransSeq = new Element("EdorTransSeq");
-
-			// String toubaoNo = tSubMsgs[11]; // 根据保单号查询保全流水号
-			String sql = "select t.TranNo , Bak3 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info(sql + "!!!!!!!!!!!!!!!!!!!");
-			sr = new ExeSQL().execSQL(sql);
-			if (sr.MaxRow != 0) {
-				mEdorTransSeq.setText(sr.GetText(1, 1));
-				if (!sr.GetText(1, 2).equals(channel)) {
-					continue;
-				}
-			}
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mMoney = new Element("Money"); // 保费
-			cLogger.info("金额" + tSubMsgs[12]);
-			mMoney.setText("-" + tSubMsgs[12]);
-			String premStr = tSubMsgs[12];
-			premSum += Double.parseDouble(premStr);
-			Element mEdorState = new Element("EdorState"); // 保全状态
-			mEdorState.setText("0" + tSubMsgs[8]);
-			Element mBankCode = new Element("BankCode"); // 银行代码
-			// mBankCode.setText("0411");
-			String sql_Type = "select ManageCom from Cont where ContNo = '"
-					+ tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + sql_Type);
-			ExeSQL es = new ExeSQL();
-			SSRS mmSSRS = es.execSQL(sql_Type);
-			if (mmSSRS.getMaxRow() >= 1) {
-				if (!mmSSRS.GetText(1, 1).equals("")
-						&& mmSSRS.GetText(1, 1) != null) {
-					if (mmSSRS.GetText(1, 1).substring(0, 4).equals("8611")) {// 北京
-						mBankCode.setText("0411");
-					} else if (mmSSRS.GetText(1, 1).substring(0, 4)
-							.equals("8641")) {// 河南
-						mBankCode.setText("0441");
-					}
-				}
-			}
-			mDetail.addContent(mEdorTransSeq);
-			mDetail.addContent(mEdorType);
-			mDetail.addContent(mMoney);
-			mDetail.addContent(mEdorState);
-			mDetail.addContent(mBankCode);
-			mWebEdorBalance.addContent(mDetail);
-			mBalanceDate.setText(DateUtil.date8to10(tSubMsgs[2]));
-		}
-		DecimalFormat decimalFormat = new DecimalFormat("#0.00");// 格式化设置
-		mSumGetMoney.setText("-" + decimalFormat.format(premSum));
-		mWebEdorBalance.addContent(mBalanceDate);
-		mInputData.addContent(mWebEdorBalance);
-
-		mBufReader.close();
-
-		TransData.addContent(mInputData);
-		// TransData.addContent(getHead());
-		cLogger.info("Out ABCBalance.getAbcDetails()!");
-		return new Document(TransData);
-	}
-
-	// 手机银行渠道保全对账
-	protected Document parseSJ(String nFileURL, String channel)
-			throws Exception {
-		cLogger.info("Into ABCBalance.getAbcDetails()...");
-		String mCharset = "";
-		// 组织根节点以及BaseInfo节点内容
-		Element TransData = new Element("TransData");
-		Element BaseInfo = new Element("BaseInfo");
-		Element TransType = new Element("TransType");
-		TransType.setText("02");
-		Element TransCode = new Element("TransCode");
-		TransCode.setText("020019");
-		Element SubTransCode = new Element("SubTransCode");
-		SubTransCode.setText("1");
-		Element TransDate = new Element("TransDate");
-		TransDate.setText(DateUtil.get10Date(new Date()));
-		Element TransTime = new Element("TransTime");
-		TransTime.setText(DateUtil.get8Time(new Date()));
-		Element TransSeq = new Element("TransSeq");
-		TransSeq.setText(new Date().getTime() + "");
-		Element Operator = new Element("Operator");
-		Operator.setText(channel);
-		Element PageFlag = new Element("PageFlag");
-		Element TotalRowNum = new Element("TotalRowNum");
-		Element RowNumStart = new Element("RowNumStart");
-		RowNumStart.setText("1");
-		Element PageRowNum = new Element("PageRowNum");
-		PageRowNum.setText("1000");
-		Element ResultCode = new Element("ResultCode");
-		Element ResultMsg = new Element("ResultMsg");
-		Element OrderFlag = new Element("OrderFlag");
-		Element OrderField = new Element("OrderField");
-		Element PayTypeFlag = new Element("PayTypeFlag");
-		PayTypeFlag.setText("1");
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-		BaseInfo.addContent(TransType).addContent(TransCode)
-				.addContent(SubTransCode).addContent(TransDate)
-				.addContent(TransTime).addContent(TransSeq)
-				.addContent(Operator).addContent(PageFlag)
-				.addContent(TotalRowNum).addContent(RowNumStart)
-				.addContent(PageRowNum).addContent(ResultCode)
-				.addContent(ResultMsg).addContent(OrderFlag)
-				.addContent(OrderField).addContent(PayTypeFlag);
-		TransData.addContent(BaseInfo);
-		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
-
-		// ExeSQL exe = new ExeSQL();
-		if (null == mCharset || "".equals(mCharset)) {
-			mCharset = "GBK";
-		}
-		InputStream pBatIs = new FileInputStream(nFileURL);
-
-		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(
-				pBatIs, mCharset));
-
-		Element mInputData = new Element("InputData");
-		Element mAppType = new Element("AppType");
-		Element mSumGetMoney = new Element("SumGetMoney");
-		Element mSumPayMoney = new Element("SumPayMoney");
-		Element mBalanceDate = new Element("BalanceDate");
-
-		Element mWebEdorBalance = new Element("WebEdorBalance");
-		String tLineMsg = mBufReader.readLine(); // 从第一行读取
-		String[] str = tLineMsg.split("\\|");
-		// mSumGetMoney.setText("-" + str[3]);
-		mSumPayMoney.setText("0.00");
-		double premSum = 0;
-		mAppType.setText("65");// 手机银行渠道
-		mBalanceDate.setText(DateUtil.getCur10Date());
-		mInputData.addContent(mAppType);
-		mInputData.addContent(mSumPayMoney);
-		mInputData.addContent(mSumGetMoney);
-
-		// 从第二行读取
-		for (; null != (tLineMsg = mBufReader.readLine());) {
-			cLogger.info("正在读取文件###################");
-			cLogger.info(tLineMsg);
-			if ("".equals(tLineMsg)) {
-				cLogger.warn("空行，直接跳过，继续下一条！");
-				continue;
-			}
-			String[] tSubMsgs = tLineMsg.split("\\|");
-			// 根据保单号查询保全申请方式
-			String mSql = "select Bak4 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + mSql);
-			SSRS sr = new ExeSQL().execSQL(mSql);
-			if (sr.MaxRow != 0) {
-				cAppType = sr.GetText(1, 1);
-			} else {
-				cAppType = cAppType + "";
-			}
-			if (cAppType.equals("21") || cAppType.equals("41")
-					|| cAppType.equals("48")) {// 21-柜面;41-网银;48-自助终端;65-手机银行
-				cLogger.warn("手机银行渠道保全对账，柜面、网银、自助终端渠道数据直接跳过，继续下一条！");
-				continue;
-			}
-			cLogger.info("@@@@@@@@@@@@@@@@@@@@" + tSubMsgs.length);
-			Element mEdorType = new Element("EdorType");
-			String ywlb = tSubMsgs[1];
-
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-				break;
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mDetail = new Element("Detail");
-			Element mEdorTransSeq = new Element("EdorTransSeq");
-
-			// String toubaoNo = tSubMsgs[11]; // 根据保单号查询保全流水号
-			String sql = "select t.TranNo , Bak3 from TranLog t where RCode=0 and t.FuncFlag='"
-					+ (tSubMsgs[1].equals("01") ? "20010" : "20011")// 20010-犹退,020011-退保
-					+ "' and t.ContNo='" + tSubMsgs[3] + "'";
-			cLogger.info(sql + "!!!!!!!!!!!!!!!!!!!");
-			sr = new ExeSQL().execSQL(sql);
-			if (sr.MaxRow != 0) {
-				mEdorTransSeq.setText(sr.GetText(1, 1));
-				if (!sr.GetText(1, 2).equals(channel)) {
-					continue;
-				}
-			}
-			if (ywlb.equals("01")) {
-				mEdorType.setText("WT"); // 犹退
-			} else if (ywlb.equals("02")) {
-				mEdorType.setText("AG"); // 满期给付
-			} else if (ywlb.equals("03")) { // 退保
-				mEdorType.setText("CT");
-			}
-			Element mMoney = new Element("Money"); // 保费
-			cLogger.info("金额" + tSubMsgs[12]);
-			mMoney.setText("-" + tSubMsgs[12]);
-			String premStr = tSubMsgs[12];
-			premSum += Double.parseDouble(premStr);
-			Element mEdorState = new Element("EdorState"); // 保全状态
-			mEdorState.setText("0" + tSubMsgs[8]);
-			Element mBankCode = new Element("BankCode"); // 银行代码
-			// mBankCode.setText("0411");
-			String sql_Type = "select ManageCom from Cont where ContNo = '"
-					+ tSubMsgs[3] + "'";
-			cLogger.info("查询SQL语句：" + sql_Type);
-			ExeSQL es = new ExeSQL();
-			SSRS mmSSRS = es.execSQL(sql_Type);
-			if (mmSSRS.getMaxRow() >= 1) {
-				if (!mmSSRS.GetText(1, 1).equals("")
-						&& mmSSRS.GetText(1, 1) != null) {
-					if (mmSSRS.GetText(1, 1).substring(0, 4).equals("8611")) {// 北京
-						mBankCode.setText("0411");
-					} else if (mmSSRS.GetText(1, 1).substring(0, 4)
-							.equals("8641")) {// 河南
-						mBankCode.setText("0441");
-					}
-				}
-			}
-			mDetail.addContent(mEdorTransSeq);
-			mDetail.addContent(mEdorType);
-			mDetail.addContent(mMoney);
-			mDetail.addContent(mEdorState);
-			mDetail.addContent(mBankCode);
-			mWebEdorBalance.addContent(mDetail);
-			mBalanceDate.setText(DateUtil.date8to10(tSubMsgs[2]));
-		}
-		DecimalFormat decimalFormat = new DecimalFormat("#0.00");// 格式化设置
-		mSumGetMoney.setText("-" + decimalFormat.format(premSum));
-		mWebEdorBalance.addContent(mBalanceDate);
-		mInputData.addContent(mWebEdorBalance);
-
-		mBufReader.close();
-
-		TransData.addContent(mInputData);
-		// TransData.addContent(getHead());
-		cLogger.info("Out ABCBalance.getAbcDetails()!");
-		return new Document(TransData);
-	}
-
+	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.SecuTradAppDoc.main");
 		mLogger.info("新农行保全交易申请文件对账程序启动...");

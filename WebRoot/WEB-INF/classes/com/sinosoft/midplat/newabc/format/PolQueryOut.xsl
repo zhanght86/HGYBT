@@ -72,9 +72,19 @@
 		<!--  ±£µ¥×´Ì¬ -->
 	<xsl:template name="policyStatus" >
 		<xsl:param name="PolicyStatus"></xsl:param>
-			<xsl:if test="$PolicyStatus = 08">00</xsl:if><!-- ³É¹¦ -->
-			<xsl:if test="$PolicyStatus = 02">01</xsl:if><!-- ÍË±£ -->		
-			<xsl:if test="$PolicyStatus = 06">03</xsl:if><!-- ÓÌ³· -->
-			<xsl:if test="$PolicyStatus = 04">07</xsl:if><!-- ÀíÅâÖÕÖ¹ -->	
+			<xsl:if test="$PolicyStatus = ''">05</xsl:if><!-- 	×´Ì¬²»Ã÷È· -->	
+			<xsl:if test="$PolicyStatus = 01">04</xsl:if><!-- 	ÂúÆÚÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 02">01</xsl:if><!-- 	ÍË±£ÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 03">08</xsl:if><!-- 	´¦ÀíÖÐ -->
+			<xsl:if test="$PolicyStatus = 04">07</xsl:if><!-- 	ÀíÅâÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 05">01</xsl:if><!-- 	Ð­ÍËÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 06">03</xsl:if><!-- 	ÓÌÍËÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 07">05</xsl:if><!-- 	Ê§Ð§ÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 08">00</xsl:if><!-- 	ÓÐÐ§ -->
+			<xsl:if test="$PolicyStatus = 09">05</xsl:if><!-- 	Ê§Ð§ -->
+			<xsl:if test="$PolicyStatus = 10"></xsl:if><!-- 	Ð­ÒéÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 11"></xsl:if><!-- 	ÀíÅâÖÕÖ¹ -->		
+			<xsl:if test="$PolicyStatus = 12"></xsl:if><!-- 	×ÔµæÖÕÖ¹ -->
+			<xsl:if test="$PolicyStatus = 13"></xsl:if><!-- 	´û¿îÖÕÖ¹ -->
 	</xsl:template>
 </xsl:stylesheet>

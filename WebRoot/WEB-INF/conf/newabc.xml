@@ -2,6 +2,7 @@
 <newabc>
 	<bank id="05" insu="010079" />
 	<TranCom outcode="05">05</TranCom>
+	<BankCode>0102</BankCode>
 	<msg path="newabc" />
 	<!-- 套接字网络通讯实现类 -->
 	<preNet>com.sinosoft.midplat.newabc.net.NewAbcNetImpl</preNet>
@@ -132,8 +133,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1014">1014</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.SecureStatusQuery</format>
-		<service>com.sinosoft.midplat.newabc.service.SecureStatusQuery
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.SecureStatusQuery</service>
 	</business>
 
 	<business>
@@ -151,8 +151,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1019">1019</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.PolValueQuery</format>
-		<service>com.sinosoft.midplat.newabc.service.ContPolValueQuery
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.ContPolValueQuery</service>
 	</business>
 
 	<business>
@@ -161,8 +160,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1021">1021</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.PolDetailQuery</format>
-		<service>com.sinosoft.midplat.newabc.service.ContPolDetailQuery
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.ContPolDetailQuery</service>
 	</business>
 
 	<business>

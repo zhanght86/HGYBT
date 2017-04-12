@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>非实时出单结果文件交易成功！</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContEndDate>2027-04-11</ContEndDate>
+         <TranDate />
+         <ApplyNo />
+         <Appnt>
+            <AppntName>张三</AppntName>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Appnt>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode />
+         <ContNo>888010000001034</ContNo>
+         <ApplyDate />
+         <SignDate>2017-04-10</SignDate>
+         <RelationToInusre>00</RelationToInusre>
+         <Insured>
+            <Name>张三</Name>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Insured>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <AccNo>6222023100036930000</AccNo>
+         <PayIntv>0</PayIntv>
+         <PayEndDate>3017-04-11</PayEndDate>
+         <Mult>10.0</Mult>
+         <ContPrtNo>102011000052842</ContPrtNo>
+         <SpecialRate>1</SpecialRate>
+         <EtraRiskCnt>0</EtraRiskCnt>
+      </Detail>
+      <Detail>
+         <ContEndDate>2027-04-11</ContEndDate>
+         <TranDate />
+         <ApplyNo />
+         <Appnt>
+            <AppntName>张三</AppntName>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Appnt>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode />
+         <ContNo>888010000001035</ContNo>
+         <ApplyDate />
+         <SignDate>2017-04-10</SignDate>
+         <RelationToInusre>00</RelationToInusre>
+         <Insured>
+            <Name>张三</Name>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Insured>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <AccNo>6222023100036930000</AccNo>
+         <PayIntv>0</PayIntv>
+         <PayEndDate>3017-04-11</PayEndDate>
+         <Mult>10.0</Mult>
+         <ContPrtNo>102011000052949</ContPrtNo>
+         <SpecialRate>1</SpecialRate>
+         <EtraRiskCnt>0</EtraRiskCnt>
+      </Detail>
+      <Detail>
+         <ContEndDate>2027-04-11</ContEndDate>
+         <TranDate />
+         <ApplyNo />
+         <Appnt>
+            <AppntName>张三</AppntName>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Appnt>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode />
+         <ContNo>888010000001036</ContNo>
+         <ApplyDate />
+         <SignDate>2017-04-10</SignDate>
+         <RelationToInusre>00</RelationToInusre>
+         <Insured>
+            <Name>张三</Name>
+            <IDType>0</IDType>
+            <IDNo>11010119800101007X</IDNo>
+         </Insured>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <AccNo>6222023100036930000</AccNo>
+         <PayIntv>0</PayIntv>
+         <PayEndDate>3017-04-11</PayEndDate>
+         <Mult>10.0</Mult>
+         <ContPrtNo>102011000053056</ContPrtNo>
+         <SpecialRate>1</SpecialRate>
+         <EtraRiskCnt>0</EtraRiskCnt>
+      </Detail>
+   </Body>
+</TranData>
+

@@ -11,7 +11,7 @@
 	  		<!-- 交易时间-->
 			<TranTime><xsl:value-of select="Header/TransTime"/></TranTime>
 			<!-- 银行代码 -->
-			<BankCode>0102</BankCode>
+			<BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
 			<!-- 地区代码 -->
 			<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
 			<!-- 银行网点 -->
@@ -44,14 +44,7 @@
 			</xsl:choose>
 			
 			<!-- 保险单号 -->
-			<ContNo>
-				<xsl:if test="Header/EntrustWay = '11'">
-					<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PolicyNo)"/>
-				</xsl:if>
-				<xsl:if test="Header/EntrustWay = '04'">
-					<xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/>
-				</xsl:if>
-			</ContNo>
+			<ContNo />
 			<!-- 投保单(印刷)号 -->
 			<ProposalPrtNo>
 				<xsl:if test="Header/EntrustWay = '11'">

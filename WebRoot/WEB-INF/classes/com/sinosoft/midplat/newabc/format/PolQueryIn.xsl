@@ -11,7 +11,7 @@
 	  		<!-- 交易时间-->
 			<TranTime><xsl:value-of select="Header/TransTime"/></TranTime>
 			<!-- 银行代码 -->
-			<BankCode>0102</BankCode>
+			<BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
 			<!-- 地区代码 -->
 			<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
 			<!-- 银行网点 -->

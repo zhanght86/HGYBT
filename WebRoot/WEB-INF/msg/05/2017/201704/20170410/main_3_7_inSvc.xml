@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170410</TranDate>
+      <TranTime>170249</TranTime>
+      <BankCode>0102</BankCode>
+      <TranCom>05</TranCom>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>112401</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>main</TranNo>
+      <FuncFlag>2000</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>7</ServiceId>
+   </Head>
+   <Body>
+      <Count>4</Count>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000059750</CardNo>
+         <CardState>6</CardState>
+         <ContNo>888010000001029</ContNo>
+         <AgentCom>01010101001865201</AgentCom>
+         <TellerNo>010101001865201</TellerNo>
+         <TranNo>128101001794197</TranNo>
+      </Detail>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000059964</CardNo>
+         <CardState>6</CardState>
+         <ContNo>888010000001031</ContNo>
+         <AgentCom>01010101001865201</AgentCom>
+         <TellerNo>010101001865201</TellerNo>
+         <TranNo>128101001794200</TranNo>
+      </Detail>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000060071</CardNo>
+         <CardState>6</CardState>
+         <ContNo>888010000001032</ContNo>
+         <AgentCom>01010101001865201</AgentCom>
+         <TellerNo>010101001865201</TellerNo>
+         <TranNo>128101001794201</TranNo>
+      </Detail>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000060178</CardNo>
+         <CardState>6</CardState>
+         <ContNo>888010000001033</ContNo>
+         <AgentCom>01010101001865201</AgentCom>
+         <TellerNo>010101001865201</TellerNo>
+         <TranNo>128101001794202</TranNo>
+      </Detail>
+   </Body>
+</TranData>
+

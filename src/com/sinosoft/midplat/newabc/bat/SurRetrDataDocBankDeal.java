@@ -18,6 +18,7 @@ import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
+import com.sinosoft.midplat.newabc.NewAbcConf;
 
 public class SurRetrDataDocBankDeal extends TimerTask implements XmlTag {
 
@@ -152,7 +153,7 @@ public class SurRetrDataDocBankDeal extends TimerTask implements XmlTag {
 
 		// 报文头结点增加核心的银行编码
 		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
+		mBankCode.setText(NewAbcConf.newInstance().getConf().getRootElement().getChildText("BankCode"));
 
 		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
 		Element mHead = new Element(Head);

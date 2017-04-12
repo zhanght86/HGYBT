@@ -109,6 +109,8 @@ public class NewAbcNetImpl extends SocketNetImpl {
 		mFuncFlagEle.setText(cFuncFlag);
 		Element mAgentCom = new Element(AgentCom);
 		Element mAgentCode = new Element(AgentCode);
+		Element mBankCode = new Element("BankCode");
+		mBankCode.setText(cThisConfRoot.getChildText("BankCode"));
 		Element mHeadEle = new Element(Head);
 		mHeadEle.addContent(mClientIpEle);
 		mHeadEle.addContent(mTranComEle);
@@ -116,6 +118,7 @@ public class NewAbcNetImpl extends SocketNetImpl {
 		mHeadEle.addContent(mAgentCom);
 		mHeadEle.addContent(mAgentCode);
 		mHeadEle.addContent(mInNoDoc);
+		mHeadEle.addContent(mBankCode);
       
 		mRootEle.addContent(mHeadEle);
 		

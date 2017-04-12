@@ -117,7 +117,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/invalidBank/</FilePath>
 	</batch>
 
 	<batch>
@@ -131,7 +132,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/fresultBank/</FilePath>
 	</batch>
    
    <batch>
@@ -161,7 +163,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>11010102</node>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/policy/</FilePath>
 	</batch>
 
 	<batch>
@@ -175,7 +178,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>112401</node>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/bqApply/</FilePath>
 	</batch>
 
 	<batch>
@@ -189,7 +193,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>11010102</node>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/fapply/</FilePath>
 	</batch>
 
 	<batch>
@@ -204,7 +209,8 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/fresult/</FilePath>
 	</batch>
 	
 	<batch>
@@ -219,7 +225,8 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/fresultkz/</FilePath>
 	</batch>
 
 	<batch>
@@ -234,13 +241,26 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/invalid/</FilePath>
 	</batch>
 	
 	<batch>
-		<name>密钥更新交易</name>
-		<startTime>17:45:00</startTime>
-		<class>com.sinosoft.midplat.newabc.bat.MYZH_Timing</class>
+		<name>证书下载</name>		
+		<startTime>03:30:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.CertificateDownload</class>
+		<tranCom>05</tranCom>
+		<funcFlag>1031</funcFlag>
+		<ABCport>6000</ABCport>
+		<ip>127.0.0.1</ip>
+		<!-- <FilePath>D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/</FilePath> -->		
+		<FilePath>/weblogic/user_projects/domains/ybt/HGLife/WEB-INF/key/</FilePath>		
+	</batch>
+	
+	<batch>
+		<name>密钥重置交易</name>
+		<startTime>03:45:00</startTime>
+		<class>com.sinosoft.midplat.newabc.bat.KeyReset</class>
 		<tranCom>05</tranCom>
 		<funcFlag>1001</funcFlag>
 		<ComCode>010079</ComCode>
@@ -248,10 +268,9 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>110102</node>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
-		<LocalPort>LocalPort</LocalPort>
+		<LocalPort>52004</LocalPort>
 	</batch>
-	
+					
 	<batch>
 		<name>新农行单证对账</name>
 		<startTime>31:00:00</startTime>
@@ -263,7 +282,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
-		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
+		<FilePath>/home/weblogic/YBT/newabc/vch/</FilePath>
 	</batch>
 	<!-- 农行对账end -->
 		

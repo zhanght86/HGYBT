@@ -18,10 +18,10 @@ public class AES2RSAEnCipher {
 	/***
 	 * 生成AES 工作密钥
 	 */
-	public void createAESCode(String nKeyPath,int pPort) throws Exception{
+	public void createAESCode(String nKeyPath) throws Exception{
 		cLogger.info("开始生成AES工作密钥...");
 		String mKeyPath = nKeyPath;
-		FileWriter mKeyIs = new FileWriter(mKeyPath + pPort + "_AESTemp.dat");
+		FileWriter mKeyIs = new FileWriter(mKeyPath + "newABCKey.dat");
 		
 		String[] mAESCode = {"q","1","w","2","e","3","r","4","t","5","y","6","u","7","i","8","o","9","o","0","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"};
 		String tempAESCode = "";
@@ -33,7 +33,7 @@ public class AES2RSAEnCipher {
 		mKeyIs.flush();
 		mKeyIs.close();
 		
-		cLogger.info("生成AES工作密钥完毕..."+ tempAESCode);
+		cLogger.info("生成AES工作密钥完毕!"+ tempAESCode);
 	}
 		
 	/***
@@ -43,7 +43,7 @@ public class AES2RSAEnCipher {
 	public void synchAESCode (String nKeyPath,int pPort) {
 		String mKeyPath = nKeyPath;
 		cLogger.info("开始备份old AES工作密钥...");
-		String aesFilePath = mKeyPath + pPort + ".dat";   //老密钥
+		String aesFilePath = mKeyPath + "oldABCKey.dat";   //老密钥
 		try {
 			InputStream mIs = new FileInputStream(aesFilePath);
 			String contAES = new String(IOTrans.toBytes(mIs));
@@ -59,14 +59,14 @@ public class AES2RSAEnCipher {
 			mIs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			cLogger.debug("备份AES工作密钥异常...");
+			cLogger.debug("备份AES工作密钥异常!");
 		}
 		
-		cLogger.info("备份old AES工作密钥完毕...");
+		cLogger.info("备份old AES工作密钥完毕!");
 		
 		cLogger.info("开始同步AES工作密钥...");
 		try {
-			String aesTempFilePath = mKeyPath + pPort + "_AESTemp.dat";
+			String aesTempFilePath = mKeyPath + "newABCKey.dat";
 			InputStream mAESSynchIs = new FileInputStream(aesTempFilePath);
 			String contAES = new String(IOTrans.toBytes(mAESSynchIs));
 			
@@ -76,9 +76,9 @@ public class AES2RSAEnCipher {
 			fwBak.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			cLogger.debug("同步AES工作密钥异常...");
+			cLogger.debug("同步AES工作密钥异常!");
 		}
-		cLogger.info("同步AES工作密钥完毕...");
+		cLogger.info("同步AES工作密钥完毕!");
 	}
 	
 	/***
@@ -88,12 +88,12 @@ public class AES2RSAEnCipher {
 	public void synchRSACode (String mKeyPath,int pPort) {
 //		String mKeyPath = getClass().getResource(pPort + "/").getPath();
 		cLogger.info("开始备份old RSA工作密钥...");
-		String aesFilePath = mKeyPath + "pubRSA/" + pPort + "_pub.cer";
+		String aesFilePath = mKeyPath + pPort + "_pub.cer";
 		try {
 			InputStream mIs = new FileInputStream(aesFilePath);
 			String contAES = new String(IOTrans.toBytes(mIs));
 			
-			File fileBak = new File(mKeyPath + "pubRSA/" + DateUtil.getCur8Date() +"_pub.cer");
+			File fileBak = new File(mKeyPath +DateUtil.getCur8Date() +"_pub.cer");
 			if(!fileBak.exists()){
 				fileBak.createNewFile();
 			}
@@ -104,25 +104,25 @@ public class AES2RSAEnCipher {
 			mIs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			cLogger.debug("备份RSA工作密钥异常...");
+			cLogger.debug("备份RSA工作密钥异常!");
 		}
 		
-		cLogger.info("备份old RSA工作密钥完毕...");
+		cLogger.info("备份old RSA工作密钥完毕!");
 		
 		cLogger.info("开始同步RSA工作密钥...");
 		try {
-			String aesTempFilePath = mKeyPath + "pubRSA/" + "cacert.crt";   //新证书
+			String aesTempFilePath = mKeyPath + "cacert.crt";   //新证书
 			InputStream mAESSynchIs = new FileInputStream(aesTempFilePath);
 			String contAES = new String(IOTrans.toBytes(mAESSynchIs));
-			FileWriter fwBak = new FileWriter(mKeyPath + "pubRSA/" + pPort + "_pub.cer");   //老证书
+			FileWriter fwBak = new FileWriter(mKeyPath + pPort + "_pub.cer");   //老证书
 			fwBak.write(contAES);
 			fwBak.flush();
 			fwBak.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			cLogger.debug("同步RSA工作密钥异常...");
+			cLogger.debug("同步RSA工作密钥异常!");
 		}
-		cLogger.info("同步RSA工作密钥完毕...");
+		cLogger.info("同步RSA工作密钥完毕!");
 	}
 	public static void main(String[] args) {
 		

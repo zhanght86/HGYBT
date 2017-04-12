@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>非实时出单结果明细文件交易成功！</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <RiskCode>012D0100</RiskCode>
+         <ContNo>888010000001034</ContNo>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <PayIntv>0</PayIntv>
+         <PayEndYear>1000</PayEndYear>
+         <PayEndYearFlag>Y</PayEndYearFlag>
+         <InsuYear>10</InsuYear>
+         <InsuYearFlag>Y</InsuYearFlag>
+      </Detail>
+      <Detail>
+         <RiskCode>012D0100</RiskCode>
+         <ContNo>888010000001035</ContNo>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <PayIntv>0</PayIntv>
+         <PayEndYear>1000</PayEndYear>
+         <PayEndYearFlag>Y</PayEndYearFlag>
+         <InsuYear>10</InsuYear>
+         <InsuYearFlag>Y</InsuYearFlag>
+      </Detail>
+      <Detail>
+         <RiskCode>012D0100</RiskCode>
+         <ContNo>888010000001036</ContNo>
+         <Prem>1000000</Prem>
+         <Amnt>960000</Amnt>
+         <PayIntv>0</PayIntv>
+         <PayEndYear>1000</PayEndYear>
+         <PayEndYearFlag>Y</PayEndYearFlag>
+         <InsuYear>10</InsuYear>
+         <InsuYearFlag>Y</InsuYearFlag>
+      </Detail>
+   </Body>
+</TranData>
+

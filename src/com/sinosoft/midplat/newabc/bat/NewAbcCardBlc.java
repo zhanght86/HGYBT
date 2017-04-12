@@ -20,13 +20,13 @@ import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
+import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.utility.ExeSQL;
 
 public class NewAbcCardBlc extends TimerTask implements XmlTag {
 
-	protected final Logger cLogger = Logger
-			.getLogger(getClass());
-
+	protected final Logger cLogger = Logger.getLogger(getClass());
+	
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
 	@SuppressWarnings("unused")
@@ -43,17 +43,14 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date()).replace("-","");
 			}
 			String mCorNo = cConfigEle.getChildTextTrim("ComCode").trim();
-			
-			String mFIleName = "POLICY"+mCorNo+"." + cCurDate; // 初始化文件名称POLICY3002
-															// //3002公司编号 + 当前时间
-			// 组织Document
+			// 初始化文件名称		POLICY  +公司编号 	+.	 	+ 当前时间
+			String mFIleName = "POLICY"+mCorNo+"." + cCurDate; 
 			if(!new BatUtils().downLoadFile(mFIleName, "02","2000",cCurDate)){
 				throw new MidplatException("新农行单证对账文件下载异常");
 			}
 			// 处理对账
 			cLogger.info("处理新农行单证对账开始...");
 			// 得到请求标准报文
-			//
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "C:\\Users\\chenjinwei\\Desktop\\POLICY1132.20161130";
 			System.out.println(myFilePath);
@@ -112,7 +109,7 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 	protected Document parse(String nFileURL) throws Exception {
 		cLogger.info("Into NewAbcCardBlc.parse()...");
 		String mCharset = "";
-		// 组织根节点以及BaseInfo节点内容
+		// 组织根节点以及Head节点内容
 		Element mTranData = new Element("TranData");
 		String tBalanceFlag = "0";
 		Date cTranDate = new Date();
@@ -154,7 +151,7 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 
 		// 报文头结点增加核心的银行编码
 		Element mBankCode = new Element("BankCode");
-		mBankCode.setText("0102");
+		mBankCode.setText(NewAbcConf.newInstance().getConf().getRootElement().getChildText("BankCode"));
 
 		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
 		Element mHead = new Element(Head);

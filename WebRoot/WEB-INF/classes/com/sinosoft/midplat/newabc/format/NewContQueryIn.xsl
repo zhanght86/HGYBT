@@ -19,7 +19,7 @@
 			<!-- 柜员代码 -->
 			<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
 			<!-- 银行代码 -->
-			<BankCode>0102</BankCode>
+			<BankCode><xsl:value-of select="Head/BankCode"/></BankCode>
 			<!-- YBT组织的节点信息 -->
 			 <xsl:copy-of select="Head/*"/>
 	</Head>

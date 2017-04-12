@@ -20,6 +20,7 @@ import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
+import com.sinosoft.midplat.newabc.NewAbcConf;
 
 /**
  * @ClassName: NewAbcBusiBlc
@@ -51,19 +52,14 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 				cCurTime=new SimpleDateFormat("HHmmss").format(new Date());
 			}
 			String mCorNo = cConfigEle.getChildTextTrim("ComCode").trim();
-
-			String mFIleName = "POLICY" + mCorNo + "." + cCurDate; // 初始化文件名称POLICY3002
-																	// //3002公司编号
-																	// + 当前时间
-			// 组织Document
-			if (!new BatUtils()
-					.downLoadFile(mFIleName, "02", "2001", cCurDate)) {
+			// 初始化文件名称		POLICY 	+公司编号	+.		+当前时间
+			String mFIleName = "POLICY" + mCorNo + "." + cCurDate; 
+			if (!new BatUtils().downLoadFile(mFIleName, "02", "2001", cCurDate)) {
 				throw new MidplatException("农行新保承保保单对账文件下载异常");
 			}
 			// 处理对账
 			cLogger.info("处理农行新单对账开始...");
 			// 得到请求标准报文
-			//
 			String myFilePath =cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/POLICY010079.20170405";
 			System.out.println(myFilePath);
@@ -189,10 +185,8 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 		mBalanceFlag.setText(tBalanceFlag);
 		
 		// 报文头结点增加核心的银行编码
-		//新建银行代码节点
 		Element mBankCode = new Element("BankCode");
-		//设置文本为0102
-		mBankCode.setText("0102");
+		mBankCode.setText(NewAbcConf.newInstance().getConf().getRootElement().getChildText("BankCode"));
 		
 		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
 		Element mHead = new Element(Head);
