@@ -15,6 +15,7 @@ import org.jdom.Element;
 
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.XmlTag;
@@ -37,6 +38,18 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		cLogger.info("Into NewAbcCardBlc.run()...");
 		try {
 			cTranLogDB = insertTranLog();
+			
+			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK).append(" and TranDate=").append(cTranLogDB.getTranDate()).append(" and FuncFlag=").append(cTranLogDB.getFuncFlag()).append(" and TranCom=").append(cTranLogDB.getTranCom()).append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'').toString();
+			ExeSQL tExeSQL = new ExeSQL();
+			if ("1".equals(tExeSQL.getOneValue(tSqlStr)))
+			{
+				throw new MidplatException("已成功做过单证对账，不能重复操作！");
+			}
+			else if (tExeSQL.mErrors.needDealError())
+			{
+				throw new MidplatException("查询历史对账信息异常！");
+			}
+			
 			cConfigEle = BatUtils.getConfigEle("2000"); // 得到bat.xml文件中的对应节点.
 
 			if ("".equals(cCurDate)) {
@@ -50,12 +63,12 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 			}
 			// 处理对账
 			cLogger.info("处理新农行单证对账开始...");
-			// 得到请求标准报文
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "C:\\Users\\chenjinwei\\Desktop\\POLICY1132.20161130";
-			System.out.println(myFilePath);
-			Document mInStd = parse(myFilePath);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContCardBlc).call(mInStd);
+			cLogger.info(myFilePath);
+			// 得到请求标准报文
+			Document cInXmlDoc = parse(myFilePath);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContCardBlc).call(cInXmlDoc);
 			String reCode =	cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg =	cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 		    cTranLogDB.setRCode(reCode);

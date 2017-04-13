@@ -45,7 +45,7 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 	public void run() {
 		cLogger.info("Into SecuTradAppDoc.run()...");
 		try {
-
+			cTranLogDB = insertTranLog();
 			cConfigEle = BatUtils.getConfigEle("2003"); // 得到bat.xml文件中的对应节点.
 
 			if ("".equals(cCurDate)) {
@@ -60,16 +60,16 @@ public class SecuTradAppDoc extends TimerTask implements XmlTag {
 			 }
 			// 处理对账
 			cLogger.info("处理保全交易申请对账文件开始...");
-			// 得到请求标准报文
-			cTranLogDB = insertTranLog();
-			 String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
+			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/BQAPPLY010079.20170405";
-			Document mInStd = parse(myFilePath, "YBT");
+			cLogger.info(myFilePath);
+			// 得到请求标准报文
+			Document cInXmlDoc = parse(myFilePath, "YBT");
 
-			JdomUtil.print(mInStd);
+			JdomUtil.print(cInXmlDoc);
 			//保存对账明细
-			saveDetails(mInStd);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(mInStd);
+			saveDetails(cInXmlDoc);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_BQContBlc).call(cInXmlDoc);
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 			cLogger.info("保全对账结果代码：" + reCode + "      结果说明：" + reMsg);

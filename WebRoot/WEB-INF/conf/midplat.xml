@@ -10,8 +10,8 @@
 	<KeyPath>/ybttest/key/</KeyPath>
 	
 	<!-- <skip>10.0.6.111</skip> -->
-	<!-- <database type="WEBLOGICPOOL" name="YBTPool" /> -->
-	<database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" />
+	<database type="WEBLOGICPOOL" name="YBTPool" />
+	<!-- <database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" /> -->
 	<service>com.sinosoft.midplat.service.SimpService</service>   
 	 <!-- Local http://10.1.41.4:8080/lis_general_dev1/services/ServiceForBankInterfaceService-->
 	 <!-- Local2 http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService -->

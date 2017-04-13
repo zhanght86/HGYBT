@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
@@ -13,7 +14,12 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.lis.db.TranLogDB;
+import com.sinosoft.lis.pubfun.MMap;
+import com.sinosoft.lis.pubfun.PubSubmit;
+import com.sinosoft.lis.schema.ContBlcDtlSchema;
+import com.sinosoft.lis.vschema.ContBlcDtlSet;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -22,6 +28,7 @@ import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newabc.NewAbcConf;
+import com.sinosoft.utility.VData;
 
 /**
  * @ClassName: NonReaTimeIssWatDetail
@@ -63,13 +70,15 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 
 			//处理对账
 			cLogger.info("处理非实时出单流水明细文件开始...");
-			cTranLogDB = insertTranLog();
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/BQAPPLY010079.20170405";
+			cLogger.info(myFilePath);
 			// 得到请求标准报文
-			Document mInStd = parse(myFilePath);
-			JdomUtil.print(mInStd);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_NonRealTimeContBlc).call(mInStd);
+			Document cInXmlDoc = parse(myFilePath);
+			JdomUtil.print(cInXmlDoc);
+			//保存对账明细
+			saveDetails(cInXmlDoc);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_NonRealTimeContBlc).call(cInXmlDoc);
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 			cLogger.info("非实时出单流水明细对账结果代码：" + reCode + "      结果说明：" + reMsg);
@@ -82,7 +91,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			}
 			
 		} catch (Exception e) {
-			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常...");
+			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常!");
 			e.printStackTrace();
 			cTranLogDB.setRCode("1");
 			cTranLogDB.setRText("非实时出单流水明细文件处理失败");
@@ -357,6 +366,70 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		return new Document(mTranData);
 	}
 
+	/** 
+	 * 保存对账明细，返回保存的明细数据(ContBlcDtlSet)
+	 */
+	@SuppressWarnings("unchecked")
+	protected ContBlcDtlSet saveDetails(Document pXmlDoc) throws Exception {
+		cLogger.debug("Into NonReaTimeIssWatDetail.saveDetails()...");
+		
+		Element mTranDataEle = pXmlDoc.getRootElement();
+		Element mBodyEle = mTranDataEle.getChild(Body);
+		
+		int mCount = Integer.parseInt(mBodyEle.getChildText(Count));
+	//	long mSumPrem = Long.parseLong(mBodyEle.getChildText(Prem));
+		double mSumPrem = Double.parseDouble(mBodyEle.getChildText(Prem));
+		List<Element> mDetailList = mBodyEle.getChildren(Detail);
+		ContBlcDtlSet mContBlcDtlSet = new ContBlcDtlSet();
+		if (mDetailList.size() != mCount) {
+			throw new MidplatException("汇总笔数与明细笔数不符！"+ mCount + "!=" + mDetailList.size());
+		}
+		double mSumDtlPrem = 0;
+		for (Element tDetailEle : mDetailList) {
+		//	mSumDtlPrem += Integer.parseInt(tDetailEle.getChildText(Prem));
+			mSumDtlPrem += Double.parseDouble(tDetailEle.getChildText(Prem));
+			
+			ContBlcDtlSchema tContBlcDtlSchema = new ContBlcDtlSchema();
+			tContBlcDtlSchema.setBlcTranNo(cTranLogDB.getLogNo());
+			tContBlcDtlSchema.setContNo(tDetailEle.getChildText(ContNo));
+			tContBlcDtlSchema.setProposalPrtNo(tDetailEle.getChildText(ProposalPrtNo));	//有些银行传
+			tContBlcDtlSchema.setTranDate(cTranLogDB.getTranDate());
+			tContBlcDtlSchema.setPrem(tDetailEle.getChildText(Prem));
+			tContBlcDtlSchema.setTranCom(cTranLogDB.getTranCom());
+			tContBlcDtlSchema.setNodeNo(tDetailEle.getChildText(NodeNo));
+			tContBlcDtlSchema.setAppntName(tDetailEle.getChildText("AppntName"));	//有些银行传
+			tContBlcDtlSchema.setInsuredName(tDetailEle.getChildText("InsuredName")); //有些银行传
+			tContBlcDtlSchema.setMakeDate(cTranLogDB.getMakeDate());
+			tContBlcDtlSchema.setMakeTime(cTranLogDB.getMakeTime());
+			tContBlcDtlSchema.setModifyDate(tContBlcDtlSchema.getMakeDate());
+			tContBlcDtlSchema.setModifyTime(tContBlcDtlSchema.getMakeTime());
+			tContBlcDtlSchema.setOperator(CodeDef.SYS);
+			tContBlcDtlSchema.setBak1(tDetailEle.getChildText("ApplyNo"));
+			
+			mContBlcDtlSet.add(tContBlcDtlSchema);
+		}
+		if (mSumPrem != mSumDtlPrem) {
+			throw new MidplatException("汇总金额与明细总金额不符！"+ mSumPrem + "!=" + mSumDtlPrem);
+		}
+		
+		/** 
+		 * 将银行发过来的对账明细存储到对账明细表(ContBlcDtl)中
+		 */
+		cLogger.info("对账明细总数(DtlSet)为：" + mContBlcDtlSet.size());
+		MMap mSubmitMMap = new MMap();
+		mSubmitMMap.put(mContBlcDtlSet, "INSERT");
+		VData mSubmitVData = new VData();
+		mSubmitVData.add(mSubmitMMap);
+		PubSubmit mPubSubmit = new PubSubmit();
+		if (!mPubSubmit.submitData(mSubmitVData, "")) {
+			cLogger.error("保存对账明细失败！" + mPubSubmit.mErrors.getFirstError());
+			throw new MidplatException("保存对账明细失败！");
+		}
+		
+		cLogger.debug("Out NonReaTimeIssWatDetail.saveDetails()!");
+		return mContBlcDtlSet;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail.main");
 		mLogger.info("新农行非实时出单流水明细对账程序启动...");

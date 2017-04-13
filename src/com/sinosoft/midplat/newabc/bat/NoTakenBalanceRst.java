@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 
+import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.lis.pubfun.PubFun1;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
@@ -43,6 +44,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
+	private TranLogDB cTranLogDB;
 	private String sTranNo = null;
 	private String curDate = null;
 	private String fileDate = null;
@@ -82,6 +84,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		Document cInXmlDoc = sendRequest();
 		try
 		{
+			cTranLogDB = insertTranLog();
 			// 处理核心返回报文
 			Document cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_NoTakenBalanceRst).call(cInXmlDoc);
 
@@ -91,6 +94,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 			cOutXmlDoc = NoTakenBalanceRstOutXsl.newInstance().getCache().transform(cOutXmlDoc);
 			cLogger.info("转换后的对账结果报文：");
 			JdomUtil.print(cOutXmlDoc);
+			
 			Element tOutHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag)))
 			{ // 交易失败
@@ -99,18 +103,35 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 
 			// fileDate="20141010";
 			receive(cOutXmlDoc, ttLocalDir);
-			cLogger.info("今天生成的文件名为：" + fileDate);
-
+			
 			Element mComCodeEle = cConfigEle.getChild("ComCode");
 			String mFileName = "INVALID" + mComCodeEle.getText() + "." + fileDate;
+			cLogger.info("今天生成的文件名为：" + mFileName);
 			if(!new BatUtils().upLoadFile(ttLocalDir+"/"+mFileName, "02", "2004",DateUtil.getDateStr(cTranDate, "yyyyMMdd"),mFileName)){
-				throw new MidplatException(cConfigEle.getChildText(name)+"文件上传失败！");
+				throw new MidplatException(cConfigEle.getChildText(name)+"上传失败！");
+			}
+			
+			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
+			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
+			cLogger.info("退保犹撤数据文件对账结果代码：" + reCode + "      结果说明：" + reMsg);
+			if (cTranLogDB != null) {
+				cTranLogDB.setRCode(reCode);
+				cTranLogDB.setRText(reMsg);
+				cTranLogDB.setModifyDate(DateUtil.getCur8Date());
+				cTranLogDB.setModifyTime(DateUtil.getCur6Time());
+				cTranLogDB.update();
 			}
 			cLogger.info(cConfigEle.getChildText(name)+"文件上传成功！");
 		}
 		catch (Exception e)
 		{
+			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常!");
 			e.printStackTrace();
+			cTranLogDB.setRCode("1");
+			cTranLogDB.setRText("退保犹撤数据文件处理失败");
+			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
+			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
+			cTranLogDB.update();
 		}
 		cLogger.info("Out NoTakenBalanceRst.deal()!");
 	}
@@ -188,6 +209,35 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		return pXmlDoc;
 	}
 
+	protected TranLogDB insertTranLog() throws MidplatException {
+		cLogger.debug("Into NoTakenBalanceRst.insertTranLog()...");
+		TranLogDB mTranLogDB = new TranLogDB();
+		mTranLogDB.setLogNo(NoFactory.nextTranLogNo());
+		mTranLogDB.setTranCom("05");
+		mTranLogDB.setNodeNo("0000000");
+		mTranLogDB.setFuncFlag("2004");
+		mTranLogDB.setOperator("YBT");
+		mTranLogDB.setTranNo(NoFactory.nextTranLogNo() + "");
+		mTranLogDB.setTranDate(DateUtil.getCur8Date());
+		mTranLogDB.setTranTime(DateUtil.getCur6Time());
+		Date mCurDate = new Date();
+		mTranLogDB.setTranTime(DateUtil.get6Time(mCurDate));
+		mTranLogDB.setRCode(0);
+		mTranLogDB.setUsedTime(0);
+		mTranLogDB.setBak1("");
+		mTranLogDB.setRCode("-1");
+		mTranLogDB.setMakeDate(DateUtil.get8Date(mCurDate));
+		mTranLogDB.setMakeTime(DateUtil.get6Time(mCurDate));
+		mTranLogDB.setModifyDate(mTranLogDB.getMakeDate());
+		mTranLogDB.setModifyTime(mTranLogDB.getMakeTime());
+		if (!(mTranLogDB.insert())) {
+			cLogger.error(mTranLogDB.mErrors.getFirstError());
+			throw new MidplatException("插入日志失败！");
+		}
+		cLogger.debug("Out NoTakenBalanceRst.insertTranLog()!");
+		return mTranLogDB;
+	}
+	
 	// 处理核心返回报文并存储在固定路径 20140911
 	private void receive(Document cOutXmlDoc, String ttLocalDir) throws Exception
 	{

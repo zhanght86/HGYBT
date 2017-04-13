@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimerTask;
 
 import org.apache.log4j.Logger;
@@ -13,7 +14,12 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.lis.db.TranLogDB;
+import com.sinosoft.lis.pubfun.MMap;
+import com.sinosoft.lis.pubfun.PubSubmit;
+import com.sinosoft.lis.schema.ContBlcDtlSchema;
+import com.sinosoft.lis.vschema.ContBlcDtlSet;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
@@ -21,6 +27,7 @@ import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newabc.NewAbcConf;
+import com.sinosoft.utility.VData;
 
 /**
  * @ClassName: NewAbcBusiBlc
@@ -62,9 +69,11 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			// 得到请求标准报文
 			String myFilePath =cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/POLICY010079.20170405";
-			System.out.println(myFilePath);
-			Document mInStd = parse(myFilePath);
-			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(mInStd);
+			cLogger.info(myFilePath);
+			Document cInXmlDoc = parse(myFilePath);
+			//保存对账明细
+			saveDetails(cInXmlDoc);
+			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(cInXmlDoc);
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 			cTranLogDB.setRCode(reCode);
@@ -314,7 +323,70 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			throw new MidplatException("解析对账文件失败！" + e.getMessage());
 		}
 	}
-
+	
+	/** 
+	 * 保存对账明细，返回保存的明细数据(ContBlcDtlSet)
+	 */
+	@SuppressWarnings("unchecked")
+	protected ContBlcDtlSet saveDetails(Document pXmlDoc) throws Exception {
+		cLogger.debug("Into NewInsPolRec.saveDetails()...");
+		
+		Element mTranDataEle = pXmlDoc.getRootElement();
+		Element mBodyEle = mTranDataEle.getChild(Body);
+		
+		int mCount = Integer.parseInt(mBodyEle.getChildText(Count));
+	//	long mSumPrem = Long.parseLong(mBodyEle.getChildText(Prem));
+		double mSumPrem = Double.parseDouble(mBodyEle.getChildText(Prem));
+		List<Element> mDetailList = mBodyEle.getChildren(Detail);
+		ContBlcDtlSet mContBlcDtlSet = new ContBlcDtlSet();
+		if (mDetailList.size() != mCount) {
+			throw new MidplatException("汇总笔数与明细笔数不符！"+ mCount + "!=" + mDetailList.size());
+		}
+		double mSumDtlPrem = 0;
+		for (Element tDetailEle : mDetailList) {
+		//	mSumDtlPrem += Integer.parseInt(tDetailEle.getChildText(Prem));
+			mSumDtlPrem += Double.parseDouble(tDetailEle.getChildText(Prem));
+			
+			ContBlcDtlSchema tContBlcDtlSchema = new ContBlcDtlSchema();
+			tContBlcDtlSchema.setBlcTranNo(cTranLogDB.getLogNo());
+			tContBlcDtlSchema.setContNo(tDetailEle.getChildText(ContNo));
+			tContBlcDtlSchema.setProposalPrtNo(tDetailEle.getChildText(ProposalPrtNo));	//有些银行传
+			tContBlcDtlSchema.setTranDate(cTranLogDB.getTranDate());
+			tContBlcDtlSchema.setPrem(tDetailEle.getChildText(Prem));
+			tContBlcDtlSchema.setTranCom(cTranLogDB.getTranCom());
+			tContBlcDtlSchema.setNodeNo(tDetailEle.getChildText(NodeNo));
+			tContBlcDtlSchema.setAppntName(tDetailEle.getChildText("AppntName"));	//有些银行传
+			tContBlcDtlSchema.setInsuredName(tDetailEle.getChildText("InsuredName")); //有些银行传
+			tContBlcDtlSchema.setMakeDate(cTranLogDB.getMakeDate());
+			tContBlcDtlSchema.setMakeTime(cTranLogDB.getMakeTime());
+			tContBlcDtlSchema.setModifyDate(tContBlcDtlSchema.getMakeDate());
+			tContBlcDtlSchema.setModifyTime(tContBlcDtlSchema.getMakeTime());
+			tContBlcDtlSchema.setOperator(CodeDef.SYS);
+			
+			mContBlcDtlSet.add(tContBlcDtlSchema);
+		}
+		if (mSumPrem != mSumDtlPrem) {
+			throw new MidplatException("汇总金额与明细总金额不符！"+ mSumPrem + "!=" + mSumDtlPrem);
+		}
+		
+		/** 
+		 * 将银行发过来的对账明细存储到对账明细表(ContBlcDtl)中
+		 */
+		cLogger.info("对账明细总数(DtlSet)为：" + mContBlcDtlSet.size());
+		MMap mSubmitMMap = new MMap();
+		mSubmitMMap.put(mContBlcDtlSet, "INSERT");
+		VData mSubmitVData = new VData();
+		mSubmitVData.add(mSubmitMMap);
+		PubSubmit mPubSubmit = new PubSubmit();
+		if (!mPubSubmit.submitData(mSubmitVData, "")) {
+			cLogger.error("保存对账明细失败！" + mPubSubmit.mErrors.getFirstError());
+			throw new MidplatException("保存对账明细失败！");
+		}
+		
+		cLogger.debug("Out NewInsPolRec.saveDetails()!");
+		return mContBlcDtlSet;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main");
 		mLogger.info("新农行新单对账程序启动...");

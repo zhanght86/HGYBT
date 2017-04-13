@@ -118,7 +118,7 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/invalidBank/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/invalidBank/</FilePath>
 	</batch>
 
 	<batch>
@@ -133,10 +133,10 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/fresultBank/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/fresultBank/</FilePath>
 	</batch>
    
-   <batch>
+   <!-- <batch>
 		<name>农行手工单</name>
 		<startTime>23:10:00</startTime>
 		<class>com.sinosoft.midplat.newabc.bat.HandCont</class>
@@ -150,7 +150,7 @@
 		<class>com.sinosoft.midplat.newabc.bat.HandContRiskDtl</class>
 		<com>05</com>
 		<funcFlag>2011</funcFlag>
-	</batch>
+	</batch> -->
    
 	<batch>
 		<name>新农行新单对账</name>
@@ -164,7 +164,7 @@
 		<zone>00000</zone>
 		<node>11010102</node>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/policy/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/qydz/</FilePath>
 	</batch>
 
 	<batch>
@@ -179,7 +179,7 @@
 		<zone>00000</zone>
 		<node>112401</node>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/bqApply/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/bqdz/</FilePath>
 	</batch>
 
 	<batch>
@@ -194,7 +194,7 @@
 		<zone>00000</zone>
 		<node>11010102</node>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/fapply/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/fapply/</FilePath>
 	</batch>
 
 	<batch>
@@ -210,7 +210,7 @@
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/fresult/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/fresult/</FilePath>
 	</batch>
 	
 	<batch>
@@ -226,7 +226,7 @@
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/fresultkz/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/fresultkz/</FilePath>
 	</batch>
 
 	<batch>
@@ -242,10 +242,10 @@
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/invalid/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/invalid/</FilePath>
 	</batch>
 	
-	<batch>
+	<!-- <batch>
 		<name>证书下载</name>		
 		<startTime>03:30:00</startTime>
 		<class>com.sinosoft.midplat.newabc.bat.CertificateDownload</class>
@@ -253,7 +253,7 @@
 		<funcFlag>1031</funcFlag>
 		<ABCport>6000</ABCport>
 		<ip>127.0.0.1</ip>
-		<!-- <FilePath>D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/</FilePath> -->		
+		<FilePath>D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/</FilePath>		
 		<FilePath>/weblogic/user_projects/domains/ybt/HGLife/WEB-INF/key/</FilePath>		
 	</batch>
 	
@@ -269,7 +269,7 @@
 		<zone>00000</zone>
 		<node>110102</node>
 		<LocalPort>52004</LocalPort>
-	</batch>
+	</batch> -->
 					
 	<batch>
 		<name>新农行单证对账</name>
@@ -283,7 +283,7 @@
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/YBT/newabc/vch/</FilePath>
+		<FilePath>/home/weblogic/ybttest/newabc/dz/</FilePath>
 	</batch>
 	<!-- 农行对账end -->
 		
