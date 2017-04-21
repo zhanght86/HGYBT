@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="GBK"?>
 <batchs autoRestart="true">
-  <!-- <batch>
+  <batch>
 		<name>贵州银行日终对账</name>
 		<startTime>3:50:00</startTime>
 		<class>com.sinosoft.midplat.gzbank.bat.GZContBlc</class>
 		<com>09</com>
 		<funcFlag>9005</funcFlag>
-	</batch>-->
+	</batch>
+	
+	<!-- 中国银行start -->
+  <batch>
+		<name>中国银行日终对账文件</name>
+		<startTime>14:20:30</startTime>
+		<class>com.sinosoft.midplat.boc.bat.BocBusiBlc</class>
+		<com>11</com>
+		<funcFlag>1105</funcFlag>
+	</batch>
+	
+    <batch>
+		<name>中国银行退保满期给付对账文件</name>
+		<startTime>03:00:00</startTime>
+		<class>com.sinosoft.midplat.boc.bat.SecuTradAppDoc</class>
+		<com>11</com>
+		<funcFlag>1106</funcFlag>
+	</batch>
+	
+	<batch>
+		<name>中国银行同步保险公司数据</name>
+		<FilePath>C:\Users\PengYF\Desktop\</FilePath>
+		<startTime>03:00:00</startTime>
+		<class>com.sinosoft.midplat.boc.bat.SurrenderDataSyc</class>
+		<!-- 前置机FTP信息 -->
+		<ftp ip="10.2.0.31" port="21" path="/boc/bankSync/" user="gzb" password="gzb1234"/>
+		<!-- 银行ftp信息 -->
+		<FtpIP></FtpIP>
+		<FtpPort>21</FtpPort>
+		<FtpUser>uat</FtpUser>
+		<FtpPass>uat123</FtpPass>
+		<FtpFilePath>/</FtpFilePath><!--上传FTP路径 -->
+		<ComCode>0220</ComCode><!-- 保险公司代码 -->
+		<funcFlag>1107</funcFlag>
+	</batch> 
+	
+	<batch>
+		<name>中国银行非银保通出单预登记</name>
+		<FilePath>C:\Users\PengYF\Desktop\</FilePath>
+		<startTime>03:00:00</startTime>
+		<class>com.sinosoft.midplat.boc.bat.NoYbtContBlc</class>
+		<!-- 前置机FTP信息 -->
+		<ftp ip="10.2.0.31" port="21" path="/boc/bankSync/" user="gzb" password="gzb1234"/>
+		<!-- 银行ftp信息 -->
+		<FtpIP></FtpIP>
+		<FtpPort>21</FtpPort>
+		<FtpUser>uat</FtpUser>
+		<FtpPass>uat123</FtpPass>
+		<FtpFilePath>/</FtpFilePath><!--上传FTP路径 -->
+		<ComCode>0220</ComCode><!-- 保险公司代码 -->
+		<funcFlag>1108</funcFlag>
+	</batch>
+	<!--中行对账end-->
+	
+	<!--建行对账start-->
 	<batch>
 		<name>新建行账务对账</name>
 		<startTime>18:55:00</startTime>
@@ -30,6 +84,7 @@
 		<funcFlag>1048</funcFlag>
 		<BankCode>0104</BankCode>
 	</batch>
+	<!--建行对账end-->
 	
 	<!-- 工行对账start 
 	<batch>
@@ -153,7 +208,7 @@
 	</batch> -->
    
 	<batch>
-		<name>新农行新单对账</name>
+		<name>新保承保保单对账</name>
 		<startTime>23:30:00</startTime>
 		<class>com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc</class>
 		<tranCom>05</tranCom>
@@ -163,8 +218,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>11010102</node>
-		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/ybttest/newabc/qydz/</FilePath>
+		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>/home/weblogic/ybttest/newabc/qydz/</FilePath> -->
 	</batch>
 
 	<batch>
@@ -178,8 +233,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>112401</node>
-		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/ybttest/newabc/bqdz/</FilePath>
+		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>/home/weblogic/ybttest/newabc/bqdz/</FilePath> -->
 	</batch>
 
 	<batch>
@@ -193,8 +248,8 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<node>11010102</node>
-		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/ybttest/newabc/fapply/</FilePath>
+		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>/home/weblogic/ybttest/newabc/fapply/</FilePath> -->
 	</batch>
 
 	<batch>
@@ -282,10 +337,21 @@
 		<ip>127.0.0.1</ip>
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
-		<!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->
-		<FilePath>/home/weblogic/ybttest/newabc/dz/</FilePath>
+		<FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath>
+		<!-- <FilePath>/home/weblogic/ybttest/newabc/dz/</FilePath> -->
 	</batch>
 	<!-- 农行对账end -->
+	
+	<!-- 浦发银行start -->
+	<batch>
+		<name>浦发银行新契约日结文件</name>
+		<startTime>18:12:00</startTime>
+		<class>com.sinosoft.midplat.spdb.bat.SpdbBusiBlc</class>
+		<com>12</com>
+		<funcFlag>3001</funcFlag>
+	</batch>
+	
+	<!-- 浦发银行end -->
 		
 	<!-- 金华银行对账start 
 	<batch>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GBK"?>
+<spdb>
+	<TranCom outcode="12">12</TranCom>
+	<BankCode>0117</BankCode>
+	<preNet>com.sinosoft.midplat.spdb.net.SpdbNetImpl</preNet>
+	<!-- 银行端代码定义,用于日终类交易-->
+	<bank id="12" insu="0100" />
+	<business>
+		<name>绿灯交易</name>
+		<funcFlag outcode="1000">1000</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.GreenTest</format>
+		<service>com.sinosoft.midplat.spdb.service.GreenTestServ</service>
+	</business>
+	<business>
+		<name>新契约试算</name>
+		<funcFlag outcode="1001">1001</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.NewCont</format>
+		<service>com.sinosoft.midplat.spdb.service.NewContInput</service>
+	</business>
+	<business>
+		<name>新契约投保</name>
+		<funcFlag outcode="1002">1002</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.ContConfirm</format>
+		<service>com.sinosoft.midplat.spdb.service.NewContConfirm</service>
+	</business>
+	<business>
+		<name>当日反交易</name>
+		<funcFlag outcode="1003">1003</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.Cancel</format>
+		<service>com.sinosoft.midplat.spdb.service.ContCancel</service>
+	</business>
+	<business>
+		<name>保单打印</name>
+		<funcFlag outcode="1004">1004</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.PrintCont</format>
+		<service>com.sinosoft.midplat.spdb.service.NewPrintCont</service>
+	</business>
+	<business>
+		<name>保单补打印</name>
+		<funcFlag outcode="1005">1005</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.spdb.format.RePrint</format>
+		<service>com.sinosoft.midplat.spdb.service.ContRePrint</service>
+	</business>
+</spdb>

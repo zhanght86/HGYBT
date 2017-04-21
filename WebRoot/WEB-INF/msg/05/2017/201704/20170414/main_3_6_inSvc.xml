@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170414</TranDate>
+      <TranTime>100853</TranTime>
+      <BankCode>0102</BankCode>
+      <TranCom>05</TranCom>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>11010102</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>main</TranNo>
+      <FuncFlag>2001</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>6</ServiceId>
+   </Head>
+   <Body>
+      <Count>8</Count>
+      <Prem>8000000</Prem>
+      <Detail>
+         <ContNo>888010000001049</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001050</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001051</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001052</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001053</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001054</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001055</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888010000001056</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>01010101001865201</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+   </Body>
+</TranData>
+

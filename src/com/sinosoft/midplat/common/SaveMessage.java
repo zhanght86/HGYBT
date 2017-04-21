@@ -42,7 +42,7 @@ public class SaveMessage {
 	}
 	
 	/**
-	 * 保存[非标准输出]报文，到03[交易机构代码]目录下
+	 * 保存{[非标准/标准]+[输入/输出]}报文，到[交易机构代码]目录下，线程名_下一个顺序号_[交易码/服务id]_{[in/out],[inSvc/outSvc]}.xml文件中
 	 * @param pXmlDoc 非标准输出报文
 	 * @param pTranCom 交易机构代码
 	 * @param pName 报文文件名

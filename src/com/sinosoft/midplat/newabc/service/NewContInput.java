@@ -272,8 +272,6 @@ public class NewContInput extends ServiceImpl {
 	private ContDB getContDB() {
 		cLogger.debug("Into NewContInput.getContDB()...");
 		
-		
-		
 		Element mInBodyEle = cInXmlDoc.getRootElement().getChild(Body);
 		Element mInRiskEle = mInBodyEle.getChild(Risk);
 		

@@ -207,7 +207,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		mTranNo.setText(Thread.currentThread().getName());
 		
 		Element mFuncFlag = new Element(FuncFlag);
-		mFuncFlag.setText(funcFlag);
+		mFuncFlag.setText(cConfigEle.getChildText(funcFlag));
 		
 		Element mBalanceFlag = new Element("BalanceFlag");
 		mBalanceFlag.setText(tBalanceFlag);

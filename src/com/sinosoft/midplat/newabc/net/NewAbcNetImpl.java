@@ -16,19 +16,42 @@ import com.sinosoft.midplat.net.SocketNetImpl;
 import com.sinosoft.midplat.newabc.util.AES;
 import com.sinosoft.midplat.newabc.util.AbcMidplatUtil;
 
+/**
+ * @ClassName: NewAbcNetImpl
+ * @Description: 新农行套接字网络通讯实现类
+ * @author sinosoft
+ * @date 2017-4-13 下午3:48:41
+ */
 public class NewAbcNetImpl extends SocketNetImpl {
+	//外部交易码
 	private String cOutFuncFlag = null;
+	//保险公司代码
 	private String cInsuID = null;
+	//交易类型
 	private String cFuncFlag = null;
+	
+	/**
+	 * <p>Title: NewAbcNetImpl</p>
+	 * <p>Description: 新农行套接字网络通讯实现类构造器</p>
+	 * @param pSocket 套接字
+	 * @param pThisConfRoot 当前配置文件根节点
+	 * @throws MidplatException
+	 */
 	public NewAbcNetImpl(Socket pSocket, Element pThisConfRoot) throws MidplatException {
+		//调用父类套接字网络通讯实现类构造器
 		super(pSocket, pThisConfRoot);
 	}
 	
+	/**
+	 * 接收[新农行非标准输入]报文，增加标准报文头
+	 */
 	public Document receive() throws Exception {
+		//进入 NewAbcNetImp.receive方法...
 		cLogger.info("Into NewAbcNetImp.receive()...");
 
-		//包头73位
+		//包头73字节
 		byte[] mHeadBytes = new byte[73];
+		//
 		IOTrans.readFull(mHeadBytes, cSocket.getInputStream());
 		String package_head = new String(mHeadBytes);
 		//4-12 位是报文体长度

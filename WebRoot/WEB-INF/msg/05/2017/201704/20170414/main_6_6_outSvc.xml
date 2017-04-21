@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>交易成功</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContNo>888010000001049</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001050</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001051</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001052</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001053</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001054</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001055</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888010000001056</ContNo>
+         <Result>数据一致！</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+   </Body>
+</TranData>
+

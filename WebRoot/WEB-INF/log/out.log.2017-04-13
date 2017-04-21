@@ -1,0 +1,170 @@
+14:49:39,758 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1276ff65
+14:49:39,822 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:49:39,827 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:49:39,827 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:49:39,842 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:49:39,842 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:49:39,842 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:49:39,874 INFO common.XmlConf(80) - conf file modified at (2017-04-13 14:46:37,205) and length=24222 bytes!
+14:49:40,005 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:49:40,027 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:49:40,043 INFO common.Log4jPrint(20) - End reset System.out!
+14:49:40,058 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:49:40,058 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:49:40,058 INFO common.XmlConf(80) - conf file modified at (2017-04-13 14:46:37,268) and length=584 bytes!
+14:49:40,058 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:49:40,058 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:49:40,105 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:49:40,128 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:49:40,159 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:49:40,159 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:49:40,159 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:49:40,174 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:49:40,174 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:49:40,174 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:49:40,190 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+14:49:40,190 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:49:40,190 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:49:40,206 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+14:49:40,206 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:49:40,206 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:23:22,688 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+15:23:22,706 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:23:22,706 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:23:22,721 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:23:22,721 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:23:23,289 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+15:23:23,290 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.584s
+15:23:23,292 INFO test.NewABCTest(223) - 收到返回报文！
+15:23:31,282 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+15:23:31,282 INFO test.NewABCTest(233) - mBodyLen:1088
+15:23:31,282 INFO test.NewABCTest(238) - 解密开始
+15:23:31,297 INFO test.NewABCTest(240) - 解密完成
+15:23:31,301 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+15:23:31,301 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：8.595s
+15:24:30,915 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+15:24:30,933 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:24:30,933 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:24:30,933 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:24:30,933 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:24:31,339 INFO test.NewABCTest(212) - 发送报文头！X1.0000010883103    00000                                       000000000
+15:24:31,339 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.421s
+15:24:31,339 INFO test.NewABCTest(223) - 收到返回报文！
+15:24:32,261 INFO test.NewABCTest(231) - package_head:X1.0000008963103    00000                                       000000000
+15:24:32,261 INFO test.NewABCTest(233) - mBodyLen:896
+15:24:32,261 INFO test.NewABCTest(238) - 解密开始
+15:24:32,277 INFO test.NewABCTest(240) - 解密完成
+15:24:32,277 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+15:24:32,277 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：1.359s
+15:43:22,091 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+15:43:22,122 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:43:22,122 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:43:22,122 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:43:22,122 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:43:22,554 INFO test.NewABCTest(212) - 发送报文头！X1.0000008323103    00000                                       000000000
+15:43:22,556 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.433s
+15:43:22,557 INFO test.NewABCTest(223) - 收到返回报文！
+15:43:23,502 INFO test.NewABCTest(231) - package_head:X1.0000032003103    00000                                       000000000
+15:43:23,502 INFO test.NewABCTest(233) - mBodyLen:3200
+15:43:23,503 INFO test.NewABCTest(238) - 解密开始
+15:43:23,506 INFO test.NewABCTest(240) - 解密完成
+15:43:23,507 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+15:43:23,507 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：1.385s
+16:05:24,763 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+16:05:24,794 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+16:05:24,794 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+16:05:24,794 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:05:24,794 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+16:05:25,249 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+16:05:25,250 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.456s
+16:05:25,251 INFO test.NewABCTest(223) - 收到返回报文！
+16:05:28,771 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+16:05:28,771 INFO test.NewABCTest(233) - mBodyLen:1088
+16:05:28,779 INFO test.NewABCTest(238) - 解密开始
+16:05:28,780 INFO test.NewABCTest(240) - 解密完成
+16:05:28,780 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+16:05:28,780 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：3.986s
+16:48:20,282 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+16:48:20,317 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+16:48:20,318 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+16:48:20,320 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:48:20,321 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+16:48:20,788 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+16:48:20,790 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.477s
+16:48:20,792 INFO test.NewABCTest(223) - 收到返回报文！
+16:48:24,665 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+16:48:24,665 INFO test.NewABCTest(233) - mBodyLen:1088
+16:48:24,670 INFO test.NewABCTest(238) - 解密开始
+16:48:24,671 INFO test.NewABCTest(240) - 解密完成
+16:48:24,671 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+16:48:24,671 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：4.358s
+16:49:48,999 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+16:49:49,021 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+16:49:49,021 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+16:49:49,021 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:49:49,021 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+16:49:49,432 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+16:49:49,432 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.411s
+16:49:49,432 INFO test.NewABCTest(223) - 收到返回报文！
+16:49:52,976 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+16:49:52,976 INFO test.NewABCTest(233) - mBodyLen:1088
+16:49:52,976 INFO test.NewABCTest(238) - 解密开始
+16:49:52,976 INFO test.NewABCTest(240) - 解密完成
+16:49:52,991 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+16:49:52,991 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：3.97s
+17:31:03,035 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:31:03,066 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:31:03,066 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:31:03,066 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:31:03,066 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:31:03,564 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:31:03,564 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.498s
+17:31:03,564 INFO test.NewABCTest(223) - 收到返回报文！
+17:31:09,232 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+17:31:09,232 INFO test.NewABCTest(233) - mBodyLen:1088
+17:31:09,241 INFO test.NewABCTest(238) - 解密开始
+17:31:09,241 INFO test.NewABCTest(240) - 解密完成
+17:31:09,241 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+17:31:09,241 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：6.175s
+17:33:58,597 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:33:58,628 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:33:58,628 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:33:58,628 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:33:58,628 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:33:59,042 INFO test.NewABCTest(212) - 发送报文头！X1.0000010883103    00000                                       000000000
+17:33:59,044 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.415s
+17:33:59,046 INFO test.NewABCTest(223) - 收到返回报文！
+17:34:16,528 INFO test.NewABCTest(231) - package_head:X1.0000193283103    00000                                       000000000
+17:34:16,528 INFO test.NewABCTest(233) - mBodyLen:19328
+17:34:16,533 INFO test.NewABCTest(238) - 解密开始
+17:34:16,564 INFO test.NewABCTest(240) - 解密完成
+17:34:16,580 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+17:34:16,580 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：17.952s
+17:39:01,204 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:39:01,235 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:39:01,235 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:39:01,251 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:39:01,251 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:39:01,675 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:39:01,675 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.44s
+17:39:01,675 INFO test.NewABCTest(223) - 收到返回报文！
+17:39:04,879 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+17:39:04,879 INFO test.NewABCTest(233) - mBodyLen:1088
+17:39:04,879 INFO test.NewABCTest(238) - 解密开始
+17:39:04,882 INFO test.NewABCTest(240) - 解密完成
+17:39:04,884 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+17:39:04,884 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：3.649s
+17:39:41,483 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:39:41,511 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:39:41,512 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:39:41,515 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:39:41,516 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:39:41,908 INFO test.NewABCTest(212) - 发送报文头！X1.0000010883103    00000                                       000000000
+17:39:41,910 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.403s
+17:39:41,913 INFO test.NewABCTest(223) - 收到返回报文！
+17:39:46,822 INFO test.NewABCTest(231) - package_head:X1.0000193283103    00000                                       000000000
+17:39:46,822 INFO test.NewABCTest(233) - mBodyLen:19328
+17:39:46,841 INFO test.NewABCTest(238) - 解密开始
+17:39:46,860 INFO test.NewABCTest(240) - 解密完成
+17:39:46,876 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+17:39:46,891 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：5.384s

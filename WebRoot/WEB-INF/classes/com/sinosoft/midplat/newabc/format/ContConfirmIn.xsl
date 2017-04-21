@@ -55,7 +55,7 @@
 				</xsl:if>
 			</ProposalPrtNo>
 			<!-- ±£µ¥ºÏÍ¬Ó¡Ë¢ºÅ -->
-			<ContPrtNo></ContPrtNo>
+			<ContPrtNo/>
 			
 			<!-- ÊÔËãÉêÇëË³ÐòºÅ -->
 			<ApplyNo><xsl:value-of select="App/Req/ApplySerial" /></ApplyNo>

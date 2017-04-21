@@ -444,7 +444,7 @@ public class BatUtils {
 					}
 					OutputStream fileOutput = new FileOutputStream(BatUtils.getConfigEle(funcFlag).getChildText("FilePath") + fileName);
 					
-					System.out.println("下载路径:" + BatUtils.getConfigEle(funcFlag).getChildText("FilePath") + fileName);
+					cLogger.info("下载路径:" + BatUtils.getConfigEle(funcFlag).getChildText("FilePath") + fileName);
 					
 					int len = 0;
 					while ((len = is.read()) != -1) {

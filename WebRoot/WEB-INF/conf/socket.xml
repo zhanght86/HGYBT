@@ -11,6 +11,11 @@
 		<class>com.sinosoft.midplat.newabc.NewAbcYbt</class>
 	</socket>
 	<socket>	
+		<name>浦发新接口</name>
+		<port>9003</port>
+		<class>com.sinosoft.midplat.spdb.SpdbYbt</class>
+	</socket>
+	<socket>	
 		<name>建行新接口</name>
 		<port>39871</port>
 		<class>com.sinosoft.midplat.newccb.NewCcbYbt</class>

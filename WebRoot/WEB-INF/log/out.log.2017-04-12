@@ -1,0 +1,1844 @@
+09:25:29,706 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7e7b28dc
+09:25:29,728 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:25:29,728 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+09:25:29,728 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+09:25:29,728 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:25:29,744 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+09:25:29,744 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+09:25:29,744 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+09:25:29,875 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+09:25:29,891 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:25:29,906 INFO common.Log4jPrint(20) - End reset System.out!
+09:25:29,906 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:25:29,906 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+09:25:29,906 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+09:25:29,906 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+09:25:29,906 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:25:29,944 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:25:29,960 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+09:25:29,991 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+09:25:29,991 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+09:25:29,991 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+09:25:29,991 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+09:25:29,991 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+09:25:29,991 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:25:30,007 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+09:25:30,007 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:25:30,007 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:25:30,023 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+09:25:30,024 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+09:25:30,024 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:26:32,738 INFO bat.MYZH_Timing(303) - 新农行密钥更新程序启动...
+09:26:32,738 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+09:26:32,839 INFO bat.BatConf(28) - Into BatConf.load()...
+09:26:32,839 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:26:32,839 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:26:32,839 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:26:32,839 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:26:32,839 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+09:26:32,854 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+09:26:33,039 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+09:26:33,039 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:26:33,039 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:26:33,039 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+09:26:33,077 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:26:33,077 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:26:33,077 INFO bat.BatConf(50) - Out BatConf.load()!
+09:26:33,139 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412092633</InsuSerial><TransDate>20170412</TransDate><TransTime>092633</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:26:33.139</FileTimeStamp></Req></App></ABCB2I>
+09:32:35,526 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412092633</InsuSerial><TransDate>20170412</TransDate><TransTime>092633</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:26:33.139</FileTimeStamp></Req></App></ABCB2I>null
+09:32:36,042 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+09:32:40,372 INFO bat.BatUtils(316) - socket已连接
+09:32:48,327 INFO bat.BatUtils(323) - socket已连接，数据已发送
+09:33:37,249 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+09:33:37,966 INFO bat.BatUtils(404) - 商： 0
+09:33:38,135 INFO bat.BatUtils(405) - 余数： 1140
+09:33:44,938 INFO bat.BatUtils(410) - 请求次数： 1
+09:33:45,357 INFO bat.BatUtils(414) - ------读银行传送的文件---
+09:33:55,228 INFO bat.BatUtils(431) - 2345679:::::::000000001140
+09:35:08,156 INFO bat.BatUtils(495) - 关闭OutputStream成功
+09:35:08,156 INFO bat.BatUtils(499) - 关闭InputStream成功
+09:35:08,156 INFO bat.BatUtils(503) - 关闭socket成功
+09:35:08,156 INFO bat.MYZH_Timing(52) - 密钥更新交易  处理异常...证书下载异常
+09:35:08,156 INFO bat.MYZH_Timing(57) - 得到类绝对路径：null/
+09:35:08,156 INFO bat.MYZH_Timing(68) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+09:35:08,234 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+09:35:08,265 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...wpnk7oveyu4vnhtq
+09:35:10,267 INFO bat.MYZH_Timing(79) - RSA加密前的新工作密钥：XF0zVFKjelIBClyf
+09:35:10,267 INFO bat.MYZH_Timing(80) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+09:35:12,155 INFO bat.MYZH_Timing(84) - RSA加密后的新工作密钥：31B9EA40CDAA31AFA0BFD916C7396D80C65FA7951E8314C4B61A29EC5F297324DE748E73444849B651F2AFC43FB96EFED2ED674C0EABB90684C22631688D0199C9F1F3184F8A8BC8C4A8E63C9092A487F9C2C5CA00A275F893AB2A47C5E84761808BAC43178239095A71E34EE325DC66C9C531BF0D18D18B1F66498AEFD451FF
+09:35:12,172 INFO bat.MYZH_Timing(88) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+09:35:12,193 INFO bat.MYZH_Timing(186) - IP、端口：127.0.0.16000
+09:35:12,193 INFO bat.MYZH_Timing(188) - 连接成功
+09:35:12,209 INFO bat.MYZH_Timing(192) - 发送请求报文！
+09:36:02,950 INFO bat.MYZH_Timing(201) - 客户端请求发送完毕！耗时：53.84s
+09:39:26,997 INFO bat.MYZH_Timing(206) - 收到返回报文！
+09:40:04,676 INFO bat.MYZH_Timing(253) - Out MYZH_Timing.run()!
+09:40:04,676 INFO bat.MYZH_Timing(306) - 新农行密钥更新程序完成!
+09:42:20,234 INFO bat.MYZH_Timing(303) - 新农行密钥更新程序启动...
+09:42:20,258 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+09:42:20,365 INFO bat.BatConf(28) - Into BatConf.load()...
+09:42:20,368 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:42:20,369 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:42:20,387 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:42:20,389 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:42:20,391 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+09:42:20,417 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+09:42:20,637 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+09:42:20,639 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:42:20,640 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:42:20,641 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+09:42:20,676 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:42:20,697 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:42:20,698 INFO bat.BatConf(50) - Out BatConf.load()!
+09:42:20,770 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094220</InsuSerial><TransDate>20170412</TransDate><TransTime>094220</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:42:20.770</FileTimeStamp></Req></App></ABCB2I>
+09:42:20,772 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094220</InsuSerial><TransDate>20170412</TransDate><TransTime>094220</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:42:20.770</FileTimeStamp></Req></App></ABCB2I>null
+09:42:20,775 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+09:42:20,786 INFO bat.BatUtils(316) - socket已连接
+09:42:20,789 INFO bat.BatUtils(323) - socket已连接，数据已发送
+09:42:58,633 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@59dccc75
+09:42:58,692 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:42:58,696 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+09:42:58,697 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+09:42:58,698 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:42:58,699 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+09:42:58,700 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+09:42:58,715 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+09:42:58,839 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+09:42:58,850 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:42:58,858 INFO common.Log4jPrint(20) - End reset System.out!
+09:42:58,860 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:42:58,861 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+09:42:58,862 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+09:42:58,871 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+09:42:58,872 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:42:58,913 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:42:58,938 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+09:42:59,014 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+09:42:59,015 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+09:42:59,016 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+09:42:59,026 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+09:42:59,027 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:42:59,026 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+09:42:59,042 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+09:42:59,043 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:42:59,045 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:42:59,051 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+09:42:59,052 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+09:42:59,052 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:43:19,422 INFO bat.MYZH_Timing(303) - 新农行密钥更新程序启动...
+09:43:19,425 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+09:43:19,429 INFO bat.BatConf(28) - Into BatConf.load()...
+09:43:19,431 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:43:19,431 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:43:19,433 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:43:19,434 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:43:19,436 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+09:43:19,438 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+09:43:19,640 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+09:43:19,641 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:43:19,642 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:43:19,643 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+09:43:19,661 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:43:19,666 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:43:19,667 INFO bat.BatConf(50) - Out BatConf.load()!
+09:43:19,735 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094319</InsuSerial><TransDate>20170412</TransDate><TransTime>094319</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:43:19.735</FileTimeStamp></Req></App></ABCB2I>
+09:43:19,736 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094319</InsuSerial><TransDate>20170412</TransDate><TransTime>094319</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:43:19.735</FileTimeStamp></Req></App></ABCB2I>null
+09:43:19,739 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+09:43:19,750 INFO bat.BatUtils(316) - socket已连接
+09:43:19,752 INFO bat.BatUtils(323) - socket已连接，数据已发送
+09:45:12,520 INFO bat.MYZH_Timing(303) - 新农行密钥更新程序启动...
+09:45:12,526 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+09:45:12,564 INFO bat.BatConf(28) - Into BatConf.load()...
+09:45:12,566 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:45:12,567 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:45:12,570 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:45:12,572 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:45:12,573 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+09:45:12,576 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+09:45:12,885 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+09:45:12,887 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:45:12,888 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:45:12,889 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+09:45:12,914 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:45:12,921 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:45:12,922 INFO bat.BatConf(50) - Out BatConf.load()!
+09:45:13,057 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094513</InsuSerial><TransDate>20170412</TransDate><TransTime>094513</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:45:13.056</FileTimeStamp></Req></App></ABCB2I>
+09:45:14,352 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@144b3c7b
+09:45:14,447 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:45:14,452 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+09:45:14,452 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+09:45:14,455 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:45:14,456 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+09:45:14,457 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+09:45:14,474 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+09:45:14,562 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+09:45:14,573 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:45:14,578 INFO common.Log4jPrint(20) - End reset System.out!
+09:45:14,581 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:45:14,582 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+09:45:14,583 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+09:45:14,589 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+09:45:14,590 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:45:14,617 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:45:14,623 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+09:45:14,666 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+09:45:14,667 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+09:45:14,667 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+09:45:14,672 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+09:45:14,673 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+09:45:14,673 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:45:14,682 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+09:45:14,683 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:45:14,683 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:45:14,689 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+09:45:14,691 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:45:14,691 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+09:45:16,150 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412094513</InsuSerial><TransDate>20170412</TransDate><TransTime>094513</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:45:13.056</FileTimeStamp></Req></App></ABCB2I>null
+09:45:16,934 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+09:45:18,044 INFO bat.BatUtils(316) - socket已连接
+09:45:19,628 INFO bat.BatUtils(323) - socket已连接，数据已发送
+09:46:00,984 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+09:46:02,107 INFO bat.BatUtils(404) - 商： 0
+09:46:02,339 INFO bat.BatUtils(405) - 余数： 1140
+09:46:03,611 INFO bat.BatUtils(410) - 请求次数： 1
+09:46:04,951 INFO bat.BatUtils(414) - ------读银行传送的文件---
+09:46:43,370 INFO bat.BatUtils(431) - 2345679:::::::000000001140
+09:47:58,778 INFO bat.BatUtils(495) - 关闭OutputStream成功
+09:47:58,778 INFO bat.BatUtils(499) - 关闭InputStream成功
+09:47:58,781 INFO bat.BatUtils(503) - 关闭socket成功
+09:47:58,782 INFO bat.MYZH_Timing(52) - 密钥更新交易  处理异常...证书下载异常
+09:47:58,782 INFO bat.MYZH_Timing(57) - 得到类绝对路径：null/
+09:47:58,782 INFO bat.MYZH_Timing(68) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+09:47:58,782 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+09:47:58,782 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...z7bioyqonptlxsg1
+09:48:00,797 INFO bat.MYZH_Timing(79) - RSA加密前的新工作密钥：XF0zVFKjelIBClyf
+09:48:00,798 INFO bat.MYZH_Timing(80) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+09:48:01,057 INFO bat.MYZH_Timing(84) - RSA加密后的新工作密钥：31B9EA40CDAA31AFA0BFD916C7396D80C65FA7951E8314C4B61A29EC5F297324DE748E73444849B651F2AFC43FB96EFED2ED674C0EABB90684C22631688D0199C9F1F3184F8A8BC8C4A8E63C9092A487F9C2C5CA00A275F893AB2A47C5E84761808BAC43178239095A71E34EE325DC66C9C531BF0D18D18B1F66498AEFD451FF
+09:48:01,057 INFO bat.MYZH_Timing(88) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+09:48:01,069 INFO bat.MYZH_Timing(186) - IP、端口：127.0.0.16000
+09:48:01,069 INFO bat.MYZH_Timing(188) - 连接成功
+09:48:01,069 INFO bat.MYZH_Timing(192) - 发送请求报文！
+09:50:08,167 INFO bat.MYZH_Timing(201) - 客户端请求发送完毕！耗时：128.231s
+09:50:11,044 INFO bat.MYZH_Timing(206) - 收到返回报文！
+09:58:00,266 INFO bat.MYZH_Timing(310) - 新农行密钥更新程序启动...
+09:58:00,282 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+09:58:00,337 INFO bat.BatConf(28) - Into BatConf.load()...
+09:58:00,339 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:58:00,340 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:58:00,342 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:58:00,343 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:58:00,343 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+09:58:00,343 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+09:58:00,574 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+09:58:00,574 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:58:00,574 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:58:00,574 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+09:58:00,606 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:58:00,606 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:58:00,606 INFO bat.BatConf(50) - Out BatConf.load()!
+09:58:00,698 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412095800</InsuSerial><TransDate>20170412</TransDate><TransTime>095800</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:58:00.698</FileTimeStamp></Req></App></ABCB2I>
+09:58:18,405 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412095800</InsuSerial><TransDate>20170412</TransDate><TransTime>095800</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 09:58:00.698</FileTimeStamp></Req></App></ABCB2I>null
+09:58:18,921 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+09:58:20,054 INFO bat.BatUtils(316) - socket已连接
+09:58:22,495 INFO bat.BatUtils(323) - socket已连接，数据已发送
+09:58:50,951 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+09:58:51,860 INFO bat.BatUtils(404) - 商： 0
+09:58:52,122 INFO bat.BatUtils(405) - 余数： 1140
+09:58:55,112 INFO bat.BatUtils(410) - 请求次数： 1
+09:58:56,152 INFO bat.BatUtils(414) - ------读银行传送的文件---
+09:59:17,148 INFO bat.BatUtils(431) - 2345679:::::::000000001140
+10:00:28,452 INFO bat.BatUtils(495) - 关闭OutputStream成功
+10:00:28,453 INFO bat.BatUtils(499) - 关闭InputStream成功
+10:00:28,453 INFO bat.BatUtils(503) - 关闭socket成功
+10:00:28,454 INFO bat.MYZH_Timing(52) - 密钥更新交易  处理异常...证书下载异常
+10:00:28,454 INFO bat.MYZH_Timing(57) - 得到类绝对路径：null/
+10:00:28,456 INFO bat.MYZH_Timing(68) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+10:00:28,456 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+10:00:28,456 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...x90aef0ewyqs9jp8
+10:00:30,471 INFO bat.MYZH_Timing(79) - RSA加密前的新工作密钥：XF0zVFKjelIBClyf
+10:00:30,472 INFO bat.MYZH_Timing(80) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+10:00:30,790 INFO bat.MYZH_Timing(84) - RSA加密后的新工作密钥：31B9EA40CDAA31AFA0BFD916C7396D80C65FA7951E8314C4B61A29EC5F297324DE748E73444849B651F2AFC43FB96EFED2ED674C0EABB90684C22631688D0199C9F1F3184F8A8BC8C4A8E63C9092A487F9C2C5CA00A275F893AB2A47C5E84761808BAC43178239095A71E34EE325DC66C9C531BF0D18D18B1F66498AEFD451FF
+10:00:30,792 INFO bat.MYZH_Timing(88) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+10:00:30,806 INFO bat.MYZH_Timing(186) - IP、端口：127.0.0.16000
+10:00:30,807 INFO bat.MYZH_Timing(188) - 连接成功
+10:00:30,808 INFO bat.MYZH_Timing(192) - 发送请求报文！
+10:01:10,763 INFO bat.MYZH_Timing(201) - 客户端请求发送完毕！耗时：23.852s
+10:01:16,658 INFO bat.MYZH_Timing(213) - 收到返回报文！
+10:02:02,987 INFO bat.MYZH_Timing(260) - Out MYZH_Timing.run()!
+10:02:02,988 INFO bat.MYZH_Timing(313) - 新农行密钥更新程序完成!
+10:07:51,388 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+10:07:51,388 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+10:07:51,388 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+10:07:51,591 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:07:51,591 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:07:51,591 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:07:51,591 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:07:51,591 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:07:51,591 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:07:51,591 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+10:07:51,876 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:07:51,896 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:07:51,897 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:07:52,978 INFO bat.BatConf(28) - Into BatConf.load()...
+10:07:52,978 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+10:07:52,978 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+10:07:52,994 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+10:07:52,994 INFO bat.BatConf(50) - Out BatConf.load()!
+10:07:53,079 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412100753</InsuSerial><TransDate>20170412</TransDate><TransTime>100753</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:07:53.079</FileTimeStamp></Req></App></ABCB2I>
+10:07:53,079 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412100753</InsuSerial><TransDate>20170412</TransDate><TransTime>100753</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:07:53.079</FileTimeStamp></Req></App></ABCB2I>null
+10:07:53,079 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+10:07:53,094 INFO bat.BatUtils(316) - socket已连接
+10:07:53,094 INFO bat.BatUtils(323) - socket已连接，数据已发送
+10:08:11,906 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+10:08:11,906 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+10:08:11,906 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+10:08:11,927 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:08:11,928 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:08:11,929 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:08:11,931 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:08:11,933 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:08:11,934 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:08:11,937 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+10:08:12,153 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:08:12,168 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:08:12,168 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:08:12,808 INFO bat.BatConf(28) - Into BatConf.load()...
+10:08:12,808 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+10:08:12,808 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:04:39,600) and length=9262 bytes!
+10:08:12,827 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+10:08:12,827 INFO bat.BatConf(50) - Out BatConf.load()!
+10:08:12,902 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412100812</InsuSerial><TransDate>20170412</TransDate><TransTime>100812</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:08:12.902</FileTimeStamp></Req></App></ABCB2I>
+10:08:15,845 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412100812</InsuSerial><TransDate>20170412</TransDate><TransTime>100812</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:08:12.902</FileTimeStamp></Req></App></ABCB2I>null
+10:08:16,571 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+10:08:17,844 INFO bat.BatUtils(316) - socket已连接
+10:08:19,460 INFO bat.BatUtils(323) - socket已连接，数据已发送
+10:08:39,450 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+10:08:53,106 INFO bat.BatUtils(495) - 关闭OutputStream成功
+10:08:53,107 INFO bat.BatUtils(499) - 关闭InputStream成功
+10:08:53,107 INFO bat.BatUtils(503) - 关闭socket成功
+10:08:53,108 INFO bat.ABCRSADownFile(48) - 密钥更新交易  对账处理异常...证书下载异常
+10:08:53,110 INFO bat.ABCRSADownFile(52) - Out ABCRSADownFile.run()...
+10:09:13,982 INFO bat.BatUtils(404) - 商： 0
+10:09:14,214 INFO bat.BatUtils(405) - 余数： 1140
+10:09:14,683 INFO bat.BatUtils(410) - 请求次数： 1
+10:09:15,077 INFO bat.BatUtils(414) - ------读银行传送的文件---
+10:09:26,596 INFO bat.BatUtils(431) - 2345679:::::::000000001123
+10:09:57,617 INFO bat.BatUtils(460) - 文件下载完毕，向银行发送确认消息
+10:09:57,617 INFO bat.BatUtils(468) - 向银行发送确认消息完毕
+10:09:57,617 INFO bat.BatUtils(495) - 关闭OutputStream成功
+10:09:57,617 INFO bat.BatUtils(499) - 关闭InputStream成功
+10:09:57,617 INFO bat.BatUtils(503) - 关闭socket成功
+10:09:57,617 INFO bat.ABCRSADownFile(52) - Out ABCRSADownFile.run()...
+10:17:54,995 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@37db1db7
+10:17:55,012 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:17:55,022 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:17:55,023 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:17:55,025 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:17:55,026 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:17:55,026 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:17:55,039 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+10:17:55,113 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:17:55,120 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:17:55,124 INFO common.Log4jPrint(20) - End reset System.out!
+10:17:55,127 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:17:55,127 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:17:55,128 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+10:17:55,134 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:17:55,135 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:17:55,157 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:17:55,163 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:17:55,215 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:17:55,215 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:17:55,216 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:17:55,226 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:17:55,226 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:17:55,227 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:17:55,263 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+10:17:55,263 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:17:55,265 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:17:55,269 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+10:17:55,270 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:17:55,271 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:19:54,095 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+10:19:54,099 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+10:19:54,100 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+10:19:54,121 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:19:54,125 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:19:54,125 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:19:54,127 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:19:54,142 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:19:54,143 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:19:54,149 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+10:19:54,385 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:19:54,394 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:19:54,394 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:19:55,061 INFO bat.BatConf(28) - Into BatConf.load()...
+10:19:55,061 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+10:19:55,062 INFO common.XmlConf(80) - conf file modified at (2017-04-12 10:19:24,382) and length=9605 bytes!
+10:19:55,073 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+10:19:55,073 INFO bat.BatConf(50) - Out BatConf.load()!
+10:19:55,180 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412101955</InsuSerial><TransDate>20170412</TransDate><TransTime>101955</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:19:55.179</FileTimeStamp></Req></App></ABCB2I>
+10:19:57,965 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412101955</InsuSerial><TransDate>20170412</TransDate><TransTime>101955</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:19:55.179</FileTimeStamp></Req></App></ABCB2I>null
+10:19:58,779 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+10:20:00,516 INFO bat.BatUtils(316) - socket已连接
+10:20:28,428 INFO bat.BatUtils(323) - socket已连接，数据已发送
+10:21:01,641 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+10:21:02,358 INFO bat.BatUtils(404) - 商： 0
+10:21:02,511 INFO bat.BatUtils(405) - 余数： 1140
+10:21:03,188 INFO bat.BatUtils(410) - 请求次数： 1
+10:21:03,697 INFO bat.BatUtils(414) - ------读银行传送的文件---
+10:21:15,444 INFO bat.BatUtils(431) - 2345679:::::::000000001123
+10:22:28,186 INFO bat.BatUtils(495) - 关闭OutputStream成功
+10:22:28,186 INFO bat.BatUtils(499) - 关闭InputStream成功
+10:22:28,187 INFO bat.BatUtils(503) - 关闭socket成功
+10:22:28,187 INFO bat.ABCRSADownFile(48) - 证书下载  对账处理异常...证书下载异常
+10:22:28,188 INFO bat.ABCRSADownFile(52) - Out ABCRSADownFile.run()...
+10:54:14,922 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@51dcfac5
+10:54:14,946 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:54:14,962 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:54:14,963 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:54:14,968 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:54:14,968 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:54:14,968 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:54:14,984 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+10:54:15,122 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:54:15,156 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:54:15,160 INFO common.Log4jPrint(20) - End reset System.out!
+10:54:15,163 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:54:15,164 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:54:15,165 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+10:54:15,169 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:54:15,169 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:54:15,200 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:54:15,215 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:54:15,247 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:54:15,247 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:54:15,247 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:54:15,264 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:54:15,264 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:54:15,265 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:54:15,272 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+10:54:15,273 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:54:15,274 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:54:15,276 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+10:54:15,276 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:54:15,276 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:55:07,532 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+10:55:07,532 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+10:55:07,532 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+10:55:07,591 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:55:07,607 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:55:07,607 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:55:07,607 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:55:07,607 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:55:07,607 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:55:07,607 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+10:55:07,901 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:55:07,929 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:55:07,929 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:55:08,902 INFO bat.BatConf(28) - Into BatConf.load()...
+10:55:08,913 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+10:55:08,914 INFO common.XmlConf(80) - conf file modified at (2017-04-12 10:53:14,967) and length=9505 bytes!
+10:55:08,915 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+10:55:08,915 INFO bat.BatConf(50) - Out BatConf.load()!
+10:55:09,018 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412105509</InsuSerial><TransDate>20170412</TransDate><TransTime>105509</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:55:09.018</FileTimeStamp></Req></App></ABCB2I>
+10:55:12,215 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412105509</InsuSerial><TransDate>20170412</TransDate><TransTime>105509</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 10:55:09.018</FileTimeStamp></Req></App></ABCB2I>null
+10:55:12,778 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+10:55:14,196 INFO bat.BatUtils(316) - socket已连接
+10:55:15,329 INFO bat.BatUtils(323) - socket已连接，数据已发送
+10:55:37,228 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000001140
+10:55:43,604 INFO bat.BatUtils(404) - 商： 0
+10:55:43,778 INFO bat.BatUtils(405) - 余数： 1140
+10:55:44,372 INFO bat.BatUtils(410) - 请求次数： 1
+10:55:44,741 INFO bat.BatUtils(414) - ------读银行传送的文件---
+10:58:41,046 INFO bat.BatUtils(431) - 2345679:::::::000000000956
+10:58:44,778 INFO bat.BatUtils(460) - 文件下载完毕，向银行发送确认消息
+10:58:44,778 INFO bat.BatUtils(468) - 向银行发送确认消息完毕
+10:58:44,793 INFO bat.BatUtils(495) - 关闭OutputStream成功
+10:58:44,793 INFO bat.BatUtils(499) - 关闭InputStream成功
+10:58:44,793 INFO bat.BatUtils(503) - 关闭socket成功
+10:58:44,793 INFO bat.ABCRSADownFile(52) - Out ABCRSADownFile.run()...
+11:02:53,889 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+11:02:53,904 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+11:02:53,904 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+11:02:53,904 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:02:53,904 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:02:53,904 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:02:53,904 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:02:53,922 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:02:53,923 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:02:53,926 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:02:54,167 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:02:54,167 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:02:54,167 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+11:02:54,981 INFO bat.BatConf(28) - Into BatConf.load()...
+11:02:54,981 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:02:54,982 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:02:54,987 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:02:54,987 INFO bat.BatConf(50) - Out BatConf.load()!
+11:02:55,049 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412110255</InsuSerial><TransDate>20170412</TransDate><TransTime>110255</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 11:02:55.049</FileTimeStamp></Req></App></ABCB2I>
+11:02:59,734 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000004871132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412110255</InsuSerial><TransDate>20170412</TransDate><TransTime>110255</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 11:02:55.049</FileTimeStamp></Req></App></ABCB2I>null
+11:03:00,312 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+11:03:01,499 INFO bat.BatUtils(316) - socket已连接
+11:03:02,569 INFO bat.BatUtils(323) - socket已连接，数据已发送
+11:03:41,310 INFO bat.BatUtils(400) - ---银行发送的文件长度： 000000000956
+11:03:46,133 INFO bat.BatUtils(404) - 商： 0
+11:03:46,356 INFO bat.BatUtils(405) - 余数： 956
+11:03:46,920 INFO bat.BatUtils(410) - 请求次数： 1
+11:03:47,267 INFO bat.BatUtils(414) - ------读银行传送的文件---
+11:03:57,683 INFO bat.BatUtils(431) - 2345679:::::::000000000956
+11:04:13,936 INFO bat.BatUtils(460) - 文件下载完毕，向银行发送确认消息
+11:04:13,936 INFO bat.BatUtils(468) - 向银行发送确认消息完毕
+11:04:13,953 INFO bat.BatUtils(495) - 关闭OutputStream成功
+11:04:13,953 INFO bat.BatUtils(499) - 关闭InputStream成功
+11:04:13,954 INFO bat.BatUtils(503) - 关闭socket成功
+11:04:13,954 INFO bat.ABCRSADownFile(52) - Out ABCRSADownFile.run()...
+11:07:46,469 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:07:46,469 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:07:46,484 INFO bat.BatConf(28) - Into BatConf.load()...
+11:07:46,484 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:07:46,484 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:07:46,484 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:07:46,484 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:07:46,484 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:07:46,500 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:07:46,727 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:07:46,729 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:07:46,730 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:07:46,731 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:07:46,747 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:07:46,747 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:07:46,747 INFO bat.BatConf(50) - Out BatConf.load()!
+11:07:46,832 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:07:46,832 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:07:46,882 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:07:46,885 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...682izixa7oorkaf4
+11:07:48,886 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：682izixa7oorkaf4
+11:07:48,886 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:07:49,368 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：2F8E69269F0B3786ADF1217307C85B3A807DECBD20C7B57BE158A9F2A80053F7CD122095AC93743237DF3BD8A193868ECB8B216AE4A2C53F162F10CFDCF830DDB82B06D66335AF36A35BCD6E9CCECDC4192624CB25DD968191B345AE4A75E1D2F00C8C07A69F5D1F23D2944FC2A7E24B8CC1213FFC7D767BF01AAD855EBD9895
+11:07:49,368 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:07:49,389 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:10:17,744 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:10:17,744 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:10:17,760 INFO bat.BatConf(28) - Into BatConf.load()...
+11:10:17,760 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:10:17,760 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:10:17,775 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:10:17,775 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:10:17,775 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:10:17,775 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:10:17,988 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:10:17,990 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:10:17,991 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:10:17,992 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:10:18,008 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:10:18,008 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:10:18,008 INFO bat.BatConf(50) - Out BatConf.load()!
+11:10:18,070 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:10:18,070 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:10:18,086 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:10:18,086 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...816qe4vxczr72ecu
+11:10:20,089 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：816qe4vxczr72ecu
+11:10:20,090 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:10:20,406 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：185EF1F5F8FA521572BB81D826D7452D3A01218C23FB5480B6BA05BE4C5068A45D91143C22E47D9EA8B85C65FBCF98F3AD0E953C6B00A88328FC57A5690A46152CF35DB1332F87A4577F20282280E285A48D58D14DEF5B7BA6781791704DD77D4798D6E934306A8E233A00AE6FD0C5A620B6C575081F58B7CBEA289A68C0D6E4
+11:10:20,407 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:10:20,417 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:13:26,963 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@6de40a47
+11:13:26,980 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:13:26,996 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:13:26,996 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:13:26,996 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:13:26,996 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:13:26,996 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:13:27,011 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+11:13:27,078 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:13:27,094 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:13:27,094 INFO common.Log4jPrint(20) - End reset System.out!
+11:13:27,094 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:13:27,094 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:13:27,110 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+11:13:27,110 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:13:27,110 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:13:27,125 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:13:27,141 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:13:27,163 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:13:27,163 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:13:27,163 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:13:27,163 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:13:27,163 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:13:27,163 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:13:27,179 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:13:27,180 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:13:27,184 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:13:27,184 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:13:27,184 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:13:27,185 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:13:31,164 INFO bat.ABCRSADownFile(87) - 农行对账程序启动。。。
+11:13:31,167 INFO bat.ABCRSADownFile(31) - Into ABCRSADownFile.run()...
+11:13:31,167 DEBUG bat.ABCRSADownFile(56) - Into ServiceImpl.insertTranLog()...
+11:13:31,167 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:13:31,167 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:13:31,167 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:13:31,167 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:13:31,183 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:13:31,183 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:13:31,183 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:13:31,414 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:13:31,419 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:13:31,420 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+11:13:32,059 INFO bat.BatConf(28) - Into BatConf.load()...
+11:13:32,059 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:13:32,060 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:13:32,063 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:13:32,063 INFO bat.BatConf(50) - Out BatConf.load()!
+11:13:32,125 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170412111332</InsuSerial><TransDate>20170412</TransDate><TransTime>111332</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>01</FileType><FileName></FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-04-12 11:13:32.125</FileTimeStamp></Req></App></ABCB2I>
+11:13:50,413 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:13:50,419 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:13:50,468 INFO bat.BatConf(28) - Into BatConf.load()...
+11:13:50,471 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:13:50,472 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:13:50,474 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:13:50,477 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:13:50,478 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:13:50,482 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:13:50,820 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:13:50,821 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:13:50,821 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:13:50,822 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:13:50,842 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:13:50,849 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:13:50,850 INFO bat.BatConf(50) - Out BatConf.load()!
+11:13:50,952 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:13:50,953 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:13:50,960 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:13:50,966 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...dhpey8yz06nv4sb5
+11:13:52,976 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：dhpey8yz06nv4sb5
+11:13:52,976 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:13:53,391 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：0CE189015CED1D5621E3CE238175C01A77632867A4908EAD76A19226792546A817C72209AFF6E8D5FAAD2D16260704BAEE5E265576C0A29081194F525A2F6DAB96D133E4AB53FB1A534995FEF42F25CDA4C367D911BD060DE4D7DA87A9E48F05D3C49912ACEC2A90FD9036EB4E3551F7877F18C144DB5DBBB92D2E1FDA09A999
+11:13:53,392 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:13:53,410 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:13:57,648 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@cd7bef6
+11:13:57,654 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:13:57,654 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:13:57,654 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:13:57,654 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:13:57,654 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:13:57,654 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:13:57,670 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,861) and length=24222 bytes!
+11:13:57,764 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:13:57,779 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:13:57,779 INFO common.Log4jPrint(20) - End reset System.out!
+11:13:57,779 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:13:57,779 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:13:57,779 INFO common.XmlConf(80) - conf file modified at (2017-04-11 19:03:06,910) and length=584 bytes!
+11:13:57,795 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:13:57,795 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:13:57,811 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:13:57,811 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:13:57,840 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:13:57,840 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:13:57,840 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:13:57,855 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:13:57,855 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:13:57,855 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:13:57,855 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:13:57,855 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:13:57,855 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:13:57,855 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:13:57,871 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:13:57,871 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:14:50,508 INFO bat.MYZH_Timing(181) - 连接成功
+11:14:50,510 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:14:50,512 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：59.559s
+11:14:50,513 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:14:50,548 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:14:50,548 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:15:10,763 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+11:15:10,763 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+11:15:10,779 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@709438dd
+11:15:10,779 INFO common.Log4jPrint(20) - Start revert System.out...
+11:15:10,780 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+11:15:10,780 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:15:10,780 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:15:10,780 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:15:10,780 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:15:11,671 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@cd7bef6
+11:15:11,686 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:15:11,686 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:15:11,686 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:15:11,686 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:15:11,686 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:15:11,686 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:15:11,702 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:15:05,825) and length=24222 bytes!
+11:15:11,749 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:15:11,749 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:15:11,749 INFO common.Log4jPrint(20) - End reset System.out!
+11:15:11,764 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:15:11,764 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:15:11,764 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:15:05,864) and length=584 bytes!
+11:15:11,776 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:15:11,777 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:15:11,793 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:15:11,793 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:15:11,833 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:15:11,833 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:15:11,833 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:15:11,833 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:15:11,851 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:15:11,852 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:15:11,852 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:15:11,851 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:15:11,853 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:15:11,853 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:15:11,853 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:15:11,853 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:18:16,200 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+11:18:16,200 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+11:18:16,208 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@1621a02b
+11:18:16,209 INFO common.Log4jPrint(20) - Start revert System.out...
+11:18:16,210 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:18:16,210 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:18:16,210 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:18:16,210 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:18:16,210 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+11:18:16,963 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@cd7bef6
+11:18:16,963 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:18:16,979 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:18:16,979 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:18:16,979 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:18:16,979 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:18:16,979 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:18:16,994 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:18:14,460) and length=24222 bytes!
+11:18:17,048 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:18:17,048 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:18:17,048 INFO common.Log4jPrint(20) - End reset System.out!
+11:18:17,064 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:18:17,064 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:18:17,064 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:18:14,484) and length=584 bytes!
+11:18:17,064 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:18:17,064 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:18:17,079 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:18:17,079 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:18:17,110 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:18:17,110 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:18:17,110 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:18:17,110 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:18:17,110 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:18:17,110 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:18:17,130 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:18:17,130 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:18:17,131 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:18:17,133 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:18:17,133 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:18:17,133 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:18:30,805 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:18:30,808 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:18:30,886 INFO bat.BatConf(28) - Into BatConf.load()...
+11:18:30,886 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:18:30,886 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:18:30,886 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:18:30,886 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:18:30,886 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:18:30,886 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:18:31,110 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:18:31,112 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:18:31,113 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:18:31,114 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:18:31,124 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:18:31,124 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:18:31,124 INFO bat.BatConf(50) - Out BatConf.load()!
+11:18:31,203 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:18:31,203 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:18:31,226 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:18:31,230 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...cfl0wcr3u1ndhks8
+11:18:33,243 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：cfl0wcr3u1ndhks8
+11:18:33,243 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:18:33,606 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：8952D764D25D8A93D9C260DC31F8CAC1FCBBE7D644969878D73CDA466AA8F60EE9608F98273268DB3780F0299247B13F04DD21338437D2CE137984FE9701F4725341C3DCC7B9113CFF11E330EA367ADBC822A091802A343077220D69BCBD16C3D882A640786592A00260485553D6725F5CB3246FC805CF4846E1E3C068E94802
+11:18:33,606 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:18:33,628 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:22:45,954 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+11:22:45,955 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+11:22:45,956 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@45d6cba3
+11:22:45,957 INFO common.Log4jPrint(20) - Start revert System.out...
+11:22:45,958 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:22:45,958 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:22:45,958 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:22:45,958 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:22:45,958 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+11:22:46,611 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@cd7bef6
+11:22:46,627 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:22:46,627 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:22:46,627 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:22:46,627 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:22:46,627 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:22:46,627 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:22:46,627 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:22:46,674 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:22:46,689 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:22:46,689 INFO common.Log4jPrint(20) - End reset System.out!
+11:22:46,689 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:22:46,689 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:22:46,689 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:22:46,689 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:22:46,689 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:22:46,711 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:22:46,711 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:22:46,711 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:22:46,711 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:22:46,711 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:22:46,711 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:22:46,711 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:22:46,711 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:22:46,728 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:22:46,729 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:22:46,729 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:22:46,732 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:22:46,733 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:22:46,734 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:23:51,420 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1804e4
+11:23:51,438 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:23:51,441 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:23:51,441 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:23:51,441 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:23:51,441 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:23:51,441 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:23:51,441 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:23:51,542 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:23:51,542 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:23:51,542 INFO common.Log4jPrint(20) - End reset System.out!
+11:23:51,542 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:23:51,542 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:23:51,558 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:23:51,558 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:23:51,558 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:23:51,573 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:23:51,573 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:23:51,573 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:23:51,589 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:23:51,589 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:23:51,589 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:23:51,589 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:23:51,589 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:23:51,589 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:23:51,589 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:23:51,589 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:23:51,589 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:23:51,589 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:23:51,589 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:23:54,038 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:23:54,041 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:23:54,062 INFO bat.BatConf(28) - Into BatConf.load()...
+11:23:54,062 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:23:54,062 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:23:54,062 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:23:54,062 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:23:54,062 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:23:54,062 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:23:54,262 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:23:54,262 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:23:54,262 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:23:54,262 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:23:54,278 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:23:54,293 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:23:54,293 INFO bat.BatConf(50) - Out BatConf.load()!
+11:23:54,412 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:23:54,412 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:23:54,419 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:23:54,424 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...ziuo2f9vxy24xb4x
+11:23:56,425 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：ziuo2f9vxy24xb4x
+11:23:56,425 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:23:56,761 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：11C5A887B0D1EFFB8398C242C924316EDC7E819FA5855700C56F0BE82942A480EA170B53B39E520D24886533DB73509CD5A9C4D571D98604D1FC15AB5C049078121732B4DE6FCF7FCCC22C6DE8FDC0116A008116111B42FEBB74A09B66678C2EF6BD25D4F8139A9FC26646E3F9ACD6AE0A65EE6EA473A3E90A4C130BDFB7A1CF
+11:23:56,762 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBClyf
+11:23:56,774 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:27:43,447 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@32a0a9ac
+11:27:43,464 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:27:43,464 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:27:43,464 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:27:43,464 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:27:43,464 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:27:43,464 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:27:43,464 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:27:43,516 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:27:43,532 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:27:43,532 INFO common.Log4jPrint(20) - End reset System.out!
+11:27:43,532 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:27:43,532 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:27:43,532 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:27:43,547 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:27:43,547 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:27:43,583 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:27:43,585 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:27:43,589 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:27:43,590 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:27:43,592 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:27:43,592 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:27:43,592 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:27:43,592 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:27:43,592 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:27:43,592 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:27:43,592 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:27:43,592 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:27:43,608 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:27:43,608 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:28:11,481 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@28e914c8
+11:28:11,499 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:28:11,502 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:28:11,503 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:28:11,503 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:28:11,503 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:28:11,503 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:28:11,503 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:28:11,603 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:28:11,618 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:28:11,618 INFO common.Log4jPrint(20) - End reset System.out!
+11:28:11,618 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:28:11,634 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:28:11,634 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:28:11,634 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:28:11,634 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:28:11,650 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:28:11,665 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:28:11,665 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:28:11,665 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:28:11,665 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:28:11,665 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:28:11,665 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:28:11,665 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:28:11,681 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:28:11,681 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:28:11,681 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:28:11,681 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:28:11,681 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:28:11,681 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:28:16,287 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:28:16,290 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:28:16,327 INFO bat.BatConf(28) - Into BatConf.load()...
+11:28:16,329 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:28:16,330 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:28:16,332 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:28:16,334 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:28:16,335 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:28:16,337 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:28:16,590 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:28:16,592 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:28:16,592 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:28:16,593 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:28:16,613 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:28:16,619 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:28:16,620 INFO bat.BatConf(50) - Out BatConf.load()!
+11:28:16,682 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:28:16,682 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:28:16,736 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:28:16,744 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...ssgou6guo7kwze9j
+11:28:18,752 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：ssgou6guo7kwze9j
+11:28:18,752 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEVoIPO9JtFwG7CbhzUxFUTPKEqPBWLR6/z+x94SHUSw65l7MboV2fEHnqy48AC3fGdrRAregYZNbv2o2rDEs67feIEogCmHePg3AiXe1GPFbQsvzzIihZusGkY7x+lbNm/AIyz0vh0K3P7GUldMEwYns/w9GM6b3kAp1hFek+6wIDAQAB
+11:28:19,078 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：0658B2DD657736A61EB90677854700560E21C52A78F928ABD34F8EBE2E00289CFB8ED7590BFE0856221D6BA3C6E1D43D2A82BE89794421E4F46ABF1945E1218497683BDD4640A416523702FDA96CFB1452FAB4586E257B2274E8BEFD25C0BF5FD5E39EF09A5CEC44C4385AF239553AD880F0F28DDF0F10B713CD65378E7C56F9
+11:28:19,080 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:28:19,086 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:36:38,299 INFO bat.MYZH_Timing(181) - 连接成功
+11:36:38,315 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:36:38,317 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：501.635s
+11:36:38,317 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:36:38,374 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:36:38,378 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:41:27,121 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7e6b9547
+11:41:27,278 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:41:27,293 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:41:27,293 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:41:27,293 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:41:27,293 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:41:27,293 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:41:27,324 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:41:27,400 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:41:27,416 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:41:27,431 INFO common.Log4jPrint(20) - End reset System.out!
+11:41:27,431 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:41:27,431 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:41:27,431 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:41:27,453 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:41:27,453 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:41:27,469 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:41:27,485 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:41:27,531 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:41:27,531 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:41:27,531 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:41:27,551 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:41:27,551 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:41:27,552 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:41:27,554 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:41:27,554 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:41:27,554 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:41:27,571 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:41:27,571 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:41:27,576 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:42:02,714 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:42:02,714 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:42:02,745 INFO bat.BatConf(28) - Into BatConf.load()...
+11:42:02,745 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:42:02,745 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:42:02,745 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:42:02,745 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:42:02,745 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:42:02,745 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:42:02,908 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:42:02,908 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:42:02,908 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:42:02,923 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:42:02,943 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:42:02,945 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:42:02,945 INFO bat.BatConf(50) - Out BatConf.load()!
+11:42:02,999 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:42:02,999 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:42:03,014 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:42:03,014 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...q9zqyu26p5g3iil7
+11:42:05,026 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：q9zqyu26p5g3iil7
+11:42:05,026 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+11:42:05,396 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：73C8BA385EFD2E8D3FC09FC822F6A428B2243EAB796A32728AA5D4114AD9DD77C1449FFFC1AAC141350A0C66C80F7903D9A30D3337AF9750B02DA95A144C75D5BAB4E9AE03D3497BF3C9998BEFA52E7D89B38141F1BB488EA538205629AE1DBEC44FE3050103812E982F99781836FFCB998DE31AB62B339536F575FD97362084
+11:42:05,396 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:42:05,427 INFO bat.MYZH_Timing(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+11:42:05,477 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:42:05,487 INFO bat.MYZH_Timing(181) - 连接成功
+11:42:05,487 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:42:05,493 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：2.493s
+11:42:05,497 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:42:05,585 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:42:05,585 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:44:49,758 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:44:49,758 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:44:49,811 INFO bat.BatConf(28) - Into BatConf.load()...
+11:44:49,811 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:44:49,811 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:44:49,811 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:44:49,811 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:44:49,811 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:44:49,811 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:44:50,012 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:44:50,012 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:44:50,012 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:44:50,012 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:44:50,045 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:44:50,051 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:44:50,052 INFO bat.BatConf(50) - Out BatConf.load()!
+11:44:50,120 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:44:50,120 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:44:50,136 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:44:50,154 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...8f7s5ndyycqv2f00
+11:44:52,155 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：8f7s5ndyycqv2f00
+11:44:52,156 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+11:44:52,440 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：21C0131BE53F2BC22A73CCBFA1ECACB985DAEA216BEC1421EF9D6CD4166054E8D60B194A8517E296B0914ABC0CD1E16C3F8379A4EEAAA30D83307E1A70ED3888B8BC0535AFFDC09BF2E82E653D2392AD3E0EEBD0ACD7D42F9B0234A956ADC8734D2D347DBFBADD7EE2E0ABF4E507192C2E6EBF5ADFD183A1BF23557B5107DE27
+11:44:52,440 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:44:52,458 INFO bat.MYZH_Timing(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+11:44:52,462 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:45:01,533 INFO bat.MYZH_Timing(181) - 连接成功
+11:45:04,339 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:46:50,155 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：119.504s
+11:47:07,929 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:48:14,844 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:48:14,860 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:49:02,620 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:49:02,620 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:49:02,657 INFO bat.BatConf(28) - Into BatConf.load()...
+11:49:02,657 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:49:02,657 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:49:02,657 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:49:02,657 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:49:02,657 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:49:02,673 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:49:02,905 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:49:02,905 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:49:02,905 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:49:02,905 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:49:02,936 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:49:02,936 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:49:02,952 INFO bat.BatConf(50) - Out BatConf.load()!
+11:49:03,026 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:49:03,026 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:49:03,042 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:49:03,042 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...tg4b3h7jhg14y9wf
+11:49:05,044 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：tg4b3h7jhg14y9wf
+11:49:05,044 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+11:49:05,344 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：46E1C128EF92FE814A6051F0B1F8C8BF4DB4FA82745309495B4023B9F0B2BC36E242C51F214DE95B4F1A2762C841D4DD9A55F3F0C11F5D96035F6A2B0116BA717645B8D88AFA92E044ACD7CB7BD535B2AC141ACEFD5535D21CC259F418A80267856A32BA3A2718FFA1BF1BBF2E72B38FD9017FB48F1EAC39B8247D65F6A49C35
+11:49:05,344 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:49:05,344 INFO bat.MYZH_Timing(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+11:49:05,359 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:49:10,263 INFO bat.MYZH_Timing(181) - 连接成功
+11:49:10,840 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:49:13,652 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：10.441s
+11:49:14,003 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:49:25,237 INFO bat.MYZH_Timing(207) - 收到返回报文头：X1.0000005791132    00000                                        00000000
+11:49:27,078 INFO bat.MYZH_Timing(211) - 收到返回报文长度为：579
+11:49:29,205 INFO bat.MYZH_Timing(220) - 银行返回非标准报文！<ABCB2I>
+<Header>
+<RetCode>000000</RetCode>
+<RetMsg>???</RetMsg>
+<SerialNo></SerialNo>
+<InsuSerial>0420170410152202</InsuSerial>
+<TransDate>20170410</TransDate>
+<TransTime>152202</TransTime>
+<BankCode></BankCode>
+<CorpNo>1132</CorpNo>
+<TransCode>1017</TransCode>
+<TransSide>0</TransSide>
+<EntrustWay></EntrustWay>
+<ProvCode></ProvCode>
+<BranchNo></BranchNo>
+</Header>
+<App>
+<Req>
+<AccTimeStamp>2017-04-10 15:22:02.516</AccTimeStamp>
+<FileName>FRESULTKZ010079.20170410</FileName>
+<FileType>02</FileType>
+<FileLen>00000146</FileLen>
+</Req>
+</App>
+</ABCB2I>
+11:49:38,157 INFO bat.MYZH_Timing(228) - 农行处理密钥更新成功，进行本地密钥更换
+11:49:39,143 INFO bat.AES2RSAEnCipher(45) - 开始备份old AES工作密钥...
+11:49:53,526 INFO bat.AES2RSAEnCipher(65) - 备份old AES工作密钥完毕...
+11:49:53,526 INFO bat.AES2RSAEnCipher(67) - 开始同步AES工作密钥...
+11:49:53,532 INFO bat.AES2RSAEnCipher(81) - 同步AES工作密钥完毕...
+11:49:53,532 INFO bat.AES2RSAEnCipher(90) - 开始备份old RSA工作密钥...
+11:49:53,532 INFO bat.AES2RSAEnCipher(110) - 备份old RSA工作密钥完毕...
+11:49:53,532 INFO bat.AES2RSAEnCipher(112) - 开始同步RSA工作密钥...
+11:49:53,532 DEBUG bat.AES2RSAEnCipher(123) - 同步RSA工作密钥异常...
+11:49:53,532 INFO bat.AES2RSAEnCipher(125) - 同步RSA工作密钥完毕...
+11:49:53,547 INFO bat.MYZH_Timing(234) - 本地密钥更换完成...
+11:49:53,549 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:49:53,550 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:56:29,815 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@4e88151c
+11:56:29,825 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:56:29,825 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:56:29,825 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:56:29,825 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:56:29,825 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:56:29,825 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:56:29,847 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:56:29,919 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:56:29,935 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:56:29,935 INFO common.Log4jPrint(20) - End reset System.out!
+11:56:29,935 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:56:29,935 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:56:29,935 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:56:29,953 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:56:29,953 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:56:29,969 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:56:29,969 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:56:30,015 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:56:30,015 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:56:30,015 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:56:30,015 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:56:30,015 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:56:30,015 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:56:30,031 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:56:30,031 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:56:30,031 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:56:30,031 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:56:30,031 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:56:30,031 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:56:50,982 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:56:50,982 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:56:50,997 INFO bat.BatConf(28) - Into BatConf.load()...
+11:56:51,013 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:56:51,013 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:56:51,013 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:56:51,013 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:56:51,013 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:56:51,013 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:56:51,182 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:56:51,198 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:56:51,198 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:56:51,198 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:56:51,213 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:56:51,213 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:56:51,213 INFO bat.BatConf(50) - Out BatConf.load()!
+11:56:51,282 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:56:51,282 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:56:51,298 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:56:51,298 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...3vk2clynup4fwf8n
+11:56:53,308 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：3vk2clynup4fwf8n
+11:56:53,308 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+11:56:53,571 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：8E7C45507BBD52CFBCA1F817B52FC29CB5E4DC1AE7B208D519444980B5743CB2017BDCBE2576F4F7B58D7470D01ECD0348926638ED4B3814470BB454B8CE28EE7EBDF0DB0601ECBE1CA1A62E8909428CCF50EC2E5AB5AC862DBD1D8223456BA1BF2713E237400ED443382E515FBE00B81CB1390BF45983A2FE331445D170BD56
+11:56:53,571 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:56:53,571 INFO bat.MYZH_Timing(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+11:56:53,590 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:56:54,619 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:56:54,619 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+11:57:35,236 INFO bat.MYZH_Timing(296) - 新农行密钥更新程序启动...
+11:57:35,240 INFO bat.MYZH_Timing(39) - Into MYZH_Timing.run()...
+11:57:35,268 INFO bat.BatConf(28) - Into BatConf.load()...
+11:57:35,271 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+11:57:35,272 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+11:57:35,274 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:57:35,276 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+11:57:35,277 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+11:57:35,280 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+11:57:35,571 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+11:57:35,573 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:57:35,574 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+11:57:35,575 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+11:57:35,600 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+11:57:35,608 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:57:35,609 INFO bat.BatConf(50) - Out BatConf.load()!
+11:57:35,729 INFO bat.MYZH_Timing(50) - 得到类绝对路径：null/
+11:57:35,729 INFO bat.MYZH_Timing(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+11:57:35,737 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+11:57:35,744 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...u32p746c8r6ohv5x
+11:57:35,904 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1299ee0b
+11:57:35,924 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:57:35,924 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:57:35,924 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:57:35,924 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:57:35,924 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:57:35,924 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:57:35,924 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,269) and length=24222 bytes!
+11:57:36,009 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:57:36,009 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:57:36,024 INFO common.Log4jPrint(20) - End reset System.out!
+11:57:36,024 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:57:36,024 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:57:36,024 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:22:43,289) and length=584 bytes!
+11:57:36,024 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:57:36,024 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:57:36,056 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:57:36,074 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:57:36,079 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:57:36,080 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:57:36,081 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:57:36,086 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:57:36,086 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:57:36,089 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+11:57:36,090 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:57:36,092 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:57:36,090 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:57:36,094 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+11:57:36,095 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:57:36,100 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:57:37,750 INFO bat.MYZH_Timing(72) - RSA加密前的新工作密钥：u32p746c8r6ohv5x
+11:57:37,751 INFO bat.MYZH_Timing(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+11:57:38,149 INFO bat.MYZH_Timing(77) - RSA加密后的新工作密钥：6738E87BE03BDD94F762B97223D0C34D3636101682D906DC576924012FF9999AF469BCB8988AD153F7D20BBC0F086C835CB196ADD337516CFF7B85BF1E0ABF1612C97FFDEBB9B75B90BB34E84FCF04C53CD324CB0E3067C99CA6387212341BA6F8B46F6AF4BDFB5F2B580C3B3EC07D8C691669F7804BCB08AEA904B298902B69
+11:57:38,149 INFO bat.MYZH_Timing(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+11:57:38,153 INFO bat.MYZH_Timing(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+11:57:38,163 INFO bat.MYZH_Timing(179) - IP、端口：127.0.0.16000
+11:57:42,672 INFO bat.MYZH_Timing(181) - 连接成功
+11:57:44,419 INFO bat.MYZH_Timing(185) - 发送请求报文！
+11:59:14,359 INFO bat.MYZH_Timing(194) - 客户端请求发送完毕！耗时：12.575s
+11:59:15,515 INFO bat.MYZH_Timing(199) - 收到返回报文！
+11:59:22,905 INFO bat.MYZH_Timing(207) - 收到返回报文头：X1.0000004741132    00000                                        00000000
+11:59:27,512 INFO bat.MYZH_Timing(211) - 收到返回报文长度为：474
+11:59:37,861 INFO bat.MYZH_Timing(220) - 银行返回非标准报文！<ABCB2I>
+<Header>
+<RetCode>000000</RetCode>
+<RetMsg>???</RetMsg>
+<SerialNo></SerialNo>
+<InsuSerial>0420170410152202</InsuSerial>
+<TransDate>20170412</TransDate>
+<TransTime>152202</TransTime>
+<BankCode></BankCode>
+<CorpNo>1132</CorpNo>
+<TransCode>1017</TransCode>
+<TransSide>0</TransSide>
+<EntrustWay></EntrustWay>
+<ProvCode></ProvCode>
+<BranchNo></BranchNo>
+</Header>
+<App>
+<Req>
+<KeyAccTime>2017-04-12 11:59:02.516</KeyAccTime>
+</Req>
+</App>
+</ABCB2I>
+11:59:44,841 INFO bat.MYZH_Timing(228) - 农行处理密钥更新成功，进行本地密钥更换
+11:59:45,747 INFO bat.AES2RSAEnCipher(45) - 开始备份old AES工作密钥...
+11:59:50,655 INFO bat.AES2RSAEnCipher(65) - 备份old AES工作密钥完毕...
+11:59:50,671 INFO bat.AES2RSAEnCipher(67) - 开始同步AES工作密钥...
+11:59:50,673 INFO bat.AES2RSAEnCipher(81) - 同步AES工作密钥完毕...
+11:59:51,918 INFO bat.AES2RSAEnCipher(90) - 开始备份old RSA工作密钥...
+11:59:51,936 INFO bat.AES2RSAEnCipher(110) - 备份old RSA工作密钥完毕...
+11:59:51,938 INFO bat.AES2RSAEnCipher(112) - 开始同步RSA工作密钥...
+11:59:51,940 INFO bat.AES2RSAEnCipher(125) - 同步RSA工作密钥完毕...
+11:59:52,704 INFO bat.MYZH_Timing(234) - 本地密钥更换完成...
+11:59:53,705 INFO bat.MYZH_Timing(246) - Out MYZH_Timing.run()!
+11:59:56,980 INFO bat.MYZH_Timing(299) - 新农行密钥更新程序完成!
+14:34:25,777 INFO bat.ABCSynchAESCode(308) - 新农行密钥更新程序启动...
+14:34:25,777 INFO bat.ABCSynchAESCode(40) - Into MYZH_Timing.run()...
+14:34:25,820 INFO bat.BatConf(28) - Into BatConf.load()...
+14:34:25,822 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:34:25,823 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:34:25,823 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:34:25,823 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:34:25,823 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+14:34:25,823 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+14:34:26,048 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+14:34:26,051 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:34:26,052 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:34:26,053 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+14:34:26,074 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:34:26,080 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:34:26,081 INFO bat.BatConf(50) - Out BatConf.load()!
+14:34:26,149 INFO bat.ABCSynchAESCode(51) - 得到类绝对路径：null/
+14:34:26,150 INFO bat.ABCSynchAESCode(62) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+14:34:26,156 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+14:34:26,162 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...pp5gixk1awnrnth8
+14:34:28,162 INFO bat.ABCSynchAESCode(73) - RSA加密前的新工作密钥：pp5gixk1awnrnth8
+14:34:28,162 INFO bat.ABCSynchAESCode(74) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+14:34:28,689 INFO bat.ABCSynchAESCode(78) - RSA加密后的新工作密钥：62F5E0606DE898812A28301E8C4A595C5E106F62CD36BACDFC335B4B93A4E92E49EED1DA34EE4B5F12B4A0F6B7565A81661515CEFAD9221C6A66E2515DADEBC5214089CF27B3415D361B976C91D7E14C653F1237D46132FD35916AF7B5A76DF26EDA7D5CE72306EF9DA079D6803EA83BC01D4FE0536A69B24495B378A6C209A5
+14:34:28,690 INFO bat.ABCSynchAESCode(82) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+14:34:28,693 INFO bat.ABCSynchAESCode(86) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+14:34:28,697 INFO bat.ABCSynchAESCode(180) - IP、端口：127.0.0.16000
+14:34:36,711 INFO bat.ABCSynchAESCode(182) - 连接成功
+14:34:44,623 INFO bat.ABCSynchAESCode(186) - 发送请求报文！
+14:34:59,306 INFO bat.ABCSynchAESCode(197) - 客户端请求发送完毕！耗时：32.571s
+14:36:24,793 INFO bat.ABCSynchAESCode(206) - 收到返回报文！
+14:36:36,054 INFO bat.ABCSynchAESCode(258) - Out MYZH_Timing.run()!
+14:36:36,057 INFO bat.ABCSynchAESCode(311) - 新农行密钥更新程序完成!
+15:35:13,580 INFO bat.ABCSynchAESCode(295) - 新农行密钥更新程序启动...
+15:35:13,595 INFO bat.ABCSynchAESCode(39) - Into MYZH_Timing.run()...
+15:35:13,611 INFO bat.BatConf(28) - Into BatConf.load()...
+15:35:13,611 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+15:35:13,627 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+15:35:13,630 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:35:13,632 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+15:35:13,633 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+15:35:13,633 INFO common.XmlConf(80) - conf file modified at (2017-04-12 11:01:25,606) and length=9506 bytes!
+15:35:13,849 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+15:35:13,849 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:35:13,849 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+15:35:13,849 INFO common.XmlConf(80) - conf file modified at (2017-04-11 15:48:04,842) and length=24222 bytes!
+15:35:13,871 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+15:35:13,871 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:35:13,871 INFO bat.BatConf(50) - Out BatConf.load()!
+15:35:13,949 INFO bat.ABCSynchAESCode(50) - 得到类绝对路径：null/
+15:35:13,949 INFO bat.ABCSynchAESCode(61) - /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/key/52004_pub.cer
+15:35:13,949 INFO bat.AES2RSAEnCipher(22) - 开始生成AES工作密钥...
+15:35:13,964 INFO bat.AES2RSAEnCipher(36) - 生成AES工作密钥完毕...wa7lcsutucsazt7w
+15:35:15,968 INFO bat.ABCSynchAESCode(72) - RSA加密前的新工作密钥：wa7lcsutucsazt7w
+15:35:15,968 INFO bat.ABCSynchAESCode(73) - RSA加密前的公钥：-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAKjk5gF0tY0PMA0GCSqGSIb3DQEBBQUAMGIxCzAJBgNV
+BAYTAkNOMRAwDgYDVQQIDAdCZWlKaW5nMRAwDgYDVQQHDAdCZWlKaW5nMRAwDgYD
+VQQKDAdBQkNoaW5hMQ8wDQYDVQQLDAZBQkNTREMxDDAKBgNVBAMMA0FCQzAgFw0x
+NDA1MTYwOTE5MjNaGA8yMTE0MDQyMjA5MTkyM1owYjELMAkGA1UEBhMCQ04xEDAO
+BgNVBAgMB0JlaUppbmcxEDAOBgNVBAcMB0JlaUppbmcxEDAOBgNVBAoMB0FCQ2hp
+bmExDzANBgNVBAsMBkFCQ1NEQzEMMAoGA1UEAwwDQUJDMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQCiAnurTX4kOLrFxVCippsrcwLfDTIh7wqClvJRIi34dGKh
+MlQ6y7rijgt2IIYf6Jnu76rDiBXscaHYdjYMpqwcrmwZsznBhRB3y3YbOqWBA1nO
+exMaoqQ36AtXrO9Ek2B6meGBRMu+gB2hg+k16oi0TFhp6i6zxPav215BIW1U6QID
+AQABo1AwTjAdBgNVHQ4EFgQUHI1dsITtM5Ha5m0q2TbADO49K0YwHwYDVR0jBBgw
+FoAUHI1dsITtM5Ha5m0q2TbADO49K0YwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQAiENgMqfFMS1R05mL6KPiFCZWggMlxKLjQ+aKpa0o+FXJOGDPk2kb1
+rD3XL86vOkKdm1VUPJa6EEKobJw09Nkm68Ea15bdAob7Q0XnBSy7b3PiYPPP9xeq
+GR34rAbXjV99RYpjwV/ztKC2+tdyyT1hmjuP0Plh+TleLCtgBWq3pQ==
+-----END CERTIFICATE-----
+
+15:35:16,304 INFO bat.ABCSynchAESCode(77) - RSA加密后的新工作密钥：3626D508D05DF4FD54DE526FEF6B266F60EF4ABAFE363665EA3749776209B4BF20B7BD4EB8370D6C55294313339CD594C8B6CB5A4F1D5B53BA5089D82D079169808868488C8D96021E86876B0007862C609080B084C55C21973E5C55E79F32B5698107D618C4F64C1A395BDE81AF58F52438BB6494870B075C6486DF6621214A
+15:35:16,304 INFO bat.ABCSynchAESCode(81) - RSA加密前的老工作密钥：XF0zVFKjelIBCAJG
+15:35:16,320 INFO bat.ABCSynchAESCode(85) - RSA加密后的老工作密钥：58C3C092DC02160D26229802F003737ABA7AB61F061D05B121971922CD40B2860CD83AC82BA38D63C3A62E5F1FD585E9EC32DE782637B2E2F845B4B400098A699B5D5E873C8DAD6702A4157D54B2D88E105596C025F999BDAAE1AED24C90AC5E5E2594831D334BCD5D0638FA790125A3C6E3A658549FA8AB91288F6BD530159F
+15:35:16,337 INFO bat.ABCSynchAESCode(179) - IP、端口：127.0.0.16000
+15:35:16,337 INFO bat.ABCSynchAESCode(181) - 连接成功
+15:35:23,827 INFO bat.ABCSynchAESCode(185) - 发送请求报文！
+15:35:53,325 INFO bat.ABCSynchAESCode(197) - 客户端请求发送完毕！耗时：38.859s
+15:35:53,785 INFO bat.ABCSynchAESCode(198) - 收到返回报文！
+15:35:55,489 INFO bat.ABCSynchAESCode(206) - 收到返回报文头：X1.0000004741132    00000                                        00000000
+15:35:56,436 INFO bat.ABCSynchAESCode(210) - 收到返回报文长度为：474
+15:35:58,079 INFO bat.ABCSynchAESCode(219) - 银行返回非标准报文！<ABCB2I>
+<Header>
+<RetCode>000000</RetCode>
+<RetMsg>???</RetMsg>
+<SerialNo></SerialNo>
+<InsuSerial>0420170410152202</InsuSerial>
+<TransDate>20170412</TransDate>
+<TransTime>152202</TransTime>
+<BankCode></BankCode>
+<CorpNo>1132</CorpNo>
+<TransCode>1017</TransCode>
+<TransSide>0</TransSide>
+<EntrustWay></EntrustWay>
+<ProvCode></ProvCode>
+<BranchNo></BranchNo>
+</Header>
+<App>
+<Req>
+<KeyAccTime>2017-04-12 14:37:02.516</KeyAccTime>
+</Req>
+</App>
+</ABCB2I>
+15:35:59,155 INFO bat.ABCSynchAESCode(227) - 农行处理密钥更新成功，进行本地密钥更换
+15:35:59,556 INFO bat.AES2RSAEnCipher(45) - 开始备份old AES工作密钥...
+15:36:01,861 INFO bat.AES2RSAEnCipher(65) - 备份old AES工作密钥完毕...
+15:36:01,861 INFO bat.AES2RSAEnCipher(67) - 开始同步AES工作密钥...
+15:36:01,865 INFO bat.AES2RSAEnCipher(81) - 同步AES工作密钥完毕...
+15:36:01,865 INFO bat.AES2RSAEnCipher(90) - 开始备份old RSA工作密钥...
+15:36:01,865 INFO bat.AES2RSAEnCipher(110) - 备份old RSA工作密钥完毕...
+15:36:01,865 INFO bat.AES2RSAEnCipher(112) - 开始同步RSA工作密钥...
+15:36:01,865 INFO bat.AES2RSAEnCipher(125) - 同步RSA工作密钥完毕...
+15:36:01,865 INFO bat.ABCSynchAESCode(233) - 本地密钥更换完成...
+15:36:01,865 INFO bat.ABCSynchAESCode(245) - Out MYZH_Timing.run()!
+15:36:01,865 INFO bat.ABCSynchAESCode(298) - 新农行密钥更新程序完成!
+17:23:08,715 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@78e000bb
+17:23:08,750 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:23:08,781 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+17:23:08,781 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+17:23:08,781 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:23:08,781 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+17:23:08,781 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+17:23:08,797 INFO common.XmlConf(80) - conf file modified at (2017-04-12 17:22:11,004) and length=24222 bytes!
+17:23:08,922 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+17:23:08,953 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:23:08,953 INFO common.Log4jPrint(20) - End reset System.out!
+17:23:08,969 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:23:08,969 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+17:23:08,969 INFO common.XmlConf(80) - conf file modified at (2017-04-12 16:17:09,527) and length=584 bytes!
+17:23:08,969 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+17:23:08,969 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:23:08,984 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+17:23:09,014 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+17:23:09,046 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+17:23:09,046 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+17:23:09,046 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+17:23:09,077 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+17:23:09,077 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+17:23:09,077 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:23:09,077 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+17:23:09,077 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+17:23:09,093 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:23:09,115 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+17:23:09,115 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+17:23:09,115 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+17:40:38,109 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:40:38,185 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:40:38,185 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:40:38,185 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:40:38,185 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:40:38,887 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:40:38,887 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.717s
+17:40:38,887 INFO test.NewABCTest(223) - 收到返回报文！
+17:48:17,241 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:48:17,275 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:48:17,275 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:48:17,278 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:48:17,279 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:48:17,800 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:48:17,801 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.531s
+17:48:17,803 INFO test.NewABCTest(223) - 收到返回报文！
+17:53:18,964 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:53:18,995 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:53:19,010 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:53:19,010 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:53:19,010 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:53:19,458 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:53:19,458 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.463s
+17:53:19,458 INFO test.NewABCTest(223) - 收到返回报文！
+17:57:24,315 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:57:24,336 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:57:24,336 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:57:24,336 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:57:24,336 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:57:24,820 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:57:24,820 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.499s
+17:57:24,820 INFO test.NewABCTest(223) - 收到返回报文！
+17:59:36,702 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+17:59:36,734 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:59:36,734 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:59:36,734 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:59:36,734 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:59:37,209 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+17:59:37,210 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.476s
+17:59:37,211 INFO test.NewABCTest(223) - 收到返回报文！
+18:03:40,606 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1ac531
+18:03:40,639 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:03:40,655 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+18:03:40,655 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+18:03:40,655 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:03:40,655 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+18:03:40,655 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+18:03:40,674 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,374) and length=24222 bytes!
+18:03:40,775 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+18:03:40,790 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:03:40,828 INFO common.Log4jPrint(20) - End reset System.out!
+18:03:40,828 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:03:40,828 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+18:03:40,828 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,454) and length=584 bytes!
+18:03:40,828 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+18:03:40,828 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:03:40,843 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+18:03:40,875 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+18:03:40,906 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+18:03:40,906 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+18:03:40,906 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+18:03:40,921 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+18:03:40,921 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+18:03:40,921 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:03:40,921 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+18:03:40,921 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+18:03:40,921 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:03:40,937 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+18:03:40,937 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+18:03:40,937 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+18:03:41,680 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+18:03:41,681 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+18:03:41,682 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@4a11b2e8
+18:03:41,683 INFO common.Log4jPrint(20) - Start revert System.out...
+18:03:41,684 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:03:41,684 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:03:41,684 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:03:41,684 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+18:03:41,684 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:03:42,373 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1ac531
+18:03:42,378 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:03:42,378 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+18:03:42,378 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+18:03:42,378 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:03:42,378 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+18:03:42,378 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+18:03:42,378 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,374) and length=24222 bytes!
+18:03:42,428 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+18:03:42,431 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:03:42,431 INFO common.Log4jPrint(20) - End reset System.out!
+18:03:42,431 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:03:42,431 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+18:03:42,431 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,454) and length=584 bytes!
+18:03:42,431 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+18:03:42,431 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:03:42,447 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+18:03:42,447 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+18:03:42,465 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+18:03:42,466 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+18:03:42,466 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+18:03:42,469 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+18:03:42,470 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:03:42,471 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+18:03:42,472 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+18:03:42,473 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:03:42,475 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+18:03:42,476 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+18:03:42,476 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+18:03:42,477 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+18:03:59,452 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@1a3174f7
+18:03:59,475 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:03:59,491 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+18:03:59,491 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+18:03:59,491 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:03:59,491 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+18:03:59,491 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+18:03:59,506 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,374) and length=24222 bytes!
+18:03:59,638 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+18:03:59,638 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:03:59,653 INFO common.Log4jPrint(20) - End reset System.out!
+18:03:59,653 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:03:59,653 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+18:03:59,653 INFO common.XmlConf(80) - conf file modified at (2017-04-12 18:03:10,454) and length=584 bytes!
+18:03:59,675 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+18:03:59,675 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:03:59,691 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+18:03:59,691 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+18:03:59,729 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+18:03:59,729 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+18:03:59,729 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+18:03:59,729 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+18:03:59,729 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+18:03:59,729 INFO net.SocketListenerF5(91) - 2_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:03:59,745 INFO net.SocketListenerF5(104) - 2_Socket(建行新接口)加载成功!
+18:03:59,745 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+18:03:59,745 INFO net.SocketListenerF5(91) - 3_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:03:59,769 INFO net.SocketListenerF5(104) - 3_Socket(贵州银行)加载成功!
+18:03:59,769 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+18:03:59,771 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+18:04:49,409 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:04:49,428 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:04:49,428 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:04:49,428 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:04:49,428 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:04:49,875 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:04:49,875 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.447s
+18:04:49,875 INFO test.NewABCTest(223) - 收到返回报文！
+18:04:51,307 INFO test.NewABCTest(231) - package_head:X1.0000008323103    00000                                       000000000
+18:04:51,307 INFO test.NewABCTest(233) - mBodyLen:832
+18:04:51,319 INFO test.NewABCTest(238) - 解密开始
+18:04:51,321 INFO test.NewABCTest(240) - 解密完成
+18:04:51,322 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:04:51,322 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：1.894s
+18:06:19,729 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:06:19,776 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:06:19,776 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:06:19,776 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:06:19,776 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:06:20,192 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:06:20,192 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.416s
+18:06:20,192 INFO test.NewABCTest(223) - 收到返回报文！
+18:06:20,314 INFO test.NewABCTest(231) - package_head:X1.0000008323103    00000                                       000000000
+18:06:20,315 INFO test.NewABCTest(233) - mBodyLen:832
+18:06:20,315 INFO test.NewABCTest(238) - 解密开始
+18:06:20,317 INFO test.NewABCTest(240) - 解密完成
+18:06:20,321 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:06:20,324 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：0.548s
+18:07:07,296 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:07:07,312 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:07:07,312 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:07:07,312 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:07:07,328 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:07:07,805 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:07:07,807 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.494s
+18:07:07,808 INFO test.NewABCTest(223) - 收到返回报文！
+18:07:07,867 INFO test.NewABCTest(231) - package_head:X1.0000008323103    00000                                       000000000
+18:07:07,867 INFO test.NewABCTest(233) - mBodyLen:832
+18:07:07,867 INFO test.NewABCTest(238) - 解密开始
+18:07:07,867 INFO test.NewABCTest(240) - 解密完成
+18:07:07,883 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:07:07,883 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：0.571s
+18:07:34,663 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:07:34,694 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:07:34,696 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:07:34,698 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:07:34,699 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:07:35,110 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:07:35,110 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.432s
+18:07:35,110 INFO test.NewABCTest(223) - 收到返回报文！
+18:07:35,217 INFO test.NewABCTest(231) - package_head:X1.0000008323103    00000                                       000000000
+18:07:35,217 INFO test.NewABCTest(233) - mBodyLen:832
+18:07:35,217 INFO test.NewABCTest(238) - 解密开始
+18:07:35,217 INFO test.NewABCTest(240) - 解密完成
+18:07:35,217 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:07:35,217 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：0.539s
+18:08:10,875 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:08:10,901 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:08:10,901 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:08:10,901 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:08:10,901 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:08:11,338 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:08:11,339 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.453s
+18:08:11,341 INFO test.NewABCTest(223) - 收到返回报文！
+18:08:11,556 INFO test.NewABCTest(231) - package_head:X1.0000008323103    00000                                       000000000
+18:08:11,556 INFO test.NewABCTest(233) - mBodyLen:832
+18:08:11,556 INFO test.NewABCTest(238) - 解密开始
+18:08:11,556 INFO test.NewABCTest(240) - 解密完成
+18:08:11,572 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:08:11,572 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：0.686s
+18:08:42,952 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:08:42,968 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:08:42,968 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:08:42,968 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:08:42,968 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:08:43,379 INFO test.NewABCTest(212) - 发送报文头！X1.0000117123103    00000                                       000000000
+18:08:43,379 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.411s
+18:08:43,379 INFO test.NewABCTest(223) - 收到返回报文！
+18:08:53,840 INFO test.NewABCTest(231) - package_head:X1.0000010883103    00000                                       000000000
+18:08:53,840 INFO test.NewABCTest(233) - mBodyLen:1088
+18:08:53,901 INFO test.NewABCTest(238) - 解密开始
+18:08:53,901 INFO test.NewABCTest(240) - 解密完成
+18:08:53,917 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:08:53,917 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：10.949s
+18:09:26,435 INFO test.NewABCTest(137) - Socket连接10.2.0.31:9002
+18:09:26,461 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:09:26,461 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:09:26,464 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:09:26,466 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:09:26,951 INFO test.NewABCTest(212) - 发送报文头！X1.0000010883103    00000                                       000000000
+18:09:26,951 INFO test.NewABCTest(217) - 客户端请求发送完毕！耗时：0.494s
+18:09:26,951 INFO test.NewABCTest(223) - 收到返回报文！
+18:09:28,076 INFO test.NewABCTest(231) - package_head:X1.0000009283103    00000                                       000000000
+18:09:28,076 INFO test.NewABCTest(233) - mBodyLen:928
+18:09:28,089 INFO test.NewABCTest(238) - 解密开始
+18:09:28,092 INFO test.NewABCTest(240) - 解密完成
+18:09:28,096 INFO test.NewABCTest(253) - UTF-8 农行的报文: 
+18:09:28,098 INFO test.NewABCTest(257) - 客户端接收返回报文完毕！耗时：1.641s

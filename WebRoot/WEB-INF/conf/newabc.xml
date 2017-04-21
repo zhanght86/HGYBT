@@ -101,10 +101,8 @@
 		<timeout>300</timeout><!-- 超时时间 -->
 		<locktime>120</locktime><!-- 锁定时间 -->
 		<funcFlag outcode="1007">1007</funcFlag><!-- 交易码 -->
-		<format>com.sinosoft.midplat.newabc.format.RenewalPaymentQuery
-		</format><!-- format -->
-		<service>com.sinosoft.midplat.newabc.service.NewRenewalPaymentQuery
-		</service><!-- service -->
+		<format>com.sinosoft.midplat.newabc.format.RenewalPaymentQuery</format><!-- format -->
+		<service>com.sinosoft.midplat.newabc.service.NewRenewalPaymentQuery</service><!-- service -->
 	</business>
 
 	<business>
@@ -113,8 +111,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1008">1008</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.RenewalPayment</format>
-		<service>com.sinosoft.midplat.newabc.service.NewRenewalPayment
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.NewRenewalPayment</service>
 	</business>
 
 	<business>

@@ -14,9 +14,9 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 
 public class NewCont extends XmlSimpFormat {
 	private Element header=null;
+	@SuppressWarnings("unused")
 	private String riskcode=null;
-/*	private String tranno=null;
-	private String trandate=null;*/
+	
 	public NewCont(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
@@ -26,16 +26,12 @@ public class NewCont extends XmlSimpFormat {
 		
 		header=(Element)pNoStdXml.getRootElement().getChild("Header").clone();
 		riskcode=pNoStdXml.getRootElement().getChild("App").getChild("Req").getChild("Risks").getChildText("RiskCode");
-		//tranno=pNoStdXml.getRootElement().getChild("Header").getChildText("SerialNo");
 		
-		
+		//处理受益人
 		List<Element> bnfs=dealBnf(pNoStdXml);
 		JdomUtil.print(pNoStdXml);
 		Document mStdXml = 
 			NewContInXsl.newInstance().getCache().transform(pNoStdXml);
-		
-		//处理投保人和被保人地址的问题
-//		mStdXml  = dealAddress(mStdXml);
 		
 		mStdXml.getRootElement().getChild("Body").addContent(bnfs);
 		cLogger.info("Out newABCNewCont.noStd2Std()!");
@@ -45,13 +41,6 @@ public class NewCont extends XmlSimpFormat {
 
 	public Document std2NoStd(Document pStdXml) throws Exception {
 		cLogger.info("Into newABCNewCont.std2NoStd()...");
-		
-//		String mInFilePath2 = "H:/1016043_33_1014_in.xml";
-//		InputStream mIs2 = new FileInputStream(mInFilePath2);
-//		Document mInXmlDoc = JdomUtil.build(mIs2,"GBK");
-//		header=(Element)mInXmlDoc.getRootElement().getChild("Header").clone();
-//		mIs2.close();	
-		
 		
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
@@ -84,62 +73,13 @@ public class NewCont extends XmlSimpFormat {
 		return mNoStdXml;
 	}
 	
-	
-	
-	
-//	private Document dealAddress(Document mStdXml){
-//		Element AppntEle = mStdXml.getRootElement().getChild(Body).getChild(Appnt);
-//		Element appAddressEle = AppntEle.getChild(Address);
-//		
-//		StringBuffer appSb = new StringBuffer();
-//		String appProv = AppntEle.getChildText("Prov");
-//		String appCity = AppntEle.getChildText("City");
-//		String appZone = AppntEle.getChildText("Zone");
-//		
-//		if(!"".equals(appProv)){
-//			appSb = appSb.append(appProv).append("省(直辖市)");
-//		}
-//		if(!"".equals(appCity)){
-//			appSb = appSb.append(appCity).append("市");
-//		}
-//		if(!"".equals(appZone)){
-//			appSb = appSb.append(appZone).append("区(县)");
-//		}
-//		
-//		appAddressEle.setText(appSb.append(appAddressEle.getText()).toString());
-//	    
-//		Element InsuredEle = mStdXml.getRootElement().getChild(Body).getChild(Insured);
-//		Element insuAddressEle = InsuredEle.getChild(Address);	
-//		
-//		StringBuffer insuSb = new StringBuffer();
-//		String insuProv = InsuredEle.getChildText("Prov");
-//		String insuCity = InsuredEle.getChildText("City");
-//		String insuZone = InsuredEle.getChildText("Zone");
-//		
-//		if(!"".equals(insuProv)){
-//			insuSb = insuSb.append(insuProv).append("省(直辖市)");
-//		}
-//		if(!"".equals(insuCity)){
-//			insuSb = insuSb.append(insuCity).append("市");
-//		}
-//		if(!"".equals(insuZone)){
-//			insuSb = insuSb.append(insuZone).append("区(县)");
-//		}
-//		
-//		insuAddressEle.setText(insuSb.append(insuAddressEle.getText()).toString());
-//		
-//		return mStdXml;
-//	}
-	
-	
-
 	//生成自动增长的投保单号截取交易流水号后6位
-		public static String trannoStringBuffer(String date,String tranno)
-		{
-			String trannobuffer=tranno.substring(6);
-			String  bufferTranno="02"+date+trannobuffer;
-			return bufferTranno;
-		}
+	public static String trannoStringBuffer(String date,String tranno)
+	{
+		String trannobuffer=tranno.substring(6);
+		String  bufferTranno="02"+date+trannobuffer;
+		return bufferTranno;
+	}
 	
 	/**
 	 *  
@@ -167,19 +107,7 @@ public class NewCont extends XmlSimpFormat {
 		String count=noStdBnf.getChild("Count").getText();
 		int countInt=Integer.parseInt(count);
 		cLogger.info("受益人个数:"+countInt);
-		String grade=null;//受益人顺序
-		String type=null;//受益人类型 农行0是生存受益人，1是身故受益人
 		for(int i=1;i<=countInt;i++){
-			//受益人类型i
-			type=noStdBnf.getChildText("Type"+i);
-			//安赢A借贷险第一受益人
-			if(riskcode.equals("211902")&&("1").equals(type)){//20141202 王玮邮件要求：安赢A借贷险把身故受益人顺序+1，即第一受益人修改为第二受益人
-				//第一受益人修改为第二受益人
-				grade=noStdBnf.getChildText("Sequence"+i);
-				grade=String.valueOf(Integer.parseInt(grade)+1);
-				noStdBnf.getChild("Sequence"+i).setText(grade);
-			}
-			
 			//受益人
 			Element bnf=new Element("Bnf");
 			//受益人类型
@@ -239,83 +167,88 @@ public class NewCont extends XmlSimpFormat {
 		return bnfs;
 	}
 	
+	/**
+	 * @Title: returnIdType
+	 * @Description: 返回映射后的证件类型
+	 * @param noStdType 非标准报文证件类型
+	 * @return 核心证件类型
+	 * @return String 
+	 * @throws
+	 */
 	private String returnIdType(String noStdType){
-		if("110001".equals(noStdType))return "0";
-		if("110002".equals(noStdType))return "0";
-		if("110003".equals(noStdType))return "C";
-		if("110004".equals(noStdType))return "C";
-		if("110005".equals(noStdType))return "4";
-		if("110006".equals(noStdType))return "4";
+		if("110001".equals(noStdType))return "0";//居民身份证
+		if("110002".equals(noStdType))return "0";//重号居民身份证
+		if("110003".equals(noStdType))return "0";//临时居民身份证 
+		if("110004".equals(noStdType))return "0";//重号临时居民身份证
+		if("110005".equals(noStdType))return "4";//户口簿
+		if("110006".equals(noStdType))return "4";//重号户口簿
 		if("110007".equals(noStdType))return "2";
 		if("110008".equals(noStdType))return "2";
 		if("110009".equals(noStdType))return "D";
 		if("110010".equals(noStdType))return "D";
-		if("110011".equals(noStdType))return "8";
-		if("110012".equals(noStdType))return "8";
-		if("110013".equals(noStdType))return "8";
-		if("110014".equals(noStdType))return "8";
-		if("110015".equals(noStdType))return "8";
-		if("110016".equals(noStdType))return "8";
-		if("110017".equals(noStdType))return "5";
-		if("110018".equals(noStdType))return "5";
-		if("110019".equals(noStdType))return "8";
-		if("110020".equals(noStdType))return "8";
-		if("110021".equals(noStdType))return "E";
-		if("110022".equals(noStdType))return "E";
-		if("110023".equals(noStdType))return "1";
-		if("110024".equals(noStdType))return "1";
-		if("110025".equals(noStdType))return "1";
-		if("110026".equals(noStdType))return "1";
-		if("110027".equals(noStdType))return "2";
-		if("110028".equals(noStdType))return "2";
-		if("110029".equals(noStdType))return "8";
-		if("110030".equals(noStdType))return "8";
-		if("110031".equals(noStdType))return "D";
-		if("110032".equals(noStdType))return "D";
-		if("110033".equals(noStdType))return "A";
-		if("110034".equals(noStdType))return "A";
-		if("110035".equals(noStdType))return "A";
-		if("110036".equals(noStdType))return "A";
-		if("119998".equals(noStdType))return "8";
-		if("119999".equals(noStdType))return "8";
+		if("110011".equals(noStdType))return "99";//离休干部荣誉证
+		if("110012".equals(noStdType))return "99";//重号离休干部荣誉证
+		if("110013".equals(noStdType))return "99";//军官退休证
+		if("110014".equals(noStdType))return "99";//重号军官退休证
+		if("110015".equals(noStdType))return "99";//文职干部退休证
+		if("110016".equals(noStdType))return "99";//重号文职干部退休证
+		if("110017".equals(noStdType))return "99";//军事院校学员证
+		if("110018".equals(noStdType))return "99";//重号军事院校学员证
+		if("110019".equals(noStdType))return "F";//港澳居民往来内地通行证
+		if("110020".equals(noStdType))return "F";//重号港澳居民往来内地通行证
+		if("110021".equals(noStdType))return "F";//台湾居民往来大陆通行证
+		if("110022".equals(noStdType))return "F";//重号台湾居民往来大陆通行证
+		if("110023".equals(noStdType))return "1";//中华人民共和国护照
+		if("110024".equals(noStdType))return "1";//重号中华人民共和国护照
+		if("110025".equals(noStdType))return "1";//外国护照
+		if("110026".equals(noStdType))return "1";//重号外国护照
+		if("110027".equals(noStdType))return "2";//军官证
+		if("110028".equals(noStdType))return "2";//重号军官证
+		if("110029".equals(noStdType))return "99";//文职干部证
+		if("110030".equals(noStdType))return "99";//重号文职干部证
+		if("110031".equals(noStdType))return "D";//警官证
+		if("110032".equals(noStdType))return "D";//重号警官证
+		if("110033".equals(noStdType))return "2";//军人士兵证
+		if("110034".equals(noStdType))return "2";//重号军人士兵证
+		if("110035".equals(noStdType))return "D";//武警士兵证
+		if("110036".equals(noStdType))return "D";//重号武警士兵证
+		if("119998".equals(noStdType))return "99";//系统使用的个人证件识别标识
+		if("119999".equals(noStdType))return "99";//其他个人证件识别标识
 		return "--";
 	}
 	private String retion(String noStdType){
-		if("02".equals(noStdType))return  "02";		
-		if("03".equals(noStdType))return  "02";
-		if("04".equals(noStdType))return  "01";
-		if("05".equals(noStdType))return  "01";
-		if("06".equals(noStdType))return  "03";
-		if("07".equals(noStdType))return  "03";
-		if("08".equals(noStdType))return  "04";
-		if("09".equals(noStdType))return  "04";
-		if("10".equals(noStdType))return "04";
-		if("11".equals(noStdType))return "04";
-		if("12".equals(noStdType))return "04";
-		if("13".equals(noStdType))return "04";
-		if("14".equals(noStdType))return "04";
-		if("15".equals(noStdType))return "04";
-		if("16".equals(noStdType))return "06";
-		if("17".equals(noStdType))return "06";
-		if("18".equals(noStdType))return "06";
-		if("19".equals(noStdType))return "06";
-		if("20".equals(noStdType))return "06";
-		if("21".equals(noStdType))return "06";
-		if("22".equals(noStdType))return "06";
-		if("23".equals(noStdType))return "06";
-		if("24".equals(noStdType))return "06";
-		if("25".equals(noStdType))return "06";
-		if("26".equals(noStdType))return "06";
-		if("27".equals(noStdType))return "06";
-		if("28".equals(noStdType))return "06";
-		if("29".equals(noStdType))return "06";
-		if("30".equals(noStdType))return "06";
+		if("01".equals(noStdType))return  "00";//本人		
+		if("02".equals(noStdType))return  "02";//丈夫
+		if("03".equals(noStdType))return  "02";//妻子
+		if("04".equals(noStdType))return  "01";//父亲
+		if("05".equals(noStdType))return  "01";//母亲
+		if("06".equals(noStdType))return  "03";//儿子
+		if("07".equals(noStdType))return  "03";//女儿
+		if("08".equals(noStdType))return  "04";//祖父
+		if("09".equals(noStdType))return  "04";//祖母
+		if("10".equals(noStdType))return "04";//孙子
+		if("11".equals(noStdType))return "04";//孙女
+		if("12".equals(noStdType))return "04";//外祖父
+		if("13".equals(noStdType))return "04";//外祖母
+		if("14".equals(noStdType))return "04";//外孙
+		if("15".equals(noStdType))return "04";//外孙女
+		if("16".equals(noStdType))return "06";//哥哥
+		if("17".equals(noStdType))return "06";//姐姐
+		if("18".equals(noStdType))return "06";//弟弟
+		if("19".equals(noStdType))return "06";//妹妹
+		if("20".equals(noStdType))return "06";//公公
+		if("21".equals(noStdType))return "06";//婆婆
+		if("22".equals(noStdType))return "06";//儿媳
+		if("23".equals(noStdType))return "06";//岳父
+		if("24".equals(noStdType))return "06";//岳母
+		if("25".equals(noStdType))return "06";//女婿
+		if("26".equals(noStdType))return "06";//其他亲属
+		if("27".equals(noStdType))return "06";//同事
+		if("28".equals(noStdType))return "06";//朋友
+		if("29".equals(noStdType))return "09";//雇主
+		if("30".equals(noStdType))return "06";//其他
 		return "--";
 	}
-	
-	
-	
-	
 	
 	public static void main(String[] args) throws Exception {
 		System.out.println("程序开始…");

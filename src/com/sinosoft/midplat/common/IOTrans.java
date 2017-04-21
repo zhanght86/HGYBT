@@ -41,7 +41,7 @@ public class IOTrans {
 	}
 	
 	/**
-	 * 不关闭流
+	 * 不关闭流输入输出转换接收到的数据为字节数组不关闭流
 	 */
 	public static byte[] toBytes5Close(InputStream pIns) {
 		ByteArrayOutputStream mByteArrayOutputStream = new ByteArrayOutputStream();

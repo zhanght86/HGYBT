@@ -10,8 +10,8 @@
 	<KeyPath>/ybttest/key/</KeyPath>
 	
 	<!-- <skip>10.0.6.111</skip> -->
-	<database type="WEBLOGICPOOL" name="YBTPool" />
-	<!-- <database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" /> -->
+	<!-- <database type="WEBLOGICPOOL" name="YBTPool" /> -->
+	<database type="ORACLE" name="ybt" ip="10.2.0.32" port="1521" user="ybt" password="ybt123" />
 	<service>com.sinosoft.midplat.service.SimpService</service>   
 	 <!-- Local http://10.1.41.4:8080/lis_general_dev1/services/ServiceForBankInterfaceService-->
 	 <!-- Local2 http://10.1.41.4:8080/lis_bugfix_dev/services/ServiceForBankInterfaceService -->
@@ -155,6 +155,7 @@
 		<service id="7" name="单证对账" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="10" name="银保犹豫期退保查询" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="11" name="银保犹豫期退保" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
+		<!-- <service id="11" name="银保犹豫期退保" address="http://192.168.199.227:8001/ui/services/ServiceForBankInterfaceService" method="service" /> -->
 		<service id="12" name="银保犹豫期退保冲正" address="http://10.0.4.31:9080/services/ServiceForBankInterfaceService" method="service" />
 		<service id="13" name="银保退保查询" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />
 		<service id="14" name="银保退保" address="http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService" method="service" />

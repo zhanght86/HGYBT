@@ -31,7 +31,7 @@ import com.sinosoft.utility.VData;
 
 /**
  * @ClassName: NewAbcBusiBlc
- * @Description: 新农行新单对账
+ * @Description: 新农行新保承保保单对账
  * @author sinosoft
  * @date 2017-4-7 下午12:07:19
  */
@@ -62,10 +62,10 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			// 初始化文件名称		POLICY 	+公司编号	+.		+当前时间
 			String mFIleName = "POLICY" + mCorNo + "." + cCurDate; 
 			if (!new BatUtils().downLoadFile(mFIleName, "02", "2001", cCurDate)) {
-				throw new MidplatException("农行新保承保保单对账文件下载异常");
+				throw new MidplatException("新农行新保承保保单对账文件下载异常");
 			}
 			// 处理对账
-			cLogger.info("处理农行新单对账开始...");
+			cLogger.info("处理农行新保承保保单对账开始...");
 			// 得到请求标准报文
 			String myFilePath =cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/POLICY010079.20170405";
@@ -81,7 +81,7 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
-			cLogger.info("处理农行新单对账结束!");
+			cLogger.info("处理农行新保承保保单对账结束!");
 
 		} catch (Exception e) {
 			cLogger.error(cConfigEle.getChildTextTrim("name") + "  处理异常..."
@@ -389,7 +389,7 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NewAbcBusiBlc.main");
-		mLogger.info("新农行新单对账程序启动...");
+		mLogger.info("新农行新保承保保单对账程序启动...");
 
 		NewAbcBusiBlc abcAES = new NewAbcBusiBlc();
 
@@ -412,7 +412,7 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			}
 		}
 		abcAES.run();
-		System.out.println("新农行新单对账程序完成!");
+		System.out.println("新农行新保承保保单对账程序完成!");
 	}
 
 }
