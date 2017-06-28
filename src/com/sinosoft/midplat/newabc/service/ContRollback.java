@@ -1,6 +1,8 @@
 package com.sinosoft.midplat.newabc.service;
 
 
+import java.util.Date;
+
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -74,9 +76,6 @@ public class ContRollback extends ServiceImpl {
 			} catch (Exception ex) {	//使用默认值
 				cLogger.debug("未配置锁定时间，或配置有误，使用默认值(s)："+tLockTime, ex);
 			}
-				
-			
-			
 			//当天、同一网点，成功出过单
 			String tSqlStr = new StringBuilder("select * from Cont where Type=").append(AblifeCodeDef.ContType_Bank)
 //				.append(" and State=").append(AblifeCodeDef.ContState_Sign)// 可能是签单失败后的冲正，也可能是签单成功后的冲正
@@ -119,7 +118,6 @@ public class ContRollback extends ServiceImpl {
 			}
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		
@@ -142,5 +140,58 @@ public class ContRollback extends ServiceImpl {
 		
 		cLogger.info("Out ContRollback.service()!");
 		return cOutXmlDoc;
+	}
+	
+	protected TranLogDB insertTranLog(Document pXmlDoc) throws MidplatException
+	{
+		cLogger.debug("Into ServiceImpl.insertTranLog()...");
+
+		Element mTranDataEle = pXmlDoc.getRootElement();
+		Element mHeadEle = mTranDataEle.getChild(Head);
+		Element mBodyEle = mTranDataEle.getChild(Body);
+
+		TranLogDB mTranLogDB = new TranLogDB();
+		mTranLogDB.setLogNo(Thread.currentThread().getName());
+		System.out.println("进程名：" + Thread.currentThread().getName());
+		mTranLogDB.setTranCom(mHeadEle.getChildText(TranCom));
+		mTranLogDB.setZoneNo(mHeadEle.getChildText("ZoneNo"));
+		mTranLogDB.setNodeNo(mHeadEle.getChildText(NodeNo));
+//		mTranLogDB.setTranNo(mHeadEle.getChildText(TranNo));
+		mTranLogDB.setTranNo(DateUtil.getCur8Date() + ""+ DateUtil.getCur6Time());
+		mTranLogDB.setOperator(mHeadEle.getChildText(TellerNo));
+		mTranLogDB.setFuncFlag(mHeadEle.getChildText(FuncFlag));
+		mTranLogDB.setTranDate(mHeadEle.getChildText(TranDate));
+		mTranLogDB.setTranTime(mHeadEle.getChildText(TranTime));
+		mTranLogDB.setInNoDoc(mHeadEle.getChildText("InNoDoc"));
+		System.out.println("trancom:" + mTranLogDB.getTranCom());
+		System.out.println("FuncFlag:" + mTranLogDB.getFuncFlag());
+		System.out.println("mHeadEle.getChildText" + mHeadEle.getChildText("InNoDoc"));
+		if (null != mBodyEle)
+		{
+			mTranLogDB.setProposalPrtNo(mBodyEle.getChildText(ProposalPrtNo));
+			mTranLogDB.setContNo(mBodyEle.getChildText(ContNo));
+			mTranLogDB.setOtherNo(mBodyEle.getChildText(ContPrtNo));
+			mTranLogDB.setBak2(mBodyEle.getChildText("OldLogNo"));
+			if (null == mTranLogDB.getBak2() || "".equals(mTranLogDB.getBak2()))
+			{
+				mTranLogDB.setBak2(mBodyEle.getChildText("OldTranNo"));
+			}
+		}
+		mTranLogDB.setUsedTime(-1);
+		mTranLogDB.setBak1(mHeadEle.getChildText(ClientIp));
+		Date mCurDate = new Date();
+		mTranLogDB.setMakeDate(DateUtil.get8Date(mCurDate));
+		mTranLogDB.setMakeTime(DateUtil.get6Time(mCurDate));
+		mTranLogDB.setModifyDate(mTranLogDB.getMakeDate());
+		mTranLogDB.setModifyTime(mTranLogDB.getMakeTime());
+		long mStartMillis = System.currentTimeMillis();
+		if (!mTranLogDB.insert())
+		{
+			cLogger.error(mTranLogDB.mErrors.getFirstError());
+			throw new MidplatException("插入日志失败！");
+		}
+
+		cLogger.debug("Out ServiceImpl.insertTranLog()!");
+		return mTranLogDB;
 	}
 }

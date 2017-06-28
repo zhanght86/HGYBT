@@ -144,6 +144,7 @@
 										<Rsrv_Fld_2></Rsrv_Fld_2>
 										<!-- #保留字段三 -->
 										<Rsrv_Fld_3></Rsrv_Fld_3>
+										<AutoIns_Ins_Cvr_TpCd>3</AutoIns_Ins_Cvr_TpCd>
 									</MyInsu_Detail>
 								</xsl:for-each>
 							</MyInsu_List>
@@ -163,12 +164,14 @@
 	
 <!-- 代理渠道代码 -->
 	<xsl:template name="salechnl">
-		<xsl:param name="Salechnls">9999</xsl:param>
-		<xsl:if test="$Salechnls = '01'">9999</xsl:if><!-- 团险渠道 -->
-		<xsl:if test="$Salechnls = '02'">9999</xsl:if><!-- 个人营销 -->
-		<xsl:if test="$Salechnls = '03'">9999</xsl:if><!-- 银行代理 -->
-		<xsl:if test="$Salechnls = '04'">9999</xsl:if><!-- 中介渠道 -->
-		<xsl:if test="$Salechnls = '05'">9999</xsl:if><!-- 网销渠道 -->
+		<xsl:param name="Salechnls"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$Salechnls='0'">0029</xsl:when><!-- 柜面出单 -->
+			<xsl:when test="$Salechnls='1'">0001</xsl:when><!-- 网银出单 -->
+			<xsl:when test="$Salechnls='2'">0006</xsl:when><!--  手机银行 --> 
+			<xsl:when test="$Salechnls='8'">0023</xsl:when><!--  智慧终端 --> 
+			<xsl:otherwise></xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>	
 	
 </xsl:stylesheet>

@@ -1,10 +1,14 @@
 package com.sinosoft.midplat.newabc.bat;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.TimerTask;
@@ -21,6 +25,7 @@ import com.sinosoft.lis.vschema.ContBlcDtlSet;
 import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
+import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
@@ -39,18 +44,19 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
+	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
 	@SuppressWarnings("unused")
 	private static String cCurTime="";
-	@SuppressWarnings("unused")
-	private String mFileData = "";
 	private TranLogDB cTranLogDB;
 	private Document cOutXmlDoc;
 
 	public void run() {
+		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
 		cLogger.info("Into NewAbcBusiBlc.run()...");
 		try {
+			cResultMsg = null;
 			cTranLogDB = insertTranLog();
 			cConfigEle = BatUtils.getConfigEle("2001"); // 得到bat.xml文件中的对应节点.
 
@@ -64,28 +70,36 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 			if (!new BatUtils().downLoadFile(mFIleName, "02", "2001", cCurDate)) {
 				throw new MidplatException("新农行新保承保保单对账文件下载异常");
 			}
+			
 			// 处理对账
 			cLogger.info("处理农行新保承保保单对账开始...");
 			// 得到请求标准报文
 			String myFilePath =cConfigEle.getChildTextTrim("FilePath")+mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/POLICY010079.20170405";
 			cLogger.info(myFilePath);
+			
 			Document cInXmlDoc = parse(myFilePath);
 			//保存对账明细
 			saveDetails(cInXmlDoc);
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NewContBlc).call(cInXmlDoc);
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
+			
 			cTranLogDB.setRCode(reCode);
 			cTranLogDB.setRText(reMsg);
 			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
-			cLogger.info("处理农行新保承保保单对账结束!");
 
+			// 每月1日备份上月的对账文件
+			if ("01".equals(DateUtil.getDateStr(new Date(), "dd"))){
+				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
+			}
+			
+			cResultMsg = reMsg;
 		} catch (Exception e) {
-			cLogger.error(cConfigEle.getChildTextTrim("name") + "  处理异常..."
-					+ e.getMessage());
+			cResultMsg = e.toString();
+			cLogger.error(cConfigEle.getChildTextTrim("name") + "  处理异常..."+ e.getMessage());
 			e.printStackTrace();
 			cTranLogDB.setRCode("1");
 			cTranLogDB.setRText(e.getMessage());
@@ -95,6 +109,8 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 		} finally {
 			cCurDate = "";
 		}
+		
+		cLogger.info("处理农行新保承保保单对账结束!");
 		cLogger.info("Out NewAbcBusiBlc.run()!");
 	}
 
@@ -133,21 +149,20 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 		Element mTranData = new Element("TranData");
 		//对账标志
 		String tBalanceFlag = "0";
-		Date cTranDate = new Date();
 		//新建交易日期节点
 		Element mTranDate = new Element(TranDate);
 		//交易日期节点设置文本为8位日期字符串
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		mTranDate.setText(cCurDate);
 		//获取当前日期字符串
-		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
+		String cTranDate = DateUtil.getCurDate("yyyyMMdd");
 		// 对账日期为...8位交易日期字符串
-		cLogger.info(" 对账日期为..." + DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+		cLogger.info(" 对账日期为..." + cCurDate);
 		// 当前日期为...当前日期字符串
-		cLogger.info(" 当前日期为..." + mCurrDate);
+		cLogger.info(" 当前日期为..." + cTranDate);
 
 		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
 		//8位交易日期字符串非当前日期字符串
-		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate))
+		if (!cCurDate.equals(cTranDate))
 		{
 			//对账标志置为1[手工对账]
 			tBalanceFlag = "1";
@@ -156,12 +171,12 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 		//新建交易时间节点
 		Element mTranTime = new Element(TranTime);
 		//交易时间节点设置文本为6位交易时间字符串
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
+		mTranTime.setText(DateUtil.getDateStr(new Date(), "HHmmss"));
 
 		//新建交易机构代码节点
 		Element mTranCom = new Element(TranCom);
 		//交易机构代码节点设置文本为当前银行交易配置文件根节点下交易机构代码子节点文本
-		mTranCom.setText(cConfigEle.getChildText("tranCom"));
+		mTranCom.setText(cConfigEle.getChildText("com"));
 		
 		//新建省市代码节点
 		Element mZoneNo = new Element("ZoneNo");
@@ -385,6 +400,76 @@ public class NewAbcBusiBlc extends TimerTask implements XmlTag {
 		
 		cLogger.debug("Out NewInsPolRec.saveDetails()!");
 		return mContBlcDtlSet;
+	}
+	
+	// 备份月文件，比如yyyyMM01当日，系统会在目录localDir 建立/yyyy/yyyyMM，
+	// 然后把所有文件移动到该目录，但是yyyyMM01的文件除外
+	private void bakFiles(String pFileDir)
+	{
+		cLogger.info("Into NewAbcBusiBlc.bakFiles...");
+
+		if (null == pFileDir || "".equals(pFileDir))
+		{
+			cLogger.warn("本地文件目录为空，不进行备份操作！");
+			return;
+		}
+		File mDirFile = new File(pFileDir);
+		if (!mDirFile.exists() || !mDirFile.isDirectory())
+		{
+			cLogger.warn("本地文件目录不存在，不进行备份操作！" + mDirFile);
+			return;
+		}
+
+		File[] mOldFiles = mDirFile.listFiles(new FileFilter()
+		{
+			public boolean accept(File pFile)
+			{
+				if (!pFile.isFile())
+				{
+					return false;
+				}
+
+				Calendar tCurCalendar = Calendar.getInstance();
+				tCurCalendar.setTime(new Date());
+
+				Calendar tFileCalendar = Calendar.getInstance();
+				tFileCalendar.setTime(new Date(pFile.lastModified()));
+
+				return tFileCalendar.before(tCurCalendar);
+			}
+		});
+
+		Calendar mCalendar = Calendar.getInstance();
+		mCalendar.add(Calendar.MONTH, -1);
+		File mNewDir = new File(mDirFile, DateUtil.getDateStr(mCalendar, "yyyy/yyyyMM"));
+		for (File tFile : mOldFiles)
+		{
+			try
+			{
+				String fileName_date = tFile.getName().substring(tFile.getName().length() - 8);
+				Date date = new Date();
+				if (!fileName_date.equals(String.valueOf(DateUtil.get8Date(date))))
+				{
+					cLogger.info(tFile.getAbsoluteFile() + " start move...");
+					IOTrans.fileMove(tFile, mNewDir);
+					cLogger.info(tFile.getAbsoluteFile() + " end move!");
+				}
+			}
+			catch (IOException ex)
+			{
+				cLogger.error(tFile.getAbsoluteFile() + "备份失败！", ex);
+			}
+		}
+
+		cLogger.info("Out NewAbcBusiBlc.bakFiles!");
+	}
+	
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
 	}
 	
 	public static void main(String[] args) throws Exception {

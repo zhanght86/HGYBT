@@ -1,15 +1,9 @@
 package com.sinosoft.midplat.newabc.format;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
-import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 /**
  * 保全申请 报文转换
@@ -26,8 +20,7 @@ public class SecureApply extends XmlSimpFormat {
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into SecureApply.noStd2Std()...");
 		header=(Element)pNoStdXml.getRootElement().getChild("Header").clone();
-		Document mStdXml = 
-			SecureApplyInXsl.newInstance().getCache().transform(pNoStdXml);
+		Document mStdXml = SecureApplyInXsl.newInstance().getCache().transform(pNoStdXml);
 		return mStdXml;
 	}
 	
@@ -35,8 +28,7 @@ public class SecureApply extends XmlSimpFormat {
 		cLogger.info("Into SecureApply.std2NoStd()...");
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
-		Document mNoStdXml = 
-			SecureApplyOutXsl.newInstance().getCache().transform(pStdXml);
+		Document mNoStdXml = SecureApplyOutXsl.newInstance().getCache().transform(pStdXml);
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
 		//为请求业务报文头信息加入返回码和返回信息.把请求的业务报文头加入到返回报文中返回给银行。
 		Element  RetCode= mNoStdXml.getRootElement().getChild("Header").getChild("RetCode");
@@ -53,7 +45,6 @@ public class SecureApply extends XmlSimpFormat {
 		
 		cLogger.info(RetCode.getText());
 		cLogger.info(RetMsg.getText());
-		
 		
 		cLogger.info("Out SecureApply.std2NoStd()!");
 		return mNoStdXml;

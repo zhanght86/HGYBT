@@ -70,7 +70,7 @@ public class AES2RSAEnCipher {
 			InputStream mAESSynchIs = new FileInputStream(aesTempFilePath);
 			String contAES = new String(IOTrans.toBytes(mAESSynchIs));
 			
-			FileWriter fwBak = new FileWriter(mKeyPath + pPort + ".dat");
+			FileWriter fwBak = new FileWriter(mKeyPath + "oldABCKey.dat");
 			fwBak.write(contAES);
 			fwBak.flush();
 			fwBak.close();

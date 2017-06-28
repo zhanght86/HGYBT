@@ -24,7 +24,7 @@ import com.sinosoft.utility.ElementLis;
 
 /**
  * @ClassName: SpdbPLDFReqBatch
- * @Description: 批量代发上传文件
+ * @Description: 批量代发文件
  * @author sinosoft
  * @date 2017-4-21 下午5:37:03
  */

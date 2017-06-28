@@ -1,7 +1,5 @@
 package com.sinosoft.midplat.newabc.service;
 
-import java.util.Calendar;
-import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -14,7 +12,6 @@ import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
-import com.sinosoft.utility.ExeSQL;
 
 /**
  * 新单试算结果查询
@@ -67,14 +64,9 @@ public class NewContQuery extends ServiceImpl{
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			
-	} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
+		} 
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		

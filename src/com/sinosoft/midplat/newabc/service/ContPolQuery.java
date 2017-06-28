@@ -1,7 +1,6 @@
 package com.sinosoft.midplat.newabc.service;
 
 import java.util.Calendar;
-import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -69,12 +68,8 @@ public class ContPolQuery extends ServiceImpl{
 			}
 			
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null

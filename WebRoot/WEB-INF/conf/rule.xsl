@@ -104,7 +104,12 @@
 	<xsl:if test="IDType = '--'">   
 		<msg>投保人证件类型不能为空</msg>
 	</xsl:if> 
-	  
+	
+	<!-- 投保人证件类型特定校验 -->
+	<xsl:if test="IDType = '99'">   
+		<msg>投保人证件类型不符合保险公司规定</msg>
+	</xsl:if>
+	 
 	<!-- 投保人证件号码非空校验 --> 
 	<xsl:if test="string-length(IDNo)= 0">   
 		<msg>投保人证件号码不能为空</msg>
@@ -137,11 +142,11 @@
 	
 	<!-- 投保人通讯地址不能为空校验 -工行，农行 -->
 	<xsl:if test="$sTranCom !='03' and string-length(Address) = 0 "> 
-		<!-- <msg>投保人通讯地址不能为空</msg> -->
+		 <msg>投保人通讯地址不能为空</msg>
 	</xsl:if>     
 	<!-- 投保人单位地址和家庭地址不能同时为空校验 -建行 -->
 	<xsl:if test="$sTranCom ='03' and string-length(Address) = 0 and string-length(WorkAddress) = 0"> 
-		<!-- <msg>投保人单位地址和家庭地址不能同时为空</msg> -->
+		<msg>投保人单位地址和家庭地址不能同时为空</msg>
 	</xsl:if>   
 	<!-- 投保人家庭电话和单位电话不能同时为空校验 -建行 -->
 	<xsl:if test="$sTranCom ='03' and string-length(Phone) = 0 and string-length(WorkPhone) = 0 and string-length(Mobile) = 0"> 
@@ -179,6 +184,11 @@
 	 <!-- 投保人与被保人的关系校校验 -->
 	<xsl:if test = "RelaToInsured = '--'"> 
 		<msg>投保人与被保人的关系不能为空</msg>
+	</xsl:if>
+	
+	<!-- 投保人与被保人的关系校校验 -->
+	<xsl:if test = "RelaToInsured = '99'"> 
+		<msg>投保人与被保人的关系不符合保险公司规定</msg>
 	</xsl:if>    
 	
 	<!-- 投保人证件号码非空校验 lilu20141212 金华银行加了校验，其他银行要加等通知 -->
@@ -222,7 +232,12 @@
 	<xsl:if test="IDType = '--'">   
 		<msg>被保人证件类型不能为空</msg>
 	</xsl:if> 
-	  
+	
+	<!-- 被保人证件类型特定校验 -->
+	<xsl:if test="IDType = '99'">   
+		<msg>被保人证件类型不符合保险公司规定</msg>
+	</xsl:if>
+	
 	<!-- 被保人证件号码非空校验 --> 
 	<xsl:if test="string-length(IDNo)= 0">   
 		<msg>被保人证件号码不能为空</msg>
@@ -303,6 +318,11 @@
 	<!-- 受益人证件类型非空校验 -->
 	<xsl:if test="IDType = '--'">    
 		<msg>受益人证件类型不能为空</msg>
+	</xsl:if>
+	
+	<!-- 受益人证件类型特定校验 -->
+	<xsl:if test="IDType = '99'">    
+		<msg>受益人证件类型不符合保险公司规定</msg>
 	</xsl:if>  
 	  
 	<!-- 受益人证件号码非空校验 --> 
@@ -339,6 +359,11 @@
 	 <!-- 收益人与被保人的关系校校验 -->
 	<xsl:if test = "RelaToInsured = '--'"> 
 		<msg>受益人与被保人的关系不能为空</msg>
+	</xsl:if>
+	
+	<!-- 收益人与被保人的关系校校验 -->
+	<xsl:if test = "RelaToInsured = '99'"> 
+		<msg>受益人与被保人的关系不符合保险公司规定</msg>
 	</xsl:if>  
 		 
 	<xsl:if test="Grade = ''">

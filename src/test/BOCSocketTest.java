@@ -29,22 +29,22 @@ public class BOCSocketTest {
 		
 		//本地
 		String mIP = "127.0.0.1";
-		int mPort = 52004;
+		int mPort = 9005;
 		//uat
 //		String mIP = "10.1.1.116";
-//		int mPort = 52004;
+//		int mPort = 9005;
 		
 		//dat
 //		String mIP = "10.1.1.216";
-//		int mPort = 52004;
+//		int mPort = 9005;
 		
 		//VIR
 //		String mIP = "10.9.3.124";
-//		int mPort = 52004;
+//		int mPort = 9005;
 		
 		//生产环境  慎用
 //		String mIP = "10.1.19.2";
-//		int mPort = 52004;
+//		int mPort = 9005;
 		/**
 		 * 6000112-新单投保
 		 * 6000113-承保收费
@@ -54,44 +54,44 @@ public class BOCSocketTest {
 		String mFuncFlag = null;
 		
 		//新单投保
-		mFuncFlag = "1001";
-		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1001in_noStd.xml";
-		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1001out_noStd.xml";
+//		mFuncFlag = "1001";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1001in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1001out_noStd.xml";
 		
 		//缴费出单
-//		mFuncFlag = "1002";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1002in_noStd.xml" ;
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1002out_noStd.xml";
+		mFuncFlag = "1002";
+		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1002in_noStd.xml" ;
+		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1002out_noStd.xml";
 		
 		//保单重打
 //		mFuncFlag = "1003";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1003in_noStd.xml" ;
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1003out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1003in_noStd.xml" ;
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1003out_noStd.xml";
 		
 		//当日契撤
 //		mFuncFlag = "1004";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1004in_noStd.xml";
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1004out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1004in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1004out_noStd.xml";
 		
 		//续期缴费查询
 //		mFuncFlag = "1005";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1005in_noStd.xml";
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1005out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1005in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1005out_noStd.xml";
 		
 		//续期缴费
 //		mFuncFlag = "1006";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1006in_noStd.xml";
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1006out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1006in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1006out_noStd.xml";
 		
 		//退保\满期给付试算
 //		mFuncFlag = "1007";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1007in_noStd.xml";
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1007out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1007in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1007out_noStd.xml";
 		
 		//退保\满期给付确认
 //		mFuncFlag = "1008";
-//		String mInFilePath = "D:/File/task/20170320/boc/ybt_test/1008in_noStd.xml";
-//		String mOutFilePath = "D:/File/task/20170320/boc/ybt_test/1008out_noStd.xml";
+//		String mInFilePath = "D:/File/task/20170626/boc/ybt_test/1008in_noStd.xml";
+//		String mOutFilePath = "D:/File/task/20170626/boc/ybt_test/1008out_noStd.xml";
 		
 		BOCSocketTest mTestUI = new BOCSocketTest(mIP, mPort);
 		InputStream mIs = new FileInputStream(mInFilePath);

@@ -11,63 +11,78 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 import cn.ccb.secapi.SecAPI;
-import cn.ccb.secapi.SecException;
 
-public class SecurityMessageHeaderUtils
-{
-	// private static final Log log =
-	// LogFactory.getLog(SecurityMessageHeaderUtils.class);
-	public static final String log001 = "æ¥å—å¹¶å¤„ç†åçš„å®‰å…¨æŠ¥æ–‡å¤´ä¿¡æ¯=\n{0}";
-	public static final String log002 = "æœåŠ¡{0}è¿œç¨‹å®‰å…¨èŠ‚ç‚¹{1}è°ƒç”¨å®‰å…¨å‡ºé”™,é”™è¯¯ç ä¸º{2}";
-	public static final String log003 = "æœåŠ¡{0}è¿œç¨‹å®‰å…¨èŠ‚ç‚¹{1}å‘ê€¨Ï·æ±‚æ—¶è°ƒç”¨å®‰å…¨å‡ºé”¿é”™è¯¯ç ä¸º{2}";
-	public static final String log004 = "æœåŠ¡{0}è¿œç¨‹å®‰å…¨èŠ‚ç‚¹{1}å“åº”æ—¶è°ƒç”¨å®‰å…¨å‡ºé”¿é”™è¯¯ç ä¸º{2}";
-	public static final String log005 = "å‘ê€¥Î‰å…¨æŠ¥æ–‡å¤´ä¿¡æ¿\n{0}";
+
+public class SecurityMessageHeaderUtils {
+	public static final String log001 = "½ÓÊÜ²¢´¦ÀíºóµÄ°²È«±¨ÎÄÍ·ĞÅÏ¢=\n{0}";
+	public static final String log002 = "·şÎñ{0}Ô¶³Ì°²È«½Úµã{1}µ÷ÓÃ°²È«³ö´í,´íÎóÂëÎª{2}";
+	public static final String log003 = "·şÎñ{0}Ô¶³Ì°²È«½Úµã{1}·¢ËÍÇëÇóÊ±µ÷ÓÃ°²È«³ö´í,´íÎóÂëÎª{2}";
+	public static final String log004 = "·şÎñ{0}Ô¶³Ì°²È«½Úµã{1}ÏìÓ¦Ê±µ÷ÓÃ°²È«³ö´í,´íÎóÂëÎª{2}";
+	public static final String log005 = "·¢ËÍ°²È«±¨ÎÄÍ·ĞÅÏ¢=\n{0}";
 	protected static final String SEP = ":";
-	protected static final byte[] SEP_BYTES = ":".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEP_BYTES = ":"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final byte SEP_BEGIN = SEP_BYTES[0];
 	protected static final String SEP2 = "\r\n";
-	protected static final byte[] SEP2_BYTES = "\r\n".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEP2_BYTES = "\r\n"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final byte SEP2_BEGIN = SEP2_BYTES[0];
 	protected static final String SEC_ERROR_CODE = "SEC_ERROR_CODE";
-	protected static final byte[] SEC_ERROR_CODE_BYTES = "SEC_ERROR_CODE".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_ERROR_CODE_BYTES = "SEC_ERROR_CODE"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_RESP_CODE = "SEC_RESP_CODE";
-	protected static final byte[] SEC_RESP_CODE_BYTES = "SEC_RESP_CODE".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_RESP_CODE_BYTES = "SEC_RESP_CODE"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_IS_MAC = "SEC_IS_MAC";
-	protected static final byte[] SEC_IS_MAC_BYTES = "SEC_IS_MAC".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_IS_MAC_BYTES = "SEC_IS_MAC"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_IS_CONTEXT = "SEC_IS_CONTEXT";
-	protected static final byte[] SEC_IS_CONTEXT_BYTES = "SEC_IS_CONTEXT".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_IS_CONTEXT_BYTES = "SEC_IS_CONTEXT"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_IS_ENC = "SEC_IS_ENC";
-	protected static final byte[] SEC_IS_ENC_BYTES = "SEC_IS_ENC".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_IS_ENC_BYTES = "SEC_IS_ENC"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_MAC = "SEC_MAC";
-	protected static final byte[] SEC_MAC_BYTES = "SEC_MAC".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_MAC_BYTES = "SEC_MAC"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_CONTEXT = "SEC_CONTEXT";
-	protected static final byte[] SEC_CONTEXT_BYTES = "SEC_CONTEXT".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_CONTEXT_BYTES = "SEC_CONTEXT"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_ID1 = "SEC_ID1";
-	protected static final byte[] SEC_ID1_BYTES = "SEC_ID1".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_ID1_BYTES = "SEC_ID1"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_ID2 = "SEC_ID2";
-	protected static final byte[] SEC_ID2_BYTES = "SEC_ID2".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_ID2_BYTES = "SEC_ID2"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_TRACE_ID = "SEC_TRACE_ID";
-	protected static final byte[] SEC_TRACE_ID_BYTES = "SEC_TRACE_ID".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_TRACE_ID_BYTES = "SEC_TRACE_ID"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_TX_CODE = "SEC_TX_CODE";
-	protected static final byte[] SEC_TX_CODE_BYTES = "SEC_TX_CODE".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_TX_CODE_BYTES = "SEC_TX_CODE"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_TX_TYPE = "SEC_TX_TYPE";
-	protected static final byte[] SEC_TX_TYPE_BYTES = "SEC_TX_TYPE".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_TX_TYPE_BYTES = "SEC_TX_TYPE"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_LEN = "SEC_LEN";
-	protected static final byte[] SEC_LEN_BYTES = "SEC_LEN".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] SEC_LEN_BYTES = "SEC_LEN"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String FALSE_FLAG = "0";
-	protected static final byte[] FALSE_FLAG_BYTES = "0".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] FALSE_FLAG_BYTES = "0"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String TRUE_FLAG = "1";
-	protected static final byte[] TRUE_FLAG_BYTES = "1".getBytes(SecurityManagerUtils.CHARSET);
+	protected static final byte[] TRUE_FLAG_BYTES = "1"
+			.getBytes(SecurityManagerUtils.CHARSET);
 	protected static final String SEC_ERROR_CODE_SUCCESS = "000000000000";
-
+	
 	private static String mSecNodeId = null;
 	private static String mRmtSecNodeId = null;
-
+	
 	protected static final String SEC_SIGN = "SEC_SIGN";
-	protected static final byte[] SEC_SIGN_BYTES = "SEC_SIGN".getBytes(SecurityManagerUtils.CHARSET);;
+	protected static final byte[] SEC_SIGN_BYTES = "SEC_SIGN"
+			.getBytes(SecurityManagerUtils.CHARSET);
 
-	public static byte[] marshal(SecurityMessageHeader securityMessageHeader, byte[] messageData, boolean isClient)
-	{
+	public static byte[] marshal(SecurityMessageHeader securityMessageHeader,
+			byte[] messageData, boolean isClient) {
 		// log.debug("log001", new Object[] { securityMessageHeader });
 
 		String serviceId = securityMessageHeader.getServiceId();
@@ -77,10 +92,10 @@ public class SecurityMessageHeaderUtils
 		String evtTraceId = securityMessageHeader.getEvtTraceId();
 		String respCode = securityMessageHeader.getRespCode();
 		String secErrorCode = securityMessageHeader.getSecErrorCode();
-
+		
+		
 		String sign = securityMessageHeader.getSign();
-		if (StringUtils.isEmpty(sign))
-		{
+		if (StringUtils.isEmpty(sign)) {
 			sign = null;
 		}
 
@@ -93,18 +108,17 @@ public class SecurityMessageHeaderUtils
 
 		byte[] isEncFlag = FALSE_FLAG_BYTES;
 
-		if (messageData == null)
-		{
+		if (messageData == null) {
 			messageData = new byte[0];
 		}
 
-		if ((StringUtils.isEmpty(secErrorCode)) || (StringUtils.equalsIgnoreCase("000000000000", secErrorCode)))
-		{
-			try
-			{
-
-				// è·å–å®‰å…¨ç­–ç•¥
-				SecurityPolicy securityPolicy = SecurityManagerUtils.getSecPolicy(secNodeId, rmtSecNodeId);
+		if ((StringUtils.isEmpty(secErrorCode))
+				|| (StringUtils.equalsIgnoreCase("000000000000", secErrorCode))) {
+			try {
+				
+				//»ñÈ¡°²È«²ßÂÔ
+				SecurityPolicy securityPolicy =
+						SecurityManagerUtils.getSecPolicy(secNodeId, rmtSecNodeId);
 				boolean isMac = securityPolicy.isMac();
 				boolean isContext = securityPolicy.isContext();
 				boolean isEnc = securityPolicy.isEnc();
@@ -112,50 +126,54 @@ public class SecurityMessageHeaderUtils
 				securityMessageHeader.setContext(isContext);
 				securityMessageHeader.setEnc(isEnc);
 
-				// ï¿½Ç·ï¿½ï¿½Ã°ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½É°ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿¿
-				if (isContext)
-				{
+				//
+				if (isContext) {
 					isContextFlag = TRUE_FLAG_BYTES;
-					if (isClient)
-					{
-						secContext = SecurityManagerUtils.genSecContext(secNodeId, rmtSecNodeId, evtTraceId, securityMessageHeader.getSecContext()).getBytes(SecurityManagerUtils.CHARSET);
+					if (isClient) {
+						secContext =
+								SecurityManagerUtils
+										.genSecContext(
+												secNodeId,
+												rmtSecNodeId,
+												evtTraceId,
+												securityMessageHeader
+														.getSecContext())
+										.getBytes(SecurityManagerUtils.CHARSET);
 					}
 
 				}
-
-				// æ˜¯å¦æŠ¥æ–‡å¢åŠ æ•°å­—éªŒç­¾
-				if (!"".equals(sign) && sign != null)
-				{
+				
+				//ÊÇ·ñ±¨ÎÄÔö¼ÓÊı×ÖÑéÇ©
+				if(!"".equals(sign) && sign != null){
 					sign = new String(SecurityManagerUtils.genSign(secNodeId, messageData));
 				}
-
-				// æ˜¯å¦åŠ å¯†ï¼Œä»¥åŠæŠ¥æ–‡åŠ å¯†ê€¨Ş¿
-				if (isEnc)
-				{
+				
+				//ÊÇ·ñ¼ÓÃÜ£¬ÒÔ¼°±¨ÎÄ¼ÓÃÜÂß¼­
+				if (isEnc) {
 					isEncFlag = TRUE_FLAG_BYTES;
-					messageData = SecurityManagerUtils.pkgEncrypt(secNodeId, rmtSecNodeId, messageData);
+					messageData =
+							SecurityManagerUtils.pkgEncrypt(secNodeId,
+									rmtSecNodeId, messageData);
 				}
 
 				secLen = StringUtils.leftPad(messageData.length + "", 6, '0');
 
-				// ï¿½Ç·ï¿½MacĞ£ï¿½é£¬ï¿½ï¿½ï¿½ï¿½ï¿½MacĞ£ï¿½ï¿½ï¿½ï¿½
-				if (isMac)
-				{
+				//
+				if (isMac) {
 					isMacFlag = TRUE_FLAG_BYTES;
-					mac = SecurityManagerUtils.mac(secNodeId, rmtSecNodeId, messageData);
+					mac =
+							SecurityManagerUtils.mac(secNodeId, rmtSecNodeId,
+									messageData);
 				}
-			}
-			catch (Throwable t)
-			{
-				if (isClient)
-				{
+			} catch (Throwable t) {
+				if (isClient) {
 					// log.error("log003", t, new Object[] { serviceId,
 					// rmtSecNodeId, t.getMessage() });
-					if ((t instanceof CommonRuntimeException))
-					{
+					if ((t instanceof CommonRuntimeException)) {
 						throw ((CommonRuntimeException) t);
 					}
-					throw new SecurityException("XSSF301500AC", t, new Object[] { t.getLocalizedMessage() });
+//					throw new SecurityException("XSSF301500AC", t,
+//							new Object[] { t.getLocalizedMessage() });
 				}
 
 				// secErrorCode = SwapAreaUtils.getSecErrorCode();
@@ -163,51 +181,41 @@ public class SecurityMessageHeaderUtils
 					secErrorCode = "XSSF301500AC";
 				// log.error("log004", t, new Object[] { serviceId,
 				// rmtSecNodeId, secErrorCode });
-			}
-			finally
-			{
+			} finally {
 				// SwapAreaUtils.setSecErrorCode(null);
 			}
-		}
-		else if (!isClient)
-		{
+		} else if (!isClient) {
 			if (securityMessageHeader.isContext())
 				isContextFlag = TRUE_FLAG_BYTES;
-			else
-			{
+			else {
 				isContextFlag = FALSE_FLAG_BYTES;
 			}
 
 			if (securityMessageHeader.isMac())
 				isMacFlag = TRUE_FLAG_BYTES;
-			else
-			{
+			else {
 				isMacFlag = FALSE_FLAG_BYTES;
 			}
 
 			if (securityMessageHeader.isEnc())
 				isEncFlag = TRUE_FLAG_BYTES;
-			else
-			{
+			else {
 				isEncFlag = FALSE_FLAG_BYTES;
 			}
 
 		}
 
-		if (StringUtils.isEmpty(secErrorCode))
-		{
+		if (StringUtils.isEmpty(secErrorCode)) {
 			secErrorCode = "000000000000";
 		}
 
-		if (secLen == null)
-		{
+		if (secLen == null) {
 			secLen = StringUtils.leftPad(messageData.length + "", 6, '0');
 		}
 
 		ByteArrayOutputStream os = null;
-		try
-		{
-			// ï¿½ï¿½ï¿½ï¿½Í·ï¿½Ö½ï¿½ï¿½ï¿½
+		try {
+			//
 			os = new ByteArrayOutputStream();
 
 			outputHeader(SEC_ERROR_CODE_BYTES, secErrorCode, os);
@@ -223,9 +231,8 @@ public class SecurityMessageHeaderUtils
 			outputHeader(SEC_TX_TYPE_BYTES, serviceType, os);
 			outputHeader(SEC_RESP_CODE_BYTES, respCode, os);
 			outputHeader(SEC_LEN_BYTES, secLen, os);
-
-			if (null != sign)
-			{
+			
+			if (null != sign) {
 				outputHeader(SEC_SIGN_BYTES, sign, os);
 			}
 
@@ -235,29 +242,26 @@ public class SecurityMessageHeaderUtils
 				os.write(messageData);
 			// log.debug("log005", new Object[] { new String(os.toByteArray())
 			// });
-
-			// å®‰å…¨ç»„ä»¶é€¿Çº
-			// System.out.println("é€¿Çºå®‰å…¨èŠ‚ç‚¹å·ä¸ºï¼¿+secNodeId);
-			// SecAPI.nodeFinal(secNodeId);
-			// System.out.println("é€¿Çºå®‰å…¨èŠ‚ç‚¹å®Œæˆ");
-		}
-		catch (Throwable t)
-		{
+			
+			//°²È«×é¼şÍË³ö
+//			System.out.println("ÍË³ö°²È«½ÚµãºÅÎª£º"+secNodeId);
+//			SecAPI.nodeFinal(secNodeId);
+//			System.out.println("ÍË³ö°²È«½ÚµãÍê³É");
+		} catch (Throwable t) {
 			throw new SecurityException("XSSF301500AD", t, new Object[0]);
 		}
-
+		
 		return os.toByteArray();
 	}
 
-	public static Object[] ummarshal(byte[] message, boolean isServer, SecurityMessageHeader securityMessageHeader)
-	{
-		// è¿”å›ç»“æœæ•°ç»„å¯¹è±¡ï¼¿ä¸ºå®‰å…¨å¤´ï¼¿ä¸ºæŠ¥æ–‡ä½“
+	public static Object[] ummarshal(byte[] message, boolean isServer,
+			SecurityMessageHeader securityMessageHeader) {
+		//·µ»Ø½á¹ûÊı×é¶ÔÏó£¬0Îª°²È«Í·£¬1Îª±¨ÎÄÌå
 		Object[] retObjs = new Object[2];
 		retObjs[0] = securityMessageHeader;
 		retObjs[1] = new byte[0];
 
-		if ((message == null) || (message.length == 0))
-		{
+		if ((message == null) || (message.length == 0)) {
 			return retObjs;
 		}
 
@@ -279,56 +283,44 @@ public class SecurityMessageHeaderUtils
 		byte[] key = null;
 		byte[] value = null;
 		int i = 0;
-		try
-		{
-			for (; i < messageLength; i++)
-			{
-				if (message[i] == SEP_BEGIN)
-				{
+		try {
+			for (; i < messageLength; i++) {
+				if (message[i] == SEP_BEGIN) {
 					contentLength = content.size();
 					key = new byte[contentLength];
-					for (int j = 0; j < contentLength; j++)
-					{
+					for (int j = 0; j < contentLength; j++) {
 						key[j] = ((Byte) content.get(j)).byteValue();
 					}
 					content = new ArrayList();
-				}
-				else if (message[i] == SEP2_BEGIN)
-				{
-					if (i + 2 <= messageLength)
-					{
+				} else if (message[i] == SEP2_BEGIN) {
+					if (i + 2 <= messageLength) {
 						contentLength = content.size();
 						value = new byte[contentLength];
-						for (int k = 0; k < contentLength; k++)
-						{
+						for (int k = 0; k < contentLength; k++) {
 							value[k] = ((Byte) content.get(k)).byteValue();
 						}
-						container.put(new String(key, SecurityManagerUtils.CHARSET), value);
-						if ((i + 2 < messageLength) && (message[(i + 2)] == SEP2_BEGIN))
-						{
+						container.put(new String(key,
+								SecurityManagerUtils.CHARSET), value);
+						if ((i + 2 < messageLength)
+								&& (message[(i + 2)] == SEP2_BEGIN)) {
 							i += 4;
 							break;
 						}
 						content = new ArrayList();
 
 						i++;
+					} else {
+						throw new SecurityException("XSSF301500AE",
+								new Object[0]);
 					}
-					else
-					{
-						throw new SecurityException("XSSF301500AE", new Object[0]);
-					}
-				}
-				else
-				{
+				} else {
 					content.add(Byte.valueOf(message[i]));
 				}
 			}
 
-			if (i < messageLength)
-			{
+			if (i < messageLength) {
 				messageBody = new byte[messageLength - i];
-				for (int l = 0; i < messageLength; l++)
-				{
+				for (int l = 0; i < messageLength; l++) {
 					messageBody[l] = message[i];
 
 					i++;
@@ -336,7 +328,6 @@ public class SecurityMessageHeaderUtils
 
 			}
 
-			// SecAPI.nodeInit(rmtSecNodeId);
 			secNodeId = getStringHeader("SEC_ID2", container);
 			rmtSecNodeId = getStringHeader("SEC_ID1", container);
 			secContext = getStringHeader("SEC_CONTEXT", container);
@@ -344,99 +335,119 @@ public class SecurityMessageHeaderUtils
 			sign = getStringHeader("SEC_SIGN", container);
 			System.out.println("secNodeId=============" + secNodeId);
 			System.out.println("rmtSecNodeId=============" + rmtSecNodeId);
-			System.out.println("Library è·¯å¾„" + System.getProperty("java.library.path"));
+//			mRmtSecNodeId = secNodeId;
+//			mSecNodeId = rmtSecNodeId;
+
+			System.out.println("Library Â·¾¶£º"+System.getProperty("java.library.path"));
 			
-			try
-			{
+//			if ((isServer)
+//					&& (!SecurityManagerUtils.getSecNodeId().equals(secNodeId))) {
+//				throw new SecurityException("XSSF301500AF",
+//						new Object[] { secNodeId });
+//			}
+
+//			secErrorCode = getStringHeader("SEC_ERROR_CODE", container);
+//			if ((!isServer)
+//					&& (!StringUtils.equalsIgnoreCase(secErrorCode,
+//							"000000000000"))) {
+//				CommonRuntimeException com =
+//						new CommonRuntimeException("XSSF301500AK",
+//								new Object[] { secErrorCode, rmtSecNodeId });
+//				// log.error("log002", com, new Object[] {
+//				// getStringHeader("SEC_TX_CODE", container), secNodeId,
+//				// secErrorCode });
+//				throw com;
+//			}
+//			//°²È«×é¼ş³õÊ¼»¯
+			try{
+				System.out.println("³õÊ¼»¯°²È«½ÚµãºÅÎª£º"+secNodeId);
 				SecAPI.nodeInit(secNodeId);
-			}
-			catch(Exception e)
-			{
+				System.out.println("³õÊ¼»¯°²È«½ÚµãÍê³É");
+			}catch(Exception e){
 				e.printStackTrace();
+				System.out.println("³õÊ¼»¯°²È«½ÚµãÊ§°Ü¡£¡£¡£");
 			}
-
-		
-
-			// è·å–å®‰å…¨ç­–ç•¥
-			System.out.println("secNodeId:" + secNodeId + "   rmtSecNodeId" + rmtSecNodeId);
+			
+			//»ñÈ¡°²È«²ßÂÔ
 			SecurityPolicy securityPolicy = SecurityManagerUtils.getSecPolicy(secNodeId, rmtSecNodeId);
 			isMac = securityPolicy.isMac();
 			isContext = securityPolicy.isContext();
 			isEnc = securityPolicy.isEnc();
-			// System.out.println("isMac = "+isMac
-			// +"  SEC_IS_MAC = "+getBooleanHeader("SEC_IS_MAC", container));
-			if (isMac != getBooleanHeader("SEC_IS_MAC", container))
-			{
-				// System.out.println("æ ¡éªŒMACã€‚ä€£ä€£ä€£ä€£ä€£ã¿¢);
-				throw new SecurityException("XSSF301500AH", new Object[] { Boolean.valueOf(getBooleanHeader("SEC_IS_MAC", container)) });
+//			System.out.println("isMac = "+isMac +"  SEC_IS_MAC = "+getBooleanHeader("SEC_IS_MAC", container));
+			if (isMac != getBooleanHeader("SEC_IS_MAC", container)) {
+//				System.out.println("Ğ£ÑéMAC¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£");
+				throw new SecurityException("XSSF301500AH",
+						new Object[] { Boolean.valueOf(getBooleanHeader(
+								"SEC_IS_MAC", container)) });
 			}
-			// è¿›è¡Œå®‰å…¨ä¸Šä¸‹æ–‡ä€ACã€æŠ¥æ–‡è§£å¯¿
-			if (isMac)
-			{
-				// System.out.println("MAC å€¼ï¼š"+new String((byte[])
-				// container.get("SEC_MAC")));
-				// System.out.println("æŠ¥æ–‡ä½“ï¼š"+new String(messageBody , "UTF-8"));
-				SecurityManagerUtils.macVerify(secNodeId, rmtSecNodeId, messageBody, (byte[]) container.get("SEC_MAC"));
+			//½øĞĞ°²È«ÉÏÏÂÎÄ¡¢MAC¡¢±¨ÎÄ½âÃÜ
+			if (isMac) {
+//				System.out.println("MAC Öµ£º"+new String((byte[]) container.get("SEC_MAC")));
+//				System.out.println("±¨ÎÄÌå£º"+new String(messageBody , "UTF-8"));
+				SecurityManagerUtils.macVerify(secNodeId, rmtSecNodeId,
+						messageBody, (byte[]) container.get("SEC_MAC"));
 			}
-			// è¿›è¡Œå®‰å…¨ä¸Šä¸‹æ–‡æ ¡éª¿
-			if (isContext != getBooleanHeader("SEC_IS_CONTEXT", container))
-			{
-				throw new SecurityException("XSSF301500AI", new Object[] { Boolean.valueOf(getBooleanHeader("SEC_IS_CONTEXT", container)) });
-			}
-
-			if ((isServer) && (isContext))
-			{
-				SecurityManagerUtils.checkSecContext(secNodeId, rmtSecNodeId, evtTraceId, secContext);
+			//½øĞĞ°²È«ÉÏÏÂÎÄĞ£Ñé
+			if (isContext != getBooleanHeader("SEC_IS_CONTEXT", container)) {
+				throw new SecurityException("XSSF301500AI",
+						new Object[] { Boolean.valueOf(getBooleanHeader(
+								"SEC_IS_CONTEXT", container)) });
 			}
 
-			if (isEnc != getBooleanHeader("SEC_IS_ENC", container))
-			{
-				throw new SecurityException("XSSF301500AJ", new Object[] { Boolean.valueOf(getBooleanHeader("SEC_IS_ENC", container)) });
+			if ((isServer) && (isContext)) {
+				SecurityManagerUtils.checkSecContext(secNodeId, rmtSecNodeId,
+						evtTraceId, secContext);
+			}
+			
+
+			if (isEnc != getBooleanHeader("SEC_IS_ENC", container)) {
+				throw new SecurityException("XSSF301500AJ",
+						new Object[] { Boolean.valueOf(getBooleanHeader(
+								"SEC_IS_ENC", container)) });
 			}
 
-			if (isEnc)
-			{
-				messageBody = SecurityManagerUtils.pkgDecrypt(secNodeId, rmtSecNodeId, messageBody);
+			if (isEnc) {
+				messageBody =
+						SecurityManagerUtils.pkgDecrypt(secNodeId,
+								rmtSecNodeId, messageBody);
 			}
-			// éªŒè¯ç­¾å
-			// System.out.println("æŠ¥æ–‡å¤´ä¸­ç­¾åå€¼ï¼š"+sign);
-			if (sign != null && !"".equals(sign))
-			{
+			//ÑéÖ¤Ç©Ãû
+//			System.out.println("±¨ÎÄÍ·ÖĞÇ©ÃûÖµ£º"+sign);
+			if(sign != null && !"".equals(sign)){
 				SecurityManagerUtils.signVerify(rmtSecNodeId, messageBody, sign.getBytes());
 			}
-		}
-		catch (Throwable t)
-		{
-			if (isServer)
-			{
+		} catch (Throwable t) {
+			if (isServer) {
 				// secErrorCode = SwapAreaUtils.getSecErrorCode();
-				if (StringUtils.isEmpty(secErrorCode))
-				{
+				if (StringUtils.isEmpty(secErrorCode)) {
 					if ((t instanceof CommonRuntimeException))
 						secErrorCode = ((CommonRuntimeException) t).getCode();
-					else
-					{
+					else {
 						secErrorCode = "XSSF301500AC";
 					}
 				}
 			}
-			if ((t instanceof CommonRuntimeException))
-			{
+			if ((t instanceof CommonRuntimeException)) {
 				throw ((CommonRuntimeException) t);
 			}
-			throw new SecurityException("XSSF301500AC", t, new Object[] { t.getLocalizedMessage() });
-		}
-		finally
-		{
+//			throw new SecurityException("XSSF301500AC", t, new Object[] { t
+//					.getLocalizedMessage() });
+		} finally {
 			// SwapAreaUtils.setSecErrorCode(null);
-			securityMessageHeader.setMac(getBooleanHeader("SEC_IS_MAC", container));
-			securityMessageHeader.setContext(getBooleanHeader("SEC_IS_CONTEXT", container));
-			securityMessageHeader.setEnc(getBooleanHeader("SEC_IS_ENC", container));
-			securityMessageHeader.setServiceId(getStringHeader("SEC_TX_CODE", container));
+			securityMessageHeader.setMac(getBooleanHeader("SEC_IS_MAC",
+					container));
+			securityMessageHeader.setContext(getBooleanHeader(
+					"SEC_IS_CONTEXT", container));
+			securityMessageHeader.setEnc(getBooleanHeader("SEC_IS_ENC",
+					container));
+			securityMessageHeader.setServiceId(getStringHeader("SEC_TX_CODE",
+					container));
 
-			securityMessageHeader.setServiceType(getStringHeader("SEC_TX_TYPE", container));
+			securityMessageHeader.setServiceType(getStringHeader(
+					"SEC_TX_TYPE", container));
 
-			securityMessageHeader.setRespCode(getStringHeader("SEC_RESP_CODE", container));
+			securityMessageHeader.setRespCode(getStringHeader("SEC_RESP_CODE",
+					container));
 
 			securityMessageHeader.setSecErrorCode(secErrorCode);
 			securityMessageHeader.setSecNodeId(secNodeId);
@@ -449,57 +460,53 @@ public class SecurityMessageHeaderUtils
 		}
 
 		retObjs[1] = messageBody;
-		// System.out.println("*********************** ummarshal 3 **************************");
+//		System.out.println("*********************** ummarshal 3 **************************");
 		return retObjs;
 	}
 
-	public static byte[] pinDecrypt(byte[] cipherData)
-	{
-		// System.out.println("è¿›å…¥æ•æ„Ÿå­—æ®µè§£å¯†ã€‚ä€£ä€£ã¿¢);
-		// å®‰å…¨ç»„ä»¶åˆå§‹åŒ¿
-		// try {
-		// SecAPI.nodeInit(mRmtSecNodeId);
-		// } catch (SecException e) {
-		// e.printStackTrace();
-		// }
-		// System.out.println("æœ¬åœ°å®‰å…¨èŠ‚ç‚¹å·ï¼š"+mRmtSecNodeId
-		// +"      å¯¹ç«¯å®‰å…¨èŠ‚ç‚¹å·ï¼š"+mSecNodeId +"      " +
-		// "è§£å¯†å†…å®¹ï¼¿+new String(cipherData));
-		byte[] secDecryptBytes = SecurityManagerUtils.pinDecrypt(mRmtSecNodeId, mSecNodeId, cipherData);
-
-		// System.out.println("è§£å¯†åæ€¤Øºï¼š"+new String(secDecryptBytes));
-
+	public static byte[] pinDecrypt(byte[] cipherData){
+//		System.out.println("½øÈëÃô¸Ğ×Ö¶Î½âÃÜ¡£¡£¡£¡£¡£¡£");
+		//°²È«×é¼ş³õÊ¼»¯
+//		try {
+//			SecAPI.nodeInit(mRmtSecNodeId);
+//		} catch (SecException e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println("±¾µØ°²È«½ÚµãºÅ£º"+mRmtSecNodeId +"      ¶Ô¶Ë°²È«½ÚµãºÅ£º"+mSecNodeId +"      " +
+//				"½âÃÜÄÚÈİ£º"+new String(cipherData));
+		byte[] secDecryptBytes =  SecurityManagerUtils.pinDecrypt(mRmtSecNodeId, mSecNodeId, cipherData);
+		
+//		System.out.println("½âÃÜºóÖµÎª£º"+new String(secDecryptBytes));
+		
 		return secDecryptBytes;
 	}
-
-	private static void outputHeader(byte[] headerName, byte[] headerValue, OutputStream outputStream) throws IOException
-	{
+	
+	private static void outputHeader(byte[] headerName, byte[] headerValue,
+			OutputStream outputStream) throws IOException {
 		outputStream.write(headerName);
 		outputStream.write(SEP_BYTES);
 		outputStream.write(headerValue);
 		outputStream.write(SEP2_BYTES);
 	}
 
-	private static void outputHeader(byte[] headerName, String headerValue, OutputStream outputStream) throws IOException
-	{
+	private static void outputHeader(byte[] headerName, String headerValue,
+			OutputStream outputStream) throws IOException {
 		byte[] bytesValue = new byte[0];
-		if (headerValue != null)
-		{
+		if (headerValue != null) {
 			bytesValue = headerValue.getBytes(SecurityManagerUtils.CHARSET);
 		}
 		outputHeader(headerName, bytesValue, outputStream);
 	}
 
-	private static boolean getBooleanHeader(String headerName, Map<String, byte[]> container)
-	{
+	private static boolean getBooleanHeader(String headerName,
+			Map<String, byte[]> container) {
 		return "1".equals(getStringHeader(headerName, container));
 	}
 
-	private static String getStringHeader(String headerName, Map<String, byte[]> container)
-	{
+	private static String getStringHeader(String headerName,
+			Map<String, byte[]> container) {
 		byte[] byteHeader = (byte[]) container.get(headerName);
-		if ((byteHeader == null) || (byteHeader.length == 0))
-		{
+		if ((byteHeader == null) || (byteHeader.length == 0)) {
 			return null;
 		}
 

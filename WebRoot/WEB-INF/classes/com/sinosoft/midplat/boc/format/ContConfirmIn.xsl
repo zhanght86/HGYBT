@@ -20,21 +20,24 @@
       <InNoDoc><xsl:value-of select="Head/InNoDoc"/></InNoDoc>
    </Head>
    <Body>
-      <ProposalPrtNo>
-        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/>
-      </ProposalPrtNo>
-      <Prem>
-        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Main/Premium)"/>
-      </Prem>
-      <OldTranNo><xsl:value-of select="Main/OriginTransNo"/></OldTranNo>
-      <ContNo />
-      <ContPrtNo>
-        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/PrintNo)"/>
-      </ContPrtNo>
-      <PayMode />
-      <BkAcctNo><xsl:value-of select="Main/PayAcc"/></BkAcctNo>
-      <!-- 缴费方式 -->
-      <BkPayMode></BkPayMode>
+   		<!-- 保险单号 -->
+        <ContNo />
+        <!-- 投保单(印刷)号 -->
+      	<ProposalPrtNo>
+        	<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/>
+      	</ProposalPrtNo>
+      	<!-- 保单合同印刷号 -->
+      	<ContPrtNo>
+	        <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/PrintNo)"/>
+      	</ContPrtNo>
+      	<Prem>
+        	<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Main/Premium)"/>
+      	</Prem>
+      	<OldTranNo><xsl:value-of select="Main/OriginTransNo"/></OldTranNo>
+      	<PayMode />
+      	<BkAcctNo><xsl:value-of select="Main/PayAcc"/></BkAcctNo>
+      	<!-- 缴费方式 -->
+      	<BkPayMode></BkPayMode>
    </Body>
 </TranData>
 </xsl:template>

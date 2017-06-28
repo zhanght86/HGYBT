@@ -5,7 +5,7 @@
 	xmlns:java="http://xml.apache.org/xslt/java"
 	exclude-result-prefixes="java">
 
-	<xsl:template match="/">
+	<xsl:template match="TranData">
 		<TX>
 			<!-- 报文头 -->
 			<TX_HEADER>
@@ -87,78 +87,74 @@
 	      			<ENTITY>
 			        	<APP_ENTITY>
 			        			<!-- 投保人名称-->
-								<Plchd_Nm><xsl:value-of select="/TranData/Body/AppntName" /></Plchd_Nm>
+								<Plchd_Nm><xsl:value-of select="Body/AppntName" /></Plchd_Nm>
 								<!--保险标的物名称 -->
-								<Ins_Ulyg_Nm><xsl:value-of select="/TranData/Body/InsuFlag" /></Ins_Ulyg_Nm>
+								<Ins_Ulyg_Nm><xsl:value-of select="Body/Corpore" /></Ins_Ulyg_Nm>
 								<!-- 第一受益人名称-->
-								<Fst_Benf_Nm><xsl:value-of select="/TranData/Body/BnfName" /></Fst_Benf_Nm>
+								<Fst_Benf_Nm><xsl:value-of select="Body/BnfName1st" /></Fst_Benf_Nm>
 								<!-- 投保保额  -->
-								<Ins_Cvr><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToDouble(/TranData/Body/Amnt)" /></Ins_Cvr>
+								<Ins_Cvr><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToDouble(Body/Amnt)" /></Ins_Cvr>
 								<!-- 经办人名称-->
-								<RspbPsn_Nm><xsl:value-of select="/TranData/Body/AgentName" /></RspbPsn_Nm>
+								<RspbPsn_Nm><xsl:value-of select="Body/HandlerName" /></RspbPsn_Nm>
 								<!-- 经办人证件类型代码-->
 								<RspbPsn_Crdt_TpCd>
 									<xsl:call-template name="tran_idtype">
 										<xsl:with-param name="idtype">
-											<xsl:value-of select="/TranData/Body/IDType" />
+											<xsl:value-of select="Body/HandlerIDType" />
 									</xsl:with-param></xsl:call-template>
 								</RspbPsn_Crdt_TpCd>
 								<!-- 经办人证件号码-->
-								<RspbPsn_Crdt_No><xsl:value-of select="/TranData/Body/IDNo" /></RspbPsn_Crdt_No>
+								<RspbPsn_Crdt_No><xsl:value-of select="Body/HandlerIDNo" /></RspbPsn_Crdt_No>
 								<!--保单生效日期 -->
-								<InsPolcy_EfDt><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(/TranData/Body/InsuStartDate)" /></InsPolcy_EfDt>
+								<InsPolcy_EfDt><xsl:value-of select="Body/ContStartDate" /></InsPolcy_EfDt>
 								<!-- 保单失效日期-->
-								<InsPolcy_ExpDt><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date10to8(/TranData/Body/InsuEndDate)" /></InsPolcy_ExpDt>
+								<InsPolcy_ExpDt><xsl:value-of select="Body/ContEndDate" /></InsPolcy_ExpDt>
 								<!-- 代理保险合约状态代码-->
 								<AcIsAR_StCd>
-									<xsl:call-template name="tran_policystatus">
-										<xsl:with-param name="policystatus">
-											<xsl:value-of select="/TranData/Body/PolicyStatus" />
+									<xsl:call-template name="tran_contstate">
+										<xsl:with-param name="contstate">
+											<xsl:value-of select="Body/ContState" />
 									</xsl:with-param></xsl:call-template>
 								</AcIsAR_StCd>
 								<!-- 被保人名称-->
-								<Rcgn_Nm><xsl:value-of select="/TranData/Body/InsuredName" /></Rcgn_Nm>
+								<Rcgn_Nm><xsl:value-of select="Body/InsuredName" /></Rcgn_Nm>
 								<!-- 投保份数-->
-								<Ins_Cps><xsl:value-of select="/TranData/Body/Mult" /></Ins_Cps>
+								<Ins_Cps><xsl:value-of select="Body/Mult" /></Ins_Cps>
 			        	</APP_ENTITY>
 			        </ENTITY>
 	      	</TX_BODY>
 		</TX>
 	</xsl:template>
 	
-		<!-- 证件类型 -->
+	<!-- 证件类型 核心一个值对应建行多个值 待与核心确认-->
 	<xsl:template name="tran_idtype">
 		<xsl:param name="idtype"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$idtype = '0'">1010</xsl:when><!-- 公民身份证号码 -->
-			<xsl:when test="$idtype = '2'">1022</xsl:when><!-- 军官证 -->
-			<xsl:when test="$idtype = 'D'">1032</xsl:when><!-- 警官证 -->
-			<xsl:when test="$idtype = 'A'">1021</xsl:when><!-- 解放军士兵证 -->
-			<xsl:when test="$idtype = '4'">1040</xsl:when><!-- 户口簿 -->
-			<xsl:when test="$idtype = 'B'">1080</xsl:when><!-- (港澳)回乡证及通行证 -->
-			<xsl:when test="$idtype = '1'">1050</xsl:when><!-- 护照-->
-			<xsl:when test="$idtype = '5'">1060</xsl:when><!-- 学生证-->
-			<xsl:when test="$idtype = '6'">1999</xsl:when><!-- 个人其他证件-->
-			<xsl:when test="$idtype = '3'">1100</xsl:when><!-- 驾照 -->
-			<xsl:when test="$idtype = 'C'">1011</xsl:when><!-- 临时居民身份证 -->
-			<xsl:when test="$idtype = 'E'">1160</xsl:when><!-- 台湾居民身份证 台胞证 -->
+			<xsl:when test="$idtype = '0'">1010</xsl:when><!-- 身份证 -->
+			<xsl:when test="$idtype = '1'">1052</xsl:when><!-- 护照 -->
+			<xsl:when test="$idtype = '2'">1020</xsl:when><!-- (军人证)军官证 -->
+			<xsl:when test="$idtype = '4'">1040</xsl:when><!-- 户口本 -->
+			<xsl:when test="$idtype = 'F'">1070</xsl:when><!-- 港、澳、台通行证 -->
 			<xsl:otherwise>
-					<xsl:value-of select="2999" /><!-- 其他 -->
+					<xsl:value-of select="1999" /><!-- 其他 -->
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
-		<!--代理保险合约状态代码 -->
-	<xsl:template name="tran_policystatus">
-		<xsl:param name="policystatus"></xsl:param>
+	<!-- 代理保险合约状态代码 
+	1-承保 
+	2-犹退终止 
+	3-退保终止 
+	B-待对账
+	 -->
+	<xsl:template name="tran_contstate">
+		<xsl:param name="contstate"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$policystatus = '1'">076011</xsl:when><!-- 保单已有效，客户已签收 -->
-			<xsl:when test="$policystatus = '4'">076034</xsl:when><!-- 失效-->
-			<xsl:when test="$policystatus = 'B'">076034</xsl:when><!-- 没有对账-->
-			<xsl:when test="$policystatus = 'F'">076034</xsl:when><!-- 对账失败-->
-			<xsl:otherwise>--</xsl:otherwise>
+			<xsl:when test="$contstate = '1'">076036</xsl:when><!-- 承保 -->
+			<xsl:when test="$contstate = '2'">076024</xsl:when><!-- 犹退终止-->
+			<xsl:when test="$contstate = '3'">076025</xsl:when><!-- 退保终止-->
+			<xsl:when test="$contstate = 'B'">076047</xsl:when><!-- 待对账-->
+			<xsl:otherwise></xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 </xsl:stylesheet>	
-
-

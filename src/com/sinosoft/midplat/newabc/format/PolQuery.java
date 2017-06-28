@@ -1,9 +1,7 @@
 package com.sinosoft.midplat.newabc.format;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -26,8 +24,7 @@ public class PolQuery extends XmlSimpFormat {
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into PolQuery.noStd2Std()...");
 		header=(Element)pNoStdXml.getRootElement().getChild("Header").clone();
-		Document mStdXml = 
-			PolQueryInXsl.newInstance().getCache().transform(pNoStdXml);
+		Document mStdXml = PolQueryInXsl.newInstance().getCache().transform(pNoStdXml);
 		return mStdXml;
 	}
 	
@@ -35,8 +32,7 @@ public class PolQuery extends XmlSimpFormat {
 		cLogger.info("Into PolQuery.std2NoStd()...");
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
-		Document mNoStdXml = 
-			PolQueryOutXsl.newInstance().getCache().transform(pStdXml);
+		Document mNoStdXml = PolQueryOutXsl.newInstance().getCache().transform(pStdXml);
 		
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
 		//为请求业务报文头信息加入返回码和返回信息.把请求的业务报文头加入到返回报文中返回给银行。

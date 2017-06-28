@@ -40,8 +40,8 @@ public class PrintCont extends XmlSimpFormat {
 	public static void main(String[] args) throws Exception{
 	
 		System.out.println("³ÌÐò¿ªÊ¼¡­");
-		String mInFilePath = "D:/File/task/20170420/spdb/unit_test/23465_33_29_outSvc.xml";
-		String mOutFilePath = "D:/File/task/20170420/spdb/unit_test/23465_36_1004_out.xml";
+		String mInFilePath = "D:/File/task/20170424/spdb/unit_test/23465_33_29_outSvc.xml";
+		String mOutFilePath = "D:/File/task/20170424/spdb/unit_test/23465_36_1004_out.xml";
 		InputStream mIs = new FileInputStream(mInFilePath);
 		Document mInXmlDoc = JdomUtil.build(mIs);
 		mIs.close();

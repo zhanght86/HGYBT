@@ -1,38 +1,25 @@
 package com.sinosoft.midplat.newccb.bat;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.reflect.Constructor;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
 import java.util.TimerTask;
-
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
-
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.bat.BatConf;
-import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
-import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlConf;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newccb.NewCcbConf;
-import com.sinosoft.midplat.service.Service;
-
 import com.sinosoft.utility.ElementLis;
 import com.sinosoft.utility.ExeSQL;
 import com.sinosoft.utility.SSRS;
@@ -41,6 +28,7 @@ public class NewCcbBQBlc extends TimerTask implements XmlTag
 {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
+	@SuppressWarnings("unused")
 	private XmlConf cThisConf;
 	private int cFuncFlag;
 	protected Date cTranDate;

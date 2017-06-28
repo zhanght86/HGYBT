@@ -325,7 +325,8 @@
 													<xsl:if test = "RelaToInsured = '06'">0133010</xsl:if>
 												</Benf_And_Rcgn_ReTpCd>
 									    		<!-- 受益比例 -->
-											    <Bnft_Pct><xsl:value-of select="Lot"/></Bnft_Pct>
+											   <!--  <Bnft_Pct><xsl:value-of select="Lot"/></Bnft_Pct> -->
+											    <Bnft_Pct><xsl:value-of select="format-number(Lot div 100.00 , '#0.0000' )" /></Bnft_Pct>
 									    		<!-- 受益人通讯地址 -->
 											    <Benf_Comm_Adr><xsl:value-of select="Address"/></Benf_Comm_Adr>
 									    	</Benf_Detail>

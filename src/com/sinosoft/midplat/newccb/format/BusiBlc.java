@@ -23,14 +23,12 @@ public class BusiBlc extends XmlSimpFormat
 	private String mSYS_RECV_TIME = null;
 	/**服务响应时间*/
 	private String mSYS_RESP_TIME = null;
-	private Document noStdDoc = new Document();
 	private String typeCode = null;
 	
 	/**交易流水号*/
 	private String tranNo = null;
 	/**交易日期*/
 	private String tranDate = null;
-	private String sFuncflag = null;
 	private String sysTxCode = null;
 	private Element oldTxHeader = null;
 	private Element oldComEntity = null;
@@ -43,7 +41,6 @@ public class BusiBlc extends XmlSimpFormat
 	public Document noStd2Std(Document pNoStdXml) throws Exception
 	{
 		cLogger.info("Into BusiBlc.noStd2Std()...");
-		noStdDoc = pNoStdXml;
 		cLogger.info("非标准报文："+JdomUtil.toStringFmt(pNoStdXml));
 		oldTxHeader = (Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		oldComEntity = (Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").clone();
@@ -68,21 +65,17 @@ public class BusiBlc extends XmlSimpFormat
 		cLogger.info("Into BusiBlc.std2NoStd()...");
 		Document mNoStdXml = null;
 		//日终与保险公司对账（账务类）
-		if (typeCode.equals("P53817103"))
-		{
+		if (typeCode.equals("P53817103")){
 			mNoStdXml = DailyZWBlcOutXsl.newInstance().getCache().transform(pStdXml);
 		}
 		//日终与保险公司对账（保全类）
-		if (typeCode.equals("P53817104"))
-		{
+		if (typeCode.equals("P53817104")){
 			mNoStdXml = DailyBQBlcOutXsl.newInstance().getCache().transform(pStdXml);
 		}
 		//发送银行端单证信息
-		if (typeCode.equals("P53817105"))
-		{
+		if(typeCode.equals("P53817105")){
 			mNoStdXml = SendDocumentOutXsl.newInstance().getCache().transform(pStdXml);
 		}
-
 		// 服务响应时间
 		mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 

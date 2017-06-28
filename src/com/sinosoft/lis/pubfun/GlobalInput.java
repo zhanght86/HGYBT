@@ -20,7 +20,7 @@ public class GlobalInput
     public String Operator;
     /** 当前管理机构 */
     public String ManageCom;
-    /** 当前管理机构 */
+    /** 当前管理机构名称 */
     public String ManageComName;
     /** 当前登陆机构 */
     public String ComCode;

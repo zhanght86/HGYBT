@@ -14,7 +14,6 @@ import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
-import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.AuthorityCheck;
@@ -93,7 +92,7 @@ public class ContRePrint extends ServiceImpl {
 			cLogger.info(tSqlStr);
 			ContSet mContSet = new ContDB().executeQuery(tSqlStr);
 			if (1 != mContSet.size()) {
-				throw new MidplatException("非当日同一网点所出保单，不能进行该操作！");
+				throw new MidplatException("非当日所出保单，不能进行该操作！");
 			}
 			ContSchema tContSchema = mContSet.get(1);
 			
@@ -136,13 +135,8 @@ public class ContRePrint extends ServiceImpl {
 				}
 			}
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);			
-			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
-		} 
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		
@@ -170,6 +164,7 @@ public class ContRePrint extends ServiceImpl {
 	 * create by zhj 2010 11 05
 	 * 网点 权限 添加校验方法
 	 */
+	@SuppressWarnings("unused")
 	private Document authority(Document mInXmlDoc) throws MidplatException{
 		
   

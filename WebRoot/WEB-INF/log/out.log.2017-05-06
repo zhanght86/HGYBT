@@ -1,0 +1,71 @@
+18:52:55,652 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@3af78ba5
+18:52:55,696 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:52:55,772 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+18:52:55,773 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+18:52:55,793 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:52:55,793 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+18:52:55,794 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+18:52:55,818 INFO common.XmlConf(80) - conf file modified at (2017-05-05 16:39:10,476) and length=25409 bytes!
+18:52:56,011 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+18:52:56,044 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:52:56,066 INFO common.Log4jPrint(20) - End reset System.out!
+18:52:56,069 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:52:56,069 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+18:52:56,070 INFO common.XmlConf(80) - conf file modified at (2017-05-05 16:39:10,530) and length=708 bytes!
+18:52:56,079 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+18:52:56,080 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:52:56,150 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+18:52:56,163 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+18:52:56,254 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+18:52:56,255 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+18:52:56,256 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+18:52:56,265 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+18:52:56,265 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+18:52:56,265 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+18:52:56,272 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+18:52:56,273 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:52:56,272 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+18:52:56,321 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+18:52:56,323 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:52:56,321 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+18:52:56,345 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+18:52:56,346 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+18:52:56,346 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+18:55:09,257 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+18:55:09,345 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+18:55:09,346 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :0:0:0:0:0:0:0:1
+18:55:10,377 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+18:55:10,465 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+18:55:10,508 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+18:55:10,605 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+18:55:10,606 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000048','86','001','0:0:0:0:0:0:0:1','2017-05-06','18:55:10' )
+18:55:11,002 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+18:57:09,049 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+18:57:09,130 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+18:57:09,201 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+18:57:24,714 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1103'
+18:57:24,747 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1103'
+18:57:24,793 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+18:57:41,713 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1104'
+18:57:41,773 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1104'
+18:57:41,827 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+19:00:04,393 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1103'
+19:00:04,461 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1103'
+19:00:04,515 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+19:02:02,348 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1100'
+19:02:02,387 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1100'
+19:02:05,122 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1108'
+19:02:05,184 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1108'
+19:02:05,247 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+19:02:05,738 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+19:02:05,809 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+19:02:05,877 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+19:02:37,151 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1105'
+19:02:37,217 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+19:11:50,277 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1113'
+19:11:50,332 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1113'
+19:11:50,395 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+19:13:02,595 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1112'
+19:13:02,645 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1112'
+19:13:02,712 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+19:42:30,297 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************

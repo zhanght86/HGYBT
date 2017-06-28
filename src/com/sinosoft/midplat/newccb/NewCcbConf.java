@@ -1,12 +1,7 @@
 package com.sinosoft.midplat.newccb;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 import org.jdom.Element;
-
 import com.sinosoft.midplat.MidplatConf;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.SysInfo;

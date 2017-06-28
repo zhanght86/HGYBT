@@ -7,39 +7,25 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import com.sinosoft.midplat.common.JdomUtil;
+import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 import com.sinosoft.utility.ExeSQL;
 
 public class QueryPaymentInfo extends XmlSimpFormat {
-	private Element cTransaction_Header = null;
 	private String mSYS_RECV_TIME = null;
 	private String mSYS_RESP_TIME = null;
 	private String tranNo = null;
 	private String tranDate = null;
-	private String sContno = null;
 	private String sProposalPrtNo = null;
-	private String sLv1BrNo = null;
-	private String sAgInsPkgID = null;
 	private String sysTxCode = null;
-	private String sPayedTimes  = null;
 	private Element oldTxHeader = null;
 	private Element oldComEntity = null;
-	private Document cInNoStdXml = null;
-	
 	public QueryPaymentInfo(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
-
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into QueryPaymentInfo.noStd2Std()...");
-		cInNoStdXml=pNoStdXml;
-		//此处备份一下请求报文头相关信息，组织返回报文时会用到
-		cTransaction_Header =
-			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
-		
-//		JdomUtil.print(cTransaction_Header);
-		
 		//服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		
@@ -50,25 +36,10 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 		tranNo = pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChildText("SvPt_Jrnl_No");
 		//临时保存银行发起交易日期作为保险公司账务日期 
 		tranDate = NewCcbFormatUtil.getTimeAndDate(pNoStdXml.getRootElement().getChild("TX_HEADER").getChildText("SYS_REQ_TIME"), 0, 8);
-		
 		Document mStdXml = 
 				QueryPaymentInfoInXsl.newInstance().getCache().transform(pNoStdXml);
-		
 		JdomUtil.print(mStdXml);
 		cLogger.info(JdomUtil.toStringFmt(mStdXml));
-		sProposalPrtNo=mStdXml.getRootElement().getChild("LCCont").getChildText("PrtNo");
-//		sContno=mStdXml.getRootElement().getChild("LCCont").getChildText("ContNo");
-		if(sContno==null||sContno.equals("")){
-			//从cont表中查找对应的保单号
-			String getContNoSQL = new StringBuilder("select contno from cont where ProposalPrtNo = '").append(sProposalPrtNo).append("'").toString();
-			sContno = new ExeSQL().getOneValue(getContNoSQL);
-			if(sContno==null&&sContno.equals("")){
-				mStdXml.getRootElement().getChild("LCCont").getChild("ContNo").setText(sProposalPrtNo);
-			}else {
-//				mStdXml.getRootElement().getChild("LCCont").getChild("ContNo").setText(sContno);
-			}
-		}
-		
 		cLogger.info("Out QueryPaymentInfo.noStd2Std()!");
 		return mStdXml;
 	}
@@ -80,13 +51,9 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 		JdomUtil.print(mNoStdXml);
 			//服务响应时间
 			mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-			
 			//设置TX_HEADER的一些节点信息
 			mNoStdXml = NewCcbFormatUtil.setNoStdTxHeader(mNoStdXml, oldTxHeader, mSYS_RECV_TIME, mSYS_RESP_TIME);
-
 			mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
-			
-
 			//COM_ENTITY节点加入服务方流水号
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText(tranNo);
 			mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("Ins_Co_Acg_Dt").setText(tranDate);
@@ -96,45 +63,31 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 
 			Element mRetData = pStdXml.getRootElement().getChild("RetData");
 			if (mRetData.getChildText(Flag).equals("1")) {	//交易成功
-				
-//				sPayedTimes=pStdXml.getRootElement().getChild("Body").getChildText("PayedTimes");
-				//已交保费期数>=1，表示是续期缴费查询，否则为实时投保缴费查询
-//				if(Integer.parseInt(sPayedTimes)>=1){
-//					mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgInsPyFBsnSbdvsn_Cd").setText("14");
-//				}else{
-//					mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgInsPyFBsnSbdvsn_Cd").setText("11");
-//				}
-			
-			
-//			sContno=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("InsPolcy_No");
-			sProposalPrtNo=mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChildText("Ins_BillNo");
-			
-			if(sContno!=null&&!sContno.equals("")){
-				//从cont表中查找对应的投保单号的建行一级分行号，实时投保时已存入备用字段10 bak10
-				String getLv1BrNoSQL = new StringBuilder("select bak10 from cont where contno = '").append(sContno).append("'").toString();
-				sLv1BrNo = new ExeSQL().getOneValue(getLv1BrNoSQL);
-				//APP_ENTITY节点加入建行一级分行号
-				mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("Lv1_Br_No").setText(sLv1BrNo);
-				
-				//从cont表中查找对应的投保单号的建行代理保险套餐编号，实时投保时已存入备用字段9 bak9
-				String getAgInsPkgIDSQL = new StringBuilder("select bak9 from cont where contno = '").append(sContno).append("'").toString();
-				sAgInsPkgID = new ExeSQL().getOneValue(getAgInsPkgIDSQL);
-				//APP_ENTITY节点加入建行代理保险套餐编号
-				mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgIns_Pkg_ID").setText(sAgInsPkgID);
-			} else if(sProposalPrtNo!=null&&!sProposalPrtNo.equals("")){
-				//从cont表中查找对应的投保单号的建行一级分行号，实时投保时已存入备用字段10 bak10
-				String getLv1BrNoSQL2 = new StringBuilder("select bak10 from cont where ProposalPrtNo = '").append(sProposalPrtNo).append("'").toString();
-				sLv1BrNo = new ExeSQL().getOneValue(getLv1BrNoSQL2);
-				//APP_ENTITY节点加入建行一级分行号
-//				mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("Lv1_Br_No").setText(sLv1BrNo);
-				
-				//从cont表中查找对应的投保单号的建行代理保险套餐编号，实时投保时已存入备用字段9 bak9
-				String getAgInsPkgIDSQL2 = new StringBuilder("select bak9 from cont where ProposalPrtNo = '").append(sProposalPrtNo).append("'").toString();
-				sAgInsPkgID = new ExeSQL().getOneValue(getAgInsPkgIDSQL2);
-				//APP_ENTITY节点加入建行代理保险套餐编号
-				mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").getChild("AgIns_Pkg_ID").setText(sAgInsPkgID);
-			}
-			
+				//根据投保单号查询非实时投保时的：保险年期类别代码、保险期限、保险周期代码、保费缴费方式代码、保费缴费期数、保费缴费周期代码 
+				Element mAppEntityEle = mNoStdXml.getRootElement().getChild("TX_BODY")
+				.getChild("ENTITY").getChild("APP_ENTITY");
+				Element mLcCont=pStdXml.getRootElement().getChild("LCCont");
+				sProposalPrtNo= mLcCont.getChildText("PrtNo");
+				String sql="select BAK1 from TranLog where ProposalPrtNo='"+sProposalPrtNo+"' " +
+						"and funcflag='1060' and rcode='0'";
+				String mBak1 = new ExeSQL().getOneValue(sql);
+				if(mBak1 == null || mBak1.equals("")){
+					throw new MidplatException("根据投保单号未查询到非实时投保相应信息，请确认！");
+				}else{
+					String strs[] = mBak1.split("\\|");
+					 //保险年期类别代码
+					mAppEntityEle.getChild("Ins_Yr_Prd_CgyCd").setText(strs[0]);
+				    //保险期限
+					mAppEntityEle.getChild("Ins_Ddln").setText(strs[1]);
+				    //保险周期代码
+					mAppEntityEle.getChild("Ins_Cyc_Cd").setText(strs[2]);
+				    //保费缴费方式代码
+					mAppEntityEle.getChild("InsPrem_PyF_MtdCd").setText(strs[3]);
+				    //保费缴费期数
+					mAppEntityEle.getChild("InsPrem_PyF_Prd_Num").setText(strs[4]);
+				    //保费缴费周期代码 
+					mAppEntityEle.getChild("InsPrem_PyF_Cyc_Cd").setText(strs[5]);
+				}
 				mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText("Desc"));
 				mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC_LEN").setText(Integer.toString(mRetData.getChildText(Desc).length()));
 			} else {	//交易失败
@@ -142,9 +95,7 @@ public class QueryPaymentInfo extends XmlSimpFormat {
 				mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText("Desc"));
 				mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC_LEN").setText(Integer.toString(mRetData.getChildText(Desc).length()));
 			}
-			
 			/*End-组织返回报文头*/
-
 			cLogger.info("Out QueryPaymentInfo.std2NoStd()!");
 			return mNoStdXml;
 	}

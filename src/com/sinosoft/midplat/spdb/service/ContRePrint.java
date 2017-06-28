@@ -33,9 +33,14 @@ public class ContRePrint extends ServiceImpl {
 
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
-		String mContNo = mBodyEle.getChildText(ContNo);
+		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
+		Element mContNo = mBodyEle.getChild(ContNo);
 
 		try {
+			
+			String sql= "select ContNo from Cont where Type=0 and ProposalPrtNo ='" + mProposalPrtNo + "'";
+			mContNo.setText(new ExeSQL().getOneValue(sql));
+			
 			cTranLogDB = insertTranLog(pInXmlDoc);
 
 			// 校验系统中是否有相同保单正在处理，尚未返回
@@ -48,7 +53,7 @@ public class ContRePrint extends ServiceImpl {
 			Calendar tCurCalendar = Calendar.getInstance();
 			tCurCalendar.add(Calendar.SECOND, -tLockTime);
 			String tSqlStr = new StringBuilder("select count(1) from TranLog where RCode=").append(CodeDef.RCode_NULL)
-					.append(" and ContNo='").append(mContNo).append('\'')
+					.append(" and ContNo='").append(mContNo.getText()).append('\'')
 					.append(" and MakeDate>=").append(DateUtil.get8Date(tCurCalendar))
 					.append(" and MakeTime>=").append(DateUtil.get6Time(tCurCalendar))
 					.toString();
@@ -59,7 +64,7 @@ public class ContRePrint extends ServiceImpl {
 			// 当天、同一网点，成功出过单
 			tSqlStr = new StringBuilder("select * from Cont where Type=").append(AblifeCodeDef.ContType_Bank)
 					.append(" and State=").append(AblifeCodeDef.ContState_Sign)
-					.append(" and ContNo='").append(mContNo).append('\'')
+					.append(" and ContNo='").append(mContNo.getText()).append('\'')
 					.append(" and MakeDate=").append(cTranLogDB.getMakeDate())
 					.append(" and TranCom=").append(cTranLogDB.getTranCom())
 					.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')

@@ -1,6 +1,9 @@
-//建行获取保单详细查询
 package com.sinosoft.midplat.newccb.format;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -9,6 +12,7 @@ import org.jdom.Element;
 
 
 
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
@@ -92,4 +96,26 @@ public class SignPolicyFormat extends XmlSimpFormat {
 		return mNoStdXml;
 	}
 
+	public static void main(String[] args) throws Exception {
+		System.out.println("程序开始...");
+		
+		String mInFilePath="D:/File/task/20170517/newccb/transfer_test/P538191B2in_Std.xml";
+		String mOutFilePath="D:/File/task/20170517/newccb/transfer_test/P538191B2out_noStd.xml";
+		
+		InputStream mIs=new FileInputStream(mInFilePath);
+		Document mInXmlDoc=JdomUtil.build(mIs);
+		mIs.close();
+		
+		Document mOutXmlDoc=new SignPolicyFormat(null).noStd2Std(mInXmlDoc);
+//		Document mOutXmlDoc=new SignPolicyFormat(null).std2NoStd(mInXmlDoc);
+		
+		JdomUtil.print(mOutXmlDoc);
+		
+		OutputStream mOs=new FileOutputStream(mOutFilePath); 
+		JdomUtil.output(mOutXmlDoc, mOs);
+		mOs.flush();
+		mOs.close();
+		
+		System.out.println("成功结束!");
+	}
 }

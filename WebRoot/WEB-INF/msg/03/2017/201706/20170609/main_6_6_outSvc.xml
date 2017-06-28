@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>交易成功</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContNo>888030000001474</ContNo>
+         <Result>1</Result>
+         <ResultText>保单状态有误！</ResultText>
+      </Detail>
+   </Body>
+</TranData>
+

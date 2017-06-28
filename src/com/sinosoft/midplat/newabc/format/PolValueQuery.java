@@ -11,7 +11,6 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 
 public class PolValueQuery extends XmlSimpFormat {
 
-	@SuppressWarnings("unused")
 	private Element header=null;
 	
 	public PolValueQuery(Element pThisBusiConf) {

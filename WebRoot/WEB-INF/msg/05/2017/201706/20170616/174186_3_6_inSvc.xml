@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170616</TranDate>
+      <TranTime>142216</TranTime>
+      <BankCode>0102</BankCode>
+      <TranCom>05</TranCom>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>11010102</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>174186</TranNo>
+      <FuncFlag>2001</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>6</ServiceId>
+   </Head>
+   <Body>
+      <Count>3</Count>
+      <Prem>2500000</Prem>
+      <Detail>
+         <ContNo>888030000001547</ContNo>
+         <Prem>500000</Prem>
+         <AgentCom>440540</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888030000001548</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>440540</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+      <Detail>
+         <ContNo>888030000001549</ContNo>
+         <Prem>1000000</Prem>
+         <AgentCom>440540</AgentCom>
+         <ProposalPrtNo />
+         <AppntName />
+         <InsuredName />
+      </Detail>
+   </Body>
+</TranData>
+

@@ -1,0 +1,960 @@
+17:26:38,378 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:26:38,407 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:26:38,407 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:26:38,410 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:26:38,411 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:26:38,995 INFO test.NewABCTest(210) - 发送报文头！X1.0000119683103    00000                                       000000000
+17:26:38,999 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.598s
+17:26:39,000 INFO test.NewABCTest(221) - 收到返回报文！
+17:27:13,694 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:27:21,979 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:27:31,873 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@50163f64
+17:27:31,893 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:27:31,904 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+17:27:31,905 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+17:27:31,907 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:27:31,908 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+17:27:31,908 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+17:27:31,951 INFO common.XmlConf(80) - conf file modified at (2017-04-27 16:25:46,139) and length=24521 bytes!
+17:27:32,112 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+17:27:32,135 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:27:32,144 INFO common.Log4jPrint(20) - End reset System.out!
+17:27:32,147 INFO net.SocketConf(27) - Into SocketConf.load()...
+17:27:32,147 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+17:27:32,149 INFO common.XmlConf(80) - conf file modified at (2017-04-27 16:25:46,178) and length=708 bytes!
+17:27:32,159 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+17:27:32,160 INFO net.SocketConf(60) - Out SocketConf.load()!
+17:27:32,205 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+17:27:32,233 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+17:27:32,261 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+17:27:32,264 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+17:27:32,265 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+17:27:32,269 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+17:27:32,270 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+17:27:32,271 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+17:27:32,273 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+17:27:32,297 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+17:27:32,300 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+17:27:32,316 ERROR net.SocketListenerF5(108) - 3_Socket加载失败!
+java.lang.ClassNotFoundException: com.sinosoft.midplat.newccb.NewCcbYbt
+	at weblogic.utils.classloaders.GenericClassLoader.findLocalClass(GenericClassLoader.java:297)
+	at weblogic.utils.classloaders.GenericClassLoader.findClass(GenericClassLoader.java:270)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.findClass(ChangeAwareClassLoader.java:64)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at weblogic.utils.classloaders.GenericClassLoader.loadClass(GenericClassLoader.java:179)
+	at weblogic.utils.classloaders.ChangeAwareClassLoader.loadClass(ChangeAwareClassLoader.java:43)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:171)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.<init>(SocketListenerF5.java:179)
+	at com.sinosoft.midplat.net.SocketListenerF5.contextInitialized(SocketListenerF5.java:98)
+	at weblogic.servlet.internal.EventsManager$FireContextListenerAction.run(EventsManager.java:481)
+	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+	at weblogic.servlet.internal.EventsManager.notifyContextCreatedEvent(EventsManager.java:181)
+	at weblogic.servlet.internal.WebAppServletContext.preloadResources(WebAppServletContext.java:1868)
+	at weblogic.servlet.internal.WebAppServletContext.start(WebAppServletContext.java:3154)
+	at weblogic.servlet.internal.WebAppModule.startContexts(WebAppModule.java:1518)
+	at weblogic.servlet.internal.WebAppModule.start(WebAppModule.java:484)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.ScopedModuleDriver.start(ScopedModuleDriver.java:200)
+	at weblogic.application.internal.flow.ModuleListenerInvoker.start(ModuleListenerInvoker.java:247)
+	at weblogic.application.internal.flow.ModuleStateDriver$3.next(ModuleStateDriver.java:425)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.flow.ModuleStateDriver.start(ModuleStateDriver.java:119)
+	at weblogic.application.internal.flow.StartModulesFlow.activate(StartModulesFlow.java:27)
+	at weblogic.application.internal.BaseDeployment$2.next(BaseDeployment.java:671)
+	at weblogic.application.utils.StateMachineDriver.nextState(StateMachineDriver.java:52)
+	at weblogic.application.internal.BaseDeployment.activate(BaseDeployment.java:212)
+	at weblogic.application.internal.SingleModuleDeployment.activate(SingleModuleDeployment.java:44)
+	at weblogic.application.internal.DeploymentStateChecker.activate(DeploymentStateChecker.java:161)
+	at weblogic.deploy.internal.targetserver.AppContainerInvoker.activate(AppContainerInvoker.java:79)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activate(BasicDeployment.java:184)
+	at weblogic.deploy.internal.targetserver.BasicDeployment.activateFromServerLifecycle(BasicDeployment.java:361)
+	at weblogic.management.deploy.internal.DeploymentAdapter$1.doActivate(DeploymentAdapter.java:51)
+	at weblogic.management.deploy.internal.DeploymentAdapter.activate(DeploymentAdapter.java:200)
+	at weblogic.management.deploy.internal.AppTransition$2.transitionApp(AppTransition.java:30)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.transitionApps(ConfiguredDeployments.java:240)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.activate(ConfiguredDeployments.java:169)
+	at weblogic.management.deploy.internal.ConfiguredDeployments.deploy(ConfiguredDeployments.java:123)
+	at weblogic.management.deploy.internal.DeploymentServerService.resume(DeploymentServerService.java:180)
+	at weblogic.management.deploy.internal.DeploymentServerService.start(DeploymentServerService.java:96)
+	at weblogic.t3.srvr.SubsystemRequest.run(SubsystemRequest.java:64)
+	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+17:27:32,319 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+17:27:32,347 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+17:27:32,347 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+17:27:32,348 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+17:27:53,142 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:27:53,163 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:27:53,164 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:27:53,166 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:27:53,168 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:27:53,180 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:27:53,181 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+17:27:53,182 INFO common.XmlConf(80) - conf file modified at (2017-04-27 16:25:46,153) and length=6904 bytes!
+17:27:53,236 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+17:27:53,237 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:27:53,279 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+17:27:53,285 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+17:27:53,646 INFO test.NewABCTest(210) - 发送报文头！X1.0000119683103    00000                                       000000000
+17:27:53,647 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.488s
+17:27:53,648 INFO test.NewABCTest(221) - 收到返回报文！
+17:27:54,124 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+17:27:54,176 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+17:27:54,225 INFO midplat.Ybt4Socket(34) - TranLogNo:136572
+17:27:54,225 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:27:54,356 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:27:54,357 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:27:54,358 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:27:54,380 INFO net.NewAbcNetImpl(58) - package_head:X1.0000119683103    00000                                       000000000
+17:27:54,380 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:27:54,381 INFO net.NewAbcNetImpl(65) - mBodyLen:11968
+17:27:54,381 INFO net.NewAbcNetImpl(70) - 解密开始
+17:27:54,408 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:27:54,413 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:27:54,576 INFO net.NewAbcNetImpl(72) - 解密完成
+17:27:54,577 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456812</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><AppNo>810000456812</AppNo><Appl><!--投保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><InvalidDate>20310131</InvalidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><OtherConnect /><ShortMsg /><FixIncome>0</FixIncome><AnnualIncome>500000</AnnualIncome><Company /><JobType /><JobCode>3010101</JobCode><Notice /><CustSource>1</CustSource><RelaToInsured>01</RelaToInsured></Appl><Insu><!--被保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><ValidDate>20310131</ValidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><JobType /><JobCode>3010101</JobCode><Company /><AnnualIncome>50000</AnnualIncome><Tall>0</Tall><Weight>0</Weight><IsRiskJob /><HealthNotice>0</HealthNotice><Notice /><CreditCard /><CreditType /><Immaturity>0</Immaturity></Insu><Bnfs><!--受益人--><Count>1</Count><Type1>1</Type1><Name1>李四</Name1><Sex1>0</Sex1><Birthday1>19671025</Birthday1><IDCode1>320304196710256138</IDCode1><BeginDate1 /><InvalidDate1>20310131</InvalidDate1><IDKind1>110001</IDKind1><RelationToInsured1>01</RelationToInsured1><Sequence1>1</Sequence1><Prop1>100</Prop1><Phone1 /><Country1 /><Address1 /><Prov1 /><City1 /><Zone1 /><Type2 /><Name2 /><Sex2 /><Birthday2 /><IDCode2 /><BeginDate2 /><InvalidDate2 /><IDKind2 /><RelationToInsured2 /><Sequence2>0</Sequence2><Prop2>0</Prop2><Phone2 /><Country2 /><Address2 /><Prov2 /><City2 /><Zone2 /><Type3 /><Name3 /><Sex3 /><Birthday3 /><IDCode3 /><BeginDate3 /><InvalidDate3 /><IDKind3 /><RelationToInsured3 /><Sequence3>0</Sequence3><Prop3>0</Prop3><Phone3 /><Country3 /><Address3 /><Prov3 /><City3 /><Zone3 /></Bnfs><Risks><!--险种--><Count /><InsuCode>0204</InsuCode><RiskCode>012D0100</RiskCode><Name>华贵多彩赢家年金保险</Name><Policypwd /><Share>10</Share><Prem>10000</Prem><Price>0</Price><Amnt>0</Amnt><PayType>1</PayType><!--交费方式:趸交,年交--><PayDueType>0</PayDueType><!--交费期间类型:趸交--><PayDueDate>2</PayDueDate><!--交费期间:2年交--><InsuDueType>4</InsuDueType><!--保险期间类型--><InsuDueDate>10</InsuDueDate><!--保险期间:10年--><FullBonusGetMode /><GetYearFlag>0</GetYearFlag><GetYear>6</GetYear><BonusPayMode /><BonusGetMode /><WNRiskAccCount /><WNRiskAccType /><InvestProtion /><AutoPayFlag /><AutoPayForFlag /><SubFlag /><RiskBeginDate /><RiskEndDate /><InvestType /><ContinuePay /><ContinuePayAmt /><ContinuePayDue /><ContinuePayBeginDate /><SameFlag /></Risks><Inv><!--基本保费投资帐户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></Inv><ContinuePay><!--定期追加保险费的投资账户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></ContinuePay><Objt><!--保险目标--><Prov /><City /><Zone /><Address /><Amnt /><ZipCode /><Area /><PreFlag /><NoPayPortion /><NoPayPrem /><Struts /><Usage /><FasAmnt /><FloAmnt /><Count /><Name1 /><Amnt1 /><Name2 /><Amnt2 /><Name3 /><Amnt3 /><Name4 /><Amnt4 /><Name5 /><Amnt5 /><Name6 /><Amnt6 /><Name7 /><Amnt7 /></Objt><Loan><!--贷款信息--><ContNo /><LoanType /><LoanBank /><VchCheckNo /><Flag /><HurtAmnt /><VchNo /><AccNo /><Prem /><BegDate /><EndDate /></Loan><Addt><!--附加险--><Count>0</Count><RiskCode1 /><InsuCode1 /><Name1 /><Share1>0</Share1><AutoPayFlag1 /><Prem1>0</Prem1><Amnt1 /><PayType1 /><PayDueType1 /><PayDueDate1 /><InsuDueType1 /><InsuDueDate1 /><RiskCode2 /><InsuCode2 /><Name2 /><Share2>0</Share2><AutoPayFlag2 /><Prem2>0</Prem2><Amnt2 /><PayType2 /><PayDueType2 /><PayDueDate2 /><InsuDueType2 /><InsuDueDate2 /><RiskCode3 /><InsuCode3 /><Name3 /><Share3>0</Share3><AutoPayFlag3 /><Prem3>0</Prem3><Amnt3 /><PayType3 /><PayDueType3 /><PayDueDate3 /><InsuDueType3 /><InsuDueDate3 /><RiskCode4 /><InsuCode4 /><Name4 /><Share4>0</Share4><AutoPayFlag4 /><Prem4>0</Prem4><Amnt4 /><PayType4 /><PayDueType4 /><PayDueDate4 /><InsuDueType4 /><InsuDueDate4 /><RiskCode5 /><InsuCode5 /><Name5 /><Share5>0</Share5><AutoPayFlag5 /><Prem5>0</Prem5><Amnt5 /><PayType5 /><PayDueType5 /><PayDueDate5 /><InsuDueType5 /><InsuDueDate5 /><RiskCode6 /><InsuCode6 /><Name6 /><Share6>0</Share6><AutoPayFlag6 /><Prem6>0</Prem6><Amnt6 /><PayType6 /><PayDueType6 /><PayDueDate6 /><InsuDueType6 /><InsuDueDate6 /></Addt><Base><!--基本信息--><SpecArranged /><ArugeFlag /><ArbteName /><ConAccName>李四</ConAccName><ConAccNo>12345678</ConAccNo><!--续期缴费账号--><ApplGetAccNo /><InsuGetAccNo /><ApplyDate>20170427</ApplyDate><PolicyApplySerial>1010100004210</PolicyApplySerial><VchType>8055</VchType><VchName>渤海保单</VchName><VchNo>1800100000646</VchNo><Saler>郝海峰</Saler><BranchCertNo>4401008906584400</BranchCertNo><SalerCertNo>00201009440000026065</SalerCertNo><BranchName>中国农业银行广州东城支行</BranchName><RenewPayType /><ApplGetAccName /><InsuGetAccName /><PoliValidDate /></Base><Reserve1>婚姻状况</Reserve1><Reserve2 /><Reserve3>家庭年收入</Reserve3><Reserve4 /><Reserve5>投保人保费预算</Reserve5><Reserve6 /><Reserve7 /><Reserve8 /><Reserve9 /><Reserve10 /><Reserve11 /><Reserve12 /><Reserve13 /><Reserve14 /><Reserve15 /><Reserve16 /><Reserve17 /><Reserve18 /><Reserve19 /><Reserve20 /></Req></App></ABCB2I>
+  
+17:27:54,593 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:27:54,611 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1002
+17:27:54,981 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+17:27:54,982 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+17:27:54,993 INFO common.SaveMessage(94) - 136575_3_1002_in.xml IO输出耗时:0.01s
+17:27:54,993 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136575_3_1002_in.xml
+17:27:54,994 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:27:54,995 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.NewCont
+17:27:55,053 INFO format.NewCont(27) - Into newABCNewCont.noStd2Std()...
+17:27:55,053 INFO format.NewCont(102) - 受益人个数:1
+17:27:55,157 INFO format.NewContInXsl(27) - Into NewContInXsl.load()...
+17:27:55,158 INFO format.NewContInXsl(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContIn.xsl...
+17:27:55,159 INFO common.XslCache(70) - conf file modified at (2017-04-26 17:38:53,908) and length=26028 bytes!
+17:27:55,832 INFO format.NewContInXsl(37) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContIn.xsl!
+17:27:55,833 INFO format.NewContInXsl(50) - Out NewContInXsl.load()!
+17:27:55,923 INFO common.Log4jPrint(20) - sdfsdfsdfewre===5.0E7
+17:27:55,928 INFO format.NewCont(38) - Out newABCNewCont.noStd2Std()!
+17:27:55,929 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContInput
+17:27:56,019 INFO service.NewContInput(37) - Into NewContInput.service()...
+17:27:56,019 INFO service.NewContInput(52) - 判断是否重发，1为重发，重发Body增加ResendFlag节点
+17:27:56,020 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=0 and ProposalPrtNo='101010000421067' and bak3='810000456812' and MakeDate =20170529
+17:27:56,099 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:27:56,195 INFO common.Log4jPrint(20) - 进程名：136575
+17:27:56,195 INFO common.Log4jPrint(20) - trancom:5
+17:27:56,196 INFO common.Log4jPrint(20) - FuncFlag:1002
+17:27:56,196 INFO common.Log4jPrint(20) - mHeadEle.getChildText136575_3_1002_in.xml
+17:27:56,225 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:27:56,226 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136575,5,'01','01010101001865201','810000456812','apky',1002,20170529,152647,'101010000421067','180010000064605',-1,-1,'127.0.0.1','136575_3_1002_in.xml',20170529,172756,20170529,172756 )
+17:27:56,276 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:27:56,279 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from cont where bak8='810000456812' and trancom ='05'
+17:27:56,325 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101010000421067' and MakeDate>=20170529 and MakeTime>=172556
+17:27:56,455 INFO common.RuleXsl(176) - Into RuleXsl.load()...
+17:27:56,455 INFO common.RuleXsl(179) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xsl...
+17:27:56,456 INFO common.XslCache(70) - conf file modified at (2017-04-24 09:29:16,555) and length=15623 bytes!
+17:27:56,608 INFO common.RuleXsl(188) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xsl!
+17:27:56,609 INFO common.RuleXsl(202) - Out RuleXsl.load()!
+17:27:56,631 INFO common.RuleXml(228) - Into RuleXml.load()...
+17:27:56,631 INFO common.RuleXml(231) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xml...
+17:27:56,632 INFO common.XmlConf(80) - conf file modified at (2017-04-27 16:25:46,172) and length=9884 bytes!
+17:27:56,663 INFO common.RuleXml(238) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xml!
+17:27:56,663 INFO common.RuleXml(245) - Out RuleXml.load()!
+17:27:56,664 INFO common.RuleParser(54) - Into RuleParser.check()...
+17:27:56,665 INFO common.RuleParser(76) - Into RuleParser.checkByXsl()...
+17:27:56,801 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:27:56,802 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:27:56,802 INFO common.Log4jPrint(20) - 返回的结果是:0
+17:27:56,803 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:27:56,804 INFO common.RuleParser(80) - <?xml version="1.0"?>
+<rules><msg>投保日期必须为当天</msg></rules>
+
+17:27:56,805 ERROR service.NewContInput(250) - 新单试算交易失败！
+com.sinosoft.midplat.exception.MidplatException: 投保日期必须为当天
+	at com.sinosoft.midplat.common.RuleParser.checkByXsl(RuleParser.java:84)
+	at com.sinosoft.midplat.common.RuleParser.check(RuleParser.java:58)
+	at com.sinosoft.midplat.newabc.service.NewContInput.service(NewContInput.java:146)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+17:27:56,897 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:27:56,897 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:27:56,898 INFO common.Log4jPrint(20) - 810000456812
+17:27:56,898 INFO common.Log4jPrint(20) - 810000456812
+17:27:56,899 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=136575,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000456812',Operator='apky',FuncFlag=1002,TranDate=20170529,TranTime=152647,ProposalPrtNo='101010000421067',ContNo=null,OtherNo='180010000064605',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='投保日期必须为当天',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3='810000456812',Bak4=null,Bak5=null,InNoDoc='136575_3_1002_in.xml',MakeDate=20170529,InDoc=null,OutDoc=null,MakeTime=172756,ModifyDate=20170529,ModifyTime=172756,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000456812'
+17:27:56,926 INFO service.NewContInput(268) - Out NewContInput.service()!
+17:27:56,927 INFO format.NewCont(44) - Into newABCNewCont.std2NoStd()...
+17:27:56,956 INFO format.NewContOutXsl(27) - Into NewContInXsl.load()...
+17:27:56,956 INFO format.NewContOutXsl(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContOut.xsl...
+17:27:56,957 INFO common.XslCache(70) - conf file modified at (2017-04-24 09:29:04,458) and length=959 bytes!
+17:27:56,976 INFO format.NewContOutXsl(37) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NewContOut.xsl!
+17:27:56,977 INFO format.NewContOutXsl(50) - Out NewContInXsl.load()!
+17:27:56,979 INFO format.NewCont(59) - 交易失败=========失败信息:投保日期必须为当天
+17:27:56,979 INFO format.NewCont(73) - Out newABCNewCont.std2NoStd()!
+17:27:56,980 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:27:56,986 INFO common.SaveMessage(94) - 136575_6_1002_out.xml IO输出耗时:0.0060s
+17:27:56,986 INFO net.NewAbcNetImpl(168) - 保存报文完毕！136575_6_1002_out.xml
+17:27:56,987 INFO net.NewAbcNetImpl(175) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456812</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+
+17:27:56,987 INFO common.Log4jPrint(20) - strLen:412
+17:27:56,987 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456812</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+    
+17:27:56,988 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:27:56,988 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:27:56,989 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+17:27:56,990 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456812</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>009999</RetCode><RetMsg>投保日期必须为当天</RetMsg></Header></ABCB2I>
+    
+17:27:56,990 INFO common.Log4jPrint(20) - xml字符串的报文长度：832
+17:27:57,103 INFO test.NewABCTest(229) - package_head:X1.0000008323103    00000                                       000000000
+17:27:57,103 INFO test.NewABCTest(231) - mBodyLen:832
+17:27:57,104 INFO test.NewABCTest(236) - 解密开始
+17:27:57,105 INFO test.NewABCTest(238) - 解密完成
+17:27:57,108 INFO test.NewABCTest(251) - UTF-8 农行的报文: 
+17:27:57,108 INFO test.NewABCTest(255) - 客户端接收返回报文完毕！耗时：3.949s
+17:27:57,130 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:27:57,130 INFO common.Log4jPrint(20) - null
+17:27:57,131 INFO common.Log4jPrint(20) - null
+17:27:57,131 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:27:57,145 INFO common.Log4jPrint(20) - i=0
+17:27:57,148 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:27:57,157 INFO midplat.Ybt4Socket(192) - 处理总耗时：2.8s
+17:27:57,158 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:28:27,094 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:28:27,113 INFO midplat.Ybt4Socket(34) - TranLogNo:136578
+17:28:27,114 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:28:27,115 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:28:27,118 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:28:27,118 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:28:27,121 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:28:27,122 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:28:27,126 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:28:27,127 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:28:27,563 INFO test.NewABCTest(210) - 发送报文头！X1.0000119683103    00000                                       000000000
+17:28:27,564 INFO net.NewAbcNetImpl(58) - package_head:X1.0000119683103    00000                                       000000000
+17:28:27,564 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:28:27,564 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.452s
+17:28:27,564 INFO net.NewAbcNetImpl(65) - mBodyLen:11968
+17:28:27,565 INFO net.NewAbcNetImpl(70) - 解密开始
+17:28:27,565 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:28:27,566 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:28:27,566 INFO test.NewABCTest(221) - 收到返回报文！
+17:28:27,571 INFO net.NewAbcNetImpl(72) - 解密完成
+17:28:27,571 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456813</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><AppNo>810000456813</AppNo><Appl><!--投保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><InvalidDate>20310131</InvalidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><OtherConnect /><ShortMsg /><FixIncome>0</FixIncome><AnnualIncome>500000</AnnualIncome><Company /><JobType /><JobCode>3010101</JobCode><Notice /><CustSource>1</CustSource><RelaToInsured>01</RelaToInsured></Appl><Insu><!--被保人--><IDKind>110001</IDKind><IDCode>320304196710256138</IDCode><BeginDate /><ValidDate>20310131</ValidDate><Name>李四</Name><Sex>0</Sex><Birthday>19671025</Birthday><Country>156</Country><Address>重庆@@渝北区@@北大街@@28号@@</Address><Prov>江苏省</Prov><City>徐州市</City><Zone>泉山区</Zone><ZipCode>100000</ZipCode><Email /><Phone /><Mobile>18501077318</Mobile><JobType /><JobCode>3010101</JobCode><Company /><AnnualIncome>50000</AnnualIncome><Tall>0</Tall><Weight>0</Weight><IsRiskJob /><HealthNotice>0</HealthNotice><Notice /><CreditCard /><CreditType /><Immaturity>0</Immaturity></Insu><Bnfs><!--受益人--><Count>1</Count><Type1>1</Type1><Name1>李四</Name1><Sex1>0</Sex1><Birthday1>19671025</Birthday1><IDCode1>320304196710256138</IDCode1><BeginDate1 /><InvalidDate1>20310131</InvalidDate1><IDKind1>110001</IDKind1><RelationToInsured1>01</RelationToInsured1><Sequence1>1</Sequence1><Prop1>100</Prop1><Phone1 /><Country1 /><Address1 /><Prov1 /><City1 /><Zone1 /><Type2 /><Name2 /><Sex2 /><Birthday2 /><IDCode2 /><BeginDate2 /><InvalidDate2 /><IDKind2 /><RelationToInsured2 /><Sequence2>0</Sequence2><Prop2>0</Prop2><Phone2 /><Country2 /><Address2 /><Prov2 /><City2 /><Zone2 /><Type3 /><Name3 /><Sex3 /><Birthday3 /><IDCode3 /><BeginDate3 /><InvalidDate3 /><IDKind3 /><RelationToInsured3 /><Sequence3>0</Sequence3><Prop3>0</Prop3><Phone3 /><Country3 /><Address3 /><Prov3 /><City3 /><Zone3 /></Bnfs><Risks><!--险种--><Count /><InsuCode>0204</InsuCode><RiskCode>012D0100</RiskCode><Name>华贵多彩赢家年金保险</Name><Policypwd /><Share>10</Share><Prem>10000</Prem><Price>0</Price><Amnt>0</Amnt><PayType>1</PayType><!--交费方式:趸交,年交--><PayDueType>0</PayDueType><!--交费期间类型:趸交--><PayDueDate>2</PayDueDate><!--交费期间:2年交--><InsuDueType>4</InsuDueType><!--保险期间类型--><InsuDueDate>10</InsuDueDate><!--保险期间:10年--><FullBonusGetMode /><GetYearFlag>0</GetYearFlag><GetYear>6</GetYear><BonusPayMode /><BonusGetMode /><WNRiskAccCount /><WNRiskAccType /><InvestProtion /><AutoPayFlag /><AutoPayForFlag /><SubFlag /><RiskBeginDate /><RiskEndDate /><InvestType /><ContinuePay /><ContinuePayAmt /><ContinuePayDue /><ContinuePayBeginDate /><SameFlag /></Risks><Inv><!--基本保费投资帐户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></Inv><ContinuePay><!--定期追加保险费的投资账户--><Count /><Type1 /><Pro1 /><Type2 /><Pro2 /><Type3 /><Pro3 /><Type4 /><Pro4 /><Type5 /><Pro5 /></ContinuePay><Objt><!--保险目标--><Prov /><City /><Zone /><Address /><Amnt /><ZipCode /><Area /><PreFlag /><NoPayPortion /><NoPayPrem /><Struts /><Usage /><FasAmnt /><FloAmnt /><Count /><Name1 /><Amnt1 /><Name2 /><Amnt2 /><Name3 /><Amnt3 /><Name4 /><Amnt4 /><Name5 /><Amnt5 /><Name6 /><Amnt6 /><Name7 /><Amnt7 /></Objt><Loan><!--贷款信息--><ContNo /><LoanType /><LoanBank /><VchCheckNo /><Flag /><HurtAmnt /><VchNo /><AccNo /><Prem /><BegDate /><EndDate /></Loan><Addt><!--附加险--><Count>0</Count><RiskCode1 /><InsuCode1 /><Name1 /><Share1>0</Share1><AutoPayFlag1 /><Prem1>0</Prem1><Amnt1 /><PayType1 /><PayDueType1 /><PayDueDate1 /><InsuDueType1 /><InsuDueDate1 /><RiskCode2 /><InsuCode2 /><Name2 /><Share2>0</Share2><AutoPayFlag2 /><Prem2>0</Prem2><Amnt2 /><PayType2 /><PayDueType2 /><PayDueDate2 /><InsuDueType2 /><InsuDueDate2 /><RiskCode3 /><InsuCode3 /><Name3 /><Share3>0</Share3><AutoPayFlag3 /><Prem3>0</Prem3><Amnt3 /><PayType3 /><PayDueType3 /><PayDueDate3 /><InsuDueType3 /><InsuDueDate3 /><RiskCode4 /><InsuCode4 /><Name4 /><Share4>0</Share4><AutoPayFlag4 /><Prem4>0</Prem4><Amnt4 /><PayType4 /><PayDueType4 /><PayDueDate4 /><InsuDueType4 /><InsuDueDate4 /><RiskCode5 /><InsuCode5 /><Name5 /><Share5>0</Share5><AutoPayFlag5 /><Prem5>0</Prem5><Amnt5 /><PayType5 /><PayDueType5 /><PayDueDate5 /><InsuDueType5 /><InsuDueDate5 /><RiskCode6 /><InsuCode6 /><Name6 /><Share6>0</Share6><AutoPayFlag6 /><Prem6>0</Prem6><Amnt6 /><PayType6 /><PayDueType6 /><PayDueDate6 /><InsuDueType6 /><InsuDueDate6 /></Addt><Base><!--基本信息--><SpecArranged /><ArugeFlag /><ArbteName /><ConAccName>李四</ConAccName><ConAccNo>12345678</ConAccNo><!--续期缴费账号--><ApplGetAccNo /><InsuGetAccNo /><ApplyDate>20170529</ApplyDate><PolicyApplySerial>1010100004210</PolicyApplySerial><VchType>8055</VchType><VchName>渤海保单</VchName><VchNo>1800100000646</VchNo><Saler>郝海峰</Saler><BranchCertNo>4401008906584400</BranchCertNo><SalerCertNo>00201009440000026065</SalerCertNo><BranchName>中国农业银行广州东城支行</BranchName><RenewPayType /><ApplGetAccName /><InsuGetAccName /><PoliValidDate /></Base><Reserve1>婚姻状况</Reserve1><Reserve2 /><Reserve3>家庭年收入</Reserve3><Reserve4 /><Reserve5>投保人保费预算</Reserve5><Reserve6 /><Reserve7 /><Reserve8 /><Reserve9 /><Reserve10 /><Reserve11 /><Reserve12 /><Reserve13 /><Reserve14 /><Reserve15 /><Reserve16 /><Reserve17 /><Reserve18 /><Reserve19 /><Reserve20 /></Req></App></ABCB2I>
+  
+17:28:27,581 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:28:27,584 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1002
+17:28:27,602 INFO common.SaveMessage(94) - 136581_9_1002_in.xml IO输出耗时:0.015s
+17:28:27,602 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136581_9_1002_in.xml
+17:28:27,603 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:28:27,605 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.NewCont
+17:28:27,605 INFO format.NewCont(27) - Into newABCNewCont.noStd2Std()...
+17:28:27,606 INFO format.NewCont(102) - 受益人个数:1
+17:28:27,617 INFO common.Log4jPrint(20) - sdfsdfsdfewre===5.0E7
+17:28:27,620 INFO format.NewCont(38) - Out newABCNewCont.noStd2Std()!
+17:28:27,620 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContInput
+17:28:27,621 INFO service.NewContInput(37) - Into NewContInput.service()...
+17:28:27,621 INFO service.NewContInput(52) - 判断是否重发，1为重发，重发Body增加ResendFlag节点
+17:28:27,621 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=0 and ProposalPrtNo='101010000421067' and bak3='810000456813' and MakeDate =20170529
+17:28:27,681 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:28:27,682 INFO common.Log4jPrint(20) - 进程名：136581
+17:28:27,683 INFO common.Log4jPrint(20) - trancom:5
+17:28:27,683 INFO common.Log4jPrint(20) - FuncFlag:1002
+17:28:27,684 INFO common.Log4jPrint(20) - mHeadEle.getChildText136581_9_1002_in.xml
+17:28:27,706 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:28:27,706 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136581,5,'01','01010101001865201','810000456813','apky',1002,20170529,152647,'101010000421067','180010000064605',-1,-1,'127.0.0.1','136581_9_1002_in.xml',20170529,172827,20170529,172827 )
+17:28:27,730 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:28:27,732 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from cont where bak8='810000456813' and trancom ='05'
+17:28:27,784 INFO common.Log4jPrint(20) - ExecSQL : select count(1) from TranLog where RCode=-1 and ProposalPrtNo='101010000421067' and MakeDate>=20170529 and MakeTime>=172627
+17:28:27,843 INFO common.RuleParser(54) - Into RuleParser.check()...
+17:28:27,844 INFO common.RuleParser(76) - Into RuleParser.checkByXsl()...
+17:28:27,847 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:28:27,847 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:28:27,848 INFO common.Log4jPrint(20) - 返回的结果是:0
+17:28:27,848 INFO common.Log4jPrint(20) - 对邮编进行校验
+17:28:27,849 INFO common.RuleParser(80) - <?xml version="1.0"?>
+<rules />
+
+17:28:27,850 INFO common.RuleParser(87) - Out RuleParser.checkByXsl()!
+17:28:27,850 INFO common.RuleParser(67) - Out RuleParser.check()!
+17:28:27,879 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+17:28:27,889 INFO common.SaveMessage(94) - 136581_12_0_inSvc.xml IO输出耗时:0.0090s
+17:28:27,890 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！136581_12_0_inSvc.xml
+17:28:27,891 INFO common.Log4jPrint(20) - start call 录单核保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:28:27,892 INFO net.CallWebsvcAtomSvc(102) - start call 录单核保(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:28:28,032 WARN dialect.StAXDialectDetector(236) - Weblogic's StAX implementation is unsupported and some Axiom features will not work as expected! Please use Woodstox instead.
+17:28:28,905 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+17:28:28,925 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:28:28,925 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+17:28:28,926 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+17:28:28,926 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+17:28:28,927 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+17:28:28,927 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:28,952 DEBUG httpclient.Wire(70) - >> "f71[\r][\n]"
+17:28:28,954 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTI5PC9UcmFuRGF0ZT48VHJhblRpbWU+MTUyNjQ3PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4wMTwvWm9uZU5vPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VGVsbGVyTm8+YXBreTwvVGVsbGVyTm8+PFRyYW5Obz44MTAwMDA0NTY4MTM8L1RyYW5Obz48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MTAwMjwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjEzNjU4MV85XzEwMDJfaW4ueG1sPC9Jbk5vRG9jPjxCYW5rQ29kZT4wMTAyPC9CYW5rQ29kZT48U2VydmljZUlkPjA8L1NlcnZpY2VJZD48L0hlYWQ+PEJvZHk+PFNhbGVDaGFubmVsPjA8L1NhbGVDaGFubmVsPjxBcHBseU5vPjgxMDAwMDQ1NjgxMzwvQXBwbHlObz48UHJvcG9zYWxQcnRObz4xMDEwMTAwMDA0MjEwNjc8L1Byb3Bvc2FsUHJ0Tm8+PENvbnRQcnRObz4xODAwMTAwMDAwNjQ2MDU8L0NvbnRQcnRObz48UG9sQXBwbHlEYXRlPjIwMTcwNTI5PC9Qb2xBcHBseURhdGU+PEdldFBvbE1vZGU+MTwvR2V0UG9sTW9kZT48SGVhbHRoTm90aWNlPk48L0hlYWx0aE5vdGljZT48QWNjTmFtZT7A7svEPC9BY2NOYW1lPjxBY2NObz4xMjM0NTY3ODwvQWNjTm8+PFNhbGVOYW1lPrrCuqO35TwvU2FsZU5hbWU+PFNhbGVTdGFmZj4wMDIwMTAwOTQ0MDAwMDAyNjA2NTwvU2FsZVN0YWZmPjxTYWxlQ2VydE5vPjAwMjAxMDA5NDQwMDAwMDI2MDY1PC9TYWxlQ2VydE5vPjxBcHBudD48TmFtZT7A7svEPC9OYW1lPjxTZXg+MDwvU2V4PjxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+PElEVHlwZT4wPC9JRFR5cGU+PElETm8+MzIwMzA0MTk2NzEwMjU2MTM4PC9JRE5vPjxKb2JDb2RlPjMwMTAxMDE8L0pvYkNvZGU+PE5hdGlvbmFsaXR5PkNITjwvTmF0aW9uYWxpdHk+PFN0YXR1cmUgLz48V2VpZ2h0IC8+PE1hcml0YWxTdGF0dXMgLz48WWVhclNhbGFyeT41MC4wPC9ZZWFyU2FsYXJ5PjxGYW1pbHlZZWFyU2FsYXJ5IC8+PElkRXhwRGF0ZT4yMDMxMDEzMTwvSWRFeHBEYXRlPjxBZGRyZXNzQ29udGVudCAvPjxGaXhUZWxEbXN0RHN0Y05vIC8+PE1vYmlsZUl0bERzdGNObyAvPjxOYXRpb25hbGl0eUNvZGUgLz48QWRkcmVzcz7W2MfsQEDT5bGxx/hAQLGxtPO91kBAMji6xUBAPC9BZGRyZXNzPjxaaXBDb2RlPjEwMDAwMDwvWmlwQ29kZT48TW9iaWxlPjE4NTAxMDc3MzE4PC9Nb2JpbGU+PFBob25lIC8+PEVtYWlsIC8+PFJlbGFUb0luc3VyZWQ+MDA8L1JlbGFUb0luc3VyZWQ+PERlblR5cGU+MTwvRGVuVHlwZT48UHJvdj69rcvVyqE8L1Byb3Y+PENpdHk+0OzW3crQPC9DaXR5Pjxab25lPsiqyb3H+DwvWm9uZT48L0FwcG50PjxJbnN1cmVkPjxOYW1lPsDuy8Q8L05hbWU+PFNleD4wPC9TZXg+PEJpcnRoZGF5PjE5NjcxMDI1PC9CaXJ0aGRheT48SURUeXBlPjA8L0lEVHlwZT48SURObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0lETm8+PEpvYkNvZGU+MzAxMDEwMTwvSm9iQ29kZT48TmF0aW9uYWxpdHk+Q0hOPC9OYXRpb25hbGl0eT48U3RhdHVyZT4wPC9TdGF0dXJlPjxXZWlnaHQ+MDwvV2VpZ2h0PjxNYXJpdGFsU3RhdHVzIC8+PFllYXJTYWxhcnkgLz48SWRFeHBEYXRlPjIwMzEwMTMxPC9JZEV4cERhdGU+PEFkZHJlc3M+1tjH7EBA0+Wxscf4QECxsbTzvdZAQDI4usVAQDwvQWRkcmVzcz48WmlwQ29kZT4xMDAwMDA8L1ppcENvZGU+PE1vYmlsZT4xODUwMTA3NzMxODwvTW9iaWxlPjxQaG9uZSAvPjxFbWFpbCAvPjxQcm92Pr2ty9XKoTwvUHJvdj48Q2l0eT7Q7NbdytA8L0NpdHk+PFpvbmU+yKrJvcf4PC9ab25lPjwvSW5zdXJlZD48Umlzaz48Umlza0NvZGU+MDEyRDAxMDA8L1Jpc2tDb2RlPjxNYWluUmlza0NvZGU+MDEyRDAxMDA8L01haW5SaXNrQ29kZT48QW1udD4wPC9BbW50PjxQcmVtPjEwMDAwMDA8L1ByZW0+PE11bHQ+MTA8L011bHQ+PFBheU1vZGU+QjwvUGF5TW9kZT48UGF5SW50dj4wPC9QYXlJbnR2PjxJbnN1WWVhckZsYWc+WTwvSW5zdVllYXJGbGFnPjxJbnN1WWVhcj4xMDwvSW5zdVllYXI+PFBheUVuZFllYXJGbGFnPlk8L1BheUVuZFllYXJGbGFnPjxQYXlFbmRZZWFyPjEwMDA8L1BheUVuZFllYXI+PEJvbnVzR2V0TW9kZSAvPjxGdWxsQm9udXNHZXRNb2RlIC8+PEdldFllYXJGbGFnPlk8L0dldFllYXJGbGFnPjxHZXRZZWFyPjY8L0dldFllYXI+PEdldFRlcm1zIC8+PEdldEludHYgLz48R2V0QmFua0NvZGUgLz48R2V0QmFua0FjY05vIC8+PEdldEFjY05hbWUgLz48QXV0b1BheUZsYWcgLz48L1Jpc2s+PExvYW4+PExvYW5ObyAvPjxMb2FuQmFua05hbWUgLz48TG9hbkRhdGUgLz48TG9hbkVuZERhdGUgLz48TG9hblR5cGU+MDE8L0xvYW5UeXBlPjxBY2NObyAvPjxMb2FuUHJlbSAvPjxJbnN1RGF0ZSAvPjxJbnN1RW5kRGF0ZSAvPjwvTG9hbj48UGF5TW9kZT5CPC9QYXlNb2RlPjxKb2JOb3RpY2UgLz48Qm5mPjxCZW5lZmljVHlwZT5OPC9CZW5lZmljVHlwZT48VHlwZT4xPC9UeXBlPjxHcmFkZT4xPC9HcmFkZT48TmFtZT7A7svEPC9OYW1lPjxTZXg+MDwvU2V4PjxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+PElEVHlwZT4wPC9JRFR5cGU+PElETm8+MzIwMzA0MTk2NzEwMjU2MTM4PC9JRE5vPjxJZEV4cERhdGU+MjAzMTAxMzE8L0lkRXhwRGF0ZT48UmVsYVRvSW5zdXJlZD4wMDwvUmVsYVRvSW5zdXJlZD48TG90PjEwMDwvTG90PjwvQm5mPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+17:28:28,954 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:28,956 DEBUG httpclient.Wire(84) - >> "0"
+17:28:28,957 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:28,958 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:31,739 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:28:31,740 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:28:31,743 DEBUG httpclient.Wire(70) - << "Date: Mon, 29 May 2017 09:27:28 GMT[\r][\n]"
+17:28:31,743 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+17:28:31,744 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:28:31,745 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+17:28:31,745 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:28:31,759 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,759 DEBUG httpclient.Wire(84) - << "f"
+17:28:31,760 DEBUG httpclient.Wire(84) - << "e"
+17:28:31,761 DEBUG httpclient.Wire(84) - << "8"
+17:28:31,761 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,762 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,762 DEBUG httpclient.Wire(84) - << "<?xm"
+17:28:31,769 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT4NCiAgICA8U2FsZUNoYW5uZWw+MDwvU2FsZUNoYW5uZWw+DQogICAgPENvbnRObz4xMDEwMTAwMDA0MjEwNjc8L0NvbnRObz4NCiAgICA8UHJvcG9zYWxQcnRObz4xMDEwMTAwMDA0MjEwNjc8L1Byb3Bvc2FsUHJ0Tm8+DQogICAgPENvbnRQcnRObz4xODAwMTAwMDAwNjQ2MDU8L0NvbnRQcnRObz4NCiAgICA8UG9saWN5UGxlZGdlPjA8L1BvbGljeVBsZWRnZT4NCiAgICA8Q29udFZhbHVlPjEwMDAwMDA8L0NvbnRWYWx1ZT4NCiAgICA8QWNjb3VudFZhbHVlPjEwMDAwMDA8L0FjY291bnRWYWx1ZT4NCiAgICA8UGF5UHJvdj48L1BheVByb3Y+DQogICAgPFBheU5vZGVObz4wMTAxMDEwMTAwMDE8L1BheU5vZGVObz4NCiAgICA8UGF5VHlwZT4wPC9QYXlUeXBlPg0KICAgIDxQYXlQcmVtPjA8L1BheVByZW0+DQogICAgPEFjY05vPjEyMzQ1Njc4PC9BY2NObz4NCiAgICA8UHJlbT4xMDAwMDAwPC9QcmVtPg0KICAgIDxQcmVtVGV4dD7Iy8PxsdLSvM3y1KrV+zwvUHJlbVRleHQ+DQogICAgPEFtbnQ+OTYwMDAwPC9BbW50Pg0KICAgIDxBbW50VGV4dD7Iy8PxsdK+wceqwr2w29Sq1fs8L0FtbnRUZXh0Pg0KICAgIDxBZ2VudENvZGU+NTIwMTMwMDAwMzwvQWdlbnRDb2RlPg0KICAgIDxBZ2VudE5hbWU+1cXI/TwvQWdlbnROYW1lPg0KICAgIDxBZ2VudEdycENvZGU+MDAwMDAwMDAwMjIzPC9BZ2VudEdycENvZGU+DQogICAgPEFnZW50R3JwTmFtZT6589H00vixo9Oq0rWyvzG20zwvQWdlbnRHcnBOYW1lPg0KICAgIDxBZ2VudENvbT4wMTAxMDEwMTAwMDE8L0FnZW50Q29tPg0KICAgIDxBZ2VudENvbU5hbWU+xanStdL40NC589bdufPR9MrAvM2zx834teM8L0FnZW50Q29tTmFtZT4NCiAgICA8Q29tQ29kZT44NjUyMDEwMTwvQ29tQ29kZT4NCiAgICA8Q29tTG9jYXRpb24+ufPW3cqhufPR9MrQuN/Qwsf4s6TB68TPwrcxNzi6xcOpzKi5+rzKyczO8dbQ0MRBtrAxM7LjPC9Db21Mb2NhdGlvbj4NCiAgICA8Q29tTmFtZT67qrnzyMvK2bGjz9W5ybfd09DP3rmry77TqtK119yyvzwvQ29tTmFtZT4NCiAgICA8Q29tWmlwQ29kZT48L0NvbVppcENvZGU+DQogICAgPENvbVBob25lPjwvQ29tUGhvbmU+DQogICAgPFNhbGVTdGFmZj4wMDIwMTAwOTQ0MDAwMDAyNjA2NTwvU2FsZVN0YWZmPg0KICAgIDxTYWxlTmFtZT66wrqjt+U8L1NhbGVOYW1lPg0KICAgIDxTYWxlQ2VydE5vPjAwMjAxMDA5NDQwMDAwMDI2MDY1PC9TYWxlQ2VydE5vPg0KICAgIDxQb2xpY3lTdGF0dXM+PC9Qb2xpY3lTdGF0dXM+DQogICAgPEJhbmtDb21Obz4wMTAxMDEwMTAwMTg2NTIwMTwvQmFua0NvbU5vPg0KICAgIDxBZ2VudFBob25lPjE1MDYzODE5NjMyPC9BZ2VudFBob25lPg0KICAgIDxQYXlJbnR2PjA8L1BheUludHY+DQogICAgPEluc1ByZW1fUHlGX1ByZF9OdW0+MTAwMDwvSW5zUHJlbV9QeUZfUHJkX051bT4NCiAgICA8UGF5ZW5kWWVhcj4xMDAwPC9QYXllbmRZZWFyPg0KICAgIDxQYXllbmRZZWFyRmxhZz5ZPC9QYXllbmRZZWFyRmxhZz4NCiAgICA8QXBwbnQ+DQogICAgICA8Q3VzdG9tZXJObz4wMDAwMDAyMjc0PC9DdXN0b21lck5vPg0KICAgICAgPE5hbWU+wO7LxDwvTmFtZT4NCiAgICAgIDxTZXg+MDwvU2V4Pg0KICAgICAgPEJpcnRoZGF5PjE5NjcxMDI1PC9CaXJ0aGRheT4NCiAgICAgIDxJRFR5cGU+MDwvSURUeXBlPg0KICAgICAgPElETm8+MzIwMzA0MTk2NzEwMjU2MTM4PC9JRE5vPg0KICAgICAgPEpvYlR5cGU+MTwvSm9iVHlwZT4NCiAgICAgIDxKb2JDb2RlPjMwMTAxMDE8L0pvYkNvZGU+DQogICAgICA8Sm9iTmFtZT4xPC9Kb2JOYW1lPg0KICAgICAgPE5hdGlvbmFsaXR5PkNITjwvTmF0aW9uYWxpdHk+DQogICAgICA8U3RhdHVyZT48L1N0YXR1cmU+DQogICAgICA8V2VpZ2h0PjwvV2VpZ2h0Pg0KICAgICAgPE1hcml0YWxTdGF0dXM+PC9NYXJpdGFsU3RhdHVzPg0KICAgICAgPEFkZHJlc3M+1tjH7EBA0+Wxscf4QECxsbTzvdZAQDI4usVAQDwvQWRkcmVzcz4NCiAgICAgIDxaaXBDb2RlPjEwMDAwMDwvWmlwQ29kZT4NCiAgICAgIDxNb2JpbGU+MTg1MDEwNzczMTg8L01vYmlsZT4NCiAgICAgIDxQaG9uZT4xODUwMTA3NzMxODwvUGhvbmU+DQogICAgICA8RW1haWw+PC9FbWFpbD4NCiAgICAgIDxSZWxhVG9JbnN1cmVkPjAwPC9SZWxhVG9JbnN1cmVkPg0KICAgICAgPFllYXJTYWxhcnk+NTAuMDwvWWVhclNhbGFyeT4NCiAgICAgIDxGYW1pbHlZZWFyU2FsYXJ5PjAuMDwvRmFtaWx5WWVhclNhbGFyeT4NCiAgICAgIDxEZW5UeXBlPjE8L0RlblR5cGU+DQogICAgPC9BcHBudD4NCiAgICA8SW5zdXJlZD4NCiAgICAgIDxDdXN0b21lck5vPjAwMDAwMDIyNzQ8L0N1c3RvbWVyTm8+DQogICAgICA8TmFtZT7A7svEPC9OYW1lPg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPElEVHlwZT4wPC9JRFR5cGU+DQogICAgICA8SURObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0lETm8+DQogICAgICA8Sm9iVHlwZT4xPC9Kb2JUeXBlPg0KICAgICAgPEpvYkNvZGU+MzAxMDEwMTwvSm9iQ29kZT4NCiAgICAgIDxKb2JOYW1lPjE8L0pvYk5hbWU+DQogICAgICA8U3RhdHVyZT48L1N0YXR1cmU+DQogICAgICA8TmF0aW9uYWxpdHk+Q0hOPC9OYXRpb25hbGl0eT4NCiAgICAgIDxXZWlnaHQ+PC9XZWlnaHQ+DQogICAgICA8TWFyaXRhbFN0YXR1cz48L01hcml0YWxTdGF0dXM+DQogICAgICA8QWRkcmVzcz7W2MfsQEDT5bGxx/hAQLGxtPO91kBAMji6xUBAPC9BZGRyZXNzPg0KICAgICAgPFppcENvZGU+MTAwMDAwPC9aaXBDb2RlPg0KICAg"
+17:28:31,796 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,797 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,798 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,799 DEBUG httpclient.Wire(84) - << "f"
+17:28:31,799 DEBUG httpclient.Wire(84) - << "e"
+17:28:31,800 DEBUG httpclient.Wire(84) - << "8"
+17:28:31,801 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,802 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,803 DEBUG httpclient.Wire(84) - << "ICAgPE1vYmlsZT4xODUwMTA3NzMxODwvTW9iaWxlPg0KICAgICAgPFBob25lPjE4NTAxMDc3MzE4PC9QaG9uZT4NCiAgICAgIDxFbWFpbD48L0VtYWlsPg0KICAgICAgPERlblR5cGU+PC9EZW5UeXBlPg0KICAgIDwvSW5zdXJlZD4NCiAgICA8Qm5mPg0KICAgICAgPFR5cGU+MDwvVHlwZT4NCiAgICAgIDxHcmFkZT4xPC9HcmFkZT4NCiAgICAgIDxOYW1lPsDuy8Q8L05hbWU+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgIDxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzODwvSURObz4NCiAgICAgIDxSZWxhVG9JbnN1cmVkPjwvUmVsYVRvSW5zdXJlZD4NCiAgICAgIDxMb3Q+MTAwPC9Mb3Q+DQogICAgICA8QmVuZkFjY05vPjwvQmVuZkFjY05vPg0KICAgICAgPEJlbmZBY2NOYW1lPjwvQmVuZkFjY05hbWU+DQogICAgPC9CbmY+DQogICAgPEJuZj4NCiAgICAgIDxUeXBlPjE8L1R5cGU+DQogICAgICA8R3JhZGU+MTwvR3JhZGU+DQogICAgICA8TmFtZT7A7svEPC9OYW1lPg0KICAgICAgPEJpcnRoZGF5PjE5NjcxMDI1PC9CaXJ0aGRheT4NCiAgICAgIDxTZXg+MDwvU2V4Pg0KICAgICAgPElEVHlwZT4wPC9JRFR5cGU+DQogICAgICA8SURObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0lETm8+DQogICAgICA8UmVsYVRvSW5zdXJlZD4wMDwvUmVsYVRvSW5zdXJlZD4NCiAgICAgIDxMb3Q+MTAwPC9Mb3Q+DQogICAgICA8QmVuZkFjY05vPjwvQmVuZkFjY05vPg0KICAgICAgPEJlbmZBY2NOYW1lPjwvQmVuZkFjY05hbWU+DQogICAgPC9CbmY+DQogICAgPEhlc2l0YXRlUGVyaW9kPjIwPC9IZXNpdGF0ZVBlcmlvZD4NCiAgICA8Umlzaz4NCiAgICAgIDxSaXNrQ29kZT4wMTJEMDEwMDwvUmlza0NvZGU+DQogICAgICA8Umlza05hbWU+u6q587bgssrTrrzSxOq98LGjz9U8L1Jpc2tOYW1lPg0KICAgICAgPE1haW5SaXNrQ29kZT4wMTJEMDEwMDwvTWFpblJpc2tDb2RlPg0KICAgICAgPFBvbEFwcGx5RGF0ZT4yMDE3MDUyOTwvUG9sQXBwbHlEYXRlPg0KICAgICAgPFNpZ25EYXRlPjwvU2lnbkRhdGU+DQogICAgICA8Q1ZhbGlEYXRlPjIwMTcwNTI5PC9DVmFsaURhdGU+DQogICAgICA8SW5zdUVuZERhdGU+MjAyNzA1Mjk8L0luc3VFbmREYXRlPg0KICAgICAgPEFtbnQ+OTYwMDAwPC9BbW50Pg0KICAgICAgPFByZW0+MTAwMDAwMDwvUHJlbT4NCiAgICAgIDxNdWx0PjEwPC9NdWx0Pg0KICAgICAgPFBheUludHY+MDwvUGF5SW50dj4NCiAgICAgIDxQYXlNb2RlPjA8L1BheU1vZGU+DQogICAgICA8SW5zdVllYXJGbGFnPlk8L0luc3VZZWFyRmxhZz4NCiAgICAgIDxJbnN1WWVhcj4xMDwvSW5zdVllYXI+DQogICAgICA8WWVhcnM+MTA8L1llYXJzPg0KICAgICAgPFBheUVuZFllYXJGbGFnPlk8L1BheUVuZFllYXJGbGFnPg0KICAgICAgPFBheUVuZFllYXI+MTAwMDwvUGF5RW5kWWVhcj4NCiAgICAgIDxQYXlFbmREYXRlPjMwMTcwNTI5PC9QYXlFbmREYXRlPg0KICAgICAgPENvc3RJbnR2PjwvQ29zdEludHY+DQogICAgICA8Q29zdERhdGU+PC9Db3N0RGF0ZT4NCiAgICAgIDxQYXlUb0RhdGU+PC9QYXlUb0RhdGU+DQogICAgICA8R2V0WWVhckZsYWc+WTwvR2V0WWVhckZsYWc+DQogICAgICA8R2V0U3RhcnREYXRlPjIwMTcwNTI5PC9HZXRTdGFydERhdGU+DQogICAgICA8R2V0WWVhcj42PC9HZXRZZWFyPg0KICAgICAgPEdldEludHY+PC9HZXRJbnR2Pg0KICAgICAgPEdldFRlcm1zPjwvR2V0VGVybXM+DQogICAgICA8R2V0QmFua0NvZGU+PC9HZXRCYW5rQ29kZT4NCiAgICAgIDxHZXRCYW5rQWNjTm8+PC9HZXRCYW5rQWNjTm8+DQogICAgICA8R2V0QWNjTmFtZT48L0dldEFjY05hbWU+DQogICAgICA8QXV0b1BheUZsYWc+PC9BdXRvUGF5RmxhZz4NCiAgICAgIDxCb251c0dldE1vZGU+PC9Cb251c0dldE1vZGU+DQogICAgICA8U3ViRmxhZz48L1N1YkZsYWc+DQogICAgICA8RnVsbEJvbnVzR2V0TW9kZT48L0Z1bGxCb251c0dldE1vZGU+DQogICAgICA8QWNjb3VudD48L0FjY291bnQ+DQogICAgICA8Q2FzaFZhbHVlcz4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj4xPC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjkyNjAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+MjwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD45ODEwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjM8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTA0MTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMTAzMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj41PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjExNzAwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjY8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTEyMTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NzwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDcwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj44PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjEwMTcwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjk8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+OTYxMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5k"
+17:28:31,853 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,855 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,856 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,857 DEBUG httpclient.Wire(84) - << "1"
+17:28:31,858 DEBUG httpclient.Wire(84) - << "8"
+17:28:31,859 DEBUG httpclient.Wire(84) - << "b"
+17:28:31,860 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,860 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,861 DEBUG httpclient.Wire(84) - << "WWVhcj4xMDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDAwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgIDwvQ2FzaFZhbHVlcz4NCiAgICAgIDxEZWR1Y3Rpb25WYWx1ZXM+PC9EZWR1Y3Rpb25WYWx1ZXM+DQogICAgICA8Qm9udXNWYWx1ZXM+PC9Cb251c1ZhbHVlcz4NCiAgICAgIDxTcGVjQ29udGVudD48L1NwZWNDb250ZW50Pg0KICAgIDwvUmlzaz4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+17:28:31,862 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,862 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,863 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,864 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,864 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,865 DEBUG httpclient.Wire(84) - << "0"
+17:28:31,866 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,866 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,876 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:31,876 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:31,877 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:28:31,879 INFO net.CallWebsvcAtomSvc(145) - 投保单号101010000421067录单核保(service)耗时：3.987s
+17:28:31,897 INFO common.SaveMessage(94) - 136581_15_0_outSvc.xml IO输出耗时:0.0090s
+17:28:31,897 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！136581_15_0_outSvc.xml
+17:28:31,898 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+17:28:31,898 INFO common.Log4jPrint(20) - -----------------------------------------------
+17:28:31,898 INFO service.NewContInput(181) - hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+17:28:31,900 DEBUG service.NewContInput(273) - Into NewContInput.getContDB()...
+17:28:32,005 DEBUG service.NewContInput(319) - Out NewContInput.getContDB()!
+17:28:32,006 INFO common.Log4jPrint(20) - ExecSQL : select 1 from cont where ProposalPrtno = '101010000421067'
+17:28:32,048 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:28:32,049 INFO common.Log4jPrint(20) - mSql: insert into Cont ( RecordNo,Type,ContNo,ProposalPrtNo,ProductId,TranCom,NodeNo,AgentCom,AgentComName,AgentCode,AgentName,ManageCom,AppntNo,AppntName,AppntSex,AppntBirthday,AppntIDType,AppntIDNo,InsuredNo,InsuredName,InsuredSex,InsuredBirthday,InsuredIDType,InsuredIDNo,TranDate,PolApplyDate,SignDate,Prem,Amnt,State,Bak1,Bak8,MakeDate,MakeTime,ModifyDate,ModifyTime,Operator ) values ( 549,0,'101010000421067','101010000421067',0,5,'01010101001865201','010101010001','农业银行贵州贵阳世纪城网点','5201300003','张三','86520101','0000002274','李四','0',19671025,'0','320304196710256138','0000002274','李四','0',19671025,'0','320304196710256138',20170529,20170529,0,1000000.0,960000.0,1,'012D0100','810000456813',20170529,172832,20170529,172832,'sys' )
+17:28:32,091 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:28:32,091 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:28:32,091 INFO common.Log4jPrint(20) - 810000456813
+17:28:32,092 INFO common.Log4jPrint(20) - 810000456813
+17:28:32,092 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=136581,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000456813',Operator='apky',FuncFlag=1002,TranDate=20170529,TranTime=152647,ProposalPrtNo='101010000421067',ContNo=null,OtherNo='180010000064605',AgentCom='010101010001',AgentCode='5201300003',AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom='86520101',RCode=0,RText='交易成功！',UsedTime=4,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3='810000456813',Bak4=null,Bak5=null,InNoDoc='136581_9_1002_in.xml',MakeDate=20170529,InDoc=null,OutDoc=null,MakeTime=172827,ModifyDate=20170529,ModifyTime=172832,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000456813'
+17:28:32,110 INFO service.NewContInput(268) - Out NewContInput.service()!
+17:28:32,110 INFO format.NewCont(44) - Into newABCNewCont.std2NoStd()...
+17:28:32,114 INFO format.NewCont(55) - 交易成功=========
+17:28:32,115 INFO format.NewCont(73) - Out newABCNewCont.std2NoStd()!
+17:28:32,115 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:28:32,123 INFO common.SaveMessage(94) - 136581_18_1002_out.xml IO输出耗时:0.0070s
+17:28:32,124 INFO net.NewAbcNetImpl(168) - 保存报文完毕！136581_18_1002_out.xml
+17:28:32,125 INFO net.NewAbcNetImpl(175) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><App><Ret><PolicyNo>1010100004210</PolicyNo><CorpCheckNo /><ValidDate /><PolicyDueDate /><Prem>10000.00</Prem><Amnt>9600.00</Amnt></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456813</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+
+17:28:32,125 INFO common.Log4jPrint(20) - strLen:542
+17:28:32,126 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><App><Ret><PolicyNo>1010100004210</PolicyNo><CorpCheckNo /><ValidDate /><PolicyDueDate /><Prem>10000.00</Prem><Amnt>9600.00</Amnt></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456813</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+  
+17:28:32,126 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:28:32,127 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:28:32,127 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+17:28:32,129 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><App><Ret><PolicyNo>1010100004210</PolicyNo><CorpCheckNo /><ValidDate /><PolicyDueDate /><Prem>10000.00</Prem><Amnt>9600.00</Amnt></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152647</TransTime><TransCode>1002</TransCode><ProvCode>01</ProvCode><SerialNo>810000456813</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial /><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+  
+17:28:32,129 INFO common.Log4jPrint(20) - xml字符串的报文长度：1088
+17:28:32,130 INFO net.NewAbcNetImpl(246) - Out NewAbcNetImp.send()!
+17:28:32,131 INFO test.NewABCTest(229) - package_head:X1.0000010883103    00000                                       000000000
+17:28:32,132 INFO test.NewABCTest(231) - mBodyLen:1088
+17:28:32,132 INFO test.NewABCTest(236) - 解密开始
+17:28:32,135 INFO test.NewABCTest(238) - 解密完成
+17:28:32,138 INFO test.NewABCTest(251) - UTF-8 农行的报文: 
+17:28:32,140 INFO test.NewABCTest(255) - 客户端接收返回报文完毕！耗时：5.028s
+17:28:32,147 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:28:32,147 INFO common.Log4jPrint(20) - null
+17:28:32,148 INFO common.Log4jPrint(20) - null
+17:28:32,148 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:28:32,186 INFO common.Log4jPrint(20) - i=0
+17:28:32,186 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:28:32,187 INFO midplat.Ybt4Socket(192) - 处理总耗时：5.061s
+17:28:32,187 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:28:50,522 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:28:50,547 INFO midplat.Ybt4Socket(34) - TranLogNo:136584
+17:28:50,549 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:28:50,549 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:28:50,564 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:28:50,565 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:28:50,567 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:28:50,569 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:28:50,584 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:28:50,585 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:28:51,148 INFO test.NewABCTest(210) - 发送报文头！X1.0000010883103    00000                                       000000000
+17:28:51,149 INFO net.NewAbcNetImpl(58) - package_head:X1.0000010883103    00000                                       000000000
+17:28:51,150 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:28:51,150 INFO net.NewAbcNetImpl(65) - mBodyLen:1088
+17:28:51,150 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.603s
+17:28:51,151 INFO net.NewAbcNetImpl(70) - 解密开始
+17:28:51,151 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:28:51,151 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:28:51,153 INFO net.NewAbcNetImpl(72) - 解密完成
+17:28:51,154 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794248</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PayAmt>10000</PayAmt><PayAccount>6225565656565656</PayAccount><PolicyNo>1010100004210</PolicyNo><ApplySerial>810000456813</ApplySerial><AccName>李丁</AccName><RiskCode>012D0100</RiskCode></Req></App></ABCB2I>
+  
+17:28:51,158 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:28:51,159 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1004
+17:28:51,191 INFO common.SaveMessage(94) - 136587_21_1004_in.xml IO输出耗时:0.03s
+17:28:51,191 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136587_21_1004_in.xml
+17:28:51,192 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:28:51,193 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.ContConfirm
+17:28:51,241 INFO format.ContConfirm(32) - Into ContConfirm.noStd2Std()...
+17:28:51,242 INFO format.ContConfirm(39) - 查询===================================!
+17:28:51,243 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno,otherno,logno,Operator from tranlog where trancom='05' and rcode='0' and funcflag='1002' and tranno='810000456813' and MakeDate='20170529' order by logno desc
+17:28:51,311 INFO format.ContConfirm(42) - 查询结果：4
+17:28:51,405 INFO format.ContConfirmInXsl(26) - Into ContConfirmInXsl.load()...
+17:28:51,405 INFO format.ContConfirmInXsl(29) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmIn.xsl...
+17:28:51,406 INFO common.XslCache(70) - conf file modified at (2017-04-26 17:41:35,544) and length=2552 bytes!
+17:28:51,463 INFO format.ContConfirmInXsl(36) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmIn.xsl!
+17:28:51,463 INFO format.ContConfirmInXsl(49) - Out ContConfirmInXsl.load()!
+17:28:51,467 INFO format.ContConfirm(44) - 赋值===================================!
+17:28:51,468 INFO format.ContConfirm(59) - Out ContConfirm.noStd2Std()!
+17:28:51,468 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContConfirm
+17:28:51,640 INFO service.NewContConfirm(34) - Into NewContConfirm.service()...
+17:28:51,641 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno from cont where bak8='810000456813' and state ='1' 
+17:28:51,697 INFO common.Log4jPrint(20) - ExecSQL : select bak8 from cont where proposalprtno='101010000421067' and state ='1' 
+17:28:51,742 INFO service.NewContConfirm(54) - 传过来的 顺序号：810000456813
+17:28:51,742 INFO service.NewContConfirm(55) - 查出来的 顺序号：810000456813
+17:28:51,743 INFO service.NewContConfirm(56) - 传过来的 投保单号：101010000421067
+17:28:51,743 INFO service.NewContConfirm(57) - 查出来的 投保单号：101010000421067
+17:28:51,744 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:28:51,744 INFO common.Log4jPrint(20) - 进程名：136587
+17:28:51,745 INFO common.Log4jPrint(20) - trancom:5
+17:28:51,745 INFO common.Log4jPrint(20) - FuncFlag:1004
+17:28:51,745 INFO common.Log4jPrint(20) - mHeadEle.getChildText136587_21_1004_in.xml
+17:28:51,780 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:28:51,780 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136587,5,'01','01010101001865201','128101001794248','apky',1004,20170529,152154,'101010000421067','180010000064605',-1,-1,'127.0.0.1','136587_21_1004_in.xml',20170529,172851,20170529,172851 )
+17:28:51,810 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:28:51,810 INFO service.NewContConfirm(68) - Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理
+17:28:51,811 INFO service.NewContConfirm(93) - select * from TranLog where ProposalPrtNo = '101010000421067'  and funcflag =1002 and trancom=5 and rcode=0 order by logno desc
+17:28:51,927 INFO service.NewContConfirm(95) - mTranLogSet.size():1
+17:28:51,928 INFO service.NewContConfirm(105) - 取最新的保单印刷号给核心传过去:180010000064605
+17:28:51,928 INFO service.NewContConfirm(121) - select * from Cont where Type=0 and State=1 and ProposalPrtNo='101010000421067' and MakeDate=20170529 and TranCom=5 and NodeNo='01010101001865201'
+17:28:52,019 INFO service.NewContConfirm(130) - select state from Cont where bak8=810000456813
+17:28:52,020 INFO common.Log4jPrint(20) - ExecSQL : select state from Cont where bak8=810000456813
+17:28:52,056 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+17:28:52,062 INFO common.SaveMessage(94) - 136587_24_1_inSvc.xml IO输出耗时:0.0050s
+17:28:52,062 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！136587_24_1_inSvc.xml
+17:28:52,063 INFO common.Log4jPrint(20) - start call 收费签单(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:28:52,063 INFO net.CallWebsvcAtomSvc(102) - start call 收费签单(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:28:52,104 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+17:28:52,105 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:28:52,106 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+17:28:52,106 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+17:28:52,106 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+17:28:52,107 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+17:28:52,107 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:52,108 DEBUG httpclient.Wire(70) - >> "485[\r][\n]"
+17:28:52,109 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTI5PC9UcmFuRGF0ZT48VHJhblRpbWU+MTUyMTU0PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4wMTwvWm9uZU5vPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VGVsbGVyTm8+YXBreTwvVGVsbGVyTm8+PFRyYW5Obz4xMjgxMDEwMDE3OTQyNDg8L1RyYW5Obz48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MTAwNDwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjEzNjU4N18yMV8xMDA0X2luLnhtbDwvSW5Ob0RvYz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFNlcnZpY2VJZD4xPC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxTYWxlQ2hhbm5lbD4wPC9TYWxlQ2hhbm5lbD48Q29udE5vIC8+PFByb3Bvc2FsUHJ0Tm8+MTAxMDEwMDAwNDIxMDY3PC9Qcm9wb3NhbFBydE5vPjxDb250UHJ0Tm8+MTgwMDEwMDAwMDY0NjA1PC9Db250UHJ0Tm8+PEFwcGx5Tm8+ODEwMDAwNDU2ODEzPC9BcHBseU5vPjxQb2xBcHBseURhdGUgLz48QmtBY2N0Tm8+NjIyNTU2NTY1NjU2NTY1NjwvQmtBY2N0Tm8+PFByZW0+MTAwMDAwMDwvUHJlbT48L0JvZHk+PC9UcmFuRGF0YT4NCg==</arg0></service></soapenv:Body></soapenv:Envelope>"
+17:28:52,110 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:52,110 DEBUG httpclient.Wire(84) - >> "0"
+17:28:52,110 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:52,111 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:28:53,059 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:28:53,059 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:28:53,060 DEBUG httpclient.Wire(70) - << "Date: Mon, 29 May 2017 09:27:52 GMT[\r][\n]"
+17:28:53,061 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+17:28:53,062 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:28:53,062 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+17:28:53,063 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:28:53,064 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,064 DEBUG httpclient.Wire(84) - << "f"
+17:28:53,065 DEBUG httpclient.Wire(84) - << "e"
+17:28:53,065 DEBUG httpclient.Wire(84) - << "8"
+17:28:53,066 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,066 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,067 DEBUG httpclient.Wire(84) - << "<?xm"
+17:28:53,068 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT4NCiAgICA8U2FsZUNoYW5uZWw+MDwvU2FsZUNoYW5uZWw+DQogICAgPENvbnRObz44ODgwMTAwMDAwMDExMDQ8L0NvbnRObz4NCiAgICA8UHJvcG9zYWxQcnRObz4xMDEwMTAwMDA0MjEwNjc8L1Byb3Bvc2FsUHJ0Tm8+DQogICAgPENvbnRQcnRObz4xODAwMTAwMDAwNjQ2MDU8L0NvbnRQcnRObz4NCiAgICA8UG9saWN5UGxlZGdlPjA8L1BvbGljeVBsZWRnZT4NCiAgICA8Q29udFZhbHVlPjEwMDAwMDA8L0NvbnRWYWx1ZT4NCiAgICA8QWNjb3VudFZhbHVlPjEwMDAwMDA8L0FjY291bnRWYWx1ZT4NCiAgICA8UGF5UHJvdj48L1BheVByb3Y+DQogICAgPFBheU5vZGVObz4wMTAxMDEwMTAwMDE8L1BheU5vZGVObz4NCiAgICA8UGF5VHlwZT4wPC9QYXlUeXBlPg0KICAgIDxQYXlQcmVtPjEwMDAwMDA8L1BheVByZW0+DQogICAgPEFjY05vPjYyMjU1NjU2NTY1NjU2NTY8L0FjY05vPg0KICAgIDxQcmVtPjEwMDAwMDA8L1ByZW0+DQogICAgPFByZW1UZXh0PsjLw/Gx0tK8zfLUqtX7PC9QcmVtVGV4dD4NCiAgICA8QW1udD45NjAwMDA8L0FtbnQ+DQogICAgPEFtbnRUZXh0PsjLw/Gx0r7Bx6rCvbDb1KrV+zwvQW1udFRleHQ+DQogICAgPEFnZW50Q29kZT41MjAxMzAwMDAzPC9BZ2VudENvZGU+DQogICAgPEFnZW50TmFtZT7Vxcj9PC9BZ2VudE5hbWU+DQogICAgPEFnZW50R3JwQ29kZT4wMDAwMDAwMDAyMjM8L0FnZW50R3JwQ29kZT4NCiAgICA8QWdlbnRHcnBOYW1lPrnz0fTS+LGj06rStbK/MbbTPC9BZ2VudEdycE5hbWU+DQogICAgPEFnZW50Q29tPjAxMDEwMTAxMDAwMTwvQWdlbnRDb20+DQogICAgPEFnZW50Q29tTmFtZT7FqdK10vjQ0Lnz1t2589H0ysC8zbPHzfi14zwvQWdlbnRDb21OYW1lPg0KICAgIDxDb21Db2RlPjg2NTIwMTAxPC9Db21Db2RlPg0KICAgIDxDb21Mb2NhdGlvbj6589bdyqG589H0ytC439DCx/izpMHrxM/CtzE3OLrFw6nMqLn6vMrJzM7x1tDQxEG2sDEzsuM8L0NvbUxvY2F0aW9uPg0KICAgIDxDb21OYW1lPruqufPIy8rZsaPP1bnJt93T0M/euavLvtOq0rXX3LK/PC9Db21OYW1lPg0KICAgIDxDb21aaXBDb2RlPjwvQ29tWmlwQ29kZT4NCiAgICA8Q29tUGhvbmU+PC9Db21QaG9uZT4NCiAgICA8U2FsZVN0YWZmPjAwMjAxMDA5NDQwMDAwMDI2MDY1PC9TYWxlU3RhZmY+DQogICAgPFNhbGVOYW1lPrrCuqO35TwvU2FsZU5hbWU+DQogICAgPFNhbGVDZXJ0Tm8+MDAyMDEwMDk0NDAwMDAwMjYwNjU8L1NhbGVDZXJ0Tm8+DQogICAgPFBvbGljeVN0YXR1cz48L1BvbGljeVN0YXR1cz4NCiAgICA8QmFua0NvbU5vPjAxMDEwMTAxMDAxODY1MjAxPC9CYW5rQ29tTm8+DQogICAgPEFnZW50UGhvbmU+MTUwNjM4MTk2MzI8L0FnZW50UGhvbmU+DQogICAgPFBheUludHY+MDwvUGF5SW50dj4NCiAgICA8SW5zUHJlbV9QeUZfUHJkX051bT4xMDAwPC9JbnNQcmVtX1B5Rl9QcmRfTnVtPg0KICAgIDxQYXllbmRZZWFyPjEwMDA8L1BheWVuZFllYXI+DQogICAgPFBheWVuZFllYXJGbGFnPlk8L1BheWVuZFllYXJGbGFnPg0KICAgIDxBcHBudD4NCiAgICAgIDxDdXN0b21lck5vPjAwMDAwMDIyNzQ8L0N1c3RvbWVyTm8+DQogICAgICA8TmFtZT7A7svEPC9OYW1lPg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPElEVHlwZT4wPC9JRFR5cGU+DQogICAgICA8SURObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0lETm8+DQogICAgICA8Sm9iVHlwZT4xPC9Kb2JUeXBlPg0KICAgICAgPEpvYkNvZGU+MzAxMDEwMTwvSm9iQ29kZT4NCiAgICAgIDxKb2JOYW1lPjE8L0pvYk5hbWU+DQogICAgICA8TmF0aW9uYWxpdHk+Q0hOPC9OYXRpb25hbGl0eT4NCiAgICAgIDxTdGF0dXJlPjwvU3RhdHVyZT4NCiAgICAgIDxXZWlnaHQ+PC9XZWlnaHQ+DQogICAgICA8TWFyaXRhbFN0YXR1cz48L01hcml0YWxTdGF0dXM+DQogICAgICA8QWRkcmVzcz7W2MfsQEDT5bGxx/hAQLGxtPO91kBAMji6xUBAPC9BZGRyZXNzPg0KICAgICAgPFppcENvZGU+MTAwMDAwPC9aaXBDb2RlPg0KICAgICAgPE1vYmlsZT4xODUwMTA3NzMxODwvTW9iaWxlPg0KICAgICAgPFBob25lPjE4NTAxMDc3MzE4PC9QaG9uZT4NCiAgICAgIDxFbWFpbD48L0VtYWlsPg0KICAgICAgPFJlbGFUb0luc3VyZWQ+MDA8L1JlbGFUb0luc3VyZWQ+DQogICAgICA8WWVhclNhbGFyeT41MC4wPC9ZZWFyU2FsYXJ5Pg0KICAgICAgPEZhbWlseVllYXJTYWxhcnk+MC4wPC9GYW1pbHlZZWFyU2FsYXJ5Pg0KICAgICAgPERlblR5cGU+MTwvRGVuVHlwZT4NCiAgICA8L0FwcG50Pg0KICAgIDxJbnN1cmVkPg0KICAgICAgPEN1c3RvbWVyTm8+MDAwMDAwMjI3NDwvQ3VzdG9tZXJObz4NCiAgICAgIDxOYW1lPsDuy8Q8L05hbWU+DQogICAgICA8U2V4PjA8L1NleD4NCiAgICAgIDxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+DQogICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgIDxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzODwvSURObz4NCiAgICAgIDxKb2JUeXBlPjE8L0pvYlR5cGU+DQogICAgICA8Sm9iQ29kZT4zMDEwMTAxPC9Kb2JDb2RlPg0KICAgICAgPEpvYk5hbWU+MTwvSm9iTmFtZT4NCiAgICAgIDxTdGF0dXJlPjwvU3RhdHVyZT4NCiAgICAgIDxOYXRpb25hbGl0eT5DSE48L05hdGlvbmFsaXR5Pg0KICAgICAgPFdlaWdodD48L1dlaWdodD4NCiAgICAgIDxNYXJpdGFsU3RhdHVzPjwvTWFyaXRhbFN0YXR1cz4NCiAgICAgIDxBZGRyZXNzPtbYx+xAQNPlsbHH+EBAsbG0873WQEAyOLrFQEA8L0FkZHJlc3M+DQogICAgICA8WmlwQ29kZT4xMDAwMDA8"
+17:28:53,069 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,069 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,070 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,070 DEBUG httpclient.Wire(84) - << "f"
+17:28:53,071 DEBUG httpclient.Wire(84) - << "e"
+17:28:53,071 DEBUG httpclient.Wire(84) - << "8"
+17:28:53,071 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,072 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,072 DEBUG httpclient.Wire(84) - << "L1ppcENvZGU+DQogICAgICA8TW9iaWxlPjE4NTAxMDc3MzE4PC9Nb2JpbGU+DQogICAgICA8UGhvbmU+MTg1MDEwNzczMTg8L1Bob25lPg0KICAgICAgPEVtYWlsPjwvRW1haWw+DQogICAgICA8RGVuVHlwZT48L0RlblR5cGU+DQogICAgPC9JbnN1cmVkPg0KICAgIDxCbmY+DQogICAgICA8VHlwZT4wPC9UeXBlPg0KICAgICAgPEdyYWRlPjE8L0dyYWRlPg0KICAgICAgPE5hbWU+wO7LxDwvTmFtZT4NCiAgICAgIDxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+DQogICAgICA8U2V4PjA8L1NleD4NCiAgICAgIDxJRFR5cGU+MDwvSURUeXBlPg0KICAgICAgPElETm8+MzIwMzA0MTk2NzEwMjU2MTM4PC9JRE5vPg0KICAgICAgPFJlbGFUb0luc3VyZWQ+PC9SZWxhVG9JbnN1cmVkPg0KICAgICAgPExvdD4xMDA8L0xvdD4NCiAgICAgIDxCZW5mQWNjTm8+PC9CZW5mQWNjTm8+DQogICAgICA8QmVuZkFjY05hbWU+PC9CZW5mQWNjTmFtZT4NCiAgICA8L0JuZj4NCiAgICA8Qm5mPg0KICAgICAgPFR5cGU+MTwvVHlwZT4NCiAgICAgIDxHcmFkZT4xPC9HcmFkZT4NCiAgICAgIDxOYW1lPsDuy8Q8L05hbWU+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgIDxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzODwvSURObz4NCiAgICAgIDxSZWxhVG9JbnN1cmVkPjAwPC9SZWxhVG9JbnN1cmVkPg0KICAgICAgPExvdD4xMDA8L0xvdD4NCiAgICAgIDxCZW5mQWNjTm8+PC9CZW5mQWNjTm8+DQogICAgICA8QmVuZkFjY05hbWU+PC9CZW5mQWNjTmFtZT4NCiAgICA8L0JuZj4NCiAgICA8SGVzaXRhdGVQZXJpb2Q+MjA8L0hlc2l0YXRlUGVyaW9kPg0KICAgIDxSaXNrPg0KICAgICAgPFJpc2tDb2RlPjAxMkQwMTAwPC9SaXNrQ29kZT4NCiAgICAgIDxSaXNrTmFtZT67qrnztuCyytOuvNLE6r3wsaPP1TwvUmlza05hbWU+DQogICAgICA8TWFpblJpc2tDb2RlPjAxMkQwMTAwPC9NYWluUmlza0NvZGU+DQogICAgICA8UG9sQXBwbHlEYXRlPjIwMTcwNTI5PC9Qb2xBcHBseURhdGU+DQogICAgICA8U2lnbkRhdGU+MjAxNzA1Mjk8L1NpZ25EYXRlPg0KICAgICAgPENWYWxpRGF0ZT4yMDE3MDUzMDwvQ1ZhbGlEYXRlPg0KICAgICAgPEluc3VFbmREYXRlPjIwMjcwNTMwPC9JbnN1RW5kRGF0ZT4NCiAgICAgIDxBbW50Pjk2MDAwMDwvQW1udD4NCiAgICAgIDxQcmVtPjEwMDAwMDA8L1ByZW0+DQogICAgICA8TXVsdD4xMDwvTXVsdD4NCiAgICAgIDxQYXlJbnR2PjA8L1BheUludHY+DQogICAgICA8UGF5TW9kZT4wPC9QYXlNb2RlPg0KICAgICAgPEluc3VZZWFyRmxhZz5ZPC9JbnN1WWVhckZsYWc+DQogICAgICA8SW5zdVllYXI+MTA8L0luc3VZZWFyPg0KICAgICAgPFllYXJzPjEwPC9ZZWFycz4NCiAgICAgIDxQYXlFbmRZZWFyRmxhZz5ZPC9QYXlFbmRZZWFyRmxhZz4NCiAgICAgIDxQYXlFbmRZZWFyPjEwMDA8L1BheUVuZFllYXI+DQogICAgICA8UGF5RW5kRGF0ZT4zMDE3MDUzMDwvUGF5RW5kRGF0ZT4NCiAgICAgIDxDb3N0SW50dj48L0Nvc3RJbnR2Pg0KICAgICAgPENvc3REYXRlPjwvQ29zdERhdGU+DQogICAgICA8UGF5VG9EYXRlPjMwMTcwNTMwPC9QYXlUb0RhdGU+DQogICAgICA8R2V0WWVhckZsYWc+WTwvR2V0WWVhckZsYWc+DQogICAgICA8R2V0U3RhcnREYXRlPjIwMTcwNTMwPC9HZXRTdGFydERhdGU+DQogICAgICA8R2V0WWVhcj42PC9HZXRZZWFyPg0KICAgICAgPEdldEludHY+PC9HZXRJbnR2Pg0KICAgICAgPEdldFRlcm1zPjwvR2V0VGVybXM+DQogICAgICA8R2V0QmFua0NvZGU+PC9HZXRCYW5rQ29kZT4NCiAgICAgIDxHZXRCYW5rQWNjTm8+PC9HZXRCYW5rQWNjTm8+DQogICAgICA8R2V0QWNjTmFtZT48L0dldEFjY05hbWU+DQogICAgICA8QXV0b1BheUZsYWc+PC9BdXRvUGF5RmxhZz4NCiAgICAgIDxCb251c0dldE1vZGU+PC9Cb251c0dldE1vZGU+DQogICAgICA8U3ViRmxhZz48L1N1YkZsYWc+DQogICAgICA8RnVsbEJvbnVzR2V0TW9kZT48L0Z1bGxCb251c0dldE1vZGU+DQogICAgICA8QWNjb3VudD48L0FjY291bnQ+DQogICAgICA8Q2FzaFZhbHVlcz4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj4xPC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjkyNjAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+MjwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD45ODEwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjM8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTA0MTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMTAzMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj41PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjExNzAwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjY8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTEyMTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NzwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDcwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj44PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjEwMTcwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjk8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+OTYxMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAg"
+17:28:53,074 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,074 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,075 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,075 DEBUG httpclient.Wire(84) - << "1"
+17:28:53,075 DEBUG httpclient.Wire(84) - << "b"
+17:28:53,076 DEBUG httpclient.Wire(84) - << "3"
+17:28:53,076 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,076 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,077 DEBUG httpclient.Wire(84) - << "ICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj4xMDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDAwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgIDwvQ2FzaFZhbHVlcz4NCiAgICAgIDxEZWR1Y3Rpb25WYWx1ZXM+PC9EZWR1Y3Rpb25WYWx1ZXM+DQogICAgICA8Qm9udXNWYWx1ZXM+PC9Cb251c1ZhbHVlcz4NCiAgICAgIDxTcGVjQ29udGVudD48L1NwZWNDb250ZW50Pg0KICAgIDwvUmlzaz4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+17:28:53,079 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,079 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,080 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,080 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,080 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,081 DEBUG httpclient.Wire(84) - << "0"
+17:28:53,081 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,082 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,082 DEBUG httpclient.Wire(84) - << "[\r]"
+17:28:53,082 DEBUG httpclient.Wire(70) - << "[\n]"
+17:28:53,083 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:28:53,085 INFO net.CallWebsvcAtomSvc(145) - 投保单号101010000421067收费签单(service)耗时：1.021s
+17:28:53,100 INFO common.SaveMessage(94) - 136587_27_1_outSvc.xml IO输出耗时:0.0080s
+17:28:53,100 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！136587_27_1_outSvc.xml
+17:28:53,100 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+17:28:53,101 INFO common.Log4jPrint(20) - ExecSQL : update Cont set State=2, ContNo=888010000001104, SignDate=20170529, ModifyDate=20170529, ModifyTime=172853 where Proposalprtno=101010000421067
+17:28:53,183 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:28:53,184 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:28:53,184 INFO common.Log4jPrint(20) - 128101001794248
+17:28:53,184 INFO common.Log4jPrint(20) - 128101001794248
+17:28:53,184 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=136587,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='128101001794248',Operator='apky',FuncFlag=1004,TranDate=20170529,TranTime=152154,ProposalPrtNo='101010000421067',ContNo='888010000001104',OtherNo='180010000064605',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='交易成功！',UsedTime=1,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='136587_21_1004_in.xml',MakeDate=20170529,InDoc=null,OutDoc=null,MakeTime=172851,ModifyDate=20170529,ModifyTime=172853,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='128101001794248'
+17:28:53,226 INFO service.NewContConfirm(229) - Out NewContConfirm.service()!
+17:28:53,227 INFO format.ContConfirm(64) - Into ContConfirm.Std2StdnoStd()...
+17:28:53,257 INFO format.ContConfirmOutXsl(35) - Into ContConfirmOutXsl.load()...
+17:28:53,258 INFO format.ContConfirmOutXsl(38) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmOut.xsl...
+17:28:53,258 INFO common.XslCache(70) - conf file modified at (2017-04-26 15:27:12,367) and length=24931 bytes!
+17:28:53,648 INFO format.ContConfirmOutXsl(54) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmOut.xsl!
+17:28:53,649 INFO format.ContConfirmOutXsl(67) - Out ContConfirmOutXsl.load()!
+17:28:53,678 INFO format.ContConfirm(78) - 交易成功=========
+17:28:53,679 INFO common.Log4jPrint(20) - Prnt个数：70
+17:28:53,680 INFO common.Log4jPrint(20) - Prnt个数：43
+17:28:53,681 INFO common.Log4jPrint(20) - Prnt个数：20
+17:28:53,684 INFO format.ContConfirm(96) - Out ContConfirm.Std2StdnoStd()!
+17:28:53,684 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:28:53,704 INFO common.SaveMessage(94) - 136587_30_1004_out.xml IO输出耗时:0.02s
+17:28:53,704 INFO net.NewAbcNetImpl(168) - 保存报文完毕！136587_30_1004_out.xml
+17:28:53,705 INFO net.NewAbcNetImpl(175) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo>1800100000646</VchNo><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:28:53</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794248</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+
+17:28:53,706 INFO common.Log4jPrint(20) - strLen:8332
+17:28:53,706 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo>1800100000646</VchNo><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:28:53</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794248</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+    
+17:28:53,707 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:28:53,708 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:28:53,709 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+17:28:53,881 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo>1800100000646</VchNo><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:28:53</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794248</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+    
+17:28:53,885 INFO common.Log4jPrint(20) - xml字符串的报文长度：16672
+17:28:53,886 INFO test.NewABCTest(229) - package_head:X1.0000166723103    00000                                       000000000
+17:28:53,886 INFO net.NewAbcNetImpl(246) - Out NewAbcNetImp.send()!
+17:28:53,886 INFO test.NewABCTest(231) - mBodyLen:16672
+17:28:53,887 INFO test.NewABCTest(236) - 解密开始
+17:28:53,899 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:28:53,900 INFO common.Log4jPrint(20) - null
+17:28:53,900 INFO common.Log4jPrint(20) - null
+17:28:53,900 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:28:53,907 INFO test.NewABCTest(238) - 解密完成
+17:28:53,917 INFO test.NewABCTest(251) - UTF-8 农行的报文: 
+17:28:53,921 INFO test.NewABCTest(255) - 客户端接收返回报文完毕！耗时：3.374s
+17:28:53,941 INFO common.Log4jPrint(20) - i=0
+17:28:53,942 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:28:53,942 INFO midplat.Ybt4Socket(192) - 处理总耗时：3.358s
+17:28:53,943 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:30:32,726 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:30:32,742 INFO midplat.Ybt4Socket(34) - TranLogNo:136590
+17:30:32,743 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:30:32,743 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:30:32,749 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:30:32,750 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:30:32,754 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:30:32,756 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:30:32,768 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:30:32,769 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:30:33,104 INFO test.NewABCTest(210) - 发送报文头！X1.0000012163103    00000                                       000000000
+17:30:33,105 INFO net.NewAbcNetImpl(58) - package_head:X1.0000012163103    00000                                       000000000
+17:30:33,106 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:30:33,106 INFO net.NewAbcNetImpl(65) - mBodyLen:1216
+17:30:33,107 INFO net.NewAbcNetImpl(70) - 解密开始
+17:30:33,107 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:30:33,106 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.365s
+17:30:33,108 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:30:33,109 INFO net.NewAbcNetImpl(72) - 解密完成
+17:30:33,109 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>164944</TransTime><TransCode>1009</TransCode><CorpNo>1141</CorpNo><SerialNo>810000585810</SerialNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><OrgSerialNo>128101001794248</OrgSerialNo><OrgTransDate>20170529</OrgTransDate><TransCode>1004</TransCode><InsuCode>0205</InsuCode><ProdCode>012D0100</ProdCode><PolicyNo>888010000001104</PolicyNo><PayAcc>6228452508010633671</PayAcc><PayAmt>60000.00</PayAmt></Req></App></ABCB2I>
+  
+17:30:33,110 INFO test.NewABCTest(221) - 收到返回报文！
+17:30:33,115 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:30:33,115 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1009
+17:30:33,120 INFO common.SaveMessage(94) - 136593_33_1009_in.xml IO输出耗时:0.0030s
+17:30:33,120 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136593_33_1009_in.xml
+17:30:33,120 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:30:33,122 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.Rollback
+17:30:33,156 INFO format.Rollback(27) - Into Rollback.noStd2Std()...
+17:30:33,169 INFO format.RollbackInXsl(24) - Into RollbackInXsl.load()...
+17:30:33,169 INFO format.RollbackInXsl(27) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/RollbackIn.xsl...
+17:30:33,170 INFO common.XslCache(70) - conf file modified at (2017-04-26 14:59:01,670) and length=1925 bytes!
+17:30:33,196 INFO format.RollbackInXsl(34) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/RollbackIn.xsl!
+17:30:33,197 INFO format.RollbackInXsl(47) - Out RollbackInXsl.load()!
+17:30:33,200 INFO format.Rollback(31) - Out Rollback.noStd2Std()!
+17:30:33,201 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.ContRollback
+17:30:33,214 INFO service.ContRollback(39) - Into ContRollback.service()...
+17:30:33,215 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:30:33,216 INFO common.Log4jPrint(20) - 进程名：136593
+17:30:33,216 INFO common.Log4jPrint(20) - trancom:5
+17:30:33,216 INFO common.Log4jPrint(20) - FuncFlag:1009
+17:30:33,217 INFO common.Log4jPrint(20) - mHeadEle.getChildText136593_33_1009_in.xml
+17:30:33,259 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:30:33,259 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ContNo,RCode,UsedTime,Bak1,Bak2,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136593,5,'01','01010101001865201','810000585810','apky',1009,20170529,164944,'888010000001104',-1,-1,'127.0.0.1','128101001794248','136593_33_1009_in.xml',20170529,173033,20170529,173033 )
+17:30:33,279 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:30:33,279 INFO service.ContRollback(62) - select * from Tranlog where  FuncFlag=1004 and tranno ='128101001794248' and MakeDate=20170529 and TranCom=5 and ZoneNo='01' and NodeNo='01010101001865201'
+17:30:33,318 INFO service.ContRollback(89) - select * from Cont where Type=0 and ProposalPrtNo = '101010000421067' and MakeDate=20170529 and TranCom=5 and NodeNo='01010101001865201'
+17:30:33,363 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+17:30:33,368 INFO common.SaveMessage(94) - 136593_36_2_inSvc.xml IO输出耗时:0.0050s
+17:30:33,368 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！136593_36_2_inSvc.xml
+17:30:33,368 INFO common.Log4jPrint(20) - start call 新单回滚(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:30:33,368 INFO net.CallWebsvcAtomSvc(102) - start call 新单回滚(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:30:33,396 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+17:30:33,397 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:30:33,398 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+17:30:33,398 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+17:30:33,399 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+17:30:33,399 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+17:30:33,400 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:30:33,401 DEBUG httpclient.Wire(70) - >> "411[\r][\n]"
+17:30:33,402 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTI5PC9UcmFuRGF0ZT48VHJhblRpbWU+MTY0OTQ0PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4wMTwvWm9uZU5vPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VGVsbGVyTm8+YXBreTwvVGVsbGVyTm8+PFRyYW5Obz44MTAwMDA1ODU4MTA8L1RyYW5Obz48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MTAwOTwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjEzNjU5M18zM18xMDA5X2luLnhtbDwvSW5Ob0RvYz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFNlcnZpY2VJZD4yPC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxTYWxlQ2hhbm5lbD4wPC9TYWxlQ2hhbm5lbD48Q29udE5vPjg4ODAxMDAwMDAwMTEwNDwvQ29udE5vPjxQcm9wb3NhbFBydE5vPjEwMTAxMDAwMDQyMTA2NzwvUHJvcG9zYWxQcnRObz48T2xkVHJhbk5vPjEyODEwMTAwMTc5NDI0ODwvT2xkVHJhbk5vPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+17:30:33,403 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:30:33,403 DEBUG httpclient.Wire(84) - >> "0"
+17:30:33,404 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:30:33,405 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:30:33,470 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:30:33,470 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:30:33,471 DEBUG httpclient.Wire(70) - << "Date: Mon, 29 May 2017 09:29:33 GMT[\r][\n]"
+17:30:33,471 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+17:30:33,471 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:30:33,472 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+17:30:33,472 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:30:33,473 DEBUG httpclient.Wire(84) - << "0"
+17:30:33,473 DEBUG httpclient.Wire(84) - << "1"
+17:30:33,473 DEBUG httpclient.Wire(84) - << "c"
+17:30:33,474 DEBUG httpclient.Wire(84) - << "b"
+17:30:33,474 DEBUG httpclient.Wire(84) - << "[\r]"
+17:30:33,474 DEBUG httpclient.Wire(70) - << "[\n]"
+17:30:33,475 DEBUG httpclient.Wire(84) - << "<?xm"
+17:30:33,475 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+s+XV/b270tezybmmPC9EZXNjPg0KICA8L0hlYWQ+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+17:30:33,476 DEBUG httpclient.Wire(84) - << "[\r]"
+17:30:33,476 DEBUG httpclient.Wire(70) - << "[\n]"
+17:30:33,477 DEBUG httpclient.Wire(84) - << "0"
+17:30:33,477 DEBUG httpclient.Wire(84) - << "0"
+17:30:33,477 DEBUG httpclient.Wire(84) - << "0"
+17:30:33,478 DEBUG httpclient.Wire(84) - << "0"
+17:30:33,478 DEBUG httpclient.Wire(84) - << "[\r]"
+17:30:33,478 DEBUG httpclient.Wire(70) - << "[\n]"
+17:30:33,479 DEBUG httpclient.Wire(84) - << "[\r]"
+17:30:33,479 DEBUG httpclient.Wire(70) - << "[\n]"
+17:30:33,480 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:30:33,481 INFO net.CallWebsvcAtomSvc(145) - 投保单号101010000421067新单回滚(service)耗时：0.112s
+17:30:33,489 INFO common.SaveMessage(94) - 136593_39_2_outSvc.xml IO输出耗时:0.0050s
+17:30:33,490 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！136593_39_2_outSvc.xml
+17:30:33,490 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+17:30:33,491 INFO common.Log4jPrint(20) - ExecSQL : update Cont set State=  1, ModifyDate=20170529, ModifyTime=173033 where RecordNo=549
+17:30:33,571 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:30:33,572 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:30:33,572 INFO common.Log4jPrint(20) - 810000585810
+17:30:33,572 INFO common.Log4jPrint(20) - 810000585810
+17:30:33,572 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=136593,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='810000585810',Operator='apky',FuncFlag=1009,TranDate=20170529,TranTime=164944,ProposalPrtNo='101010000421067',ContNo='888010000001104',OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='冲正交易成功',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2='128101001794248',Bak3=null,Bak4=null,Bak5=null,InNoDoc='136593_33_1009_in.xml',MakeDate=20170529,InDoc=null,OutDoc=null,MakeTime=173033,ModifyDate=20170529,ModifyTime=173033,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='810000585810'
+17:30:33,598 INFO service.ContRollback(143) - Out ContRollback.service()!
+17:30:33,598 INFO format.Rollback(36) - Into Rollback.std2NoStd()...
+17:30:33,601 INFO format.RollbackOutXsl(24) - Into RollbackOutXsl.load()...
+17:30:33,602 INFO format.RollbackOutXsl(27) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/RollbackOut.xsl...
+17:30:33,602 INFO common.XslCache(70) - conf file modified at (2017-04-24 09:29:05,184) and length=455 bytes!
+17:30:33,616 INFO format.RollbackOutXsl(43) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/RollbackOut.xsl!
+17:30:33,616 INFO format.RollbackOutXsl(56) - Out RollbackOutXsl.load()!
+17:30:33,617 INFO format.Rollback(45) - 交易成功=========
+17:30:33,618 INFO format.Rollback(60) - Out Rollback.std2NoStd()!
+17:30:33,618 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:30:33,624 INFO common.SaveMessage(94) - 136593_42_1009_out.xml IO输出耗时:0.0060s
+17:30:33,624 INFO net.NewAbcNetImpl(168) - 保存报文完毕！136593_42_1009_out.xml
+17:30:33,624 INFO net.NewAbcNetImpl(175) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><App><Ret><OrgSerialNo>128101001794248</OrgSerialNo><OrgTransDate>20170529</OrgTransDate><TransCode>1004</TransCode></Ret></App><Header><TransDate>20170529</TransDate><TransTime>164944</TransTime><TransCode>1009</TransCode><CorpNo>1141</CorpNo><SerialNo>810000585810</SerialNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><RetCode>000000</RetCode><RetMsg>冲正交易成功</RetMsg></Header></ABCB2I>
+
+17:30:33,625 INFO common.Log4jPrint(20) - strLen:517
+17:30:33,625 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><App><Ret><OrgSerialNo>128101001794248</OrgSerialNo><OrgTransDate>20170529</OrgTransDate><TransCode>1004</TransCode></Ret></App><Header><TransDate>20170529</TransDate><TransTime>164944</TransTime><TransCode>1009</TransCode><CorpNo>1141</CorpNo><SerialNo>810000585810</SerialNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><RetCode>000000</RetCode><RetMsg>冲正交易成功</RetMsg></Header></ABCB2I>
+           
+17:30:33,625 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:30:33,626 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:30:33,626 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+17:30:33,627 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><App><Ret><OrgSerialNo>128101001794248</OrgSerialNo><OrgTransDate>20170529</OrgTransDate><TransCode>1004</TransCode></Ret></App><Header><TransDate>20170529</TransDate><TransTime>164944</TransTime><TransCode>1009</TransCode><CorpNo>1141</CorpNo><SerialNo>810000585810</SerialNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><ProvCode>01</ProvCode><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><RetCode>000000</RetCode><RetMsg>冲正交易成功</RetMsg></Header></ABCB2I>
+           
+17:30:33,628 INFO common.Log4jPrint(20) - xml字符串的报文长度：1056
+17:30:33,628 INFO test.NewABCTest(229) - package_head:X1.0000010563103    00000                                       000000000
+17:30:33,629 INFO test.NewABCTest(231) - mBodyLen:1056
+17:30:33,630 INFO test.NewABCTest(236) - 解密开始
+17:30:33,632 INFO test.NewABCTest(238) - 解密完成
+17:30:33,636 INFO test.NewABCTest(251) - UTF-8 农行的报文: 
+17:30:33,637 INFO test.NewABCTest(255) - 客户端接收返回报文完毕！耗时：0.896s
+17:30:33,649 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:30:33,649 INFO common.Log4jPrint(20) - null
+17:30:33,649 INFO common.Log4jPrint(20) - null
+17:30:33,650 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:30:33,695 INFO common.Log4jPrint(20) - i=0
+17:30:33,695 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:30:33,696 INFO midplat.Ybt4Socket(192) - 处理总耗时：0.928s
+17:30:33,696 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:37:46,540 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:37:46,607 INFO midplat.Ybt4Socket(34) - TranLogNo:136596
+17:37:46,632 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:37:46,633 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:37:46,639 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:37:46,640 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:37:46,649 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:37:46,650 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:37:46,652 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:37:46,652 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:37:47,127 INFO test.NewABCTest(210) - 发送报文头！X1.0000010883103    00000                                       000000000
+17:37:47,129 INFO net.NewAbcNetImpl(58) - package_head:X1.0000010883103    00000                                       000000000
+17:37:47,129 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:37:47,130 INFO net.NewAbcNetImpl(65) - mBodyLen:1088
+17:37:47,130 INFO net.NewAbcNetImpl(70) - 解密开始
+17:37:47,131 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:37:47,129 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.527s
+17:37:47,134 INFO test.NewABCTest(221) - 收到返回报文！
+17:37:47,135 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:37:47,138 INFO net.NewAbcNetImpl(72) - 解密完成
+17:37:47,139 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794248</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PayAmt>10000</PayAmt><PayAccount>6225565656565656</PayAccount><PolicyNo>1010100004210</PolicyNo><ApplySerial>810000456813</ApplySerial><AccName>李丁</AccName><RiskCode>012D0100</RiskCode></Req></App></ABCB2I>
+  
+17:37:47,159 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:37:47,160 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1004
+17:37:47,171 INFO common.SaveMessage(94) - 136599_45_1004_in.xml IO输出耗时:0.0070s
+17:37:47,172 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136599_45_1004_in.xml
+17:37:47,173 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:37:47,174 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.ContConfirm
+17:37:47,175 INFO format.ContConfirm(32) - Into ContConfirm.noStd2Std()...
+17:37:47,185 INFO format.ContConfirm(39) - 查询===================================!
+17:37:47,186 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno,otherno,logno,Operator from tranlog where trancom='05' and rcode='0' and funcflag='1002' and tranno='810000456813' and MakeDate='20170529' order by logno desc
+17:37:47,220 INFO format.ContConfirm(42) - 查询结果：4
+17:37:47,226 INFO format.ContConfirm(44) - 赋值===================================!
+17:37:47,226 INFO format.ContConfirm(59) - Out ContConfirm.noStd2Std()!
+17:37:47,226 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContConfirm
+17:37:47,227 INFO service.NewContConfirm(34) - Into NewContConfirm.service()...
+17:37:47,228 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno from cont where bak8='810000456813' and state ='1' 
+17:37:47,279 INFO common.Log4jPrint(20) - ExecSQL : select bak8 from cont where proposalprtno='101010000421067' and state ='1' 
+17:37:47,335 INFO service.NewContConfirm(54) - 传过来的 顺序号：810000456813
+17:37:47,335 INFO service.NewContConfirm(55) - 查出来的 顺序号：810000456813
+17:37:47,335 INFO service.NewContConfirm(56) - 传过来的 投保单号：101010000421067
+17:37:47,336 INFO service.NewContConfirm(57) - 查出来的 投保单号：101010000421067
+17:37:47,336 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:37:47,337 INFO common.Log4jPrint(20) - 进程名：136599
+17:37:47,338 INFO common.Log4jPrint(20) - trancom:5
+17:37:47,338 INFO common.Log4jPrint(20) - FuncFlag:1004
+17:37:47,339 INFO common.Log4jPrint(20) - mHeadEle.getChildText136599_45_1004_in.xml
+17:37:47,359 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:37:47,360 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136599,5,'01','01010101001865201','128101001794248','apky',1004,20170529,152154,'101010000421067','180010000064605',-1,-1,'127.0.0.1','136599_45_1004_in.xml',20170529,173747,20170529,173747 )
+17:37:47,456 ERROR service.ServiceImpl(200) - ORA-00001: 违反唯一约束条件 (YBT.PK_TRANNO) 
+17:37:47,456 ERROR service.NewContConfirm(211) - 新单缴费交易失败！
+com.sinosoft.midplat.exception.MidplatException: 插入日志失败！
+	at com.sinosoft.midplat.service.ServiceImpl.insertTranLog(ServiceImpl.java:205)
+	at com.sinosoft.midplat.newabc.service.NewContConfirm.service(NewContConfirm.java:66)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:146)
+17:37:47,457 INFO service.NewContConfirm(229) - Out NewContConfirm.service()!
+17:37:47,457 INFO format.ContConfirm(64) - Into ContConfirm.Std2StdnoStd()...
+17:37:47,472 ERROR midplat.Ybt4Socket(159) - 系统出现非预期异常！
+java.lang.NullPointerException
+	at com.sinosoft.midplat.newabc.format.ContConfirm.dealBnf(ContConfirm.java:103)
+	at com.sinosoft.midplat.newabc.format.ContConfirm.std2NoStd(ContConfirm.java:70)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:148)
+17:37:47,473 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:37:47,473 ERROR midplat.Ybt4Socket(169) - 发送返回报文异常!
+java.lang.NullPointerException
+	at com.sinosoft.midplat.newabc.net.NewAbcNetImpl.send(NewAbcNetImpl.java:156)
+	at com.sinosoft.midplat.Ybt4Socket.run(Ybt4Socket.java:167)
+17:37:47,503 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:37:47,503 INFO common.Log4jPrint(20) - null
+17:37:47,504 INFO common.Log4jPrint(20) - null
+17:37:47,504 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:37:47,536 INFO common.Log4jPrint(20) - i=0
+17:37:47,536 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:37:47,537 INFO midplat.Ybt4Socket(192) - 处理总耗时：0.898s
+17:37:47,537 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:38:02,588 INFO test.NewABCTest(135) - Socket连接127.0.0.1:9002
+17:38:02,603 INFO midplat.Ybt4Socket(34) - TranLogNo:136602
+17:38:02,613 INFO midplat.Ybt4Socket(48) - 前端通讯模块：com.sinosoft.midplat.newabc.net.NewAbcNetImpl
+17:38:02,614 INFO net.SocketNetImpl(56) - 客户端IP：127.0.0.1；服务端口：9002
+17:38:02,616 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:38:02,617 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:38:02,619 INFO midplat.Ybt4Socket(59) - Into Ybt4Socket.run()...
+17:38:02,620 INFO net.NewAbcNetImpl(50) - Into NewAbcNetImp.receive()...
+17:38:02,623 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:38:02,624 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:38:02,987 INFO test.NewABCTest(210) - 发送报文头！X1.0000010883103    00000                                       000000000
+17:38:02,989 INFO net.NewAbcNetImpl(58) - package_head:X1.0000010883103    00000                                       000000000
+17:38:02,989 INFO net.NewAbcNetImpl(63) - cInsuID:3103
+17:38:02,990 INFO net.NewAbcNetImpl(65) - mBodyLen:1088
+17:38:02,991 INFO net.NewAbcNetImpl(70) - 解密开始
+17:38:02,991 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:38:02,992 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:38:02,993 INFO net.NewAbcNetImpl(72) - 解密完成
+17:38:02,994 INFO common.Log4jPrint(20) - 解密后的报文:============<ABCB2I><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794249</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode></Header><App><Req><PayAmt>10000</PayAmt><PayAccount>6225565656565656</PayAccount><PolicyNo>1010100004210</PolicyNo><ApplySerial>810000456813</ApplySerial><AccName>李丁</AccName><RiskCode>012D0100</RiskCode></Req></App></ABCB2I>
+  
+17:38:02,994 INFO test.NewABCTest(215) - 客户端请求发送完毕！耗时：0.391s
+17:38:02,999 INFO net.NewAbcNetImpl(82) - UTF-8 农行的报文: 
+17:38:02,999 INFO net.NewAbcNetImpl(102) - 农行交易码为=======:1004
+17:38:03,000 INFO test.NewABCTest(221) - 收到返回报文！
+17:38:03,030 INFO common.SaveMessage(94) - 136605_48_1004_in.xml IO输出耗时:0.029s
+17:38:03,030 INFO net.NewAbcNetImpl(122) - 保存报文完毕！136605_48_1004_in.xml
+17:38:03,031 INFO net.NewAbcNetImpl(148) - Out NewAbcNetImp.receive()!
+17:38:03,032 INFO midplat.Ybt4Socket(130) - 报文转换模块：com.sinosoft.midplat.newabc.format.ContConfirm
+17:38:03,033 INFO format.ContConfirm(32) - Into ContConfirm.noStd2Std()...
+17:38:03,034 INFO format.ContConfirm(39) - 查询===================================!
+17:38:03,034 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno,otherno,logno,Operator from tranlog where trancom='05' and rcode='0' and funcflag='1002' and tranno='810000456813' and MakeDate='20170529' order by logno desc
+17:38:03,068 INFO format.ContConfirm(42) - 查询结果：4
+17:38:03,070 INFO format.ContConfirm(44) - 赋值===================================!
+17:38:03,070 INFO format.ContConfirm(59) - Out ContConfirm.noStd2Std()!
+17:38:03,070 INFO midplat.Ybt4Socket(139) - 业务处理模块：com.sinosoft.midplat.newabc.service.NewContConfirm
+17:38:03,071 INFO service.NewContConfirm(34) - Into NewContConfirm.service()...
+17:38:03,072 INFO common.Log4jPrint(20) - ExecSQL : select proposalprtno from cont where bak8='810000456813' and state ='1' 
+17:38:03,123 INFO common.Log4jPrint(20) - ExecSQL : select bak8 from cont where proposalprtno='101010000421067' and state ='1' 
+17:38:03,164 INFO service.NewContConfirm(54) - 传过来的 顺序号：810000456813
+17:38:03,165 INFO service.NewContConfirm(55) - 查出来的 顺序号：810000456813
+17:38:03,165 INFO service.NewContConfirm(56) - 传过来的 投保单号：101010000421067
+17:38:03,165 INFO service.NewContConfirm(57) - 查出来的 投保单号：101010000421067
+17:38:03,165 DEBUG service.ServiceImpl(67) - Into ServiceImpl.insertTranLog()...
+17:38:03,166 INFO common.Log4jPrint(20) - 进程名：136605
+17:38:03,166 INFO common.Log4jPrint(20) - trancom:5
+17:38:03,166 INFO common.Log4jPrint(20) - FuncFlag:1004
+17:38:03,167 INFO common.Log4jPrint(20) - mHeadEle.getChildText136605_48_1004_in.xml
+17:38:03,185 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+17:38:03,186 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,ZoneNo,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,ProposalPrtNo,OtherNo,RCode,UsedTime,Bak1,InNoDoc,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 136605,5,'01','01010101001865201','128101001794249','apky',1004,20170529,152154,'101010000421067','180010000064605',-1,-1,'127.0.0.1','136605_48_1004_in.xml',20170529,173803,20170529,173803 )
+17:38:03,198 DEBUG service.ServiceImpl(209) - Out ServiceImpl.insertTranLog()!
+17:38:03,198 INFO service.NewContConfirm(68) - Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理
+17:38:03,199 INFO service.NewContConfirm(93) - select * from TranLog where ProposalPrtNo = '101010000421067'  and funcflag =1002 and trancom=5 and rcode=0 order by logno desc
+17:38:03,230 INFO service.NewContConfirm(95) - mTranLogSet.size():1
+17:38:03,230 INFO service.NewContConfirm(105) - 取最新的保单印刷号给核心传过去:180010000064605
+17:38:03,231 INFO service.NewContConfirm(121) - select * from Cont where Type=0 and State=1 and ProposalPrtNo='101010000421067' and MakeDate=20170529 and TranCom=5 and NodeNo='01010101001865201'
+17:38:03,270 INFO service.NewContConfirm(130) - select state from Cont where bak8=810000456813
+17:38:03,270 INFO common.Log4jPrint(20) - ExecSQL : select state from Cont where bak8=810000456813
+17:38:03,316 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+17:38:03,322 INFO common.SaveMessage(94) - 136605_51_1_inSvc.xml IO输出耗时:0.0060s
+17:38:03,323 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！136605_51_1_inSvc.xml
+17:38:03,323 INFO common.Log4jPrint(20) - start call 收费签单(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:38:03,324 INFO net.CallWebsvcAtomSvc(102) - start call 收费签单(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:38:03,410 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+17:38:03,412 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:38:03,412 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+17:38:03,413 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+17:38:03,413 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+17:38:03,414 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+17:38:03,414 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:38:03,416 DEBUG httpclient.Wire(70) - >> "485[\r][\n]"
+17:38:03,416 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTI5PC9UcmFuRGF0ZT48VHJhblRpbWU+MTUyMTU0PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4wMTwvWm9uZU5vPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VGVsbGVyTm8+YXBreTwvVGVsbGVyTm8+PFRyYW5Obz4xMjgxMDEwMDE3OTQyNDk8L1RyYW5Obz48Q2xpZW50SXA+MTI3LjAuMC4xPC9DbGllbnRJcD48VHJhbkNvbT4wNTwvVHJhbkNvbT48RnVuY0ZsYWc+MTAwNDwvRnVuY0ZsYWc+PEFnZW50Q29tIC8+PEFnZW50Q29kZSAvPjxJbk5vRG9jPjEzNjYwNV80OF8xMDA0X2luLnhtbDwvSW5Ob0RvYz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFNlcnZpY2VJZD4xPC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxTYWxlQ2hhbm5lbD4wPC9TYWxlQ2hhbm5lbD48Q29udE5vIC8+PFByb3Bvc2FsUHJ0Tm8+MTAxMDEwMDAwNDIxMDY3PC9Qcm9wb3NhbFBydE5vPjxDb250UHJ0Tm8+MTgwMDEwMDAwMDY0NjA1PC9Db250UHJ0Tm8+PEFwcGx5Tm8+ODEwMDAwNDU2ODEzPC9BcHBseU5vPjxQb2xBcHBseURhdGUgLz48QmtBY2N0Tm8+NjIyNTU2NTY1NjU2NTY1NjwvQmtBY2N0Tm8+PFByZW0+MTAwMDAwMDwvUHJlbT48L0JvZHk+PC9UcmFuRGF0YT4NCg==</arg0></service></soapenv:Body></soapenv:Envelope>"
+17:38:03,417 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:38:03,418 DEBUG httpclient.Wire(84) - >> "0"
+17:38:03,418 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:38:03,419 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:38:03,585 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:38:03,586 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:38:03,586 DEBUG httpclient.Wire(70) - << "Date: Mon, 29 May 2017 09:37:03 GMT[\r][\n]"
+17:38:03,587 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+17:38:03,588 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:38:03,589 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+17:38:03,589 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:38:03,591 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,592 DEBUG httpclient.Wire(84) - << "f"
+17:38:03,592 DEBUG httpclient.Wire(84) - << "e"
+17:38:03,593 DEBUG httpclient.Wire(84) - << "8"
+17:38:03,593 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,594 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,594 DEBUG httpclient.Wire(84) - << "<?xm"
+17:38:03,595 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT4NCiAgICA8U2FsZUNoYW5uZWw+MDwvU2FsZUNoYW5uZWw+DQogICAgPENvbnRObz44ODgwMTAwMDAwMDExMDQ8L0NvbnRObz4NCiAgICA8UHJvcG9zYWxQcnRObz4xMDEwMTAwMDA0MjEwNjc8L1Byb3Bvc2FsUHJ0Tm8+DQogICAgPENvbnRQcnRObz48L0NvbnRQcnRObz4NCiAgICA8UG9saWN5UGxlZGdlPjA8L1BvbGljeVBsZWRnZT4NCiAgICA8Q29udFZhbHVlPjEwMDAwMDA8L0NvbnRWYWx1ZT4NCiAgICA8QWNjb3VudFZhbHVlPjEwMDAwMDA8L0FjY291bnRWYWx1ZT4NCiAgICA8UGF5UHJvdj48L1BheVByb3Y+DQogICAgPFBheU5vZGVObz4wMTAxMDEwMTAwMDE8L1BheU5vZGVObz4NCiAgICA8UGF5VHlwZT4wPC9QYXlUeXBlPg0KICAgIDxQYXlQcmVtPjEwMDAwMDA8L1BheVByZW0+DQogICAgPEFjY05vPjYyMjU1NjU2NTY1NjU2NTY8L0FjY05vPg0KICAgIDxQcmVtPjEwMDAwMDA8L1ByZW0+DQogICAgPFByZW1UZXh0PsjLw/Gx0tK8zfLUqtX7PC9QcmVtVGV4dD4NCiAgICA8QW1udD45NjAwMDA8L0FtbnQ+DQogICAgPEFtbnRUZXh0PsjLw/Gx0r7Bx6rCvbDb1KrV+zwvQW1udFRleHQ+DQogICAgPEFnZW50Q29kZT41MjAxMzAwMDAzPC9BZ2VudENvZGU+DQogICAgPEFnZW50TmFtZT7Vxcj9PC9BZ2VudE5hbWU+DQogICAgPEFnZW50R3JwQ29kZT4wMDAwMDAwMDAyMjM8L0FnZW50R3JwQ29kZT4NCiAgICA8QWdlbnRHcnBOYW1lPrnz0fTS+LGj06rStbK/MbbTPC9BZ2VudEdycE5hbWU+DQogICAgPEFnZW50Q29tPjAxMDEwMTAxMDAwMTwvQWdlbnRDb20+DQogICAgPEFnZW50Q29tTmFtZT7FqdK10vjQ0Lnz1t2589H0ysC8zbPHzfi14zwvQWdlbnRDb21OYW1lPg0KICAgIDxDb21Db2RlPjg2NTIwMTAxPC9Db21Db2RlPg0KICAgIDxDb21Mb2NhdGlvbj6589bdyqG589H0ytC439DCx/izpMHrxM/CtzE3OLrFw6nMqLn6vMrJzM7x1tDQxEG2sDEzsuM8L0NvbUxvY2F0aW9uPg0KICAgIDxDb21OYW1lPruqufPIy8rZsaPP1bnJt93T0M/euavLvtOq0rXX3LK/PC9Db21OYW1lPg0KICAgIDxDb21aaXBDb2RlPjwvQ29tWmlwQ29kZT4NCiAgICA8Q29tUGhvbmU+PC9Db21QaG9uZT4NCiAgICA8U2FsZVN0YWZmPjAwMjAxMDA5NDQwMDAwMDI2MDY1PC9TYWxlU3RhZmY+DQogICAgPFNhbGVOYW1lPrrCuqO35TwvU2FsZU5hbWU+DQogICAgPFNhbGVDZXJ0Tm8+MDAyMDEwMDk0NDAwMDAwMjYwNjU8L1NhbGVDZXJ0Tm8+DQogICAgPFBvbGljeVN0YXR1cz48L1BvbGljeVN0YXR1cz4NCiAgICA8QmFua0NvbU5vPjAxMDEwMTAxMDAxODY1MjAxPC9CYW5rQ29tTm8+DQogICAgPEFnZW50UGhvbmU+MTUwNjM4MTk2MzI8L0FnZW50UGhvbmU+DQogICAgPFBheUludHY+MDwvUGF5SW50dj4NCiAgICA8SW5zUHJlbV9QeUZfUHJkX051bT4xMDAwPC9JbnNQcmVtX1B5Rl9QcmRfTnVtPg0KICAgIDxQYXllbmRZZWFyPjEwMDA8L1BheWVuZFllYXI+DQogICAgPFBheWVuZFllYXJGbGFnPlk8L1BheWVuZFllYXJGbGFnPg0KICAgIDxBcHBudD4NCiAgICAgIDxDdXN0b21lck5vPjAwMDAwMDIyNzQ8L0N1c3RvbWVyTm8+DQogICAgICA8TmFtZT7A7svEPC9OYW1lPg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPElEVHlwZT4wPC9JRFR5cGU+DQogICAgICA8SURObz4zMjAzMDQxOTY3MTAyNTYxMzg8L0lETm8+DQogICAgICA8Sm9iVHlwZT4xPC9Kb2JUeXBlPg0KICAgICAgPEpvYkNvZGU+MzAxMDEwMTwvSm9iQ29kZT4NCiAgICAgIDxKb2JOYW1lPjE8L0pvYk5hbWU+DQogICAgICA8TmF0aW9uYWxpdHk+Q0hOPC9OYXRpb25hbGl0eT4NCiAgICAgIDxTdGF0dXJlPjwvU3RhdHVyZT4NCiAgICAgIDxXZWlnaHQ+PC9XZWlnaHQ+DQogICAgICA8TWFyaXRhbFN0YXR1cz48L01hcml0YWxTdGF0dXM+DQogICAgICA8QWRkcmVzcz7W2MfsQEDT5bGxx/hAQLGxtPO91kBAMji6xUBAPC9BZGRyZXNzPg0KICAgICAgPFppcENvZGU+MTAwMDAwPC9aaXBDb2RlPg0KICAgICAgPE1vYmlsZT4xODUwMTA3NzMxODwvTW9iaWxlPg0KICAgICAgPFBob25lPjE4NTAxMDc3MzE4PC9QaG9uZT4NCiAgICAgIDxFbWFpbD48L0VtYWlsPg0KICAgICAgPFJlbGFUb0luc3VyZWQ+MDA8L1JlbGFUb0luc3VyZWQ+DQogICAgICA8WWVhclNhbGFyeT41MC4wPC9ZZWFyU2FsYXJ5Pg0KICAgICAgPEZhbWlseVllYXJTYWxhcnk+MC4wPC9GYW1pbHlZZWFyU2FsYXJ5Pg0KICAgICAgPERlblR5cGU+MTwvRGVuVHlwZT4NCiAgICA8L0FwcG50Pg0KICAgIDxJbnN1cmVkPg0KICAgICAgPEN1c3RvbWVyTm8+MDAwMDAwMjI3NDwvQ3VzdG9tZXJObz4NCiAgICAgIDxOYW1lPsDuy8Q8L05hbWU+DQogICAgICA8U2V4PjA8L1NleD4NCiAgICAgIDxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+DQogICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgIDxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzODwvSURObz4NCiAgICAgIDxKb2JUeXBlPjE8L0pvYlR5cGU+DQogICAgICA8Sm9iQ29kZT4zMDEwMTAxPC9Kb2JDb2RlPg0KICAgICAgPEpvYk5hbWU+MTwvSm9iTmFtZT4NCiAgICAgIDxTdGF0dXJlPjwvU3RhdHVyZT4NCiAgICAgIDxOYXRpb25hbGl0eT5DSE48L05hdGlvbmFsaXR5Pg0KICAgICAgPFdlaWdodD48L1dlaWdodD4NCiAgICAgIDxNYXJpdGFsU3RhdHVzPjwvTWFyaXRhbFN0YXR1cz4NCiAgICAgIDxBZGRyZXNzPtbYx+xAQNPlsbHH+EBAsbG0873WQEAyOLrFQEA8L0FkZHJlc3M+DQogICAgICA8WmlwQ29kZT4xMDAwMDA8L1ppcENvZGU+DQogICAg"
+17:38:03,597 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,597 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,598 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,599 DEBUG httpclient.Wire(84) - << "f"
+17:38:03,600 DEBUG httpclient.Wire(84) - << "e"
+17:38:03,601 DEBUG httpclient.Wire(84) - << "8"
+17:38:03,601 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,602 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,603 DEBUG httpclient.Wire(84) - << "ICA8TW9iaWxlPjE4NTAxMDc3MzE4PC9Nb2JpbGU+DQogICAgICA8UGhvbmU+MTg1MDEwNzczMTg8L1Bob25lPg0KICAgICAgPEVtYWlsPjwvRW1haWw+DQogICAgICA8RGVuVHlwZT48L0RlblR5cGU+DQogICAgPC9JbnN1cmVkPg0KICAgIDxCbmY+DQogICAgICA8VHlwZT4wPC9UeXBlPg0KICAgICAgPEdyYWRlPjE8L0dyYWRlPg0KICAgICAgPE5hbWU+wO7LxDwvTmFtZT4NCiAgICAgIDxCaXJ0aGRheT4xOTY3MTAyNTwvQmlydGhkYXk+DQogICAgICA8U2V4PjA8L1NleD4NCiAgICAgIDxJRFR5cGU+MDwvSURUeXBlPg0KICAgICAgPElETm8+MzIwMzA0MTk2NzEwMjU2MTM4PC9JRE5vPg0KICAgICAgPFJlbGFUb0luc3VyZWQ+PC9SZWxhVG9JbnN1cmVkPg0KICAgICAgPExvdD4xMDA8L0xvdD4NCiAgICAgIDxCZW5mQWNjTm8+PC9CZW5mQWNjTm8+DQogICAgICA8QmVuZkFjY05hbWU+PC9CZW5mQWNjTmFtZT4NCiAgICA8L0JuZj4NCiAgICA8Qm5mPg0KICAgICAgPFR5cGU+MTwvVHlwZT4NCiAgICAgIDxHcmFkZT4xPC9HcmFkZT4NCiAgICAgIDxOYW1lPsDuy8Q8L05hbWU+DQogICAgICA8QmlydGhkYXk+MTk2NzEwMjU8L0JpcnRoZGF5Pg0KICAgICAgPFNleD4wPC9TZXg+DQogICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgIDxJRE5vPjMyMDMwNDE5NjcxMDI1NjEzODwvSURObz4NCiAgICAgIDxSZWxhVG9JbnN1cmVkPjAwPC9SZWxhVG9JbnN1cmVkPg0KICAgICAgPExvdD4xMDA8L0xvdD4NCiAgICAgIDxCZW5mQWNjTm8+PC9CZW5mQWNjTm8+DQogICAgICA8QmVuZkFjY05hbWU+PC9CZW5mQWNjTmFtZT4NCiAgICA8L0JuZj4NCiAgICA8SGVzaXRhdGVQZXJpb2Q+MjA8L0hlc2l0YXRlUGVyaW9kPg0KICAgIDxSaXNrPg0KICAgICAgPFJpc2tDb2RlPjAxMkQwMTAwPC9SaXNrQ29kZT4NCiAgICAgIDxSaXNrTmFtZT67qrnztuCyytOuvNLE6r3wsaPP1TwvUmlza05hbWU+DQogICAgICA8TWFpblJpc2tDb2RlPjAxMkQwMTAwPC9NYWluUmlza0NvZGU+DQogICAgICA8UG9sQXBwbHlEYXRlPjIwMTcwNTI5PC9Qb2xBcHBseURhdGU+DQogICAgICA8U2lnbkRhdGU+MjAxNzA1Mjk8L1NpZ25EYXRlPg0KICAgICAgPENWYWxpRGF0ZT4yMDE3MDUzMDwvQ1ZhbGlEYXRlPg0KICAgICAgPEluc3VFbmREYXRlPjIwMjcwNTMwPC9JbnN1RW5kRGF0ZT4NCiAgICAgIDxBbW50Pjk2MDAwMDwvQW1udD4NCiAgICAgIDxQcmVtPjEwMDAwMDA8L1ByZW0+DQogICAgICA8TXVsdD4xMDwvTXVsdD4NCiAgICAgIDxQYXlJbnR2PjA8L1BheUludHY+DQogICAgICA8UGF5TW9kZT4wPC9QYXlNb2RlPg0KICAgICAgPEluc3VZZWFyRmxhZz5ZPC9JbnN1WWVhckZsYWc+DQogICAgICA8SW5zdVllYXI+MTA8L0luc3VZZWFyPg0KICAgICAgPFllYXJzPjEwPC9ZZWFycz4NCiAgICAgIDxQYXlFbmRZZWFyRmxhZz5ZPC9QYXlFbmRZZWFyRmxhZz4NCiAgICAgIDxQYXlFbmRZZWFyPjEwMDA8L1BheUVuZFllYXI+DQogICAgICA8UGF5RW5kRGF0ZT4zMDE3MDUzMDwvUGF5RW5kRGF0ZT4NCiAgICAgIDxDb3N0SW50dj48L0Nvc3RJbnR2Pg0KICAgICAgPENvc3REYXRlPjwvQ29zdERhdGU+DQogICAgICA8UGF5VG9EYXRlPjMwMTcwNTMwPC9QYXlUb0RhdGU+DQogICAgICA8R2V0WWVhckZsYWc+WTwvR2V0WWVhckZsYWc+DQogICAgICA8R2V0U3RhcnREYXRlPjIwMTcwNTMwPC9HZXRTdGFydERhdGU+DQogICAgICA8R2V0WWVhcj42PC9HZXRZZWFyPg0KICAgICAgPEdldEludHY+PC9HZXRJbnR2Pg0KICAgICAgPEdldFRlcm1zPjwvR2V0VGVybXM+DQogICAgICA8R2V0QmFua0NvZGU+PC9HZXRCYW5rQ29kZT4NCiAgICAgIDxHZXRCYW5rQWNjTm8+PC9HZXRCYW5rQWNjTm8+DQogICAgICA8R2V0QWNjTmFtZT48L0dldEFjY05hbWU+DQogICAgICA8QXV0b1BheUZsYWc+PC9BdXRvUGF5RmxhZz4NCiAgICAgIDxCb251c0dldE1vZGU+PC9Cb251c0dldE1vZGU+DQogICAgICA8U3ViRmxhZz48L1N1YkZsYWc+DQogICAgICA8RnVsbEJvbnVzR2V0TW9kZT48L0Z1bGxCb251c0dldE1vZGU+DQogICAgICA8QWNjb3VudD48L0FjY291bnQ+DQogICAgICA8Q2FzaFZhbHVlcz4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj4xPC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjkyNjAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+MjwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD45ODEwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjM8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTA0MTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMTAzMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj41PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjExNzAwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjY8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+MTEyMTAwMDwvQ2FzaD4NCiAgICAgICAgPC9DYXNoVmFsdWU+DQogICAgICAgIDxDYXNoVmFsdWU+DQogICAgICAgICAgPEVuZFllYXI+NzwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDcwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4NCiAgICAgICAgICA8RW5kWWVhcj44PC9FbmRZZWFyPg0KICAgICAgICAgIDxDYXNoPjEwMTcwMDA8L0Nhc2g+DQogICAgICAgIDwvQ2FzaFZhbHVlPg0KICAgICAgICA8Q2FzaFZhbHVlPg0KICAgICAgICAgIDxFbmRZZWFyPjk8L0VuZFllYXI+DQogICAgICAgICAgPENhc2g+OTYxMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgICAgPENhc2hWYWx1ZT4N"
+17:38:03,605 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,606 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,607 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,608 DEBUG httpclient.Wire(84) - << "1"
+17:38:03,609 DEBUG httpclient.Wire(84) - << "9"
+17:38:03,610 DEBUG httpclient.Wire(84) - << "f"
+17:38:03,610 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,611 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,612 DEBUG httpclient.Wire(84) - << "CiAgICAgICAgICA8RW5kWWVhcj4xMDwvRW5kWWVhcj4NCiAgICAgICAgICA8Q2FzaD4xMDAwMDAwPC9DYXNoPg0KICAgICAgICA8L0Nhc2hWYWx1ZT4NCiAgICAgIDwvQ2FzaFZhbHVlcz4NCiAgICAgIDxEZWR1Y3Rpb25WYWx1ZXM+PC9EZWR1Y3Rpb25WYWx1ZXM+DQogICAgICA8Qm9udXNWYWx1ZXM+PC9Cb251c1ZhbHVlcz4NCiAgICAgIDxTcGVjQ29udGVudD48L1NwZWNDb250ZW50Pg0KICAgIDwvUmlzaz4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+17:38:03,613 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,613 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,614 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,615 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,615 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,616 DEBUG httpclient.Wire(84) - << "0"
+17:38:03,617 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,617 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,618 DEBUG httpclient.Wire(84) - << "[\r]"
+17:38:03,619 DEBUG httpclient.Wire(70) - << "[\n]"
+17:38:03,620 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:38:03,621 INFO net.CallWebsvcAtomSvc(145) - 投保单号101010000421067收费签单(service)耗时：0.297s
+17:38:03,636 INFO common.SaveMessage(94) - 136605_54_1_outSvc.xml IO输出耗时:0.0080s
+17:38:03,637 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！136605_54_1_outSvc.xml
+17:38:03,637 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+17:38:03,638 INFO common.Log4jPrint(20) - ExecSQL : update Cont set State=2, ContNo=888010000001104, SignDate=20170529, ModifyDate=20170529, ModifyTime=173803 where Proposalprtno=101010000421067
+17:38:03,762 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+17:38:03,763 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:38:03,763 INFO common.Log4jPrint(20) - 128101001794249
+17:38:03,764 INFO common.Log4jPrint(20) - 128101001794249
+17:38:03,764 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=136605,TranCom=5,ZoneNo='01',NodeNo='01010101001865201',TranNo='128101001794249',Operator='apky',FuncFlag=1004,TranDate=20170529,TranTime=152154,ProposalPrtNo='101010000421067',ContNo='888010000001104',OtherNo='180010000064605',AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='交易成功！',UsedTime=0,AppntName=null,Bak1='127.0.0.1',Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc='136605_48_1004_in.xml',MakeDate=20170529,InDoc=null,OutDoc=null,MakeTime=173803,ModifyDate=20170529,ModifyTime=173803,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='128101001794249'
+17:38:03,813 INFO service.NewContConfirm(229) - Out NewContConfirm.service()!
+17:38:03,814 INFO format.ContConfirm(64) - Into ContConfirm.Std2StdnoStd()...
+17:38:03,815 INFO format.ContConfirmOutXsl(35) - Into ContConfirmOutXsl.load()...
+17:38:03,823 INFO format.ContConfirmOutXsl(38) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmOut.xsl...
+17:38:03,824 INFO common.XslCache(70) - conf file modified at (2017-04-26 15:27:12,367) and length=24931 bytes!
+17:38:03,952 INFO format.ContConfirmOutXsl(54) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/ContConfirmOut.xsl!
+17:38:03,952 INFO format.ContConfirmOutXsl(67) - Out ContConfirmOutXsl.load()!
+17:38:03,970 INFO format.ContConfirm(78) - 交易成功=========
+17:38:03,971 INFO common.Log4jPrint(20) - Prnt个数：70
+17:38:03,971 INFO common.Log4jPrint(20) - Prnt个数：43
+17:38:03,972 INFO common.Log4jPrint(20) - Prnt个数：20
+17:38:03,974 INFO format.ContConfirm(96) - Out ContConfirm.Std2StdnoStd()!
+17:38:03,974 INFO net.NewAbcNetImpl(153) - Into NewAbcNetImp.send()...
+17:38:03,983 INFO common.SaveMessage(94) - 136605_57_1004_out.xml IO输出耗时:0.0080s
+17:38:03,983 INFO net.NewAbcNetImpl(168) - 保存报文完毕！136605_57_1004_out.xml
+17:38:03,985 INFO net.NewAbcNetImpl(175) - xmlStr 去掉 xml投后发送回去的报文:
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo /><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:38:03</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794249</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+
+17:38:03,986 INFO common.Log4jPrint(20) - strLen:8313
+17:38:03,988 INFO common.Log4jPrint(20) - buqizhihou de changdu==
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo /><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:38:03</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794249</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+       
+17:38:03,988 INFO common.Log4jPrint(20) - 密钥路径:/D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/key/newABCKey.dat
+17:38:03,989 INFO common.Log4jPrint(20) - 密钥：XF0zVFKjelIBClyf
+17:38:03,989 INFO common.Log4jPrint(20) - 密钥======XF0zVFKjelIBClyf
+17:38:04,256 INFO common.Log4jPrint(20) - 报文长度
+<ABCB2I><App><Ret><PolicyNo>888010000001104</PolicyNo><VchNo /><AcceptDate>20170529</AcceptDate><ValidDate>20170530</ValidDate><PolicyDuedate>20270530</PolicyDuedate><DueDate /><UserId>5201300003</UserId><ComPhone /><RiskName>华贵多彩赢家年金保险</RiskName><PayAccount /><Prem>10000.00</Prem><Risks><Name>华贵多彩赢家年金保险</Name><Share>10</Share><Prem>10000.00</Prem><PayDueDate>1000</PayDueDate><PayType>1</PayType></Risks><Addt><Count>0</Count></Addt><Prnts><Count>70</Count><Prnt1>　</Prnt1><Prnt2>　</Prnt2><Prnt3>　</Prnt3><Prnt4>　</Prnt4><Prnt5>　</Prnt5><Prnt6>　</Prnt6><Prnt7>　</Prnt7><Prnt8>　</Prnt8><Prnt9>　</Prnt9><Prnt10>　</Prnt10><Prnt11>　</Prnt11><Prnt12>　</Prnt12><Prnt13>         保险合同号:888010000001104                                                货币单位：人民币/元</Prnt13><Prnt14>         ------------------------------------------------------------------------------------------------ </Prnt14><Prnt15 /><Prnt16>         保险合同成立日：2017-05-29                                         保险合同生效日期：2017-05-30</Prnt16><Prnt17>         ------------------------------------------------------------------------------------------------</Prnt17><Prnt18>         投保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt18><Prnt19>         被保人姓名：李四              性别：男         年龄：49            证件号码：320304196710256138</Prnt19><Prnt20>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt20><Prnt21>         受益人姓名：李四        		   性别: 男         受益顺序: 1         受益比例:   100%</Prnt21><Prnt22 /><Prnt23 /><Prnt24 /><Prnt25 /><Prnt26 /><Prnt27 /><Prnt28>         ------------------------------------------------------------------------------------------------</Prnt28><Prnt29>         险种名称                          保险期间    交费期间    交费方式  （基本）保额/份数   保险费</Prnt29><Prnt30>         华贵多彩赢家年金保险                10年       趸交        趸交               10份     10000.00元</Prnt30><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37>         保险费合计：人民币壹万元整（RMB 10000.00元）</Prnt37><Prnt38>         ------------------------------------------------------------------------------------------------</Prnt38><Prnt39>         （本栏空白）</Prnt39><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /><Prnt44>         ------------------------------------------------------------------------------------------------</Prnt44><Prnt45>         特别约定：（无）</Prnt45><Prnt46 /><Prnt47 /><Prnt48 /><Prnt49 /><Prnt50 /><Prnt51 /><Prnt52 /><Prnt53>         ------------------------------------------------------------------------------------------------</Prnt53><Prnt54>         银行网点名称：农业银行贵州贵阳世纪城网点</Prnt54><Prnt55>         银行销售人员姓名/代码：郝海峰/00201009440000026065                    打印时间：2017-05-29 17:38:03</Prnt55><Prnt56>         银保经理姓名：张三                                                  银保经理电话：15063819632</Prnt56><Prnt57>         签发机构：贵州省贵阳市高新区长岭南路178号茅台国际商务中心A栋13层</Prnt57><Prnt58>         机构地址：华贵人寿保险股份有限公司营业总部                      </Prnt58><Prnt59 /><Prnt60 /><Prnt61 /><Prnt62 /><Prnt63 /><Prnt64 /><Prnt65 /><Prnt66 /><Prnt67 /><Prnt68 /><Prnt69>                                                                                     2017年05月29日</Prnt69><Prnt70 /></Prnts><Messages><Count>43</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 现金价值表                     </Prnt6><Prnt7 /><Prnt8>         保险合同号：888010000001104                                   基本保险金额： 9600.00</Prnt8><Prnt9>         险种名称：华贵多彩赢家年金保险                                货币单位：人民币/元</Prnt9><Prnt10>         ------------------------------------------------------------------------------------------------</Prnt10><Prnt11>                  保单年度末  现金价值  | 保单年度末  现金价值  | 保单年度末  现金价值</Prnt11><Prnt12>         ------------------------------------------------------------------------------------------------</Prnt12><Prnt13>                       1      9260.00 |    -             -    |    -             -   </Prnt13><Prnt14>                       2      9810.00 |    -             -    |    -             -   </Prnt14><Prnt15>                       3     10410.00 |    -             -    |    -             -   </Prnt15><Prnt16>                       4     11030.00 |    -             -    |    -             -   </Prnt16><Prnt17>                       5     11700.00 |    -             -    |    -             -   </Prnt17><Prnt18>                       6     11210.00 |    -             -    |    -             -   </Prnt18><Prnt19>                       7     10700.00 |    -             -    |    -             -   </Prnt19><Prnt20>                       8     10170.00 |    -             -    |    -             -   </Prnt20><Prnt21>                       9      9610.00 |    -             -    |    -             -   </Prnt21><Prnt22>                      10     10000.00 |    -             -    |    -             -   </Prnt22><Prnt23>         ------------------------------------------------------------------------------------------------</Prnt23><Prnt24>         *现金价值表中给出的现金价值为客户已足额缴纳保单年度内所有保险费的情况下，各保单年度末所对应的现</Prnt24><Prnt25>         金价值额。投保后所做的各项变更可能使本表不再适用。</Prnt25><Prnt26>         *对于本现金价值表中未列出的保单年度末现金价值及两个保单年度中间任意一天的本合同的现金价值，可向</Prnt26><Prnt27>         公司来电垂询。</Prnt27><Prnt28 /><Prnt29 /><Prnt30 /><Prnt31 /><Prnt32 /><Prnt33 /><Prnt34 /><Prnt35 /><Prnt36 /><Prnt37 /><Prnt38 /><Prnt39 /><Prnt40 /><Prnt41 /><Prnt42 /><Prnt43 /></Messages><TbdPrnts><Count>20</Count><Prnt1 /><Prnt2 /><Prnt3 /><Prnt4 /><Prnt5 /><Prnt6>                                                 保险合同送达回执</Prnt6><Prnt7 /><Prnt8 /><Prnt9>         保险合同号: 888010000001104</Prnt9><Prnt10>         投保人: 李四               银保经理姓名：      张三              银保经理代码：5201300003</Prnt10><Prnt11>             本投保人已收到贵公司的保险合同（保险合同号: 888010000001104），本保险合同包括保险单、</Prnt11><Prnt12>         现金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</Prnt12><Prnt13>         提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</Prnt13><Prnt14>             投保人签名：                                    签收日期：         年     月     日</Prnt14><Prnt15>                                               以下栏由公司人员填写</Prnt15><Prnt16>         ------------------------------------------------------------------------------------------------</Prnt16><Prnt17>             保险合同号为 888010000001104的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</Prnt17><Prnt18>         回执交回。</Prnt18><Prnt19 /><Prnt20>             银保经理签名：	          经办人签字：           日期：      年     月     日</Prnt20></TbdPrnts></Ret></App><Header><TransDate>20170529</TransDate><TransTime>152154</TransTime><TransCode>1004</TransCode><ProvCode>01</ProvCode><SerialNo>128101001794249</SerialNo><CorpNo>1141</CorpNo><TransSide>1</TransSide><EntrustWay>11</EntrustWay><BranchNo>010101001865201</BranchNo><Tlid>apky</Tlid><BankCode>03</BankCode><InsuSerial>136581</InsuSerial><RetCode>000000</RetCode><RetMsg>交易成功！</RetMsg></Header></ABCB2I>
+       
+17:38:04,257 INFO common.Log4jPrint(20) - xml字符串的报文长度：16640
+17:38:04,258 INFO test.NewABCTest(229) - package_head:X1.0000166403103    00000                                       000000000
+17:38:04,258 INFO net.NewAbcNetImpl(246) - Out NewAbcNetImp.send()!
+17:38:04,259 INFO test.NewABCTest(231) - mBodyLen:16640
+17:38:04,259 INFO test.NewABCTest(236) - 解密开始
+17:38:04,273 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+17:38:04,273 INFO common.Log4jPrint(20) - null
+17:38:04,274 INFO common.Log4jPrint(20) - null
+17:38:04,274 INFO common.Log4jPrint(20) - mSql: select * from TranLog where TranNo='null'
+17:38:04,278 INFO test.NewABCTest(238) - 解密完成
+17:38:04,286 INFO test.NewABCTest(251) - UTF-8 农行的报文: 
+17:38:04,288 INFO common.Log4jPrint(20) - i=0
+17:38:04,288 ERROR midplat.Ybt4Socket(178) - 查询Tranlog表异常!
+17:38:04,289 INFO midplat.Ybt4Socket(192) - 处理总耗时：1.67s
+17:38:04,289 INFO midplat.Ybt4Socket(194) - Out Ybt4Socket.run()!
+17:38:04,289 INFO test.NewABCTest(255) - 客户端接收返回报文完毕！耗时：1.687s

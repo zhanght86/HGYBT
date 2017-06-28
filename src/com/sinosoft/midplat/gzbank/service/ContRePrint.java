@@ -11,6 +11,7 @@ import com.sinosoft.lis.vschema.ContSet;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.exception.MidplatException;
@@ -29,6 +30,8 @@ public class ContRePrint extends ServiceImpl {
 		cLogger.info("Into ContRePrintBoc.service()...");
 		cInXmlDoc = pInXmlDoc;
 		 
+		JdomUtil.print(cInXmlDoc);
+		
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mContNo = mBodyEle.getChildText(ContNo);

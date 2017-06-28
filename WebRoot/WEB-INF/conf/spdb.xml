@@ -4,7 +4,7 @@
 	<BankCode>0117</BankCode>
 	<preNet>com.sinosoft.midplat.spdb.net.SpdbNetImpl</preNet>
 	<!-- 银行端代码定义,用于日终类交易-->
-	<bank id="12" insu="0100" />
+	<bank id="12" insu="0079" />
 	<business>
 		<name>绿灯交易</name>
 		<funcFlag outcode="1000">1000</funcFlag>

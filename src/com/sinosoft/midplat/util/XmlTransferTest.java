@@ -44,8 +44,9 @@ public class XmlTransferTest {
 	public static void main(String[] args) throws TransformerException,
 			FileNotFoundException {
 		String inXmlSource = "F:/xml/ABC/";
-//		inXmlSource = "D:/task/20170119/newccb/transfer_test/";
-		inXmlSource="D:/File/task/20170215/newabc/ybt_test/";
+		inXmlSource = "D:/File/task/20170628/newccb/transfer_test/";
+//		inXmlSource="D:/File/task/20170628/newabc/ybt_test/";
+//		inXmlSource="D:/File/task/20170628/newccb/test_case/model2/";
 		String filename="";//XML文件
 //		filename="01in_noStd.xml";
 //		filename="01out_Std.xml";
@@ -93,11 +94,15 @@ public class XmlTransferTest {
 //		filename="AL13100192017011101_RESULT.XML";
 //		filename="P53818105in_noStd.xml";
 //		filename="P53818103in_noStd.xml";
+//		filename="50022_2673_1012_in.xml";
+		filename="178434_21_36_outSvc.xml";
 		//农业银行
 //		filename="1002in_noStd.xml";
 //		filename="1002out_Std.xml";
 //		filename="1004in_noStd.xml";
-//		filename="1004out_Std.xml";
+//		filename="1004out_Std_0.xml";
+//		filename="1004out_Std_3_12.xml";
+//		filename="166212_396_1_outSvc.xml";
 //		filename="1010in_noStd.xml";
 //		filename="1010out_Std.xml";
 //		filename="1012in_noStd.xml";
@@ -108,7 +113,7 @@ public class XmlTransferTest {
 //		filename="1013out_Std.xml";
 //		filename="1009in_noStd.xml";
 //		filename="1009out_Std.xml";
-		filename="1021in_noStd.xml";
+//		filename="1021in_noStd.xml";
 //		filename="1021out_Std.xml";
 		String XslPath= "";//XSL文件
 		//中国银行
@@ -130,7 +135,7 @@ public class XmlTransferTest {
 //		XslPath="PolicyCancelConfirmIn.xsl";
 //		XslPath="PolicyCancelConfirmOut.xsl";
 		//贵州银行
-//		XslPath="PolicyContTrialIn.xsl";//转换为核心请求报文XSL
+		XslPath="PolicyContTrialIn.xsl";//转换为核心请求报文XSL
 //		XslPath="PolicyContTrialOut.xsl";
 //		XslPath="ContConfirmIn.xsl";
 //		XslPath="ContConfirmOut.xsl";//转换为贵州银行应答报文XSL
@@ -153,6 +158,7 @@ public class XmlTransferTest {
 //		XslPath="BatchSendDiskIn.xsl";
 //		XslPath="BatRequestIn.xsl";
 //		XslPath="BatResponseIn.xsl";
+		XslPath="QueryContDetailOut.xsl";
 		//农业银行
 //		XslPath="NewContIn.xsl";
 //		XslPath="NewContOut.xsl";
@@ -167,14 +173,16 @@ public class XmlTransferTest {
 //		XslPath="SecureApplyOut.xsl";
 //		XslPath="RollbackIn.xsl";
 //		XslPath="RollbackOut.xsl";
-		XslPath="PolDetailQueryIn.xsl";
+//		XslPath="PolDetailQueryIn.xsl";
 		inXmlSource=inXmlSource+filename;
 //		String filepath = "F:/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newabc/format/";
-		String filepath="D:/Software/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newabc/format/";
-//		String filepath = "D:/task/20170119/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
+		String filepath="D:/Software/MyEclipse/workspace/HGLIFE/src/com/sinosoft/midplat/newccb/format/";
+//		String filepath = "D:/task/20170628/newccb/transfer_test/NewCBCSetBatXmltoTxt.xsl";
 		String xslSource = filepath + XslPath;
-		String outXml = "D:/File/task/20170213/newabc/ybt_test/1021in_Std.xml";//32
-//		String outXml = "D:/task/20170119/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
+//		String outXml = "D:/File/task/20170213/newabc/ybt_test/1021in_Std.xml";//32
+//		String outXml = "D:/task/20170628/newccb/transfer_test/0000000001_F020010020090729_00001.txt";//37
+//		String outXml = "D:/File/task/20170628/newabc/transfer_test/1004out_noStd_0.xml";
+		String outXml = "D:/File/task/20170628/newccb/transfer_test/178434_24_1040_out.xml";
 		transferXml(inXmlSource, xslSource, outXml);
 		InputStream fis = new FileInputStream(new File(outXml));
 		Document mLogDocument = JdomUtil.build(fis);

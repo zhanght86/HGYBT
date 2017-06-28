@@ -10,10 +10,7 @@ import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
 import com.sinosoft.midplat.common.JdomUtil;
-import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.format.XmlSimpFormat;
-import com.sinosoft.utility.ExeSQL;
-import com.sinosoft.utility.SSRS;
 /**
  * 新单试算结果查询 报文转换
  * @author Liuzk
@@ -30,20 +27,7 @@ public class NewContQuery extends XmlSimpFormat {
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into NewContQuery.noStd2Std()...");
 		header=(Element)pNoStdXml.getRootElement().getChild("Header").clone();
-		Document mStdXml = 
-			NewContQueryInXsl.newInstance().getCache().transform(pNoStdXml);
-		
-//		//农行传ApplySerial，方从Cont中查出ContNo ,Prem 
-//		Element mBodyEle = mStdXml.getRootElement().getChild(Body);
-//		String mSqlStr = "select ContNo ,Prem  from Cont where BAK7= " +
-//				"'" +mBodyEle.getChildText("ApplySerial") + "'";
-//		SSRS mSSRS = new ExeSQL().execSQL(mSqlStr);
-//		if (1 != mSSRS.MaxRow) {
-//			throw new MidplatException("查询保单信息失败！");
-//		}
-//		
-//		mBodyEle.getChild(ContNo).setText(mSSRS.GetText(1, 1));
-//		mBodyEle.getChild(Prem).setText(mSSRS.GetText(2, 1));
+		Document mStdXml = NewContQueryInXsl.newInstance().getCache().transform(pNoStdXml);
 		return mStdXml;
 	}
 	

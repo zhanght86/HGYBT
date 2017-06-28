@@ -25,11 +25,11 @@
 			<!-- 保险单号 -->
 			<ContNo/>
 			<!-- 投保单(印刷)号 -->
-			<ProposalPrtNo><xsl:value-of select="BUSI/CONTENT/APPNO"/></ProposalPrtNo>
+			<ProposalPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(BUSI/CONTENT/APPNO)"/></ProposalPrtNo>
 			<!-- 新保单合同印刷号 -->
-			<ContPrtNo><xsl:value-of select="BUSI/CONTENT/BILL_USED" /></ContPrtNo>
+			<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(BUSI/CONTENT/BILL_USED)" /></ContPrtNo>
 			<!-- 旧的保单合同印刷号 -->
-			<OldContPrtNo><xsl:value-of select="BUSI/CONTENT/BILL_CANCEL" /></OldContPrtNo>
+			<OldContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(BUSI/CONTENT/BILL_CANCEL)" /></OldContPrtNo>
 		</Body>
 	</TranData>
 </xsl:template>

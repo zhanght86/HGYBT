@@ -1,25 +1,24 @@
 package com.sinosoft.midplat.newccb.service;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.jsp.tagext.TryCatchFinally;
 
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jdom.JDOMException;
 import org.jdom.xpath.XPath;
+
+import cn.ccb.secapi.SecAPI;
 
 import com.sinosoft.lis.db.ContDB;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
+import com.sinosoft.midplat.common.FTPDealBL;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -27,9 +26,9 @@ import com.sinosoft.midplat.common.RuleParser;
 import com.sinosoft.midplat.common.YBTDataVerification;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
+import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
-import com.sinosoft.utility.Schema;
 
 public class NewContInput extends ServiceImpl
 {
@@ -47,15 +46,30 @@ public class NewContInput extends ServiceImpl
 
 		cLogger.info(JdomUtil.toStringFmt(cInXmlDoc));
 		Element mRootEle = cInXmlDoc.getRootElement();
+		Element mHeadEle = mRootEle.getChild(Head);
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
 		// String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
+		//银行渠道编码
+		String mSellType = mHeadEle.getChildText("SellType");
+		//智慧终端扫描文件
+		Element mFileList = mBodyEle.getChild("FileList");
 		try
 		{
 			// System.out.println("--------------------------------------------------------------------------------------------------------");
 			// JdomUtil.print(cInXmlDoc);
 			cTranLogDB = insertTranLog(cInXmlDoc);
-
+			
+			/*****************针对智慧终端渠道影像文件处理开始*******************/
+			if(mSellType.equals("10110109") && mFileList != null){
+				cLogger.info("智慧终端渠道影像文件处理开始。。。");
+				String mLocalID = mHeadEle.getChildText("LocalID");
+				String mRemoteID = mHeadEle.getChildText("remoteID");
+				sentFtpFile(mLocalID,mRemoteID,mBodyEle);
+				cLogger.info("智慧终端渠道影像文件处理结束。。。");
+			}
+			/*****************针对智慧终端渠道影像文件处理结束*******************/
+			
 			// 校验系统中是否有相同保单正在处理，尚未返回
 			int tLockTime = 300; // 默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try
@@ -97,12 +111,8 @@ public class NewContInput extends ServiceImpl
 					}
 				}
 			}
-			
-
 			new RuleParser().check(cInXmlDoc);
-
-
-			cLogger.info("------进入收益比例校验20140807------");
+			cLogger.info("------进入收益比例校验------");
 			YBTDataVerification verification = new YBTDataVerification();
 			boolean GradeFlag = verification.SameGradeBnfVerification(cInXmlDoc);
 			if (GradeFlag == false)
@@ -119,13 +129,9 @@ public class NewContInput extends ServiceImpl
 				e.printStackTrace();
 				throw new MidplatException(e.getMessage());
 			}
-
-			System.out.println("-----------------------------------------------");
-			cLogger.info("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 			JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
-			Element tOutBodyEle = tOutRootEle.getChild(Body);
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag)))
 			{
 				String desc = tOutHeadEle.getChildText(Desc);
@@ -239,6 +245,87 @@ public class NewContInput extends ServiceImpl
 		return cOutXmlDoc;
 	}
 
+	/**
+	 * 解密智慧终端渠道影像文件，
+	 * 然后上传FTP
+	 * @param mLocalID
+	 * @param mRemoteID
+	 * @param mBodyEle
+	 * @throws MidplatException
+	 */
+	@SuppressWarnings("unchecked")
+	private void sentFtpFile(String mLocalID,String mRemoteID,Element mBodyEle) throws MidplatException {
+		Element cBusiConfRoot = NewCcbConf.newInstance().getConf().getRootElement();
+		Element cThisBusiConf = null;
+		try {
+			cThisBusiConf = (Element) XPath.selectSingleNode(cBusiConfRoot, "business[funcFlag='1012']");
+		} catch (JDOMException e1) {
+			e1.printStackTrace();
+		}
+		//上传FTP信息
+		cLogger.info("FTP信息开始");
+		Element pFtpEle = cThisBusiConf.getChild("ftp");
+		String mFtpIp = pFtpEle.getAttributeValue("ip");
+		cLogger.debug("ftp.ip = " + mFtpIp);
+		String mFtpPort = pFtpEle.getAttributeValue("port");
+		cLogger.debug("ftp.port = " + mFtpPort);
+		String mFtpUser = pFtpEle.getAttributeValue("user");
+		cLogger.debug("ftp.user = " + mFtpUser);
+		String mFtpPassword = pFtpEle.getAttributeValue("password");
+		cLogger.debug("ftp.password = " + mFtpPassword);
+		String mFtpPath = pFtpEle.getAttributeValue("path");
+		cLogger.debug("ftp.path = " + mFtpPath);
+		cLogger.info("FTP信息结束");
+		//解密保存路径
+		String mLocalPath = cThisBusiConf.getChildText("LocalDir");
+		if(mLocalPath.equals("") || mLocalPath == null){
+			throw new MidplatException("智慧终端渠道影像文件解密路径未配置！");
+		}
+		if(!mLocalPath.endsWith("/")){
+			mLocalPath = mLocalPath+"/";
+		}
+		List<Element> mFiles =new ArrayList<Element>();
+		mFiles = mBodyEle.getChild("FileList").getChildren("File");
+		String mEnvFilePath = null;
+		String mFileName =null;
+		for(int i=0;i<mFiles.size();i++){
+			mEnvFilePath = mBodyEle.getChild("FileList").getChildText("FilePath").trim();
+			mFileName = mFiles.get(i).getText().trim();
+			mLocalPath = cThisBusiConf.getChildText("LocalDir");
+			if(!"".equals(mEnvFilePath) && !"".equals(mFileName)){
+				this.cLogger.info("接收文件为："+mEnvFilePath +"    "+ mFileName);
+			}else{
+				cLogger.info("接收文件或文件名不能为空");
+				continue;
+			}
+			if(!mEnvFilePath.endsWith("/")){
+				mEnvFilePath = mEnvFilePath+"/";
+			}
+			mEnvFilePath = mEnvFilePath + mFileName;
+			mLocalPath = mLocalPath + mFileName;
+			cLogger.info("密文路径："+mEnvFilePath +"    明文路径："+ mLocalPath);
+			this.cLogger.info("文件解密开始...");
+			try{
+				//文件解密
+				SecAPI.fileUnEnvelop(mLocalID, mRemoteID, mEnvFilePath, mLocalPath);
+				this.cLogger.error("文件解密成功"+(mEnvFilePath));
+			}catch(Exception e){
+				throw new MidplatException("文件解密失败："+(mEnvFilePath));
+			}
+			this.cLogger.info("文件解密完成...");
+			//解密完成上传FTP
+			FTPDealBL tFTPDealBL = new FTPDealBL(mFtpIp, mFtpUser,
+					mFtpPassword, Integer.valueOf(mFtpPort));
+			File mfile = new File(mLocalPath);
+			cLogger.info("上传开始...");
+			if (!tFTPDealBL.ApacheFTPUploadFile(mfile, mFtpPath)) {
+				cLogger.info("上传有误...");
+				throw new MidplatException("FTP上传出错 FileName = " + mFileName);
+			} 
+			cLogger.info("上传结束...");
+		}
+	}
+	
 	private ContDB getContDB()
 	{
 		cLogger.debug("Into NewContInput.getContDB()...");

@@ -19,14 +19,15 @@ import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.SysInfo;
 import com.sinosoft.midplat.common.XmlTag;
+import com.sinosoft.midplat.exception.MidplatException;
 
 public class KeyReset extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
 	//配置信息节点
+	protected String cResultMsg;
 	protected Element cConfigEle;
-	@SuppressWarnings("unused")
 	private static String cCurDate = "";
 	private String publicKey;
 	private String newAESRSAKey;
@@ -38,6 +39,7 @@ public class KeyReset extends TimerTask implements XmlTag {
 
 	public void run() {
 		cLogger.info("Into KeyReset.run()...");
+		cResultMsg = null;
 		
 		try{
 			cConfigEle = BatUtils.getConfigEle("1001");
@@ -47,17 +49,22 @@ public class KeyReset extends TimerTask implements XmlTag {
 			e.getStackTrace();
 		}
 		
+		if ("".equals(cCurDate)) {
+			cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date());
+		}
+		
 		String mLocalPort = cConfigEle.getChildTextTrim("LocalPort");
 		cLogger.info("得到类绝对路径："+cConfigEle.getChildText("FilePath")+"/");
 				
 		String mKeyPath =SysInfo.cHome+"key/";
+		//新安全证书
 		String publicNewKeyPath = mKeyPath  +"cacert.crt";
 		long mOldTimeMillis = System.currentTimeMillis();
 		
-		String mTransNo = "1001" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		String mTransNo = "1001" + cCurDate + new SimpleDateFormat("HHmmss").format(new Date());
 		try {
 			
-			//获得加密AES工作密钥的 RSA公钥
+			//老安全证书
 			String publicKeyPath = mKeyPath + mLocalPort+"_pub.cer";
 			cLogger.info(publicKeyPath);
 			publicKey = new String(IOTrans.toBytes( new FileInputStream(publicKeyPath)));
@@ -117,7 +124,7 @@ public class KeyReset extends TimerTask implements XmlTag {
 			Date date = new Date();
 			//交易日期
 			Element mTransDate = new Element("TransDate");
-			mTransDate.setText(new SimpleDateFormat("yyyyMMdd").format(date));
+			mTransDate.setText(cCurDate);
 			
 			//交易时间
 			Element mTransTime = new Element("TransTime");
@@ -245,9 +252,12 @@ public class KeyReset extends TimerTask implements XmlTag {
 				mSocketIs.close();
 			if (mSocket != null)
 				mSocket.close();
+			cResultMsg = mOutNoStd.getRootElement().getChild("Header").getChildText("RetMsg");
 		} catch (UnknownHostException e) {
+			cResultMsg = e.toString();
 			e.printStackTrace();
 		} catch (IOException e) {
+			cResultMsg = e.toString();
 			e.printStackTrace();
 		}
 
@@ -285,7 +295,7 @@ public class KeyReset extends TimerTask implements XmlTag {
 		/*	[C1:固定"X",C3:1.0,N8:数据包长度,C8:银行分配保险公司代码,C1:0-不加密1-关键数据加密2-报文整体加密,C1:加密算法
 		 *		报文类型+版本号+数据包长度[包体长度]+公司代码+加密标示+加密算法
 		 */
-		String pack = "X1.0" + tPackHeadLengthStr + "1132    " + "0" + "0"
+		String pack = "X1.0" + tPackHeadLengthStr + "1147    " + "0" + "0"
 		/*
 		 * C1:0-不压缩1-压缩,C1:0,C1:0,C40:40x' ',C8:固定值00000000]
 		 * 数据压缩标志+数据压缩算法+摘要算法+摘要+预留字段[固定值C8:00000000]
@@ -299,12 +309,40 @@ public class KeyReset extends TimerTask implements XmlTag {
 		return (pack + mBodyStr).getBytes();
 	}
 
-	public static void main(String[] args) {
-		Logger cLogger=Logger.getLogger("com.sinosoft.midplat.newabc.bat.KeyReset.main");
-		cLogger.info("新农行密钥重置程序启动...");
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		Logger mLogger=Logger.getLogger("com.sinosoft.midplat.newabc.bat.KeyReset.main");
+		mLogger.info("新农行密钥重置程序启动...");
+		
 		KeyReset abcAES = new KeyReset();
+		
+		// 用于补对账，设置补对账日期 
+		if (0 != args.length) {
+			mLogger.info("args[0] = " + args[0]);
+		
+			/**
+			 * 严格日期校验的正则表达式：\\d{4}-((0\\d)|(1[012]))-(([012]\\d)|(3[01]))。
+			 * 4位年-2位月-2位日。 4位年：4位[0-9]的数字。
+			 * 1或2位月：单数月为0加[0-9]的数字；双数月必须以1开头，尾数为0、1或2三个数之一。
+			 * 1或2位日：以0、1或2开头加[0-9]的数字，或者以3开头加0或1。
+			 * 
+			 * 简单日期校验的正则表达式：\\d{4}-\\d{2}-\\d{2}。
+			 */
+			if (args[0].matches("\\d{4}((0\\d)|(1[012]))(([012]\\d)|(3[01]))")) {
+				cCurDate = args[0];
+			} else {
+				throw new MidplatException("日期格式有误，应为yyyyMMdd！" + args[0]);
+			}
+		}
 		abcAES.run();
-		cLogger.info("新农行密钥重置程序完成!");
+		mLogger.info("新农行密钥重置程序完成!");
 	}
 
 }

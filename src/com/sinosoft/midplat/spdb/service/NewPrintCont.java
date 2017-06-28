@@ -29,10 +29,14 @@ public class NewPrintCont extends ServiceImpl {
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
-		String mContNo = mBodyEle.getChildText(ContNo);
+		Element mContNo = mBodyEle.getChild(ContNo);
 
 		try
 		{
+			
+			String sql= "select ContNo from Cont where Type=0 and ProposalPrtNo ='" + mProposalPrtNo + "'";
+			mContNo.setText(new ExeSQL().getOneValue(sql));
+			
 			cTranLogDB = insertTranLog(cInXmlDoc);
 
 			// 校验系统中是否有相同保单正在处理，尚未返回

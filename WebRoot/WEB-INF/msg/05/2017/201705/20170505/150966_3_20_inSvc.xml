@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170505</TranDate>
+      <TranTime>103137</TranTime>
+      <BankCode>0102</BankCode>
+      <TranCom>05</TranCom>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>11010102</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>150966</TranNo>
+      <FuncFlag>2002</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>20</ServiceId>
+   </Head>
+   <Body>
+      <Count>1</Count>
+      <Prem>1000000</Prem>
+      <Detail>
+         <ApplyNo>71200000428933</ApplyNo>
+         <AppntName>张三</AppntName>
+         <IDType>110001</IDType>
+         <IDNo>11010119800101007X</IDNo>
+         <RiskCode>012D0100</RiskCode>
+         <ProdCode>000101</ProdCode>
+         <ProposalPrtNo>101010001179068</ProposalPrtNo>
+         <Prem>1000000</Prem>
+         <SpecialRate></SpecialRate>
+         <AccNo>6228451036002138864</AccNo>
+         <Phone>02145637548</Phone>
+         <Mobile>13517860167</Mobile>
+         <NodeNo>010101001865201</NodeNo>
+         <TranDate>20170505</TranDate>
+         <ContNo>101010001179068</ContNo>
+      </Detail>
+   </Body>
+</TranData>
+

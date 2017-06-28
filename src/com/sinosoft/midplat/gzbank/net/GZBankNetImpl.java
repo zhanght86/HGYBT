@@ -19,7 +19,7 @@ public class GZBankNetImpl extends SocketNetImpl {
 	private Element mQdBankCode = null;		//签到银行代码
 	private Element mBankCode = null;		//区域银行代码
 	private Element mBranch = null;			//银行网点代码
-	private Element mInsuOrgNo = null;		//保险公司机构代码
+//	private Element mInsuOrgNo = null;		//保险公司机构代码
 	private Element mTransExeDate = null;	//银行交易日期
 	private Element mTransRefGUID = null;	//银行流水号
 	private Element mTeller = null;			//银行操作员、柜员
@@ -54,13 +54,14 @@ public class GZBankNetImpl extends SocketNetImpl {
 		cSocket.shutdownInput();
 		
 		Document mXmlDoc = JdomUtil.build(mBodyBytes);
+		cLogger.info("银行请求报文:"+JdomUtil.toStringFmt(mXmlDoc));//测试
 		Element mRootEle = mXmlDoc.getRootElement();
 		/**
 		 * 赋值部分
 		 */
 		mTransNo = (Element) mRootEle.getChild("TransNo").clone();
 		mQdBankCode = (Element) mRootEle.getChild("QdBankCode").clone();
-		mInsuOrgNo = (Element) mRootEle.getChild("InsuOrgNo").clone();
+//		mInsuOrgNo = (Element) mRootEle.getChild("InsuOrgNo").clone();
 		mBankCode = (Element) mRootEle.getChild("BankCode").clone();
 		mBranch = (Element) mRootEle.getChild("Branch").clone();
 		mTransExeDate = (Element) mRootEle.getChild("TransExeDate").clone();
@@ -123,7 +124,7 @@ public class GZBankNetImpl extends SocketNetImpl {
 		//赋值报文头信息
 		Element mRootEle = pOutNoStd.getRootElement();
 		mRootEle.addContent(mTransNo).addContent(mQdBankCode).addContent(mBankCode).addContent(mBranch)
-		.addContent(mInsuOrgNo).addContent(mTransExeDate).addContent(mTransRefGUID).addContent(mTeller)
+		.addContent(mTransExeDate).addContent(mTransRefGUID).addContent(mTeller)
 		.addContent(mTellerName);
 		
 		StringBuffer mSaveName = new StringBuffer(Thread.currentThread().getName())

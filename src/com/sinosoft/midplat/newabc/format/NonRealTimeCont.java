@@ -1,9 +1,5 @@
 //新农行非实时出单
 package com.sinosoft.midplat.newabc.format;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.Date;
 
 import org.jdom.Document;

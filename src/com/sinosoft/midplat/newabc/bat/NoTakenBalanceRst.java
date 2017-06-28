@@ -9,6 +9,7 @@ import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -40,14 +41,13 @@ import com.sinosoft.utility.SSRS;
 public class NoTakenBalanceRst extends TimerTask implements XmlTag
 {
 	protected final static Logger cLogger = Logger.getLogger(NoTakenBalanceRst.class);
-	protected Date cTranDate;
+	
 	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
 	private TranLogDB cTranLogDB;
 	private String sTranNo = null;
 	private String curDate = null;
-	private String fileDate = null;
 	
 	protected String getCoreNum()
 	{
@@ -58,19 +58,23 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 	{
 		cLogger.info("Into NoTakenBalanceRst.getBody()...");
 
-		// contblcdtl里查找昨日银行回盘文件中失败的
-		String rTranDate = String.valueOf(DateUtil.get8Date(new Date().getTime() - 86400000L));
-		String mSqlStr10 = "select * from ContBlcDtl where trancom='05' " + " and trandate='" + rTranDate + "'" + " and type='24'" + " and bak5='1'";
-		SSRS ssrs = new ExeSQL().execSQL(mSqlStr10);
 		Element mBody = new Element(Body);
-		for (int i = 0; i < ssrs.getMaxRow(); i++)
-		{
-			ElementLis Detail = new ElementLis("Detail", mBody);
-			new ElementLis("BusiType", ssrs.GetText(i + 1, 18), Detail);
-			new ElementLis("ContNo", ssrs.GetText(i + 1, 3), Detail);
-			new ElementLis("AppntName", ssrs.GetText(i + 1, 12), Detail);
-			new ElementLis("Status", ssrs.GetText(i + 1, 18), Detail);
-			new ElementLis("TranDate", ssrs.GetText(i + 1, 5), Detail);
+		try {
+			// contblcdtl里查找昨日银行回盘文件中失败的
+			String rTranDate = String.valueOf(DateUtil.get8Date(new SimpleDateFormat("yyyyMMdd").parse(cCurDate).getTime() - 86400000L));
+			String mSqlStr10 = "select * from ContBlcDtl where trancom='05' " + " and trandate='" + rTranDate + "'" + " and type='24'" + " and bak5='1'";
+			SSRS ssrs = new ExeSQL().execSQL(mSqlStr10);
+			for (int i = 0; i < ssrs.getMaxRow(); i++)
+			{
+				ElementLis Detail = new ElementLis("Detail", mBody);
+				new ElementLis("BusiType", ssrs.GetText(i + 1, 18), Detail);
+				new ElementLis("ContNo", ssrs.GetText(i + 1, 3), Detail);
+				new ElementLis("AppntName", ssrs.GetText(i + 1, 12), Detail);
+				new ElementLis("Status", ssrs.GetText(i + 1, 18), Detail);
+				new ElementLis("TranDate", ssrs.GetText(i + 1, 5), Detail);
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
 
 		cLogger.info("Out NoTakenBalanceRst.getBody()!");
@@ -101,19 +105,19 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
 
-			// fileDate="20141010";
 			receive(cOutXmlDoc, ttLocalDir);
 			
 			Element mComCodeEle = cConfigEle.getChild("ComCode");
-			String mFileName = "INVALID" + mComCodeEle.getText() + "." + fileDate;
+			String mFileName = "INVALID" + mComCodeEle.getText() + "." + cCurDate;
 			cLogger.info("今天生成的文件名为：" + mFileName);
-			if(!new BatUtils().upLoadFile(ttLocalDir+"/"+mFileName, "02", "2004",DateUtil.getDateStr(cTranDate, "yyyyMMdd"),mFileName)){
+			if(!new BatUtils().upLoadFile(ttLocalDir+"/"+mFileName, "02", "2004",cCurDate,mFileName)){
 				throw new MidplatException(cConfigEle.getChildText(name)+"上传失败！");
 			}
 			
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 			cLogger.info("退保犹撤数据文件对账结果代码：" + reCode + "      结果说明：" + reMsg);
+			
 			if (cTranLogDB != null) {
 				cTranLogDB.setRCode(reCode);
 				cTranLogDB.setRText(reMsg);
@@ -121,10 +125,10 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 				cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 				cTranLogDB.update();
 			}
-			cLogger.info(cConfigEle.getChildText(name)+"文件上传成功！");
-		}
-		catch (Exception e)
-		{
+			
+			cResultMsg = reMsg;
+		}catch (Exception e){
+			cResultMsg = e.toString();
 			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常!");
 			e.printStackTrace();
 			cTranLogDB.setRCode("1");
@@ -133,6 +137,8 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
 		}
+		
+		cLogger.info(cConfigEle.getChildText(name)+"文件上传成功！");
 		cLogger.info("Out NoTakenBalanceRst.deal()!");
 	}
 
@@ -147,7 +153,6 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		// 当日生成的退保犹撤数据文件和非实时出单结果文件的文件名为次日，农行会在次日处理
 		// curDate=当前日期
 		// fileDate=生成文件日期
-		// 20141217
 		String gfileDate = "";
 		Calendar c = Calendar.getInstance();
 		curDate = String.valueOf(DateUtil.get8Date(c.getTime()));
@@ -184,15 +189,15 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		return gfileDate;
 	}
 	
-	// 创建请求报文 20140913
+	// 创建请求报文
 	@SuppressWarnings("static-access")
 	private Document sendRequest()
 	{
 		cLogger.info("Into NoTakenBalanceRst.sendRequest()...");
 		ElementLis TranData = new ElementLis("TranData");
 		ElementLis Head = new ElementLis("Head", TranData);
-		new ElementLis("TranDate",DateUtil.getDateStr(cTranDate, "yyyyMMdd"), Head);
-		new ElementLis("TranTime", DateUtil.getDateStr(cTranDate, "HHmmss"), Head);
+		new ElementLis("TranDate",cCurDate, Head);
+		new ElementLis("TranTime", DateUtil.getDateStr(new Date(), "HHmmss"), Head);
 		new ElementLis("TranCom", "05", Head);
 		new ElementLis("ZoneNo", "11", Head);
 		new ElementLis("NodeNo", cConfigEle.getChildText("NodeNo"), Head);
@@ -205,7 +210,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		Element Body = getBody();
 		TranData.addContent(Body);
 		Document pXmlDoc = new Document(TranData);
-		cLogger.info("Out NoTakenBalanceRst.sendRequest()!" + cTranDate);
+		cLogger.info("Out NoTakenBalanceRst.sendRequest()!" + cCurDate);
 		return pXmlDoc;
 	}
 
@@ -238,14 +243,13 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		return mTranLogDB;
 	}
 	
-	// 处理核心返回报文并存储在固定路径 20140911
+	// 处理核心返回报文并存储在固定路径
 	private void receive(Document cOutXmlDoc, String ttLocalDir) throws Exception
 	{
-		cLogger.info("Into NoTakenBalanceRst.receive()..." + cTranDate);
+		cLogger.info("Into NoTakenBalanceRst.receive()..." + cCurDate);
 		JdomUtil.print(cOutXmlDoc);
 
 		// fileDate=dealFileName();
-		fileDate = String.valueOf(DateUtil.get8Date(cTranDate));
 		String outHead = null;// 头记录
 		@SuppressWarnings("unused")
 		String serialNo = "";// 序号
@@ -299,17 +303,17 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 					serialNo = "0" + Integer.toString(i);
 					// fileName =
 					// "INVALID"+tComCode+"."+String.valueOf((DateUtil.get8Date(System.currentTimeMillis())+1));
-					fileName = "INVALID" + tComCode + "." + fileDate;
+					fileName = "INVALID" + tComCode + "." + cCurDate;
 				}
 				else
 				{
 					serialNo = Integer.toString(i);
 					// fileName =
 					// "INVALID"+tComCode+"."+String.valueOf((DateUtil.get8Date(System.currentTimeMillis())+1));
-					fileName = "INVALID" + tComCode + "." + fileDate;
+					fileName = "INVALID" + tComCode + "." + cCurDate;
 				}
 				File file = new File(ttLocalDir + "/" + fileName);
-				// 如果文件不存在穿件文件
+				// 如果文件不存在创建文件
 				if (!file.exists())
 				{
 					try
@@ -411,9 +415,9 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 				{
 					tCount3 = "0";
 				}
-				outHead = tComCode + "|" + "03" + "|" + tSumCount + "|" + tSumMoney + "|" + tCount1 + "|" + tSumMoney1 + "|" + tCount2 + "|" + tSumMoney2 + "|" + tCount3 + "|" + tSumMoney3 + "\n";
+				outHead = tComCode + "|" + "03" + "|" + tSumCount + "|" + tSumMoney + "|" + tCount1 + "|" + tSumMoney1 + "|" + tCount2 + "|" + tSumMoney2 + "|" + tCount3 + "|" + tSumMoney3 + "|" + "\n";
 				out = outHead + outBody;
-				cLogger.info("第" + i + "个文件生成返回文件总记录" + out);
+				cLogger.info("第" + (i+1) + "个文件生成返回文件总记录" + out);
 				byte[] m = out.getBytes("GBK");
 				try
 				{
@@ -446,7 +450,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		{
 			// fileName =
 			// "INVALID"+tComCode+"."+String.valueOf((DateUtil.get8Date(System.currentTimeMillis())+1));
-			fileName = "INVALID" + tComCode + "." + fileDate;
+			fileName = "INVALID" + tComCode + "." + cCurDate;
 			File file = new File(ttLocalDir + "/" + fileName);
 			// 如果文件不存在创建文件
 			if (!file.exists())
@@ -470,7 +474,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 			tCount3 = "0";
 			tSumMoney3 = "0.00";
 			System.out.println("总金额：" + tSumMoney);
-			outHead = tComCode + "|" + "03" + "|" + tSumCount + "|" + tSumMoney + "|" + tCount1 + "|" + tSumMoney1 + "|" + tCount2 + "|" + tSumMoney2 + "|" + tCount3 + "|" + tSumMoney3 + "\n";
+			outHead = tComCode + "|" + "03" + "|" + tSumCount + "|" + tSumMoney + "|" + tCount1 + "|" + tSumMoney1 + "|" + tCount2 + "|" + tSumMoney2 + "|" + tCount3 + "|" + tSumMoney3 + "|" + "\n";
 			out = outHead;
 			cLogger.info("只返回头文件，核心未返回退保值" + out);
 			byte[] m = out.getBytes("GBK");
@@ -512,17 +516,6 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date());
 			}
 			System.out.println(cConfigEle.getContent());
-			String nextDate = cConfigEle.getChildText("nextDate");
-			if (null == cTranDate)
-			{
-				if (null != nextDate && "Y".equals(nextDate))
-				{
-					cTranDate = new Date();
-					cTranDate = new Date(cTranDate.getTime() - 1000 * 3600 * 24);
-				}
-				else
-					cTranDate = new Date();
-			}
 			
 			try
 			{
@@ -549,24 +542,23 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 			}
 
 			// 每月1日备份上月的对账文件
-			if ("01".equals(DateUtil.getDateStr(cTranDate, "dd")))
-			{
+			if ("01".equals(DateUtil.getDateStr(new Date(), "dd"))){
 				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
 			}
 		}
 		catch (Throwable ex)
 		{
-			cLogger.error("交易出错！", ex);
 			cResultMsg = ex.toString();
+			cLogger.error("交易出错！", ex);
 		}
 
-		cTranDate = null; // 每次跑完，清空日期
+		cCurDate = null; // 每次跑完，清空日期
 
 		cLogger.info("Out NoTakenBalanceRst.run()!");
 	}
 
-	// 备份月文件，比如20141201当日，系统会在目录localDir 建立/2014/201411，
-	// 然后把所有文件移动到该目录，但是20141201的文件除外
+	// 备份月文件，比如yyyyMM01当日，系统会在目录localDir 建立/yyyy/yyyyMM，
+	// 然后把所有文件移动到该目录，但是yyyyMM01的文件除外
 	private void bakFiles(String pFileDir)
 	{
 		cLogger.info("Into NoTakenBalanceRst.bakFiles()...");
@@ -593,7 +585,7 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 				}
 
 				Calendar tCurCalendar = Calendar.getInstance();
-				tCurCalendar.setTime(cTranDate);
+				tCurCalendar.setTime(new Date());
 
 				Calendar tFileCalendar = Calendar.getInstance();
 				tFileCalendar.setTime(new Date(pFile.lastModified()));
@@ -627,11 +619,19 @@ public class NoTakenBalanceRst extends TimerTask implements XmlTag
 		cLogger.info("Out NoTakenBalanceRst.bakFiles()!");
 	}
 	
-public static void main(String[] args) throws Exception{
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
+	}
+	
+	public static void main(String[] args) throws Exception{
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NoTakenBalanceRst.main");
-		cLogger.info("开始退保犹撤数据文件对账程序...");	//没起作用，未打印
+		cLogger.info("开始退保犹撤数据文件对账程序...");
 		
-		NoTakenBalanceRst abcAES = new NoTakenBalanceRst();	//没起作用
+		NoTakenBalanceRst abcAES = new NoTakenBalanceRst();
 		// 用于补对账，设置补对账日期
 		if (0 != args.length) {
 			mLogger.info("args[0] = " + args[0]);
@@ -650,8 +650,8 @@ public static void main(String[] args) throws Exception{
 				throw new MidplatException("日期格式有误，应为yyyy-MM-dd！" + args[0]);
 			}
 		}
-		abcAES.run();	//没起作用
+		abcAES.run();
 		
-		cLogger.info("结束退保犹撤数据文件对账程序!");	//没起作用，未打印
+		cLogger.info("结束退保犹撤数据文件对账程序!");
 	}
 }

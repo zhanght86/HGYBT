@@ -7,7 +7,7 @@
 
 <xsl:template match="ABCB2I">
 		<TranData>
-			<!--基本信息-->
+		<!--基本信息-->
 	  	<Head>
 	  		<!-- 交易日期 -->
 	  		<TranDate><xsl:value-of select="Header/TransDate"/></TranDate>

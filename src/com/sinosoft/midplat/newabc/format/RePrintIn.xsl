@@ -26,6 +26,8 @@
 			 <xsl:copy-of select="Head/*"/> 
 	  	</Head>
 	<Body>
+		<!-- 销售渠道 -->
+		<SaleChannel><xsl:apply-templates select="Header/EntrustWay"/></SaleChannel>
 		<!-- 保险单号 -->
 		<ContNo></ContNo>
 		<!-- 投保单(印刷)号 -->
@@ -36,6 +38,24 @@
 		<OldContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/OldVchNo)"/></OldContPrtNo>
 	</Body>
 </TranData>
+</xsl:template>
+
+<!-- 委托方式
+01-银行网银渠道
+02-掌上银行渠道
+04-银行自助终端渠道
+11-银行柜台渠道
+20-保险公司渠道
+ -->
+<xsl:template name="tran_salechannel" match="EntrustWay">
+	<xsl:choose>
+		<xsl:when test=".=01">1</xsl:when><!-- 银行网银渠道 -->
+		<xsl:when test=".=02">2</xsl:when><!-- 掌上银行渠道 -->
+		<xsl:when test=".=04">8</xsl:when><!-- 银行自助终端渠道 -->
+		<xsl:when test=".=11">0</xsl:when><!-- 银行柜台渠道 -->
+		<xsl:when test=".=20"></xsl:when><!-- 保险公司渠道 -->
+		<xsl:otherwise>--</xsl:otherwise>
+	</xsl:choose>
 </xsl:template>
 
 </xsl:stylesheet>

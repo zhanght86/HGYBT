@@ -1,0 +1,106 @@
+14:41:22,696 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@31b037fe
+14:41:22,737 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:41:22,751 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:41:22,752 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:41:22,766 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:41:22,767 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:41:22,768 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:41:22,793 INFO common.XmlConf(80) - conf file modified at (2017-05-25 14:20:30,749) and length=10121 bytes!
+14:41:22,906 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:41:22,941 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:41:22,954 INFO common.Log4jPrint(20) - End reset System.out!
+14:41:22,956 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:41:22,956 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:41:22,957 INFO common.XmlConf(80) - conf file modified at (2017-05-25 14:20:30,805) and length=708 bytes!
+14:41:22,963 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:41:22,964 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:41:23,010 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:41:23,024 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:41:23,064 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:41:23,065 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:41:23,065 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:41:23,076 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:41:23,077 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+14:41:23,079 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:41:23,091 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+14:41:23,091 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+14:41:23,091 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:41:23,118 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+14:41:23,123 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:41:23,125 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:41:23,139 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+14:41:23,140 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+14:41:23,140 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:41:25,092 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+14:41:25,093 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+14:41:25,118 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@50b742d3
+14:41:25,118 INFO common.Log4jPrint(20) - Start revert System.out...
+14:41:25,119 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+14:41:25,142 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:41:25,150 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:41:25,142 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:41:25,142 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:41:25,142 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+14:41:25,766 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@31b037fe
+14:41:25,771 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:41:25,773 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+14:41:25,773 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+14:41:25,774 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:41:25,774 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+14:41:25,775 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+14:41:25,777 INFO common.XmlConf(80) - conf file modified at (2017-05-25 14:20:30,749) and length=10121 bytes!
+14:41:25,808 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+14:41:25,845 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:41:25,846 INFO common.Log4jPrint(20) - End reset System.out!
+14:41:25,848 INFO net.SocketConf(27) - Into SocketConf.load()...
+14:41:25,848 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+14:41:25,849 INFO common.XmlConf(80) - conf file modified at (2017-05-25 14:20:30,805) and length=708 bytes!
+14:41:25,852 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+14:41:25,852 INFO net.SocketConf(60) - Out SocketConf.load()!
+14:41:25,870 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+14:41:25,872 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+14:41:25,876 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+14:41:25,877 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+14:41:25,880 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+14:41:25,881 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+14:41:25,882 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+14:41:25,881 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+14:41:25,885 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+14:41:25,886 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+14:41:25,889 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+14:41:25,889 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+14:41:25,889 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+14:41:25,892 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+14:41:25,894 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+14:41:25,897 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+14:41:25,897 INFO net.SocketListenerF5$Server(194) - 监听端口 9004

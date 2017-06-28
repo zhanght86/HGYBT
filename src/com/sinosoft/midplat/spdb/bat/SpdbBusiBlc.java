@@ -19,6 +19,12 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.spdb.SpdbConf;
 import com.sinosoft.utility.ExeSQL;
 
+/**
+ * @ClassName: SpdbBusiBlc
+ * @Description: 新契约日结文件
+ * @author sinosoft
+ * @date 2017-4-21 下午6:02:46
+ */
 public class SpdbBusiBlc extends ToBankBalance
 {
 	public SpdbBusiBlc()

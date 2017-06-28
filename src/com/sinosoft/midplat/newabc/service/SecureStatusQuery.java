@@ -1,7 +1,6 @@
 package com.sinosoft.midplat.newabc.service;
 
 import java.util.Calendar;
-import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -68,12 +67,8 @@ public class SecureStatusQuery extends ServiceImpl{
 			}
 			
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		

@@ -1,10 +1,14 @@
 package com.sinosoft.midplat.newabc.bat;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.TimerTask;
@@ -21,6 +25,7 @@ import com.sinosoft.lis.vschema.ContBlcDtlSet;
 import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
+import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
@@ -40,16 +45,17 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
+	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
-	@SuppressWarnings("unused")
-	private String mFileData = "";
 	private Document cOutXmlDoc;
 	private TranLogDB cTranLogDB;
 
 	public void run() {
+		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
 		cLogger.info("Into NonReaTimeIssWatDetail.run()...");
 		try {
+			cResultMsg = null;
 			cTranLogDB = insertTranLog();
 			cConfigEle = BatUtils.getConfigEle("2002"); // 得到bat.xml文件中的对应节点.
 
@@ -73,6 +79,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
 //			String myFilePath = "D:/YBT_SAVE_XML/ZHH/newabc/BQAPPLY010079.20170405";
 			cLogger.info(myFilePath);
+			
 			// 得到请求标准报文
 			Document cInXmlDoc = parse(myFilePath);
 			JdomUtil.print(cInXmlDoc);
@@ -82,6 +89,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			String reCode = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Flag");
 			String reMsg = cOutXmlDoc.getRootElement().getChild("Head").getChildText("Desc");
 			cLogger.info("非实时出单流水明细对账结果代码：" + reCode + "      结果说明：" + reMsg);
+			
 			if (cTranLogDB != null) {
 				cTranLogDB.setRCode(reCode);
 				cTranLogDB.setRText(reMsg);
@@ -90,7 +98,14 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 				cTranLogDB.update();
 			}
 			
+			 // 每月1日备份上月的对账文件
+			if ("01".equals(DateUtil.getDateStr(new Date(), "dd"))){
+				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
+			}
+			
+			cResultMsg = reMsg;
 		} catch (Exception e) {
+			cResultMsg = e.toString();
 			cLogger.error(cConfigEle.getChildTextTrim("name") + "  对账处理异常!");
 			e.printStackTrace();
 			cTranLogDB.setRCode("1");
@@ -101,6 +116,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		} finally {
 			cCurDate = "";
 		}
+		
 		cLogger.info("处理非实时出单流水明细文件结束!");
 		cLogger.info("Out NonReaTimeIssWatDetail.run()!");
 	}
@@ -176,23 +192,22 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		// 组织根节点以及BaseInfo节点内容
 		Element mTranData = new Element("TranData");
 		String tBalanceFlag = "0";
-		Date cTranDate = new Date();
 		Element mTranDate = new Element(TranDate);
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
-		cLogger.info(" 对账日期为..."+DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		cLogger.info(" 当前日期为..."+mCurrDate);
+		mTranDate.setText(cCurDate);
+		String cTranDate = DateUtil.getCurDate("yyyyMMdd");
+		cLogger.info(" 对账日期为..."+cCurDate);
+		cLogger.info(" 当前日期为..."+cTranDate);
 		
-		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
-		if(!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate)){
+		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0
+		if(!cCurDate.equals(cTranDate)){
 			tBalanceFlag = "1";
 		}
 		
 		Element mTranTime = new Element(TranTime);
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
+		mTranTime.setText(DateUtil.getDateStr(new Date(), "HHmmss"));
 		
 		Element mTranCom = new Element(TranCom);
-		mTranCom.setText(cConfigEle.getChildText("tranCom"));
+		mTranCom.setText(cConfigEle.getChildText("com"));
 		
 		Element mZoneNo = new Element("ZoneNo");
 		mZoneNo.setText(cConfigEle.getChildText("zone"));
@@ -233,7 +248,6 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		//格式：保险公司代码|银行代码|总记录数|总金额|
 		//文件其他内容：（明细记录）
 		//交易日期|试算申请顺序号|投保人姓名|投保人证件类型|投保人证件号码|险种编码|产品编码|投保单号|保费|个性化费率|账号|电话号码|手机号码|地址|邮政编码|附言|省市代码|网点号|
-		System.out.println(pBatIs);
 		BufferedReader mBufReader = new BufferedReader(
 				new InputStreamReader(pBatIs, mCharset));
 		
@@ -259,22 +273,17 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			
 			String[] tSubMsgs = tLineMsg.split("\\|", -1);
 			
-//			if (!"01".equals(tSubMsgs[10])) {
-//				cLogger.warn("非承保保单，直接跳过，继续下一条！");
-//				continue;
-//			}
-//			if (!("01".equals(tSubMsgs[11])&&("0000".equals(tSubMsgs[12])))) {
-//				cLogger.warn("承保保单（冲正或撤单的单子），直接跳过，继续下一条！");
-//				continue;
-//			}
-			
 			/*
 			 * 农行的实时的地区码是4位的（银行省市代码+2位地区码），对账的地区码是2位的，所以对账的地区码还要拼接省市银行代码部分
 			 *    
-			 * 联调的时候和农行的人员确认的，20130403
+			 * 联调的时候和农行的人员确认的
 			 * 
 			 * 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|保单状态
 			 */
+			
+			//交易日期
+			Element tTranDateEle = new Element(TranDate);
+			tTranDateEle.setText(tSubMsgs[0]);
 			
 			//试算申请序号
 			Element tApplyNoEle = new Element("ApplyNo");
@@ -302,7 +311,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			
 			//投保单号
 			Element tProposalPrtNoEle = new Element(ProposalPrtNo);
-			tProposalPrtNoEle.setText(tSubMsgs[7]);
+			tProposalPrtNoEle.setText(NumberUtil.no13To15(tSubMsgs[7]));
 			
 			//保费
 			Element tPremEle = new Element(Prem);
@@ -333,10 +342,7 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 			Element tNodeNo = new Element("NodeNo");
 			tNodeNo.setText(nodeNo);
 			
-			Element tTranDateEle = new Element(TranDate);
-			tTranDateEle.setText(tSubMsgs[0]);
-			
-			//非实时出单银保通不知道保单号，因此在插入对账明细表的时候用投保单号插入保单号20141012
+			//非实时出单银保通不知道保单号，因此在插入对账明细表的时候用投保单号插入保单号
  			Element tContNo=new Element(ContNo);
  			tContNo.setText(tSubMsgs[7]);
 			
@@ -377,7 +383,6 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		Element mBodyEle = mTranDataEle.getChild(Body);
 		
 		int mCount = Integer.parseInt(mBodyEle.getChildText(Count));
-	//	long mSumPrem = Long.parseLong(mBodyEle.getChildText(Prem));
 		double mSumPrem = Double.parseDouble(mBodyEle.getChildText(Prem));
 		List<Element> mDetailList = mBodyEle.getChildren(Detail);
 		ContBlcDtlSet mContBlcDtlSet = new ContBlcDtlSet();
@@ -386,7 +391,6 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		}
 		double mSumDtlPrem = 0;
 		for (Element tDetailEle : mDetailList) {
-		//	mSumDtlPrem += Integer.parseInt(tDetailEle.getChildText(Prem));
 			mSumDtlPrem += Double.parseDouble(tDetailEle.getChildText(Prem));
 			
 			ContBlcDtlSchema tContBlcDtlSchema = new ContBlcDtlSchema();
@@ -428,6 +432,76 @@ public class NonReaTimeIssWatDetail extends TimerTask implements XmlTag {
 		
 		cLogger.debug("Out NonReaTimeIssWatDetail.saveDetails()!");
 		return mContBlcDtlSet;
+	}
+	
+	// 备份月文件，比如yyyyMM01当日，系统会在目录localDir 建立/yyyy/yyyyMM，
+	// 然后把所有文件移动到该目录，但是yyyyMM01的文件除外
+	private void bakFiles(String pFileDir)
+	{
+		cLogger.info("Into NonReaTimeIssWatDetail.bakFiles...");
+
+		if (null == pFileDir || "".equals(pFileDir))
+		{
+			cLogger.warn("本地文件目录为空，不进行备份操作！");
+			return;
+		}
+		File mDirFile = new File(pFileDir);
+		if (!mDirFile.exists() || !mDirFile.isDirectory())
+		{
+			cLogger.warn("本地文件目录不存在，不进行备份操作！" + mDirFile);
+			return;
+		}
+
+		File[] mOldFiles = mDirFile.listFiles(new FileFilter()
+		{
+			public boolean accept(File pFile)
+			{
+				if (!pFile.isFile())
+				{
+					return false;
+				}
+
+				Calendar tCurCalendar = Calendar.getInstance();
+				tCurCalendar.setTime(new Date());
+
+				Calendar tFileCalendar = Calendar.getInstance();
+				tFileCalendar.setTime(new Date(pFile.lastModified()));
+
+				return tFileCalendar.before(tCurCalendar);
+			}
+		});
+
+		Calendar mCalendar = Calendar.getInstance();
+		mCalendar.add(Calendar.MONTH, -1);
+		File mNewDir = new File(mDirFile, DateUtil.getDateStr(mCalendar, "yyyy/yyyyMM"));
+		for (File tFile : mOldFiles)
+		{
+			try
+			{
+				String fileName_date = tFile.getName().substring(tFile.getName().length() - 8);
+				Date date = new Date();
+				if (!fileName_date.equals(String.valueOf(DateUtil.get8Date(date))))
+				{
+					cLogger.info(tFile.getAbsoluteFile() + " start move...");
+					IOTrans.fileMove(tFile, mNewDir);
+					cLogger.info(tFile.getAbsoluteFile() + " end move!");
+				}
+			}
+			catch (IOException ex)
+			{
+				cLogger.error(tFile.getAbsoluteFile() + "备份失败！", ex);
+			}
+		}
+
+		cLogger.info("Out NonReaTimeIssWatDetail.bakFiles!");
+	}
+	
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
 	}
 	
 	public static void main(String[] args) throws Exception {

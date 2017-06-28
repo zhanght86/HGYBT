@@ -4,47 +4,33 @@
 	<bank id="03" insu="010079" />
 	<TranCom outcode="03">03</TranCom>
 	<CoreNo>010079</CoreNo>
-	<AgentCom></AgentCom><!--代理机构编码:建设银行贵州贵阳世纪城网点 1301010001-->
+	<AgentCom></AgentCom><!--代理机构编码:建设银行贵州贵阳世纪城网点1301010001 -->
+	<!--<preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet> --> <!--测试环境类 -->
 	<FTP ip="10.1.3.67" user="lisftp" password="lisftp_3132" remoteStr="/uploadfile" localStr="/downloadfile"/><!--批量交易FTP配置信息 -->
-  <LocalDownloadZipFile>/home/weblogic/ybttest/newccb/batchzip/</LocalDownloadZipFile>
-  <backBatchZip>/home/weblogic/ybttest/newccb/backbatchzip/</backBatchZip>
-	<!--<preNet>com.sinosoft.midplat.newccb.net.NewCcbNetImpl</preNet>--><!--测试环境类 -->
-	<preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet><!-- 本地测试类 -->
+    <LocalDownloadZipFile>G:\\zip\</LocalDownloadZipFile>
+    <LocalDownloadZipFile>/home/weblogic/ybttest/newccb/batchzip/</LocalDownloadZipFile>
+    <backBatchZip>G:\\backzip\</backBatchZip>
+    <backBatchZip>/home/weblogic/ybttest/newccb/backbatchzip/</backBatchZip>
+    <preNet>com.sinosoft.midplat.newccb.newNet.CcbNetImpl</preNet><!-- 本地测试类 -->
 	<!-- 银联账号 -->
 	<BankNo>105</BankNo>
+	<business>
+		<name>绿灯测试</name>
+		<funcFlag outcode="P53818152">111</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.GreenTest</format>
+		<service>com.sinosoft.midplat.newccb.service.GreenTest</service>
+	</business>
 	<business>
 		<name>实时投保</name>
 		<funcFlag outcode="P53819113">1012</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout> 
+		<LocalDir>D:/DecrFilePath/</LocalDir>
 		<format>com.sinosoft.midplat.newccb.format.NewCont</format>
 		<service>com.sinosoft.midplat.newccb.service.NewContInput</service>
-	</business>
-	<business>
-		<name>非实时投保</name>
-		<funcFlag outcode="P53819121">1060</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout> 
-		<format>com.sinosoft.midplat.newccb.format.DelayedNewCont</format>
-		<service>com.sinosoft.midplat.newccb.service.DelayedNewContInput</service>
-	</business>
-	<business>
-		<name>更新非实时业务状态</name>
-		<funcFlag outcode="P538191E4">1080</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout> 
-		<format>com.sinosoft.midplat.newccb.format.UpdateServiceStatus</format>
-		<service>com.sinosoft.midplat.newccb.service.ContUpdateServiceStatus</service>
-	</business>
-	<business>
-		<name>获取非实时核保状态</name>
-		<funcFlag outcode="P53817109">1061</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout> 
-		<format>com.sinosoft.midplat.newccb.format.GetDelayedUnderwritingStatus</format>
-		<service>com.sinosoft.midplat.newccb.service.GetDelayedUndStatusForService</service>
-		<LocalDir>/home/weblogic/ybttest/newccb/snd/</LocalDir>
-		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
+		<ftp ip="10.2.0.31" port="21" path="/newccb/image/" user="gzb" password="gzb1234"/>
 	</business>
 	<business>
 		<name>新单确认</name>
@@ -63,28 +49,44 @@
 		<service>com.sinosoft.midplat.newccb.service.ContRePrint</service>
 	</business>
 	<business>
+		<name>查询客户保单</name>
+		<funcFlag outcode="P53819176">1039</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.QueryCont</format>
+		<service>com.sinosoft.midplat.newccb.service.NewQueryCont</service>
+	</business>
+	<business>
+		<name>修改保单基本信息</name>
+		<funcFlag outcode="P53819161">1038</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ModifyCont</format>
+		<service>com.sinosoft.midplat.newccb.service.NewModifyCont</service>
+	</business>
+	<business>
+		<name>代理保险售后提醒查询</name>
+		<funcFlag outcode="P5381B123">1052</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.ActInsuSaleRemindQuery</format>
+		<service>com.sinosoft.midplat.newccb.service.ActInsuSaleRemindQuery</service>
+	</business>
+	<business>
+		<name>打印保单</name>
+		<funcFlag outcode="P53819182">1032</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.PrintCont</format>
+		<service>com.sinosoft.midplat.newccb.service.NewPrintCont</service>
+	</business>
+	<business>
 		<name>重控核对</name>
 		<funcFlag outcode="P538191A2">108</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout>
 		<format>com.sinosoft.midplat.newccb.format.CardControl</format>
 	    <service>com.sinosoft.midplat.newccb.service.ContCancelCardControlCcb</service>  
-	</business>
-	<business>
-		<name>确认撤销当日保单</name>
-		<funcFlag outcode="P53819142">1015</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout>
-		<format>com.sinosoft.midplat.newccb.format.WriteOff</format>
-		<service>com.sinosoft.midplat.newccb.service.ContCancel</service>
-	</business>
-	<business>
-		<name>绿灯测试</name>
-		<funcFlag outcode="P53818152">111</funcFlag>
-		<locktime>200</locktime>
-		<timeout>200</timeout>
-		<format>com.sinosoft.midplat.newccb.format.GreenTest</format>
-		<service>com.sinosoft.midplat.newccb.service.GreenTest</service>
 	</business>
 	<business>
 		<name>自动冲正</name>
@@ -95,12 +97,12 @@
 		<service>com.sinosoft.midplat.newccb.service.ContRollback</service>
 	</business>
 	<business>
-		<name>打印保单</name>
-		<funcFlag outcode="P53819182">1032</funcFlag>
+		<name>确认撤销当日保单</name>
+		<funcFlag outcode="P53819142">1015</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout>
-		<format>com.sinosoft.midplat.newccb.format.PrintCont</format>
-		<service>com.sinosoft.midplat.newccb.service.NewPrintCont</service>
+		<format>com.sinosoft.midplat.newccb.format.WriteOff</format>
+		<service>com.sinosoft.midplat.newccb.service.ContCancel</service>
 	</business>
 	<business>
 		<name>查询缴纳保费信息</name>
@@ -147,33 +149,88 @@
 		<funcFlag outcode="P53816107">1043</funcFlag>
 		<locktime>200</locktime>
 		<timeout>200</timeout>
-		<ip>127.0.0.1</ip>
 		<format>com.sinosoft.midplat.newccb.format.GetContList2</format>
 		<service>com.sinosoft.midplat.newccb.service.NewGetContList2</service>
+		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
+		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
+	</business>
+	<!-- 非实时相关交易 -->
+	<business>
+		<name>申请非实时投保</name>
+		<funcFlag outcode="P53819121">1060</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.DelayedNewCont</format>
+		<service>com.sinosoft.midplat.newccb.service.DelayedNewContInput</service>
+	</business>
+	<business>   
+		<name>申请契撤</name>        
+		<funcFlag outcode="P53819145">010047</funcFlag>   
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.P53819145</format>
+		<service>com.sinosoft.midplat.newccb.service.P53819145</service>
+	</business>
+	<business>   
+		<name>确认契撤</name>        
+		<funcFlag outcode="P53819146">010048</funcFlag>   
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.P53819146</format>
+		<service>com.sinosoft.midplat.newccb.service.P53819146</service>
+	</business>
+	<business>
+		<name>更新非实时业务状态</name>
+		<funcFlag outcode="P538191E4">1080</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.UpdateServiceStatus</format>
+		<service>com.sinosoft.midplat.newccb.service.ContUpdateServiceStatus</service>
+	</business>
+	<business>
+		<name>查询非实时缴费信息</name>
+		<funcFlag outcode="P53819153">1090</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.QueryPaymentInfo</format>
+		<service>com.sinosoft.midplat.newccb.service.NewQueryPaymentInfo</service>
+	</business>
+	<business>
+		<name>获取非实时核保状态</name>
+		<funcFlag outcode="P53817109">1061</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.GetDelayedUnderwritingStatus</format>
+		<service>com.sinosoft.midplat.newccb.service.GetDelayedUndStatusForService</service>
 		<LocalDir>/home/weblogic/ybttest/newccb/snd/</LocalDir>
 		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
 	</business>
-	<business> 
-		<name>日终与保险公司对账（账务类）</name>      
-		<funcFlag outcode="P53817103">3005</funcFlag>
+	<business>   
+		<name>登记签收日期</name>        
+		<funcFlag outcode="P538191D2">010045</funcFlag>   
 		<locktime>200</locktime>
-		<timeout>200</timeout>    
-		<NodeNo>110378300</NodeNo>      
-		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>        
-		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
-		<CoreNo>010079</CoreNo>
-		<LocalDir>/home/weblogic/ybttest/newccb/zw/</LocalDir>
+		<timeout>200</timeout> 
+		<format>com.sinosoft.midplat.newccb.format.RegisterDateofRec</format>
+		<service>com.sinosoft.midplat.newccb.service.RegisterDateofRec</service>
+	</business>
+	<!-- 日终交易 -->
+	<business> 
+		<name>日终与保险公司对账（账务）</name>   <!-- 交易带附件模式--> 
+		<funcFlag outcode="P53817103">3005</funcFlag>
+		<LocalDir>C:\Users\PengYF\Desktop\sinosoft\HG\</LocalDir> 
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.CCBBusiBlc</service>
 	</business>
 	<business> 
-		<name>日终与保险公司对账（保全类）</name>      
+		<name>日终与保险公司对账（保全）</name>   <!-- 交易带附件模式--> 
 		<funcFlag outcode="P53817104">1048</funcFlag>
+		<LocalDir>C:\Users\PengYF\Desktop\sinosoft</LocalDir>   
 		<locktime>200</locktime>
-		<timeout>200</timeout>    
-		<NodeNo>110378300</NodeNo>      
-		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>        
-		<service>com.sinosoft.midplat.newccb.service.NewContBlc</service>
-		<CoreNo>010079</CoreNo>
-		<LocalDir>/home/weblogic/ybttest/newccb/bq/</LocalDir>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.BusiBlc</format>
+		<service>com.sinosoft.midplat.newccb.service.CCBBusiBlc</service>
 	</business>
 	<business>
 		<name>发送银行端单证信息</name>
@@ -186,6 +243,7 @@
 		<CoreNo>010079</CoreNo>
 		<LocalDir>/home/weblogic/ybttest/newccb/dz/</LocalDir>
 	</business>
+	<!--批量代收付业务-->	
 	<business>
 		<name>批量代收代付查询</name>
 		<funcFlag outcode="P53818102">1046</funcFlag>
@@ -202,7 +260,8 @@
 		<format>com.sinosoft.midplat.newccb.format.BatRequest</format>
 		<service>com.sinosoft.midplat.newccb.service.ContBatRequest</service>
 		<!--响应银行文件加密前存储路径-->
-		<LocalDir>/home/weblogic/ybttest/newccb/qp/</LocalDir>
+		<!--<LocalDir>/home/weblogic/ybttest/newccb/qp/</LocalDir>-->
+		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
 		<!--响应银行文件加密后存储路径-->
 		<ccbLocalDir>/home/ap/fserver2/snd/</ccbLocalDir>
 	</business>
@@ -221,7 +280,34 @@
 		<timeout>200</timeout>
 		<format>com.sinosoft.midplat.newccb.format.BatResponse</format>
 		<service>com.sinosoft.midplat.newccb.service.ContBatResponse</service>
-		<!--银行送盘文件解密存储路径-->
-		<LocalDir>/home/weblogic/ybttest/newccb/sp/</LocalDir>
+		<!--银行送盘文件解密后存储路径-->
+		<!--<LocalDir>/home/weblogic/ybttest/newccb/sp/</LocalDir>-->
+		<LocalDir>C:/Users/anico/Desktop/unencrypt/</LocalDir>
+		<ccbLocalDir>/home/ap/fserver2/rcv/</ccbLocalDir>
+	</business>
+	<!-- 登记台账 -->
+	<business>
+		<name>申请登记台账</name>
+		<funcFlag outcode="P538191B2">1054</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.SignPolicyFormat</format>
+		<service>com.sinosoft.midplat.newccb.service.SignPolicyService</service>
+	</business>
+	<business>
+		<name>确认登记台账</name>
+		<funcFlag outcode="P538191B3">1055</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.SignConfirm</format>
+		<service>com.sinosoft.midplat.newccb.service.SignConfirmService</service>
+	</business>
+	<business>
+		<name>撤销登记台账</name>
+		<funcFlag outcode="P538191B3">1055</funcFlag>
+		<locktime>200</locktime>
+		<timeout>200</timeout>
+		<format>com.sinosoft.midplat.newccb.format.SignConfirm</format>
+		<service>com.sinosoft.midplat.newccb.service.SignConfirmService</service>
 	</business>
 </newccb>

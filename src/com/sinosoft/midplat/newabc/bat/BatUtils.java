@@ -90,7 +90,7 @@ public class BatUtils {
 		String cCurDate = new SimpleDateFormat("yyyyMMdd").format(date);
 		String cCurTime = new SimpleDateFormat("HHmmss").format(date);
 		String cAllCurDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(date);
-		
+//		String cAllCurDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date().getTime() - 86400000L);
 		try {
 			String tTransCode = "04" + cCurDate + cCurTime;//获取交易流水号
 			if(transFlag.equals(DOWN)){
@@ -104,7 +104,7 @@ public class BatUtils {
 				fileName = "";
 			}
 			String xmlStr = "<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>"+tTransCode+"</InsuSerial><TransDate>"+ mTranDate +"</TransDate>" +
-					"<TransTime>"+ cCurTime +"</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode>" +
+					"<TransTime>"+ cCurTime +"</TransTime><BankCode>03</BankCode><CorpNo>1147</CorpNo><TransCode>1017</TransCode>" +
 							"<TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header>" +
 							"<App><Req><TransFlag>"+transFlag+"</TransFlag><FileType>"+fileType+"</FileType><FileName>"+fileName+"</FileName>" +
 									"<FileLen>"+FileLen+"</FileLen><FileTimeStamp>"+ cAllCurDate +"</FileTimeStamp></Req></App></ABCB2I>";
@@ -293,7 +293,7 @@ public class BatUtils {
 			des += " ";
 		}
 		
-		String pack = "X1.0" +tPackHeadLengthStr+"1132    "+"0"+"0"+"0"+"0"+"0"+des+"00000000";
+		String pack = "X1.0" +tPackHeadLengthStr+"1147    "+"0"+"0"+"0"+"0"+"0"+des+"00000000";
 		return  pack.getBytes();
 	}
 	/**
@@ -355,10 +355,11 @@ public class BatUtils {
 				for(int m  =0;m<mm;m++){
 					byte[] RealfileData = null;
 					if(mm-m!=1){
-						RealfileData = new String(fileData).substring(m*4096, (m+1)*4096).getBytes();
-					
+//						RealfileData = new String(fileData).substring(m*4096, (m+1)*4096).getBytes();
+						RealfileData = new String(fileData,m*4096,4096).getBytes();
 					}else{
-						RealfileData = new String(fileData).substring(m*4096).getBytes();
+//						RealfileData = new String(fileData).substring(m*4096).getBytes();
+						RealfileData = new String(fileData,m*4096,fileLen-m*4096).getBytes();
 					}
 					cLogger.info("第"+m+"次发送的数据"+new String(RealfileData));
 //					cLogger.info("第"+m+"次发送的数据长度"+(new String(RealfileData)).length());
@@ -396,7 +397,6 @@ public class BatUtils {
 					}
 					tFileLen += (char) x;
 				}
-				fileLen = Integer.parseInt(tFileLen);
 				cLogger.info("---银行发送的文件长度： "+tFileLen);
 				fileLen = Integer.parseInt(tFileLen); 
 				int mm = fileLen/4096;

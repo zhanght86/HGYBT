@@ -339,13 +339,7 @@
 									<!-- 受益人详细地址内容 -->
 									<Benf_Dtl_Adr_Cntnt><xsl:value-of select="AddressContent" /></Benf_Dtl_Adr_Cntnt>
 									<!-- 受益人国籍代码 -->
-									<Benf_Nat_Cd>
-										<xsl:call-template name="tran_Nationality">
-											<xsl:with-param name="Nationality">
-												<xsl:value-of select="Nationality" />
-											</xsl:with-param>
-										</xsl:call-template>
-									</Benf_Nat_Cd>
+									<Benf_Nat_Cd></Benf_Nat_Cd>
 									<!-- 受益人与被保人关系代码 -->
 									<Benf_And_Rcgn_ReTpCd>	
 										<xsl:if test = "RelaToInsured = '00'">0133043</xsl:if>
@@ -358,7 +352,7 @@
 									</Benf_And_Rcgn_ReTpCd>
 									<!-- 受益比例 -->
 									<Bnft_Pct>
-										<xsl:value-of select="Lot" />
+										<xsl:value-of select="format-number((Lot div 100),'0.0000')" />
 									</Bnft_Pct>
 									<!-- 受益人通讯地址 -->
 									<Benf_Comm_Adr>
@@ -758,10 +752,16 @@
 	<!-- 代理保险合约状态 -->
 	<xsl:template name="tran_Status">
 		<xsl:param name="Status"></xsl:param>
-		<xsl:if test="$Status = ''">076012</xsl:if><!-- 有效 -->
-		<xsl:if test="$Status = '0'">076012</xsl:if><!-- 有效 -->
-		<xsl:if test="$Status = '1'">076034</xsl:if><!-- 失效 -->
-		<xsl:if test="$Status = '2'">076035</xsl:if><!-- 复效 -->
+		<xsl:choose>
+			<xsl:when test="$Status = '1'">076012</xsl:when><!-- 	有效 -->
+			<xsl:when test="$Status = '3'">076025</xsl:when><!-- 	退保终止 -->
+			<!--  <xsl:when test="$Status = ''">076023</xsl:when>--><!--   当日撤单 -->
+			<xsl:when test="$Status = '2'">076024</xsl:when><!-- 	犹退终止 -->
+			<xsl:when test="$Status = '4'">076030</xsl:when><!-- 	满期终止 -->	
+			<xsl:when test="$Status = '5'">076039</xsl:when><!-- 	理赔终止 -->
+			<xsl:when test="$Status = 'B'">076012</xsl:when><!-- 	有效 -->
+			<xsl:otherwise>--</xsl:otherwise><!-- 部分赎回 -->
+		</xsl:choose>
 	</xsl:template>
 
 	<!-- 保障年期/年龄标志 ？有点小问题，业务测试再调 -->

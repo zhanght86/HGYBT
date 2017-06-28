@@ -65,9 +65,6 @@ public class ContPolDetailQuery extends ServiceImpl{
 			}
 			
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
 			

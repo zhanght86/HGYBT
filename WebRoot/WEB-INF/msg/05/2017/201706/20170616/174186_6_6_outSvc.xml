@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>交易成功</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContNo>888030000001547</ContNo>
+         <Result>0</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888030000001548</ContNo>
+         <Result>1</Result>
+         <ResultText>保单状态有误！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888030000001549</ContNo>
+         <Result>1</Result>
+         <ResultText>保单状态有误！</ResultText>
+      </Detail>
+   </Body>
+</TranData>
+

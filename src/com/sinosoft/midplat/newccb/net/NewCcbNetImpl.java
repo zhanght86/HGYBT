@@ -1,20 +1,16 @@
 package com.sinosoft.midplat.newccb.net;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 import org.jdom.transform.XSLTransformException;
 import org.jdom.xpath.XPath;
-
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.SaveMessage;
@@ -81,7 +77,6 @@ public class NewCcbNetImpl extends SocketNetImpl
 		// 获得安全报文头和报文的长度
 		String mData = request.toString();
 		cLogger.info("报文头信息：" + request.toString());
-		cLogger.info("==================20140901==================");
 		int mContent_Length = mData.indexOf("Content-Length:") + 15;
 		mContent_Length = Integer.parseInt(mData.substring(mContent_Length, mData.indexOf("\r\n", mContent_Length)).trim());
 		cLogger.info("报文体长度：" + mContent_Length);

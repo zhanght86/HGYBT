@@ -182,7 +182,7 @@ public class NewContInput extends ServiceImpl {
 		mContDB.setType(AblifeCodeDef.ContType_Bank);
 		mContDB.setContNo(mOutBodyEle.getChildText(ContNo));
 		mContDB.setProposalPrtNo(mOutBodyEle.getChildText(ProposalPrtNo));
-		mContDB.setProductId(mInBodyEle.getChild("Risk").getChildText(MainRiskCode));
+		mContDB.setProductId(mInBodyEle.getChildText(ProductId));
 		mContDB.setTranCom(cTranLogDB.getTranCom());
 		mContDB.setNodeNo(cTranLogDB.getNodeNo());
 		mContDB.setAgentCom(mOutBodyEle.getChildText(AgentCom));
@@ -210,7 +210,7 @@ public class NewContInput extends ServiceImpl {
 			mContDB.setAmnt(mOutBodyEle.getChildText(Amnt));
 		}
 		mContDB.setState(AblifeCodeDef.ContState_Input);
-		mContDB.setProductId(mInRiskEle.getChildText(MainRiskCode));
+		mContDB.setBak1(mInRiskEle.getChildText(MainRiskCode));
 		mContDB.setOperator(CodeDef.SYS);
 		/** 渠道为空代表银保通 **/
 //		mContDB.setChannel(mOutBodyEle.getChildText("SaleChanel"));

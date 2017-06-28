@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="GBK"?>
 
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
 	exclude-result-prefixes="java">
 
@@ -20,25 +19,16 @@
 				<TellerNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCB_EmpID" /></TellerNo>
 				<!-- 交易流水号 -->
 				<TranNo><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/SvPt_Jrnl_No" /></TranNo>
-				<!-- 银行端ip[非必须] 
-				<ClientIp>127.0.0.1</ClientIp> -->
-				<!-- 交易渠道 
-				<TranCom>03</TranCom> -->
-				<!-- 交易类型 -->
-		 <!-- <FuncFlag><xsl:value-of select="TX_HEADER/SYS_TX_CODE" /></FuncFlag>  -->	
-				<!-- 服务id ？待确认
-				<ServiceId>0</ServiceId> -->
 				<xsl:copy-of select="Head/*"/>
 			</Head>
 		<!-- 报文体 -->
 		<xsl:apply-templates select="TX_BODY/ENTITY/APP_ENTITY" />
 		</TranData>
 	</xsl:template>
-
 	<!-- 报文体 -->
 	<xsl:template match="TX_BODY/ENTITY/APP_ENTITY">
 		<Body>
-			<!-- (保险公司流水号 Y -->
+			<!-- 保险公司流水号 Y -->
 		  <OldTranNo><xsl:value-of select="Ins_Co_Jrnl_No" /></OldTranNo> 
 		</Body>
 	</xsl:template>	

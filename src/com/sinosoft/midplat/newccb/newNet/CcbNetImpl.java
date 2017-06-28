@@ -1,8 +1,5 @@
 package com.sinosoft.midplat.newccb.newNet;
 
-import com.sinosoft.lis.db.NodeMapDB;
-import com.sinosoft.lis.schema.NodeMapSchema;
-import com.sinosoft.lis.vschema.NodeMapSet;
 import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.NoFactory;
@@ -11,15 +8,11 @@ import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.SocketNetImpl;
 import com.sinosoft.midplat.newccb.format.ErrorOutXsl;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.transform.XSLTransformer;
 import org.jdom.xpath.XPath;
 
 public class CcbNetImpl extends SocketNetImpl
@@ -45,7 +38,7 @@ public class CcbNetImpl extends SocketNetImpl
     byte[] mBodyBytes = new byte[mBodyLength];
     IOTrans.readFull(mBodyBytes, this.cSocket.getInputStream());
     this.cSocket.shutdownInput();
-    String docIn=new String(mBodyBytes,"UTF-8");
+    String docIn=new String(mBodyBytes,"GBK");//¸ü¸Ä±àÂë
     this.mInNoStd = JdomUtil.build(docIn.getBytes());
 
     Element mRootEle = this.mInNoStd.getRootElement();

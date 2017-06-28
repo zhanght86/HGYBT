@@ -1,0 +1,1761 @@
+10:31:35,362 INFO bat.NonReaTimeIssWatDetail(451) - 新农行非实时出单流水明细对账程序启动...
+10:31:35,377 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:31:35,377 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:31:35,377 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:31:35,377 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:31:35,377 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:31:35,377 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:31:35,393 INFO common.XmlConf(80) - conf file modified at (2017-05-04 16:39:04,620) and length=25409 bytes!
+10:31:35,562 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:31:35,594 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:31:35,594 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:31:37,197 INFO bat.NonReaTimeIssWatDetail(53) - Into NonReaTimeIssWatDetail.run()...
+10:31:37,197 DEBUG bat.NonReaTimeIssWatDetail(117) - Into NonReaTimeIssWatDetail.insertTranLog()...
+10:31:37,382 DEBUG bat.NonReaTimeIssWatDetail(141) - Out NonReaTimeIssWatDetail.insertTranLog()!
+10:31:37,397 INFO bat.BatConf(28) - Into BatConf.load()...
+10:31:37,397 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+10:31:37,397 INFO common.XmlConf(80) - conf file modified at (2017-05-08 09:58:01,008) and length=12906 bytes!
+10:31:37,413 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+10:31:37,429 INFO bat.BatConf(50) - Out BatConf.load()!
+10:31:37,582 INFO bat.NonReaTimeIssWatDetail(75) - 处理非实时出单流水明细文件开始...
+10:31:37,582 INFO bat.NonReaTimeIssWatDetail(78) - D:/YBT_SAVE_XML/ZHH/newabc/FAPPLY010079.20170505
+10:31:37,582 INFO bat.NonReaTimeIssWatDetail(182) - Into NonReaTimeIssWatDetail.parse()...
+10:31:37,582 INFO bat.NonReaTimeIssWatDetail(191) -  对账日期为...20170505
+10:31:37,582 INFO bat.NonReaTimeIssWatDetail(192) -  当前日期为...20170505
+10:31:37,582 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+10:31:37,582 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+10:31:37,582 INFO common.XmlConf(80) - conf file modified at (2017-04-14 10:31:09,010) and length=6904 bytes!
+10:31:37,598 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+10:31:37,598 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+10:31:37,598 INFO bat.NonReaTimeIssWatDetail(259) - 20170505|71200000428933|寮犱笁|110001|11010119800101007X|012D0100|000101|101010001179068|10000||6228451036002138864|02145637548|13517860167|榛勬捣璺?56鍙穦100000||01|010101001865201|
+10:31:37,598 INFO bat.NonReaTimeIssWatDetail(373) - Out NonReaTimeIssWatDetail.parse()!
+10:31:37,613 DEBUG bat.NonReaTimeIssWatDetail(382) - Into NonReaTimeIssWatDetail.saveDetails()...
+10:31:37,613 INFO bat.NonReaTimeIssWatDetail(426) - 对账明细总数(DtlSet)为：1
+10:31:37,904 DEBUG bat.NonReaTimeIssWatDetail(437) - Out NonReaTimeIssWatDetail.saveDetails()!
+10:31:37,904 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+10:31:37,935 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+10:31:37,935 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:31:37,963 INFO common.SaveMessage(94) - 150966_3_20_inSvc.xml IO输出耗时:0.027s
+10:31:37,963 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！150966_3_20_inSvc.xml
+10:31:37,964 INFO net.CallWebsvcAtomSvc(102) - start call 非实时日终对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:31:38,747 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+10:31:38,769 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:31:38,800 DEBUG httpclient.Wire(70) - >> "561[\r][\n]"
+10:31:38,800 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA1PC9UcmFuRGF0ZT48VHJhblRpbWU+MTAzMTM3PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20+MDU8L1RyYW5Db20+PFpvbmVObz4wMDAwMDwvWm9uZU5vPjxOb2RlTm8+MTEwMTAxMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPjE1MDk2NjwvVHJhbk5vPjxGdW5jRmxhZz4yMDAyPC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD4yMDwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MTwvQ291bnQ+PFByZW0+MTAwMDAwMDwvUHJlbT48RGV0YWlsPjxBcHBseU5vPjcxMjAwMDAwNDI4OTMzPC9BcHBseU5vPjxBcHBudE5hbWU+5byg5LiJPC9BcHBudE5hbWU+PElEVHlwZT4xMTAwMDE8L0lEVHlwZT48SURObz4xMTAxMDExOTgwMDEwMTAwN1g8L0lETm8+PFJpc2tDb2RlPjAxMkQwMTAwPC9SaXNrQ29kZT48UHJvZENvZGU+MDAwMTAxPC9Qcm9kQ29kZT48UHJvcG9zYWxQcnRObz4xMDEwMTAwMDExNzkwNjg8L1Byb3Bvc2FsUHJ0Tm8+PFByZW0+MTAwMDAwMDwvUHJlbT48U3BlY2lhbFJhdGU+PC9TcGVjaWFsUmF0ZT48QWNjTm8+NjIyODQ1MTAzNjAwMjEzODg2NDwvQWNjTm8+PFBob25lPjAyMTQ1NjM3NTQ4PC9QaG9uZT48TW9iaWxlPjEzNTE3ODYwMTY3PC9Nb2JpbGU+PE5vZGVObz4wMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VHJhbkRhdGU+MjAxNzA1MDU8L1RyYW5EYXRlPjxDb250Tm8+MTAxMDEwMDAxMTc5MDY4PC9Db250Tm8+PC9EZXRhaWw+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+10:31:38,800 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:31:38,800 DEBUG httpclient.Wire(84) - >> "0"
+10:31:38,800 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:31:38,800 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:31:38,869 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:31:38,869 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:31:38,879 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 02:30:25 GMT[\r][\n]"
+10:31:38,880 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+10:31:38,880 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:31:38,880 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+10:31:38,880 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:31:38,880 DEBUG httpclient.Wire(84) - << "0"
+10:31:38,880 DEBUG httpclient.Wire(84) - << "1"
+10:31:38,880 DEBUG httpclient.Wire(84) - << "d"
+10:31:38,896 DEBUG httpclient.Wire(84) - << "b"
+10:31:38,896 DEBUG httpclient.Wire(84) - << "[\r]"
+10:31:38,896 DEBUG httpclient.Wire(70) - << "[\n]"
+10:31:38,896 DEBUG httpclient.Wire(84) - << "<?xm"
+10:31:38,896 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+10:31:38,896 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjE8L0ZsYWc+DQogICAgPERlc2M+QWdlbnRDb23U2rG+z7XNs9bQsru05tTaPC9EZXNjPg0KICA8L0hlYWQ+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+10:31:38,912 INFO net.CallWebsvcAtomSvc(145) - 投保单号null非实时日终对账(service)耗时：0.947s
+10:31:38,912 INFO common.SaveMessage(94) - 150966_6_20_outSvc.xml IO输出耗时:0.0s
+10:31:38,912 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！150966_6_20_outSvc.xml
+10:31:38,912 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+10:31:38,912 INFO bat.NonReaTimeIssWatDetail(88) - 非实时出单流水明细对账结果代码：1      结果说明：AgentCom在本系统中不存在
+10:31:39,147 INFO bat.NonReaTimeIssWatDetail(112) - 处理非实时出单流水明细文件结束!
+10:31:39,147 INFO bat.NonReaTimeIssWatDetail(113) - Out NonReaTimeIssWatDetail.run()!
+10:33:28,122 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:33:28,122 INFO common.Log4jPrint(20) - 00000000000
+10:33:28,122 INFO common.Log4jPrint(20) - 05
+10:33:28,122 INFO common.Log4jPrint(20) - 2002
+10:33:28,122 INFO common.Log4jPrint(20) - 20170505
+10:33:28,133 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonReaTimeIssWatDetail: 05-2002-20170505 - mExtendClass:
+10:33:28,133 INFO bat.NonReaTimeIssWatDetail(53) - Into NonReaTimeIssWatDetail.run()...
+10:33:28,134 DEBUG bat.NonReaTimeIssWatDetail(117) - Into NonReaTimeIssWatDetail.insertTranLog()...
+10:33:28,180 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:33:28,181 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 150972,5,'0000000','150975','YBT',2002,20170505,103328,-1,0,20170505,103328,20170505,103328 )
+10:33:28,200 DEBUG bat.NonReaTimeIssWatDetail(141) - Out NonReaTimeIssWatDetail.insertTranLog()!
+10:33:28,201 INFO common.Log4jPrint(20) - quzhi:23:45:00
+10:33:28,202 INFO bat.NonReaTimeIssWatDetail(75) - 处理非实时出单流水明细文件开始...
+10:33:28,202 INFO bat.NonReaTimeIssWatDetail(78) - D:/YBT_SAVE_XML/ZHH/newabc/FAPPLY010079.20170505
+10:33:28,202 INFO bat.NonReaTimeIssWatDetail(182) - Into NonReaTimeIssWatDetail.parse()...
+10:33:28,203 INFO bat.NonReaTimeIssWatDetail(191) -  对账日期为...20170505
+10:33:28,204 INFO bat.NonReaTimeIssWatDetail(192) -  当前日期为...20170505
+10:33:28,205 INFO bat.NonReaTimeIssWatDetail(259) - 20170505|71200000428933|张三|110001|11010119800101007X|012D0100|000101|101010001179068|10000||6228451036002138864|02145637548|13517860167|黄海路156号|100000||01|010101001865201|
+10:33:28,206 INFO bat.NonReaTimeIssWatDetail(373) - Out NonReaTimeIssWatDetail.parse()!
+10:33:28,207 DEBUG bat.NonReaTimeIssWatDetail(382) - Into NonReaTimeIssWatDetail.saveDetails()...
+10:33:28,208 INFO bat.NonReaTimeIssWatDetail(426) - 对账明细总数(DtlSet)为：1
+10:33:28,241 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:33:28,242 INFO common.Log4jPrint(20) - mSql: insert into ContBlcDtl ( BlcTranNo,Type,ContNo,ProposalPrtNo,TranDate,Prem,TranCom,NodeNo,AppntName,RCode,Bak1,MakeDate,MakeTime,ModifyDate,ModifyTime,Operator ) values ( 150972,0,'101010001179068','101010001179068',20170505,1000000,5,'01010101001865201','张三',0,'71200000428933',20170505,103328,20170505,103328,'sys' )
+10:33:28,294 DEBUG bat.NonReaTimeIssWatDetail(437) - Out NonReaTimeIssWatDetail.saveDetails()!
+10:33:28,297 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+10:33:28,304 INFO common.SaveMessage(94) - 150969_21_20_inSvc.xml IO输出耗时:0.0060s
+10:33:28,305 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！150969_21_20_inSvc.xml
+10:33:28,306 INFO common.Log4jPrint(20) - start call 非实时日终对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:33:28,306 INFO net.CallWebsvcAtomSvc(102) - start call 非实时日终对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:33:28,348 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+10:33:28,348 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:33:28,349 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+10:33:28,350 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+10:33:28,351 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+10:33:28,351 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+10:33:28,352 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:33:28,353 DEBUG httpclient.Wire(70) - >> "561[\r][\n]"
+10:33:28,354 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA1PC9UcmFuRGF0ZT48VHJhblRpbWU+MTAzMzI4PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20+MDU8L1RyYW5Db20+PFpvbmVObz4wMDAwMDwvWm9uZU5vPjxOb2RlTm8+MTEwMTAxMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPjE1MDk2OTwvVHJhbk5vPjxGdW5jRmxhZz4yMDAyPC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD4yMDwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48Q291bnQ+MTwvQ291bnQ+PFByZW0+MTAwMDAwMDwvUHJlbT48RGV0YWlsPjxBcHBseU5vPjcxMjAwMDAwNDI4OTMzPC9BcHBseU5vPjxBcHBudE5hbWU+1cXI/TwvQXBwbnROYW1lPjxJRFR5cGU+MTEwMDAxPC9JRFR5cGU+PElETm8+MTEwMTAxMTk4MDAxMDEwMDdYPC9JRE5vPjxSaXNrQ29kZT4wMTJEMDEwMDwvUmlza0NvZGU+PFByb2RDb2RlPjAwMDEwMTwvUHJvZENvZGU+PFByb3Bvc2FsUHJ0Tm8+MTAxMDEwMDAxMTc5MDY4PC9Qcm9wb3NhbFBydE5vPjxQcmVtPjEwMDAwMDA8L1ByZW0+PFNwZWNpYWxSYXRlPjwvU3BlY2lhbFJhdGU+PEFjY05vPjYyMjg0NTEwMzYwMDIxMzg4NjQ8L0FjY05vPjxQaG9uZT4wMjE0NTYzNzU0ODwvUGhvbmU+PE1vYmlsZT4xMzUxNzg2MDE2NzwvTW9iaWxlPjxOb2RlTm8+MDEwMTAxMDEwMDE4NjUyMDE8L05vZGVObz48VHJhbkRhdGU+MjAxNzA1MDU8L1RyYW5EYXRlPjxDb250Tm8+MTAxMDEwMDAxMTc5MDY4PC9Db250Tm8+PC9EZXRhaWw+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+10:33:28,354 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:33:28,355 DEBUG httpclient.Wire(84) - >> "0"
+10:33:28,356 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:33:28,357 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:33:28,535 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:33:28,536 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:33:28,536 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 02:32:15 GMT[\r][\n]"
+10:33:28,537 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+10:33:28,538 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:33:28,539 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+10:33:28,539 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:33:28,540 DEBUG httpclient.Wire(84) - << "0"
+10:33:28,541 DEBUG httpclient.Wire(84) - << "1"
+10:33:28,542 DEBUG httpclient.Wire(84) - << "d"
+10:33:28,542 DEBUG httpclient.Wire(84) - << "f"
+10:33:28,543 DEBUG httpclient.Wire(84) - << "[\r]"
+10:33:28,544 DEBUG httpclient.Wire(70) - << "[\n]"
+10:33:28,545 DEBUG httpclient.Wire(84) - << "<?xm"
+10:33:28,546 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxusuxo7bU1cu9u9LXtKbA7bPJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+10:33:28,547 DEBUG httpclient.Wire(84) - << "[\r]"
+10:33:28,548 DEBUG httpclient.Wire(70) - << "[\n]"
+10:33:28,548 DEBUG httpclient.Wire(84) - << "0"
+10:33:28,549 DEBUG httpclient.Wire(84) - << "0"
+10:33:28,550 DEBUG httpclient.Wire(84) - << "0"
+10:33:28,551 DEBUG httpclient.Wire(84) - << "0"
+10:33:28,552 DEBUG httpclient.Wire(84) - << "[\r]"
+10:33:28,552 DEBUG httpclient.Wire(70) - << "[\n]"
+10:33:28,553 DEBUG httpclient.Wire(84) - << "[\r]"
+10:33:28,554 DEBUG httpclient.Wire(70) - << "[\n]"
+10:33:28,555 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:33:28,556 INFO net.CallWebsvcAtomSvc(145) - 投保单号null非实时日终对账(service)耗时：0.25s
+10:33:28,657 INFO common.SaveMessage(94) - 150969_24_20_outSvc.xml IO输出耗时:0.096s
+10:33:28,657 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！150969_24_20_outSvc.xml
+10:33:28,658 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+10:33:28,658 INFO bat.NonReaTimeIssWatDetail(88) - 非实时出单流水明细对账结果代码：0      结果说明：非实时核保对账交易处理成功！
+10:33:28,704 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+10:33:28,705 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+10:33:28,705 INFO common.Log4jPrint(20) - 150975
+10:33:28,706 INFO common.Log4jPrint(20) - 150975
+10:33:28,706 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=150972,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='150975',Operator='YBT',FuncFlag=2002,TranDate=20170505,TranTime=103328,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='非实时核保对账交易处理成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170505,InDoc=null,OutDoc=null,MakeTime=103328,ModifyDate=20170505,ModifyTime=103328,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='150975'
+10:33:28,736 INFO bat.NonReaTimeIssWatDetail(112) - 处理非实时出单流水明细文件结束!
+10:33:28,737 INFO bat.NonReaTimeIssWatDetail(113) - Out NonReaTimeIssWatDetail.run()!
+10:33:28,737 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:32:44,224 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:32:44,237 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:32:44,237 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:32:44,238 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:32:44,238 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:32:44,239 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:32:44,289 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:32:44,290 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+10:32:44,290 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:32:44,291 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:32:52,591 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:32:52,592 INFO common.Log4jPrint(20) - 00000000000
+10:32:52,593 INFO common.Log4jPrint(20) - 05
+10:32:52,593 INFO common.Log4jPrint(20) - 2008
+10:32:52,594 INFO common.Log4jPrint(20) - 20170505
+10:32:52,602 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonRealTimeContRst: 05-2008-20170505 - mExtendClass:
+10:32:52,610 INFO bat.NonRealTimeContRst(472) - Into NonRealTimeContRst.run()...
+10:32:52,612 INFO common.Log4jPrint(20) - quzhi:20:12:00
+10:32:52,613 INFO bat.NonRealTimeContRst(483) - [[Element: <name/>], [Element: <startTime/>], [Element: <class/>], [Element: <com/>], [Element: <funcFlag/>], [Element: <ComCode/>], [Element: <ABCport/>], [Element: <ip/>], [Element: <zone/>], [Element: <NodeNo/>], [Element: <nextDate/>], [Comment: <!-- <FilePath>D:/YBT_SAVE_XML/ZHH/newabc/</FilePath> -->], [Element: <FilePath/>]]
+10:32:52,615 INFO bat.NonRealTimeContRst(73) - Into NonRealTimeContRst.deal()...
+10:32:52,616 INFO bat.NonRealTimeContRst(193) - Into NonRealTimeContRst.sendRequest()...
+10:32:52,704 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+10:32:52,738 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+10:32:52,786 INFO bat.NonRealTimeContRst(225) - Out NonRealTimeContRst.sendRequest()!Mon May 08 10:32:52 CST 2017
+10:32:52,786 DEBUG bat.NonRealTimeContRst(230) - Into NonRealTimeContRst.insertTranLog()...
+10:32:52,819 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:32:52,820 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 150981,5,'0000000','150984','YBT',2008,20170508,103252,-1,0,20170508,103252,20170508,103252 )
+10:32:52,850 DEBUG bat.NonRealTimeContRst(254) - Out NonRealTimeContRst.insertTranLog()!
+10:32:52,854 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+10:32:52,859 INFO common.SaveMessage(94) - 150978_27_49_inSvc.xml IO输出耗时:0.0050s
+10:32:52,860 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！150978_27_49_inSvc.xml
+10:32:52,860 INFO common.Log4jPrint(20) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:32:52,861 INFO net.CallWebsvcAtomSvc(102) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:32:52,898 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+10:32:52,900 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:32:52,901 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+10:32:52,901 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+10:32:52,902 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+10:32:52,903 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+10:32:52,903 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:32:52,904 DEBUG httpclient.Wire(70) - >> "2ad[\r][\n]"
+10:32:52,905 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTAzMjUyPC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48Wm9uZU5vPjExPC9ab25lTm8+PE5vZGVObz4xMTI0MDE8L05vZGVObz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDI8L1RyYW5Obz48RnVuY0ZsYWc+MjAwODwvRnVuY0ZsYWc+PFNlcnZpY2VJZD40OTwvU2VydmljZUlkPjwvSGVhZD48Qm9keSAvPjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+10:32:52,906 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:32:52,907 DEBUG httpclient.Wire(84) - >> "0"
+10:32:52,907 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:32:52,908 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:32:52,982 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:32:52,983 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:32:52,984 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 02:34:53 GMT[\r][\n]"
+10:32:52,985 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+10:32:52,985 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:32:52,986 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+10:32:52,986 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:32:52,987 DEBUG httpclient.Wire(84) - << "0"
+10:32:52,988 DEBUG httpclient.Wire(84) - << "1"
+10:32:52,989 DEBUG httpclient.Wire(84) - << "f"
+10:32:52,989 DEBUG httpclient.Wire(84) - << "7"
+10:32:52,989 DEBUG httpclient.Wire(84) - << "[\r]"
+10:32:52,990 DEBUG httpclient.Wire(70) - << "[\n]"
+10:32:52,991 DEBUG httpclient.Wire(84) - << "<?xm"
+10:32:52,991 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxs/a1pb3hufvOxLz+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT48L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+10:32:52,992 DEBUG httpclient.Wire(84) - << "[\r]"
+10:32:52,993 DEBUG httpclient.Wire(70) - << "[\n]"
+10:32:52,994 DEBUG httpclient.Wire(84) - << "0"
+10:32:52,995 DEBUG httpclient.Wire(84) - << "0"
+10:32:52,996 DEBUG httpclient.Wire(84) - << "0"
+10:32:52,997 DEBUG httpclient.Wire(84) - << "0"
+10:32:52,997 DEBUG httpclient.Wire(84) - << "[\r]"
+10:32:52,998 DEBUG httpclient.Wire(70) - << "[\n]"
+10:32:52,999 DEBUG httpclient.Wire(84) - << "[\r]"
+10:32:53,000 DEBUG httpclient.Wire(70) - << "[\n]"
+10:32:53,001 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:32:53,002 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行非实时出单结果文件(service)耗时：0.141s
+10:32:53,008 INFO common.SaveMessage(94) - 150978_30_49_outSvc.xml IO输出耗时:0.0020s
+10:32:53,009 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！150978_30_49_outSvc.xml
+10:32:53,010 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+10:32:53,010 INFO bat.NonRealTimeContRst(84) - 核心返回的非实时对账结果报文：
+10:32:53,040 INFO format.NonRealTimeContRstOutXsl(25) - Into NonRealTimeContRstOutXsl.load()...
+10:32:53,040 INFO format.NonRealTimeContRstOutXsl(28) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl...
+10:32:53,042 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,302) and length=5213 bytes!
+10:32:53,215 INFO format.NonRealTimeContRstOutXsl(35) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl!
+10:32:53,216 INFO format.NonRealTimeContRstOutXsl(48) - Out NonRealTimeContRstOutXsl.load()!
+10:32:53,239 INFO bat.NonRealTimeContRst(87) - 转换后的对账结果报文：
+10:32:53,240 INFO bat.NonRealTimeContRst(261) - Into NonRealTimeContRst.receive()...Mon May 08 10:32:52 CST 2017
+10:32:53,241 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+10:32:53,241 INFO bat.NonRealTimeContRst(290) - 生成返回文件头记录null
+10:32:53,242 INFO bat.NonRealTimeContRst(291) - 生成返回文件总记录0
+10:32:53,243 INFO common.Log4jPrint(20) - 	at java.io.WinNTFileSystem.createFileExclusively(Native Method)
+10:32:53,244 INFO common.Log4jPrint(20) - 	at java.io.File.createNewFile(File.java:883)
+10:32:53,244 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.receive(NonRealTimeContRst.java:431)
+10:32:53,245 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.deal(NonRealTimeContRst.java:96)
+10:32:53,245 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.run(NonRealTimeContRst.java:500)
+10:32:53,246 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:267)
+10:32:53,246 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:32:53,246 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:32:53,247 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:32:53,247 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:32:53,248 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:32:53,248 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,248 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:32:53,249 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,250 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:32:53,250 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,251 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:32:53,251 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:32:53,251 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:32:53,252 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:32:53,252 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:32:53,253 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:32:53,253 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:32:53,253 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:32:53,254 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:32:53,254 INFO bat.NonRealTimeContRst(443) - 只返回头文件，核心未返回退保值010079|03|0|0.00|
+
+10:32:53,256 INFO common.Log4jPrint(20) - 	at java.io.FileOutputStream.open(Native Method)
+10:32:53,256 INFO common.Log4jPrint(20) - 	at java.io.FileOutputStream.<init>(FileOutputStream.java:194)
+10:32:53,257 INFO common.Log4jPrint(20) - 	at java.io.FileOutputStream.<init>(FileOutputStream.java:145)
+10:32:53,257 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.receive(NonRealTimeContRst.java:447)
+10:32:53,257 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.deal(NonRealTimeContRst.java:96)
+10:32:53,258 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.run(NonRealTimeContRst.java:500)
+10:32:53,258 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:267)
+10:32:53,259 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:32:53,259 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:32:53,259 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:32:53,260 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:32:53,260 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:32:53,260 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,261 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:32:53,261 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,262 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:32:53,262 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,262 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:32:53,263 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:32:53,263 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:32:53,264 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:32:53,264 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:32:53,264 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:32:53,265 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:32:53,266 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:32:53,266 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:32:53,266 ERROR bat.NonRealTimeContRst(455) - 找不到文件
+10:32:53,267 INFO common.Log4jPrint(20) - 文件名：FRESULT010079.20170508
+10:32:53,267 INFO bat.NonRealTimeContRst(465) - Out NonRealTimeContRst.receive()!
+10:32:53,268 INFO bat.NonRealTimeContRst(100) - 今天生成的文件名为：FRESULT010079.20170508
+10:32:53,269 INFO common.Log4jPrint(20) - 	at java.io.FileInputStream.open(Native Method)
+10:32:53,270 INFO common.Log4jPrint(20) - 	at java.io.FileInputStream.<init>(FileInputStream.java:120)
+10:32:53,271 INFO common.Log4jPrint(20) - 	at java.io.FileInputStream.<init>(FileInputStream.java:79)
+10:32:53,271 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.BatUtils.upLoadFile(BatUtils.java:593)
+10:32:53,272 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.deal(NonRealTimeContRst.java:101)
+10:32:53,272 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.run(NonRealTimeContRst.java:500)
+10:32:53,273 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:267)
+10:32:53,273 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:32:53,274 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:32:53,274 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:32:53,274 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:32:53,275 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:32:53,275 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,276 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:32:53,276 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,277 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:32:53,277 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,278 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:32:53,278 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:32:53,279 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:32:53,279 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:32:53,280 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:32:53,280 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:32:53,280 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:32:53,281 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:32:53,281 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:32:53,283 ERROR bat.NonRealTimeContRst(120) - 非实时出单结果文件  对账处理异常!
+10:32:53,284 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.deal(NonRealTimeContRst.java:102)
+10:32:53,284 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.NonRealTimeContRst.run(NonRealTimeContRst.java:500)
+10:32:53,284 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:267)
+10:32:53,285 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:32:53,286 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:32:53,287 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:32:53,287 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:32:53,288 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:32:53,289 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,289 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:32:53,290 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,291 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:32:53,291 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:32:53,292 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:32:53,292 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:32:53,293 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:32:53,293 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:32:53,293 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:32:53,294 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:32:53,295 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:32:53,295 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:32:53,295 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:32:53,322 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+10:32:53,322 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+10:32:53,323 INFO common.Log4jPrint(20) - 150984
+10:32:53,324 INFO common.Log4jPrint(20) - 150984
+10:32:53,324 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=150981,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='150984',Operator='YBT',FuncFlag=2008,TranDate=20170508,TranTime=103252,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='非实时出单结果文件上传失败！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=103252,ModifyDate=20170508,ModifyTime=103253,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='150984'
+10:32:53,346 INFO bat.NonRealTimeContRst(131) - 非实时出单结果文件文件上传成功！
+10:32:53,347 INFO bat.NonRealTimeContRst(132) - Out NonRealTimeContRst.deal()...
+10:32:53,348 INFO bat.NonRealTimeContRst(535) - Out NonRealTimeContRst.run()!
+10:32:53,348 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:33:56,847 INFO bat.BatConf(28) - Into BatConf.load()...
+10:33:56,849 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+10:33:56,849 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:33:29,888) and length=12906 bytes!
+10:33:56,851 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+10:33:56,851 INFO bat.BatConf(50) - Out BatConf.load()!
+10:34:25,789 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+10:34:25,789 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+10:34:25,793 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@6f221448
+10:34:25,794 INFO common.Log4jPrint(20) - Start revert System.out...
+10:34:25,795 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+10:34:25,795 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:34:25,795 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:34:25,795 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:34:25,795 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:34:25,795 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:34:25,920 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@f2c03ac
+10:34:25,920 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:34:25,920 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:34:25,920 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:34:25,920 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:34:25,920 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:34:25,920 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:34:25,936 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:34:20,277) and length=25409 bytes!
+10:34:25,973 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:34:25,973 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:34:25,989 INFO common.Log4jPrint(20) - End reset System.out!
+10:34:25,989 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:34:25,989 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:34:25,989 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:34:20,304) and length=708 bytes!
+10:34:25,989 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:34:25,989 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:34:26,004 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:34:26,004 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:34:26,020 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:34:26,020 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:34:26,020 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:34:26,020 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:34:26,020 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:34:26,020 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+10:34:26,020 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+10:34:26,020 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:34:26,020 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+10:34:26,020 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+10:34:26,020 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:34:26,020 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:34:26,020 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+10:34:26,036 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:34:26,036 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:34:28,386 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************
+10:35:22,359 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+10:35:22,399 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+10:35:22,400 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :0:0:0:0:0:0:0:1
+10:35:22,838 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+10:35:22,865 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+10:35:22,888 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+10:35:22,981 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:35:22,981 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000053','86','001','0:0:0:0:0:0:0:1','2017-05-08','10:35:22' )
+10:35:24,190 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+10:35:33,510 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+10:35:33,563 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+10:35:33,625 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+10:35:37,714 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:35:37,744 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:35:37,745 INFO pubfun.CodeQueryBL(77) - CodeType = trancom_bank
+10:35:37,745 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+10:35:37,746 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:35:37,746 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+10:35:37,794 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:35:37,794 INFO common.Log4jPrint(20) - 结果：0|2^03|建设银行^05|农业银行
+10:35:37,795 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:35:37,796 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:35:40,793 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:35:40,793 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:35:40,806 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:35:40,806 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:35:40,807 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:35:40,807 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:35:40,869 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:35:40,869 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+10:35:40,869 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:35:40,870 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:35:46,508 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:35:46,509 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:35:46,510 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:35:46,510 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:35:46,510 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:35:46,511 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:35:46,563 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:35:46,563 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+10:35:46,564 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:35:46,565 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:36:01,271 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:36:01,272 INFO common.Log4jPrint(20) - 00000000000
+10:36:01,272 INFO common.Log4jPrint(20) - 05
+10:36:01,273 INFO common.Log4jPrint(20) - 2008
+10:36:01,273 INFO common.Log4jPrint(20) - 20170505
+10:36:01,359 INFO bat.BatConf(28) - Into BatConf.load()...
+10:36:01,360 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+10:36:01,360 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:34:20,242) and length=12906 bytes!
+10:36:01,366 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+10:36:01,366 INFO bat.BatConf(50) - Out BatConf.load()!
+10:36:01,388 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonRealTimeContRst: 05-2008-20170505 - mExtendClass:
+10:36:01,404 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:36:01,405 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+10:36:01,473 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+10:36:01,522 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+10:36:01,590 INFO bat.NonRealTimeContRst(472) - Into NonRealTimeContRst.run()...
+10:36:01,636 INFO common.Log4jPrint(20) - quzhi:20:12:00
+10:36:01,636 INFO bat.NonRealTimeContRst(483) - [[Element: <name/>], [Element: <startTime/>], [Element: <class/>], [Element: <com/>], [Element: <funcFlag/>], [Element: <ComCode/>], [Element: <ABCport/>], [Element: <ip/>], [Element: <zone/>], [Element: <NodeNo/>], [Element: <nextDate/>], [Element: <FilePath/>], [Comment: <!-- <FilePath>/home/weblogic/ybttest/newabc/fresult/</FilePath> -->]]
+10:36:01,644 INFO bat.NonRealTimeContRst(73) - Into NonRealTimeContRst.deal()...
+10:36:01,644 INFO bat.NonRealTimeContRst(193) - Into NonRealTimeContRst.sendRequest()...
+10:36:01,700 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+10:36:01,737 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+10:36:01,790 INFO bat.NonRealTimeContRst(225) - Out NonRealTimeContRst.sendRequest()!Mon May 08 10:36:01 CST 2017
+10:36:01,793 DEBUG bat.NonRealTimeContRst(230) - Into NonRealTimeContRst.insertTranLog()...
+10:36:01,904 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:36:01,905 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 150987,5,'0000000','150990','YBT',2008,20170508,103601,-1,0,20170508,103601,20170508,103601 )
+10:36:01,944 DEBUG bat.NonRealTimeContRst(254) - Out NonRealTimeContRst.insertTranLog()!
+10:36:01,988 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+10:36:02,010 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+10:36:02,011 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:36:02,023 INFO common.SaveMessage(94) - 150984_3_49_inSvc.xml IO输出耗时:0.011s
+10:36:02,023 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！150984_3_49_inSvc.xml
+10:36:02,024 INFO common.Log4jPrint(20) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:36:02,025 INFO net.CallWebsvcAtomSvc(102) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:36:02,145 WARN dialect.StAXDialectDetector(236) - Weblogic's StAX implementation is unsupported and some Axiom features will not work as expected! Please use Woodstox instead.
+10:36:02,472 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+10:36:02,484 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:36:02,485 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+10:36:02,485 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+10:36:02,486 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+10:36:02,486 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+10:36:02,487 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:36:02,506 DEBUG httpclient.Wire(70) - >> "2ad[\r][\n]"
+10:36:02,506 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTAzNjAxPC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48Wm9uZU5vPjExPC9ab25lTm8+PE5vZGVObz4xMTI0MDE8L05vZGVObz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDM8L1RyYW5Obz48RnVuY0ZsYWc+MjAwODwvRnVuY0ZsYWc+PFNlcnZpY2VJZD40OTwvU2VydmljZUlkPjwvSGVhZD48Qm9keSAvPjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+10:36:02,507 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:36:02,507 DEBUG httpclient.Wire(84) - >> "0"
+10:36:02,508 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:36:02,508 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:36:02,567 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:36:02,568 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:36:02,570 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 02:38:02 GMT[\r][\n]"
+10:36:02,571 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+10:36:02,571 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:36:02,572 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+10:36:02,572 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:36:02,582 DEBUG httpclient.Wire(84) - << "0"
+10:36:02,583 DEBUG httpclient.Wire(84) - << "1"
+10:36:02,584 DEBUG httpclient.Wire(84) - << "f"
+10:36:02,584 DEBUG httpclient.Wire(84) - << "7"
+10:36:02,584 DEBUG httpclient.Wire(84) - << "[\r]"
+10:36:02,586 DEBUG httpclient.Wire(70) - << "[\n]"
+10:36:02,586 DEBUG httpclient.Wire(84) - << "<?xm"
+10:36:02,591 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxs/a1pb3hufvOxLz+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT48L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+10:36:02,592 DEBUG httpclient.Wire(84) - << "[\r]"
+10:36:02,592 DEBUG httpclient.Wire(70) - << "[\n]"
+10:36:02,593 DEBUG httpclient.Wire(84) - << "0"
+10:36:02,593 DEBUG httpclient.Wire(84) - << "0"
+10:36:02,594 DEBUG httpclient.Wire(84) - << "0"
+10:36:02,595 DEBUG httpclient.Wire(84) - << "0"
+10:36:02,595 DEBUG httpclient.Wire(84) - << "[\r]"
+10:36:02,596 DEBUG httpclient.Wire(70) - << "[\n]"
+10:36:02,596 DEBUG httpclient.Wire(84) - << "[\r]"
+10:36:02,597 DEBUG httpclient.Wire(70) - << "[\n]"
+10:36:02,597 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:36:02,607 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行非实时出单结果文件(service)耗时：0.582s
+10:36:02,638 INFO common.SaveMessage(94) - 150984_6_49_outSvc.xml IO输出耗时:0.028s
+10:36:02,638 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！150984_6_49_outSvc.xml
+10:36:02,639 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+10:36:02,639 INFO bat.NonRealTimeContRst(84) - 核心返回的非实时对账结果报文：
+10:36:02,646 INFO format.NonRealTimeContRstOutXsl(25) - Into NonRealTimeContRstOutXsl.load()...
+10:36:02,647 INFO format.NonRealTimeContRstOutXsl(28) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl...
+10:36:02,647 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,302) and length=5213 bytes!
+10:36:02,680 INFO format.NonRealTimeContRstOutXsl(35) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl!
+10:36:02,680 INFO format.NonRealTimeContRstOutXsl(48) - Out NonRealTimeContRstOutXsl.load()!
+10:36:02,695 INFO bat.NonRealTimeContRst(87) - 转换后的对账结果报文：
+10:36:02,696 INFO bat.NonRealTimeContRst(261) - Into NonRealTimeContRst.receive()...Mon May 08 10:36:01 CST 2017
+10:36:02,697 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+10:36:02,698 INFO bat.NonRealTimeContRst(290) - 生成返回文件头记录null
+10:36:02,698 INFO bat.NonRealTimeContRst(291) - 生成返回文件总记录0
+10:36:02,700 INFO bat.NonRealTimeContRst(443) - 只返回头文件，核心未返回退保值010079|03|0|0.00|
+
+10:36:02,709 INFO common.Log4jPrint(20) - 文件名：FRESULT010079.20170508
+10:36:02,711 INFO bat.NonRealTimeContRst(465) - Out NonRealTimeContRst.receive()!
+10:36:02,712 INFO bat.NonRealTimeContRst(100) - 今天生成的文件名为：FRESULT010079.20170508
+10:36:02,712 INFO bat.NonRealTimeContRst(107) - 非实时出单结果文件对账结果代码：0      结果说明：非实时出单结果文件交易成功！
+10:36:02,744 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+10:36:02,744 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+10:36:02,745 INFO common.Log4jPrint(20) - 150990
+10:36:02,745 INFO common.Log4jPrint(20) - 150990
+10:36:02,746 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=150987,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='150990',Operator='YBT',FuncFlag=2008,TranDate=20170508,TranTime=103601,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='非实时出单结果文件交易成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=103601,ModifyDate=20170508,ModifyTime=103602,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='150990'
+10:36:02,783 INFO bat.NonRealTimeContRst(131) - 非实时出单结果文件文件上传成功！
+10:36:02,783 INFO bat.NonRealTimeContRst(132) - Out NonRealTimeContRst.deal()...
+10:36:02,784 INFO bat.NonRealTimeContRst(535) - Out NonRealTimeContRst.run()!
+10:36:02,784 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:38:30,931 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:38:30,932 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:38:30,933 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:38:30,933 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:38:30,934 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:38:30,937 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:38:30,993 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:38:30,993 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+10:38:30,994 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:38:30,994 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:38:39,518 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:38:39,518 INFO common.Log4jPrint(20) - 00000000000
+10:38:39,531 INFO common.Log4jPrint(20) - 05
+10:38:39,531 INFO common.Log4jPrint(20) - 2005
+10:38:39,532 INFO common.Log4jPrint(20) - 20170505
+10:38:39,543 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonRealTimeContRstDetail: 05-2005-20170505 - mExtendClass:
+10:38:39,549 INFO bat.NonRealTimeContRstDetail(109) - Into NonRealTimeContRstDetail.run()...
+10:38:39,552 INFO common.Log4jPrint(20) - quzhi:20:15:00
+10:38:39,553 INFO bat.NonRealTimeContRstDetail(116) - [[Element: <name/>], [Element: <startTime/>], [Element: <class/>], [Element: <com/>], [Element: <funcFlag/>], [Element: <ComCode/>], [Element: <ABCport/>], [Element: <ip/>], [Element: <zone/>], [Element: <NodeNo/>], [Element: <nextDate/>], [Element: <FilePath/>], [Comment: <!-- <FilePath>/home/weblogic/ybttest/newabc/fresultkz/</FilePath> -->]]
+10:38:39,554 INFO bat.NonRealTimeContRstDetail(155) - Into NonRealTimeContRstDetail.deal()...
+10:38:39,555 INFO bat.NonRealTimeContRstDetail(55) - Into NonRealTimeContRstDetail.sendRequest()...
+10:38:39,569 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+10:38:39,606 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+10:38:39,664 INFO bat.NonRealTimeContRstDetail(73) - Out NonRealTimeContRstDetail.sendRequest()!
+10:38:39,667 DEBUG bat.NonRealTimeContRstDetail(78) - Into NonRealTimeContRstDetail.insertTranLog()...
+10:38:39,689 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:38:39,690 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 150996,5,'0000000','150999','YBT',2005,20170508,103839,-1,0,20170508,103839,20170508,103839 )
+10:38:39,718 DEBUG bat.NonRealTimeContRstDetail(102) - Out NonRealTimeContRstDetail.insertTranLog()!
+10:38:39,720 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+10:38:39,730 INFO common.SaveMessage(94) - 150993_9_71_inSvc.xml IO输出耗时:0.0090s
+10:38:39,731 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！150993_9_71_inSvc.xml
+10:38:39,733 INFO common.Log4jPrint(20) - start call 新农行非实时出单结果明细文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:38:39,734 INFO net.CallWebsvcAtomSvc(102) - start call 新农行非实时出单结果明细文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+10:38:39,792 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+10:38:39,793 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:38:39,794 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+10:38:39,795 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+10:38:39,796 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+10:38:39,796 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+10:38:39,797 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:38:39,799 DEBUG httpclient.Wire(70) - >> "2d9[\r][\n]"
+10:38:39,800 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTAzODM5PC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4xMTwvWm9uZU5vPjxOb2RlTm8+MTEyNDAxPC9Ob2RlTm8+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDQ8L1RyYW5Obz48RnVuY0ZsYWc+MjAwNTwvRnVuY0ZsYWc+PFNlcnZpY2VJZD43MTwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48VHJhbkRhdGU+MjAxNzA1MDg8L1RyYW5EYXRlPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+10:38:39,801 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:38:39,802 DEBUG httpclient.Wire(84) - >> "0"
+10:38:39,803 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:38:39,803 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+10:38:39,875 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:38:39,876 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+10:38:39,877 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 02:40:40 GMT[\r][\n]"
+10:38:39,878 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+10:38:39,878 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+10:38:39,879 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+10:38:39,879 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:38:39,880 DEBUG httpclient.Wire(84) - << "0"
+10:38:39,881 DEBUG httpclient.Wire(84) - << "1"
+10:38:39,882 DEBUG httpclient.Wire(84) - << "f"
+10:38:39,882 DEBUG httpclient.Wire(84) - << "b"
+10:38:39,883 DEBUG httpclient.Wire(84) - << "[\r]"
+10:38:39,883 DEBUG httpclient.Wire(70) - << "[\n]"
+10:38:39,883 DEBUG httpclient.Wire(84) - << "<?xm"
+10:38:39,884 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxs/a1pb3hufvD98+4zsS8/r270tezybmmo6E8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+PC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+10:38:39,884 DEBUG httpclient.Wire(84) - << "[\r]"
+10:38:39,885 DEBUG httpclient.Wire(70) - << "[\n]"
+10:38:39,885 DEBUG httpclient.Wire(84) - << "0"
+10:38:39,886 DEBUG httpclient.Wire(84) - << "0"
+10:38:39,887 DEBUG httpclient.Wire(84) - << "0"
+10:38:39,887 DEBUG httpclient.Wire(84) - << "0"
+10:38:39,888 DEBUG httpclient.Wire(84) - << "[\r]"
+10:38:39,888 DEBUG httpclient.Wire(70) - << "[\n]"
+10:38:39,889 DEBUG httpclient.Wire(84) - << "[\r]"
+10:38:39,889 DEBUG httpclient.Wire(70) - << "[\n]"
+10:38:39,890 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+10:38:39,892 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行非实时出单结果明细文件(service)耗时：0.158s
+10:38:39,908 INFO common.SaveMessage(94) - 150993_12_71_outSvc.xml IO输出耗时:0.012s
+10:38:39,909 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！150993_12_71_outSvc.xml
+10:38:39,909 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+10:38:39,910 INFO bat.NonRealTimeContRstDetail(161) - 核心返回的非实时对账结果明细报文:
+10:38:39,917 INFO format.NonRealTimeContRstDetailOutXsl(25) - Into NonRealTimeContRstDetailOutXsl.load()...
+10:38:39,918 INFO format.NonRealTimeContRstDetailOutXsl(27) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstDetailOut.xsl...
+10:38:39,919 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,296) and length=2401 bytes!
+10:38:39,952 INFO format.NonRealTimeContRstDetailOutXsl(31) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstDetailOut.xsl!
+10:38:39,953 INFO format.NonRealTimeContRstDetailOutXsl(39) - Out NonRealTimeContRstDetailOutXsl.load()!
+10:38:39,956 INFO bat.NonRealTimeContRstDetail(164) - 转换后的对账结果明细报文:
+10:38:39,957 INFO bat.NonRealTimeContRstDetail(213) - Into NonRealTimeContRstDetail.receive()...Mon May 08 10:38:39 CST 2017
+10:38:39,959 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+10:38:39,960 INFO bat.NonRealTimeContRstDetail(235) - 生成返回文件头记录:null
+10:38:39,960 INFO bat.NonRealTimeContRstDetail(236) - 生成返回文件总记录:0
+10:38:39,961 INFO bat.NonRealTimeContRstDetail(319) - 只返回文件头，核心未返回保单险种信息!010079|03|0|0.00|
+
+10:38:39,964 INFO common.Log4jPrint(20) - 文件名:FRESULTKZ010079.20170508
+10:38:39,965 INFO bat.NonRealTimeContRstDetail(335) - Out NonRealTimeContRstDetail.receive()!
+10:38:39,966 INFO bat.NonRealTimeContRstDetail(177) - 今天生成的文件名为：FRESULTKZ010079.20170508
+10:38:39,966 INFO bat.NonRealTimeContRstDetail(184) - 非实时出单结果明细文件对账结果代码：0      结果说明：非实时出单结果明细文件交易成功！
+10:38:39,993 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+10:38:39,993 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+10:38:39,994 INFO common.Log4jPrint(20) - 150999
+10:38:39,994 INFO common.Log4jPrint(20) - 150999
+10:38:39,994 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=150996,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='150999',Operator='YBT',FuncFlag=2005,TranDate=20170508,TranTime=103839,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='非实时出单结果明细文件交易成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=103839,ModifyDate=20170508,ModifyTime=103839,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='150999'
+10:38:40,028 INFO bat.NonRealTimeContRstDetail(208) - 非实时出单结果明细文件文件上传成功！
+10:38:40,028 INFO bat.NonRealTimeContRstDetail(209) - Out NonRealTimeContRstDetail.deal()!
+10:38:40,029 INFO bat.NonRealTimeContRstDetail(151) - Out NonRealTimeContRstDetail.run()!
+10:38:40,030 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:40:15,720 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:40:15,720 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:40:15,729 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:40:15,729 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:40:15,730 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:40:15,730 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:40:15,777 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:40:15,778 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+10:40:15,778 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:40:15,779 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:40:23,469 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:40:23,469 INFO common.Log4jPrint(20) - 00000000000
+10:40:23,470 INFO common.Log4jPrint(20) - 05
+10:40:23,471 INFO common.Log4jPrint(20) - 2006
+10:40:23,471 INFO common.Log4jPrint(20) - 20170505
+10:40:23,477 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal: 05-2006-20170505 - mExtendClass:
+10:40:23,517 INFO bat.SurRetrDataDocBankDeal(38) - Into SurRetrDataDocBankDeal.run()...
+10:40:23,518 DEBUG bat.SurRetrDataDocBankDeal(93) - Into SurRetrDataDocBankDeal.insertTranLog()...
+10:40:23,538 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+10:40:23,538 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 151005,5,'0000000','151008','YBT',2006,20170508,104023,-1,0,20170508,104023,20170508,104023 )
+10:40:23,556 DEBUG bat.SurRetrDataDocBankDeal(117) - Out SurRetrDataDocBankDeal.insertTranLog()!
+10:40:23,557 INFO common.Log4jPrint(20) - quzhi:23:10:00
+10:40:23,558 INFO bat.BatUtils(111) - 向银行发送文件上传下载交易报文体：<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170508104023</InsuSerial><TransDate>20170505</TransDate><TransTime>104023</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>INVALID.BANK010079.20170505</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-05-08 10:40:23.558</FileTimeStamp></Req></App></ABCB2I>
+10:40:23,559 INFO bat.BatUtils(306) - 发送内容是:
+X1.0000005141132    00000                                        00000000<ABCB2I><Header><SerialNo></SerialNo><InsuSerial>0420170508104023</InsuSerial><TransDate>20170505</TransDate><TransTime>104023</TransTime><BankCode></BankCode><CorpNo>1132</CorpNo><TransCode>1017</TransCode><TransSide>0</TransSide><EntrustWay></EntrustWay><ProvCode></ProvCode><BranchNo></BranchNo></Header><App><Req><TransFlag>1</TransFlag><FileType>02</FileType><FileName>INVALID.BANK010079.20170505</FileName><FileLen>00000000</FileLen><FileTimeStamp>2017-05-08 10:40:23.558</FileTimeStamp></Req></App></ABCB2I>null
+10:40:23,560 INFO common.Log4jPrint(20) - quzhi:23:10:00
+10:40:23,561 INFO common.Log4jPrint(20) - quzhi:23:10:00
+10:40:23,562 INFO bat.BatUtils(309) - 目标ip与端口:127.0.0.1::6000
+10:40:24,592 INFO common.Log4jPrint(20) - 	at java.net.PlainSocketImpl.socketConnect(Native Method)
+10:40:24,593 INFO common.Log4jPrint(20) - 	at java.net.PlainSocketImpl.doConnect(PlainSocketImpl.java:351)
+10:40:24,593 INFO common.Log4jPrint(20) - 	at java.net.PlainSocketImpl.connectToAddress(PlainSocketImpl.java:213)
+10:40:24,593 INFO common.Log4jPrint(20) - 	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:200)
+10:40:24,594 INFO common.Log4jPrint(20) - 	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+10:40:24,594 INFO common.Log4jPrint(20) - 	at java.net.Socket.connect(Socket.java:529)
+10:40:24,594 INFO common.Log4jPrint(20) - 	at java.net.Socket.connect(Socket.java:478)
+10:40:24,595 INFO common.Log4jPrint(20) - 	at java.net.Socket.<init>(Socket.java:375)
+10:40:24,595 INFO common.Log4jPrint(20) - 	at java.net.Socket.<init>(Socket.java:189)
+10:40:24,595 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.BatUtils.sendData(BatUtils.java:315)
+10:40:24,596 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.BatUtils.downLoadFile(BatUtils.java:76)
+10:40:24,596 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:50)
+10:40:24,596 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:255)
+10:40:24,597 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:40:24,597 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:40:24,597 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:40:24,597 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:40:24,598 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:40:24,599 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,599 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:40:24,599 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,600 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:40:24,600 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,601 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:40:24,601 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:40:24,602 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:40:24,602 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:40:24,602 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:40:24,603 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:40:24,603 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:40:24,604 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:40:24,604 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:40:24,606 ERROR bat.SurRetrDataDocBankDeal(77) - 退保犹撤数据文件-银行处理结果回盘  回传交易处理异常...
+10:40:24,606 INFO common.Log4jPrint(20) - 	at com.sinosoft.midplat.newabc.bat.SurRetrDataDocBankDeal.run(SurRetrDataDocBankDeal.java:51)
+10:40:24,607 INFO common.Log4jPrint(20) - 	at jsp_servlet._ybt.__manualbalancesave._jspService(__manualbalancesave.java:255)
+10:40:24,607 INFO common.Log4jPrint(20) - 	at weblogic.servlet.jsp.JspBase.service(JspBase.java:34)
+10:40:24,607 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper$ServletServiceAction.run(StubSecurityHelper.java:227)
+10:40:24,607 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.StubSecurityHelper.invokeServlet(StubSecurityHelper.java:125)
+10:40:24,608 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletStubImpl.execute(ServletStubImpl.java:301)
+10:40:24,608 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.TailFilter.doFilter(TailFilter.java:26)
+10:40:24,608 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,609 INFO common.Log4jPrint(20) - 	at filters.SetCharacterEncodingFilter.doFilter(SetCharacterEncodingFilter.java:26)
+10:40:24,609 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,609 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.RequestEventsFilter.doFilter(RequestEventsFilter.java:27)
+10:40:24,609 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.FilterChainImpl.doFilter(FilterChainImpl.java:56)
+10:40:24,610 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.wrapRun(WebAppServletContext.java:3730)
+10:40:24,610 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext$ServletInvocationAction.run(WebAppServletContext.java:3696)
+10:40:24,610 INFO common.Log4jPrint(20) - 	at weblogic.security.acl.internal.AuthenticatedSubject.doAs(AuthenticatedSubject.java:321)
+10:40:24,611 INFO common.Log4jPrint(20) - 	at weblogic.security.service.SecurityManager.runAs(SecurityManager.java:120)
+10:40:24,611 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.securedExecute(WebAppServletContext.java:2273)
+10:40:24,611 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.WebAppServletContext.execute(WebAppServletContext.java:2179)
+10:40:24,612 INFO common.Log4jPrint(20) - 	at weblogic.servlet.internal.ServletRequestImpl.run(ServletRequestImpl.java:1490)
+10:40:24,612 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.execute(ExecuteThread.java:256)
+10:40:24,612 INFO common.Log4jPrint(20) - 	at weblogic.work.ExecuteThread.run(ExecuteThread.java:221)
+10:40:24,639 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+10:40:24,639 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+10:40:24,640 INFO common.Log4jPrint(20) - 151008
+10:40:24,640 INFO common.Log4jPrint(20) - 151008
+10:40:24,640 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=151005,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='151008',Operator='YBT',FuncFlag=2006,TranDate=20170508,TranTime=104023,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=1,RText='退保犹撤数据文件-银行处理结果回盘文件下载失败',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=104023,ModifyDate=20170508,ModifyTime=104024,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='151008'
+10:40:24,671 INFO bat.SurRetrDataDocBankDeal(88) - 处理退保犹撤数据文件-银行处理结果回盘结束!
+10:40:24,671 INFO bat.SurRetrDataDocBankDeal(89) - Out SurRetrDataDocBankDeal.run()!
+10:40:24,672 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:41:01,229 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+10:41:01,229 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+10:41:01,237 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@615f8156
+10:41:01,238 INFO common.Log4jPrint(20) - Start revert System.out...
+10:41:01,238 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:41:01,238 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:41:01,238 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:41:01,238 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:41:01,238 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:41:01,238 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+10:41:01,421 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@f2c03ac
+10:41:01,455 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:41:01,457 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:41:01,459 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:41:01,459 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:41:01,460 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:41:01,461 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:41:01,485 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:34:20,277) and length=25409 bytes!
+10:41:01,525 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:41:01,533 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:41:01,536 INFO common.Log4jPrint(20) - End reset System.out!
+10:41:01,538 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:41:01,539 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:41:01,539 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:34:20,304) and length=708 bytes!
+10:41:01,543 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:41:01,543 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:41:01,564 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:41:01,566 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:41:01,569 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:41:01,569 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:41:01,570 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:41:01,573 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:41:01,574 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:41:01,574 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+10:41:01,577 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+10:41:01,578 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+10:41:01,578 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:41:01,580 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+10:41:01,582 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:41:01,583 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:41:01,586 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+10:41:01,587 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:41:01,588 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:41:02,813 INFO common.Log4jPrint(20) -  exception:请您重新登录！
+10:41:04,878 INFO common.Log4jPrint(20) -  exception:请您重新登录！
+10:41:06,891 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************
+10:42:01,553 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:42:01,553 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:42:01,555 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,179) and length=708 bytes!
+10:42:01,556 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:42:01,556 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+10:42:01,556 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+10:42:01,556 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@279168ba
+10:42:01,556 INFO common.Log4jPrint(20) - Start revert System.out...
+10:42:01,556 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+10:42:01,556 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:42:01,556 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:42:01,556 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:42:01,556 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:42:01,556 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:42:01,556 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:42:01,556 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:42:01,556 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:42:01,556 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:42:01,556 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:42:01,556 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:42:01,556 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+10:42:01,556 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+10:42:01,556 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:42:01,572 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+10:42:01,572 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:42:01,572 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:42:01,572 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+10:42:01,572 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+10:42:01,572 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:42:01,572 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:42:01,572 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:42:01,572 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:42:01,572 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:42:01,572 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:42:01,572 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,161) and length=25409 bytes!
+10:42:01,572 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:42:01,572 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:42:46,842 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:42:46,870 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:42:46,871 INFO pubfun.CodeQueryBL(77) - CodeType = trancom_bank
+10:42:46,871 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+10:42:46,872 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:42:46,930 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:42:46,931 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:42:46,931 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:42:49,894 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:42:49,894 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:42:49,909 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:42:49,909 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:42:49,909 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:42:49,942 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:42:49,942 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:42:49,942 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:42:58,159 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:42:58,337 INFO bat.BatConf(28) - Into BatConf.load()...
+10:42:58,337 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+10:42:58,338 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,133) and length=12906 bytes!
+10:42:58,344 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+10:42:58,345 INFO bat.BatConf(50) - Out BatConf.load()!
+10:42:58,386 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+10:42:58,535 INFO bat.SurRetrDataDocBankDeal(38) - Into SurRetrDataDocBankDeal.run()...
+10:42:58,535 DEBUG bat.SurRetrDataDocBankDeal(93) - Into SurRetrDataDocBankDeal.insertTranLog()...
+10:42:58,654 DEBUG bat.SurRetrDataDocBankDeal(117) - Out SurRetrDataDocBankDeal.insertTranLog()!
+10:42:58,693 INFO bat.SurRetrDataDocBankDeal(55) - 退保犹撤数据文件-银行处理结果回盘开始...
+10:42:58,749 INFO bat.SurRetrDataDocBankDeal(88) - 处理退保犹撤数据文件-银行处理结果回盘结束!
+10:42:58,749 INFO bat.SurRetrDataDocBankDeal(89) - Out SurRetrDataDocBankDeal.run()!
+10:42:58,749 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:44:18,066 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+10:44:18,066 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+10:44:18,073 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+10:44:18,073 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+10:44:18,074 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+10:44:18,120 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+10:44:18,121 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+10:44:18,121 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+10:44:25,504 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+10:44:25,604 INFO bat.NonReaTimeIssResDocBankDeal(38) - Into NonReaTimeIssResDocBankDeal.run()...
+10:44:25,604 DEBUG bat.NonReaTimeIssResDocBankDeal(99) - Into NonReaTimeIssResDocBankDeal.insertTranLog()...
+10:44:25,641 DEBUG bat.NonReaTimeIssResDocBankDeal(123) - Out NonReaTimeIssResDocBankDeal.insertTranLog()!
+10:44:25,642 INFO bat.NonReaTimeIssResDocBankDeal(61) - 处理非实时出单结果文件-银行处理结果回盘开始...
+10:44:25,690 INFO bat.NonReaTimeIssResDocBankDeal(94) - 处理非实时出单结果文件-银行处理结果回盘结束...
+10:44:25,691 INFO bat.NonReaTimeIssResDocBankDeal(95) - Out onReaTimeIssResDocBankDeal.run()!
+10:44:25,691 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+10:46:26,346 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7dfabdc2
+10:46:26,373 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:46:26,373 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:46:26,373 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:46:26,373 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:46:26,373 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:46:26,373 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:46:26,389 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,161) and length=25409 bytes!
+10:46:26,477 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:46:26,492 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:46:26,508 INFO common.Log4jPrint(20) - End reset System.out!
+10:46:26,508 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:46:26,508 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:46:26,508 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,179) and length=708 bytes!
+10:46:26,524 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:46:26,524 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:46:26,546 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:46:26,546 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:46:26,577 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:46:26,577 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:46:26,577 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:46:26,593 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:46:26,593 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:46:26,593 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+10:46:26,593 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+10:46:26,593 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+10:46:26,593 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:46:26,608 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+10:46:26,608 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:46:26,608 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:46:26,624 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+10:46:26,624 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+10:46:26,624 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:46:27,162 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+10:46:27,162 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+10:46:27,162 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@aacca00
+10:46:27,162 INFO common.Log4jPrint(20) - Start revert System.out...
+10:46:27,162 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:46:27,162 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:46:27,162 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:46:27,162 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:46:27,162 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+10:46:27,162 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+10:46:27,949 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7dfabdc2
+10:46:27,960 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:46:27,976 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+10:46:27,976 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+10:46:27,976 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:46:27,976 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+10:46:27,976 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+10:46:27,976 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,161) and length=25409 bytes!
+10:46:28,060 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+10:46:28,073 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:46:28,075 INFO common.Log4jPrint(20) - End reset System.out!
+10:46:28,078 INFO net.SocketConf(27) - Into SocketConf.load()...
+10:46:28,078 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+10:46:28,079 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,179) and length=708 bytes!
+10:46:28,085 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+10:46:28,086 INFO net.SocketConf(60) - Out SocketConf.load()!
+10:46:28,126 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+10:46:28,129 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+10:46:28,133 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+10:46:28,134 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+10:46:28,136 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+10:46:28,137 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+10:46:28,145 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+10:46:28,145 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+10:46:28,148 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+10:46:28,149 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+10:46:28,151 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+10:46:28,152 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+10:46:28,157 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+10:46:28,157 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+10:46:28,157 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+10:46:28,157 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+10:46:28,157 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:03:26,301 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+11:03:26,308 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+11:03:26,309 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :0:0:0:0:0:0:0:1
+11:03:26,727 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+11:03:26,775 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+11:03:26,798 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+11:03:26,845 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:03:26,846 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000055','86','001','0:0:0:0:0:0:0:1','2017-05-08','11:03:26' )
+11:03:28,059 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+11:03:30,215 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+11:03:30,273 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+11:03:30,315 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+11:03:33,717 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:03:33,719 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:03:33,720 INFO pubfun.CodeQueryBL(77) - CodeType = trancom_bank
+11:03:33,721 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+11:03:33,721 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:03:33,721 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+11:03:33,778 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:03:33,779 INFO common.Log4jPrint(20) - 结果：0|2^03|建设银行^05|农业银行
+11:03:33,779 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:03:33,780 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:03:36,328 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:03:36,328 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:03:36,330 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+11:03:36,330 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:03:36,331 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:03:36,331 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:03:36,376 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:03:36,376 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+11:03:36,376 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:03:36,377 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:03:47,299 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+11:03:47,300 INFO common.Log4jPrint(20) - 00000000000
+11:03:47,301 INFO common.Log4jPrint(20) - 05
+11:03:47,301 INFO common.Log4jPrint(20) - 2008
+11:03:47,302 INFO common.Log4jPrint(20) - 20170505
+11:03:47,398 INFO bat.BatConf(28) - Into BatConf.load()...
+11:03:47,399 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+11:03:47,400 INFO common.XmlConf(80) - conf file modified at (2017-05-08 10:41:15,133) and length=12906 bytes!
+11:03:47,407 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+11:03:47,408 INFO bat.BatConf(50) - Out BatConf.load()!
+11:03:47,424 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonRealTimeContRst: 05-2008-20170505 - mExtendClass:
+11:03:47,428 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+11:03:47,429 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+11:03:47,494 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+11:03:47,558 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+11:03:47,603 INFO bat.NonRealTimeContRst(472) - Into NonRealTimeContRst.run()...
+11:03:47,606 INFO common.Log4jPrint(20) - quzhi:20:12:00
+11:03:47,606 INFO bat.NonRealTimeContRst(483) - [[Element: <name/>], [Element: <startTime/>], [Element: <class/>], [Element: <com/>], [Element: <funcFlag/>], [Element: <ComCode/>], [Element: <ABCport/>], [Element: <ip/>], [Element: <zone/>], [Element: <NodeNo/>], [Element: <nextDate/>], [Element: <FilePath/>], [Comment: <!-- <FilePath>/home/weblogic/ybttest/newabc/fresult/</FilePath> -->]]
+11:03:47,612 INFO bat.NonRealTimeContRst(73) - Into NonRealTimeContRst.deal()...
+11:03:47,612 INFO bat.NonRealTimeContRst(193) - Into NonRealTimeContRst.sendRequest()...
+11:03:47,637 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+11:03:47,653 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+11:03:47,681 INFO bat.NonRealTimeContRst(225) - Out NonRealTimeContRst.sendRequest()!Mon May 08 11:03:47 CST 2017
+11:03:47,684 DEBUG bat.NonRealTimeContRst(230) - Into NonRealTimeContRst.insertTranLog()...
+11:03:47,708 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:03:47,709 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 151026,5,'0000000','151029','YBT',2008,20170508,110347,-1,0,20170508,110347,20170508,110347 )
+11:03:47,723 DEBUG bat.NonRealTimeContRst(254) - Out NonRealTimeContRst.insertTranLog()!
+11:03:47,748 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:03:47,766 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+11:03:47,767 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:03:47,775 INFO common.SaveMessage(94) - 151023_3_49_inSvc.xml IO输出耗时:0.0070s
+11:03:47,775 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！151023_3_49_inSvc.xml
+11:03:47,776 INFO common.Log4jPrint(20) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:03:47,776 INFO net.CallWebsvcAtomSvc(102) - start call 新农行非实时出单结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:03:47,859 WARN dialect.StAXDialectDetector(236) - Weblogic's StAX implementation is unsupported and some Axiom features will not work as expected! Please use Woodstox instead.
+11:03:48,202 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:03:48,219 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:03:48,251 DEBUG httpclient.Wire(70) - >> "2ad[\r][\n]"
+11:03:48,251 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTEwMzQ3PC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48Wm9uZU5vPjExPC9ab25lTm8+PE5vZGVObz4xMTI0MDE8L05vZGVObz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDU8L1RyYW5Obz48RnVuY0ZsYWc+MjAwODwvRnVuY0ZsYWc+PFNlcnZpY2VJZD40OTwvU2VydmljZUlkPjwvSGVhZD48Qm9keSAvPjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:03:48,251 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:03:48,251 DEBUG httpclient.Wire(84) - >> "0"
+11:03:48,251 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:03:48,251 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:03:48,595 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:03:48,596 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:03:48,599 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 03:05:48 GMT[\r][\n]"
+11:03:48,600 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:03:48,600 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:03:48,602 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:03:48,603 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:03:48,620 DEBUG httpclient.Wire(84) - << "0"
+11:03:48,621 DEBUG httpclient.Wire(84) - << "6"
+11:03:48,621 DEBUG httpclient.Wire(84) - << "d"
+11:03:48,622 DEBUG httpclient.Wire(84) - << "7"
+11:03:48,623 DEBUG httpclient.Wire(84) - << "[\r]"
+11:03:48,624 DEBUG httpclient.Wire(70) - << "[\n]"
+11:03:48,625 DEBUG httpclient.Wire(84) - << "<?xm"
+11:03:48,632 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxs/a1pb3hufvOxLz+vbvS17PJuaajoTwvRGVzYz4NCiAgPC9IZWFkPg0KICA8Qm9keT4NCiAgICA8RGV0YWlsPg0KICAgICAgPENvbnRFbmREYXRlPjIwMjctMDUtMDk8L0NvbnRFbmREYXRlPg0KICAgICAgPFRyYW5EYXRlPjwvVHJhbkRhdGU+DQogICAgICA8QXBwbHlObz48L0FwcGx5Tm8+DQogICAgICA8QXBwbnQ+DQogICAgICAgIDxBcHBudE5hbWU+1cXI/TwvQXBwbnROYW1lPg0KICAgICAgICA8SURUeXBlPjA8L0lEVHlwZT4NCiAgICAgICAgPElETm8+MTEwMTAxMTk4MDAxMDEwMDdYPC9JRE5vPg0KICAgICAgPC9BcHBudD4NCiAgICAgIDxSaXNrQ29kZT4wMTJEMDEwMDwvUmlza0NvZGU+DQogICAgICA8UHJvZENvZGU+PC9Qcm9kQ29kZT4NCiAgICAgIDxDb250Tm8+ODg4MDEwMDAwMDAxMTU0PC9Db250Tm8+DQogICAgICA8QXBwbHlEYXRlPjwvQXBwbHlEYXRlPg0KICAgICAgPFNpZ25EYXRlPjIwMTctMDUtMDg8L1NpZ25EYXRlPg0KICAgICAgPFJlbGF0aW9uVG9JbnVzcmU+MDA8L1JlbGF0aW9uVG9JbnVzcmU+DQogICAgICA8SW5zdXJlZD4NCiAgICAgICAgPE5hbWU+1cXI/TwvTmFtZT4NCiAgICAgICAgPElEVHlwZT4wPC9JRFR5cGU+DQogICAgICAgIDxJRE5vPjExMDEwMTE5ODAwMTAxMDA3WDwvSURObz4NCiAgICAgIDwvSW5zdXJlZD4NCiAgICAgIDxQcmVtPjEwMDAwMDA8L1ByZW0+DQogICAgICA8QW1udD45NjAwMDA8L0FtbnQ+DQogICAgICA8QWNjTm8+NjIyMjAyMzEwMDAzNjkzMDAwMDwvQWNjTm8+DQogICAgICA8UGF5SW50dj4wPC9QYXlJbnR2Pg0KICAgICAgPFBheUVuZERhdGU+MzAxNy0wNS0wOTwvUGF5RW5kRGF0ZT4NCiAgICAgIDxNdWx0PjEwLjA8L011bHQ+DQogICAgICA8Q29udFBydE5vPjEwMjAxMTAwMDA0MzQ2MzwvQ29udFBydE5vPg0KICAgICAgPFNwZWNpYWxSYXRlPjE8L1NwZWNpYWxSYXRlPg0KICAgICAgPEV0cmFSaXNrQ250PjA8L0V0cmFSaXNrQ250Pg0KICAgIDwvRGV0YWlsPg0KICA8L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:03:48,653 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行非实时出单结果文件(service)耗时：0.876s
+11:03:48,666 INFO common.SaveMessage(94) - 151023_6_49_outSvc.xml IO输出耗时:0.0080s
+11:03:48,668 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！151023_6_49_outSvc.xml
+11:03:48,669 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:03:48,670 INFO bat.NonRealTimeContRst(84) - 核心返回的非实时对账结果报文：
+11:03:48,703 INFO format.NonRealTimeContRstOutXsl(25) - Into NonRealTimeContRstOutXsl.load()...
+11:03:48,703 INFO format.NonRealTimeContRstOutXsl(28) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl...
+11:03:48,705 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,302) and length=5213 bytes!
+11:03:48,860 INFO format.NonRealTimeContRstOutXsl(35) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstOut.xsl!
+11:03:48,860 INFO format.NonRealTimeContRstOutXsl(48) - Out NonRealTimeContRstOutXsl.load()!
+11:03:48,920 INFO bat.NonRealTimeContRst(87) - 转换后的对账结果报文：
+11:03:48,920 INFO bat.NonRealTimeContRst(261) - Into NonRealTimeContRst.receive()...Mon May 08 11:03:47 CST 2017
+11:03:48,921 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+11:03:48,922 INFO bat.NonRealTimeContRst(290) - 生成返回文件头记录null
+11:03:48,923 INFO bat.NonRealTimeContRst(291) - 生成返回文件总记录1
+11:03:48,962 INFO common.Log4jPrint(20) - 总金额：10000.00
+11:03:48,963 INFO bat.NonRealTimeContRst(391) - 第0个文件生成返回文件总记录010079|03|1|10000.00|
+||张三|110001|11010119800101007X|012D0100||888010000001154|||张三|110001|11010119800101007X|10000.00|9600.00|6222023100036930000|1|30170509|20270509|10|1|102011000043463|0|
+
+11:03:48,967 INFO common.Log4jPrint(20) - 文件名：FRESULT010079.20170508
+11:03:48,968 INFO bat.NonRealTimeContRst(465) - Out NonRealTimeContRst.receive()!
+11:03:48,968 INFO bat.NonRealTimeContRst(100) - 今天生成的文件名为：FRESULT010079.20170508
+11:03:48,969 INFO bat.NonRealTimeContRst(107) - 非实时出单结果文件对账结果代码：0      结果说明：非实时出单结果文件交易成功！
+11:03:48,989 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:03:48,990 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:03:48,990 INFO common.Log4jPrint(20) - 151029
+11:03:48,991 INFO common.Log4jPrint(20) - 151029
+11:03:48,991 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=151026,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='151029',Operator='YBT',FuncFlag=2008,TranDate=20170508,TranTime=110347,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='非实时出单结果文件交易成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=110347,ModifyDate=20170508,ModifyTime=110348,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='151029'
+11:03:49,024 INFO bat.NonRealTimeContRst(131) - 非实时出单结果文件文件上传成功！
+11:03:49,024 INFO bat.NonRealTimeContRst(132) - Out NonRealTimeContRst.deal()...
+11:03:49,025 INFO bat.NonRealTimeContRst(535) - Out NonRealTimeContRst.run()!
+11:03:49,025 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+11:04:42,094 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:04:42,095 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:04:42,096 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+11:04:42,096 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:04:42,097 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:04:42,097 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:04:42,133 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:04:42,133 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+11:04:42,133 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:04:42,134 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:04:48,110 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:04:48,110 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:04:48,123 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+11:04:48,123 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:04:48,123 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:04:48,124 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:04:48,174 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:04:48,175 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+11:04:48,175 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:04:48,175 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:04:55,162 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+11:04:55,162 INFO common.Log4jPrint(20) - 00000000000
+11:04:55,163 INFO common.Log4jPrint(20) - 05
+11:04:55,164 INFO common.Log4jPrint(20) - 2005
+11:04:55,164 INFO common.Log4jPrint(20) - 20170505
+11:04:55,175 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NonRealTimeContRstDetail: 05-2005-20170505 - mExtendClass:
+11:04:55,200 INFO bat.NonRealTimeContRstDetail(109) - Into NonRealTimeContRstDetail.run()...
+11:04:55,203 INFO common.Log4jPrint(20) - quzhi:20:15:00
+11:04:55,204 INFO bat.NonRealTimeContRstDetail(116) - [[Element: <name/>], [Element: <startTime/>], [Element: <class/>], [Element: <com/>], [Element: <funcFlag/>], [Element: <ComCode/>], [Element: <ABCport/>], [Element: <ip/>], [Element: <zone/>], [Element: <NodeNo/>], [Element: <nextDate/>], [Element: <FilePath/>], [Comment: <!-- <FilePath>/home/weblogic/ybttest/newabc/fresultkz/</FilePath> -->]]
+11:04:55,205 INFO bat.NonRealTimeContRstDetail(155) - Into NonRealTimeContRstDetail.deal()...
+11:04:55,205 INFO bat.NonRealTimeContRstDetail(55) - Into NonRealTimeContRstDetail.sendRequest()...
+11:04:55,221 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+11:04:55,253 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+11:04:55,288 INFO bat.NonRealTimeContRstDetail(73) - Out NonRealTimeContRstDetail.sendRequest()!
+11:04:55,289 DEBUG bat.NonRealTimeContRstDetail(78) - Into NonRealTimeContRstDetail.insertTranLog()...
+11:04:55,307 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:04:55,307 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 151035,5,'0000000','151038','YBT',2005,20170508,110455,-1,0,20170508,110455,20170508,110455 )
+11:04:55,333 DEBUG bat.NonRealTimeContRstDetail(102) - Out NonRealTimeContRstDetail.insertTranLog()!
+11:04:55,335 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:04:55,342 INFO common.SaveMessage(94) - 151032_9_71_inSvc.xml IO输出耗时:0.0060s
+11:04:55,343 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！151032_9_71_inSvc.xml
+11:04:55,344 INFO common.Log4jPrint(20) - start call 新农行非实时出单结果明细文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:04:55,344 INFO net.CallWebsvcAtomSvc(102) - start call 新农行非实时出单结果明细文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:04:55,386 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:04:55,388 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:04:55,388 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:04:55,389 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:04:55,390 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:04:55,391 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:04:55,391 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:04:55,393 DEBUG httpclient.Wire(70) - >> "2d9[\r][\n]"
+11:04:55,394 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTEwNDU1PC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFpvbmVObz4xMTwvWm9uZU5vPjxOb2RlTm8+MTEyNDAxPC9Ob2RlTm8+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDY8L1RyYW5Obz48RnVuY0ZsYWc+MjAwNTwvRnVuY0ZsYWc+PFNlcnZpY2VJZD43MTwvU2VydmljZUlkPjwvSGVhZD48Qm9keT48VHJhbkRhdGU+MjAxNzA1MDg8L1RyYW5EYXRlPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:04:55,395 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:04:55,396 DEBUG httpclient.Wire(84) - >> "0"
+11:04:55,399 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:04:55,400 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:04:55,496 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:04:55,498 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:04:55,499 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 03:06:55 GMT[\r][\n]"
+11:04:55,500 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:04:55,501 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:04:55,502 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:04:55,502 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:04:55,503 DEBUG httpclient.Wire(84) - << "0"
+11:04:55,503 DEBUG httpclient.Wire(84) - << "3"
+11:04:55,504 DEBUG httpclient.Wire(84) - << "c"
+11:04:55,504 DEBUG httpclient.Wire(84) - << "3"
+11:04:55,505 DEBUG httpclient.Wire(84) - << "[\r]"
+11:04:55,506 DEBUG httpclient.Wire(70) - << "[\n]"
+11:04:55,506 DEBUG httpclient.Wire(84) - << "<?xm"
+11:04:55,507 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+t8fKtcqxs/a1pb3hufvD98+4zsS8/r270tezybmmo6E8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPERldGFpbD4NCiAgICAgIDxSaXNrQ29kZT4wMTJEMDEwMDwvUmlza0NvZGU+DQogICAgICA8Q29udE5vPjg4ODAxMDAwMDAwMTE1NDwvQ29udE5vPg0KICAgICAgPFByZW0+MTAwMDAwMDwvUHJlbT4NCiAgICAgIDxBbW50Pjk2MDAwMDwvQW1udD4NCiAgICAgIDxQYXlJbnR2PjA8L1BheUludHY+DQogICAgICA8UGF5RW5kWWVhcj4xMDAwPC9QYXlFbmRZZWFyPg0KICAgICAgPFBheUVuZFllYXJGbGFnPlk8L1BheUVuZFllYXJGbGFnPg0KICAgICAgPEluc3VZZWFyPjEwPC9JbnN1WWVhcj4NCiAgICAgIDxJbnN1WWVhckZsYWc+WTwvSW5zdVllYXJGbGFnPg0KICAgIDwvRGV0YWlsPg0KICA8L0JvZHk+DQo8L1RyYW5EYXRhPg0KDQo=</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:04:55,508 DEBUG httpclient.Wire(84) - << "[\r]"
+11:04:55,509 DEBUG httpclient.Wire(70) - << "[\n]"
+11:04:55,510 DEBUG httpclient.Wire(84) - << "0"
+11:04:55,510 DEBUG httpclient.Wire(84) - << "0"
+11:04:55,511 DEBUG httpclient.Wire(84) - << "0"
+11:04:55,511 DEBUG httpclient.Wire(84) - << "0"
+11:04:55,512 DEBUG httpclient.Wire(84) - << "[\r]"
+11:04:55,513 DEBUG httpclient.Wire(70) - << "[\n]"
+11:04:55,515 DEBUG httpclient.Wire(84) - << "[\r]"
+11:04:55,515 DEBUG httpclient.Wire(70) - << "[\n]"
+11:04:55,516 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:04:55,518 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行非实时出单结果明细文件(service)耗时：0.174s
+11:04:55,539 INFO common.SaveMessage(94) - 151032_12_71_outSvc.xml IO输出耗时:0.017s
+11:04:55,539 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！151032_12_71_outSvc.xml
+11:04:55,540 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:04:55,540 INFO bat.NonRealTimeContRstDetail(161) - 核心返回的非实时对账结果明细报文:
+11:04:55,553 INFO format.NonRealTimeContRstDetailOutXsl(25) - Into NonRealTimeContRstDetailOutXsl.load()...
+11:04:55,553 INFO format.NonRealTimeContRstDetailOutXsl(27) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstDetailOut.xsl...
+11:04:55,555 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,296) and length=2401 bytes!
+11:04:55,590 INFO format.NonRealTimeContRstDetailOutXsl(31) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NonRealTimeContRstDetailOut.xsl!
+11:04:55,591 INFO format.NonRealTimeContRstDetailOutXsl(39) - Out NonRealTimeContRstDetailOutXsl.load()!
+11:04:55,594 INFO bat.NonRealTimeContRstDetail(164) - 转换后的对账结果明细报文:
+11:04:55,595 INFO bat.NonRealTimeContRstDetail(213) - Into NonRealTimeContRstDetail.receive()...Mon May 08 11:04:55 CST 2017
+11:04:55,598 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+11:04:55,598 INFO bat.NonRealTimeContRstDetail(235) - 生成返回文件头记录:null
+11:04:55,599 INFO bat.NonRealTimeContRstDetail(236) - 生成返回文件总记录:1
+11:04:55,600 INFO common.Log4jPrint(20) - 总金额:10000.00
+11:04:55,600 INFO bat.NonRealTimeContRstDetail(286) - 第0个文件生成返回文件总记录:010079|03|1|10000.00|
+012D0100|888010000001154|1|4|1000|4|10|10000.00|9600.00|
+
+11:04:55,607 INFO common.Log4jPrint(20) - 文件名:FRESULTKZ010079.20170508
+11:04:55,608 INFO bat.NonRealTimeContRstDetail(335) - Out NonRealTimeContRstDetail.receive()!
+11:04:55,608 INFO bat.NonRealTimeContRstDetail(177) - 今天生成的文件名为：FRESULTKZ010079.20170508
+11:04:55,609 INFO bat.NonRealTimeContRstDetail(184) - 非实时出单结果明细文件对账结果代码：0      结果说明：非实时出单结果明细文件交易成功！
+11:04:55,638 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:04:55,639 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:04:55,639 INFO common.Log4jPrint(20) - 151038
+11:04:55,640 INFO common.Log4jPrint(20) - 151038
+11:04:55,640 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=151035,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='151038',Operator='YBT',FuncFlag=2005,TranDate=20170508,TranTime=110455,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='非实时出单结果明细文件交易成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=110455,ModifyDate=20170508,ModifyTime=110455,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='151038'
+11:04:55,659 INFO bat.NonRealTimeContRstDetail(208) - 非实时出单结果明细文件文件上传成功！
+11:04:55,659 INFO bat.NonRealTimeContRstDetail(209) - Out NonRealTimeContRstDetail.deal()!
+11:04:55,659 INFO bat.NonRealTimeContRstDetail(151) - Out NonRealTimeContRstDetail.run()!
+11:04:55,660 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+11:08:00,101 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************
+11:21:31,004 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+11:21:31,005 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+11:21:31,006 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :0:0:0:0:0:0:0:1
+11:21:31,072 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+11:21:31,101 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+11:21:31,131 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+11:21:31,222 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:21:31,222 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000056','86','001','0:0:0:0:0:0:0:1','2017-05-08','11:21:31' )
+11:21:31,263 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+11:21:35,094 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+11:21:35,132 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+11:21:35,178 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+11:28:32,094 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+11:28:32,094 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+11:28:32,099 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@7740b009
+11:28:32,099 INFO common.Log4jPrint(20) - Start revert System.out...
+11:28:32,099 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+11:28:32,099 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:28:32,099 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:28:32,099 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:28:32,099 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:28:32,099 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:28:33,081 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7dfabdc2
+11:28:33,117 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:28:33,134 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:28:33,134 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:28:33,134 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:28:33,134 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:28:33,134 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:28:33,165 INFO common.XmlConf(80) - conf file modified at (2017-05-08 11:28:29,461) and length=25409 bytes!
+11:28:33,234 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:28:33,234 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:28:33,250 INFO common.Log4jPrint(20) - End reset System.out!
+11:28:33,265 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:28:33,265 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:28:33,265 INFO common.XmlConf(80) - conf file modified at (2017-05-08 11:28:29,482) and length=708 bytes!
+11:28:33,265 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:28:33,265 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:28:33,281 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:28:33,297 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:28:33,334 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:28:33,334 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:28:33,334 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:28:33,350 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:28:33,350 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+11:28:33,350 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:28:33,350 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+11:28:33,350 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:28:33,350 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+11:28:33,381 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+11:28:33,381 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:28:33,381 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:28:33,381 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+11:28:33,397 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:28:33,381 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:28:35,771 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************
+11:28:42,620 INFO common.Log4jPrint(20) - ++++++++++++++++++Password :001
+11:28:42,689 INFO common.Log4jPrint(20) - Password:3D5AA576F0DF6C61
+11:28:42,689 INFO common.Log4jPrint(20) - ++++++++++++++++++IP :0:0:0:0:0:0:0:1
+11:28:43,125 INFO common.Log4jPrint(20) - mManageCom:86ComCode:86
+11:28:43,159 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='LOGNO' and nolimit='SN' for update
+11:28:43,179 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'LOGNO' and nolimit = 'SN'
+11:28:43,279 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:28:43,279 INFO common.Log4jPrint(20) - mSql: insert into LDUserLog ( LogNo,ManageCom,Operator,CientIP,MakeDate,MakeTime ) values ( '0000000057','86','001','0:0:0:0:0:0:0:1','2017-05-08','11:28:43' )
+11:28:44,735 INFO common.Log4jPrint(20) - 菜单SQL：select * from LDMenu where 1 = 1 order by NodeOrder asc
+11:28:47,945 INFO common.Log4jPrint(20) - ExecSQL : SELECT NodeCode FROM LDMenu WHERE NodeCode = '1110'
+11:28:48,250 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1110'
+11:28:48,304 INFO common.Log4jPrint(20) - ExecSQL : select NodeCode,NodeName,ParentNodeCode from LDMenu where NodeCode = '1105'
+11:28:51,569 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:28:51,601 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:28:51,601 INFO pubfun.CodeQueryBL(77) - CodeType = trancom_bank
+11:28:51,602 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+11:28:51,603 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:28:51,603 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 and CodeType='trancom_bank' order by Code
+11:28:51,641 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:28:51,641 INFO common.Log4jPrint(20) - 结果：0|2^03|建设银行^05|农业银行
+11:28:51,642 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:28:51,642 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:28:56,300 INFO pubfun.CodeQueryUI(37) - Into CodeQueryUI.submitData()...
+11:28:56,316 INFO pubfun.CodeQueryBL(24) - Into CodeQueryBL.submitData()...
+11:28:56,317 INFO pubfun.CodeQueryBL(77) - CodeType = blctranstype
+11:28:56,317 INFO pubfun.CodeQueryBL(325) - CodeQueryBL.SQL: select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:28:56,318 INFO utility.ExeSQL(210) - Into ExeSQL.getEncodedResult()...
+11:28:56,318 INFO common.Log4jPrint(20) - ExecSQL : select Code, CodeName from ldcode where 1=1 And COMCODE='05' and CodeType='blctranstype' order by Code
+11:28:56,367 INFO utility.ExeSQL(337) - Out ExeSQL.getEncodedResult()!
+11:28:56,367 INFO common.Log4jPrint(20) - 结果：0|9^2000|农行凭证对账^2001|农行新单对账^2002|农行非实时日终对账^2003|农行保全对账^2004|农行退保犹撤对账文件^2005|农行非实时出单结果明细文件^2006|农行退保犹撤数据回盘文件^2007|农行非实时出单结果回盘文件^2008|农行非实时出单结果文件
+11:28:56,368 INFO pubfun.CodeQueryBL(35) - Out CodeQueryBL.submitData()!
+11:28:56,368 INFO pubfun.CodeQueryUI(54) - Out CodeQueryUI.submitData()!
+11:30:02,579 INFO _ybt.__manualbalancesave(161) - into ManualBalanceSave.jsp...
+11:30:02,580 INFO common.Log4jPrint(20) - 00000000000
+11:30:02,581 INFO common.Log4jPrint(20) - 05
+11:30:02,584 INFO common.Log4jPrint(20) - 2004
+11:30:02,585 INFO common.Log4jPrint(20) - 20170505
+11:30:02,704 INFO bat.BatConf(28) - Into BatConf.load()...
+11:30:02,704 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+11:30:02,705 INFO common.XmlConf(80) - conf file modified at (2017-05-08 11:28:29,433) and length=12906 bytes!
+11:30:02,715 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+11:30:02,716 INFO bat.BatConf(50) - Out BatConf.load()!
+11:30:02,739 INFO common.Log4jPrint(20) - com.sinosoft.midplat.newabc.bat.NoTakenBalanceRst: 05-2004-20170505 - mExtendClass:
+11:30:02,768 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+11:30:02,769 INFO common.Log4jPrint(20) - ExecSQL : select max(LogNo) from TranLog where mod(LogNo,3)=0
+11:30:02,859 INFO common.Log4jPrint(20) - ExecSQL : select max(MapNo) from NodeMap where mod(MapNo,3)=0
+11:30:02,920 INFO common.Log4jPrint(20) - ExecSQL : select max(RecordNo) from Cont where mod(RecordNo,3)=0
+11:30:02,957 INFO bat.NoTakenBalanceRst(509) - Into NoTakenBalanceRst.run()...
+11:30:03,006 INFO common.Log4jPrint(20) - quzhi:20:05:00
+11:30:03,013 INFO bat.NoTakenBalanceRst(83) - Into NoTakenBalanceRst.deal()...
+11:30:03,014 INFO bat.NoTakenBalanceRst(197) - Into NoTakenBalanceRst.sendRequest()...
+11:30:03,056 INFO common.Log4jPrint(20) - ExecSQL : select MaxNo from LDMaxNo where notype='TRANSNO' and nolimit='SN' for update
+11:30:03,081 INFO common.Log4jPrint(20) - ExecSQL : update ldmaxno set maxno = maxno + 1 where notype = 'TRANSNO' and nolimit = 'SN'
+11:30:03,134 INFO bat.NoTakenBalanceRst(60) - Into NoTakenBalanceRst.getBody()...
+11:30:03,135 INFO common.Log4jPrint(20) - ExecSQL : select * from ContBlcDtl where trancom='05'  and trandate='20170507' and type='24' and bak5='1'
+11:30:03,190 INFO bat.NoTakenBalanceRst(77) - Out NoTakenBalanceRst.getBody()!
+11:30:03,191 INFO bat.NoTakenBalanceRst(214) - Out NoTakenBalanceRst.sendRequest()!Mon May 08 11:30:03 CST 2017
+11:30:03,191 DEBUG bat.NoTakenBalanceRst(219) - Into NoTakenBalanceRst.insertTranLog()...
+11:30:03,296 INFO common.Log4jPrint(20) - 进入更新后的InsPart
+11:30:03,297 INFO common.Log4jPrint(20) - mSql: insert into TranLog ( LogNo,TranCom,NodeNo,TranNo,Operator,FuncFlag,TranDate,TranTime,RCode,UsedTime,MakeDate,MakeTime,ModifyDate,ModifyTime ) values ( 151041,5,'0000000','151044','YBT',2004,20170508,113003,-1,0,20170508,113003,20170508,113003 )
+11:30:03,326 DEBUG bat.NoTakenBalanceRst(243) - Out NoTakenBalanceRst.insertTranLog()!
+11:30:03,360 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+11:30:03,377 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+11:30:03,378 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:30:03,386 INFO common.SaveMessage(94) - 151038_3_48_inSvc.xml IO输出耗时:0.0080s
+11:30:03,387 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！151038_3_48_inSvc.xml
+11:30:03,387 INFO common.Log4jPrint(20) - start call 新农行犹豫期退保结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:30:03,388 INFO net.CallWebsvcAtomSvc(102) - start call 新农行犹豫期退保结果文件(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+11:30:03,469 WARN dialect.StAXDialectDetector(236) - Weblogic's StAX implementation is unsupported and some Axiom features will not work as expected! Please use Woodstox instead.
+11:30:03,803 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+11:30:03,822 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:30:03,822 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+11:30:03,823 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+11:30:03,824 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+11:30:03,824 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+11:30:03,825 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:30:03,853 DEBUG httpclient.Wire(70) - >> "2ad[\r][\n]"
+11:30:03,854 DEBUG httpclient.Wire(84) - >> "<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTA4PC9UcmFuRGF0ZT48VHJhblRpbWU+MTEzMDAzPC9UcmFuVGltZT48VHJhbkNvbT4wNTwvVHJhbkNvbT48Wm9uZU5vPjExPC9ab25lTm8+PE5vZGVObz4xMTI0MDE8L05vZGVObz48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRlbGxlck5vPjExMDEwMTAyMTEwPC9UZWxsZXJObz48VHJhbk5vPjAwMDAwMDAwMDAwMDEzNDc8L1RyYW5Obz48RnVuY0ZsYWc+MjAwNDwvRnVuY0ZsYWc+PFNlcnZpY2VJZD40ODwvU2VydmljZUlkPjwvSGVhZD48Qm9keSAvPjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+11:30:03,854 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:30:03,855 DEBUG httpclient.Wire(84) - >> "0"
+11:30:03,855 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:30:03,855 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+11:30:03,937 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:30:03,938 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+11:30:03,941 DEBUG httpclient.Wire(70) - << "Date: Mon, 08 May 2017 03:32:04 GMT[\r][\n]"
+11:30:03,942 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+11:30:03,943 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+11:30:03,944 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+11:30:03,944 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:30:03,962 DEBUG httpclient.Wire(84) - << "0"
+11:30:03,963 DEBUG httpclient.Wire(84) - << "3"
+11:30:03,963 DEBUG httpclient.Wire(84) - << "4"
+11:30:03,964 DEBUG httpclient.Wire(84) - << "f"
+11:30:03,965 DEBUG httpclient.Wire(84) - << "[\r]"
+11:30:03,965 DEBUG httpclient.Wire(70) - << "[\n]"
+11:30:03,966 DEBUG httpclient.Wire(84) - << "<?xm"
+11:30:03,975 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+zcuxo9PMs7fK/b7dzsS8/r270tezybmmo6E8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPERldGFpbD4NCiAgICAgIDxDaGFubmVsPjA8L0NoYW5uZWw+DQogICAgICA8QnVzaVR5cGU+MTA8L0J1c2lUeXBlPg0KICAgICAgPFRyYW5EYXRlPjIwMTctMDUtMDg8L1RyYW5EYXRlPg0KICAgICAgPENvbnRObz44ODgwMTAwMDAwMDA5ODA8L0NvbnRObz4NCiAgICAgIDxBcHBudE5hbWU+wO7LxDwvQXBwbnROYW1lPg0KICAgICAgPFN0YXR1cz4yPC9TdGF0dXM+DQogICAgICA8UHJlbT44MTY5MTc8L1ByZW0+DQogICAgPC9EZXRhaWw+DQogIDwvQm9keT4NCjwvVHJhbkRhdGE+DQoNCg==</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+11:30:03,976 DEBUG httpclient.Wire(84) - << "[\r]"
+11:30:03,977 DEBUG httpclient.Wire(70) - << "[\n]"
+11:30:03,978 DEBUG httpclient.Wire(84) - << "0"
+11:30:03,978 DEBUG httpclient.Wire(84) - << "0"
+11:30:03,979 DEBUG httpclient.Wire(84) - << "0"
+11:30:03,980 DEBUG httpclient.Wire(84) - << "0"
+11:30:03,981 DEBUG httpclient.Wire(84) - << "[\r]"
+11:30:03,983 DEBUG httpclient.Wire(70) - << "[\n]"
+11:30:03,983 DEBUG httpclient.Wire(84) - << "[\r]"
+11:30:03,985 DEBUG httpclient.Wire(70) - << "[\n]"
+11:30:03,986 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+11:30:04,002 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新农行犹豫期退保结果文件(service)耗时：0.614s
+11:30:04,009 INFO common.SaveMessage(94) - 151038_6_48_outSvc.xml IO输出耗时:0.0030s
+11:30:04,010 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！151038_6_48_outSvc.xml
+11:30:04,010 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+11:30:04,011 INFO bat.NoTakenBalanceRst(93) - 核心返回的非实时对账结果报文：
+11:30:04,051 INFO format.NoTakenBalanceRstOutXsl(24) - Into NoTakenBalanceRstOutXsl.load()...
+11:30:04,052 INFO format.NoTakenBalanceRstOutXsl(27) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NoTakenBalanceRstOut.xsl...
+11:30:04,053 INFO common.XslCache(70) - conf file modified at (2017-05-04 09:19:27,217) and length=1461 bytes!
+11:30:04,087 INFO format.NoTakenBalanceRstOutXsl(34) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/com/sinosoft/midplat/newabc/format/NoTakenBalanceRstOut.xsl!
+11:30:04,088 INFO format.NoTakenBalanceRstOutXsl(47) - Out NoTakenBalanceRstOutXsl.load()!
+11:30:04,142 INFO bat.NoTakenBalanceRst(96) - 转换后的对账结果报文：
+11:30:04,143 INFO bat.NoTakenBalanceRst(250) - Into NoTakenBalanceRst.receive()...Mon May 08 11:30:03 CST 2017
+11:30:04,144 INFO common.Log4jPrint(20) - [Element: <TranData/>]           ===========      [Element: <Head/>]
+11:30:04,153 INFO bat.NoTakenBalanceRst(286) - 生成返回文件头记录null
+11:30:04,153 INFO bat.NoTakenBalanceRst(287) - 生成返回文件总记录1
+11:30:04,204 INFO common.Log4jPrint(20) - a:0b:0b:816917
+11:30:04,204 INFO common.Log4jPrint(20) - 总金额：8169.17
+11:30:04,205 INFO bat.NoTakenBalanceRst(422) - 第0个文件生成返回文件总记录010079|03|1|8169.17|0|0.00|0|0.00|1|8169.17
+03|20170508|888010000000980|李四|0||||2|8169.17|
+
+11:30:04,208 INFO common.Log4jPrint(20) - 文件名：INVALID010079.20170508
+11:30:04,209 INFO bat.NoTakenBalanceRst(502) - Out NoTakenBalanceRst.receive()!
+11:30:04,210 INFO bat.NoTakenBalanceRst(110) - 今天生成的文件名为：INVALID010079.20170508
+11:30:04,210 INFO bat.NoTakenBalanceRst(117) - 退保犹撤数据文件对账结果代码：0      结果说明：退保犹撤数据文件交易成功！
+11:30:04,235 INFO common.Log4jPrint(20) - 进入更新后的UpdPart
+11:30:04,236 INFO common.Log4jPrint(20) - 进入更新后的setPKWherePart
+11:30:04,237 INFO common.Log4jPrint(20) - 151044
+11:30:04,237 INFO common.Log4jPrint(20) - 151044
+11:30:04,237 INFO common.Log4jPrint(20) - mSql: update TranLog set LogNo=151041,TranCom=5,ZoneNo=null,NodeNo='0000000',TranNo='151044',Operator='YBT',FuncFlag=2004,TranDate=20170508,TranTime=113003,ProposalPrtNo=null,ContNo=null,OtherNo=null,AgentCom=null,AgentCode=null,AgentComName=null,AgentName=null,UnitCode=null,AgentCodeGrade=null,AgentGrade=null,ManageCom=null,RCode=0,RText='退保犹撤数据文件交易成功！',UsedTime=0,AppntName=null,Bak1=null,Bak2=null,Bak3=null,Bak4=null,Bak5=null,InNoDoc=null,MakeDate=20170508,InDoc=null,OutDoc=null,MakeTime=113003,ModifyDate=20170508,ModifyTime=113004,AppntIDNo=null,InsuredName=null,InsuredIDNo=null,ProductId=null,OutNoDoc=null where TranNo='151044'
+11:30:04,291 INFO bat.NoTakenBalanceRst(141) - 退保犹撤数据文件文件上传成功！
+11:30:04,291 INFO bat.NoTakenBalanceRst(142) - Out NoTakenBalanceRst.deal()!
+11:30:04,292 INFO bat.NoTakenBalanceRst(571) - Out NoTakenBalanceRst.run()!
+11:30:04,292 INFO _ybt.__manualbalancesave(273) - out ManualBalanceSave.jsp...
+11:32:28,573 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+11:32:28,583 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+11:32:28,585 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@3538cf71
+11:32:28,585 INFO common.Log4jPrint(20) - Start revert System.out...
+11:32:28,585 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+11:32:28,585 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:32:28,585 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:32:28,585 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:32:28,585 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:32:28,585 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+11:32:28,742 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7dfabdc2
+11:32:28,742 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+11:32:28,742 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+11:32:28,742 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+11:32:28,742 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+11:32:28,742 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+11:32:28,742 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+11:32:28,758 INFO common.XmlConf(80) - conf file modified at (2017-05-08 11:28:29,461) and length=25409 bytes!
+11:32:28,789 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+11:32:28,805 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+11:32:28,805 INFO common.Log4jPrint(20) - End reset System.out!
+11:32:28,805 INFO net.SocketConf(27) - Into SocketConf.load()...
+11:32:28,805 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+11:32:28,805 INFO common.XmlConf(80) - conf file modified at (2017-05-08 11:28:29,482) and length=708 bytes!
+11:32:28,805 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+11:32:28,805 INFO net.SocketConf(60) - Out SocketConf.load()!
+11:32:28,826 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+11:32:28,826 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+11:32:28,826 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+11:32:28,826 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+11:32:28,826 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+11:32:28,842 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+11:32:28,842 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+11:32:28,842 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+11:32:28,842 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+11:32:28,842 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+11:32:28,842 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+11:32:28,842 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+11:32:28,842 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+11:32:28,842 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+11:32:28,842 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+11:32:28,842 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+11:32:28,842 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+11:32:29,936 INFO common.Log4jPrint(20) - 	@> 销毁 session, 退出系统 ****************************************
+16:54:29,878 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+16:54:29,882 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+16:54:29,885 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@42ed1bf6
+16:54:29,886 INFO common.Log4jPrint(20) - Start revert System.out...
+16:54:29,888 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+16:54:29,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:54:29,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:54:29,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:54:29,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:54:29,913 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:54:37,183 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@7dfabdc2
+16:55:25,137 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@112d568c
+16:55:25,175 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+16:55:25,222 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+16:55:25,222 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+16:55:25,222 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:55:25,222 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+16:55:25,222 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+16:55:25,275 INFO common.XmlConf(80) - conf file modified at (2017-05-08 16:54:24,411) and length=25409 bytes!
+16:55:25,476 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+16:55:25,507 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+16:55:25,538 INFO common.Log4jPrint(20) - End reset System.out!
+16:55:25,538 INFO net.SocketConf(27) - Into SocketConf.load()...
+16:55:25,538 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+16:55:25,554 INFO common.XmlConf(80) - conf file modified at (2017-05-08 16:54:24,460) and length=708 bytes!
+16:55:25,559 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+16:55:25,560 INFO net.SocketConf(60) - Out SocketConf.load()!
+16:55:25,592 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+16:55:25,638 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+16:55:25,776 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+16:55:25,776 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+16:55:25,776 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+16:55:25,776 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+16:55:25,792 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+16:55:25,792 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+16:55:25,792 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+16:55:25,792 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+16:55:25,792 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+16:55:25,823 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+16:55:25,823 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+16:55:25,823 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+16:55:25,861 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+16:55:25,861 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+16:55:25,861 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+16:55:29,034 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+16:55:29,034 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+16:55:29,041 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@768209d7
+16:55:29,042 INFO common.Log4jPrint(20) - Start revert System.out...
+16:55:29,042 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:55:29,042 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:55:29,042 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:55:29,042 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+16:55:29,042 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:55:29,042 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+16:55:30,136 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@112d568c
+16:55:30,162 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+16:55:30,189 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+16:55:30,189 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+16:55:30,189 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+16:55:30,189 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+16:55:30,189 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+16:55:30,221 INFO common.XmlConf(80) - conf file modified at (2017-05-08 16:54:24,411) and length=25409 bytes!
+16:55:30,390 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+16:55:30,405 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+16:55:30,452 INFO common.Log4jPrint(20) - End reset System.out!
+16:55:30,452 INFO net.SocketConf(27) - Into SocketConf.load()...
+16:55:30,452 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+16:55:30,452 INFO common.XmlConf(80) - conf file modified at (2017-05-08 16:54:24,460) and length=708 bytes!
+16:55:30,468 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+16:55:30,468 INFO net.SocketConf(60) - Out SocketConf.load()!
+16:55:30,490 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+16:55:30,552 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+16:55:30,621 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+16:55:30,621 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+16:55:30,621 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+16:55:30,637 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+16:55:30,637 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+16:55:30,637 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+16:55:30,637 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+16:55:30,637 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+16:55:30,637 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+16:55:30,668 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+16:55:30,668 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+16:55:30,668 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+16:55:30,722 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+16:55:30,722 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+16:55:30,722 INFO net.SocketListenerF5$Server(194) - 监听端口 9004

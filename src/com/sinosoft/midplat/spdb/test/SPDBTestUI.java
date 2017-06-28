@@ -32,14 +32,14 @@ public class SPDBTestUI {
 		int mPort = 9003;
 
 		String mFuncFlag = "";
-		String mInFilePath="D:/File/task/20170420/spdb/ybt_test/";
+		String mInFilePath="D:/File/task/20170424/spdb/ybt_test/";
 		
 		//绿灯交易
 //		mFuncFlag = "1000";
 //		mInFilePath += "1000in_noStd.xml";
 		//新契约试算
-		mFuncFlag = "1001";
-		mInFilePath += "1001in_noStd.xml";
+//		mFuncFlag = "1001";
+//		mInFilePath += "1001in_noStd.xml";
 		//新契约投保
 //		mFuncFlag = "1002";
 //		mInFilePath += "1002in_noStd.xml";
@@ -50,10 +50,10 @@ public class SPDBTestUI {
 //		mFuncFlag = "1004";
 //		mInFilePath += "1004in_noStd.xml";
 		//保单补打印
-//		mFuncFlag = "1005";
-//		mInFilePath += "1005in_noStd.xml";
+		mFuncFlag = "1005";
+		mInFilePath += "1005in_noStd.xml";
 		
-		String mOutFilePath = "D:/File/task/20170420/spdb/ybt_test/1001out_noStd.xml";
+		String mOutFilePath = "D:/File/task/20170424/spdb/ybt_test/1005out_noStd.xml";
 
 		SPDBTestUI mTest = new SPDBTestUI(mIP, mPort);
 		InputStream mIs = new FileInputStream(mInFilePath);
@@ -114,7 +114,7 @@ public class SPDBTestUI {
 		}
 		cLogger.info("返回报文头：" + new String(mOutHeadBytes));
 		cLogger.info("返回报文包头：" + new String(mOutHeadBytes, 0, 8).trim());
-		int mOutBodyLengthInt = Integer.parseInt(new String(mOutHeadBytes, 8, 16).trim());
+		int mOutBodyLengthInt = Integer.parseInt(new String(mOutHeadBytes, 8, 8).trim());
 		cLogger.info("返回报文长度：" + mOutBodyLengthInt);
 		// 处理报文体
 		byte[] mOutBodyBytes = new byte[mOutBodyLengthInt];

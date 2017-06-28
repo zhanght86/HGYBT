@@ -2,14 +2,11 @@ package com.sinosoft.midplat.newccb.service;
 
 import org.jdom.Document;
 import org.jdom.Element;
-
-import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.common.MidplatUtil;
 import com.sinosoft.midplat.exception.MidplatException;
-import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.service.ServiceImpl;
 import com.sinosoft.utility.ExeSQL;
 
@@ -23,10 +20,6 @@ public class GreenTest extends ServiceImpl {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into GreenTest.service()...");
 		cInXmlDoc = pInXmlDoc;
-
-		Element mRootEle = cInXmlDoc.getRootElement(); 
-		Element mHeadEle = (Element) mRootEle.getChild(Head).clone();
-		
 		long mUsedContConfirm =0;
 		try {
 			cTranLogDB = insertTranLog(pInXmlDoc);

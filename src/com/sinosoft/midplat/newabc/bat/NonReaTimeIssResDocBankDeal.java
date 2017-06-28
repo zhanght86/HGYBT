@@ -1,10 +1,14 @@
 package com.sinosoft.midplat.newabc.bat;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimerTask;
 
@@ -14,6 +18,7 @@ import org.jdom.Element;
 
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.common.DateUtil;
+import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.NumberUtil;
 import com.sinosoft.midplat.common.XmlTag;
@@ -24,17 +29,20 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 
+	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
-	@SuppressWarnings("unused")
-	private String mFileData = "";
+	private TranLogDB cTranLogDB;
 	@SuppressWarnings("unused")
 	private Document cOutXmlDoc;
-	private TranLogDB cTranLogDB;
 
 	public void run() {
+		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
 		cLogger.info("Into NonReaTimeIssResDocBankDeal.run()...");
 		try {
+			cResultMsg = null;
+			cTranLogDB = insertTranLog();
+			
 			cConfigEle = BatUtils.getConfigEle("2007"); // 得到bat.xml文件中的对应节点.
 
 			if ("".equals(cCurDate)) {
@@ -43,8 +51,7 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 			String mComCode = cConfigEle.getChildTextTrim("ComCode");
 			String mFIleName = "FRESULT.BANK" + mComCode + "." + cCurDate; // 初始化文件名称POLICY3002
 			// //3002公司编号 + 当前时间
-			if (!new BatUtils()
-					.downLoadFile(mFIleName, "02", "2007", cCurDate)) {
+			if (!new BatUtils().downLoadFile(mFIleName, "02", "2007", cCurDate)) {
 				cTranLogDB.setRCode("1");
 				cTranLogDB.setRText("非实时出单结果文件-银行处理结果回盘文件下载失败");
 				cTranLogDB.setModifyDate(DateUtil.getCur8Date());
@@ -52,10 +59,10 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 				cTranLogDB.update();
 				throw new MidplatException("非实时出单结果文件-银行处理结果回盘文件下载失败");
 			}
+			
 			// 处理对账
 			cLogger.info("处理非实时出单结果文件-银行处理结果回盘开始...");
 			// 得到请求标准报文
-			cTranLogDB = insertTranLog();
 			/*String myFilePath = cConfigEle.getChildTextTrim("FilePath")+ mFIleName;
 //			String myFilePath = "C:\\Users\\chenjinwei\\Desktop\\BQAPPLY1132.20161130";
 			Document mInStd = parse(myFilePath);
@@ -66,22 +73,32 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 			String reMsg = cOutXmlDoc.getRootElement().getChild("BaseInfo")
 					.getChildText("ResultMsg");
 			cLogger.info("保全对账结果代码："+reCode+"      结果说明："+reMsg);*/
+			
 			cTranLogDB.setRCode("0");
 			cTranLogDB.setRText("交易成功");
 			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
+			
+			// 每月1日备份上月的对账文件
+			if ("01".equals(DateUtil.getDateStr(new Date(), "dd"))){
+				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
+			}
+			
+			cResultMsg = "交易成功";
 		} catch (Exception e) {
+			cResultMsg = e.toString();
 			cLogger.error(cConfigEle.getChildTextTrim("name") + "  处理异常...");
 			e.printStackTrace();
 			cTranLogDB.setRCode("1");
-			cTranLogDB.setRText("交易失败");
+			cTranLogDB.setRText(e.getMessage());
 			cTranLogDB.setModifyDate(DateUtil.getCur8Date());
 			cTranLogDB.setModifyTime(DateUtil.getCur6Time());
 			cTranLogDB.update();
 		} finally {
 			cCurDate = "";
 		}
+		
 		cLogger.info("处理非实时出单结果文件-银行处理结果回盘结束...");
 		cLogger.info("Out onReaTimeIssResDocBankDeal.run()!");
 	}
@@ -121,24 +138,23 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 		// 组织根节点以及BaseInfo节点内容
 		Element mTranData = new Element("TranData");
 		String tBalanceFlag = "0";
-		Date cTranDate = new Date();
 		Element mTranDate = new Element(TranDate);
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
-		cLogger.info(" 对账日期为..." + DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		cLogger.info(" 当前日期为..." + mCurrDate);
+		mTranDate.setText(cCurDate);
+		String cTranDate = DateUtil.getCurDate("yyyyMMdd");
+		cLogger.info(" 对账日期为..." + cCurDate);
+		cLogger.info(" 当前日期为..." + cTranDate);
 
 		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
-		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate))
+		if (!cCurDate.equals(cTranDate))
 		{
 			tBalanceFlag = "1";
 		}
 
 		Element mTranTime = new Element(TranTime);
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
+		mTranTime.setText(DateUtil.getDateStr(new Date(), "HHmmss"));
 
 		Element mTranCom = new Element(TranCom);
-		mTranCom.setText(cConfigEle.getChildText("tranCom"));
+		mTranCom.setText(cConfigEle.getChildText("com"));
 		
 		Element mZoneNo = new Element("ZoneNo");
 		mZoneNo.setText(cConfigEle.getChildText("zone"));
@@ -217,7 +233,7 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 
 				//设置批处理执行日期为交易日期
 				Element tTranDateEle = new Element(TranDate);
-				tTranDateEle.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
+				tTranDateEle.setText(cCurDate);
 				tDetailEle.addContent(tTranDateEle);
 
 				// 保单号
@@ -270,6 +286,76 @@ public class NonReaTimeIssResDocBankDeal extends TimerTask implements XmlTag {
 
 		cLogger.info("Out NonReaTimeIssResDocBankDeal.parse()!");
 		return new Document(mTranData);
+	}
+	
+	// 备份月文件，比如yyyyMM01当日，系统会在目录localDir 建立/yyyy/yyyyMM，
+	// 然后把所有文件移动到该目录，但是yyyyMM01的文件除外
+	private void bakFiles(String pFileDir)
+	{
+		cLogger.info("Into NonReaTimeIssResDocBankDeal.bakFiles...");
+
+		if (null == pFileDir || "".equals(pFileDir))
+		{
+			cLogger.warn("本地文件目录为空，不进行备份操作！");
+			return;
+		}
+		File mDirFile = new File(pFileDir);
+		if (!mDirFile.exists() || !mDirFile.isDirectory())
+		{
+			cLogger.warn("本地文件目录不存在，不进行备份操作！" + mDirFile);
+			return;
+		}
+
+		File[] mOldFiles = mDirFile.listFiles(new FileFilter()
+		{
+			public boolean accept(File pFile)
+			{
+				if (!pFile.isFile())
+				{
+					return false;
+				}
+
+				Calendar tCurCalendar = Calendar.getInstance();
+				tCurCalendar.setTime(new Date());
+
+				Calendar tFileCalendar = Calendar.getInstance();
+				tFileCalendar.setTime(new Date(pFile.lastModified()));
+
+				return tFileCalendar.before(tCurCalendar);
+			}
+		});
+
+		Calendar mCalendar = Calendar.getInstance();
+		mCalendar.add(Calendar.MONTH, -1);
+		File mNewDir = new File(mDirFile, DateUtil.getDateStr(mCalendar, "yyyy/yyyyMM"));
+		for (File tFile : mOldFiles)
+		{
+			try
+			{
+				String fileName_date = tFile.getName().substring(tFile.getName().length() - 8);
+				Date date = new Date();
+				if (!fileName_date.equals(String.valueOf(DateUtil.get8Date(date))))
+				{
+					cLogger.info(tFile.getAbsoluteFile() + " start move...");
+					IOTrans.fileMove(tFile, mNewDir);
+					cLogger.info(tFile.getAbsoluteFile() + " end move!");
+				}
+			}
+			catch (IOException ex)
+			{
+				cLogger.error(tFile.getAbsoluteFile() + "备份失败！", ex);
+			}
+		}
+
+		cLogger.info("Out NonReaTimeIssResDocBankDeal.bakFiles!");
+	}
+	
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
 	}
 	
 	public static void main(String[] args) throws Exception {

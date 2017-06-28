@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="GBK"?>
 
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:java="http://xml.apache.org/xslt/java"
 	exclude-result-prefixes="java">
 
@@ -59,6 +58,7 @@
 				<SYS_RESP_DESC_LEN></SYS_RESP_DESC_LEN>    
 			     <!-- 服务响应描述 -->
 				<SYS_RESP_DESC></SYS_RESP_DESC>    
+				<xsl:copy-of select="Head/*"/>
 			</TX_HEADER>
 	
 		<!-- 报文体 -->
@@ -66,9 +66,9 @@
 	      			<COMMON>
 	         			<FILE_LIST_PACK>
 	         				<!-- 文件个数 -->
-				            <FILE_NUM>1</FILE_NUM>
+				            <FILE_NUM>0</FILE_NUM>
 				            <!-- 文件处理方式 -->
-				            <FILE_MODE></FILE_MODE>
+				            <FILE_MODE>0</FILE_MODE>
 				        	<!-- 文件节点 -->
 				            <FILE_NODE></FILE_NODE>
 				            <!-- 打包后后文件名 -->
@@ -85,22 +85,10 @@
 	         			</FILE_LIST_PACK>
 	      			</COMMON>
 	      			<ENTITY>
-			        	<APP_ENTITY>
-			        			<!-- 险种编号-->
-								<Cvr_ID><xsl:value-of select="/TranData/Body/RiskCode" /></Cvr_ID>
-								<!-- 险种名称-->
-								<Cvr_Nm><xsl:value-of select="/TranData/Body/RiskName" /></Cvr_Nm>
-								<!-- 代理保险套餐编号-->
-								<AgIns_Pkg_ID></AgIns_Pkg_ID>
-								<!-- 套餐名称-->
-								<Pkg_Nm></Pkg_Nm>
-
-			        	</APP_ENTITY>
+			        	<APP_ENTITY />
 			        </ENTITY>
 	      	</TX_BODY>
 		</TX>
 	</xsl:template>
 	
 </xsl:stylesheet>	
-
-

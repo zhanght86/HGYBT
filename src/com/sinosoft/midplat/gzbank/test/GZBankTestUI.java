@@ -22,17 +22,18 @@ public class GZBankTestUI {
 		System.out.println("程序开始...");
 		
 		String mIP = "127.0.0.1";//本地
+//		String mIP = "10.2.0.31";//本地
 		int mPort = 9004;
 		
 		String mFuncFlag = null;
-		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\sinosoft\\HG\\GZbank\\";
+		String mInFilePath = "D:/File/task/20170509/gz/ybt_test/";
 		
 		//新单核保
-//		mFuncFlag = "9000102";
-//		mInFilePath += "保费试算请求.xml";
+		mFuncFlag = "9000102";
+		mInFilePath += "保费试算请求.xml";
 		//新单承保
-		mFuncFlag = "9000103";
-		mInFilePath += "缴费出单请求.xml";
+//		mFuncFlag = "9000103";
+//		mInFilePath += "缴费出单请求.xml";
 		//保单重打
 //		mFuncFlag = "9000801";
 //		mInFilePath += "保单重打.xml";
@@ -40,7 +41,7 @@ public class GZBankTestUI {
 //		mFuncFlag = "9000901";
 //		mInFilePath += "当日撤单.xml";
 		
-		String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";
+		String mOutFilePath = "D:/File/task/20170509/gz/ybt_test/保费试算应答.xml";
 		GZBankTestUI mTestUI = new GZBankTestUI(mIP, mPort);
 		InputStream mIs = new FileInputStream(mInFilePath);
 		byte[] mOutBytes = mTestUI.sendRequest(mFuncFlag, mIs);

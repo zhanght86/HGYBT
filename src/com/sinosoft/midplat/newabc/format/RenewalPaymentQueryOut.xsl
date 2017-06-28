@@ -9,12 +9,12 @@
 		<!--返回信息 -->
 		<RetMsg></RetMsg>
 		<!--银行交易流水号 -->
-		<SerialNo><xsl:value-of select="Head/TranNo"/></SerialNo>
+		<SerialNo></SerialNo>
 		<!--保险公司流水号 -->
 		<InsuSerial></InsuSerial>
-		<!-- 交易日期-->
+		<!-- 交易时间-->
 		<TransTime></TransTime>
-		<!-- 交易时-->
+		<!-- 交易日期-->
 		<TransDate></TransDate>
 		<!-- 银行代码-->
 		<BankCode></BankCode>
@@ -27,27 +27,26 @@
 		<Ret>
 			<Appl>
 				<!-- 投保人姓名 -->
-				<Name><xsl:value-of select="Body/Name"/></Name>
+				<Name></Name>
 				<!-- 证件类型 -->
-				<IDKind><xsl:value-of select="Body/IDType"/></IDKind>
+				<IDKind></IDKind>
 				<!-- 证件号码 -->
-				<IDCode><xsl:value-of select="Body/IDNo"/></IDCode>
+				<IDCode></IDCode>
 			</Appl>
 			<!-- 应缴期数 -->
-			<DuePeriod><xsl:value-of select="Body/RecvNum"/></DuePeriod>
+			<DuePeriod></DuePeriod>
 			<!-- 应缴日期 -->
-			<DueDate><xsl:value-of select="RecvDate"/></DueDate>
+			<DueDate></DueDate>
 			<!-- 应缴金额 -->
-			<DueAmt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/Prem)"/></DueAmt>
+			<DueAmt></DueAmt>
 			<!-- 保险公司方险种代码  format类中添加 -->
 			<RiskCode></RiskCode>
 			<!-- 保单号-->
-			<PolicyNo><xsl:value-of select="Body/ContNo"/></PolicyNo>
+			<PolicyNo></PolicyNo>
 		</Ret>	
 	</App>
 </ABCB2I>
 </xsl:template>
-	
 	<!--  保单状态 -->
 	<xsl:template name="policyStatus" >
 		<xsl:param name="PolicyStatus"></xsl:param>

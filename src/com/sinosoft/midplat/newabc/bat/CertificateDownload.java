@@ -22,6 +22,7 @@ public class CertificateDownload extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 	
+	protected String cResultMsg;
 	protected Element cConfigEle;
 	private static String cCurDate = "";
 	@SuppressWarnings("unused")
@@ -31,7 +32,8 @@ public class CertificateDownload extends TimerTask implements XmlTag {
 		cLogger.info("Into CertificateDownload.run()...");
 		
 		try {
-			 cTranLogDB = insertTranLog();
+			cResultMsg = null;
+			cTranLogDB = insertTranLog();
 			cConfigEle = BatUtils.getConfigEle("1031");	
 			if("".equals(cCurDate)){
 				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date()).replace("-","");
@@ -44,7 +46,9 @@ public class CertificateDownload extends TimerTask implements XmlTag {
 				throw new MidplatException("证书下载异常");
 			}
 			 
+			cResultMsg = "证书下载成功!";
 		} catch (Exception e) {
+			cResultMsg = e.toString();
 			cLogger.info(cConfigEle.getChildTextTrim("name")+"  对账处理异常..."+e.getMessage());
 			e.printStackTrace();
 		}
@@ -81,7 +85,15 @@ public class CertificateDownload extends TimerTask implements XmlTag {
 	    
 	    this.cLogger.debug("Out CertificateDownload.insertTranLog()!");
 	    return mTranLogDB;
-	  }
+	 }
+	
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
+	}
 	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.CertificateDownload.main");

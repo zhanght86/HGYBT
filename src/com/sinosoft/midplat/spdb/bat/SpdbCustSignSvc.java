@@ -29,11 +29,19 @@ import com.sinosoft.utility.ElementLis;
 public class SpdbCustSignSvc extends SpdbPushFileToBankSvc
 {
 
+	/**
+	 * <p>Title: 批量签约文件构造器</p>
+	 * <p>Description: 初始化当前配置文件、交易代码</p>
+	 */
 	public SpdbCustSignSvc()
 	{
 		super(SpdbConf.newInstance(), "3008");
 	}
 
+	/**
+	 * 处理
+	 * @param ttLocalDir 本地保存文件目录
+	 */
 	@Override
 	protected void deal(String ttLocalDir)
 	{
@@ -45,12 +53,11 @@ public class SpdbCustSignSvc extends SpdbPushFileToBankSvc
 		{
 			// 处理核心返回报文
 			long mStartMillis = System.currentTimeMillis();
-			 Document cOutXmlDoc = new
-			 CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_SpdbCustSign).call(cInXmlDoc);
+			Document cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_SpdbCustSign).call(cInXmlDoc);
 
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
-			cTranLogDB.setBak2("调用核心接口：" + tHeadEle.getChildText(Desc));
+			cTranLogDB.setRText(tHeadEle.getChildText(Desc));
 			long tCurMillis = System.currentTimeMillis();
 			cTranLogDB.setUsedTime((int) (tCurMillis - mStartMillis) / 1000);
 			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
@@ -68,41 +75,76 @@ public class SpdbCustSignSvc extends SpdbPushFileToBankSvc
 		cLogger.info("Out SpdbCustSignSvc.deal()...");
 	}
 
+	/**
+	 * @Title: sendRequest
+	 * @Description: 发送核心请求报文
+	 * @return 标准输入报文
+	 * @return Document 核心标准输入报文
+	 * @throws
+	 */
 	private Document sendRequest()
 	{
 		cLogger.info("Into SpdbCustSignSvc.sendRequest()...");
+		//根节点
 		ElementLis TranData = new ElementLis("TranData");
+		//报文头[交易基本信息]
 		Element Head = getHead();
 		String trantime = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
 		TranData.addContent(Head);
+		//报文体[交易数据]
 		ElementLis Body = new ElementLis("Body", TranData);
+		//交易日期
 		new ElementLis(TranDate, trantime.substring(0, 8), Body);
+		//构建标准输入报文
 		Document pXmlDoc = new Document(TranData);
 		cLogger.info("Out SpdbCustSignSvc.sendRequest()..." + cTranDate);
+		//返回标准输入报文
 		return pXmlDoc;
 	}
 
+	/**
+	 * @Title: receive
+	 * @Description: 接收
+	 * @param cOutXmlDoc 标准输出报文
+	 * @param ttLocalDir 本地保存文件目录
+	 * @return void  
+	 * @throws
+	 */
 	@SuppressWarnings("unchecked")
 	private void receive(Document cOutXmlDoc, String ttLocalDir)
 	{
 		cLogger.info("Into SpdbCustSignSvc.receive()..." + cTranDate);
-		String outHead = "";// 头记录
-		String serialNo = "";// 序号
-		String fileName = "";// 文件名称
+		//头记录
+		String outHead = "";
+		//序号
+		String serialNo = "";
+		//文件名称
+		String fileName = "";
 		String out = "";
 		String outBody = "";
-		int maxNo = 500;// 一个txt中允许最多的明细记录数 测试的话，只需要把这个值换掉即可
+		// 一个txt中允许最多的明细记录数 测试的话，只需要把这个值换掉即可
+		int maxNo = 500;
 
+		//标准输出报文根节点
 		Element tRoot = cOutXmlDoc.getRootElement();
-		String tComCode = AblifeCodeDef.spdb_ComCode;// 保险公司代码
+		//保险公司代码
+		String tComCode = AblifeCodeDef.spdb_ComCode;
 
+		//批量签约文件类实例
 		SpdbCustSignSvc tRun = new SpdbCustSignSvc();
+		
+		//报文体
 		Element tBody = tRoot.getChild("Body");
+		//明细
 		List<Element> list = tBody.getChildren("Detail");
+		//明细数
 		int tCount = list.size();
+		//生成返回文件头记录
 		cLogger.info("生成返回文件头记录" + outHead);
+		//明细数非0
 		if (list.size() != 0)
 		{
+			//全轮
 			int totalRound = 0;
 			if (tCount % maxNo == 0)
 			{
@@ -115,22 +157,29 @@ public class SpdbCustSignSvc extends SpdbPushFileToBankSvc
 
 			for (int i = 0; i < totalRound; i++)
 			{
+				//序号不足2两位[小于10]
 				if (i + 1 < 10)
 				{
+					//序号前置0
 					serialNo = "0" + Integer.toString(i);
+					//文件名称[	 UBCS_保险公司编号(4位) _机构代码（4位）_日期（8位）_序号（2位）										 文件类型：TXT]
 					fileName = "UBCS_" + tComCode + "_9800_" + DateUtil.getDateStr(cTranDate, "yyyyMMdd") + "_" + serialNo + ".txt";
 				}
 				else
 				{
+					//取两位序号
 					serialNo = Integer.toString(i);
+					//文件名称[	 UBCS_保险公司编号(4位) _机构代码（4位）_日期（8位）_序号（2位）										 文件类型：TXT]
 					fileName = "UBCS_" + tComCode + "_9800_" + DateUtil.getDateStr(cTranDate, "yyyyMMdd") + "_" + serialNo + ".txt";
 				}
+				//本地保存文件目录/yyyyMMdd
 				File tDir = new File(ttLocalDir + "/" + DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-				// 如果文件不存在创建文件
+				// 如果文件夹不存在
 				if (!tDir.exists())
 				{
 					try
 					{
+						//创建文件夹
 						tDir.mkdir();
 					}
 					catch (Exception e)
@@ -139,6 +188,7 @@ public class SpdbCustSignSvc extends SpdbPushFileToBankSvc
 					}
 				}
 
+				//本地保存文件目录/yyyyMMdd/UBCS_保险公司编号(4位) _机构代码（4位）_日期（8位）_序号（2位）.TXT
 				File file = new File(ttLocalDir + "/" + DateUtil.getDateStr(cTranDate, "yyyyMMdd") + "/" + fileName);
 				/*
 				 * 此循环是向第i个文件中流出(i+1)*maxNo - i*maxNo个明细记录

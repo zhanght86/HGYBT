@@ -5,32 +5,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import javax.naming.NamingException;
-
+import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jdom.xpath.XPath;
-
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
-import com.sinosoft.midplat.common.NumberUtil;
-import com.sinosoft.midplat.common.XmlConf;
 import com.sinosoft.midplat.format.XmlSimpFormat;
-import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newccb.bean.LKPolicyXML;
 import com.sinosoft.midplat.newccb.dao.LKPolicyXMLDao;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
-import com.sinosoft.utility.ElementLis;
-import com.sinosoft.utility.ExeSQL;
 
 public class NewCont extends XmlSimpFormat {
-	private Element cTransaction_Header = null;
 	private String mSYS_RECV_TIME = null;
 	private String mSYS_RESP_TIME = null;
 	private String tranNo = null;
@@ -38,18 +27,14 @@ public class NewCont extends XmlSimpFormat {
 	private String sysTxCode = null;
 	private String sAginsPkgId = null;
 	private String sPayIntv = null;
-	private String sMult = null;
 	private String sLot = null;
 	private String sPayCycCod = null;
 	private String sRelationShip = null;
 	private Element oldTxHeader = null;
 	private Element oldComEntity = null;
 	private Element oldAppEntity = null;
-	
 	/**请求的非标准报文*/
 	private Document noStdDoc = null;
-	
-	
 	public NewCont(Element pThisConf) {
 		super(pThisConf);
 	}
@@ -57,15 +42,11 @@ public class NewCont extends XmlSimpFormat {
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into NewCont.noStd2Std()...");
 		
-		//此处备份一下请求报文头相关信息，组织返回报文时会用到
-		cTransaction_Header =
-			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		//此处备份一下请求报文体APP_EITITY相关信息，组织返回报文时会用到
 		oldAppEntity =
 			(Element) pNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("APP_ENTITY").clone();;
 		
 		sAginsPkgId	=oldAppEntity.getChild("Busi_List").getChild("Busi_Detail").getChildText("AgIns_Pkg_ID");
-//		JdomUtil.print(cTransaction_Header);
 		
 		//服务接受时间
 		mSYS_RECV_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
@@ -153,26 +134,19 @@ public class NewCont extends XmlSimpFormat {
 			//保存非标准报文
 			saveNoStdDoc(pStdXml);
 		}
-		
 		Document mNoStdXml = 
 			NewContOutXsl.newInstance().getCache().transform(pStdXml);
 		JdomUtil.print(mNoStdXml);
-		
 		//服务响应时间
 		mSYS_RESP_TIME = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
-		
 		//设置TX_HEADER的一些节点信息
 		mNoStdXml = NewCcbFormatUtil.setNoStdTxHeader(mNoStdXml, oldTxHeader, mSYS_RECV_TIME, mSYS_RESP_TIME);
-		
 		//当核保成功的时候，返回TX_BODY时，增加COM_ENTITY节点
 //		String resultCode = pStdXml.getRootElement().getChild("Head").getChildText("Flag");
 //		if(resultCode.equals("0")){
 		mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
 //		}
-		
-		
 		/*Start-组织返回报文头*/
-
 		Element mRetData = pStdXml.getRootElement().getChild("Head");
 		if (mRetData.getChildText(Flag).equals("0")) {	//交易成功
 			mNoStdXml.getRootElement().getChild("TX_HEADER").getChild("SYS_RESP_DESC").setText(mRetData.getChildText(Desc));
@@ -219,8 +193,6 @@ public class NewCont extends XmlSimpFormat {
 		
 		//标准报文根节点
 		Element stdDocRoot = stdDoc.getRootElement();
-		
-		
 		//设置保单号
 		policyXML.setContNo(stdDocRoot.getChild(Body).getChildText(ContNo));
 		//投置投保单号
@@ -262,27 +234,36 @@ public class NewCont extends XmlSimpFormat {
 		}
 	}
 	
+	/**
+	 *  网销渠道生成投保单号
+	 * @param tSaleChnl
+	 * @return
+	 * @throws Exception
+	 */
+	
+	public static String dealPrtNo() throws Exception {
+	    int hashCodeV = UUID.randomUUID().toString().hashCode();
+        if(hashCodeV < 0) {//有可能是负数
+            hashCodeV = - hashCodeV;
+        }
+        //格式化一个整数,位数不够向前补0(整数只能长度为10位)
+        String tRomNo = String.format("%010d", hashCodeV);
+        String tPrtNo="10199"+tRomNo.substring(2);
+        return tPrtNo;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		System.out.println("程序开始…");
-
-
-		String mInFilePath = "C:/Users/liuzk/Desktop/1380526_39_0_outSvc.xml";
-		String mOutFilePath = "C:/Users/liuzk/Desktop/22.xml";
-
-
-
-		Document mInXmlDoc = JdomUtil.build(mInFilePath);
-		
-//		Document mOutXmlDoc = new NewCont(null).std2NoStd(mInXmlDoc);
+		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\sinosoft\\HG\\ccb\\新单投保.xml";
+		String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";
+		InputStream mIs = new FileInputStream(mInFilePath);
+		Document mInXmlDoc = JdomUtil.build(mIs);
+		JdomUtil.print(mInXmlDoc);
 		Document mOutXmlDoc = new NewCont(null).noStd2Std(mInXmlDoc);
-//
+//		Document mOutXmlDoc = new NewCont(null).std2NoStd(mInXmlDoc);
 		JdomUtil.print(mOutXmlDoc);
-
-		OutputStream mOs = new FileOutputStream(mOutFilePath);
-		JdomUtil.output(mOutXmlDoc, mOs);
-		mOs.flush();
-		mOs.close();
-
+		OutputStream mFos = new FileOutputStream(mOutFilePath);
+		JdomUtil.output(mOutXmlDoc, mFos);
 		System.out.println("成功结束！");
 
 	}

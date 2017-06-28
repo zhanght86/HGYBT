@@ -1,0 +1,201 @@
+09:58:17,846 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:58:17,934 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:58:17,934 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:58:17,965 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:58:17,965 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:58:17,965 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+09:58:17,965 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+09:58:18,031 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+09:58:18,047 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:26:43,649 INFO format.RePrint(33) - Into RePrint.std2NoStd()...
+10:26:43,681 INFO format.ContConfirmOutXsl(24) - Into PolicyContTrialInXsl.load()...
+10:26:43,712 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:26:43,712 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:26:43,745 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:26:43,748 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:26:43,750 INFO format.ContConfirmOutXsl(26) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/ContConfirmOut.xsl...
+10:26:43,765 INFO common.XslCache(70) - conf file modified at (2017-06-23 09:28:48,417) and length=43650 bytes!
+10:26:44,097 INFO format.ContConfirmOutXsl(40) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/gzbank/format/ContConfirmOut.xsl!
+10:26:44,113 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:26:44,113 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:26:44,145 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+10:26:44,182 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:26:44,282 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:26:44,282 INFO format.ContConfirmOutXsl(53) - Out AddApplyInXsl.load()!
+10:26:44,784 INFO format.RePrint(45) - Out RePrint.std2NoStd()!
+10:39:33,520 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:39:33,520 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:39:33,520 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:39:33,520 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:39:33,520 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:39:33,520 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:39:33,520 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:39:33,536 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:39:33,536 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:39:33,536 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+(2017-06-08 11:58:40,176) and length=9665 bytes!
+10:39:33,536 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:39:33,536 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:39:33,536 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+10:39:33,607 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:39:33,623 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:39:33,707 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:39:33,723 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:41:12,458 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:41:12,458 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:41:12,458 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:41:12,458 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:41:12,458 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:41:12,458 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:41:12,474 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+10:41:12,511 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:41:12,517 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+10:44:22,779 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+10:44:22,795 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+10:44:22,795 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+10:44:22,795 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+10:44:22,795 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+10:44:22,795 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+10:44:22,811 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+10:44:22,842 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+10:44:22,842 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:25:41,589 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:25:41,823 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:25:41,824 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:25:41,837 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:25:41,838 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:25:45,749 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:25:45,750 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：4.013s
+14:25:45,752 INFO test.NewABCTest(245) - 收到返回报文！
+14:25:46,270 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:25:46,271 INFO test.NewABCTest(255) - mBodyLen:928
+14:25:46,271 INFO test.NewABCTest(260) - 解密开始
+14:25:46,273 INFO test.NewABCTest(263) - 解密完成
+14:25:46,276 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:25:46,277 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：4.54s
+14:26:33,495 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:26:33,513 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:26:33,513 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:26:33,515 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:26:33,516 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:26:33,901 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:26:33,902 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.392s
+14:26:33,903 INFO test.NewABCTest(245) - 收到返回报文！
+14:26:34,143 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:26:34,143 INFO test.NewABCTest(255) - mBodyLen:928
+14:26:34,144 INFO test.NewABCTest(260) - 解密开始
+14:26:34,146 INFO test.NewABCTest(263) - 解密完成
+14:26:34,150 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:26:34,152 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：0.642s
+14:28:21,333 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:28:21,429 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:28:21,429 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:28:21,431 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:28:21,433 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:28:21,837 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:28:21,839 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.413s
+14:28:21,840 INFO test.NewABCTest(245) - 收到返回报文！
+14:28:22,324 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:28:22,324 INFO test.NewABCTest(255) - mBodyLen:928
+14:28:22,325 INFO test.NewABCTest(260) - 解密开始
+14:28:22,326 INFO test.NewABCTest(263) - 解密完成
+14:28:22,330 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:28:22,331 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：0.905s
+14:29:32,062 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:29:32,082 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:29:32,082 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:29:32,084 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:29:32,085 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:29:32,456 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:29:32,458 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.379s
+14:29:32,459 INFO test.NewABCTest(245) - 收到返回报文！
+14:29:32,668 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:29:32,668 INFO test.NewABCTest(255) - mBodyLen:928
+14:29:32,669 INFO test.NewABCTest(260) - 解密开始
+14:29:32,670 INFO test.NewABCTest(263) - 解密完成
+14:29:32,674 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:29:32,674 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：0.595s
+14:29:46,237 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:29:46,255 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:29:46,255 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:29:46,257 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:29:46,258 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:29:46,629 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:29:46,631 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.379s
+14:29:46,633 INFO test.NewABCTest(245) - 收到返回报文！
+14:29:47,903 INFO test.NewABCTest(253) - package_head:X1.0000011841147    00000                                       000000000
+14:29:47,904 INFO test.NewABCTest(255) - mBodyLen:1184
+14:29:47,905 INFO test.NewABCTest(260) - 解密开始
+14:29:47,906 INFO test.NewABCTest(263) - 解密完成
+14:29:47,909 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:29:47,910 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：1.658s
+14:31:33,057 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:31:33,074 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:31:33,074 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:31:33,076 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:31:33,077 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:31:33,449 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:31:33,450 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.379s
+14:31:33,450 INFO test.NewABCTest(245) - 收到返回报文！
+14:31:33,621 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:31:33,622 INFO test.NewABCTest(255) - mBodyLen:928
+14:31:33,622 INFO test.NewABCTest(260) - 解密开始
+14:31:33,624 INFO test.NewABCTest(263) - 解密完成
+14:31:33,629 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:31:33,630 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：0.558s
+14:32:32,854 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:32:32,874 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:32:32,874 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:32:32,876 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:32:32,877 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:32:33,237 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:32:33,239 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.369s
+14:32:33,239 INFO test.NewABCTest(245) - 收到返回报文！
+14:32:33,444 INFO test.NewABCTest(253) - package_head:X1.0000009281147    00000                                       000000000
+14:32:33,445 INFO test.NewABCTest(255) - mBodyLen:928
+14:32:33,445 INFO test.NewABCTest(260) - 解密开始
+14:32:33,447 INFO test.NewABCTest(263) - 解密完成
+14:32:33,449 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:32:33,450 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：0.58s
+14:35:02,861 INFO test.NewABCTest(158) - Socket连接10.2.0.31:9002
+14:35:02,878 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:35:02,879 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:35:02,881 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:35:02,882 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:35:03,262 INFO test.NewABCTest(234) - 发送报文头！X1.0000012161147    00000                                       000000000
+14:35:03,264 INFO test.NewABCTest(239) - 客户端请求发送完毕！耗时：0.388s
+14:35:03,265 INFO test.NewABCTest(245) - 收到返回报文！
+14:35:04,405 INFO test.NewABCTest(253) - package_head:X1.0000011841147    00000                                       000000000
+14:35:04,406 INFO test.NewABCTest(255) - mBodyLen:1184
+14:35:04,406 INFO test.NewABCTest(260) - 解密开始
+14:35:04,408 INFO test.NewABCTest(263) - 解密完成
+14:35:04,411 INFO test.NewABCTest(276) - UTF-8 农行的报文: 
+14:35:04,411 INFO test.NewABCTest(280) - 客户端接收返回报文完毕！耗时：1.535s
+14:36:19,078 INFO test.NewABCTest(159) - Socket连接10.2.0.31:9002
+14:36:19,097 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:36:19,098 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:36:19,099 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:36:19,100 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:36:19,522 INFO test.NewABCTest(235) - 发送报文头！X1.0000008001147    00000                                       000000000
+14:36:19,523 INFO test.NewABCTest(240) - 客户端请求发送完毕！耗时：0.43s
+14:36:19,524 INFO test.NewABCTest(246) - 收到返回报文！
+14:36:20,221 INFO test.NewABCTest(254) - package_head:X1.0000033601147    00000                                       000000000
+14:36:20,222 INFO test.NewABCTest(256) - mBodyLen:3360
+14:36:20,222 INFO test.NewABCTest(261) - 解密开始
+14:36:20,226 INFO test.NewABCTest(264) - 解密完成
+14:36:20,232 INFO test.NewABCTest(277) - UTF-8 农行的报文: 
+14:36:20,233 INFO test.NewABCTest(281) - 客户端接收返回报文完毕！耗时：1.14s
+14:36:37,595 INFO test.NewABCTest(159) - Socket连接10.2.0.31:9002
+14:36:37,612 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:36:37,613 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:36:37,615 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:36:37,615 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:36:37,983 INFO test.NewABCTest(235) - 发送报文头！X1.0000008001147    00000                                       000000000
+14:36:37,984 INFO test.NewABCTest(240) - 客户端请求发送完毕！耗时：0.375s
+14:36:37,985 INFO test.NewABCTest(246) - 收到返回报文！
+14:36:38,328 INFO test.NewABCTest(254) - package_head:X1.0000033601147    00000                                       000000000
+14:36:38,328 INFO test.NewABCTest(256) - mBodyLen:3360
+14:36:38,329 INFO test.NewABCTest(261) - 解密开始
+14:36:38,333 INFO test.NewABCTest(264) - 解密完成
+14:36:38,339 INFO test.NewABCTest(277) - UTF-8 农行的报文: 
+14:36:38,341 INFO test.NewABCTest(281) - 客户端接收返回报文完毕！耗时：0.732s

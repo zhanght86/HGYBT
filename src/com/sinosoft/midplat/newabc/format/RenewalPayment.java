@@ -9,8 +9,8 @@ import com.sinosoft.midplat.format.XmlSimpFormat;
 
 public class RenewalPayment extends XmlSimpFormat {
 
-	@SuppressWarnings("unused")
 	private Element header=null;
+	private Element req=null;
 	
 	public RenewalPayment(Element pThisBusiConf) {
 		super(pThisBusiConf);
@@ -19,6 +19,7 @@ public class RenewalPayment extends XmlSimpFormat {
 	public Document noStd2Std(Document pNoStdXml) throws Exception{
 		cLogger.info("Into RenewalPayment.noStd2Std()...");
 		header=(Element)pNoStdXml.getRootElement().getChild("Header").clone();
+		req=(Element)pNoStdXml.getRootElement().getChild("App").getChild("Req").clone();
 		Document mStdXml=RenewalPaymentInXsl.newInstance().getCache().transform(pNoStdXml);
 		cLogger.info("Into RenewalPayment.noStd2Std()!");
 		return mStdXml;
@@ -46,6 +47,16 @@ public class RenewalPayment extends XmlSimpFormat {
 		mNoStdXml.getRootElement().getChild("Header").getChild("TransDate").setText(header.getChildText("TransDate"));
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
 		mNoStdXml.getRootElement().getChild("Header").getChild("CorpNo").setText(header.getChildText("CorpNo"));
+		
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("RiskCode").setText(req.getChildText("RiskCode"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("ProdCode").setText(req.getChildText("ProdCode"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("PolicyNo").setText(req.getChildText("PolicyNo"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("Appl").getChild("IDKind").setText(req.getChild("Appl").getChildText("IDKind"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("Appl").getChild("IDCode").setText(req.getChild("Appl").getChildText("IDCode"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("Appl").getChild("Name").setText(req.getChild("Appl").getChildText("Name"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("PayAcc").setText(req.getChildText("PayAcc"));
+		mNoStdXml.getRootElement().getChild("App").getChild("Ret").getChild("PayAmt").setText(req.getChildText("PayAmt"));
+		
 		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out RenewalPayment.std2NoStd()!");
 		return mNoStdXml;

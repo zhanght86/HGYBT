@@ -84,15 +84,12 @@ public class NewContBlc extends ServiceImpl
 
 		cLogger.info("Into NewContBlc.service()...");
 
-		try
-		{
+		try{
 			int fileNum = Integer.valueOf(pInXmlDoc.getRootElement().getChild("TX_BODY").getChild("COMMON").getChild("FILE_LIST_PACK").getChildTextTrim("FILE_NUM"));
-			if (fileNum < 1)
-			{
+			if (fileNum < 1){
 				throw new MidplatException("没有对账文件！");
 			}
-			try
-			{
+			try{
 				// 解密报文，并且获得标准报文
 				FileUtil fu = new FileUtil(pInXmlDoc);
 				cInXmlDoc = fu.fileSecurity();

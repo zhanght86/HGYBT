@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170603</TranDate>
+      <TranTime>153904</TranTime>
+      <TranCom>03</TranCom>
+      <NodeNo />
+      <TellerNo>sys</TellerNo>
+      <TranNo>1496475544315</TranNo>
+      <FuncFlag>20032</FuncFlag>
+      <BankCode>0104</BankCode>
+      <ServiceId>16</ServiceId>
+   </Head>
+   <Body>
+      <Count>5</Count>
+      <Prem />
+      <Detail>
+         <TranDate />
+         <ProposalPrtNo />
+         <ContNo>888010000001108</ContNo>
+         <AgentCom />
+         <Prem />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <TranDate />
+         <ProposalPrtNo />
+         <ContNo>888010000001114</ContNo>
+         <AgentCom />
+         <Prem />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <TranDate />
+         <ProposalPrtNo />
+         <ContNo>888010000001117</ContNo>
+         <AgentCom />
+         <Prem />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <TranDate />
+         <ProposalPrtNo />
+         <ContNo>888010000001115</ContNo>
+         <AgentCom />
+         <Prem />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <TranDate />
+         <ProposalPrtNo />
+         <ContNo>888010000001118</ContNo>
+         <AgentCom />
+         <Prem />
+         <TranNo />
+      </Detail>
+   </Body>
+</TranData>
+

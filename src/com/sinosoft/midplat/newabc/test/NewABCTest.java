@@ -45,23 +45,47 @@ public class NewABCTest {
 		 * 3013          保全申请
 		 * */
 		
-		String mFuncFlag = "1002";
+		String mFuncFlag = "";
+		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\sinosoft\\HG\\abc\\";
 		
-		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\1002in_noStd.xml";
+		//新单试算
+//		mFuncFlag = "1002";
+//		mInFilePath += "新单试算.xml";
+		
+		//新单核保-网银渠道
+//		mFuncFlag = "1002";
+//		mInFilePath += "新单核保-网银渠道.xml";
+		
+		//新单承保
+//		mFuncFlag = "1004";
+//		mInFilePath += "新单承保.xml";
+		
+		//新单撤单
+//		mFuncFlag = "1010";
+//		mInFilePath += "新单承保.xml";
+		
+		//取消交易
+//		mFuncFlag = "1009";
+//		mInFilePath += "取消交易.xml";
+		
+		//续期查询
+		mFuncFlag = "1007";
+		mInFilePath += "续期查询.xml";
+		
+		String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";
 		InputStream mIs = new FileInputStream(mInFilePath);
-		
 		String mABCB2IS=JdomUtil.toString(JdomUtil.build(mIs));
 		mABCB2IS=mABCB2IS.substring(mABCB2IS.indexOf("<ABCB2I>"));
 		byte[] mABCB2IB=mABCB2IS.getBytes();
-		
-		//cLogger.info(new String(IOTrans.toBytes(tInNoStdDoc)));
 		NewABCTest mTestUI = new NewABCTest(mIP, mPort);
 		Document mOutXmlDoc = mTestUI.sendRequest(mFuncFlag, mABCB2IB);
-		//cLogger.info(new String(mOutBytes,"UTF-8"));
+		System.out.println("实际返回报文为：");
 		JdomUtil.print(mOutXmlDoc);
-		OutputStream mFos = new FileOutputStream(ABCDocUtil.getOutNoStdPath(mFuncFlag));
+		OutputStream mFos = new FileOutputStream(mOutFilePath);
+		JdomUtil.output(mOutXmlDoc, mFos);
 		mFos.flush();
 		mFos.close();
+		System.out.println("成功结束！");
 	}
 	
 	public NewABCTest(String pIP, int pPort) {
@@ -79,63 +103,7 @@ public class NewABCTest {
 		long mOldTimeMillis = System.currentTimeMillis();
 		long mCurTimeMillis = mOldTimeMillis;
 		
-		
-		
-//		byte[] mHeadBytes=new byte[73];
-//		
-//		//报文类型
-//		byte[] C1Type="X".getBytes();
-//		System.arraycopy(C1Type, 0, mHeadBytes, 0, C1Type.length);
-//		//版本
-//		byte[] C3="1.0".getBytes();
-//		System.arraycopy(C3, 0, mHeadBytes, 1, C3.length);
-//		//数据包长度
-//		byte[] mInClearBodyBytes = IOTrans.toBytes(pInputStream);  
-//		String mBody=AES.Encrypt(AES.rpadEncrypt(new String(mInClearBodyBytes),' '));
-//		byte[] mInLengthBytes = mBody.getBytes();
-//		cLogger.info("报文长度="+mInLengthBytes.length);
-//		String mInCipherBodyLengthStr = String.valueOf(mInLengthBytes.length);
-//		byte[] mInLengthBytess = mInCipherBodyLengthStr.getBytes();
-//		byte[] dateLenth=new byte[8];
-//		System.arraycopy(mInLengthBytess, 0, dateLenth, 0, mInLengthBytess.length);                          
-//		System.arraycopy(dateLenth, 0, mHeadBytes, 4, dateLenth.length);
-//		
-//		cLogger.info("发送报文头23423423！==="+new String(dateLenth,"UTF-8")+"=====");
-//		//公司代码
-//		byte[] C1TypeT="4518    ".getBytes();
-//		System.arraycopy(C1TypeT, 0, mHeadBytes, 12, C1TypeT.length);
-//		//加密标示
-//		byte[] C1TypeK="1".getBytes();
-//		System.arraycopy(C1TypeK, 0, mHeadBytes, 20, C1TypeK.length);
-//		//加密算法
-//		byte[] C1TypeM=" ".getBytes();
-//		System.arraycopy(C1TypeM, 0, mHeadBytes, 21, C1TypeM.length);
-//		//数据压缩标志
-//		byte[] C1TypeH=" ".getBytes();
-//		System.arraycopy(C1TypeH, 0, mHeadBytes, 22, C1TypeH.length);
-//		//数据压缩算法
-//		byte[] C1TypeY=" ".getBytes();
-//		System.arraycopy(C1TypeY, 0, mHeadBytes, 23, C1TypeY.length);
-//		//摘要算法
-//		byte[] C1TypeZ=" ".getBytes();
-//		System.arraycopy(C1TypeZ, 0, mHeadBytes, 23, C1TypeZ.length);
-//		//摘要
-//		StringBuffer sp=new StringBuffer();;
-//		for(int i=0;i<=39;i++){
-//			sp.append(" ");
-//		}
-//		
-//		byte[] C2TypeZ=sp.toString().getBytes();
-//		System.out.println(C2TypeZ.length);
-//		System.arraycopy(C2TypeZ, 0, mHeadBytes, 24, C2TypeZ.length);
-//		
-//		//预留字段00000000
-//		byte[] temp="00000000".getBytes();
-//		System.arraycopy(temp, 0, mHeadBytes, 65, temp.length);
-//		for(int i=0;i<mHeadBytes.length;i++){
-//			System.out.print("="+mHeadBytes[i]+"=");
-//		}
-		String cInsuID="3103";   //中韩人寿保险公司代码
+		String cInsuID="1147";   //华贵保险公司代码
 		String endxmlStr=AES.Encrypt(AES.rpadEncrypt(new String(doc),' '));
 		
 
@@ -180,14 +148,6 @@ public class NewABCTest {
 		/**********解密完成****************/
 		
 		System.out.println("解密后的报文:============"+axx);
-//		StringBuffer abc_xml = new StringBuffer();
-//		abc_xml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-//		abc_xml.append("\n");
-//		abc_xml.append(axx.getBytes());
-//		System.out.println("返回的报文:"+abc_xml.toString());
-//		byte[] all_xml = abc_xml.toString().getBytes("UTF-8");//#
-//		
-//		Document mXmlDoc_bank = JdomUtil.build(all_xml,"UTF-8"); //#
 		Document mXmlDoc_bank = JdomUtil.build(axx.toString());
 		cLogger.info("UTF-8 农行的报文: ");
 		JdomUtil.print(mXmlDoc_bank);

@@ -4,14 +4,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.jsp.tagext.TryCatchFinally;
 
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
 import com.sinosoft.lis.db.ContDB;
-import com.sinosoft.lis.vschema.ContSet;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
@@ -41,14 +39,8 @@ public class NewContInput extends ServiceImpl {
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
 		String mApplyNo = mBodyEle.getChildText("ApplyNo");
-		
 		try {
-//			System.out.println("--------------------------------------------------------------------------------------------------------");
-//			JdomUtil.print(cInXmlDoc);
-			
-			
 			Calendar tCurCalendar = Calendar.getInstance();
-			//判断是否重发20141010
 			cLogger.info("判断是否重发，1为重发，重发Body增加ResendFlag节点");
 			String tResendSql = new StringBuilder("select count(1) from TranLog where RCode=").append(CodeDef.RCode_OK)
 			.append(" and ProposalPrtNo='").append(mProposalPrtNo).append('\'')
@@ -58,7 +50,6 @@ public class NewContInput extends ServiceImpl {
 			if ("1".equals(new ExeSQL().getOneValue(tResendSql))) {
 				Element tResendFlag=new ElementLis("ResendFlag", "1",mBodyEle);
 				cLogger.info("重发标志："+tResendFlag.getText());
-				
 				try {
 					String tDltTranlogSql= new StringBuilder("delete from tranlog where proposalprtno='")
 					.append(mProposalPrtNo).append('\'')
@@ -73,9 +64,7 @@ public class NewContInput extends ServiceImpl {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
 			}
-			
 			cTranLogDB = insertTranLog(cInXmlDoc);
 			cTranLogDB.setBak3(mApplyNo);
 			Element tRiskCode  = (Element) XPath.selectSingleNode(cInXmlDoc.getRootElement(), "/TranData/Body/Risk/RiskCode");
@@ -117,13 +106,6 @@ public class NewContInput extends ServiceImpl {
 						if (!count.equals("0")) {
 							throw new MidplatException("申请试算顺序号已使用，请更换！");
 						}
-
-			
-//			cLogger.info("Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理");	
-			//add by zhj 网点与权限 添加代理
-//			cInXmlDoc = authority(cInXmlDoc); 	
-			//add by zhj 网点与权限 添加代理end 
-			
 			//校验系统中是否有相同保单正在处理，尚未返回 
 			int tLockTime = 300;	//默认超时设置为5分钟(300s)；如果未配置锁定时间，则使用该值。
 			try {
@@ -140,25 +122,21 @@ public class NewContInput extends ServiceImpl {
 			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
 				throw new MidplatException("此保单数据正在处理中，请稍候！");
 			}
-			
 			JdomUtil.print(cInXmlDoc);
-			
 			new RuleParser().check(cInXmlDoc);
-			
-			//lilu20141202 方若成要求，判断红利领取方式 农行有增额交清，核心没有，要求选增额交清的时候报错
 			String getBonus=cInXmlDoc.getRootElement().getChild("Body").getChild("Risk").getChildText("BonusGetMode");
 			if(getBonus.equals("5")){
 				throw new MidplatException("无此红利领取方式，请重新选择！");
 			}
-			//lilu20141203 方若成要求，判断期缴产品，要校验续期缴费帐号不能为空
-			String payIntv=cInXmlDoc.getRootElement().getChild("Body").getChild("Risk").getChildText("PayIntv");
+			//判断期缴产品，要校验续期缴费帐号不能为空
+			/*String payIntv=cInXmlDoc.getRootElement().getChild("Body").getChild("Risk").getChildText("PayIntv");
 			String payAccNo=cInXmlDoc.getRootElement().getChild("Body").getChildText("AccNo");
 			String paySaleChannel=cInXmlDoc.getRootElement().getChild("Body").getChildText("SaleChannel");
 			if(!payIntv.equals("0") && !paySaleChannel.equals("8")){//非趸交和非自助终端
 				if(payAccNo.equals("")||payAccNo==null){
 					throw new MidplatException("期缴产品，续期缴费帐号不能为空！");
 				}
-			}
+			}*/
 			
 
 			if("211901".equals(tRiskCode.getTextTrim())||"211902".equals(tRiskCode.getTextTrim())){//农行的借贷险用这种更细化的校验方式
@@ -174,11 +152,7 @@ public class NewContInput extends ServiceImpl {
 					throw new MidplatException("同一受益顺序受益份额之和不等于1！请确认");
 				}
 			}
-
-			
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContInput).call(cInXmlDoc);
-			System.out.println("-----------------------------------------------");
-			cLogger.info("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 			JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
@@ -186,10 +160,8 @@ public class NewContInput extends ServiceImpl {
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			
 			//核心不存保单印刷号，用请求报文对应值覆盖
 //			tOutBodyEle.getChild(ProposalPrtNo).setText(mContPrtNo);
-			
 			//核心可能将一个产品的两个险种都定义为主险，而银行则认为一主一附，以银行报文为准，覆盖核心记录
 			String tMainRiskCode = mBodyEle.getChild(Risk).getChildText(MainRiskCode);
 			List<Element> tRiskList = tOutBodyEle.getChildren(Risk);
@@ -202,7 +174,6 @@ public class NewContInput extends ServiceImpl {
 					tRiskList.add(0, tRiskList.remove(i));	//将主险调整到最前面
 				}
 			}
-			
 			//超时自动删除数据
 			long tUseTime = System.currentTimeMillis() - mStartMillis;
 			int tTimeOut = 60;	//默认超时设置为1分钟；如果未配置超时时间，则使用该值。
@@ -354,6 +325,7 @@ public class NewContInput extends ServiceImpl {
 	 * create by zhj 2010 11 05
 	 * 网点 权限 添加校验方法
 	 */
+	@SuppressWarnings("unused")
 	private Document authority(Document mInXmlDoc) throws MidplatException{
 		
   

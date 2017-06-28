@@ -81,18 +81,13 @@ public class ContSecureQuery extends ServiceImpl{
 			cLogger.info("---------------------------------------------");
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
-			Element tOutBodyEle = tOutRootEle.getChild(Body);  
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
 			
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		

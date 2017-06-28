@@ -45,16 +45,7 @@ public class SecureStatusQuery extends XmlSimpFormat {
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
 		
-//		String mInFilePath2 = "G:/1002891_501_3014_in.xml";
-//		InputStream mIs2 = new FileInputStream(mInFilePath2);
-//		Document mInXmlDoc = JdomUtil.build(mIs2);
-//		header=(Element)mInXmlDoc.getRootElement().getChild("Header").clone();
-//		riskcode=mInXmlDoc.getRootElement().getChild("App").getChild("Req").getChildText("RiskCode");
-//		busitype=mInXmlDoc.getRootElement().getChild("App").getChild("Req").getChildText("BusinType");
-//		mIs2.close();
-		
-		Document mNoStdXml = 
-			SecureStatusQueryOutXsl.newInstance().getCache().transform(pStdXml);
+		Document mNoStdXml = SecureStatusQueryOutXsl.newInstance().getCache().transform(pStdXml);
 		Date date=new Date();
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
 		mNoStdXml.getRootElement().getChild("Header").getChild("CorpNo").setText(header.getChildText("CorpNo"));
@@ -80,32 +71,29 @@ public class SecureStatusQuery extends XmlSimpFormat {
 		cLogger.info(RetCode.getText());
 		cLogger.info(RetMsg.getText());
 		
-		
 		cLogger.info("Out SecureStatusQuery.std2NoStd()!");
 		return mNoStdXml;
 	}
 	
-//	public static void main(String[] args) throws Exception {
-//		System.out.println("程序开始…");
-////		String mInFilePath = "C:/Users/Administrator/Desktop/报文/新农行保全申请状态查询请求.xml";
-////		String mOutFilePath = "C:/Users/Administrator/Desktop/报文/新农行保全申请状态查询返回.xml";
+	public static void main(String[] args) throws Exception {
+		System.out.println("程序开始…");
+
+		String mInFilePath = "G:/1002891_503_46_outSvc.xml";
+		String mOutFilePath = "G:/1.xml";
+
+		InputStream mIs = new FileInputStream(mInFilePath);
+		Document mInXmlDoc = JdomUtil.build(mIs);
+		mIs.close();
+
+		Document mOutXmlDoc = new SecureStatusQuery(null).std2NoStd(mInXmlDoc);
+//		Document mOutXmlDoc = new SecureStatusQuery(null).noStd2Std(mInXmlDoc);
+
+		JdomUtil.print(mOutXmlDoc);
 //
-//		String mInFilePath = "G:/1002891_503_46_outSvc.xml";
-//		String mOutFilePath = "G:/1.xml";
-//
-//		InputStream mIs = new FileInputStream(mInFilePath);
-//		Document mInXmlDoc = JdomUtil.build(mIs);
-//		mIs.close();
-//
-//		Document mOutXmlDoc = new SecureStatusQuery(null).std2NoStd(mInXmlDoc);
-////		Document mOutXmlDoc = new SecureStatusQuery(null).noStd2Std(mInXmlDoc);
-//
-//		JdomUtil.print(mOutXmlDoc);
-////
-//		OutputStream mOs = new FileOutputStream(mOutFilePath);
-//		JdomUtil.output(mOutXmlDoc, mOs);
-//		mOs.flush();
-//		mOs.close();
-//		System.out.println("成功结束！");
-//	}
+		OutputStream mOs = new FileOutputStream(mOutFilePath);
+		JdomUtil.output(mOutXmlDoc, mOs);
+		mOs.flush();
+		mOs.close();
+		System.out.println("成功结束！");
+	}
 }

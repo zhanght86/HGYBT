@@ -21,13 +21,7 @@
    </Head>
    <Body>
    	  <!-- 销售渠道 -->
-      <SaleChannel>
-      <xsl:call-template name="tran_Channel">
-        <xsl:with-param name="Channel">
-		  <xsl:value-of select="Main/Channel"/>
-	    </xsl:with-param>
-	  </xsl:call-template>
-      </SaleChannel>
+      <SaleChannel><xsl:apply-templates select="Main/Channel"/></SaleChannel>
       <!-- 投保单号 -->
       <ProposalPrtNo>
         <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(Main/ApplyNo)"/>
@@ -40,10 +34,10 @@
       <GetPolMode>1</GetPolMode>
       <!-- 健康告知 -->
       <HealthNotice><xsl:value-of select="Risks/Appendix/HealthFlag"/></HealthNotice>
-      <!-- 银行账户 -->
-      <AccNo><xsl:value-of select="Risks/Appendix/PayAcc"/></AccNo>
       <!-- 账户姓名 -->
       <AccName><xsl:value-of select="Risks/Appendix/PayAccName"/></AccName>
+      <!-- 银行账户 -->
+      <AccNo><xsl:value-of select="Risks/Appendix/PayAcc"/></AccNo>
       <!-- 投保人信息 -->
       <Appnt>
       	 <!-- 投保人姓名 -->
@@ -69,7 +63,7 @@
 		 <!-- 投保人证件号码 -->
          <IDNo><xsl:value-of select="Appnt/IDNo"/></IDNo>
          <!-- 投保人职业代码(需转换)-->
-         <JobCode>3010101</JobCode>
+         <JobCode><xsl:value-of select="Appnt/JobCode"/></JobCode>
          <!-- 投保人国籍 -->
          <Nationality>
          	<xsl:call-template name="ApplCountry">
@@ -78,9 +72,9 @@
 				</xsl:with-param>
 			</xsl:call-template>
          </Nationality>
-         <!-- 投保人身高 -->
+         <!-- 投保人身高(cm)  空值 -->
          <Stature></Stature>
-         <!-- 投保人体重 -->
+         <!-- 投保人体重(kg) -->
          <Weight></Weight>
          <!-- 婚否(N/Y) 空值 -->
          <MaritalStatus></MaritalStatus>
@@ -92,10 +86,10 @@
          <Address><xsl:value-of select="Appnt/HomeAddr"/></Address>
          <!-- 投保人邮编 -->
          <ZipCode><xsl:value-of select="Appnt/HomeZipCode"/></ZipCode>
-         <!-- 投保人固定电话 -->
-         <Phone><xsl:value-of select="Appnt/HomePhone"/></Phone>
          <!-- 投保人移动电话 -->
          <Mobile><xsl:value-of select="Appnt/MobilePhone"/></Mobile>
+         <!-- 投保人固定电话 -->
+         <Phone><xsl:value-of select="Appnt/HomePhone"/></Phone>
          <!-- 投保人电子邮箱 -->
          <Email><xsl:value-of select="Appnt/Email"/></Email>
          <!-- 投保人与被保人关系 -->
@@ -106,10 +100,6 @@
 			 </xsl:with-param>
 		   </xsl:call-template>
          </RelaToInsured>
-         <!-- 投保人单位地址 -->
-         <WorkAddress></WorkAddress>
-         <!-- 投保人单位邮编 -->
-         <WorkZipCode></WorkZipCode>
       </Appnt>
       <!-- 被保人信息 -->
       <Insured>
@@ -136,7 +126,7 @@
          <!-- 被保人证件号码 -->
          <IDNo><xsl:value-of select="Insured/IDNo"/></IDNo>
          <!-- 被保人职业代码(需转换) -->
-         <JobCode>3010101</JobCode>
+         <JobCode><xsl:value-of select="Insured/JobCode"/></JobCode>
          <!-- 被保人国籍(需转换) -->
          <Nationality>
          	<xsl:call-template name="ApplCountry">
@@ -145,9 +135,9 @@
 				</xsl:with-param>
 			</xsl:call-template>
 		</Nationality>
-         <!-- 被保人身高(cm) -->
+         <!-- 被保人身高(cm)  空值 -->
          <Stature></Stature>
-         <!--被保人体重(g) -->
+         <!--被保人体重(g)  空值 -->
          <Weight></Weight>
          <!-- 婚否(N/Y) 空值- -->
          <MaritalStatus></MaritalStatus>
@@ -159,10 +149,10 @@
          <Address><xsl:value-of select="Insured/HomeAddr"/></Address>
          <!-- 被保人邮编 -->
          <ZipCode><xsl:value-of select="Insured/HomeZipCode"/></ZipCode>
-         <!-- 被保人固定电话 -->
-         <Phone><xsl:value-of select="Insured/HomePhone"/></Phone>
          <!-- 被保人移动电话 -->
          <Mobile><xsl:value-of select="Insured/MobilePhone"/></Mobile>
+         <!-- 被保人固定电话 -->
+         <Phone><xsl:value-of select="Insured/HomePhone"/></Phone>
          <!-- 被保人邮箱 -->
          <Email><xsl:value-of select="Insured/Email"/></Email>
       </Insured>
@@ -209,7 +199,7 @@
 			 </xsl:with-param>
 		   </xsl:call-template>
          </RelaToInsured>
-         <!-- 受益比例 -->
+         <!-- 受益比例(整数，百分比) -->
          <Lot><xsl:value-of select="Percent"/></Lot>
          <!--身份证证件有效期yyyyMMdd-  -->
          <IdExpDate><xsl:value-of select="IDEndDate"/></IdExpDate>
@@ -225,9 +215,9 @@
          <RiskCode><xsl:value-of select="Code"/></RiskCode>
          <!-- 主险险种代码 -->
          <MainRiskCode><xsl:value-of select="$MainCode"/></MainRiskCode>
-         <!-- 保额（分） -->
+         <!-- 保额(分) -->
          <Amnt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(InsuAmount)"/></Amnt>
-         <!-- 保费（分） -->
+         <!-- 保险费(分) -->
          <Prem><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.yuanToFen(Premium)"/></Prem>
          <!-- 投保份数 -->
          <Mult><xsl:value-of select="Unit"/></Mult>
@@ -252,11 +242,10 @@
          <!-- 保险年期年龄 -->
          <InsuYear><xsl:value-of select="InsuYear"/></InsuYear>
          <xsl:if test="../Appendix/PayIntv='01'"><!-- 趸交1000Y给核心 -->				    
-		   <PayEndYear>1000</PayEndYear><!-- 缴费年期年龄 -->
 		   <PayEndYearFlag>Y</PayEndYearFlag><!-- 缴费年期年龄标志 -->
+		   <PayEndYear>1000</PayEndYear><!-- 缴费年期年龄 -->
 		 </xsl:if>
 		 <xsl:if test="../Appendix/PayIntv!='01'">		    
-		   <PayEndYear><xsl:value-of select="PayEndYear"/></PayEndYear>
            <PayEndYearFlag>
 	           <xsl:call-template name="tran_PayEndYearFlag">
 			     <xsl:with-param name="PayEndYearFlag">
@@ -264,6 +253,7 @@
 		   		 </xsl:with-param>
 			   </xsl:call-template>
            </PayEndYearFlag>
+		   <PayEndYear><xsl:value-of select="PayEndYear"/></PayEndYear>
 		 </xsl:if>
 		 <!-- 红利领取方式 -->
 		 <BonusGetMode>
@@ -287,7 +277,7 @@
 		 <GetYear><xsl:value-of select="../Appendix/GetStartAge"/></GetYear>
 		 <!-- 领取年期-->
 		 <GetTerms><xsl:value-of select="../Appendix/GetYear"/></GetTerms>
-		 <!--领取方式 传空  -->
+		 <!-- 领取方式 传空  -->
 		 <GetIntv />
 		 <!-- 领取银行编码 传空 -->
 		 <GetBankCode />
@@ -304,14 +294,18 @@
 </xsl:template>
 
 <!--销售渠道-->
-<xsl:template name="tran_Channel">
-  <xsl:param name="Channel"></xsl:param>
-  <xsl:choose>
-  <xsl:when test="$Channel = '1'">0</xsl:when><!--柜面-->
-  <xsl:when test="$Channel = '2'">07</xsl:when><!--网银 -->
-   <xsl:when test="$Channel = '4'">06</xsl:when><!--自助终端 -->
-  <xsl:otherwise></xsl:otherwise>  
-  </xsl:choose>
+<xsl:template name="tran_Channel" match="Channel">
+  	<xsl:choose>
+  	   <xsl:when test=".= '0'"></xsl:when><!-- 其他 -->
+	   <xsl:when test=".= '1'">0</xsl:when><!--柜面-->
+	   <xsl:when test=".= '2'">1</xsl:when><!--网银 -->
+	   <xsl:when test=".= '3'">2</xsl:when><!-- 手机银行 -->
+	   <xsl:when test=".= '4'">8</xsl:when><!--自助终端 -->
+	   <xsl:when test=".= '5'"></xsl:when><!-- 智能柜台 -->
+	   <xsl:when test=".= '6'"></xsl:when><!-- 呼叫中心 -->
+	   <xsl:when test=".= '7'"></xsl:when><!-- 中银开放平台 -->
+	   <xsl:otherwise>--</xsl:otherwise><!-- 其他 -->
+  	</xsl:choose>
 </xsl:template>
 
 <!-- 国籍 -->

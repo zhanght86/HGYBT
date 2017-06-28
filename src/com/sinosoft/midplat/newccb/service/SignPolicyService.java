@@ -1,10 +1,6 @@
 package com.sinosoft.midplat.newccb.service;
-
-
-
 import org.jdom.Document;
 import org.jdom.Element;
-
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.AblifeCodeDef;
@@ -24,22 +20,13 @@ public class SignPolicyService extends ServiceImpl {
 	public SignPolicyService(Element pThisBusiConf) {
 		super(pThisBusiConf);
 	}
-	
-	@SuppressWarnings("unchecked")
 	public Document service(Document pInXmlDoc) {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into SignPolicyService.service()...");
 		cInXmlDoc = pInXmlDoc;
-		
 		try {
-			
-			
-			
 			cTranLogDB = insertTranLog(cInXmlDoc);
-			
-			
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_SignPolicyFormat).call(cInXmlDoc);
-
 			cLogger.info("发送核心获取申请登记台账报文完成 ");
 			JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
@@ -47,13 +34,10 @@ public class SignPolicyService extends ServiceImpl {
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
-		
 		cLogger.info("插入日志："+cTranLogDB);
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
 			cLogger.info("插入日志成功："+cTranLogDB);
@@ -74,6 +58,7 @@ public class SignPolicyService extends ServiceImpl {
 	}
 	
 	
+	@SuppressWarnings("unused")
 	private void rollback() {
 		cLogger.debug("Into SignPolicyService.rollback()...");
 		
@@ -108,6 +93,7 @@ public class SignPolicyService extends ServiceImpl {
 	 * create by zhj 2010 11 05
 	 * 网点 权限 添加校验方法
 	 */
+	@SuppressWarnings("unused")
 	private Document authority(Document mInXmlDoc) throws MidplatException{
 		
   

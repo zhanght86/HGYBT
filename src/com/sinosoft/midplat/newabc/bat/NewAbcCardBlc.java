@@ -1,57 +1,49 @@
 package com.sinosoft.midplat.newabc.bat;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.TimerTask;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jdom.Element;
-
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.common.AblifeCodeDef;
-import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
+import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.NoFactory;
 import com.sinosoft.midplat.common.XmlTag;
 import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.midplat.net.CallWebsvcAtomSvc;
 import com.sinosoft.midplat.newabc.NewAbcConf;
 import com.sinosoft.utility.ExeSQL;
+import com.sinosoft.utility.SSRS;
 
 public class NewAbcCardBlc extends TimerTask implements XmlTag {
 
 	protected final Logger cLogger = Logger.getLogger(getClass());
 	
+	protected String cResultMsg;
 	protected static Element cConfigEle;
 	private static String cCurDate = "";
-	@SuppressWarnings("unused")
-	private String mFileData = "";
-	 private TranLogDB cTranLogDB;
+	private TranLogDB cTranLogDB;
 	private Document cOutXmlDoc;
+	
 	public void run() {
+		Thread.currentThread().setName(String.valueOf(NoFactory.nextTranLogNo()));
 		cLogger.info("Into NewAbcCardBlc.run()...");
 		try {
+			cResultMsg = null;
 			cTranLogDB = insertTranLog();
-			
-			String tSqlStr = new StringBuilder("select 1 from TranLog where RCode=").append(CodeDef.RCode_OK).append(" and TranDate=").append(cTranLogDB.getTranDate()).append(" and FuncFlag=").append(cTranLogDB.getFuncFlag()).append(" and TranCom=").append(cTranLogDB.getTranCom()).append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'').toString();
-			ExeSQL tExeSQL = new ExeSQL();
-			if ("1".equals(tExeSQL.getOneValue(tSqlStr)))
-			{
-				throw new MidplatException("已成功做过单证对账，不能重复操作！");
-			}
-			else if (tExeSQL.mErrors.needDealError())
-			{
-				throw new MidplatException("查询历史对账信息异常！");
-			}
-			
 			cConfigEle = BatUtils.getConfigEle("2000"); // 得到bat.xml文件中的对应节点.
-
 			if ("".equals(cCurDate)) {
 				cCurDate = new SimpleDateFormat("yyyyMMdd").format(new Date()).replace("-","");
 			}
@@ -64,7 +56,7 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 			// 处理对账
 			cLogger.info("处理新农行单证对账开始...");
 			String myFilePath = cConfigEle.getChildTextTrim("FilePath")+mFIleName;
-//			String myFilePath = "C:\\Users\\chenjinwei\\Desktop\\POLICY1132.20161130";
+//			String myFilePath = "C:\\Users\\PengYF\\Desktop\\sinosoft\\POLICY1147.20170607";
 			cLogger.info(myFilePath);
 			// 得到请求标准报文
 			Document cInXmlDoc = parse(myFilePath);
@@ -76,8 +68,15 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
         	cTranLogDB.setModifyDate(DateUtil.getCur8Date());
         	cTranLogDB.setModifyTime(DateUtil.getCur6Time());
          	cTranLogDB.update();
-			cLogger.info("处理新农行单证对账结束!");
+         	
+	        // 每月1日备份上月的对账文件
+			if ("01".equals(DateUtil.getDateStr(new Date(), "dd"))){
+				bakFiles(cConfigEle.getChildTextTrim("FilePath"));
+			}
+         	
+         	cResultMsg = reMsg;
 		} catch (Exception e) {
+			cResultMsg = e.toString();
 			cLogger.error(cConfigEle.getChildTextTrim("name")+ "  处理异常..."+e.getMessage());
 			e.printStackTrace();
 		    cTranLogDB.setRCode("1");
@@ -88,9 +87,9 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		}finally {
 			cCurDate = "";
 		}
+		cLogger.info("处理新农行单证对账结束!");
 		cLogger.info("Out NewAbcCardBlc.run()!");
 	}
-	
 	protected TranLogDB insertTranLog() throws MidplatException {
 	    this.cLogger.debug("Into NewAbcCardBlc.insertTranLog()...");
 	    TranLogDB mTranLogDB = new TranLogDB();
@@ -125,24 +124,21 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		// 组织根节点以及Head节点内容
 		Element mTranData = new Element("TranData");
 		String tBalanceFlag = "0";
-		Date cTranDate = new Date();
 		Element mTranDate = new Element(TranDate);
-		mTranDate.setText(DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		String mCurrDate = DateUtil.getCurDate("yyyyMMdd");
-		cLogger.info(" 对账日期为..." + DateUtil.getDateStr(cTranDate, "yyyyMMdd"));
-		cLogger.info(" 当前日期为..." + mCurrDate);
+		mTranDate.setText(cCurDate);
+		String cTranDate = DateUtil.getCurDate("yyyyMMdd");
+		cLogger.info(" 对账日期为..." + cCurDate);
+		cLogger.info(" 当前日期为..." + cTranDate);
 
-		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0 modify by liuq 2010-11-11
-		if (!DateUtil.getDateStr(cTranDate, "yyyyMMdd").equals(mCurrDate))
-		{
+		// 若手工对账，则tBalanceFlag标志置为1 ，日终对账置为0
+		if (!cCurDate.equals(cTranDate)){
 			tBalanceFlag = "1";
 		}
-
 		Element mTranTime = new Element(TranTime);
-		mTranTime.setText(DateUtil.getDateStr(cTranDate, "HHmmss"));
+		mTranTime.setText(DateUtil.getDateStr(new Date(), "HHmmss"));
 
 		Element mTranCom = new Element(TranCom);
-		mTranCom.setText(cConfigEle.getChildText("tranCom"));
+		mTranCom.setText(cConfigEle.getChildText("com"));
 		
 		Element mZoneNo = new Element(ZoneNo);
 		mZoneNo.setText(cConfigEle.getChildText("zone"));
@@ -176,7 +172,6 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		mTranData.addContent(mHead);
 		// ^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_^_
 		
-		// ExeSQL exe = new ExeSQL();
 		if (null == mCharset || "".equals(mCharset)) {
 			mCharset = "GBK";
 		}
@@ -185,97 +180,75 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		BufferedReader mBufReader = new BufferedReader(new InputStreamReader(pBatIs, mCharset));
 		try{
 			/*
-			 * 文件第一行：（汇总信息） 格式：保险公司代码|总记录数|总金额|成功总记录数|成功总金额 文件其他内容：（明细记录）
-			 * 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|交易状态
+			 * 处理逻辑：柜面渠道，出单成功的单证对账；当日撤单数据单证对账；冲正交易不处理单证对账
+			 * （汇总信息）： 保险公司代码|总记录数|总金额|成功总记录数|成功总金额 
+			 * （明细记录）： 交易日期|银行交易流水号|银行省市代码|网点代码|保单号|交易金额|交易类型|交易状态
 			 */
+			@SuppressWarnings("unused")
 			String[] mSubMsgs = mBufReader.readLine().split("\\|", -1);
 			// 把成功的记录独取出来发给核心
 			Element mCountEle = new Element(Count);
-			mCountEle.setText(mSubMsgs[3].trim());
 			Element mBodyEle = new Element(Body);
-			mBodyEle.addContent(mCountEle);
-	
-			for (String tLineMsg; null != (tLineMsg = mBufReader.readLine());)
-			{
-	
+			int count=0;
+			for (String tLineMsg; null != (tLineMsg = mBufReader.readLine());){
 				// 空行，直接跳过
 				tLineMsg = tLineMsg.trim();
-				if ("".equals(tLineMsg))
-				{
+				if ("".equals(tLineMsg)){
 					cLogger.warn("空行，直接跳过，继续下一条！");
 					continue;
 				}
-	
 				String[] tSubMsgs = tLineMsg.split("\\|", -1);
-	
-				if (!"01".equals(tSubMsgs[6]))
-				{
+				if (!"01".equals(tSubMsgs[6])){
 					cLogger.warn("非承保保单，直接跳过，继续下一条！");
 					continue;
 				}
-				if (!("01".equals(tSubMsgs[7])))
-				{
-					cLogger.warn("承保保单（冲正或撤单的单子），直接跳过，继续下一条！");
+				String tSqlStr = new StringBuffer("select bak5 from cont where contNo='")
+					.append(tSubMsgs[4]).append('\'').append(" and tranCom=").append(05)
+					.append(" and state in(").append(AblifeCodeDef.ContState_Cancel).append(",")
+					.append(AblifeCodeDef.ContState_Sign).append(")").toString();
+				cLogger.info(tSqlStr);
+				SSRS ssrs = new ExeSQL().execSQL(tSqlStr);
+				//判断是否是当日撤单数据，是：单证对账；否：不对账
+				if(ssrs.getMaxRow()>0){
+					//非柜面渠道跳过
+					if(!ssrs.GetText(1, 1).equals("0")){
+						cLogger.warn("电子渠道数据，直接跳过，继续下一条！");
+						continue;
+					}else{
+						cLogger.info("柜面渠道数据...");
+					}
+				}else{
+					cLogger.warn("非当日撤单or非承保数据，直接跳过，继续下一条！");
 					continue;
 				}
-	
-				/*
-				 * 农行的实时的地区码是4位的（银行省市代码+2位地区码），对账的地区码是2位的，所以对账的地区码还要拼接省市银行代码部分
-				 * 
-				 * 联调的时候和农行的人员确认的，20130403
-				 */
-				
-				//单证关联号(保单号、保全号等)
+				//保单号
 				Element tContNoEle = new Element(ContNo);
 				tContNoEle.setText(tSubMsgs[4]);
-				
-				// 获取保单印刷号
-				String tContPrtNoSql = "select otherno from tranlog where funcflag='1004' and contno='" + tContNoEle.getText() + "' and trancom='05' and rcode='0' ";
+				// 从日志表中查询保单印刷号
+				String tContPrtNoSql = new StringBuffer("select otherno from tranlog where funcflag=")
+					.append(1004).append(" and contno='").append(tContNoEle.getText()).append('\'')
+					.append(" and trancom=").append(05).append(" and rcode=").append(0).toString();
 				this.cLogger.info("保单印刷号sql:" + tContPrtNoSql);
 				String tContPrtNo = new ExeSQL().getOneValue(tContPrtNoSql);
 				//如果查询单证印刷号为空，则抛出异常
-				if(StringUtils.isEmpty(tContPrtNo))
-				{
+				if(StringUtils.isEmpty(tContPrtNo)){
 					throw new MidplatException("单证对账失败：保单" + tContNoEle.getText() + "的单证号查询失败");
 				}
-				
 				//单证类型
 				Element tCardTypeEle = new Element("CardType");
-				if (!"".equals(tContPrtNo) && tContPrtNo != null)
-				{
+				if (!"".equals(tContPrtNo) && tContPrtNo != null){
 					tCardTypeEle.setText(tContPrtNo.substring(0, 5));
 				}
-				
-				//单证号 保单印刷号
+				//保单印刷号
 				Element tCardNoEle = new Element(CardNo);
 				tCardNoEle.setText(tContPrtNo);
-							
-				//单证状态
+				//核心单证状态：4：核销；6：使用作废；9：停止作废
 				Element tCardStateEle = new Element("CardState");
-				tCardStateEle.setText("6");
-				
-				//机构[非必须，有些银行传] 
-				String nodeNo = null;
-				if (tSubMsgs[2] != null && tSubMsgs[3] != null)
-				{
-					nodeNo = tSubMsgs[2].trim() + tSubMsgs[3].trim();
-				}
+				tCardStateEle.setText("4");
 				Element tAgentCom = new Element(AgentCom);
-				tAgentCom.setText(nodeNo);
-				
-				//柜员代码[非必须，有些银行传]
 				Element mTellerNoEle = new Element(TellerNo);
-				mTellerNoEle.setText(tSubMsgs[3]);
-				
-				//交易流水号[非必须，有些银行传]
 				Element tTranNoEle = new Element(TranNo);
-				tTranNoEle.setText(tSubMsgs[1]);
-				
-	
-				/*// 获取交易日期
-				Element tTranDateEle = new Element(TranDate);
-				tTranDateEle.setText(tSubMsgs[0]);*/
-	
+				count++;
 				Element tDetailEle = new Element(Detail);
 				tDetailEle.addContent(tCardTypeEle);// 单证类型
 				tDetailEle.addContent(tCardNoEle);// 保单印刷号
@@ -286,6 +259,8 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 				tDetailEle.addContent(tTranNoEle);// 交易流水号
 				mBodyEle.addContent(tDetailEle);
 			}
+			mCountEle.setText(count+"");
+			mBodyEle.addContent(mCountEle);
 			mTranData.addContent(mBodyEle);
 			mBufReader.close(); // 关闭流
 		}catch(Exception e){
@@ -296,6 +271,76 @@ public class NewAbcCardBlc extends TimerTask implements XmlTag {
 		return new Document(mTranData); 
 	}
 
+	// 备份月文件，比如yyyyMM01当日，系统会在目录localDir 建立/yyyy/yyyyMM，
+	// 然后把所有文件移动到该目录，但是yyyyMM01的文件除外
+	private void bakFiles(String pFileDir)
+	{
+		cLogger.info("Into NewAbcCardBlc.bakFiles...");
+
+		if (null == pFileDir || "".equals(pFileDir))
+		{
+			cLogger.warn("本地文件目录为空，不进行备份操作！");
+			return;
+		}
+		File mDirFile = new File(pFileDir);
+		if (!mDirFile.exists() || !mDirFile.isDirectory())
+		{
+			cLogger.warn("本地文件目录不存在，不进行备份操作！" + mDirFile);
+			return;
+		}
+
+		File[] mOldFiles = mDirFile.listFiles(new FileFilter()
+		{
+			public boolean accept(File pFile)
+			{
+				if (!pFile.isFile())
+				{
+					return false;
+				}
+
+				Calendar tCurCalendar = Calendar.getInstance();
+				tCurCalendar.setTime(new Date());
+
+				Calendar tFileCalendar = Calendar.getInstance();
+				tFileCalendar.setTime(new Date(pFile.lastModified()));
+
+				return tFileCalendar.before(tCurCalendar);
+			}
+		});
+
+		Calendar mCalendar = Calendar.getInstance();
+		mCalendar.add(Calendar.MONTH, -1);
+		File mNewDir = new File(mDirFile, DateUtil.getDateStr(mCalendar, "yyyy/yyyyMM"));
+		for (File tFile : mOldFiles)
+		{
+			try
+			{
+				String fileName_date = tFile.getName().substring(tFile.getName().length() - 8);
+				Date date = new Date();
+				if (!fileName_date.equals(String.valueOf(DateUtil.get8Date(date))))
+				{
+					cLogger.info(tFile.getAbsoluteFile() + " start move...");
+					IOTrans.fileMove(tFile, mNewDir);
+					cLogger.info(tFile.getAbsoluteFile() + " end move!");
+				}
+			}
+			catch (IOException ex)
+			{
+				cLogger.error(tFile.getAbsoluteFile() + "备份失败！", ex);
+			}
+		}
+
+		cLogger.info("Out NewAbcCardBlc.bakFiles!");
+	}
+	
+	public final void setDate(String p8DateStr){
+		cCurDate = p8DateStr; 
+	}
+	
+	public String getResultMsg() {
+		return this.cResultMsg;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Logger mLogger = Logger.getLogger("com.sinosoft.midplat.newabc.bat.NewAbcCardBlc.main");
 		mLogger.info("新农行单证对账程序启动...");

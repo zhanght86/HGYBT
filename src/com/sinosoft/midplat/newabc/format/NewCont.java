@@ -6,9 +6,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
+
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 
@@ -30,8 +32,7 @@ public class NewCont extends XmlSimpFormat {
 		//处理受益人
 		List<Element> bnfs=dealBnf(pNoStdXml);
 		JdomUtil.print(pNoStdXml);
-		Document mStdXml = 
-			NewContInXsl.newInstance().getCache().transform(pNoStdXml);
+		Document mStdXml = NewContInXsl.newInstance().getCache().transform(pNoStdXml);
 		
 		mStdXml.getRootElement().getChild("Body").addContent(bnfs);
 		cLogger.info("Out newABCNewCont.noStd2Std()!");
@@ -71,14 +72,6 @@ public class NewCont extends XmlSimpFormat {
 		JdomUtil.print(mNoStdXml);
 		cLogger.info("Out newABCNewCont.std2NoStd()!");
 		return mNoStdXml;
-	}
-	
-	//生成自动增长的投保单号截取交易流水号后6位
-	public static String trannoStringBuffer(String date,String tranno)
-	{
-		String trannobuffer=tranno.substring(6);
-		String  bufferTranno="02"+date+trannobuffer;
-		return bufferTranno;
 	}
 	
 	/**

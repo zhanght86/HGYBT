@@ -55,7 +55,7 @@ public class ContCancel extends ServiceImpl {
 			Calendar tCurCalendar = Calendar.getInstance();
 			tCurCalendar.add(Calendar.SECOND, -tLockTime);
 			String tSqlStr = new StringBuilder("select count(1) from TranLog where RCode=").append(CodeDef.RCode_NULL)
-				.append(" and ProposalPrtNo='").append(mContNo).append('\'')
+				.append(" and ContNo='").append(mContNo).append('\'')
 				.append(" and MakeDate>=").append(DateUtil.get8Date(tCurCalendar))
 				.append(" and MakeTime>=").append(DateUtil.get6Time(tCurCalendar))
 				.toString();

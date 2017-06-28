@@ -53,10 +53,10 @@ public abstract interface AblifeCodeDef extends CodeDef {
 	String SID_Bank_Taken = "14";
 	/** 银保退保冲正 */
 	String SID_Bank_TakenCancel = "15";
-	/** 新农行保全对账 */
+	/** 保全对账 */
 	String SID_BQContBlc = "16";
 	/** 银保满期给付查询 */
-	  String SID_Bank_ManPaymentQuery = "";
+	String SID_Bank_ManPaymentQuery = "";
 	/** 银保满期给付 */
 	String SID_Bank_ManPayment = "17";
 	/** 银保满期给付冲正 */
@@ -135,9 +135,9 @@ public abstract interface AblifeCodeDef extends CodeDef {
 	/** 新建行代理保险售后提醒取数 */
 	String SID_ActInsuSaleRemindAccess = "59";
 	/** 新建行申请登记台账 */
-	String SID_SignPolicyFormat = "60";
+//	String SID_SignPolicyFormat = "60";
 	/** 新建行确认登记台账 */
-	String SID_SignConfirm = "61";
+//	String SID_SignConfirm = "61";
 	/** 新农行保单详情查询 */
 	String SID_PolDetailQuery = "62";
 	/** 建行失算保险产品（寿险） */
@@ -156,6 +156,18 @@ public abstract interface AblifeCodeDef extends CodeDef {
 	String SID_RefundFullPayment = "70";
 	/** 新农行非实时出单对账结果明细文件 **/
 	String SID_NonRealTimeContRstDtl = "71";
+	/** 登记签收日期*/
+	String SID_Bank_RegisterDateofRec ="72";
+	/** 建行申请契撤*/
+	String SID_Bank_ApplyForWithdrawal ="73";
+	/** 建行确认契撤*/
+	String SID_Bank_ConformOfWithdrawal ="74";
+	/** 新建行申请登记台账 */
+	String SID_SignPolicyFormat = "75";
+	/** 新建行确认登记台账 */
+	String SID_SignConfirm = "76";
+	/** 新建行撤销登记台账 */
+	String SID_SignCancel = "77";
 	
 	/** -保留域- */
 	int TranCom_NULL = 1;

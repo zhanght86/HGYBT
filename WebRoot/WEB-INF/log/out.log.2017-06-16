@@ -1,0 +1,460 @@
+09:12:26,973 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:12:27,058 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:12:27,058 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:12:27,058 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:12:27,058 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:12:30,323 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:12:30,324 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：3.296s
+09:12:30,324 INFO test.NewABCTest(234) - 收到返回报文！
+09:13:49,503 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:13:49,518 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:13:49,518 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:13:49,518 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:13:49,518 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:13:49,904 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:13:49,904 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.386s
+09:13:49,919 INFO test.NewABCTest(234) - 收到返回报文！
+09:13:50,904 INFO test.NewABCTest(242) - package_head:X1.0000008323103    00000                                       000000000
+09:13:50,904 INFO test.NewABCTest(244) - mBodyLen:832
+09:13:50,909 INFO test.NewABCTest(249) - 解密开始
+09:13:50,910 INFO test.NewABCTest(251) - 解密完成
+09:13:50,910 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:13:50,910 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：1.392s
+09:14:39,914 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@56b21710
+09:14:39,983 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:14:40,014 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+09:14:40,014 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+09:14:40,014 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:14:40,014 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+09:14:40,014 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+09:14:40,045 INFO common.XmlConf(80) - conf file modified at (2017-06-16 09:13:43,710) and length=9665 bytes!
+09:14:40,167 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+09:14:40,230 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:14:40,267 INFO common.Log4jPrint(20) - End reset System.out!
+09:14:40,267 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:14:40,267 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+09:14:40,267 INFO common.XmlConf(80) - conf file modified at (2017-06-16 09:13:43,731) and length=708 bytes!
+09:14:40,267 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+09:14:40,267 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:14:40,314 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:14:40,345 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+09:14:40,367 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+09:14:40,367 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+09:14:40,367 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+09:14:40,382 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+09:14:40,382 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+09:14:40,382 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+09:14:40,382 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+09:14:40,382 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+09:14:40,382 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:14:40,398 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+09:14:40,398 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:14:40,398 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:14:40,414 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+09:14:40,414 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+09:14:40,414 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:14:42,446 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+09:14:42,446 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+09:14:42,448 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@7c24d892
+09:14:42,449 INFO common.Log4jPrint(20) - Start revert System.out...
+09:14:42,449 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+09:14:42,484 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+09:14:42,484 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+09:14:42,484 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+09:14:42,484 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+09:14:42,484 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+09:14:43,785 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@56b21710
+09:14:43,796 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+09:14:43,796 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+09:14:43,796 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+09:14:43,796 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:14:43,796 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+09:14:43,796 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+09:14:43,796 INFO common.XmlConf(80) - conf file modified at (2017-06-16 09:13:43,710) and length=9665 bytes!
+09:14:43,827 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+09:14:43,869 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+09:14:43,869 INFO common.Log4jPrint(20) - End reset System.out!
+09:14:43,869 INFO net.SocketConf(27) - Into SocketConf.load()...
+09:14:43,869 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+09:14:43,869 INFO common.XmlConf(80) - conf file modified at (2017-06-16 09:13:43,731) and length=708 bytes!
+09:14:43,869 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+09:14:43,869 INFO net.SocketConf(60) - Out SocketConf.load()!
+09:14:43,885 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+09:14:43,885 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+09:14:43,885 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+09:14:43,885 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+09:14:43,885 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+09:14:43,900 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+09:14:43,900 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+09:14:43,900 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+09:14:43,900 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+09:14:43,900 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+09:14:43,900 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+09:14:43,900 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+09:14:43,900 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+09:14:43,900 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+09:14:43,900 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+09:14:43,900 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+09:14:43,900 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+09:18:12,261 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:18:12,277 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:18:12,277 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:18:12,292 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:18:12,292 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:18:12,609 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:18:12,609 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.332s
+09:18:12,609 INFO test.NewABCTest(234) - 收到返回报文！
+09:18:12,910 INFO test.NewABCTest(242) - package_head:X1.0000008323103    00000                                       000000000
+09:18:12,910 INFO test.NewABCTest(244) - mBodyLen:832
+09:18:12,910 INFO test.NewABCTest(249) - 解密开始
+09:18:12,911 INFO test.NewABCTest(251) - 解密完成
+09:18:12,913 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:18:12,913 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：0.636s
+09:19:10,090 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:19:10,106 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:19:10,106 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:19:10,106 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:19:10,106 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:19:10,438 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:19:10,438 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.332s
+09:19:10,438 INFO test.NewABCTest(234) - 收到返回报文！
+09:19:10,708 INFO test.NewABCTest(242) - package_head:X1.0000008643103    00000                                       000000000
+09:19:10,708 INFO test.NewABCTest(244) - mBodyLen:864
+09:19:10,708 INFO test.NewABCTest(249) - 解密开始
+09:19:10,708 INFO test.NewABCTest(251) - 解密完成
+09:19:10,708 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:19:10,708 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：0.602s
+09:19:47,918 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:19:47,933 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:19:47,933 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:19:47,933 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:19:47,933 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:19:48,281 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:19:48,281 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.348s
+09:19:48,281 INFO test.NewABCTest(234) - 收到返回报文！
+09:19:48,380 INFO test.NewABCTest(242) - package_head:X1.0000008003103    00000                                       000000000
+09:19:48,380 INFO test.NewABCTest(244) - mBodyLen:800
+09:19:48,380 INFO test.NewABCTest(249) - 解密开始
+09:19:48,380 INFO test.NewABCTest(251) - 解密完成
+09:19:48,397 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:19:48,398 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：0.465s
+09:20:14,337 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:20:14,352 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:20:14,352 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:20:14,352 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:20:14,352 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:20:14,700 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:20:14,700 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.348s
+09:20:14,700 INFO test.NewABCTest(234) - 收到返回报文！
+09:20:14,938 INFO test.NewABCTest(242) - package_head:X1.0000008323103    00000                                       000000000
+09:20:14,948 INFO test.NewABCTest(244) - mBodyLen:832
+09:20:14,948 INFO test.NewABCTest(249) - 解密开始
+09:20:14,950 INFO test.NewABCTest(251) - 解密完成
+09:20:14,950 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:20:14,950 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：0.598s
+09:22:45,923 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:22:45,954 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:22:45,954 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:22:45,954 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:22:45,954 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:22:46,324 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:22:46,324 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.385s
+09:22:46,324 INFO test.NewABCTest(234) - 收到返回报文！
+09:22:49,174 INFO test.NewABCTest(242) - package_head:X1.0000010883103    00000                                       000000000
+09:22:49,174 INFO test.NewABCTest(244) - mBodyLen:1088
+09:22:49,177 INFO test.NewABCTest(249) - 解密开始
+09:22:49,179 INFO test.NewABCTest(251) - 解密完成
+09:22:49,180 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:22:49,180 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：3.241s
+09:24:01,035 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:24:01,051 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:24:01,051 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:24:01,067 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:24:01,067 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:24:01,437 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:24:01,437 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.386s
+09:24:01,437 INFO test.NewABCTest(234) - 收到返回报文！
+09:24:03,817 INFO test.NewABCTest(242) - package_head:X1.0000010883103    00000                                       000000000
+09:24:03,817 INFO test.NewABCTest(244) - mBodyLen:1088
+09:24:03,817 INFO test.NewABCTest(249) - 解密开始
+09:24:03,821 INFO test.NewABCTest(251) - 解密完成
+09:24:03,822 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:24:03,822 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：2.771s
+09:24:52,995 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:24:53,011 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:24:53,011 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:24:53,011 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:24:53,011 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:24:53,349 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:24:53,349 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.338s
+09:24:53,349 INFO test.NewABCTest(234) - 收到返回报文！
+09:24:55,683 INFO test.NewABCTest(242) - package_head:X1.0000010883103    00000                                       000000000
+09:24:55,683 INFO test.NewABCTest(244) - mBodyLen:1088
+09:24:55,697 INFO test.NewABCTest(249) - 解密开始
+09:24:55,698 INFO test.NewABCTest(251) - 解密完成
+09:24:55,700 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:24:55,700 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：2.689s
+09:25:38,805 INFO test.NewABCTest(148) - Socket连接10.2.0.31:9002
+09:25:38,821 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+09:25:38,821 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+09:25:38,821 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+09:25:38,821 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+09:25:39,153 INFO test.NewABCTest(223) - 发送报文头！X1.0000110723103    00000                                       000000000
+09:25:39,169 INFO test.NewABCTest(228) - 客户端请求发送完毕！耗时：0.348s
+09:25:39,170 INFO test.NewABCTest(234) - 收到返回报文！
+09:25:41,540 INFO test.NewABCTest(242) - package_head:X1.0000010883103    00000                                       000000000
+09:25:41,540 INFO test.NewABCTest(244) - mBodyLen:1088
+09:25:41,549 INFO test.NewABCTest(249) - 解密开始
+09:25:41,551 INFO test.NewABCTest(251) - 解密完成
+09:25:41,551 INFO test.NewABCTest(264) - UTF-8 农行的报文: 
+09:25:41,551 INFO test.NewABCTest(268) - 客户端接收返回报文完毕！耗时：2.73s
+14:22:13,407 INFO bat.NewAbcBusiBlc(477) - 新农行新保承保保单对账程序启动...
+14:22:13,453 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+14:22:13,463 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+14:22:13,470 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+14:22:13,471 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+14:22:13,473 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:22:13,473 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+14:22:13,475 INFO common.XmlConf(80) - conf file modified at (2017-06-08 11:58:40,176) and length=9665 bytes!
+14:22:13,734 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+14:22:13,772 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+14:22:13,772 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+14:22:16,023 INFO bat.NewAbcBusiBlc(57) - Into NewAbcBusiBlc.run()...
+14:22:16,023 DEBUG bat.NewAbcBusiBlc(118) - Into NewAbcBusiBlc.insertTranLog()...
+14:22:16,312 DEBUG bat.NewAbcBusiBlc(141) - Out NewAbcBusiBlc.insertTranLog()!
+14:22:16,376 INFO bat.BatConf(28) - Into BatConf.load()...
+14:22:16,376 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+14:22:16,377 INFO common.XmlConf(80) - conf file modified at (2017-06-16 14:21:55,328) and length=14412 bytes!
+14:22:16,389 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+14:22:16,389 INFO bat.BatConf(50) - Out BatConf.load()!
+14:22:16,486 INFO bat.NewAbcBusiBlc(75) - 处理农行新保承保保单对账开始...
+14:22:16,486 INFO bat.NewAbcBusiBlc(79) - D:/YBT_SAVE_XML/ZHH/newabc/POLICY1147.20170616
+14:22:16,487 INFO bat.NewAbcBusiBlc(146) - Into NewAbcBusiBlc.parse()...
+14:22:16,487 INFO bat.NewAbcBusiBlc(159) -  对账日期为...20170616
+14:22:16,487 INFO bat.NewAbcBusiBlc(161) -  当前日期为...20170616
+14:22:16,488 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+14:22:16,488 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+14:22:16,489 INFO common.XmlConf(80) - conf file modified at (2017-06-05 15:09:14,628) and length=7211 bytes!
+14:22:16,496 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+14:22:16,496 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+14:22:16,499 INFO bat.NewAbcBusiBlc(334) - Out NewAbcBusiBlc.parse()!
+14:22:16,500 DEBUG bat.NewAbcBusiBlc(347) - Into NewInsPolRec.saveDetails()...
+14:22:16,503 INFO bat.NewAbcBusiBlc(390) - 对账明细总数(DtlSet)为：3
+14:22:17,112 DEBUG bat.NewAbcBusiBlc(401) - Out NewInsPolRec.saveDetails()!
+14:22:17,114 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+14:22:17,161 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+14:22:17,163 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+14:22:17,219 INFO common.SaveMessage(94) - 174186_3_6_inSvc.xml IO输出耗时:0.055s
+14:22:17,219 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！174186_3_6_inSvc.xml
+14:22:17,220 INFO net.CallWebsvcAtomSvc(102) - start call 新单对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+14:22:24,438 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+14:22:24,459 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+14:22:24,460 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+14:22:24,460 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+14:22:24,460 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+14:22:24,461 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+14:22:24,461 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:22:24,508 DEBUG httpclient.Wire(70) - >> "529[\r][\n]"
+14:22:24,509 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNjE2PC9UcmFuRGF0ZT48VHJhblRpbWU+MTQyMjE2PC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20+MDU8L1RyYW5Db20+PFpvbmVObz4wMDAwMDwvWm9uZU5vPjxOb2RlTm8+MTEwMTAxMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPjE3NDE4NjwvVHJhbk5vPjxGdW5jRmxhZz4yMDAxPC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD42PC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxDb3VudD4zPC9Db3VudD48UHJlbT4yNTAwMDAwPC9QcmVtPjxEZXRhaWw+PENvbnRObz44ODgwMzAwMDAwMDE1NDc8L0NvbnRObz48UHJlbT41MDAwMDA8L1ByZW0+PEFnZW50Q29tPjQ0MDU0MDwvQWdlbnRDb20+PFByb3Bvc2FsUHJ0Tm8gLz48QXBwbnROYW1lIC8+PEluc3VyZWROYW1lIC8+PC9EZXRhaWw+PERldGFpbD48Q29udE5vPjg4ODAzMDAwMDAwMTU0ODwvQ29udE5vPjxQcmVtPjEwMDAwMDA8L1ByZW0+PEFnZW50Q29tPjQ0MDU0MDwvQWdlbnRDb20+PFByb3Bvc2FsUHJ0Tm8gLz48QXBwbnROYW1lIC8+PEluc3VyZWROYW1lIC8+PC9EZXRhaWw+PERldGFpbD48Q29udE5vPjg4ODAzMDAwMDAwMTU0OTwvQ29udE5vPjxQcmVtPjEwMDAwMDA8L1ByZW0+PEFnZW50Q29tPjQ0MDU0MDwvQWdlbnRDb20+PFByb3Bvc2FsUHJ0Tm8gLz48QXBwbnROYW1lIC8+PEluc3VyZWROYW1lIC8+PC9EZXRhaWw+PC9Cb2R5PjwvVHJhbkRhdGE+DQo=</arg0></service></soapenv:Body></soapenv:Envelope>"
+14:22:24,509 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:22:24,510 DEBUG httpclient.Wire(84) - >> "0"
+14:22:24,510 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:22:24,510 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+14:22:44,713 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+14:22:44,713 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+14:22:44,714 DEBUG httpclient.Wire(70) - << "Date: Fri, 16 Jun 2017 06:22:10 GMT[\r][\n]"
+14:22:44,715 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+14:22:44,715 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+14:22:44,715 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+14:22:44,716 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+14:22:44,763 DEBUG httpclient.Wire(84) - << "0"
+14:22:44,764 DEBUG httpclient.Wire(84) - << "4"
+14:22:44,764 DEBUG httpclient.Wire(84) - << "1"
+14:22:44,764 DEBUG httpclient.Wire(84) - << "3"
+14:22:44,765 DEBUG httpclient.Wire(84) - << "[\r]"
+14:22:44,765 DEBUG httpclient.Wire(70) - << "[\n]"
+14:22:44,765 DEBUG httpclient.Wire(84) - << "<?xm"
+14:22:44,767 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+14:22:44,768 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxNTQ3PC9Db250Tm8+DQogICAgICA8UmVzdWx0PjA8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0Psr9vt3Su9bCo6E8L1Jlc3VsdFRleHQ+DQogICAgPC9EZXRhaWw+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxNTQ4PC9Db250Tm8+DQogICAgICA8UmVzdWx0PjE8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0PrGjtaXXtMys09DO86OhPC9SZXN1bHRUZXh0Pg0KICAgIDwvRGV0YWlsPg0KICAgIDxEZXRhaWw+DQogICAgICA8Q29udE5vPjg4ODAzMDAwMDAwMTU0OTwvQ29udE5vPg0KICAgICAgPFJlc3VsdD4xPC9SZXN1bHQ+DQogICAgICA8UmVzdWx0VGV4dD6xo7Wl17TMrNPQzvOjoTwvUmVzdWx0VGV4dD4NCiAgICA8L0RldGFpbD4NCiAgPC9Cb2R5Pg0KPC9UcmFuRGF0YT4NCg0K</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+14:22:44,784 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新单对账(service)耗时：27.564s
+14:22:44,796 INFO common.SaveMessage(94) - 174186_6_6_outSvc.xml IO输出耗时:0.0080s
+14:22:44,796 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！174186_6_6_outSvc.xml
+14:22:44,797 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+14:22:45,084 INFO bat.NewAbcBusiBlc(113) - 处理农行新保承保保单对账结束!
+14:22:45,084 INFO bat.NewAbcBusiBlc(114) - Out NewAbcBusiBlc.run()!
+15:27:03,411 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+15:27:03,413 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+15:27:03,454 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@35285701
+15:27:03,455 INFO common.Log4jPrint(20) - Start revert System.out...
+15:27:03,467 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+15:27:03,495 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:03,495 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:03,495 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:03,495 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:03,495 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:11,688 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@56b21710
+15:27:11,737 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:27:11,761 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+15:27:11,762 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+15:27:11,762 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:27:11,763 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+15:27:11,763 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+15:27:11,785 INFO common.XmlConf(80) - conf file modified at (2017-06-16 15:26:59,661) and length=9665 bytes!
+15:27:11,867 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+15:27:11,883 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:27:11,897 INFO common.Log4jPrint(20) - End reset System.out!
+15:27:11,900 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:27:11,900 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+15:27:11,901 INFO common.XmlConf(80) - conf file modified at (2017-06-16 15:26:59,709) and length=708 bytes!
+15:27:11,904 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+15:27:11,904 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:27:11,918 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:27:11,939 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:27:11,994 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:27:11,994 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:27:11,994 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:27:12,000 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:27:12,001 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+15:27:12,002 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+15:27:12,008 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+15:27:12,008 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+15:27:12,009 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:27:12,035 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+15:27:12,036 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:27:12,036 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:27:12,046 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+15:27:12,046 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:27:12,047 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+15:27:34,283 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+15:27:34,285 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+15:27:34,285 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@19fc0de
+15:27:34,286 INFO common.Log4jPrint(20) - Start revert System.out...
+15:27:34,286 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:34,286 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:34,286 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:34,286 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:34,286 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+15:27:34,287 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+15:27:34,866 DEBUG net.SocketListenerF5(40) - System.out = java.io.PrintStream@56b21710
+15:27:34,871 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+15:27:34,873 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/basepath.r
+15:27:34,873 DEBUG common.SysInfo(33) - BasePath = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/classes/
+15:27:34,874 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+15:27:34,875 DEBUG common.SysInfo(68) - Home = /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/
+15:27:34,875 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+15:27:34,877 INFO common.XmlConf(80) - conf file modified at (2017-06-16 15:27:32,662) and length=9665 bytes!
+15:27:34,919 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+15:27:34,926 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+15:27:34,929 INFO common.Log4jPrint(20) - End reset System.out!
+15:27:34,931 INFO net.SocketConf(27) - Into SocketConf.load()...
+15:27:34,931 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+15:27:34,932 INFO common.XmlConf(80) - conf file modified at (2017-06-16 15:27:32,676) and length=708 bytes!
+15:27:34,935 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+15:27:34,936 INFO net.SocketConf(60) - Out SocketConf.load()!
+15:27:34,953 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+15:27:34,955 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+15:27:34,958 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+15:27:34,960 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+15:27:34,960 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+15:27:34,963 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+15:27:34,964 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+15:27:34,965 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+15:27:34,967 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+15:27:34,968 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+15:27:34,968 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+15:27:34,971 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+15:27:34,973 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+15:27:34,971 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+15:27:34,976 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+15:27:34,976 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+15:27:34,977 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!

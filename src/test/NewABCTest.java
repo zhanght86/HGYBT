@@ -12,7 +12,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
-import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 import org.jdom.Document;
@@ -20,7 +19,6 @@ import org.jdom.Document;
 
 import com.sinosoft.midplat.common.IOTrans;
 import com.sinosoft.midplat.common.JdomUtil;
-import com.sinosoft.midplat.newabc.ABCDocUtil;
 import com.sinosoft.midplat.newabc.util.*;;
 public class NewABCTest {
 	private Logger cLogger = Logger.getLogger(getClass());
@@ -28,8 +26,9 @@ public class NewABCTest {
 	private String cIP = null; 
 	private int cPort = 0;
 	public static void main(String[] args) throws Exception {
-		String mIP = "127.0.0.1";
-//		String mIP="10.2.0.31";
+//		String mIP = "127.0.0.1";
+		String mIP="10.2.0.31";
+//		String mIP="10.1.3.65";
 		int mPort = 9002;
 		/**
 		 * 1000 	心跳交易      1000   HeartBeat
@@ -48,7 +47,7 @@ public class NewABCTest {
 		 * */
 		
 		String mFuncFlag = "1002";
-		mFuncFlag = "1004";
+//		mFuncFlag = "1004";
 //		mFuncFlag = "1009";//取消交易
 //		mFuncFlag = "1010"; //撤单
 //		mFuncFlag = "1016";//保单查询
@@ -58,7 +57,7 @@ public class NewABCTest {
 //		mFuncFlag = "1006";//非实时出单申请
 //		mFuncFlag = "1007";//续期缴费信息查询
 //		mFuncFlag = "1008";//续期缴费
-//		mFuncFlag = "1021";//保单详情查询
+		mFuncFlag = "1021";//保单详情查询
 //		mFuncFlag = "1014";//保全申请状态查询
 //		mFuncFlag = "1013";//保全申请（支持犹撤申请、满期给付申请、退保申请）
 //		mFuncFlag = "1005";//新单试算结果查询
@@ -68,39 +67,55 @@ public class NewABCTest {
 		
 		String mInFilePath = "f://xml/ABC1//"+mFuncFlag+".xml";
 		//新单试算
-		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1002in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1002in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/bank_test/164430_63_1002_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/core_test/168291_90_1002_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/uatmsg_core_test/172641_9_1002_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/production_test/174003_249_1002_in.xml";
 		//新单缴费
-		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1004in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1004in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/bank_test/164433_75_1004_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/core_test/168246_297_1004_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/uatmsg_core_test/172644_21_1004_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/production_test/166989_69_1004_in.xml";
 		//保单重打
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1018in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1018in_noStd.xml";
 		//当日撤单
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1010in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1010in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/production_test/172827_75_1010_in.xml";
 		//取消交易
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1009in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1009in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/error_test/173493_213_1009_in.xml";
 		//保全查询（支持犹撤申请、满期给付申请、退保申请查询）
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1012in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1012in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/uattest_msg/175530_231_1012_in.xml";
 		//心跳交易
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1000in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1000in_noStd.xml";
 		//非实时出单申请
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1006in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1006in_noStd.xml";
 		//续期缴费信息查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1007in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1007in_noStd.xml";
 		//续期缴费
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1008in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1008in_noStd.xml";
 		//保单详情查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1021in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1021in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/bank_test/167601_3_1021_in.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/production_test/172758_87_1021_in.xml";
+		mInFilePath="D:/File/task/20170623/newabc/uattest_msg/170421_267_1021_in.xml";
 		//保单查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1016in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1016in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/production_test/172989_63_1016_in.xml";
 		//保全申请状态查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1014in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1014in_noStd.xml";
 		//保全申请（支持犹撤申请、满期给付申请、退保申请）
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1013in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1013in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/uattest_msg/170406_207_1013_in.xml";
 		//新单试算结果查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1005in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1005in_noStd.xml";
 		//账户变更
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1011in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1011in_noStd.xml";
 		//保单价值查询
-//		mInFilePath="D:/File/task/20170421/newabc/ybt_test/1019in_noStd.xml";
+//		mInFilePath="D:/File/task/20170623/newabc/ybt_test/1019in_noStd.xml";
 		
 		InputStream mIs = new FileInputStream(mInFilePath);
 		
@@ -117,7 +132,14 @@ public class NewABCTest {
 //		mFos.flush();
 //		mFos.close();
 //		OutputStream pOs = new FileOutputStream("D:/task/20161124/test/newabc/"+mFuncFlag+"_out.xml");
-		OutputStream pOs = new FileOutputStream("D:/File/task/20170421/newabc/ybt_test/1004out_noStd.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/ybt_test/1000out_noStd.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/bank_test/164430_63_1002_out.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/uatmsg_core_test/172641_9_1002_out.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/bank_test/164433_75_1004_out.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/core_test/168246_297_1004_in.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/error_test/173493_213_1009_out.xml");
+//		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/production_test/172827_75_1010_out.xml");
+		OutputStream pOs = new FileOutputStream("D:/File/task/20170623/newabc/uattest_msg/170421_267_1021_in.xml");
 		JdomUtil.output(mOutXmlDoc, pOs);
 		pOs.flush();
 		pOs.close();
@@ -196,8 +218,9 @@ public class NewABCTest {
 //		for(int i=0;i<mHeadBytes.length;i++){
 //			System.out.print("="+mHeadBytes[i]+"=");
 //		}
-		String cInsuID="3103";   //中韩人寿保险公司代码
+		String cInsuID="1147";   //中韩人寿保险公司代码
 		String endxmlStr=AES.Encrypt(AES.rpadEncrypt(new String(doc),' '));
+//		String endxmlStr=AES.rpadEncrypt(new String(doc),' ');
 		
 
 		byte[] outBytes=endxmlStr.getBytes("UTF-8");
@@ -237,6 +260,7 @@ public class NewABCTest {
 		/**********解密请求****************/
 		cLogger.info("解密开始");
 		String axx = AES.Decrypt(new String(mReturnBodyBytes,"UTF-8"));
+//		String axx = new String(mReturnBodyBytes,"UTF-8");
 		cLogger.info("解密完成");
 		/**********解密完成****************/
 		

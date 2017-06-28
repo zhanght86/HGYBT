@@ -56,20 +56,24 @@
 			<PolicyValue><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Body/ContValue)"/></PolicyValue>
 			<!--  自动转账授权账号-->
 			<AutoTransferAccNo><xsl:value-of select="Body/AccNo"/></AutoTransferAccNo>
-			<!--  附加内容-->
-			<part1></part1>
-			<part2></part2>
-			<part3></part3>
-			<part4></part4>
-			<part5></part5>
-			<part6></part6>
+			<!-- 附加内容1 -->
+			<prt1><xsl:value-of select="Body/prt1"/></prt1>
+			<!-- 附加内容2 -->
+			<prt2><xsl:value-of select="Body/prt2"/></prt2>
+			<!-- 附加内容3 -->
+			<prt3><xsl:value-of select="Body/prt3"/></prt3>
+			<!-- 附加内容4 -->
+			<prt4><xsl:value-of select="Body/prt4"/></prt4>
+			<!-- 附加内容5 -->
+			<prt5><xsl:value-of select="Body/prt5"/></prt5>
+			<!-- 附加内容6 -->
+			<prt6><xsl:value-of select="Body/prt6"/></prt6>
 		</Ret>
 	</App>
-</ABCB2I>
-		
+	</ABCB2I>
 	</xsl:template>
 	
-		<!--  保单状态 -->
+	<!--  保单状态 -->
 	<xsl:template name="policyStatus" >
 		<xsl:param name="PolicyStatus"></xsl:param>
 			<xsl:if test="$PolicyStatus = ''">05</xsl:if><!-- 	状态不明确 -->	

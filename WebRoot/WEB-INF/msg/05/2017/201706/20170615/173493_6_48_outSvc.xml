@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>退保犹撤数据文件交易成功！</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <Channel>0</Channel>
+         <BusiType>10</BusiType>
+         <TranDate>2017-06-14</TranDate>
+         <ContNo>888030000001507</ContNo>
+         <AppntName>刘义</AppntName>
+         <Status>2</Status>
+         <Prem>398750</Prem>
+      </Detail>
+      <Detail>
+         <Channel>0</Channel>
+         <BusiType>10</BusiType>
+         <TranDate>2017-06-14</TranDate>
+         <ContNo>888030000001508</ContNo>
+         <AppntName>刘义</AppntName>
+         <Status>2</Status>
+         <Prem>397500</Prem>
+      </Detail>
+      <Detail>
+         <Channel>0</Channel>
+         <BusiType>10</BusiType>
+         <TranDate>2017-06-14</TranDate>
+         <ContNo>888030000001516</ContNo>
+         <AppntName>刘义</AppntName>
+         <Status>2</Status>
+         <Prem>788000</Prem>
+      </Detail>
+   </Body>
+</TranData>
+

@@ -27,6 +27,7 @@ import org.jdom.output.XMLOutputter;
 import com.sinosoft.lis.pubfun.FDate;
 import com.sinosoft.lis.pubfun.PubFun;
 import com.sinosoft.midplat.common.JdomUtil;
+import com.sinosoft.midplat.exception.MidplatException;
 import com.sinosoft.utility.CErrors;
 import com.sinosoft.utility.DBConnPool;
 import com.sinosoft.utility.ElementLis;
@@ -63,7 +64,27 @@ public class YBTFun {
 
 	public YBTFun() {
 	}
-
+	
+	/**
+	 * 网销渠道投保单号
+	 * 不足8位前面补0
+	 * @param applyno
+	 * @return
+	 * @throws MidplatException 
+	 */
+	public static String PrtNoTo8(String applyno, String bankcode) throws MidplatException {
+		String prtno = applyno;
+		prtno = StrTool.LCh(applyno, "0", 8);
+		if(prtno.length()>8){
+			throw new MidplatException("网销渠道投保单号中间8位流水号位数超长！");
+		}
+		if(bankcode.equals("03")){//建行网销渠道
+			prtno = "10199"+prtno;
+		}else if(bankcode.equals("05")){//农行网销渠道
+			prtno = "10198"+prtno;
+		}
+		return prtno;
+	}
 	public static String tranPrtno(String applyno, String bankcode) {
 		String prtno = applyno;
 		if (applyno.length() < 14 && bankcode.equals("04")) {
@@ -2028,7 +2049,7 @@ public class YBTFun {
 			// 如果数据库类型是ORACLE的话，需要添加nowait属性，以防止锁等待
 			if (SysConst.DBTYPE.compareTo("ORACLE") == 0) {
 				// 去掉nowait的限制
-				// tSBql.append(" nowait");
+				 tSBql.append(" nowait");
 			}
 
 			ExeSQL exeSQL = new ExeSQL(conn);
@@ -2081,7 +2102,6 @@ public class YBTFun {
 					tMaxNo = Integer.parseInt(result) + 1;
 				}
 			}
-
 			conn.commit();
 			conn.close();
 		} catch (Exception Ex) {
@@ -2539,22 +2559,11 @@ public class YBTFun {
 	 * 
 	 * @param args
 	 * @throws InterruptedException
+	 * @throws MidplatException 
 	 */
-	public static void main(String[] args) throws InterruptedException {
-		// Thread.sleep(500);
-		// String a =
-		// "保险费的百分之四十用于购买\"光大永明盛世阳光两全保险\"、\"光大永明附加盛世阳光防癌疾病保险(A款)\"和\"光大永明附加盛世阳光防癌疾病保险(B款)\"，保险费的百分之六十用于购买\"光大永明附加盛世阳光投资连结保险\"";
-		// // a = "a大写";
-		//
-		// a = dataformat("ABC我", 5, "|");
-		// System.out.println("加空格后:[" + a);
-		// String source = "123     111111                 ";
-		// System.out.println(subByte(source,7,10));
-
-//		System.out.println(getRela_bank_Code("04", "0", "1","02"));
-		System.out.println(YBTFun.getBackDes("1200","province","07"));
-		
-		System.out.println(NumberFormat("2.555444"));
+	public static void main(String[] args) throws InterruptedException, MidplatException {
+		System.out.println(YBTFun.PrtNoTo8("11","03"));
+//		System.out.println(YBTFun.CreateMaxNo("PRTNO","SN"));
 	}
 
 }

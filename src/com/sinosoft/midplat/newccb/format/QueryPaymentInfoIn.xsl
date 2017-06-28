@@ -9,7 +9,7 @@
 				</Head>
 				<BaseInfo>
 					<!-- 银行编号 -->
-					<BankCode>0104</BankCode>
+					<BankCode><xsl:value-of select="TX_BODY/ENTITY/COM_ENTITY/CCBIns_ID" /></BankCode>
 				     <!--交易日期 -->
 					<BankDate><xsl:value-of select="java:com.sinosoft.midplat.newccb.util.NewCcbFormatUtil.getTimeAndDate(//TX/TX_HEADER/SYS_REQ_TIME,0,8)" /></BankDate>
 					<!--交易时间 -->

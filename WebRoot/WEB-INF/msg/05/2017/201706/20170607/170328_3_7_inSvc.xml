@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <TranDate>20170607</TranDate>
+      <TranTime>102613</TranTime>
+      <BankCode>0102</BankCode>
+      <TranCom>05</TranCom>
+      <ZoneNo>00000</ZoneNo>
+      <NodeNo>112401</NodeNo>
+      <TellerNo>sys</TellerNo>
+      <TranNo>170328</TranNo>
+      <FuncFlag>2000</FuncFlag>
+      <BalanceFlag>0</BalanceFlag>
+      <ServiceId>7</ServiceId>
+   </Head>
+   <Body>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000159124</CardNo>
+         <CardState>4</CardState>
+         <ContNo>888030000001459</ContNo>
+         <AgentCom />
+         <TellerNo />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000159231</CardNo>
+         <CardState>4</CardState>
+         <ContNo>888030000001460</ContNo>
+         <AgentCom />
+         <TellerNo />
+         <TranNo />
+      </Detail>
+      <Detail>
+         <CardType>18001</CardType>
+         <CardNo>180010000159338</CardNo>
+         <CardState>4</CardState>
+         <ContNo>888030000001466</ContNo>
+         <AgentCom />
+         <TellerNo />
+         <TranNo />
+      </Detail>
+      <Count>3</Count>
+   </Body>
+</TranData>
+

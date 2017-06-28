@@ -2,7 +2,7 @@
 <sockets autoRestart="true">
 	<socket>	
 		<name>中国银行</name>
-		<port>9001</port>
+		<port>9005</port>
 		<class>com.sinosoft.midplat.boc.BocYbt</class>
 	</socket>
 	<socket>	

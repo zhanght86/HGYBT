@@ -20,7 +20,7 @@ import com.sinosoft.utility.ElementLis;
 
 /**
  * @ClassName: SpdbPLDSReqBatch
- * @Description: 批量代扣上传文件
+ * @Description: 批量代扣文件
  * @author sinosoft
  * @date 2017-4-21 下午5:38:51
  */

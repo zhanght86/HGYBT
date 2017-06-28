@@ -85,7 +85,7 @@ public class Heartbeat extends ServiceImpl {
 //			cTranLogDB.setOutNoDoc("");
 //			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));
 //			cTranLogDB.setRText(tHeadEle.getChildText(Desc));
-//			tCurMillis = System.currentTimeMillis();
+			tCurMillis = System.currentTimeMillis();
 //			cTranLogDB.setUsedTime((int)(tCurMillis-mStartMillis)/1000);
 //			cTranLogDB.setModifyDate(DateUtil.get8Date(tCurMillis));
 //			cTranLogDB.setModifyTime(DateUtil.get6Time(tCurMillis));

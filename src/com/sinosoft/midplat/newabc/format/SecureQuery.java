@@ -1,16 +1,9 @@
 package com.sinosoft.midplat.newabc.format;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-
-
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
 
-import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
 /**
  * 保全查询 报文转换
@@ -37,15 +30,7 @@ public class SecureQuery extends XmlSimpFormat {
 		Element ttFlag  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Flag");
 		Element ttDesc  = (Element) XPath.selectSingleNode(pStdXml.getRootElement(), "/TranData/Head/Desc");
 		
-		
-//		String mInFilePath2 = "H:/1001430_23_3012_in.xml";
-//		InputStream mIs2 = new FileInputStream(mInFilePath2);
-//		Document mInXmlDoc = JdomUtil.build(mIs2);
-//		mIs2.close();
-//		header=(Element)mInXmlDoc.getRootElement().getChild("Header").clone();
-		
-		Document mNoStdXml = 
-			SecureQueryOutXsl.newInstance().getCache().transform(pStdXml);
+		Document mNoStdXml = SecureQueryOutXsl.newInstance().getCache().transform(pStdXml);
 		mNoStdXml.getRootElement().getChild("Header").getChild("BankCode").setText(header.getChildText("BankCode"));
 		//为请求业务报文头信息加入返回码和返回信息.把请求的业务报文头加入到返回报文中返回给银行。
 		Element  RetCode= mNoStdXml.getRootElement().getChild("Header").getChild("RetCode");

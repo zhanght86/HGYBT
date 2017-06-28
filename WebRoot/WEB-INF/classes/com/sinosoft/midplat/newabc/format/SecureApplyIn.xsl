@@ -15,10 +15,22 @@
 				<!-- 地区代码 -->
 				<ZoneNo><xsl:value-of select="Header/ProvCode"/></ZoneNo>
 				<!-- 银行网点 -->
-				<NodeNo><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></NodeNo>
+				<xsl:choose>
+					<xsl:when test="Header/EntrustWay='11'"><!-- 柜面 -->
+						<NodeNo><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></NodeNo>
+					</xsl:when>
+					<xsl:otherwise><!-- 电子渠道实际网点存在取实际网点，不存在取虚拟网点 -->
+						<xsl:if test="Header/ProvCode != '' and Header/BranchNo != ''">
+							<NodeNo><xsl:value-of select="Header/ProvCode"/><xsl:value-of select="Header/BranchNo"/></NodeNo>
+						</xsl:if>
+						<xsl:if test="Header/ProvCode = '' or Header/BranchNo = ''">
+							<NodeNo>ABCWEB</NodeNo>
+						</xsl:if>
+					</xsl:otherwise>
+				</xsl:choose>
 				<!-- 柜员代码 -->
 				<xsl:choose>
-					<xsl:when test="Header/EntrustWay ='11'">
+					<xsl:when test="Header/EntrustWay = '11'">
 						<TellerNo><xsl:value-of select="Header/Tlid"/></TellerNo>
 					</xsl:when>
 					<xsl:otherwise>
@@ -30,29 +42,19 @@
 				<!-- YBT组织的节点信息 -->
 				 <xsl:copy-of select="Head/*"/> 
 		  	</Head>
-		<Body>
-			<!-- 农行自助终端渠道 0柜面 8自助终端 -->
-				<xsl:choose>
-					<xsl:when test="Header/EntrustWay ='11'">
-						<SaleChannel>0</SaleChannel>
-					</xsl:when>
-					<xsl:when test="Header/EntrustWay ='04'">
-						<SaleChannel>8</SaleChannel>
-					</xsl:when>
-				</xsl:choose>
+			<Body>
+				<!-- 销售渠道 -->
+				<SaleChannel><xsl:apply-templates select="Header/EntrustWay"/></SaleChannel>
 				<!--保单号 -->
-				<ContNo>
-					<xsl:if test="Header/EntrustWay = '11'"><xsl:value-of select="App/Req/PolicyNo" /></xsl:if>
-					<xsl:if test="Header/EntrustWay = '04'"><xsl:value-of select="java:com.sinosoft.midplat.newabc.format.NewCont.trannoStringBuffer(Header/TransDate,Header/SerialNo)"/></xsl:if>
-				</ContNo>
+				<ContNo><xsl:value-of select="App/Req/PolicyNo" /></ContNo>
 				<!-- 保单印刷号 -->
 				<xsl:choose>
 					<xsl:when test="Header/EntrustWay ='11'">
 						<ContPrtNo><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.no13To15(App/Req/PrintCode)"/></ContPrtNo>
 					</xsl:when>
-					<xsl:when test="Header/EntrustWay ='04'">
+					<xsl:otherwise>
 						<ContPrtNo></ContPrtNo>
-					</xsl:when>
+					</xsl:otherwise>
 				</xsl:choose>
 				<!-- 保单密码  -->
 				<Password><xsl:value-of select="App/Req/PolicyPwd"/></Password>
@@ -78,6 +80,24 @@
 	</TranData>
 	</xsl:template>
 
+	<!-- 委托方式
+	01-银行网银渠道
+	02-掌上银行渠道
+	04-银行自助终端渠道
+	11-银行柜台渠道
+	20-保险公司渠道
+	 -->
+	<xsl:template name="tran_salechannel" match="EntrustWay">
+		<xsl:choose>
+			<xsl:when test=".=01">1</xsl:when><!-- 银行网银渠道 -->
+			<xsl:when test=".=02">2</xsl:when><!-- 掌上银行渠道 -->
+			<xsl:when test=".=04">8</xsl:when><!-- 银行自助终端渠道 -->
+			<xsl:when test=".=11">0</xsl:when><!-- 银行柜台渠道 -->
+			<xsl:when test=".=20"></xsl:when><!-- 保险公司渠道 -->
+			<xsl:otherwise>--</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>	
+
 	<!--  业务类型 -->
 	<xsl:template name="busitype" >
 		<xsl:param name="BusiType"></xsl:param>
@@ -87,14 +107,18 @@
 	</xsl:template>
 
 	<!-- 证件类型-->
-	<xsl:template name="tran_idtype" match="IdKind">
+	<xsl:template name="tran_idtype" match="IDKind">
 		<xsl:choose>
 			<xsl:when test=".=110001">0</xsl:when>	<!-- 居民身份证 -->
-			<xsl:when test=".=110002">0</xsl:when>	<!-- 重号居民身份证-->
+			<xsl:when test=".=110002">99</xsl:when>	<!-- 重号居民身份证-->
 			<xsl:when test=".=110003">0</xsl:when>	<!-- 临时居民身份证 -->
-			<xsl:when test=".=110004">0</xsl:when>	<!-- 重号临时居民身份证 -->
+			<xsl:when test=".=110004">99</xsl:when>	<!-- 重号临时居民身份证 -->
 			<xsl:when test=".=110005">4</xsl:when>  <!-- 户口簿 -->
-			<xsl:when test=".=110006">4</xsl:when>  <!-- 重号户口簿  -->
+			<xsl:when test=".=110006">99</xsl:when>  <!-- 重号户口簿  -->
+			<xsl:when test=".=110007">99</xsl:when> <!-- 军人身份证 -->
+			<xsl:when test=".=110008">99</xsl:when> <!-- 重号中国人民解放军军人身份证件 -->
+			<xsl:when test=".=110009">99</xsl:when> <!-- 武装警察身份证 -->
+			<xsl:when test=".=110010">99</xsl:when> <!-- 重号中国人民武装警察身份证件 -->
 			<xsl:when test=".=110011">99</xsl:when>  <!-- 离休干部荣誉证 -->
 			<xsl:when test=".=110012">99</xsl:when>  <!-- 重号离休干部荣誉证 -->
 			<xsl:when test=".=110013">99</xsl:when>  <!-- 军官退休证 -->
@@ -104,23 +128,27 @@
 			<xsl:when test=".=110017">99</xsl:when>  <!-- 军事院校学员证 -->
 			<xsl:when test=".=110018">99</xsl:when>  <!-- 重号军事院校学员证 -->
 			<xsl:when test=".=110019">F</xsl:when>  <!-- 港澳居民往来内地通行证 -->
-			<xsl:when test=".=110020">F</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
+			<xsl:when test=".=110020">99</xsl:when>  <!-- 重号港澳居民往来内地通行证 -->
 			<xsl:when test=".=110021">F</xsl:when>  <!-- 台湾居民往来大陆通行证 -->
-			<xsl:when test=".=110022">F</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
-			<xsl:when test=".=110023">1</xsl:when>  <!-- 中华人民共和国护照 -->
-			<xsl:when test=".=110024">1</xsl:when>  <!-- 重号中华人民共和国护照 -->
+			<xsl:when test=".=110022">99</xsl:when>  <!-- 重号台湾居民往来大陆通行证 -->
+			<xsl:when test=".=110023">99</xsl:when>  <!-- 中华人民共和国护照 -->
+			<xsl:when test=".=110024">99</xsl:when>  <!-- 重号中华人民共和国护照 -->
 			<xsl:when test=".=110025">1</xsl:when>  <!-- 外国护照 -->
-			<xsl:when test=".=110026">1</xsl:when>  <!-- 重号外国护照 -->
+			<xsl:when test=".=110026">99</xsl:when>  <!-- 重号外国护照 -->
 			<xsl:when test=".=110027">2</xsl:when>  <!-- 军官证 -->
-			<xsl:when test=".=110028">2</xsl:when>  <!-- 重号军官证 -->
-			<xsl:when test=".=110029">99</xsl:when>  <!-- 文职干部证 -->
+			<xsl:when test=".=110028">99</xsl:when>  <!-- 重号军官证 -->
+			<xsl:when test=".=110029">2</xsl:when>  <!-- 文职干部证 -->
 			<xsl:when test=".=110030">99</xsl:when>  <!-- 重号文职干部证 -->
 			<xsl:when test=".=110031">D</xsl:when>  <!-- 警官证 -->
-			<xsl:when test=".=110032">D</xsl:when>  <!-- 重号警官证 -->
+			<xsl:when test=".=110032">99</xsl:when>  <!-- 重号警官证 -->
 			<xsl:when test=".=110033">2</xsl:when>  <!-- 军人士兵证 -->
-			<xsl:when test=".=110034">2</xsl:when>  <!-- 重号军人士兵证 -->
-			<xsl:when test=".=110035">D</xsl:when>  <!-- 武警士兵证 -->
-			<xsl:when test=".=110036">D</xsl:when>  <!-- 重号武警士兵证 -->
+			<xsl:when test=".=110034">99</xsl:when>  <!-- 重号军人士兵证 -->
+			<xsl:when test=".=110035">2</xsl:when>  <!-- 武警士兵证 -->
+			<xsl:when test=".=110036">99</xsl:when>  <!-- 重号武警士兵证 -->
+			<xsl:when test=".=110037">1</xsl:when>  <!-- 外国人居留证-->
+			<xsl:when test=".=110043">99</xsl:when>  <!-- 外国居民身份证 -->
+			<xsl:when test=".=110045">99</xsl:when>  <!-- 外交官证 -->
+			<xsl:when test=".=110047">99</xsl:when>  <!-- 中华人民共和国旅行证 -->
 			<xsl:when test=".=119998">99</xsl:when>  <!-- 系统使用的个人证件识别标识 -->
 			<xsl:when test=".=119999">99</xsl:when>  <!-- 其他个人证件识别标识 -->
 			<xsl:otherwise>--</xsl:otherwise>  

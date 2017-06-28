@@ -36,20 +36,6 @@
 		</Ret>	
 	</App>
 </ABCB2I>
-	</xsl:template>
-	
-<!-- 险种代码 -->
-<xsl:template name="Code" match="RiskCode">
-<xsl:choose>
-	<xsl:when test=".=231201">231201</xsl:when>	<!-- 中韩智赢财富两全保险（分红型）A款 -->
-	<xsl:when test=".=231202">231202</xsl:when>	<!-- 中韩智赢财富两全保险（分红型）B款 -->
-	<xsl:when test=".=231203">231203</xsl:when> 	<!-- 中韩卓越财富两全保险（分红型） -->
-	<xsl:when test=".=211901">211901</xsl:when>  	<!-- 中韩安赢借款人意外伤害保险 -->
-	<xsl:when test=".=221201">221201</xsl:when>  	<!-- 中韩保驾护航两全保险A款 -->
-	<xsl:when test=".=231204">231204</xsl:when>	<!-- 中韩智赢财富两全保险（分红型）C款 -->
-	<xsl:when test=".=211902">211902</xsl:when>  	<!-- 中韩安赢借款人意外伤害保险 A款-->
-	<xsl:otherwise>--</xsl:otherwise>
-</xsl:choose>
 </xsl:template>
 	
 </xsl:stylesheet>

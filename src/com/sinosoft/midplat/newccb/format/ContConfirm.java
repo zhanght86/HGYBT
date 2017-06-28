@@ -8,15 +8,11 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.xpath.XPath;
-
-import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
 import com.sinosoft.midplat.format.XmlSimpFormat;
-import com.sinosoft.midplat.newccb.NewCcbConf;
 import com.sinosoft.midplat.newccb.util.NewCcbFormatUtil;
 
 public class ContConfirm extends XmlSimpFormat {
@@ -36,7 +32,6 @@ public class ContConfirm extends XmlSimpFormat {
 	
 	public Document noStd2Std(Document pNoStdXml) throws Exception {
 		cLogger.info("Into ContConfirm.noStd2Std()...");
-		
 		cTransaction_Header =
 			(Element) pNoStdXml.getRootElement().getChild("TX_HEADER").clone();
 		
@@ -97,10 +92,7 @@ public class ContConfirm extends XmlSimpFormat {
 		mNoStdXml = NewCcbFormatUtil.setNoStdTxHeader(mNoStdXml, oldTxHeader, mSYS_RECV_TIME, mSYS_RESP_TIME);
 		
 		//当核保成功的时候，返回TX_BODY时，增加COM_ENTITY节点
-//		String resultCode = pStdXml.getRootElement().getChild("Head").getChildText("Flag");
-//		if(resultCode.equals("0")){
-			mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
-//		}
+		mNoStdXml = NewCcbFormatUtil.setComEntity(mNoStdXml, pStdXml, oldComEntity, sysTxCode);
 		
 		//COM_ENTITY节点加入服务方流水号
 		mNoStdXml.getRootElement().getChild("TX_BODY").getChild("ENTITY").getChild("COM_ENTITY").getChild("SvPt_Jrnl_No").setText(tranNo);
@@ -285,13 +277,18 @@ public class ContConfirm extends XmlSimpFormat {
 			return InStdDoc;
 		}
 		public static void main(String[] args) throws Exception {
-            InputStream in=new FileInputStream("C:\\Users\\anico\\Desktop\\11914_632_1_outSvc.xml");
-			Document mInXmlDoc=JdomUtil.build(in);
-            Document mOutXmlDoc = ContConfirmOutXsl.newInstance(null).getCache().transform(mInXmlDoc);;
-//			Document mOutXmlDoc =new ContConfirm(
-//			NewCcbConf.newInstance().getConf().getRootElement()		
-//			).std2NoStd(mInXmlDoc);
+			System.out.println("程序开始…");
+			String mInFilePath = "C:\\Users\\PengYF\\Desktop\\核心承保返回.xml";
+			String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";
+			InputStream mIs = new FileInputStream(mInFilePath);
+			Document mInXmlDoc = JdomUtil.build(mIs);
+			JdomUtil.print(mInXmlDoc);
+//			Document mOutXmlDoc = new ContConfirm(null).noStd2Std(mInXmlDoc);
+			Document mOutXmlDoc = new ContConfirm(null).std2NoStd(mInXmlDoc);
 			JdomUtil.print(mOutXmlDoc);
+			OutputStream mFos = new FileOutputStream(mOutFilePath);
+			JdomUtil.output(mOutXmlDoc, mFos);
+			System.out.println("成功结束！");
 
 		}
 }

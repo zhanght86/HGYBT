@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GBK"?>
+<TranData>
+   <Head>
+      <Flag>0</Flag>
+      <Desc>交易成功</Desc>
+   </Head>
+   <Body>
+      <Detail>
+         <ContNo>888030000001349</ContNo>
+         <Result>0</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888030000001350</ContNo>
+         <Result>1</Result>
+         <ResultText>银行有，核心无！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888030000001351</ContNo>
+         <Result>0</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+      <Detail>
+         <ContNo>888030000001354</ContNo>
+         <Result>0</Result>
+         <ResultText>数据一致！</ResultText>
+      </Detail>
+   </Body>
+</TranData>
+

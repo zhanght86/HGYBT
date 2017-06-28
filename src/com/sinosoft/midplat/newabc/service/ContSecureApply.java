@@ -1,7 +1,6 @@
 package com.sinosoft.midplat.newabc.service;
 
 import java.util.Calendar;
-import java.util.List;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -31,13 +30,10 @@ public class ContSecureApply extends ServiceImpl{
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into ContSecureApply.service()...");
 		cInXmlDoc = pInXmlDoc;
-		
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
 		String mContNo = mBodyEle.getChildText(ContNo);
-		String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
 		String busiType = mBodyEle.getChildText("BusiType");
-		
 		try {
 			cTranLogDB = insertTranLog(pInXmlDoc);
 			
@@ -58,9 +54,6 @@ public class ContSecureApply extends ServiceImpl{
 			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
 				throw new MidplatException("此保单数据正在处理中，请稍候！");
 			}
-			 
-			
-			//判断是否重发20141010
 			cLogger.info("判断是否重发，1为重发，重发Body增加ResendFlag节点");
 			String tResendSql = new StringBuilder("select count(1) from TranLog where RCode=").append(CodeDef.RCode_OK)
 			.append(" and contno='").append(mContNo).append('\'')
@@ -71,37 +64,24 @@ public class ContSecureApply extends ServiceImpl{
 				Element tResendFlag=new ElementLis("ResendFlag", "1",mBodyEle);
 				cLogger.info("重发标志："+tResendFlag.getText());
 			}
-			
 			JdomUtil.print(cInXmlDoc);
-		
 			if(busiType.equals("07")){//犹撤
-				
 				cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_NoTaken).call(cInXmlDoc);
 			}else 	if(busiType.equals("09")){//满期 核心暂时没有
-				
 				cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ManPayment).call(cInXmlDoc);
 			}else		if(busiType.equals("10")){//退保
-				
 				cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_Taken).call(cInXmlDoc);
 			}
-			
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
-			Element tOutBodyEle = tOutRootEle.getChild(Body);  
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-
 		} 
-		catch (MidplatException ex) {
-			cLogger.info(cThisBusiConf.getChildText(name)+"交易失败！", ex);		
-		}
 		catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
-		
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild(Head);
 			cTranLogDB.setRCode(tHeadEle.getChildText(Flag));

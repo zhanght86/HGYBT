@@ -175,7 +175,7 @@
 			<DialNumber></DialNumber>
 			<MobileNumber></MobileNumber>
 			<Zip></Zip>
-			<Gender></Gender>
+			<Gender><xsl:apply-templates select="Sex"/></Gender>
 			<RelatedToInsuredRoleCode>
 				<xsl:call-template name="tran_relation">
 					<xsl:with-param name="relation">
@@ -204,7 +204,9 @@
 	<ModalPremAmt>
 		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/Prem " />
 	</ModalPremAmt>
-	<ModalPremAmtUper></ModalPremAmtUper>
+	<ModalPremAmtUper>
+		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/PremText " />
+	</ModalPremAmtUper>
 	<PlanName>
 		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/RiskName " />
 	</PlanName>
@@ -234,10 +236,26 @@
 	<BankManagerName><xsl:value-of select="Body/AgentName " /></BankManagerName>	<!-- 银管员名称 -->
 	<BankMagCredentialsNo></BankMagCredentialsNo><!-- 银管员名称资格证 -->
 	<PayoutStart></PayoutStart>		<!-- 领取年龄 -->
-	<DivType></DivType>				<!-- 红利领取方式 -->
-	<DivTypeName></DivTypeName>		<!-- 红利领取方式名称 -->
-	<BenefitMode></BenefitMode>		<!-- 领取/给付方式代码 -->
-	<BenefitModeName></BenefitModeName><!-- 领取/给付方式名称 -->
+	<!-- 红利领取方式 -->
+	<DivType><xsl:apply-templates select="Body/Risk[RiskCode = MainRiskCode]/BonusGetMode"/></DivType>				
+	<!-- 红利领取方式名称 -->
+	<DivTypeName>
+		<xsl:call-template name="tran_bonusgetmode">
+			<xsl:with-param name="bonusgetmode">
+				<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/BonusGetMode"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</DivTypeName>		
+	<!-- 领取/给付方式代码 -->
+	<BenefitMode><xsl:apply-templates select="Body/Risk[RiskCode = MainRiskCode]/GetIntv"/></BenefitMode>		
+	<!-- 领取/给付方式名称 -->
+	<BenefitModeName>
+		<xsl:call-template name="tran_getintv">
+			<xsl:with-param name="getintv">
+				<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/GetIntv"/>
+			</xsl:with-param>
+		</xsl:call-template>
+	</BenefitModeName>
 	<FirstPayOutDate><xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/GetStartDate " /></FirstPayOutDate><!-- 首期年金领取日期 -->
 	<BasePreCount></BasePreCount>	<!-- 保额责任个数 -->
 	<BasePre1>
@@ -256,7 +274,7 @@
 		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/PolApplyDate " />
 	</PaymentDueDate>	<!-- 缴费起始日期 -->
 	<FinalPaymentDate>
-		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/PayToDate " />
+		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/PayEndDate " />
 	</FinalPaymentDate><!-- 缴费终止日期 -->
 	<EffDate>
 		<xsl:value-of select="Body/Risk[RiskCode = MainRiskCode]/CValiDate " />
@@ -292,7 +310,7 @@
 			<BenefitMode></BenefitMode>		<!-- 领取/给付方式代码 -->
 			<BenefitModeName></BenefitModeName><!-- 领取/给付方式名称 -->
 			<PayOutDate><xsl:value-of select="GetStartDate " /></PayOutDate>		<!-- 领取日期 -->
-			<PayoutStart></PayoutStart>		<!-- 领取年龄 -->
+			<PayoutStart><xsl:value-of select="GetYear "/></PayoutStart>		<!-- 领取年龄 -->
 		</xsl:element>
 	</xsl:for-each>
 	<CashValue>
@@ -313,17 +331,19 @@
 		<Text>收到本保险单后请仔细核对</Text>
 		<Text>后退还所缴保险费</Text>
 	</PolicyInfoDesc>
-	<ContractInfo>
-		<RiskAmt></RiskAmt>
-		<TotalRiskAmt></TotalRiskAmt>
-		<LoanBenefitDesc></LoanBenefitDesc>
-		<LoanContVerifyNo></LoanContVerifyNo>
-		<LoanContractNo></LoanContractNo>
-		<LoanInvoiceNo></LoanInvoiceNo>
-		<LoanStartDate></LoanStartDate>
-		<LoanEndDate></LoanEndDate>
-		<Spec1>1、本保险单最高保险金额以 100万元为限。无论被保险人持有几份本保险，本公司对其承担的保险金给付责任以</Spec1>
-	</ContractInfo>
+	<xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '012E0100'">
+		<ContractInfo>
+			<RiskAmt></RiskAmt>
+			<TotalRiskAmt></TotalRiskAmt>
+			<LoanBenefitDesc></LoanBenefitDesc>
+			<LoanContVerifyNo></LoanContVerifyNo>
+			<LoanContractNo></LoanContractNo>
+			<LoanInvoiceNo></LoanInvoiceNo>
+			<LoanStartDate></LoanStartDate>
+			<LoanEndDate></LoanEndDate>
+			<Spec1>1、本保险单最高保险金额以 100万元为限。无论被保险人持有几份本保险，本公司对其承担的保险金给付责任以</Spec1>
+		</ContractInfo>
+	</xsl:if>
 	<BeiYong></BeiYong>
 	<DigitalSignInfo>
 		<SignatureFlag>N</SignatureFlag>
@@ -339,11 +359,11 @@
 		</xsl:otherwise>
 	</xsl:choose>
 	<PrintList>
-		<PrintDesc></PrintDesc>
-		<PrintPages>1</PrintPages>
-		<VoucherType>1</VoucherType>
-		<PrintRecNum></PrintRecNum>
-		<PrintDetails>
+		<PrintDesc></PrintDesc><!-- 打印提示信息 -->
+		<PrintPages>1</PrintPages><!-- 当前打印页数 -->
+		<VoucherType>1</VoucherType><!-- 凭证类型 -->
+		<PrintRecNum></PrintRecNum><!-- 打印行数 -->
+		<PrintDetails><!-- 明细信息 -->
 			<Details></Details>
 			<xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />
 								<xsl:variable name="MainRisk" select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
@@ -357,17 +377,17 @@
 								<Details><xsl:text>　</xsl:text></Details>
 								<Details><xsl:text>　</xsl:text></Details>
 								<Details><xsl:text>　</xsl:text></Details> 
-								<Details><xsl:text>　</xsl:text>保险合同号2：<xsl:value-of select="/TranData/Body/ContNo"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' ', 48)"/>货币单位：人民币/元 </Details>
+								<Details><xsl:text>　</xsl:text>保险合同号：<xsl:value-of select="/TranData/Body/ContNo"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' ', 48)"/>货币单位：人民币/元 </Details>
 								<Details><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Details>
 								<Details/>
 								<Details><xsl:text>　</xsl:text>保险合同成立日：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur10Date()"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' ', 41)"/>保险合同生效日期：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.date8to10(/TranData/Body/Risk/CValiDate)" /> </Details>
 								<Details><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Details>      
-								<Details><xsl:text>　</xsl:text><xsl:text>投保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Appnt/Name, 12)"/>
+								<Details><xsl:text>　</xsl:text><xsl:text>投保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Appnt/Name, 16)"/>
 																												<xsl:text>性别：</xsl:text><xsl:apply-templates select="/TranData/Body/Appnt/Sex"/><xsl:text>   </xsl:text>
 																												<xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(string(java:com.sinosoft.midplat.common.DateUtil.getAge(/TranData/Body/Appnt/Birthday)),2)"/><xsl:text>            </xsl:text>  
 																												<xsl:text>证件号码：</xsl:text><xsl:value-of select="/TranData/Body/Appnt/IDNo"/>
 								</Details>
-								<Details><xsl:text>　</xsl:text><xsl:text>被保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Insured/Name, 12)"/>
+								<Details><xsl:text>　</xsl:text><xsl:text>被保人姓名：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Insured/Name, 16)"/>
 																												<xsl:text>性别：</xsl:text><xsl:apply-templates select="/TranData/Body/Insured/Sex"/><xsl:text>   </xsl:text>
 																												<xsl:text>    年龄：</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(string(java:com.sinosoft.midplat.common.DateUtil.getAge(/TranData/Body/Insured/Birthday)),2)"/><xsl:text>            </xsl:text>
 																												<xsl:text>证件号码：</xsl:text><xsl:value-of select="/TranData/Body/Insured/IDNo"/>
@@ -376,81 +396,139 @@
 								<xsl:variable name="sflag" select="java:java.lang.Boolean.parseBoolean('true')" />    
 								<xsl:variable name="num" select="count(/TranData/Body/Bnf) " />
 								<xsl:for-each select="/TranData/Body/Bnf">
-								<Details><xsl:text>　</xsl:text><xsl:text></xsl:text>受益人姓名: <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Name, 12)"/>																
-								<xsl:text>性别:</xsl:text><xsl:text> </xsl:text><xsl:apply-templates select="Sex"/><xsl:text>       </xsl:text>
-								 <xsl:text>受益顺序: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Grade, 10)"/>	
-								<xsl:text>受益比例:</xsl:text><xsl:text>   </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Lot, 3, $Falseflag)"/><xsl:text>%</xsl:text>
-			                   	</Details>
+									<xsl:if test="Type='0'"><!-- 生存受益人 -->
+										<Details><xsl:text>　</xsl:text><xsl:text></xsl:text>生存受益人姓名：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Name, 12)"/>																
+										<xsl:text>性别:</xsl:text><xsl:text> </xsl:text><xsl:apply-templates select="Sex"/><xsl:text>       </xsl:text>
+										 <xsl:text>受益顺序: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Grade, 10)"/>	
+										<xsl:text>受益比例:</xsl:text><xsl:text>   </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Lot, 3, $Falseflag)"/><xsl:text>%</xsl:text>
+					                   	</Details>
+				                   </xsl:if>
+				                   <xsl:if test="Type='1'"><!-- 身故受益人 -->
+				                   		<Details><xsl:text>　</xsl:text><xsl:text></xsl:text>身故受益人姓名：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Name, 12)"/>																
+										<xsl:text>性别:</xsl:text><xsl:text> </xsl:text><xsl:apply-templates select="Sex"/><xsl:text>       </xsl:text>
+										 <xsl:text>受益顺序: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Grade, 10)"/>	
+										<xsl:text>受益比例:</xsl:text><xsl:text>   </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(Lot, 3, $Falseflag)"/><xsl:text>%</xsl:text>
+					                   	</Details>
+				                   </xsl:if>
 								</xsl:for-each>
 								<xsl:choose>
-								<xsl:when test="$num = 0"><Details><xsl:text>　</xsl:text><xsl:text></xsl:text>受益人姓名:<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' 法定', 13)"/>																
-								<xsl:text>性别:</xsl:text><xsl:text> </xsl:text>--<xsl:text>       </xsl:text>
-								 <xsl:text>受益顺序: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('--', 10)"/>	
-								<xsl:text>受益比例:</xsl:text><xsl:text>   </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('--', 3, $Falseflag)"/>
-			                   	</Details></xsl:when>
+									<xsl:when test="$num = 0">
+										<Details><xsl:text>　</xsl:text><xsl:text></xsl:text>受益人姓名:<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(' 法定', 13)"/>																
+										<xsl:text>性别:</xsl:text><xsl:text> </xsl:text>--<xsl:text>       </xsl:text>
+										 <xsl:text>受益顺序: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('--', 10)"/>	
+										<xsl:text>受益比例:</xsl:text><xsl:text>   </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('--', 3, $Falseflag)"/>
+					                   	</Details>
+				                   	</xsl:when>
 								</xsl:choose>		
 								<Details />
 								<Details />
 								<Details />
 								<Details><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Details>      
-								<Details><xsl:text>　</xsl:text>险种名称                          保险期间    交费年期    交费方式  （基本）保额/份数   保险费</Details>
-								<xsl:for-each select="/TranData/Body/Risk">
-								<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Amnt)"/>
-								<xsl:variable name="Prem" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/>
-								<xsl:variable name="Mult" select="Mult"/>
-								<Details>
-								<!-- 险种名称 -->
-								<xsl:text>　</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(RiskName, 36)"/>
-								                                                     <xsl:choose>
-																										<xsl:when test="InsuYearFlag = 'A'"><xsl:text>至</xsl:text>
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>周岁</xsl:text>
-																										</xsl:when>
-																										<xsl:when test="InsuYearFlag = 'Y'">
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>年  </xsl:text>
-																										</xsl:when>  
-																										<xsl:when test="InsuYearFlag = 'M'">
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>月  </xsl:text>
-																										</xsl:when>
-																										<xsl:otherwise> 
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>日</xsl:text>
-																										</xsl:otherwise>
+								<xsl:variable name="MainRiskCode" select="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode" />
+								<xsl:choose>
+									<!-- 华贵多彩盛世养老年金保险 -->
+									<xsl:when test="$MainRiskCode='012E0100'">
+										<Details>　险种名称                          基本保险金额    份数    保险期间  交费期间   每期保险费</Details>
+										<xsl:for-each select="/TranData/Body/Risk">
+										<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Amnt)"/>
+										<xsl:variable name="Prem" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/>
+										<xsl:variable name="Mult" select="Mult"/>
+										<Details>
+										<!-- 险种名称 -->
+										<xsl:text>　</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(RiskName, 35)"/>
+										<!-- 保额 -->
+										<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Amnt,10,$Falseflag)"/><xsl:text></xsl:text>
+										<xsl:choose>
+											<xsl:when test="string-length($Mult)=2">
+												<!-- 份数-->
+												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Mult,8,$Falseflag)"/><xsl:text></xsl:text>
+												<!-- 保险期间 -->
+												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('终身', 11,$Falseflag)"/>
+											</xsl:when>
+											<xsl:otherwise>
+												<!-- 份数-->
+												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Mult,9,$Falseflag)"/><xsl:text></xsl:text>
+												<!-- 保险期间 -->
+												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('终身', 10,$Falseflag)"/>
+											</xsl:otherwise>
+										</xsl:choose>
+										<xsl:text>     </xsl:text>
+										<!--交费期间  -->
+										<xsl:choose>
+											<xsl:when test="PayIntv = 0">
+												<xsl:text> 趸交     </xsl:text>
+											</xsl:when>
+											<xsl:when test="PayEndYearFlag = 'Y'">
+												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 3,$Falseflag)"/><xsl:text>年      </xsl:text>
+											</xsl:when>
+										</xsl:choose>
+										<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,8,$Falseflag)"/></Details>
+										</xsl:for-each>
+									</xsl:when>
+									<xsl:otherwise>
+										<Details><xsl:text>　</xsl:text>险种名称                          保险期间    交费年期    交费方式  （基本）保额/份数   保险费</Details>
+										<xsl:for-each select="/TranData/Body/Risk">
+										<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Amnt)"/>
+										<xsl:variable name="Prem" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/>
+										<xsl:variable name="Mult" select="Mult"/>
+										<Details>
+										<!-- 险种名称 -->
+										<xsl:text>　</xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(RiskName, 36)"/>
+										                                                     <xsl:choose>
+									                                                     					<xsl:when test="InsuYearFlag = 'A' and InsuYear=105"  >
+																												<xsl:text>终身   </xsl:text>
+																											</xsl:when>
+																											<xsl:when test="InsuYearFlag = 'A'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>周岁</xsl:text>
+																											</xsl:when>
+																											<xsl:when test="InsuYearFlag = 'Y'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>年  </xsl:text>
+																											</xsl:when>  
+																											<xsl:when test="InsuYearFlag = 'M'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>月  </xsl:text>
+																											</xsl:when>
+																											<xsl:otherwise> 
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(InsuYear, 2,$Falseflag)"/><xsl:text>日</xsl:text>
+																											</xsl:otherwise>
 																								</xsl:choose>
-																						<xsl:text>     </xsl:text>
-																						<xsl:choose>
-																										<xsl:when test="PayIntv = 0">
-																											<xsl:text>趸交        </xsl:text>
-																										</xsl:when>
-																										<xsl:when test="PayEndYearFlag = 'Y'">
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>年        </xsl:text>
-																										</xsl:when>
-																										<xsl:when test="PayEndYearFlag = 'M'">
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>月        </xsl:text>
-																										</xsl:when>
-																										<xsl:when test="PayEndYearFlag = 'D'">
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>日        </xsl:text>
-																										</xsl:when>  
-																										<xsl:otherwise> 
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>周岁    </xsl:text>
-																										</xsl:otherwise>
-																								</xsl:choose>
-																						<xsl:apply-templates select="PayIntv"/>
-																											<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Mult,11,$Falseflag)"/><xsl:text>份</xsl:text>
-																						 <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,13,$Falseflag)"/>元</Details>
-								</xsl:for-each>
-								 <Details/>
-								 <Details/>
-								 <Details/>
-								 <Details/>
+																								<xsl:text>     </xsl:text>
+																								<xsl:choose>
+																											<xsl:when test="PayIntv = 0">
+																												<xsl:text>趸交        </xsl:text>
+																											</xsl:when>
+																											<xsl:when test="PayEndYearFlag = 'Y'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>年        </xsl:text>
+																											</xsl:when>
+																											<xsl:when test="PayEndYearFlag = 'M'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>月        </xsl:text>
+																											</xsl:when>
+																											<xsl:when test="PayEndYearFlag = 'D'">
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>日        </xsl:text>
+																											</xsl:when>  
+																											<xsl:otherwise> 
+																												<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(PayEndYear, 2,$Falseflag)"/><xsl:text>周岁    </xsl:text>
+																											</xsl:otherwise>
+																									</xsl:choose>
+																								<xsl:apply-templates select="PayIntv"/>
+																													<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Mult,11,$Falseflag)"/><xsl:text>份</xsl:text>
+																								 <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_($Prem,13,$Falseflag)"/>元</Details>
+										</xsl:for-each>
+									</xsl:otherwise>
+								</xsl:choose>
+								<Details/>
+								<Details/>
+								<Details/>
+								<Details/>
 								<Details><xsl:text>　</xsl:text>保险费合计：<xsl:value-of select="/TranData/Body/PremText"/>（RMB <xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/>元）</Details>
 								<Details><xsl:text>　</xsl:text>------------------------------------------------------------------------------------------------</Details>
-								<xsl:choose><!-- 保驾护航产品（221201） 此处打印的是（此栏空白），不是红利领取方式 -->
-								<xsl:when test="Risk[RiskCode=MainRiskCode]/RiskCode != '221201'">
-								<Details><xsl:text>　</xsl:text>红利领取方式：<xsl:apply-templates select="/TranData/Body/Risk[RiskCode=MainRiskCode]/BonusGetMode" /></Details>
-								</xsl:when>
-								<xsl:otherwise>
-								<Details><xsl:text>　</xsl:text>（本栏空白）</Details>
-								<Details/>
-								</xsl:otherwise>
+								<xsl:choose>
+									<xsl:when test="Risk[RiskCode=MainRiskCode]/RiskCode != '221201'">
+										<Details><xsl:text>　</xsl:text>红利领取方式：<xsl:apply-templates select="/TranData/Body/Risk[RiskCode=MainRiskCode]/BonusGetMode" /></Details>
+									</xsl:when>
+									<xsl:otherwise>
+										<Details><xsl:text>　</xsl:text>（本栏空白）</Details>
+										<Details/>
+									</xsl:otherwise>
 								</xsl:choose>
 								<xsl:choose>
 									<xsl:when test="$num=1 or $num=0"><Details/><Details /><Details /><Details /></xsl:when><!-- 受益人个数为0或者个数为1的情况是一样的，受益人的信息都占一行 -->
@@ -481,7 +559,8 @@
 								<Details><xsl:text>　</xsl:text>银行网点名称：<xsl:value-of select="/TranData/Body/AgentComName"/></Details>
 								<Details><xsl:text>　</xsl:text>银行销售人员姓名/代码：<xsl:value-of select="/TranData/Body/SaleName"/>/<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/SaleStaff,44)"/>打印时间：<xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur10Date()"/><xsl:text> </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.DateUtil.getCur8Time()"/></Details>
 								<Details><xsl:text>　</xsl:text>银保经理姓名：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/AgentName, 54)"/>银保经理电话：<xsl:value-of select="/TranData/Body/AgentPhone"/></Details>
-								<Details />
+								<Details><xsl:text>　</xsl:text>签发机构：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ComName, 54)"/></Details>
+								<Details><xsl:text>　</xsl:text>机构地址：<xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/ComLocation, 54)"/></Details>
 								<Details />
 								<Details />
 								<Details />
@@ -499,12 +578,9 @@
 	</PrintList>
 	<xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '011A0100'">
 		<PrintList>
-		<xsl:variable name="Amnt"
-			select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Amnt)" />
-		<xsl:variable name="Falseflag"
-			select="java:java.lang.Boolean.parseBoolean('false')" />
-		<xsl:variable name="MainRisk"
-			select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
+		<xsl:variable name="Amnt" select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Amnt)" />
+		<xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('false')" />
+		<xsl:variable name="MainRisk" select="/TranData/Body/Risk[RiskCode=MainRiskCode]" />
 			<PrintDesc></PrintDesc>
 			<PrintPages>2</PrintPages>
 			<VoucherType>2</VoucherType>
@@ -566,25 +642,16 @@
 		 <Details/>
 		 <Details><xsl:text>     </xsl:text><xsl:text>保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/></Details>
 		 <Details><xsl:text>     </xsl:text><xsl:text>投保人: </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/Appnt/Name, 19)"/><xsl:text>银保经理姓名：      </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(/TranData/Body/AgentName, 18)"/><xsl:text>银保经理代码：</xsl:text><xsl:value-of select="/TranData/Body/AgentCode"/></Details>
-		 <xsl:choose><!-- 保驾护航产品（221201） 没有产品说明说明书，智赢C有 -->
-		   <xsl:when test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '221201' and /TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode!='221301'">
-		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单、</xsl:text></Details>
-		     <Details><xsl:text>     </xsl:text><xsl:text>保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保提示</xsl:text></Details>
-		     <Details><xsl:text>     </xsl:text><xsl:text>书和产品说明书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</xsl:text></Details>
-		   </xsl:when>
-		   <xsl:otherwise>
-		     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单</xsl:text></Details>
-		     <Details><xsl:text>     </xsl:text><xsl:text>金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保提示</xsl:text></Details>
-		     <Details><xsl:text>     </xsl:text><xsl:text>书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</xsl:text></Details>
-		   </xsl:otherwise>
-		  </xsl:choose>
-		  <Details><xsl:text>     </xsl:text><xsl:text>    投保人签名：                                    签收日期：         年     月     日</xsl:text></Details>
-		  <Details><xsl:text>     </xsl:text><xsl:text>                                      以下栏由公司人员填写</xsl:text></Details>
-		  <Details><xsl:text>     </xsl:text><xsl:text>------------------------------------------------------------------------------------------------</xsl:text></Details>
-	      <Details><xsl:text>     </xsl:text><xsl:text>    保险合同号为 </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</xsl:text></Details>
-		  <Details><xsl:text>     </xsl:text><xsl:text>回执交回。</xsl:text></Details>
-		  <Details/>
-		  <Details><xsl:text>     </xsl:text><xsl:text>    银保经理签名：	          经办人签字：           日期：      年     月     日</xsl:text></Details>
+	     <Details><xsl:text>     </xsl:text><xsl:text>    本投保人已收到贵公司的保险合同（保险合同号: </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>），本保险合同包括保险单、</xsl:text></Details>
+	     <Details><xsl:text>     </xsl:text><xsl:text>金价值表、保险条款等相关资料，经审核确认保险合同内容正确无误。本人已阅读过产品条款、投保</xsl:text></Details>
+	     <Details><xsl:text>     </xsl:text><xsl:text>提示书，确认已了解并认可保险合同的全部内容，知晓本人的权利和义务。</xsl:text></Details>
+		 <Details><xsl:text>     </xsl:text><xsl:text>    投保人签名：                                    签收日期：         年     月     日</xsl:text></Details>
+		 <Details><xsl:text>     </xsl:text><xsl:text>                                      以下栏由公司人员填写</xsl:text></Details>
+		 <Details><xsl:text>     </xsl:text><xsl:text>------------------------------------------------------------------------------------------------</xsl:text></Details>
+	     <Details><xsl:text>     </xsl:text><xsl:text>    保险合同号为 </xsl:text><xsl:value-of select="/TranData/Body/ContNo"/><xsl:text>的保险合同已送达客户，由客户亲笔签字确认，现将保险合同送达</xsl:text></Details>
+		 <Details><xsl:text>     </xsl:text><xsl:text>回执交回。</xsl:text></Details>
+		 <Details/>
+		 <Details><xsl:text>     </xsl:text><xsl:text>    银保经理签名：	          经办人签字：           日期：      年     月     日</xsl:text></Details>
 	  </PrintDetails>
 	</PrintList>
 	</xsl:if>
@@ -592,20 +659,11 @@
 </xsl:template>
 
 	<xsl:template name="Cashs" match="CashValues">
-        <xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode != '221301'"> 
 		<xsl:for-each select="CashValue[EndYear &lt; (26)]">
 		<xsl:variable name="EndYear" select="EndYear"></xsl:variable>	
 		<xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />						
 				<Details><xsl:text>                </xsl:text><xsl:choose><xsl:when test="EndYear!='' and Cash!='-'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(EndYear,6,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Cash),13,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:text>    </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',13,$Falseflag)"/></xsl:otherwise></xsl:choose> |   <xsl:choose><xsl:when test="../CashValue[EndYear=($EndYear+25)]/EndYear!=''"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(../CashValue[EndYear=($EndYear+25)]/EndYear,2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(../CashValue[EndYear=($EndYear+25)]/Cash),17,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',14,$Falseflag)"/><xsl:text>   </xsl:text></xsl:otherwise></xsl:choose> |   <xsl:choose><xsl:when test="../CashValue[EndYear=($EndYear+50)]/EndYear!=''"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(../CashValue[EndYear=($EndYear+50)]/EndYear,2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(../CashValue[EndYear=($EndYear+50)]/Cash),17,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',14,$Falseflag)"/><xsl:text>   </xsl:text></xsl:otherwise></xsl:choose></Details>
 		</xsl:for-each>
-		</xsl:if>
-		<xsl:if test="/TranData/Body/Risk[RiskCode=MainRiskCode]/RiskCode = '221301'"> 
-		    <xsl:for-each select="CashValue[EndYear &lt; (34)]">
-		    <xsl:variable name="EndYear" select="EndYear"></xsl:variable>	
-		    <xsl:variable name="Falseflag" select="java:java.lang.Boolean.parseBoolean('true')" />						
-				<Details><xsl:text>                        </xsl:text><xsl:choose><xsl:when test="EndYear!='' and Cash!='-'"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(EndYear,6,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Cash),13,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:text>    </xsl:text><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',13,$Falseflag)"/></xsl:otherwise></xsl:choose> |   <xsl:choose><xsl:when test="../CashValue[EndYear=($EndYear+33)]/EndYear!=''"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(../CashValue[EndYear=($EndYear+33)]/EndYear,2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(../CashValue[EndYear=($EndYear+33)]/Cash),17,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',14,$Falseflag)"/><xsl:text>   </xsl:text></xsl:otherwise></xsl:choose> |   <xsl:choose><xsl:when test="../CashValue[EndYear=($EndYear+66)]/EndYear!=''"><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(../CashValue[EndYear=($EndYear+66)]/EndYear,2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_(java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(../CashValue[EndYear=($EndYear+66)]/Cash),17,$Falseflag)"/></xsl:when><xsl:otherwise><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',2,$Falseflag)"/><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fillStrWith_('-',14,$Falseflag)"/><xsl:text>   </xsl:text></xsl:otherwise></xsl:choose></Details>
-		</xsl:for-each>
-		</xsl:if>
 	</xsl:template>
 	
 	<xsl:template name="tran_Sex" match="Sex">
@@ -676,24 +734,55 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template name="tran_getmode">
-		<xsl:param name="getmode"></xsl:param>
+	<!-- 红利领取方式代码 -->
+	<xsl:template match="BonusGetMode">
 		<xsl:choose>
-			<xsl:when test="$getmode = 2">11</xsl:when><!-- 现金 -->
-			<xsl:when test="$getmode = 1">12</xsl:when><!-- 累计生息 -->
-			<xsl:when test="$getmode = 3">23</xsl:when><!-- 抵交保费 -->
-			<xsl:when test="$getmode = 5">14</xsl:when><!-- 增额交清 -->
+			<xsl:when test=".=1">12</xsl:when><!-- 累积生息 -->
+			<xsl:when test=".=2">11</xsl:when><!-- 现金领取 -->
+			<xsl:when test=".=3">13</xsl:when><!-- 抵交保险费 -->
+			<xsl:when test=".=5">14</xsl:when><!-- 增额缴清 -->
+			<xsl:otherwise>--</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template name="tran_BenefitMode">
-		<xsl:param name="BenefitMode"></xsl:param>
+	<!-- 红利领取方式名称 -->
+	<xsl:template name="tran_bonusgetmode">
+		<xsl:param name="bonusgetmode"></xsl:param>
 		<xsl:choose>
-			<xsl:when test="$BenefitMode = 0">1</xsl:when><!-- 趸领 -->
-			<xsl:when test="$BenefitMode = 12">2</xsl:when><!-- 年领 -->
-			<xsl:when test="$BenefitMode = 1">5</xsl:when><!-- 月领 -->
-			<xsl:otherwise>12</xsl:otherwise>
-			<!-- 增额交清 -->
+			<xsl:when test="$bonusgetmode=1">累积生息</xsl:when>	
+			<xsl:when test="$bonusgetmode=2">现金领取</xsl:when>	
+			<xsl:when test="$bonusgetmode=3">抵缴保费</xsl:when>	
+			<xsl:when test="$bonusgetmode=5">缴清增额</xsl:when>	
+			<xsl:otherwise>--</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<!-- 领取/给付方式代码 -->
+	<xsl:template match="GetIntv">
+		<xsl:choose>
+			<xsl:when test=".=0">1</xsl:when><!-- 趸领 -->
+			<xsl:when test=".=1">5</xsl:when><!-- 月领 -->
+			<xsl:when test=".=3">4</xsl:when><!-- 季领 -->
+			<xsl:when test=".=6">3</xsl:when><!-- 半年领 -->
+			<xsl:when test=".=12">2</xsl:when><!-- 年领 -->
+			<xsl:when test=".=36">6</xsl:when><!-- 三年领 -->
+			<xsl:when test=".=120">6</xsl:when><!-- 十年领 -->
+			<xsl:otherwise>6</xsl:otherwise><!-- 其他给付 -->
+		</xsl:choose>
+	</xsl:template>
+	
+	<!-- 领取/给付方式名称 -->
+	<xsl:template name="tran_getintv">
+		<xsl:param name="getintv"></xsl:param>
+		<xsl:choose>
+			<xsl:when test="$getintv=0">一次性给付</xsl:when>
+			<xsl:when test="$getintv=1">月给付</xsl:when>
+			<xsl:when test="$getintv=3">季给付</xsl:when>
+			<xsl:when test="$getintv=6">半年给付</xsl:when>
+			<xsl:when test="$getintv=12">年给付</xsl:when>
+			<xsl:when test="$getintv=36">其他给付</xsl:when>
+			<xsl:when test="$getintv=120">其他给付</xsl:when>
+			<xsl:otherwise>其他给付</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	

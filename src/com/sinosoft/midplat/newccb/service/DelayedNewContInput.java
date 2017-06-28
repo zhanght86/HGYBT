@@ -2,6 +2,7 @@ package com.sinosoft.midplat.newccb.service;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.namespace.QName;
 
@@ -14,7 +15,6 @@ import org.jdom.xpath.XPath;
 
 import com.sinosoft.lis.db.TranLogDB;
 import com.sinosoft.midplat.MidplatConf;
-import com.sinosoft.midplat.common.AblifeCodeDef;
 import com.sinosoft.midplat.common.CodeDef;
 import com.sinosoft.midplat.common.DateUtil;
 import com.sinosoft.midplat.common.JdomUtil;
@@ -191,8 +191,8 @@ public class DelayedNewContInput extends ServiceImpl{
 		mTranLogDB.setRCode(CodeDef.RCode_NULL);
 		mTranLogDB.setUsedTime(-1);
 		mTranLogDB.setRText("处理中");
-		//BAK1字段作为备用字段存储建行非实时投保交易保费缴费方式代码|保费缴费期数|保费缴费周期代码 作为更新非实时核保状态交易使用
-		mTranLogDB.setBak1(mBaseInfoEle.getChildText("BrNo").replaceAll(" ",""));
+		//保险年期类别代码|保险期限|保险周期代码|保费缴费方式代码|保费缴费期数|保费缴费周期代码 
+		mTranLogDB.setBak1(mBaseInfoEle.getChildText("RiskMessage").replaceAll(" ",""));
 		Date mCurDate = new Date();
 		mTranLogDB.setMakeDate(DateUtil.get8Date(mCurDate));
 		mTranLogDB.setMakeTime(DateUtil.get6Time(mCurDate));

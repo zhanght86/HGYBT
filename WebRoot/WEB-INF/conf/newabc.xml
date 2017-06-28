@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="GBK"?>
 <newabc>
-	<bank id="05" insu="010079" />
+	<bank id="05" insu="1147" />
 	<TranCom outcode="05">05</TranCom>
 	<BankCode>0102</BankCode>
 	<msg path="newabc" />
@@ -12,7 +12,7 @@
 		<name>心跳交易</name>
 		<funcFlag outcode="1000">1000</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.GreenTest</format>
-		<service>com.sinosoft.midplat.service.Heartbeat</service>
+		<service>com.sinosoft.midplat.newabc.service.Heartbeat</service>
 	</business>
 
 	<business>
@@ -120,8 +120,7 @@
 		<locktime>120</locktime>
 		<funcFlag outcode="1011">1011</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.AccountChange</format>
-		<service>com.sinosoft.midplat.newabc.service.NewAccountChange
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.NewAccountChange</service>
 	</business>
 
 	<business>
@@ -149,6 +148,15 @@
 		<funcFlag outcode="1019">1019</funcFlag>
 		<format>com.sinosoft.midplat.newabc.format.PolValueQuery</format>
 		<service>com.sinosoft.midplat.newabc.service.ContPolValueQuery</service>
+	</business>
+
+	<business>
+		<name>非实时出单申请查询</name>
+		<timeout>300</timeout>
+		<locktime>120</locktime>
+		<funcFlag outcode="1020">1020</funcFlag>
+		<format>com.sinosoft.midplat.newabc.format.NonRealTimeContQuery</format>
+		<service>com.sinosoft.midplat.newabc.service.NonRealTimeContQuery</service>
 	</business>
 
 	<business>
@@ -187,8 +195,7 @@
 		<name>手工单出单险种明细</name>
 		<socket ip="127.0.0.1" port="8080" />
 		<funcFlag outcode="2011">2011</funcFlag>
-		<service>com.sinosoft.midplat.newabc.service.HandContRiskDtlBlc
-		</service>
+		<service>com.sinosoft.midplat.newabc.service.HandContRiskDtlBlc</service>
 		<zone>00000</zone>
 		<NodeNo>112401</NodeNo>
 		<nextDate>N</nextDate>

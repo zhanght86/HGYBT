@@ -103,7 +103,6 @@
 					        			<xsl:if test="RiskCode!= MainRiskCode">
 					        				<MainAndAdlIns_Ind>1</MainAndAdlIns_Ind>
 					        			</xsl:if>
-					        			
 					        			<!-- 保费金额 -->
 					        			<InsPrem_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(Prem)"/></InsPrem_Amt>
 					        			<!-- 投保份数 -->
@@ -116,9 +115,9 @@
 			        		<!-- 投保单号 -->
 			        		<Ins_BillNo><xsl:value-of select="substring(/TranData/Body/ProposalPrtNo,1,13)"/></Ins_BillNo>
 			        		<!-- 总保费金额 -->
-			        		<Tot_InsPrem_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/></Tot_InsPrem_Amt>
+			        		<Tot_InsPrem_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/PayPrem)"/></Tot_InsPrem_Amt>
 			        		<!-- 首期缴费金额 -->
-			        		<Init_PyF_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Risk[RiskCode=MainRiskCode]/Prem)"/></Init_PyF_Amt>
+			        		<Init_PyF_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Prem)"/></Init_PyF_Amt>
 			        		<!-- 年化保费金额 -->
 			        		<Anulz_InsPrem_Amt><xsl:value-of select="java:com.sinosoft.midplat.common.NumberUtil.fenToYuan(/TranData/Body/Risk[RiskCode=MainRiskCode]/Prem)"/></Anulz_InsPrem_Amt>
 			        		<!-- 保险公司派驻人员姓名 -->
@@ -140,7 +139,6 @@
 	      	</TX_BODY>
 		</TX>
 	</xsl:template>
-	
 	<!-- 保障年期/年龄标志 -->
 	<xsl:template name="tran_PbIYF">
 		<xsl:param name="PbInsuYearFlag">2</xsl:param>

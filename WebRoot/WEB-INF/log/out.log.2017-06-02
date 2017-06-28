@@ -1,0 +1,226 @@
+17:18:57,373 INFO bat.NewAbcBusiBlc(405) - 新农行新保承保保单对账程序启动...
+17:18:57,380 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:18:57,381 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:18:57,382 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:18:57,383 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:18:57,385 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:18:57,386 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:18:57,388 INFO common.XmlConf(80) - conf file modified at (2017-06-02 09:33:58,189) and length=10260 bytes!
+17:18:57,538 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:18:57,541 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:18:57,542 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+17:19:02,074 INFO bat.NewAbcBusiBlc(52) - Into NewAbcBusiBlc.run()...
+17:19:02,075 DEBUG bat.NewAbcBusiBlc(108) - Into NewAbcBusiBlc.insertTranLog()...
+17:19:02,324 DEBUG bat.NewAbcBusiBlc(131) - Out NewAbcBusiBlc.insertTranLog()!
+17:19:02,326 INFO bat.BatConf(28) - Into BatConf.load()...
+17:19:02,327 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+17:19:02,327 INFO common.XmlConf(80) - conf file modified at (2017-06-02 16:49:45,836) and length=12848 bytes!
+17:19:02,339 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+17:19:02,339 INFO bat.BatConf(50) - Out BatConf.load()!
+17:19:02,397 INFO bat.NewAbcBusiBlc(70) - 处理农行新保承保保单对账开始...
+17:19:02,397 INFO bat.NewAbcBusiBlc(74) - D:/YBT_SAVE_XML/ZHH/newabc/POLICY1147.20170531
+17:19:02,397 INFO bat.NewAbcBusiBlc(136) - Into NewAbcBusiBlc.parse()...
+17:19:02,398 INFO bat.NewAbcBusiBlc(149) -  对账日期为...20170531
+17:19:02,398 INFO bat.NewAbcBusiBlc(151) -  当前日期为...20170531
+17:19:02,399 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:19:02,399 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:19:02,399 INFO common.XmlConf(80) - conf file modified at (2017-05-25 13:23:51,874) and length=6906 bytes!
+17:19:02,406 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:19:02,407 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:19:02,409 WARN bat.NewAbcBusiBlc(257) - 承保保单（冲正或撤单的单子），直接跳过，继续下一条！
+17:19:02,409 INFO bat.NewAbcBusiBlc(324) - Out NewAbcBusiBlc.parse()!
+17:19:02,409 DEBUG bat.NewAbcBusiBlc(337) - Into NewInsPolRec.saveDetails()...
+17:19:02,411 ERROR bat.NewAbcBusiBlc(92) - 新保承保保单对账  处理异常...汇总笔数与明细笔数不符！5!=4
+17:19:02,694 INFO bat.NewAbcBusiBlc(103) - 处理农行新保承保保单对账结束!
+17:19:02,694 INFO bat.NewAbcBusiBlc(104) - Out NewAbcBusiBlc.run()!
+17:22:20,355 INFO bat.NewAbcBusiBlc(405) - 新农行新保承保保单对账程序启动...
+17:22:20,360 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+17:22:20,361 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+17:22:20,361 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+17:22:20,363 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+17:22:20,364 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:22:20,365 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+17:22:20,367 INFO common.XmlConf(80) - conf file modified at (2017-06-02 09:33:58,189) and length=10260 bytes!
+17:22:20,517 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+17:22:20,521 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+17:22:20,522 DEBUG common.NoFactory(36) - ClusterId=0; ClusterCount=3
+17:22:22,397 INFO bat.NewAbcBusiBlc(52) - Into NewAbcBusiBlc.run()...
+17:22:22,398 DEBUG bat.NewAbcBusiBlc(108) - Into NewAbcBusiBlc.insertTranLog()...
+17:22:22,657 DEBUG bat.NewAbcBusiBlc(131) - Out NewAbcBusiBlc.insertTranLog()!
+17:22:22,659 INFO bat.BatConf(28) - Into BatConf.load()...
+17:22:22,660 INFO bat.BatConf(31) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml...
+17:22:22,660 INFO common.XmlConf(80) - conf file modified at (2017-06-02 16:49:45,836) and length=12848 bytes!
+17:22:22,671 INFO bat.BatConf(38) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/bat.xml!
+17:22:22,671 INFO bat.BatConf(50) - Out BatConf.load()!
+17:22:22,728 INFO bat.NewAbcBusiBlc(70) - 处理农行新保承保保单对账开始...
+17:22:22,728 INFO bat.NewAbcBusiBlc(74) - D:/YBT_SAVE_XML/ZHH/newabc/POLICY1147.20170531
+17:22:22,728 INFO bat.NewAbcBusiBlc(136) - Into NewAbcBusiBlc.parse()...
+17:22:22,729 INFO bat.NewAbcBusiBlc(149) -  对账日期为...20170531
+17:22:22,729 INFO bat.NewAbcBusiBlc(151) -  当前日期为...20170531
+17:22:22,730 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+17:22:22,730 INFO newabc.NewAbcConf(25) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml...
+17:22:22,730 INFO common.XmlConf(80) - conf file modified at (2017-05-25 13:23:51,874) and length=6906 bytes!
+17:22:22,738 INFO newabc.NewAbcConf(41) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/newabc.xml!
+17:22:22,738 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+17:22:22,741 WARN bat.NewAbcBusiBlc(257) - 承保保单（冲正或撤单的单子），直接跳过，继续下一条！
+17:22:22,741 INFO bat.NewAbcBusiBlc(324) - Out NewAbcBusiBlc.parse()!
+17:22:22,741 DEBUG bat.NewAbcBusiBlc(337) - Into NewInsPolRec.saveDetails()...
+17:22:22,813 INFO bat.NewAbcBusiBlc(380) - 对账明细总数(DtlSet)为：4
+17:22:23,472 DEBUG bat.NewAbcBusiBlc(391) - Out NewInsPolRec.saveDetails()!
+17:22:23,515 INFO net.CallWebsvcAtomSvc(74) - Into CallWebsvcAtomSvc.service()...
+17:22:23,530 DEBUG common.SaveMessage(23) - SavePath_HOME = null
+17:22:23,530 DEBUG common.SaveMessage(41) - SavePath_HOME = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+17:22:23,555 INFO common.SaveMessage(94) - 167832_3_6_inSvc.xml IO输出耗时:0.025s
+17:22:23,556 INFO net.CallWebsvcAtomSvc(91) - 保存报文完毕！167832_3_6_inSvc.xml
+17:22:23,556 INFO net.CallWebsvcAtomSvc(102) - start call 新单对账(http://10.2.0.41:8001/ui/services/ServiceForBankInterfaceService.service)...
+17:22:24,579 DEBUG httpclient.Wire(70) - >> "POST /ui/services/ServiceForBankInterfaceService?wsdl HTTP/1.1[\r][\n]"
+17:22:24,605 DEBUG httpclient.Wire(70) - >> "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:22:24,605 DEBUG httpclient.Wire(70) - >> "SOAPAction: ""[\r][\n]"
+17:22:24,606 DEBUG httpclient.Wire(70) - >> "User-Agent: Axis2[\r][\n]"
+17:22:24,606 DEBUG httpclient.Wire(70) - >> "Host: 10.2.0.41:8001[\r][\n]"
+17:22:24,607 DEBUG httpclient.Wire(70) - >> "Transfer-Encoding: chunked[\r][\n]"
+17:22:24,607 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:22:24,651 DEBUG httpclient.Wire(70) - >> "5e5[\r][\n]"
+17:22:24,652 DEBUG httpclient.Wire(84) - >> "<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><service xmlns="http://kernel.ablinkbank.sinosoft.com"><arg0 xmlns="">PD94bWwgdmVyc2lvbj0iMS4wIj8+DQo8VHJhbkRhdGE+PEhlYWQ+PFRyYW5EYXRlPjIwMTcwNTMxPC9UcmFuRGF0ZT48VHJhblRpbWU+MTcyMjIyPC9UcmFuVGltZT48QmFua0NvZGU+MDEwMjwvQmFua0NvZGU+PFRyYW5Db20+MDU8L1RyYW5Db20+PFpvbmVObz4wMDAwMDwvWm9uZU5vPjxOb2RlTm8+MTEwMTAxMDI8L05vZGVObz48VGVsbGVyTm8+c3lzPC9UZWxsZXJObz48VHJhbk5vPjE2NzgzMjwvVHJhbk5vPjxGdW5jRmxhZz4yMDAxPC9GdW5jRmxhZz48QmFsYW5jZUZsYWc+MDwvQmFsYW5jZUZsYWc+PFNlcnZpY2VJZD42PC9TZXJ2aWNlSWQ+PC9IZWFkPjxCb2R5PjxDb3VudD40PC9Db3VudD48UHJlbT40MDAwMDAwPC9QcmVtPjxEZXRhaWw+PENvbnRObz44ODgwMzAwMDAwMDEzNDk8L0NvbnRObz48UHJlbT4xMDAwMDAwPC9QcmVtPjxBZ2VudENvbT40NDA1NDA8L0FnZW50Q29tPjxQcm9wb3NhbFBydE5vIC8+PEFwcG50TmFtZSAvPjxJbnN1cmVkTmFtZSAvPjwvRGV0YWlsPjxEZXRhaWw+PENvbnRObz44ODgwMzAwMDAwMDEzNTA8L0NvbnRObz48UHJlbT4xMDAwMDAwPC9QcmVtPjxBZ2VudENvbT40NDA1NDA8L0FnZW50Q29tPjxQcm9wb3NhbFBydE5vIC8+PEFwcG50TmFtZSAvPjxJbnN1cmVkTmFtZSAvPjwvRGV0YWlsPjxEZXRhaWw+PENvbnRObz44ODgwMzAwMDAwMDEzNTE8L0NvbnRObz48UHJlbT4xMDAwMDAwPC9QcmVtPjxBZ2VudENvbT40NDA1NDA8L0FnZW50Q29tPjxQcm9wb3NhbFBydE5vIC8+PEFwcG50TmFtZSAvPjxJbnN1cmVkTmFtZSAvPjwvRGV0YWlsPjxEZXRhaWw+PENvbnRObz44ODgwMzAwMDAwMDEzNTQ8L0NvbnRObz48UHJlbT4xMDAwMDAwPC9QcmVtPjxBZ2VudENvbT40NDA1NDA8L0FnZW50Q29tPjxQcm9wb3NhbFBydE5vIC8+PEFwcG50TmFtZSAvPjxJbnN1cmVkTmFtZSAvPjwvRGV0YWlsPjwvQm9keT48L1RyYW5EYXRhPg0K</arg0></service></soapenv:Body></soapenv:Envelope>"
+17:22:24,652 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:22:24,652 DEBUG httpclient.Wire(84) - >> "0"
+17:22:24,653 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:22:24,653 DEBUG httpclient.Wire(70) - >> "[\r][\n]"
+17:22:25,228 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:22:25,228 DEBUG httpclient.Wire(70) - << "HTTP/1.1 200 OK[\r][\n]"
+17:22:25,231 DEBUG httpclient.Wire(70) - << "Date: Fri, 02 Jun 2017 09:22:11 GMT[\r][\n]"
+17:22:25,232 DEBUG httpclient.Wire(70) - << "Transfer-Encoding: chunked[\r][\n]"
+17:22:25,233 DEBUG httpclient.Wire(70) - << "Content-Type: text/xml; charset=UTF-8[\r][\n]"
+17:22:25,233 DEBUG httpclient.Wire(70) - << "X-Powered-By: Servlet/2.5 JSP/2.1[\r][\n]"
+17:22:25,235 DEBUG httpclient.Wire(70) - << "[\r][\n]"
+17:22:25,254 DEBUG httpclient.Wire(84) - << "0"
+17:22:25,254 DEBUG httpclient.Wire(84) - << "4"
+17:22:25,255 DEBUG httpclient.Wire(84) - << "c"
+17:22:25,255 DEBUG httpclient.Wire(84) - << "b"
+17:22:25,256 DEBUG httpclient.Wire(84) - << "[\r]"
+17:22:25,256 DEBUG httpclient.Wire(70) - << "[\n]"
+17:22:25,257 DEBUG httpclient.Wire(84) - << "<?xm"
+17:22:25,260 DEBUG httpclient.Wire(84) - << "l version='1.0' encoding='U"
+17:22:25,262 DEBUG httpclient.Wire(84) - << "TF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Body><ns:serviceResponse xmlns:ns="http://kernel.ablinkbank.sinosoft.com"><ns:return>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+DQo8VHJhbkRhdGE+DQogIDxIZWFkPg0KICAgIDxGbGFnPjA8L0ZsYWc+DQogICAgPERlc2M+vbvS17PJuaY8L0Rlc2M+DQogIDwvSGVhZD4NCiAgPEJvZHk+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxMzQ5PC9Db250Tm8+DQogICAgICA8UmVzdWx0PjA8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0Psr9vt3Su9bCo6E8L1Jlc3VsdFRleHQ+DQogICAgPC9EZXRhaWw+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxMzUwPC9Db250Tm8+DQogICAgICA8UmVzdWx0PjE8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0PtL40NDT0KOsusvQxM7eo6E8L1Jlc3VsdFRleHQ+DQogICAgPC9EZXRhaWw+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxMzUxPC9Db250Tm8+DQogICAgICA8UmVzdWx0PjA8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0Psr9vt3Su9bCo6E8L1Jlc3VsdFRleHQ+DQogICAgPC9EZXRhaWw+DQogICAgPERldGFpbD4NCiAgICAgIDxDb250Tm8+ODg4MDMwMDAwMDAxMzU0PC9Db250Tm8+DQogICAgICA8UmVzdWx0PjA8L1Jlc3VsdD4NCiAgICAgIDxSZXN1bHRUZXh0Psr9vt3Su9bCo6E8L1Jlc3VsdFRleHQ+DQogICAgPC9EZXRhaWw+DQogIDwvQm9keT4NCjwvVHJhbkRhdGE+DQoNCg==</ns:return></ns:serviceResponse></soapenv:Body></soapenv:Envelope>"
+17:22:25,275 INFO net.CallWebsvcAtomSvc(145) - 投保单号null新单对账(service)耗时：1.718s
+17:22:25,299 INFO common.SaveMessage(94) - 167832_6_6_outSvc.xml IO输出耗时:0.021s
+17:22:25,300 INFO net.CallWebsvcAtomSvc(165) - 保存报文完毕！167832_6_6_outSvc.xml
+17:22:25,300 INFO net.CallWebsvcAtomSvc(167) - Out CallWebsvcAtomSvc.service()!
+17:22:25,569 INFO bat.NewAbcBusiBlc(103) - 处理农行新保承保保单对账结束!
+17:22:25,569 INFO bat.NewAbcBusiBlc(104) - Out NewAbcBusiBlc.run()!
+18:59:28,520 INFO net.SocketConf(27) - Into SocketConf.load()...
+18:59:28,531 INFO net.SocketConf(30) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml...
+18:59:28,532 INFO common.XmlConf(80) - conf file modified at (2017-05-31 18:59:15,107) and length=708 bytes!
+18:59:28,571 INFO net.SocketConf(46) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/socket.xml!
+18:59:28,573 INFO net.SocketListenerF5(121) - Into SocketListenerF5.contextDestroyed()...
+18:59:28,573 INFO net.SocketListenerF5(123) - 关闭ServerSocket监听...
+18:59:28,576 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9003
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:59:28,576 DEBUG net.SocketListenerF5(143) - System.out = com.sinosoft.midplat.common.Log4jPrint@68d5c08f
+18:59:28,576 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9004
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:59:28,576 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9001
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:59:28,576 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！9002
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:59:28,576 ERROR net.SocketListenerF5$Server(229) - 等待客户端连接时发生I/O错误！39871
+java.net.SocketException: socket closed
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.sinosoft.midplat.net.SocketListenerF5$Server.run(SocketListenerF5.java:207)
+18:59:28,577 INFO common.Log4jPrint(20) - Start revert System.out...
+18:59:28,613 INFO net.SocketListenerF5(152) - Out SocketListenerF5.contextDestroyed()!
+18:59:28,613 INFO net.SocketListenerF5(73) - Into SocketListenerF5.contextInitialized()...
+18:59:28,614 INFO net.SocketListenerF5(91) - 0_Socket(中国银行): port=9001; class=com.sinosoft.midplat.boc.BocYbt
+18:59:28,615 INFO net.SocketListenerF5(104) - 0_Socket(中国银行)加载成功!
+18:59:28,616 INFO net.SocketListenerF5(91) - 1_Socket(农行新接口): port=9002; class=com.sinosoft.midplat.newabc.NewAbcYbt
+18:59:28,616 INFO net.SocketListenerF5(104) - 1_Socket(农行新接口)加载成功!
+18:59:28,616 INFO net.SocketListenerF5(91) - 2_Socket(浦发新接口): port=9003; class=com.sinosoft.midplat.spdb.SpdbYbt
+18:59:28,617 INFO net.SocketListenerF5$Server(194) - 监听端口 9001
+18:59:28,617 INFO net.SocketListenerF5(104) - 2_Socket(浦发新接口)加载成功!
+18:59:28,618 INFO net.SocketListenerF5$Server(194) - 监听端口 9003
+18:59:28,618 INFO net.SocketListenerF5$Server(194) - 监听端口 9002
+18:59:28,618 INFO net.SocketListenerF5(91) - 3_Socket(建行新接口): port=39871; class=com.sinosoft.midplat.newccb.NewCcbYbt
+18:59:28,619 INFO net.SocketListenerF5(104) - 3_Socket(建行新接口)加载成功!
+18:59:28,619 INFO net.SocketListenerF5$Server(194) - 监听端口 39871
+18:59:28,619 INFO net.SocketListenerF5(91) - 4_Socket(贵州银行): port=9004; class=com.sinosoft.midplat.gzbank.GZBankYbt
+18:59:28,639 INFO net.SocketListenerF5(104) - 4_Socket(贵州银行)加载成功!
+18:59:28,639 INFO net.SocketListenerF5(112) - Out SocketListenerF5.contextInitialized()!
+18:59:28,639 INFO net.SocketConf(60) - Out SocketConf.load()!
+18:59:28,639 INFO net.SocketListenerF5$Server(194) - 监听端口 9004
+18:59:28,639 INFO newabc.NewAbcConf(22) - Into NewAbcConf.load()...
+18:59:28,639 INFO newabc.NewAbcConf(25) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml...
+18:59:28,639 INFO common.XmlConf(80) - conf file modified at (2017-05-31 18:59:15,075) and length=6906 bytes!
+18:59:28,639 INFO newabc.NewAbcConf(41) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/newabc.xml!
+18:59:28,639 INFO newabc.NewAbcConf(48) - Out NewAbcConf.load()!
+18:59:28,639 INFO common.RuleXml(228) - Into RuleXml.load()...
+18:59:28,639 INFO common.RuleXml(231) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xml...
+18:59:28,639 INFO common.XmlConf(80) - conf file modified at (2017-05-31 18:59:15,102) and length=9884 bytes!
+18:59:28,655 INFO common.RuleXml(238) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/rule.xml!
+18:59:28,655 INFO common.RuleXml(245) - Out RuleXml.load()!
+18:59:28,655 INFO bat.BatConf(28) - Into BatConf.load()...
+18:59:28,655 INFO bat.BatConf(31) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml...
+18:59:28,655 INFO common.XmlConf(80) - conf file modified at (2017-05-31 18:59:14,982) and length=12848 bytes!
+18:59:28,655 INFO bat.BatConf(38) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/bat.xml!
+18:59:28,655 INFO bat.BatConf(50) - Out BatConf.load()!
+18:59:28,655 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:59:28,655 INFO midplat.MidplatConf(35) - Start load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml...
+18:59:28,655 INFO common.XmlConf(80) - conf file modified at (2017-05-31 18:59:15,054) and length=10260 bytes!
+18:59:28,671 INFO midplat.MidplatConf(51) - End load /D:/Software/WebLogic/user_projects/domains/ybt/autodeploy/HGLIFE/WEB-INF/conf/midplat.xml!
+18:59:28,671 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:59:29,176 INFO format.PolDetailQuery(61) - Into PolDetailQuery.std2NoStd()...
+18:59:29,306 INFO format.PolDetailQueryOutXsl(25) - Into PolDetailQueryOutXsl.load()...
+18:59:29,308 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+18:59:29,309 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+18:59:29,311 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+18:59:29,313 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+18:59:29,314 INFO format.PolDetailQueryOutXsl(28) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/PolDetailQueryOut.xsl...
+18:59:29,335 INFO common.XslCache(70) - conf file modified at (2017-05-31 18:58:57,648) and length=13383 bytes!
+18:59:29,600 INFO format.PolDetailQueryOutXsl(35) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/PolDetailQueryOut.xsl!
+18:59:29,618 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+18:59:29,619 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+18:59:29,619 INFO common.XmlConf(80) - conf file modified at (2017-06-02 09:33:58,189) and length=10260 bytes!
+18:59:29,631 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+18:59:29,653 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+18:59:29,654 INFO format.PolDetailQueryOutXsl(48) - Out PolDetailQueryOutXsl.load()!
+19:00:45,859 INFO format.PolDetailQuery(61) - Into PolDetailQuery.std2NoStd()...
+19:00:45,910 INFO format.PolDetailQueryOutXsl(25) - Into PolDetailQueryOutXsl.load()...
+19:00:45,912 DEBUG common.SysInfo(30) - basepath.r = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/basepath.r
+19:00:45,912 DEBUG common.SysInfo(33) - BasePath = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/
+19:00:45,914 DEBUG common.SysInfo(42) - MIDPLAT_HOME = null
+19:00:45,915 DEBUG common.SysInfo(68) - Home = /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/
+19:00:45,916 INFO format.PolDetailQueryOutXsl(28) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/PolDetailQueryOut.xsl...
+19:00:45,919 INFO common.XslCache(70) - conf file modified at (2017-05-31 19:00:32,058) and length=13279 bytes!
+19:00:46,127 INFO format.PolDetailQueryOutXsl(35) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/classes/com/sinosoft/midplat/newabc/format/PolDetailQueryOut.xsl!
+19:00:46,129 INFO midplat.MidplatConf(32) - Into MidplatConf.load()...
+19:00:46,130 INFO midplat.MidplatConf(35) - Start load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml...
+19:00:46,131 INFO common.XmlConf(80) - conf file modified at (2017-06-02 09:33:58,189) and length=10260 bytes!
+19:00:46,141 INFO midplat.MidplatConf(51) - End load /D:/Software/MyEclipse/workspace/HGLIFE/WebRoot/WEB-INF/conf/midplat.xml!
+19:00:46,145 INFO midplat.MidplatConf(91) - Out MidplatConf.load()!
+19:00:46,146 INFO format.PolDetailQueryOutXsl(48) - Out PolDetailQueryOutXsl.load()!
+19:00:46,340 INFO format.PolDetailQuery(93) - 交易成功=========
+19:00:46,340 INFO format.PolDetailQuery(103) - 000000
+19:00:46,340 INFO format.PolDetailQuery(104) - 交易成功
+19:00:46,340 INFO format.PolDetailQuery(106) - Out PolDetailQuery.std2NoStd()!

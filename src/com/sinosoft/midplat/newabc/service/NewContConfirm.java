@@ -38,11 +38,10 @@ public class NewContConfirm extends ServiceImpl {
 		
 		Element mRootEle = cInXmlDoc.getRootElement();
 		Element mBodyEle = mRootEle.getChild(Body);
-		String mProposalPrtNo = mBodyEle.getChildText(ProposalPrtNo);
-		String mContPrtNo = mBodyEle.getChildText(ContPrtNo);
 		
 		try {
-			
+			//核心交易渠道
+			String saleChannel=mBodyEle.getChildText("SaleChannel");
 			String uwTransId = mRootEle.getChild("Body").getChildText("ApplyNo");
 			String proposalprtno = mRootEle.getChild("Body").getChildText("ProposalPrtNo");
 			String sql="select proposalprtno from cont where bak8='"+uwTransId+"' and state ='1' ";
@@ -55,16 +54,7 @@ public class NewContConfirm extends ServiceImpl {
 			cLogger.info("查出来的 顺序号："+applyno);
 			cLogger.info("传过来的 投保单号："+proposalprtno);
 			cLogger.info("查出来的 投保单号："+proposalprtno2);
-			
-//			if(proposalprtno2==null||proposalprtno2.equals("")){
-//				throw new MidplatException("未找到此试算申请顺序号对应的试算交易！");
-//			}
-			
-//			if(!proposalprtno.equals(proposalprtno2)){
-//				throw new MidplatException("与试算时的投保单号不符！");
-//			}
 			cTranLogDB = insertTranLog(pInXmlDoc);
-			
 			cLogger.info("Into NewContInput.service()...-->authority(cInXmlDoc)网点与权限 添加代理");	
 			
 			//校验系统中是否有相同保单正在处理，尚未返回
@@ -84,85 +74,50 @@ public class NewContConfirm extends ServiceImpl {
 //			if (!"1".equals(new ExeSQL().getOneValue(tSqlStr))) {
 //				throw new MidplatException("此保单数据正在处理中，请稍候！");
 //			}
-			
-		
-			//农行传保单印刷号给核心
-			if("05".equals(mRootEle.getChild(Head).getChildText(TranCom))){//农行的交易
-				String tSqlStr = "select * from TranLog where ProposalPrtNo = '"+proposalprtno2+"' " +
-						" and funcflag =1012 and trancom=5 and rcode=0 order by logno desc";
-				cLogger.info(tSqlStr);
-				TranLogSet mTranLogSet = new TranLogDB().executeQuery(tSqlStr);
-				cLogger.info("mTranLogSet.size():"+mTranLogSet.size());
-				if(mTranLogSet.size()!=0){
-					TranLogSchema tTranLogSchema = mTranLogSet.get(1);
-					
-					String prtNo = tTranLogSchema.getOtherNo();
-					cTranLogDB.setOtherNo(prtNo);
-					
-					Element tContPrtNo = mBodyEle.getChild(ContPrtNo);
-					tContPrtNo.setText(prtNo);
-					
-					cLogger.info("取最新的保单印刷号给核心传过去:"+prtNo);
-				}
+			String tSqlStr = "select * from TranLog where ProposalPrtNo = '"+proposalprtno2+"' " +
+					" and funcflag =1002 and trancom=5 and rcode=0 order by logno desc";
+			cLogger.info(tSqlStr);
+			TranLogSet mTranLogSet = new TranLogDB().executeQuery(tSqlStr);
+			cLogger.info("mTranLogSet.size():"+mTranLogSet.size());
+			if(mTranLogSet.size()!=0){
+				TranLogSchema tTranLogSchema = mTranLogSet.get(1);
+				
+				String prtNo = tTranLogSchema.getOtherNo();
+				cTranLogDB.setOtherNo(prtNo);
+				
+				Element tContPrtNo = mBodyEle.getChild(ContPrtNo);
+				tContPrtNo.setText(prtNo);
+				
+				cLogger.info("取最新的保单印刷号给核心传过去:"+prtNo);
 			}
-		
-			
-//			JdomUtil.print(cInXmlDoc);
-			
-			
 			//当天、同一网点，成功录过单
-			String tSqlStr = new StringBuilder("select * from Cont where Type=").append(AblifeCodeDef.ContType_Bank)
+			String tSqlStr1 = new StringBuilder("select * from Cont where Type=").append(AblifeCodeDef.ContType_Bank)
 				.append(" and State=").append(AblifeCodeDef.ContState_Input)
 				.append(" and ProposalPrtNo='").append(proposalprtno2).append('\'')
 				.append(" and MakeDate=").append(cTranLogDB.getMakeDate())
 				.append(" and TranCom=").append(cTranLogDB.getTranCom())
-				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
+//				.append(" and NodeNo='").append(cTranLogDB.getNodeNo()).append('\'')
 				.toString();
-			cLogger.info(tSqlStr);
-			ContSet mContSet = new ContDB().executeQuery(tSqlStr);
+			cLogger.info(tSqlStr1);
+			ContSet mContSet = new ContDB().executeQuery(tSqlStr1);
 			if (1 != mContSet.size()) {
 				throw new MidplatException("非当日同一网点所出保单，不能进行该操作！");
 			}
 			ContSchema tContSchema = mContSet.get(1);
-			
-			
 			String tSqlState = new StringBuilder("select state from Cont where bak8=").append(uwTransId).toString();
 			cLogger.info(tSqlState);
-			
 			if ("2".equals(new ExeSQL().getOneValue(tSqlState))) {
 				throw new MidplatException("已做过收费签单，不能重复该操作！");
 			}
-			
-//			//和核心联调的时候放开 begin
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_Bank_ContConfirm).call(cInXmlDoc);
-			//和核心联调的时候放开 end
-			
-			//和核心联调的时候注视掉begin
-//			String mInStr = "G:/test/11019_55_1_outSvc.xml";
-//			InputStream mIs = null;  
-//			try { 
-//				mIs = new FileInputStream(mInStr); 
-//			} catch (FileNotFoundException e) {
-//				e.printStackTrace(); 
-//			}
-//			byte[] mInClearBodyBytes = IOTrans.toBytes(mIs);
-//			cOutXmlDoc = JdomUtil.build(mInClearBodyBytes, "GBK");
-			//和核心联调的时候注视掉end
-			
-	
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild(Head);
 			Element tOutBodyEle = tOutRootEle.getChild(Body);
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			//modified by chengqi 20121129
 			String mContNo = tOutBodyEle.getChildText(ContNo);
 			cTranLogDB.setContNo(mContNo);			
-			//end
-			//核心不存保单印刷号，用请求报文对应值覆盖---核心保存了，再说了这个是投保单号，呜呜...
-			//tOutBodyEle.getChild(ProposalPrtNo).setText(mContPrtNo);
-			
 			//核心可能将一个产品的两个险种都定义为主险，而银行则认为一主一附，以银行报文为准，覆盖核心记录
 			String tMainRiskCode = tContSchema.getBak1();
 			List<Element> tRiskList = tOutBodyEle.getChildren(Risk);
@@ -175,10 +130,6 @@ public class NewContConfirm extends ServiceImpl {
 					tRiskList.add(0, tRiskList.remove(i));	//将主险调整到最前面
 				}
 			}
-			
-			//单证处理(投保单核销、保单核销)
-			
-			
 			//超时自动删除数据
 			long tUseTime = System.currentTimeMillis() - mStartMillis;
 			int tTimeOut = 60;	//默认超时设置为1分钟；如果未配置超时时间，则使用该值。
@@ -189,10 +140,9 @@ public class NewContConfirm extends ServiceImpl {
 			}
 			if (tUseTime > tTimeOut*1000) {
 				cLogger.error("处理超时！UseTime=" + tUseTime/1000.0 + "s；TimeOut=" + tTimeOut + "s；投保书：" + proposalprtno2);
-			//	rollback();	//回滚系统数据
+				rollback();	//回滚系统数据
 				throw new MidplatException("系统繁忙，请稍后再试！");
 			}
-			
 			//更新保单状态
 			Element tOutMainRiskEle = tOutBodyEle.getChild(Risk);
 			Date tCurDate = new Date();
@@ -201,6 +151,7 @@ public class NewContConfirm extends ServiceImpl {
 				.append(", SignDate=").append(tOutMainRiskEle.getChildText(SignDate))
 				.append(", ModifyDate=").append(DateUtil.get8Date(tCurDate))
 				.append(", ModifyTime=").append(DateUtil.get6Time(tCurDate))
+				.append(", Bak5=").append(saleChannel)
 				.append(" where Proposalprtno=").append(proposalprtno2)
 				.toString();
 			ExeSQL tExeSQL = new ExeSQL();
@@ -209,7 +160,6 @@ public class NewContConfirm extends ServiceImpl {
 			}
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
 		

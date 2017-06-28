@@ -30,16 +30,9 @@ public class SignConfirmService extends ServiceImpl {
 		long mStartMillis = System.currentTimeMillis();
 		cLogger.info("Into SignConfirmService.service()...");
 		cInXmlDoc = pInXmlDoc;
-		
 		try {
-			
-			
-			
 			cTranLogDB = insertTranLog(cInXmlDoc);
-			
-			
 			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_SignConfirm).call(cInXmlDoc);
-
 			cLogger.info("发送核心获取确认登记台账报文完成 ");
 			JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
@@ -47,13 +40,10 @@ public class SignConfirmService extends ServiceImpl {
 			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = MidplatUtil.getSimpOutXml(CodeDef.RCode_ERROR, ex.getMessage());
 		}
-		
 		cLogger.info("插入日志："+cTranLogDB);
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
 			cLogger.info("插入日志成功："+cTranLogDB);

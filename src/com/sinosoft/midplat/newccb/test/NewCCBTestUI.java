@@ -1,8 +1,6 @@
 package com.sinosoft.midplat.newccb.test;
 
-import java.io.BufferedInputStream;
 import java.io.EOFException;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -31,12 +29,41 @@ public class NewCCBTestUI {
 		
 		
 		String funcflag = "";
-		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\";
+		String mInFilePath = "C:\\Users\\PengYF\\Desktop\\sinosoft\\HG\\ccb\\";
 		
-		funcflag="P53819182";
-		mInFilePath +="P53819182_打印保单.xml";
 		
-		       
+//		funcflag="P53819113";
+//		mInFilePath +="新单投保_年金险.xml";
+		
+//		funcflag="P53819113";
+//		mInFilePath +="新单投保_万能险.xml";
+		
+//		funcflag="P53819113";
+//		mInFilePath +="新单投保_寿险.xml";
+		
+//		funcflag="P53819152";
+//		mInFilePath +="新单确认.xml";
+		
+//		funcflag="P53819182";
+//		mInFilePath +="打印保单.xml";
+		
+//		funcflag="P53819184";
+//		mInFilePath +="保单重打.xml";
+		
+		funcflag="P53819121";
+		mInFilePath +="申请非实时投保.xml";
+		
+//		funcflag="P538191D2";
+//		mInFilePath +="登记签收日期请求.xml";
+		
+//		funcflag="P53819145";
+//		mInFilePath +="申请契撤.xml";
+		
+//		funcflag="P53819146";
+//		mInFilePath +="确认契撤.xml";
+		
+//		funcflag="P53817103";
+//		mInFilePath +="3005日终.xml";
 		       
 		       
 	    String mOutFilePath = "C:\\Users\\PengYF\\Desktop\\test.xml";

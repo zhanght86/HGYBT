@@ -42,19 +42,14 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 		try {
 			cTranLogDB = insertTranLog(cInXmlDoc);
 			JdomUtil.print(cInXmlDoc);
-			
-//			cOutXmlDoc = new CallWebsvcAtomSvc(AblifeCodeDef.SID_QueryPaymentInfo).call(cInXmlDoc);
 			cOutXmlDoc=call(pInXmlDoc);
 			System.out.println("-----------------------------------------------");
-			cLogger.info("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
 			JdomUtil.print(cOutXmlDoc);
 			Element tOutRootEle = cOutXmlDoc.getRootElement();
 			Element tOutHeadEle = tOutRootEle.getChild("RetData");
-//			if (CodeDef.RCode_ERROR == Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 			if (CodeDef.RCode_ERROR != Integer.parseInt(tOutHeadEle.getChildText(Flag))) {
 				throw new MidplatException(tOutHeadEle.getChildText(Desc));
 			}
-			
 			//超时自动删除数据
 			long tUseTime = System.currentTimeMillis() - mStartMillis;
 			int tTimeOut = 60;	//默认超时设置为1分钟；如果未配置超时时间，则使用该值。
@@ -68,13 +63,10 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 				rollback();	//回滚系统数据
 				throw new MidplatException("系统繁忙，请稍后再试！");
 			}
-			
 		} catch (Exception ex) {
 			cLogger.error(cThisBusiConf.getChildText(name)+"交易失败！", ex);
-			
 			cOutXmlDoc = getSimpOutXml(CodeDef.RCode_OK, ex.getMessage());
 		}
-		
 		if (null != cTranLogDB) {	//插入日志失败时cTranLogDB=null
 			Element tHeadEle = cOutXmlDoc.getRootElement().getChild("RetData");
 			JdomUtil.print(cOutXmlDoc);
@@ -90,11 +82,9 @@ public class NewQueryPaymentInfo extends ServiceImpl {
 				cLogger.error("更新日志信息失败！" + cTranLogDB.mErrors.getFirstError());
 			}
 		}
-		
 		cLogger.info("Out NewQueryPaymentInfo.service()!");
 		return cOutXmlDoc;
 	}
-
 	private void rollback() {
 		cLogger.debug("Into NewQueryPaymentInfo.rollback()...");
 		

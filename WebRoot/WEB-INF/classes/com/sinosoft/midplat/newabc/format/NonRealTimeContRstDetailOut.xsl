@@ -21,10 +21,21 @@
 				<PayEndYearFlag><xsl:apply-templates select="PayEndYearFlag"/></PayEndYearFlag>
 				<!-- 缴费期间 -->
 				<PayEndYear><xsl:value-of select="PayEndYear"/></PayEndYear>
-				<!-- 保险期间类型 -->
-				<InsuYearFlag><xsl:apply-templates select="InsuYearFlag"/></InsuYearFlag>
-				<!-- 保险期间 -->
-				<InsuYear><xsl:value-of select="InsuYear"/></InsuYear>
+				<xsl:choose>
+					<!-- 核心保终身产品：保险期间是105 -->
+					<xsl:when test="InsuYear='105' and InsuYearFlag='A'"> 
+						<!-- 保险期间类型 ：终身-->
+						<InsuYearFlag>6</InsuYearFlag>
+						<!-- 保险期间 -->
+						<InsuYear>199</InsuYear>
+					</xsl:when>
+					<xsl:otherwise>
+						<!-- 保险期间类型 -->
+						<InsuYearFlag><xsl:apply-templates select="InsuYearFlag"/></InsuYearFlag>
+						<!-- 保险期间 -->
+						<InsuYear><xsl:value-of select="InsuYear"/></InsuYear>
+					</xsl:otherwise>
+				</xsl:choose>
 				<!-- 保费 -->
 				<Prem><xsl:value-of select="Prem"/></Prem>
 				<!-- 保额 -->
